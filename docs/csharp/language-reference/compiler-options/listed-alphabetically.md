@@ -1,6 +1,7 @@
 ---
+description: "C# Compiler Options Listed Alphabetically"
 title: "C# Compiler Options Listed Alphabetically"
-ms.date: 05/15/2018
+ms.date: 06/04/2020
 helpviewer_keywords:
   - "compiler options [C#], listed alphabetically"
   - "C# language, compiler options listed alphabetically"
@@ -55,6 +56,7 @@ The following compiler options are sorted alphabetically. For a categorical list
 |[-nostdlib](nostdlib-compiler-option.md)|Instructs the compiler not to reference standard library (mscorlib.dll).|
 |[-nowarn](nowarn-compiler-option.md)|Disables specific warning messages|
 |[-nowin32manifest](nowin32manifest-compiler-option.md)|Instructs the compiler not to embed an application manifest in the executable file.|
+|[-nullable](nullable-compiler-option.md)|Specifies nullable context option.|
 |[-optimize](optimize-compiler-option.md)|Enables/disables optimizations.|
 |[-out](out-compiler-option.md)|Specifies the output file name (default: base name of file with main class or first file).|
 |-parallel[+&#124;-]|Specifies whether to use concurrent build (+).|
@@ -71,7 +73,7 @@ The following compiler options are sorted alphabetically. For a categorical list
 |[-resource](resource-compiler-option.md)|Embeds the specified resource.|
 |-ruleset:\<file>|Specify a ruleset file that disables specific diagnostics.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Specifies the minimum version of the subsystem that the executable file can use.|
-|[-target](target-compiler-option.md)|Specifies the format of the output file by using one of four options: [-target:appcontainerexe](target-appcontainerexe-compiler-option.md), [-target:exe](target-exe-compiler-option.md), [-target:library](target-library-compiler-option.md), [-target:module](target-module-compiler-option.md), [-target:winexe](target-winexe-compiler-option.md),  [-target:winmdobj](target-winmdobj-compiler-option.md).|
+|[-target](target-compiler-option.md)|Specifies the format of the output file by using one of the following options: [-target:appcontainerexe](target-appcontainerexe-compiler-option.md), [-target:exe](target-exe-compiler-option.md), [-target:library](target-library-compiler-option.md), [-target:module](target-module-compiler-option.md), [-target:winexe](target-winexe-compiler-option.md),  [-target:winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Allows [unsafe](../keywords/unsafe.md) code.|
 |[-utf8output](utf8output-compiler-option.md)|Outputs compiler messages in UTF-8 encoding.|
 |-version|Display the compiler version number and exit.|

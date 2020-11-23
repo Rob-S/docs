@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugModule::GetToken Method
+
 Gets the token for the table entry for this module.  
   
 ## Syntax  
@@ -28,14 +29,17 @@ HRESULT GetToken(
 ```  
   
 ## Parameters  
+
  `pToken`  
  [out] A pointer to the `mdModule` token that references the module's metadata.  
   
 ## Remarks  
- The token can be passed to the [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md), and [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) metadata import interfaces.  
+
+ The token can be passed to the [IMetaDataImport](../metadata/imetadataimport-interface.md), [IMetaDataImport2](../metadata/imetadataimport2-interface.md), and [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) metadata import interfaces.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -45,4 +49,4 @@ HRESULT GetToken(
   
 ## See also
 
-- [Metadata](../../../../docs/framework/unmanaged-api/metadata/index.md)
+- [Metadata](../metadata/index.md)

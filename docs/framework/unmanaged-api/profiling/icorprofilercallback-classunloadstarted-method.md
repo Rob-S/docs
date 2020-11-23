@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ClassUnloadStarted Method
+
 Notifies the profiler that a class is being unloaded.  
   
 ## Syntax  
@@ -26,15 +27,19 @@ HRESULT ClassUnloadStarted(
     [in] ClassID classId);  
 ```  
   
-## Parameters  
- `classId`  
- [in] Identifies the class that is being unloaded.  
-  
+## Parameters
+
+- `classId`
+
+  \[in] Identifies the class that is being unloaded.
+
 ## Remarks  
+
  The value of `classId` is not valid for an information request after the `ClassUnloadStarted` method returns — this is the profiler's last chance to obtain information about this class.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -44,5 +49,5 @@ HRESULT ClassUnloadStarted(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ClassUnloadFinished Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classunloadfinished-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ClassUnloadFinished Method](icorprofilercallback-classunloadfinished-method.md)

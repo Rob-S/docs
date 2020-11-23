@@ -3,11 +3,10 @@ title: Migrate from ASP.NET Web Forms to Blazor
 description: Learn how to approach migrating an existing ASP.NET Web Forms app to Blazor.
 author: twsouthwick
 ms.author: tasou
+no-loc: [Blazor, WebAssembly]
 ms.date: 09/19/2019
 ---
 # Migrate from ASP.NET Web Forms to Blazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Migrating a code base from ASP.NET Web Forms to Blazor is a time-consuming task that requires planning. This chapter outlines the process. Something that can ease the transition is to ensure the app adheres to an *N-tier* architecture, wherein the app model (in this case, Web Forms) is separate from the business logic. This logical separation of layers makes it clear what needs to move to .NET Core and Blazor.
 
@@ -120,7 +119,7 @@ public class Global : HttpApplication, IContainerProviderAccessor
     }
 
     /// <summary>
-    /// http://docs.autofac.org/en/latest/integration/webforms.html
+    /// https://autofaccn.readthedocs.io/en/latest/integration/webforms.html
     /// </summary>
     private void ConfigureContainer()
     {
@@ -279,7 +278,7 @@ For more information on bundling and minification, see [Bundle and minify static
 
 A page in a Web Forms app is a file with the *.aspx* extension. A Web Forms page can often be mapped to a component in Blazor. A Blazor component is authored in a file with the *.razor* extension. For the eShop project, five pages are converted to a Razor page.
 
-For example, the details view is comprised of three files in the Web Forms project: *Details.aspx*, *Details.aspx.cs*, and *Details.aspx.designer.cs*. When converting to Blazor, the code-behind and markup are combined into *Details.razor*. Razor compilation (equivalent to what's in *.designer.cs* files) is stored in the *obj* directory and aren't, by default, viewable in **Solution Explorer**. The Web Forms page consists of the following markup:
+For example, the details view comprises three files in the Web Forms project: *Details.aspx*, *Details.aspx.cs*, and *Details.aspx.designer.cs*. When converting to Blazor, the code-behind and markup are combined into *Details.razor*. Razor compilation (equivalent to what's in *.designer.cs* files) is stored in the *obj* directory and isn't, by default, viewable in **Solution Explorer**. The Web Forms page consists of the following markup:
 
 ```aspx-csharp
 <%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="eShopLegacyWebForms.Catalog.Details" %>
@@ -553,10 +552,6 @@ In Blazor, the equivalent markup is provided in a *Create.razor* file:
 
 The `EditForm` context includes validation support and can be wrapped around input. Data annotations are a common way to add validation. Such validation support can be added via the `DataAnnotationsValidator` component. For more information on this mechanism, see [ASP.NET Core Blazor forms and validation](/aspnet/core/blazor/forms-validation).
 
-## Migrate built-in Web Forms controls
-
-*This content is coming soon.*
-
 ## Migrate configuration
 
 In a Web Forms project, configuration data is most commonly stored in the *web.config* file. The configuration data is accessed with `ConfigurationManager`. Services were often required to parse objects. With .NET Framework 4.7.2, composability was added to configuration via `ConfigurationBuilders`. These builders allowed developers to add various sources for configuration that was then composed at runtime to retrieve the necessary values.
@@ -577,6 +572,7 @@ The following snippet demonstrates how the Web Forms eShop project uses *web.con
     <add key="UseMockData" value="true" />
     <add key="UseCustomizationData" value="false" />
   </appSettings>
+</configuration>
 ```
 
 It's common for secrets, such as database connection strings, to be stored within the *web.config*. The secrets are inevitably persisted in unsecure locations, such as source control. With Blazor on ASP.NET Core, the preceding XML-based configuration is replaced with the following JSON:
@@ -633,7 +629,7 @@ Because Blazor is built on .NET Core, there are considerations in ensuring suppo
 - Code Access Security (CAS)
 - Security Transparency
 
-For more information on techniques to identify necessary changes to support running on .NET Core, see [Port your code from .NET Framework to .NET Core](/dotnet/core/porting).
+For more information on techniques to identify necessary changes to support running on .NET Core, see [Port your code from .NET Framework to .NET Core](../../core/porting/index.md).
 
 ASP.NET Core is a reimagined version of ASP.NET and has some changes that may not initially seem obvious. The main changes are:
 

@@ -1,5 +1,6 @@
 ---
 title: "Registering Assemblies with COM"
+description: Register or unregister assemblies with COM using the Assembly Registration Tool (Regasm.exe), which adds information about the class to the system registry.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "COM interop, registering assemblies"
@@ -39,5 +40,5 @@ You can run a command-line tool called the [Assembly Registration Tool (Regasm.e
 
 - [Exposing .NET Framework Components to COM](exposing-dotnet-components-to-com.md)
 - [How to: Reference .NET Types from COM](how-to-reference-net-types-from-com.md)
-- [Calling a .NET Object](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Deploying an Application for COM Access](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Calling a .NET Object](/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
+- [Deploying an Application for COM Access](/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

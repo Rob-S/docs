@@ -3,11 +3,10 @@ title: Unit testing Visual Basic in .NET Core with dotnet test and NUnit
 description: Learn unit test concepts in .NET Core through an interactive experience building a sample Visual Basic solution step-by-step using NUnit.
 author: rprouse
 ms.date: 10/04/2018
-ms.custom: "seodec18"
 ---
 # Unit testing Visual Basic .NET Core libraries using dotnet test and NUnit
 
-This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts. If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/) before you begin. For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts. If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/) before you begin. For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
@@ -77,7 +76,7 @@ dotnet new nunit -lang VB
 
 The [dotnet new](../tools/dotnet-new.md) command creates a test project that uses NUnit as the test library. The generated template configures the test runner in the *PrimeServiceTests.vbproj* file:
 
-[!code-xml[Packages](~/samples/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService.Tests.vbproj#Packages)]
+[!code-xml[Packages](~/samples/snippets/core/testing/unit-testing-vb-nunit/vb/PrimeService.Tests/PrimeService.Tests.vbproj#Packages)]
 
 The test project requires other packages to create and run unit tests. `dotnet new` in the previous step added NUnit and the NUnit test adapter. Now, add the `PrimeService` class library as another dependency to the project. Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:
 
@@ -150,7 +149,7 @@ Now that you've made one test pass, it's time to write more. There are a few oth
 
 Instead of creating new tests, apply these two attributes to create a series of tests that test several values less than two, which is the lowest prime number:
 
-[!code-vb[Sample_TestCode](../../../samples/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService_IsPrimeShould.vb?name=Sample_TestCode)]
+[!code-vb[Sample_TestCode](../../../samples/snippets/core/testing/unit-testing-vb-nunit/vb/PrimeService.Tests/PrimeService_IsPrimeShould.vb?name=Sample_TestCode)]
 
 Run `dotnet test`, and two of these tests fail. To make all of the tests pass, change the `if` clause at the beginning of the `Main` method in the *PrimeServices.cs* file:
 

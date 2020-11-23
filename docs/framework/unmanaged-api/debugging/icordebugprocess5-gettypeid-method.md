@@ -19,7 +19,8 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugProcess5::GetTypeID Method
-Converts an object address to a [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) identifier.  
+
+Converts an object address to a [COR_TYPEID](cor-typeid-structure.md) identifier.  
   
 ## Syntax  
   
@@ -31,16 +32,18 @@ HRESULT GetTypeID(
 ```  
   
 ## Parameters  
+
  `obj`  
  [in] The object address.  
   
  `pId`  
- A pointer to the [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) value that identifies the object.  
+ A pointer to the [COR_TYPEID](cor-typeid-structure.md) value that identifies the object.  
   
 ## Remarks  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -50,5 +53,5 @@ HRESULT GetTypeID(
   
 ## See also
 
-- [ICorDebugProcess5 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5 Interface](icordebugprocess5-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

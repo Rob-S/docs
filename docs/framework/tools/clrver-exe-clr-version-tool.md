@@ -1,12 +1,11 @@
 ---
 title: "Clrver.exe (CLR Version Tool)"
+description: Review Clrver.exe, the CLR Version tool. This tool reports all installed versions of the common language runtime (CLR) on the computer.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "Clrver.exe"
   - "CLR Version tool"
 ms.assetid: cbc2ee86-bdc8-4a65-a8f1-ba23bce3a699
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Clrver.exe (CLR Version Tool)
 The CLR Version tool (Clrver.exe) reports all the installed versions of the common language runtime (CLR) on the computer.  

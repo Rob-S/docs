@@ -1,5 +1,6 @@
 ---
 title: "SecAnnotate.exe (.NET Security Annotator Tool)"
+description: Use SecAnnotate.exe, the .NET Security Annotator tool. Identify SecurityCritical and SecuritySafeCritical portions of one or more assemblies.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "SecAnnotate.exe"
@@ -44,6 +45,6 @@ SecAnnotate.exe [parameters] [assemblies]
 ## Remarks  
  Parameters and assemblies may also be provided in a response file that is specified on the command line and prefixed with an at sign (@). Each line in the response file should contain a single parameter or assembly name.  
   
- For more information about the .NET Security Annotator, see the entry [Using SecAnnotate to Analyze Your Assemblies for Transparency Violations](https://blogs.msdn.microsoft.com/shawnfa/2009/11/18/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example/) in the .NET Security blog.  
+ For more information about the .NET Security Annotator, see the entry [Using SecAnnotate to Analyze Your Assemblies for Transparency Violations](/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example) in the .NET Security blog.  
   
 ## Examples

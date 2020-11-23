@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedDocument::HasEmbeddedSource Method
+
 Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.  
   
 ## Syntax  
@@ -27,12 +28,14 @@ HRESULT HasEmbeddedSource(
 ```  
   
 ## Parameters  
+
  `pRetVal`  
  [out] A pointer to a variable that indicates whether the document has source embedded in the debugging symbols.  
   
 ## Return Value  
+
  S_OK if the method succeeds.  
   
 ## See also
 
-- [ISymUnmanagedDocument Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [ISymUnmanagedDocument Interface](isymunmanageddocument-interface.md)

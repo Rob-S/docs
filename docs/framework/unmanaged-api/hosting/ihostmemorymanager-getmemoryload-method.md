@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IHostMemoryManager::GetMemoryLoad Method
+
 Gets the amount of physical memory that is currently in use, and therefore unavailable, as reported by the host.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetMemoryLoad (  
-    [out] DWORD*  pMemoryLoad,   
+    [out] DWORD*  pMemoryLoad,
     [out] SIZE_T  *pAvailableBytes  
 );  
 ```  
   
 ## Parameters  
+
  `pMemoryLoad`  
  [out] A pointer to the approximate percentage of total physical memory that is currently in use.  
   
@@ -47,12 +49,14 @@ HRESULT GetMemoryLoad (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  `GetMemoryLoad` wraps the Win32 `GlobalMemoryStatus` function. The value of `pMemoryLoad` is the equivalent of the `dwMemoryLoad` field in the `MEMORYSTATUS` structure returned from `GlobalMemoryStatus`.  
   
  The runtime uses the return value as a heuristic for the garbage collector. For example, if the host reports that the majority of memory is in use, the garbage collector may elect to collect from multiple generations to increase the amount of memory that can potentially become available.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -63,4 +67,4 @@ HRESULT GetMemoryLoad (
 ## See also
 
 - <xref:System.GC?displayProperty=nameWithType>
-- [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [IHostMemoryManager Interface](ihostmemorymanager-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: "Reflection in the .NET Framework for Windows Store Apps"
+description: Use reflection in .NET for Windows Store apps. There's a set of reflection types and members to use in Windows Store apps, which are available to the full .NET.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -8,8 +9,6 @@ helpviewer_keywords:
   - "reflection, Windows Store apps"
   - ".NET for Windows Store apps, TypeInfo class"
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Reflection in the .NET Framework for Windows Store Apps
 

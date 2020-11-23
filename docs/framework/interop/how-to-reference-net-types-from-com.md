@@ -1,5 +1,6 @@
 ---
 title: "How to: Reference .NET Types from COM"
+description: Reference .NET types from COM. VB clients can view a .NET object in the object browser, but C++ clients must reference a TLB file with the \#import directive.
 ms.date: "03/30/2017"
 dev_langs: 
   - "cpp"
@@ -39,5 +40,5 @@ From the point of view of client and server code, the differences between COM an
 
 - [Exposing .NET Framework Components to COM](exposing-dotnet-components-to-com.md)
 - [Registering Assemblies with COM](registering-assemblies-with-com.md)
-- [Calling a .NET Object](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Deploying an Application for COM Access](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Calling a .NET Object](/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
+- [Deploying an Application for COM Access](/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

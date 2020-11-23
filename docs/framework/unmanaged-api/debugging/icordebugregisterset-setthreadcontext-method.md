@@ -17,10 +17,11 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugRegisterSet::SetThreadContext Method
+
 `SetThreadContext` is not implemented in the .NET Framework version 2.0. Do not call this method.  
   
 > [!NOTE]
-> Use the higher-level operation [ICorDebugNativeFrame::SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md) to set the context of a thread.  
+> Use the higher-level operation [ICorDebugNativeFrame::SetIP](icordebugnativeframe-setip-method.md) to set the context of a thread.  
   
 ## Syntax  
   
@@ -33,7 +34,8 @@ HRESULT SetThreadContext (
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -43,5 +45,5 @@ HRESULT SetThreadContext (
   
 ## See also
 
-- [ICorDebugRegisterSet Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [ICorDebugRegisterSet2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet Interface](icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 Interface](icordebugregisterset2-interface.md)

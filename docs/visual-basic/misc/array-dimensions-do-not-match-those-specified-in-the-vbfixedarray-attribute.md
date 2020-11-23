@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 71809e3b-8147-4314-9c4c-e4a5bc9a5530
 ---
 # Array dimensions do not match those specified in the 'VBFixedArray' attribute
+
 Your array's dimensions do not match the dimensions you have specified in the `VBFixedArray` attribute.  
   
 ## To correct this error  
@@ -15,5 +16,5 @@ Your array's dimensions do not match the dimensions you have specified in the `V
 ## See also
 
 - [Arrays in Visual Basic](../programming-guide/language-features/arrays/index.md)
-- [ReDim Statement](../../visual-basic/language-reference/statements/redim-statement.md)
+- [ReDim Statement](../language-reference/statements/redim-statement.md)
 - <xref:Microsoft.VisualBasic.VBFixedArrayAttribute>

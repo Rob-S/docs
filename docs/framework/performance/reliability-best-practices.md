@@ -1,5 +1,6 @@
 ---
 title: "Reliability Best Practices"
+description: See best practices for reliability in .NET host-based server applications, such as SQL Server. Prevent them from leaking resources or getting brought down.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "marking locks"
@@ -38,8 +39,6 @@ helpviewer_keywords:
   - "STA-dependent features"
   - "fibers"
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # Reliability Best Practices

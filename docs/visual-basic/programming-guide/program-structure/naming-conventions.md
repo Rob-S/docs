@@ -12,6 +12,7 @@ helpviewer_keywords:
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
 ---
 # Visual Basic Naming Conventions
+
 When you name an element in your Visual Basic application, the first character of that name must be an alphabetic character or an underscore. Note, however, that names beginning with an underscore are not compliant with the [Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
   
  The following suggestions apply to naming.  
@@ -36,8 +37,8 @@ When you name an element in your Visual Basic application, the first character o
   
 ## See also
 
-- [Keywords as Element Names in Code](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)
-- [Me, My, MyBase, and MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
-- [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
-- [Program Structure and Code Conventions](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)
+- [Keywords as Element Names in Code](keywords-as-element-names-in-code.md)
+- [Me, My, MyBase, and MyClass](me-my-mybase-and-myclass.md)
+- [Declared Element Names](../language-features/declared-elements/declared-element-names.md)
+- [Program Structure and Code Conventions](program-structure-and-code-conventions.md)
+- [Visual Basic Language Reference](../../language-reference/index.md)

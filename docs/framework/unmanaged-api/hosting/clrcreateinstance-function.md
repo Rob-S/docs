@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # CLRCreateInstance Function
-Provides one of three interfaces: [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), or [ICLRDebugging](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
+
+Provides one of three interfaces: [ICLRMetaHost](iclrmetahost-interface.md), [ICLRMetaHostPolicy](iclrmetahostpolicy-interface.md), or [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## Syntax  
   
@@ -30,6 +31,7 @@ HRESULT CLRCreateInstance(
 ```  
   
 ## Parameters  
+
  `clsid`  
  [in] One of three class identifiers: CLSID_CLRMetaHost, CLSID_CLRMetaHostPolicy, or CLSID_CLRDebugging.  
   
@@ -37,9 +39,10 @@ HRESULT CLRCreateInstance(
  [in] One of three interface identifiers (IIDs): IID_ICLRMetaHost, IID_ICLRMetaHostPolicy, or IID_ICLRDebugging.  
   
  `ppInterface`  
- [out] One of three interfaces: [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), or [ICLRDebugging](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
+ [out] One of three interfaces: [ICLRMetaHost](iclrmetahost-interface.md), [ICLRMetaHostPolicy](iclrmetahostpolicy-interface.md), or [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -48,6 +51,7 @@ HRESULT CLRCreateInstance(
 |E_POINTER|`ppInterface` is null.|  
   
 ## Remarks  
+
  The following table shows the supported combinations for `clsid` and `riid`.  
   
 |`clsid`|`riid`|  
@@ -75,7 +79,8 @@ hr = CLRCreateInstance (CLSID_CLRDebugging, IID_ICLRDebugging,
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -85,4 +90,4 @@ hr = CLRCreateInstance (CLSID_CLRDebugging, IID_ICLRDebugging,
   
 ## See also
 
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [Hosting](index.md)

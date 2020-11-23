@@ -17,13 +17,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugRegisterSet::GetRegisters Method
+
 Gets the value of each register (on the computer that is currently executing code) that is specified by the bit mask.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetRegisters (  
-    [in] ULONG64       mask,   
+    [in] ULONG64       mask,
     [in] ULONG32       regCount,  
     [out, size_is(regCount), length_is(regCount)]  
         CORDB_REGISTER regBuffer[]  
@@ -31,6 +32,7 @@ HRESULT GetRegisters (
 ```  
   
 ## Parameters  
+
  `mask`  
  [in] A bit mask that specifies which register values are to be retrieved. Each bit corresponds to a register. If a bit is set to one, the register's value is retrieved; otherwise, the register's value is not retrieved.  
   
@@ -41,12 +43,14 @@ HRESULT GetRegisters (
  [out] An array of `CORDB_REGISTER` objects, each of which receives a value of a register.  
   
 ## Remarks  
+
  The size of the array should be equal to the number of bits set to one in the bit mask. The `regCount` parameter specifies the number of elements in the buffer that will receive the register values. If the `regCount` value is too small for the number of registers indicated by the mask, the higher numbered registers will be truncated from the set. If the `regCount` value is too large, the unused `regBuffer` elements will be unmodified.  
   
  If the bit mask specifies a register that is unavailable, `GetRegisters` returns an indeterminate value for that register.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -56,5 +60,5 @@ HRESULT GetRegisters (
   
 ## See also
 
-- [ICorDebugRegisterSet Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [ICorDebugRegisterSet2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet Interface](icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 Interface](icordebugregisterset2-interface.md)

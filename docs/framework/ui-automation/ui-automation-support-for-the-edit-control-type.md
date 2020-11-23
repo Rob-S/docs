@@ -1,5 +1,6 @@
 ---
 title: "UI Automation Support for the Edit Control Type"
+description: Get information about UI Automation support for the Edit control type. Learn the required tree structure, properties, control patterns, and events.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "control types, Edit"
@@ -17,7 +18,7 @@ This topic provides information about [!INCLUDE[TLA2#tla_uiautomation](../../../
 
 Edit controls enable a user to view and edit a simple line of text without rich formatting support.
 
-The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the Edit control type. The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all edit controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].
+The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the Edit control type. The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all edit controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32, or Windows Forms.
 
 <a name="Required_UI_Automation_Tree_Structure"></a>
 

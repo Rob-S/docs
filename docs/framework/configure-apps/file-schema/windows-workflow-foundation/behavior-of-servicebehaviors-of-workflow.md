@@ -5,6 +5,7 @@ ms.topic: "reference"
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
 ---
 # \<behavior> of \<serviceBehaviors> of workflow
+
 The **behavior** element contains a collection of settings for the behavior of a service. Each behavior is indexed by its **name**. Services can link to each behavior through this name using the **behaviorConfiguration** attribute of the [\<endpoint>](../wcf/endpoint-element.md) element. This allows endpoints to share common behavior configurations without redefining the settings.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -23,20 +24,20 @@ The **behavior** element contains a collection of settings for the behavior of a
         <bufferReceive maxPendingMessagesPerChannel="Integer" />
         <etwTracking profileName="String" />
         <sendMessageChannelCache allowUnsafeCaching="Boolean">
-          <channelSettings idleTimeout="TimeSpan" 
-                           leaseTimeout="TimeSpan" 
+          <channelSettings idleTimeout="TimeSpan"
+                           leaseTimeout="TimeSpan"
                            maxItemsInCache="Integer" />
-          <factorySettings idleTimeout="TimeSpan" 
-                           leaseTimeout="TimeSpan" 
+          <factorySettings idleTimeout="TimeSpan"
+                           leaseTimeout="TimeSpan"
                            maxItemsInCache="Integer" />
         </sendMessageChannelCache>
-        <sqlWorkflowInstanceStore connectionStringName="String" 
-                                  hostLockRenewalPeriod="TimeSpan" 
-                                  instanceCompletionAction="DeleteNothing/DeleteAll" 
-                                  instanceEncodingAction="None/GZip" 
-                                  instanceLockedExceptionAction="NoRetry/BasicRetry/AggressiveRetry" 
+        <sqlWorkflowInstanceStore connectionStringName="String"
+                                  hostLockRenewalPeriod="TimeSpan"
+                                  instanceCompletionAction="DeleteNothing/DeleteAll"
+                                  instanceEncodingAction="None/GZip"
+                                  instanceLockedExceptionAction="NoRetry/BasicRetry/AggressiveRetry"
                                   runnableInstancesDetectionPeriod="TimeSpan" />
-        <workflowIdle timeToPersist="TimeSpan" 
+        <workflowIdle timeToPersist="TimeSpan"
                       timeToUnload="TimeSpan" />
         <workflowUnhandledException action="Abandon/AbandonAndSuspend/Cancel/Terminate" />
       </behavior>
@@ -46,6 +47,7 @@ The **behavior** element contains a collection of settings for the behavior of a
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  

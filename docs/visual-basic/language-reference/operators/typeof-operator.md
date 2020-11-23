@@ -14,6 +14,7 @@ helpviewer_keywords:
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
 ---
 # TypeOf Operator (Visual Basic)
+
 Checks whether the runtime type of an expression's result is type-compatible with the specified type.
   
 ## Syntax  
@@ -27,6 +28,7 @@ result = TypeOf objectexpression IsNot typename
 ```  
   
 ## Parts  
+
  `result`  
  Returned. A `Boolean` value.  
   
@@ -37,6 +39,7 @@ result = TypeOf objectexpression IsNot typename
  Required. Any data type name.  
   
 ## Remarks  
+
  The `TypeOf` operator determines whether the run-time type of `objectexpression` is compatible with `typename`. The compatibility depends on the type category of `typename`. The following table shows how compatibility is determined.  
   
 |Type category of `typename`|Compatibility criterion|  
@@ -50,6 +53,7 @@ result = TypeOf objectexpression IsNot typename
  `TypeOf` is always used with the `Is` keyword to construct a `TypeOf`...`Is` expression, or with the `IsNot` keyword to construct a `TypeOf`...`IsNot` expression.  
   
 ## Example  
+
  The following example uses `TypeOf`...`Is` expressions to test the type compatibility of two object reference variables with various data types.  
   
  [!code-vb[VbVbalrOperators#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#39)]  
@@ -58,9 +62,9 @@ result = TypeOf objectexpression IsNot typename
   
 ## See also
 
-- [Is Operator](../../../visual-basic/language-reference/operators/is-operator.md)
-- [IsNot Operator](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Is Operator](is-operator.md)
+- [IsNot Operator](isnot-operator.md)
+- [Comparison Operators in Visual Basic](../../programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operator Precedence in Visual Basic](operator-precedence.md)
+- [Operators Listed by Functionality](operators-listed-by-functionality.md)
+- [Operators and Expressions](../../programming-guide/language-features/operators-and-expressions/index.md)

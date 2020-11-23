@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: b59f5754-444f-4378-9272-9678b437e84a
 ---
 
-# Namespace or type specified in the Imports '\<qualifiedelementname>' doesn't contain any public member or cannot be found
+# BC40056: Namespace or type specified in the Imports '\<qualifiedelementname>' doesn't contain any public member or cannot be found
 
 Namespace or type specified in the Imports '\<qualifiedelementname>' doesn't contain any public member or cannot be found. Make sure the namespace or the type is defined and contains at least one public member. Make sure the alias name doesn't contain other aliases.
 
@@ -17,7 +17,7 @@ An `Imports` statement specifies a containing element that either cannot be foun
 
 A *containing element* can be a namespace, class, structure, module, interface, or enumeration. The containing element contains members, such as variables, procedures, or other containing elements.
 
-The purpose of importing is to allow your code to access namespace or type members without having to qualify them. Your project might also need to add a reference to the namespace or type. For more information, see "Importing Containing Elements" in [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).
+The purpose of importing is to allow your code to access namespace or type members without having to qualify them. Your project might also need to add a reference to the namespace or type. For more information, see "Importing Containing Elements" in [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
 
 If the compiler cannot find the specified containing element, then it cannot resolve references that use it. If it finds the element but the element does not expose any `Public` members, then no reference can be successful. In either case it is meaningless to import the element.
 
@@ -43,8 +43,8 @@ Imports behave = winfrm.Design.Behavior`
 
 ## See also
 
-- [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Namespaces in Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Imports Statement (.NET Namespace and Type)](../statements/imports-statement-net-namespace-and-type.md)
+- [Namespace Statement](../statements/namespace-statement.md)
+- [Public](../modifiers/public.md)
+- [Namespaces in Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

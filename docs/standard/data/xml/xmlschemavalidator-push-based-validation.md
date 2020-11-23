@@ -1,13 +1,10 @@
 ---
 title: "XmlSchemaValidator Push-Based Validation"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # XmlSchemaValidator Push-Based Validation
 
@@ -452,7 +449,7 @@ The following table describes how the punctuation symbols found in the state tra
 |------------|-----------------|
 |&#124;|Either method or state (the one before the bar or the one after it) can be called.|
 |?|The method or state that precedes the question mark is optional but if it is called it can only be called once.|
-|*|The method or state that precedes the * symbol is optional, and can be called more than once.|
+|\*|The method or state that precedes the \* symbol is optional, and can be called more than once.|
 
 ## Validation Context
 

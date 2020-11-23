@@ -16,6 +16,7 @@ topic_type:
   - "Reference"
 ---
 # VerifyClientKey function
+
 Ensures that the client key has the correct security.  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -23,7 +24,7 @@ Ensures that the client key has the correct security.
 ## Syntax  
   
 ```cpp  
-LONG VerifyClientKey(); 
+LONG VerifyClientKey();
 ```  
 
 ## Return value
@@ -33,6 +34,7 @@ If the function succeeds, the return value is `ERROR_SUCCESS` (0).
 If the function fails, the return value is a non-zero error code defined in *WinError.h*.
 
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** WMINet_Utils.def  

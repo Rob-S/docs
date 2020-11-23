@@ -1,13 +1,18 @@
-- name: What's new
-  href: index.yml
-  expanded: true
+name: What's new
+href: index.yml
+expanded: true
+items:
+- name: 2020
   items:
-    - name: 2019
-      expanded: true
-      items:
-      - name: November
-        href: 2019-11.md
-      - name: October
-        href: 2019-10.md
-      - name: September
-        href: 2019-09.md
+  - name: October
+    href: 2020-10.md
+  - name: September
+    href: 2020-09.md
+  - name: August
+    href: 2020-08.md
+  - name: July
+    href: 2020-07.md
+  - name: June
+    href: 2020-06.md
+  - name: May
+    href: dotnet-2020-05.md

@@ -2,17 +2,15 @@
 title: Backreference Constructs in .NET Regular Expressions
 description: Learn how to identify repeated text elements by using backreference constructs in a regular expression.
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
 helpviewer_keywords:
   - "backreferences"
   - "constructs, backreference"
-  - ".NET Framework regular expressions, backreference constructs"
+  - ".NET regular expressions, backreference constructs"
   - "regular expressions, backreference constructs"
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-ms.custom: seodec18
 ---
 
 # Backreference Constructs in Regular Expressions
@@ -22,7 +20,7 @@ Backreferences provide a convenient way to identify a repeated character or subs
 > [!NOTE]
 > A separate syntax is used to refer to named and numbered capturing groups in replacement strings. For more information, see [Substitutions](substitutions-in-regular-expressions.md).
 
-.NET defines separate language elements to refer to numbered and named capturing groups. For more information about capturing groups, see [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+.NET defines separate language elements to refer to numbered and named capturing groups. For more information about capturing groups, see [Grouping Constructs](grouping-constructs-in-regular-expressions.md).
 
 ## Numbered Backreferences
 
@@ -134,4 +132,4 @@ An input string can match this regular expression even if the two decimal digits
 
 ## See also
 
-- [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Regular Expression Language - Quick Reference](regular-expression-language-quick-reference.md)

@@ -17,21 +17,23 @@ topic_type:
   - "apiref"
 ---
 # ICLRGCManager::SetGCStartupLimits Method
+
 Sets the size of a garbage collection segment and the maximum size of the garbage collection system's generation 0.  
   
 > [!IMPORTANT]
-> Starting with the .NET Framework 4.5, you can set segment size and maximum generation 0 size to values greater than `DWORD` by using the [ICLRGCManager2::SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) method.  
+> Starting with the .NET Framework 4.5, you can set segment size and maximum generation 0 size to values greater than `DWORD` by using the [ICLRGCManager2::SetGCStartupLimitsEx](iclrgcmanager2-setgcstartuplimitsex-method.md) method.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT SetGCStartupLimits (  
-    [in] DWORD SegmentSize,   
+    [in] DWORD SegmentSize,
     [in] DWORD MaxGen0Size  
 );  
 ```  
   
 ## Parameters  
+
  `SegmentSize`  
  [in] The specified size of a garbage collection segment.  
   
@@ -54,10 +56,12 @@ HRESULT SetGCStartupLimits (
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The values that `SetGCStartupLimits` sets can be specified only once. Later calls to `SetGCStartupLimits` are ignored.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -69,5 +73,5 @@ HRESULT SetGCStartupLimits (
 
 - [Automatic Memory Management](../../../standard/automatic-memory-management.md)
 - [Garbage Collection](../../../standard/garbage-collection/index.md)
-- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [ICLRGCManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)
+- [ICLRControl Interface](iclrcontrol-interface.md)
+- [ICLRGCManager Interface](iclrgcmanager-interface.md)

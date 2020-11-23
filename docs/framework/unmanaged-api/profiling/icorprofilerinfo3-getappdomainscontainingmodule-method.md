@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo3::GetAppDomainsContainingModule Method
+
 Gets the identifiers of the application domains in which the given module has been loaded.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT GetAppDomainsContainingModule(
 ```  
   
 ## Parameters  
+
  `moduleId`  
  [in] The ID of the loaded module.  
   
@@ -44,10 +46,12 @@ HRESULT GetAppDomainsContainingModule(
  [out] An array of application domain ID values.  
   
 ## Remarks  
+
  The method uses caller allocated buffers.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -57,7 +61,7 @@ HRESULT GetAppDomainsContainingModule(
   
 ## See also
 
-- [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)
-- [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerFunctionEnum Interface](icorprofilerfunctionenum-interface.md)
+- [ICorProfilerInfo3 Interface](icorprofilerinfo3-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)
+- [Profiling](index.md)

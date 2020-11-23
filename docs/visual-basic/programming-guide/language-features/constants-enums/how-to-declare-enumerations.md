@@ -8,13 +8,14 @@ helpviewer_keywords:
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
 ---
 # How to: Declare Enumerations (Visual Basic)
+
 You create an enumeration with the `Enum` statement in the declarations section of a class or module. You cannot declare an enumeration within a method. To specify the appropriate level of access, use `Private`, `Protected`, `Friend`, or `Public`.  
   
  An `Enum` type has a name, an underlying type, and a set of fields, each representing a constant. The name must be a valid Visual Basic .NET qualifier. The underlying type must be one of the integer types—`Byte`, `Short`, `Long` or `Integer`. `Integer` is the default. Enumerations are always strongly typed and are not interchangeable with integer number types.  
   
  Enumerations cannot have floating-point values. If an enumeration is assigned a floating-point value with `Option Strict On`, a compiler error results. If `Option Strict` is `Off`, the value is automatically converted to the `Enum` type.  
   
- For information on names, and how to use the `Imports` statement to make name qualification unnecessary, see [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
+ For information on names, and how to use the `Imports` statement to make name qualification unnecessary, see [Enumerations and Name Qualification](enumerations-and-name-qualification.md).  
   
 ### To declare an enumeration  
   
@@ -38,11 +39,11 @@ You create an enumeration with the `Enum` statement in the declarations section 
   
 ## See also
 
-- [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
-- [How to: Refer to an Enumeration Member](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
-- [How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
-- [How to: Determine the String Associated with an Enumeration Value](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)
-- [When to Use an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)
-- [Constants Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
-- [Constant and Literal Data Types](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)
-- [Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md)
+- [Enumerations and Name Qualification](enumerations-and-name-qualification.md)
+- [How to: Refer to an Enumeration Member](how-to-refer-to-an-enumeration-member.md)
+- [How to: Iterate Through An Enumeration in Visual Basic](how-to-iterate-through-an-enumeration.md)
+- [How to: Determine the String Associated with an Enumeration Value](how-to-determine-the-string-associated-with-an-enumeration-value.md)
+- [When to Use an Enumeration](when-to-use-an-enumeration.md)
+- [Constants Overview](constants-overview.md)
+- [Constant and Literal Data Types](constant-and-literal-data-types.md)
+- [Constants and Enumerations](../../../language-reference/constants-and-enumerations.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ExceptionCLRCatcherFound Method
+
 Called when a `catch` block for an exception is found inside the common language runtime (CLR) itself. This method is obsolete in the .NET Framework version 2.0.  
   
 ## Syntax  
@@ -26,7 +27,8 @@ HRESULT ExceptionCLRCatcherFound();
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -36,5 +38,5 @@ HRESULT ExceptionCLRCatcherFound();
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionCLRCatcherExecute Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionclrcatcherexecute-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ExceptionCLRCatcherExecute Method](icorprofilercallback-exceptionclrcatcherexecute-method.md)

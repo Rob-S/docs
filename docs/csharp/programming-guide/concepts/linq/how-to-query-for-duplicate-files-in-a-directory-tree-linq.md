@@ -1,9 +1,11 @@
 ---
 title: "How to query for duplicate files in a directory tree (LINQ) (C#)"
+description: Learn how to use LINQ in C# to query for duplicate file names in different directories and how to query for files whose size and LastWrite times also match.
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
 ---
 # How to query for duplicate files in a directory tree (LINQ) (C#)
+
 Sometimes files that have the same name may be located in more than one folder. For example, under the Visual Studio installation folder, several folders have a readme.htm file. This example shows how to query for such duplicate file names under a specified root folder. The second example shows how to query for files whose size and LastWrite times also match.  
   
 ## Example  
@@ -93,7 +95,7 @@ class QueryDuplicateFileNames
         // A named type is used to enable the query to be  
         // passed to another method. Anonymous types can also be used  
         // for composite keys but cannot be passed across method boundaries  
-        //   
+        //
         var queryDupFiles =  
             from file in fileList  
             group file.FullName.Substring(charsToSkip) by  
@@ -164,6 +166,7 @@ class QueryDuplicateFileNames
  The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different. The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object. This query is much more likely to find files that have the same name and similar or identical content.  
   
 ## Compiling the Code  
+
  Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.  
   
 ## See also

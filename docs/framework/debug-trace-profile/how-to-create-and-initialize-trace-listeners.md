@@ -1,5 +1,6 @@
 ---
 title: "How to: Create and Initialize Trace Listeners"
+description: Learn how to create and initialize trace listeners by using classes such as System.Diagnostics.DefaultTraceListener in .NET.
 ms.date: "03/30/2017"
 dev_langs:
   - "csharp"
@@ -11,8 +12,6 @@ helpviewer_keywords:
   - "tracing [.NET Framework], trace listeners"
   - "logs, trace listeners"
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # How to: Create and Initialize Trace Listeners
 

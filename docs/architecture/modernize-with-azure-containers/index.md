@@ -7,19 +7,19 @@ ms.date: 04/28/2018
 
 ![Cover image of the Modernize .NET applications guide.](./media/index/web-application-guide-cover-image.png)
 
-PUBLISHED BY  
-Microsoft Press and Microsoft DevDiv  
-Divisions of Microsoft Corporation  
-One Microsoft Way  
-Redmond, Washington 98052-6399  
+PUBLISHED BY
+Microsoft Press and Microsoft DevDiv
+Divisions of Microsoft Corporation
+One Microsoft Way
+Redmond, Washington 98052-6399
 
-Copyright © 2018 by Microsoft Corporation  
+Copyright © 2020 by Microsoft Corporation
 
 All rights reserved. No part of the contents of this book may be reproduced in any form or by any means without the written permission of the publisher.
 
 This book is available for free in the form of an electronic book (e-book) available through multiple channels at Microsoft such as <https://dot.net/architecture>.
 
-If you have questions related to this book, email at [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
+If you have questions related to this book, email at [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 This book is provided "as-is" and expresses the author's views and opinions. The views, opinions, and information expressed in this book, including URL and other Internet website references, may change without notice.
 
@@ -31,12 +31,12 @@ Author:
 > **Cesar de la Torre**, Sr. PM, .NET Product Team, Microsoft Corp.
 
 Participants and reviewers:
-> **Scott Hunter**, Partner Director PM, .NET team, Microsoft  
-> **Paul Yuknewicz**, Principal PM Manager, Visual Studio Tools team, Microsoft  
-> **Lisa Guthrie**, Sr. PM, Visual Studio Tools team, Microsoft  
-> **Ankit Asthana**, Principal PM Manager, .NET team, Microsoft  
-> **Unai Zorrilla**, Developer Lead, Plain Concepts  
-> **Javier Valero**, Chief Operating Officer at Grupo Solutio  
+> **Scott Hunter**, Partner Director PM, .NET team, Microsoft
+> **Paul Yuknewicz**, Principal PM Manager, Visual Studio Tools team, Microsoft
+> **Lisa Guthrie**, Sr. PM, Visual Studio Tools team, Microsoft
+> **Ankit Asthana**, Principal PM Manager, .NET team, Microsoft
+> **Unai Zorrilla**, Developer Lead, Plain Concepts
+> **Javier Valero**, Chief Operating Officer at Grupo Solutio
 
 ## Introduction
 
@@ -75,7 +75,7 @@ The definition and short explanation for each application maturity level are the
 **Level 1: Cloud Infrastructure-Ready** applications: In this migration approach, you simply migrate or rehost your current on-premises applications to an infrastructure as a service ([IaaS](https://azure.microsoft.com/overview/what-is-iaas/)) platform. Your apps have almost the same composition as before, but now you deploy them to VMs in the cloud.
 This simple type of migration is typically known in the industry as "Lift & Shift."
 
-**Level 2: Cloud Optimized** applications: At this level and still without rearchitecting or altering significant code, you can gain additional benefits from running your app in the cloud with modern technologies like containers and additional cloud-managed services. You improve the agility of your applications to ship faster by refining your enterprise development operations (DevOps) processes. You achieve this by using technologies like Windows Containers, which is based on Docker Engine. Containers remove the friction that’s caused by application dependencies when you deploy in multiple stages. In this maturity model, you can deploy containers on IaaS or PaaS while using additional cloud-managed services related to databases, cache as a service, monitoring, and continuous integration/continuous deployment (CI/CD) pipelines.
+**Level 2: Cloud Optimized** applications: At this level and still without rearchitecting or altering significant code, you can gain additional benefits from running your app in the cloud with modern technologies like containers and additional cloud-managed services. You improve the agility of your applications to ship faster by refining your enterprise development operations (DevOps) processes. You achieve this by using technologies like Windows Containers, which is based on Docker Engine. Containers remove the friction that's caused by application dependencies when you deploy in multiple stages. In this maturity model, you can deploy containers on IaaS or PaaS while using additional cloud-managed services related to databases, cache as a service, monitoring, and continuous integration/continuous deployment (CI/CD) pipelines.
 
 The third level of maturity is the ultimate goal in the cloud, but it's optional for many apps and not the main focus of this guide:
 
@@ -92,12 +92,12 @@ Table 1-1 describes the main benefits of and reasons for choosing each migration
 | **Advantages**|
 | <li>No rearchitecting, no new code <li> Least effort for quick migration <li> Least-common denominator supported in Azure <li> Basic availability guarantees <li> After moving to the cloud, it's easier to modernize even more | <li> No rearchitecting <li> Minimal code/config changes <li> Improved deployment and DevOps agility to release because of containers <li> Increased density and lower deployment costs <li> Portability of apps and dependencies <li> Flexibility of host targets: PaaS approaches or IaaS | <li> Architect for the cloud, you get the best benefits from the cloud but new code is needed <li> Microservices cloud-native approaches <li> Modern mission-critical applications, cloud-resilient hyper-scalable <li> Fully managed services <li> Optimized for scale <li> Optimized for autonomous agility by subsystem <li> Built on deployment and DevOps |
 | **Challenges** |
-| <li> Smaller cloud value, other than shift in operating expense or closing datacenters <li> Little is managed: No OS or middleware patching; might use infrastructure solutions, like Terraform, Spinnaker, or Puppet | <li> Containerizing is an additional step in the learning curve for developers and IT Operations <li> DevOps and CI/CD pipelines are usually ‘a must’ for this approach. If not currently present in the culture of the organization, it might be an additional challenge| <li> Requires rearchitecture for cloud native apps and microservice architectures and usually requires significant code refactoring or rewriting when modernizing (increased time and budget)|
+| <li> Smaller cloud value, other than shift in operating expense or closing datacenters <li> Little is managed: No OS or middleware patching; might use infrastructure solutions, like Terraform, Spinnaker, or Puppet | <li> Containerizing is an additional step in the learning curve for developers and IT Operations <li> DevOps and CI/CD pipelines are usually 'a must' for this approach. If not currently present in the culture of the organization, it might be an additional challenge| <li> Requires rearchitecture for cloud native apps and microservice architectures and usually requires significant code refactoring or rewriting when modernizing (increased time and budget)|
 > **Table 1-1.** Benefits and challenges of modernization paths for existing .NET applications and services
 
 ### Key technologies and architectures by maturity level
 
-.NET Framework applications initially started with the .NET Framework version 1.0, which was released in late 2001. Then, companies moved towards newer versions (such as 2.0, 3.5 and .NET 4.x). Most of those applications ran on Windows Server and Internet Information Server (IIS), and used a relational database, like SQL Server, Oracle, MySQL, or any other RDBMS.
+.NET Framework applications initially started with the .NET Framework version 1.0, which was released in late 2001. Then, companies moved towards newer versions (such as 2.0, 3.5 and .NET Framework 4.x). Most of those applications ran on Windows Server and Internet Information Server (IIS), and used a relational database, like SQL Server, Oracle, MySQL, or any other RDBMS.
 
 Most existing .NET applications might nowadays be based on .NET Framework 4.x, or even on .NET Framework 3.5, and use web frameworks like ASP.NET MVC, ASP.NET Web Forms, ASP.NET Web API, Windows Communication Foundation (WCF), ASP.NET SignalR, and ASP.NET Web Pages. These established .NET Framework technologies depend on Windows. That dependency is important to consider if you are simply migrating legacy apps and you want to make minimal changes to your application infrastructure.
 
@@ -113,10 +113,10 @@ Each maturity level in the modernization process is associated with the followin
 
 - **Cloud Infrastructure-Ready** (rehost or basic lift & shift): As a first step, many organizations want only to quickly execute a cloud-migration strategy. In this case, applications are rehosted. Most rehosting can be automated by using [Azure Migrate](https://aka.ms/azuremigrate), a service that provides the guidance, insights, and mechanisms needed to assist you in migrating to Azure based on cloud tools like [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/) and [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/). You can also set up rehosting manually, so that you can learn infrastructure details about your assets when you move legacy apps to the cloud. For example, you can move your applications to VMs in Azure with little modification-probably with only minor configuration changes. The networking in this case is similar to an on-premises environment, especially if you create virtual networks in Azure.
 
-- **Cloud-Optimized** (Managed Services and Windows Containers): This model is about making a few important deployment optimizations to gain some significant benefits from the cloud, without changing the core architecture of the application. The fundamental step here is to add [Windows Containers](https://docs.microsoft.com/virtualization/windowscontainers/about/) support to your existing .NET Framework applications. This important step (containerization) doesn't require touching the code, so the overall lift and shift effort is light. You can use tools like [Image2Docker](https://github.com/docker/communitytools-image2docker-win) or Visual Studio, with its tools for [Docker](https://www.docker.com/). Visual Studio automatically chooses smart defaults for ASP.NET applications and Windows Containers images. These tools offer both a rapid inner loop, and a fast path to get the containers to Azure. Your agility is improved when you deploy to multiple environments.
+- **Cloud-Optimized** (Managed Services and Windows Containers): This model is about making a few important deployment optimizations to gain some significant benefits from the cloud, without changing the core architecture of the application. The fundamental step here is to add [Windows Containers](/virtualization/windowscontainers/about/) support to your existing .NET Framework applications. This important step (containerization) doesn't require touching the code, so the overall lift and shift effort is light. You can use tools like [Image2Docker](https://github.com/docker/communitytools-image2docker-win) or Visual Studio, with its tools for [Docker](https://www.docker.com/). Visual Studio automatically chooses smart defaults for ASP.NET applications and Windows Containers images. These tools offer both a rapid inner loop, and a fast path to get the containers to Azure. Your agility is improved when you deploy to multiple environments.
 Then, moving to production, you can deploy your Windows Containers to [Azure Web App for Containers](https://azure.microsoft.com/services/app-service/containers/), [Azure Container Instances (ACI)](https://azure.microsoft.com/services/container-instances/), and Azure VMs with Windows Server 2016 and containers if you prefer an IaaS approach. For more complex multi-container applications, consider using orchestrators like [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/).
 
-During this initial modernization, you can also add assets from the cloud, such as monitoring with tools like [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview); CI/CD pipelines for your app lifecycles with [Azure DevOps Services](https://azure.microsoft.com/services/devops/); and many more data resource services that are available in Azure. For instance, you can modify a monolithic web app that was originally developed by using traditional [ASP.NET Web Forms](https://www.asp.net/web-forms) or [ASP.NET MVC](https://www.asp.net/mvc), but now you deploy it by using Windows Containers. When you use Windows Containers, you should also migrate your data to a database in [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/), all without changing the core architecture of your application.
+During this initial modernization, you can also add assets from the cloud, such as monitoring with tools like [Azure Application Insights](/azure/application-insights/app-insights-overview); CI/CD pipelines for your app lifecycles with [Azure DevOps Services](https://azure.microsoft.com/services/devops/); and many more data resource services that are available in Azure. For instance, you can modify a monolithic web app that was originally developed by using traditional [ASP.NET Web Forms](https://www.asp.net/web-forms) or [ASP.NET MVC](https://www.asp.net/mvc), but now you deploy it by using Windows Containers. When you use Windows Containers, you should also migrate your data to a database in [Azure SQL Database Managed Instance](/azure/sql-database/), all without changing the core architecture of your application.
 
 - **Cloud-Native**: As introduced, you should think about architecting [cloud-native](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) applications when you are targeting large and complex applications with multiple independent development teams working on different microservices that can be developed and deployed autonomously. Also, due to granularized and independent scalability per microservice. These architectural approaches face very important challenges and complexities but can be greatly simplified by using cloud PaaS and orchestrators like [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/) (managed Kubernetes), and [Azure Functions](https://azure.microsoft.com/services/functions/) for a serverless approach. All these approaches (like microservices and Serverless) typically require you to architect for the cloud and write new code—code that is adapted to specific PaaS platforms, or code that aligns with specific architectures, like microservices.
 

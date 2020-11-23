@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataConverter::GetMetaDataFromTypeInfo Method
-Gets a pointer to an [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) instance that represents the metadata signature of the type library referenced by the specified `ITypeInfo` instance.  
+
+Gets a pointer to an [IMetaDataImport](imetadataimport-interface.md) instance that represents the metadata signature of the type library referenced by the specified `ITypeInfo` instance.  
   
 ## Syntax  
   
@@ -29,6 +30,7 @@ HRESULT GetMetaDataFromTypeInfo (
 ```  
   
 ## Parameters  
+
  `pITI`  
  [in] A pointer to an `ITypeInfo` object that refers to the type library.  
   
@@ -36,7 +38,8 @@ HRESULT GetMetaDataFromTypeInfo (
  [out] A pointer to a location that receives the address of the `IMetaDataImport` instance that represents the metadata signature.  
   
 ## Requirements  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platform:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -46,5 +49,5 @@ HRESULT GetMetaDataFromTypeInfo (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)

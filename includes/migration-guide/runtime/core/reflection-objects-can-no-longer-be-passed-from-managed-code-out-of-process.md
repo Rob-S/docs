@@ -1,9 +1,51 @@
 ### Reflection objects can no longer be passed from managed code to out-of-process DCOM clients
 
-|   |   |
-|---|---|
-|Details|Reflection objects can no longer be passed from managed code to out-of-process DCOM clients. The following types are affected:<ul><li><xref:System.Reflection.Assembly?displayProperty=name></li><li><xref:System.Reflection.MemberInfo?displayProperty=name> (and its derived types, including <xref:System.Reflection.FieldInfo?displayProperty=name>, <xref:System.Reflection.MethodInfo?displayProperty=name>, <xref:System.Type?displayProperty=name>, and <xref:System.Reflection.TypeInfo?displayProperty=name>)</li><li><xref:System.Reflection.MethodBody?displayProperty=name></li><li><xref:System.Reflection.Module?displayProperty=name></li><li><xref:System.Reflection.ParameterInfo?displayProperty=name>.</li></ul>Calls to <code>IMarshal</code> for the object return <code>E_NOINTERFACE</code>.|
-|Suggestion|Update marshaling code to work with non-reflection objects|
-|Scope|Minor|
+#### Details
+
+Reflection objects can no longer be passed from managed code to out-of-process DCOM clients. The following types are affected:
+
+- <xref:System.Reflection.Assembly?displayProperty=fullName>
+- <xref:System.Reflection.MemberInfo?displayProperty=fullName> (and its derived types, including <xref:System.Reflection.FieldInfo?displayProperty=fullName>, <xref:System.Reflection.MethodInfo?displayProperty=fullName>, <xref:System.Type?displayProperty=fullName>, and <xref:System.Reflection.TypeInfo?displayProperty=fullName>)
+- <xref:System.Reflection.MethodBody?displayProperty=fullName>
+- <xref:System.Reflection.Module?displayProperty=fullName>
+- <xref:System.Reflection.ParameterInfo?displayProperty=fullName>
+
+Calls to <code>IMarshal</code> for the object return <code>E_NOINTERFACE</code>.
+
+#### Suggestion
+
+Update marshaling code to work with non-reflection objects.
+
+| Name    | Value       |
+|:--------|:------------|
+| Scope   |Minor|
 |Version|4.6|
 |Type|Runtime|
+
+#### Affected APIs
+
+- <xref:System.Reflection.Assembly?displayProperty=fullName>
+- <xref:System.Reflection.FieldInfo?displayProperty=fullName>
+- <xref:System.Reflection.MemberInfo?displayProperty=fullName>
+- <xref:System.Reflection.MethodBody?displayProperty=fullName>
+- <xref:System.Reflection.MethodInfo?displayProperty=fullName>
+- <xref:System.Reflection.Module?displayProperty=fullName>
+- <xref:System.Reflection.ParameterInfo?displayProperty=fullName>
+- <xref:System.Reflection.TypeInfo?displayProperty=fullName>
+- <xref:System.Type?displayProperty=fullName>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Reflection.Assembly`
+- `T:System.Reflection.FieldInfo`
+- `T:System.Reflection.MemberInfo`
+- `T:System.Reflection.MethodBody`
+- `T:System.Reflection.MethodInfo`
+- `T:System.Reflection.Module`
+- `T:System.Reflection.ParameterInfo`
+- `T:System.Reflection.TypeInfo`
+- `T:System.Type`
+
+-->

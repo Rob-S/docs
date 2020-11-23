@@ -16,7 +16,8 @@ topic_type:
   - "Reference"
 ---
 # GetCurrentApartmentType function
-Retrieves the type of apartment in which the caller is executing.   
+
+Retrieves the type of apartment in which the caller is executing.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -24,10 +25,10 @@ Retrieves the type of apartment in which the caller is executing.
   
 ```cpp  
 HRESULT GetCurrentApartmentType (
-   [in] int                   vFunc, 
-   [in] IComThreadingInfo*    ptr, 
+   [in] int                   vFunc,
+   [in] IComThreadingInfo*    ptr,
    [out] APTTYPE*             aptType
-); 
+);
 ```  
 
 ## Parameters
@@ -53,6 +54,7 @@ HRESULT GetCurrentApartmentType (
 This function wraps a call to the [IComThreadingInfo::GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) method.
 
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** WMINet_Utils.idl  

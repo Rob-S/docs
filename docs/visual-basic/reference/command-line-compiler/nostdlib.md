@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
 ---
 # -nostdlib (Visual Basic)
+
 Causes the compiler not to automatically reference the standard libraries.  
   
 ## Syntax  
@@ -17,6 +18,7 @@ Causes the compiler not to automatically reference the standard libraries.
 ```  
   
 ## Remarks  
+
  The `-nostdlib` option removes the automatic reference to the System.dll assembly and prevents the compiler from reading the Vbc.rsp file. The Vbc.rsp file, which is located in the same directory as the Vbc.exe file, references the commonly used .NET Framework assemblies and imports the `System` and `Microsoft.VisualBasic` namespaces.  
   
 > [!NOTE]
@@ -26,6 +28,7 @@ Causes the compiler not to automatically reference the standard libraries.
 > The `-nostdlib` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
   
 ## Example  
+
  The following code compiles `T2.vb` without referencing the standard libraries. You must set the `_MYTYPE` conditional-compilation constant to the string "Empty" to remove the `My` object.  
   
 ```console
@@ -34,7 +37,7 @@ vbc -nostdlib -define:_MYTYPE=\"Empty\" T2.vb
   
 ## See also
 
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Customizing Which Objects are Available in My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
+- [-noconfig](noconfig.md)
+- [Visual Basic Command-Line Compiler](index.md)
+- [Sample Compilation Command Lines](sample-compilation-command-lines.md)
+- [Customizing Which Objects are Available in My](../../developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)

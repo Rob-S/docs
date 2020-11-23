@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 4ef7216c-761a-41dc-a20c-ba133f4f1d18
 ---
 # Stop statement encountered
+
 A `Stop` statement, which suspends execution, was encountered.  
   
 ## To correct this error  
@@ -14,6 +15,6 @@ A `Stop` statement, which suspends execution, was encountered.
   
 ## See also
 
-- [Stop Statement](../../visual-basic/language-reference/statements/stop-statement.md)
-- [Control Flow Summary](../../visual-basic/language-reference/keywords/control-flow-summary.md)
+- [Stop Statement](../language-reference/statements/stop-statement.md)
+- [Control Flow Summary](../language-reference/keywords/control-flow-summary.md)
 - [Stop Statements in Visual Basic](/visualstudio/debugger/stop-statements-in-visual-basic)

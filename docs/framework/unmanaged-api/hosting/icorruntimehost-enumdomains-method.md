@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorRuntimeHost::EnumDomains Method
+
 Gets an enumerator for the domains in the current process.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT EnumDomains (
 ```  
   
 ## Parameters  
+
  `hEnum`  
  [out] An enumerator for the domains.  
   
@@ -41,7 +43,8 @@ HRESULT EnumDomains (
 |HOST_E_CLRNOTAVAILABLE|The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -51,4 +54,4 @@ HRESULT EnumDomains (
   
 ## See also
 
-- [ICorRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [ICorRuntimeHost Interface](icorruntimehost-interface.md)

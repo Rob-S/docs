@@ -1,7 +1,7 @@
 ---
 title: "Floating-point numeric types - C# reference"
-description: "Overview of the built-in C# floating-point types"
-ms.date: 10/22/2019
+description: "Learn about the built-in C# floating-point types: float, double, and decimal"
+ms.date: 02/10/2020
 f1_keywords:
   - "float"
   - "float_CSharpKeyword"
@@ -21,7 +21,7 @@ helpviewer_keywords:
 ---
 # Floating-point numeric types (C# reference)
 
-The **floating-point types** are a subset of the **simple types** and can be initialized with [*literals*](#real-literals). All floating-point types are also value types. All floating-point numeric types support [arithmetic](../operators/arithmetic-operators.md), [comparison](../operators/comparison-operators.md), and [equality](../operators/equality-operators.md) operators.
+The *floating-point numeric types* represent real numbers. All floating-point numeric types are [value types](value-types.md). They are also [simple types](value-types.md#built-in-value-types) and can be initialized with [literals](#real-literals). All floating-point numeric types support [arithmetic](../operators/arithmetic-operators.md), [comparison](../operators/comparison-operators.md), and [equality](../operators/equality-operators.md) operators.
 
 ## Characteristics of the floating-point types
 
@@ -44,19 +44,21 @@ The default value of each floating-point type is zero, `0`. Each of the floating
 
 Because the `decimal` type has more precision and a smaller range than both `float` and `double`, it's appropriate for financial and monetary calculations.
 
-You can mix [integral](integral-numeric-types.md) types and floating-point types in an expression. In this case, the integral types are converted to floating-point types. The evaluation of the expression is performed according to the following rules:
+You can mix [integral](integral-numeric-types.md) types and the `float` and `double` types in an expression. In this case, integral types are implicitly converted to one of the floating-point types and, if necessary, the `float` type is implicitly converted to `double`. The expression is evaluated as follows:
 
-- If one of the floating-point types is `double`, the expression evaluates to `double`, or to [bool](bool.md) in relational and equality comparisons.
-- If there is no `double` type in the expression, the expression evaluates to `float`, or to [bool](bool.md) in relational and equality comparisons.
+- If there is `double` type in the expression, the expression evaluates to `double`, or to [`bool`](bool.md) in relational and equality comparisons.
+- If there is no `double` type in the expression, the expression evaluates to `float`, or to `bool` in relational and equality comparisons.
 
-A floating-point expression can contain the following sets of values:
+You can also mix integral types and the `decimal` type in an expression. In this case, integral types are implicitly converted to the `decimal` type and the expression evaluates to `decimal`, or to `bool` in relational and equality comparisons.
 
-- Positive and negative zero
-- Positive and negative infinity
-- Not-a-Number value (NaN)
-- The finite set of nonzero values
+You cannot mix the `decimal` type with the `float` and `double` types in an expression. In this case, if you want to perform arithmetic, comparison, or equality operations, you must explicitly convert the operands either from or to the `decimal` type, as the following example shows:
 
-For more information about these values, see IEEE Standard for Binary Floating-Point Arithmetic, available on the [IEEE](https://www.ieee.org) website.
+```csharp-interactive
+double a = 1.0;
+decimal b = 2.1m;
+Console.WriteLine(a + (double)b);
+Console.WriteLine((decimal)a + b);
+```
 
 You can use either [standard numeric format strings](../../../standard/base-types/standard-numeric-format-strings.md) or [custom numeric format strings](../../../standard/base-types/custom-numeric-format-strings.md) to format a floating-point value.
 
@@ -84,11 +86,11 @@ myMoney = 400.75M;
 
 The preceding example also shows the use of `_` as a *digit separator*, which is supported starting with C# 7.0. You can use the digit separator with all kinds of numeric literals.
 
-You also can use scientific notation, that is, specify an exponent part of a real literal, as the following example shows:
+You can also use scientific notation, that is, specify an exponent part of a real literal, as the following example shows:
 
 ```csharp-interactive
 double d = 0.42e2;
-Console.WriteLine(d);  // output 42;
+Console.WriteLine(d);  // output 42
 
 float f = 134.45E-2f;
 Console.WriteLine(f);  // output: 1.3445
@@ -99,7 +101,7 @@ Console.WriteLine(m);  // output: 1500000
 
 ## Conversions
 
-There is only one implicit conversion between floating-point numeric types: from `float` to `double`. However, you can convert any floating-point type to any other floating-point type with the [explicit cast](../operators/type-testing-and-cast.md#cast-operator-). For more information, see [Built-in numeric conversions](numeric-conversions.md).
+There is only one implicit conversion between floating-point numeric types: from `float` to `double`. However, you can convert any floating-point type to any other floating-point type with the [explicit cast](../operators/type-testing-and-cast.md#cast-expression). For more information, see [Built-in numeric conversions](numeric-conversions.md).
 
 ## C# language specification
 
@@ -112,9 +114,8 @@ For more information, see the following sections of the [C# language specificati
 ## See also
 
 - [C# reference](../index.md)
-- [Built-in types table](../keywords/built-in-types-table.md)
+- [Value types](value-types.md)
 - [Integral types](integral-numeric-types.md)
-- [Formatting numeric results table](../keywords/formatting-numeric-results-table.md)
 - [Standard numeric format strings](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Numerics in .NET](../../../standard/numerics.md)
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>

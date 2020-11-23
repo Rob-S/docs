@@ -17,9 +17,10 @@ topic_type:
   - "apiref"
 ---
 # ICLRRuntimeInfo::LoadLibrary Method
-Loads a .NET Framework library from the common language runtime (CLR) represented by an [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface.  
+
+Loads a .NET Framework library from the common language runtime (CLR) represented by an [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) interface.  
   
- This method supersedes the [LoadLibraryShim](../../../../docs/framework/unmanaged-api/hosting/loadlibraryshim-function.md) function.  
+ This method supersedes the [LoadLibraryShim](loadlibraryshim-function.md) function.  
   
 ## Syntax  
   
@@ -30,6 +31,7 @@ HRESULT LoadLibrary(
 ```  
   
 ## Parameters  
+
  `pwzDllName`  
  [in] The name of the assembly to be loaded.  
   
@@ -37,6 +39,7 @@ HRESULT LoadLibrary(
  [out] A handle to the loaded assembly.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -46,10 +49,12 @@ HRESULT LoadLibrary(
 |E_OUTOFMEMORY|Not enough memory is available to handle the request.|  
   
 ## Remarks  
+
  This method only loads DLLs included in the .NET Framework redistributable package. It can not load user-generated assemblies.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -59,6 +64,6 @@ HRESULT LoadLibrary(
   
 ## See also
 
-- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo Interface](iclrruntimeinfo-interface.md)
+- [Hosting Interfaces](hosting-interfaces.md)
+- [Hosting](index.md)

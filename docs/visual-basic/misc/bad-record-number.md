@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 1fcc33f8-822a-4de9-a6e3-228ddb5824a6
 ---
 # Bad record number
+
 The record number in `a FileGet`, `FilePut`, `FileGetObject`, or `FilePutObject` statement is less than or equal to zero.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ The record number in `a FileGet`, `FilePut`, `FileGetObject`, or `FilePutObject`
   
 ## See also
 
-- [Option Explicit Statement](../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Option Explicit Statement](../language-reference/statements/option-explicit-statement.md)

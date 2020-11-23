@@ -1,5 +1,6 @@
 ---
 title: "How to: Register Primary Interop Assemblies"
+description: Register primary interop assemblies using the Assembly Registration Tool (Regasm.exe), and read about other issues related to interop assemblies.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "registering primary interop assemblies"
@@ -43,6 +44,6 @@ regasm CompanyA.UtilLib.dll
 
 ## See also
 
-- [Programming with Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
-- [Locating Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))
-- [Redistributing Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0dt2w20(v=vs.100))
+- [Programming with Primary Interop Assemblies](/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
+- [Locating Primary Interop Assemblies](/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))
+- [Redistributing Primary Interop Assemblies](/previous-versions/dotnet/netframework-4.0/w0dt2w20(v=vs.100))

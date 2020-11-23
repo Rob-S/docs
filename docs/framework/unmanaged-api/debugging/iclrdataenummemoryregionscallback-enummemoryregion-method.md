@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion Method
-Called by [ICLRDataEnumMemoryRegions::EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) to report to the debugger the result of an attempt to enumerate a specified region of memory.  
+
+Called by [ICLRDataEnumMemoryRegions::EnumMemoryRegions](iclrdataenummemoryregions-enummemoryregions-method.md) to report to the debugger the result of an attempt to enumerate a specified region of memory.  
   
 ## Syntax  
   
@@ -29,6 +30,7 @@ HRESULT EnumMemoryRegion (
 ```  
   
 ## Parameters  
+
  `address`  
  [in] The starting address of the memory region that was to be enumerated.  
   
@@ -36,12 +38,14 @@ HRESULT EnumMemoryRegion (
  [in] The size, in bytes, of the memory region.  
   
 ## Remarks  
+
  The `ICLRDataEnumMemoryRegions::EnumMemoryRegions` method will call this callback method after each attempt to enumerate a memory region. The enumeration will continue even if this method returns an HRESULT indicating failure.  
   
  Regions reported by this callback may be duplicates or overlapping regions.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** ClrData.idl, ClrData.h  
   
@@ -51,4 +55,4 @@ HRESULT EnumMemoryRegion (
   
 ## See also
 
-- [ICLRDataEnumMemoryRegionsCallback Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md)
+- [ICLRDataEnumMemoryRegionsCallback Interface](iclrdataenummemoryregionscallback-interface.md)

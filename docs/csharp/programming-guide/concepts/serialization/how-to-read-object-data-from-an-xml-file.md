@@ -1,9 +1,11 @@
 ---
 title: "How to read object data from an XML file (C#)"
+description: This C# example reads object data that was previously written to an XML file using the XmlSerializer class.
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
 ---
 # How to read object data from an XML file (C#)
+
 This example reads object data that was previously written to an XML file using the <xref:System.Xml.Serialization.XmlSerializer> class.  
   
 ## Example  
@@ -12,7 +14,7 @@ This example reads object data that was previously written to an XML file using 
 public class Book  
 {  
     public String title;  
-}         
+}
   
 public void ReadXML()  
 {  
@@ -24,7 +26,7 @@ public void ReadXML()
     wfile.Close();  
   
     // Now we can read the serialized book ...  
-    System.Xml.Serialization.XmlSerializer reader =   
+    System.Xml.Serialization.XmlSerializer reader =
         new System.Xml.Serialization.XmlSerializer(typeof(Book));  
     System.IO.StreamReader file = new System.IO.StreamReader(  
         @"c:\temp\SerializationOverview.xml");  
@@ -37,6 +39,7 @@ public void ReadXML()
 ```  
   
 ## Compiling the Code  
+
 Replace the file name "c:\temp\SerializationOverview.xml" with the name of the file containing the serialized data. For more information about serializing data, see [How to write object data to an XML file (C#)](./how-to-write-object-data-to-an-xml-file.md).
   
  The class must have a public constructor without parameters.  
@@ -44,6 +47,7 @@ Replace the file name "c:\temp\SerializationOverview.xml" with the name of the f
  Only public properties and fields are deserialized.  
   
 ## Robust Programming  
+
  The following conditions may cause an exception:  
   
 - The class being serialized does not have a public, parameterless constructor.  
@@ -52,7 +56,8 @@ Replace the file name "c:\temp\SerializationOverview.xml" with the name of the f
   
 - The file does not exist (<xref:System.IO.IOException>).  
   
-## .NET Framework Security  
+## .NET Security  
+
  Always verify inputs, and never deserialize data from an untrusted source. The re-created object runs on a local computer with the permissions of the code that deserialized it. Verify all inputs before using the data in your application.  
   
 ## See also

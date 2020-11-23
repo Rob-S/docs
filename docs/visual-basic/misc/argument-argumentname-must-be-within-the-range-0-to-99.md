@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: d9d9a15e-c5ee-4104-9504-b48a4a191415
 ---
 # Argument '\<argumentname>' must be within the range 0 to 99
+
 An argument is not valid because it falls outside of the range 0 to 99.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ An argument is not valid because it falls outside of the range 0 to 99.
   
 ## See also
 
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

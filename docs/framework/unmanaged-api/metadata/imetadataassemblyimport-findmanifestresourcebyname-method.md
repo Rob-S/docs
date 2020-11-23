@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataAssemblyImport::FindManifestResourceByName Method
+
 Gets a pointer to the manifest resource with the specified name.  
   
 ## Syntax  
   
 ```cpp
 HRESULT FindManifestResourceByName (  
-    [in]  LPCWSTR                szName,   
+    [in]  LPCWSTR                szName,
     [out] mdManifestResource     *ptkManifestResource  
-);   
+);
 ```  
   
 ## Parameters  
+
  `szName`  
  [in] The name of the resource.  
   
@@ -36,10 +38,12 @@ HRESULT FindManifestResourceByName (
  [out] The array used to store the `mdManifestResource` metadata tokens, each of which represents a manifest resource.  
   
 ## Remarks  
+
  The `FindManifestResourceByName` method uses the standard rules employed by the common language runtime for resolving references.  
   
 ## Requirements  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platform:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -49,5 +53,5 @@ HRESULT FindManifestResourceByName (
   
 ## See also
 
-- [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [How the Runtime Locates Assemblies](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [IMetaDataAssemblyImport Interface](imetadataassemblyimport-interface.md)
+- [How the Runtime Locates Assemblies](../../deployment/how-the-runtime-locates-assemblies.md)

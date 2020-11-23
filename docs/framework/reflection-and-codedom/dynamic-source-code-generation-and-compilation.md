@@ -1,5 +1,6 @@
 ---
 title: "Dynamic Source Code Generation and Compilation"
+description: Compile and generate dynamic source code in .NET with the Code Document Object Model (CodeDOM). CodeDOM elements are linked to form a CodeDOM graph.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "Code Document Object Model"
@@ -53,4 +54,4 @@ The .NET Framework includes code generators and code compilers for <xref:Microso
   
 ## Related sections  
 
-- [CodeDOM Quick Reference](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)) provides a quick way for developers to find the CodeDOM elements that represent source code elements.
+- [CodeDOM Quick Reference](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)) provides a quick way for developers to find the CodeDOM elements that represent source code elements.

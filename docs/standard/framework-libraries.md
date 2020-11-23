@@ -3,7 +3,6 @@ title: Framework Libraries
 description: Learn how libraries provide implementations for many general and app-specific types, algorithms, and utility functionality.
 author: richlander
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
 ---
 # Framework Libraries
@@ -46,7 +45,7 @@ The BCL provides the most foundational types and utility functionality and are t
 
 * <xref:System.Net.Http.HttpClient> - An API for sending HTTP requests and receiving HTTP responses from a resource identified by a URI.
 * <xref:System.Xml.Linq.XDocument> - An API for loading, and querying XML documents with LINQ.
-* <xref:System.IO.StreamReader> - An API for reading files. 
+* <xref:System.IO.StreamReader> - An API for reading files.
 * <xref:System.IO.StreamWriter> - An API for writing files.
 
 ## App-Model APIs

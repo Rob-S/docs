@@ -82,11 +82,11 @@ Progress?.Invoke(this, new FileListArgs(file));
 As discussed in the section on [delegates](delegates-patterns.md), the ?.
 operator makes it easy to ensure that you do not attempt to raise the event
 when there are no subscribers to that event.
- 
+
 You subscribe to an event by using the `+=` operator:
 
 ```csharp
-EventHandler<FileListArgs> onProgress = (sender, eventArgs) => 
+EventHandler<FileListArgs> onProgress = (sender, eventArgs) =>
     Console.WriteLine(eventArgs.FoundFile);
 
 fileLister.Progress += onProgress;
@@ -101,7 +101,7 @@ You unsubscribe using the `-=` operator:
 fileLister.Progress -= onProgress;
 ```
 
-It's important to note that I declared a local variable for the expression that
+It's important that you declare a local variable for the expression that
 represents the event handler. That ensures the unsubscribe removes the handler.
 If, instead, you used the body of the lambda expression, you are attempting
 to remove a handler that has never been attached, which does nothing.

@@ -17,9 +17,10 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugEval::CreateValue Method
+
 Creates a value of the specified type, with an initial value of zero or null.  
   
- This method is obsolete in the .NET Framework version 2.0. Use [ICorDebugEval2::CreateValueForType](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) instead.  
+ This method is obsolete in the .NET Framework version 2.0. Use [ICorDebugEval2::CreateValueForType](icordebugeval2-createvaluefortype-method.md) instead.  
   
 ## Syntax  
   
@@ -32,24 +33,27 @@ HRESULT CreateValue (
 ```  
   
 ## Parameters  
+
  `elementType`  
- [in] A value of the [CorElementType](../../../../docs/framework/unmanaged-api/metadata/corelementtype-enumeration.md) enumeration that specifies the type of the value.  
+ [in] A value of the [CorElementType](../metadata/corelementtype-enumeration.md) enumeration that specifies the type of the value.  
   
  `pElementClass`  
- [in] Pointer to an [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-interface.md) object that specifies the class of the value, if the type is not a primitive type.  
+ [in] Pointer to an [ICorDebugClass](icordebugclass-interface.md) object that specifies the class of the value, if the type is not a primitive type.  
   
  `ppValue`  
  [out] Pointer to the address of an "ICorDebugValue" object that represents the value.  
   
 ## Remarks  
+
  `CreateValue` creates an `ICorDebugValue` object of the given type for the sole purpose of using it in a function evaluation. This value object can be used to pass user constants as parameters.  
   
- If the type of the value is a primitive type, its initial value is zero or null. Use [ICorDebugGenericValue::SetValue](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md) to set the value of a primitive type.  
+ If the type of the value is a primitive type, its initial value is zero or null. Use [ICorDebugGenericValue::SetValue](icordebuggenericvalue-setvalue-method.md) to set the value of a primitive type.  
   
  If the value of `elementType` is ELEMENT_TYPE_CLASS, you get an "ICorDebugReferenceValue" (returned in `ppValue`) representing the null object reference. You can use this object to pass null to a function evaluation that has object reference parameters. You cannot set the `ICorDebugValue` to anything; it always remains null.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -59,5 +63,5 @@ HRESULT CreateValue (
   
 ## See also
 
-- [CreateValueForType Method](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md)
+- [CreateValueForType Method](icordebugeval2-createvaluefortype-method.md)
 - [ICorDebugEval Interface](icordebugeval-interface.md)

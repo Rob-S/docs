@@ -16,10 +16,11 @@ topic_type:
   - "apiref"
 ---
 # FunctionLeave Function
+
 Notifies the profiler that a function is about to return to the caller.  
   
 > [!NOTE]
-> The `FunctionLeave` function is deprecated in the .NET Framework 2.0. It will continue to work, but will incur a performance penalty. Use the [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) function instead.  
+> The `FunctionLeave` function is deprecated in the .NET Framework 2.0. It will continue to work, but will incur a performance penalty. Use the [FunctionLeave2](functionleave2-function.md) function instead.  
   
 ## Syntax  
   
@@ -29,11 +30,14 @@ void __stdcall FunctionLeave (
 );  
 ```  
   
-## Parameters  
- `funcID`  
- [in] The identifier of the function that is returning.  
-  
+## Parameters
+
+- `funcID`
+
+  \[in] The identifier of the function that is returning.
+
 ## Remarks  
+
  The `FunctionLeave` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
   
  The execution engine does not save any registers before calling this function.  
@@ -47,7 +51,8 @@ void __stdcall FunctionLeave (
  Also, the `FunctionLeave` function must not call into managed code or in any way cause a managed memory allocation.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl  
   
@@ -57,8 +62,8 @@ void __stdcall FunctionLeave (
   
 ## See also
 
-- [FunctionEnter2 Function](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionLeave2 Function](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [FunctionTailcall2 Function](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
-- [SetEnterLeaveFunctionHooks2 Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Profiling Global Static Functions](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2 Function](functionenter2-function.md)
+- [FunctionLeave2 Function](functionleave2-function.md)
+- [FunctionTailcall2 Function](functiontailcall2-function.md)
+- [SetEnterLeaveFunctionHooks2 Method](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Profiling Global Static Functions](profiling-global-static-functions.md)

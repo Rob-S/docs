@@ -55,7 +55,7 @@ Handling the domain events is an application concern. The domain model layer sho
 
 Domain events can also be used to trigger any number of application actions, and what is more important, must be open to increase that number in the future in a decoupled way. For instance, when the order is started, you might want to publish a domain event to propagate that info to other aggregates or even to raise application actions like notifications.
 
-The key point is the open number of actions to be executed when a domain event occurs. Eventually, the actions and rules in the domain and application will grow. The complexity or number of side-effect actions when something happens will grow, but if your code were coupled with “glue” (that is, creating specific objects with `new`), then every time you needed to add a new action you would also need to change working and tested code.
+The key point is the open number of actions to be executed when a domain event occurs. Eventually, the actions and rules in the domain and application will grow. The complexity or number of side-effect actions when something happens will grow, but if your code were coupled with "glue" (that is, creating specific objects with `new`), then every time you needed to add a new action you would also need to change working and tested code.
 
 This change could result in new bugs and this approach also goes against the [Open/Closed principle](https://en.wikipedia.org/wiki/Open/closed_principle) from [SOLID](https://en.wikipedia.org/wiki/SOLID). Not only that, the original class that was orchestrating the operations would grow and grow, which goes against the [Single Responsibility Principle (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
@@ -63,7 +63,7 @@ On the other hand, if you use domain events, you can create a fine-grained and d
 
 1. Send a command (for example, CreateOrder).
 2. Receive the command in a command handler.
-   - Execute a single aggregate’s transaction.
+   - Execute a single aggregate's transaction.
    - (Optional) Raise domain events for side effects (for example, OrderStartedDomainEvent).
 3. Handle domain events (within the current process) that will execute an open number of side effects in multiple aggregates or application actions. For example:
    - Verify or create buyer and payment method.
@@ -76,7 +76,7 @@ As shown in Figure 7-15, starting from the same domain event, you can handle mul
 
 **Figure 7-15**. Handling multiple actions per domain
 
-There can be several handlers for the same domain event in the Application Layer, one handler can solve consistency between aggregates and another handler can publish an integration event, so other microservices can do something with it. The event handlers are typically in the application layer, because you will use infrastructure objects like repositories or an application API for the microservice’s behavior. In that sense, event handlers are similar to command handlers, so both are part of the application layer. The important difference is that a command should be processed only once. A domain event could be processed zero or *n* times, because it can be received by multiple receivers or event handlers with a different purpose for each handler.
+There can be several handlers for the same domain event in the Application Layer, one handler can solve consistency between aggregates and another handler can publish an integration event, so other microservices can do something with it. The event handlers are typically in the application layer, because you will use infrastructure objects like repositories or an application API for the microservice's behavior. In that sense, event handlers are similar to command handlers, so both are part of the application layer. The important difference is that a command should be processed only once. A domain event could be processed zero or *n* times, because it can be received by multiple receivers or event handlers with a different purpose for each handler.
 
 Having an open number of handlers per domain event allows you to add as many domain rules as needed, without affecting  current code. For instance, implementing the following business rule might be as easy as adding a few event handlers (or even just one):
 
@@ -118,15 +118,15 @@ In terms of the ubiquitous language of the domain, since an event is something t
 
 As noted earlier, an important characteristic of events is that since an event is something that happened in the past, it should not change. Therefore, it must be an immutable class. You can see in the previous code that the properties are read-only. There's no way to update the object, you can only set values when you create it.
 
-It’s important to highlight here that if domain events were to be handled asynchronously, using a queue that required serializing and deserializing the event objects, the properties would have to be “private set” instead of read-only, so the deserializer would be able to assign the values upon dequeuing. This is not an issue in the Ordering microservice, as the domain event pub/sub is implemented synchronously using MediatR.
+It's important to highlight here that if domain events were to be handled asynchronously, using a queue that required serializing and deserializing the event objects, the properties would have to be "private set" instead of read-only, so the deserializer would be able to assign the values upon dequeuing. This is not an issue in the Ordering microservice, as the domain event pub/sub is implemented synchronously using MediatR.
 
 ### Raise domain events
 
 The next question is how to raise a domain event so it reaches its related event handlers. You can use multiple approaches.
 
-Udi Dahan originally proposed (for example, in several related posts, such as [Domain Events – Take 2](http://udidahan.com/2008/08/25/domain-events-take-2/)) using a static class for managing and raising the events. This might include a static class named DomainEvents that would raise domain events immediately when it is called, using syntax like `DomainEvents.Raise(Event myEvent)`. Jimmy Bogard wrote a blog post ([Strengthening your domain: Domain Events](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)) that recommends a similar approach.
+Udi Dahan originally proposed (for example, in several related posts, such as [Domain Events – Take 2](https://udidahan.com/2008/08/25/domain-events-take-2/)) using a static class for managing and raising the events. This might include a static class named DomainEvents that would raise domain events immediately when it is called, using syntax like `DomainEvents.Raise(Event myEvent)`. Jimmy Bogard wrote a blog post ([Strengthening your domain: Domain Events](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)) that recommends a similar approach.
 
-However, when the domain events class is static, it also dispatches to handlers immediately. This makes testing and debugging more difficult, because the event handlers with side-effects logic are executed immediately after the event is raised. When you are testing and debugging, you want to focus on and just what is happening in the current aggregate classes; you do not want to suddenly be redirected to other event handlers for side effects related to other aggregates or application logic. This is why other approaches have evolved, as explained in the next section.
+However, when the domain events class is static, it also dispatches to handlers immediately. This makes testing and debugging more difficult, because the event handlers with side-effects logic are executed immediately after the event is raised. When you are testing and debugging, you just want to focus on what is happening in the current aggregate classes; you do not want to suddenly be redirected to other event handlers for side effects related to other aggregates or application logic. This is why other approaches have evolved, as explained in the next section.
 
 #### The deferred approach to raise and dispatch events
 
@@ -242,7 +242,7 @@ Another way to map events to multiple event handlers is by using types registrat
 
 **Figure 7-16**. Domain event dispatcher using IoC
 
-You can build all the plumbing and artifacts to implement that approach by yourself. However, you can also use available libraries like [MediatR](https://github.com/jbogard/MediatR) that uses your IoC container under the covers. You can therefore directly use the predefined interfaces and the mediator object’s publish/dispatch methods.
+You can build all the plumbing and artifacts to implement that approach by yourself. However, you can also use available libraries like [MediatR](https://github.com/jbogard/MediatR) that uses your IoC container under the covers. You can therefore directly use the predefined interfaces and the mediator object's publish/dispatch methods.
 
 In code, you first need to register the event handler types in your IoC container, as shown in the following example at [eShopOnContainers Ordering microservice](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs):
 
@@ -336,7 +336,7 @@ Finally, it's important to mention that you might sometimes want to propagate ev
 
 As stated, use domain events to explicitly implement side effects of changes within your domain. To use DDD terminology, use domain events to explicitly implement side effects across one or multiple aggregates. Additionally, and for better scalability and less impact on database locks, use eventual consistency between aggregates within the same domain.
 
-The reference app uses [MediatR](https://github.com/jbogard/MediatR) to propagate domain events synchronously across aggregates, within a single transaction. However, you could also use some AMQP implementation like [RabbitMQ](https://www.rabbitmq.com/) or [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) to propagate domain events asynchronously, using eventual consistency but, as mentioned above, you have to consider the need for compensatory actions in case of failures.
+The reference app uses [MediatR](https://github.com/jbogard/MediatR) to propagate domain events synchronously across aggregates, within a single transaction. However, you could also use some AMQP implementation like [RabbitMQ](https://www.rabbitmq.com/) or [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) to propagate domain events asynchronously, using eventual consistency but, as mentioned above, you have to consider the need for compensatory actions in case of failures.
 
 ## Additional resources
 
@@ -359,13 +359,13 @@ The reference app uses [MediatR](https://github.com/jbogard/MediatR) to propagat
   <https://www.tonytruong.net/domain-events-pattern-example/>
 
 - **Udi Dahan. How to create fully encapsulated Domain Models** \
-  <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
+  <https://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 - **Udi Dahan. Domain Events – Take 2** \
-  <http://udidahan.com/2008/08/25/domain-events-take-2/>
+  <https://udidahan.com/2008/08/25/domain-events-take-2/>
 
 - **Udi Dahan. Domain Events – Salvation** \
-  <http://udidahan.com/2009/06/14/domain-events-salvation/>
+  <https://udidahan.com/2009/06/14/domain-events-salvation/>
 
 - **Jan Kronquist. Don't publish Domain Events, return them!** \
   <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>

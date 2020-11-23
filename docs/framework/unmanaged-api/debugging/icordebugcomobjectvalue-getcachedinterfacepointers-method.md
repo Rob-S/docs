@@ -15,6 +15,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugComObjectValue::GetCachedInterfacePointers Method
+
 Gets the raw interface pointers cached on the current runtime callable wrapper (RCW).  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT GetCachedInterfacePointers(
 ```  
   
 ## Parameters  
+
  `bIInspectableOnly`  
  [in] A value that indicates whether the method will return only Windows Runtime interfaces (`IInspectable` interfaces) or all COM interfaces that are cached by the runtime callable wrapper (RCW).  
   
@@ -43,7 +45,8 @@ HRESULT GetCachedInterfacePointers(
 ## Remarks  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -53,5 +56,5 @@ HRESULT GetCachedInterfacePointers(
   
 ## See also
 
-- [ICorDebugComObjectValue Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugComObjectValue Interface](icordebugcomobjectvalue-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

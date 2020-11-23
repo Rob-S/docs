@@ -1,5 +1,6 @@
 ---
 title: "COM Wrappers"
+description: COM clients and .NET objects interact by using a COM callable wrapper and a runtime callable wrapper. The CLR creates wrappers automatically.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "wrapper classes"
@@ -11,6 +12,7 @@ helpviewer_keywords:
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
 ---
 # COM Wrappers
+
 COM differs from the .NET runtime object model in several important ways:  
   
 - Clients of COM objects must manage the lifetime of those objects; the common language runtime manages the lifetime of objects in its environment.  
@@ -27,8 +29,8 @@ COM differs from the .NET runtime object model in several important ways:
   
 ## See also
 
-- [Advanced COM Interoperability in .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
+- [Advanced COM Interoperability in .NET Framework](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Runtime Callable Wrapper](runtime-callable-wrapper.md)
 - [COM Callable Wrapper](com-callable-wrapper.md)
-- [Customizing Standard Wrappers in .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [How to: Customize Runtime Callable Wrappers in .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))
+- [Customizing Standard Wrappers in .NET Framework](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
+- [How to: Customize Runtime Callable Wrappers in .NET Framework](/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))

@@ -9,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
 ---
 # How to: Declare an Object by Using an Object Initializer (Visual Basic)
+
 Object initializers enable you to declare and instantiate an instance of a class in a single statement. In addition, you can initialize one or more members of the instance at the same time, without invoking a parameterized constructor.  
   
  When you use an object initializer to create an instance of a named type, the parameterless constructor for the class is called, followed by initialization of designated members in the order you specify.  
@@ -17,7 +18,7 @@ Object initializers enable you to declare and instantiate an instance of a class
   
  [!code-vb[VbVbalrObjectInit#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#20)]  
   
- For an implementation of the `Student` class, see [How to: Create a List of Items](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). You can copy the code from that topic to set up the class and create a list of `Student` objects to work with.  
+ For an implementation of the `Student` class, see [How to: Create a List of Items](../../concepts/linq/how-to-create-a-list-of-items.md). You can copy the code from that topic to set up the class and create a list of `Student` objects to work with.  
   
 ### To create an object of a named class by using an object initializer  
   
@@ -51,11 +52,11 @@ Object initializers enable you to declare and instantiate an instance of a class
   
      [!code-vb[VbVbalrObjectInit#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#23)]  
   
-     For more information, see [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
+     For more information, see [Local Type Inference](../variables/local-type-inference.md).  
   
 ## See also
 
-- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [How to: Create a List of Items](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
-- [Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
-- [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [Local Type Inference](../variables/local-type-inference.md)
+- [How to: Create a List of Items](../../concepts/linq/how-to-create-a-list-of-items.md)
+- [Object Initializers: Named and Anonymous Types](object-initializers-named-and-anonymous-types.md)
+- [Anonymous Types](anonymous-types.md)

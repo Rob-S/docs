@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: e5aa10eb-cfcd-4a3b-8e76-f06b8f2002be
 ---
 # How to: Iterate Through An Enumeration in Visual Basic
+
 Enumerations provide a convenient way to work with sets of related constants, and to associate constant values with names. To iterate through an enumeration, you can move it into an array using the <xref:System.Enum.GetValues%2A> method. You could also iterate through an enumeration using a `For...Each` statement, using the <xref:System.Enum.GetNames%2A> or <xref:System.Enum.GetValues%2A> method to extract the string or numeric value.  
   
 ### To iterate through an enumeration  
@@ -18,10 +19,10 @@ Enumerations provide a convenient way to work with sets of related constants, an
   
 ## See also
 
-- [Enumerations Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
-- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
-- [When to Use an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)
-- [How to: Determine the String Associated with an Enumeration Value](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)
-- [How to: Refer to an Enumeration Member](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
-- [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
-- [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Enumerations Overview](enumerations-overview.md)
+- [How to: Declare an Enumeration](how-to-declare-enumerations.md)
+- [When to Use an Enumeration](when-to-use-an-enumeration.md)
+- [How to: Determine the String Associated with an Enumeration Value](how-to-determine-the-string-associated-with-an-enumeration-value.md)
+- [How to: Refer to an Enumeration Member](how-to-refer-to-an-enumeration-member.md)
+- [Enumerations and Name Qualification](enumerations-and-name-qualification.md)
+- [Arrays](../arrays/index.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugValue::CreateBreakpoint Method
+
 The `CreateBreakpoint` method is currently not implemented.  
   
 ## Syntax  
@@ -28,7 +29,8 @@ HRESULT CreateBreakpoint (
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

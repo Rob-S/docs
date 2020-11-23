@@ -18,6 +18,7 @@ topic_type:
   - "apiref"
 ---
 # EnumerateCLRs Function
+
 Provides a mechanism for enumerating the CLRs in a process.  
   
 ## Syntax  
@@ -32,6 +33,7 @@ HRESULT EnumerateCLRs (
 ```  
   
 ## Parameters  
+
  `debuggeePID`  
  [in] Process identifier of the process from which loaded CLRs will be enumerated.  
   
@@ -45,6 +47,7 @@ HRESULT EnumerateCLRs (
  [out] Pointer to a DWORD that contains the length of the equally sized `ppHandleArrayOut` and `pdwArrayLengthOut`.  
   
 ## Return Value  
+
  S_OK  
  The number of CLRs in the process was successfully determined, and the corresponding handle and path arrays were properly filled.  
   
@@ -58,16 +61,18 @@ HRESULT EnumerateCLRs (
  Unable to enumerate loaded CLRs.  
   
 ## Remarks  
+
  For a target process that is identified by `debuggeePID`, the function returns an array of paths, `ppStringArrayOut`, to CLRs loaded in the process; an array of event handles, `ppHandleArrayOut`, which may contain a continue-startup event for the CLR at the same index; and the size of the arrays, `pdwArrayLengthOut`, which specifies the number of CLRs that are loaded.  
   
  On the Windows operating system, `debuggeePID` maps to an OS process identifier.  
   
- The memory for `ppHandleArrayOut` and `ppStringArrayOut` are allocated by this function. To free the memory allocated, you must call [CloseCLREnumeration Function](../../../../docs/framework/unmanaged-api/debugging/closeclrenumeration-function.md).  
+ The memory for `ppHandleArrayOut` and `ppStringArrayOut` are allocated by this function. To free the memory allocated, you must call [CloseCLREnumeration Function](closeclrenumeration-function.md).  
   
  This function can be called with both array parameters set to null in order to return the count of CLRs in the target process. From this count, a caller can infer the size of the buffer that will be created: `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** dbgshim.h  
   

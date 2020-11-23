@@ -6,14 +6,15 @@ f1_keywords:
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
 ---
 # Object variable or With block variable not set
-An invalid object variable is being referenced.   This error can occur for several reasons:
+
+An invalid object variable is being referenced. This error can occur for several reasons:
 
 - A variable was declared without specifying a type. If a variable is declared without specifying a type, it defaults to type `Object`.
 
     For example, a variable declared with `Dim x` would be of type `Object;` a variable declared with `Dim x As String` would be of type `String`.
 
     > [!TIP]
-    > The `Option Strict` statement disallows implicit typing that results in an `Object` type. If you omit the type, a compile-time error will occur. See [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).
+    > The `Option Strict` statement disallows implicit typing that results in an `Object` type. If you omit the type, a compile-time error will occur. See [Option Strict Statement](../statements/option-strict-statement.md).
 
 - You are attempting to reference an object that has been set to `Nothing`.
 
@@ -24,7 +25,7 @@ An invalid object variable is being referenced.   This error can occur for sever
 - You are attempting to access code within a `With...End With` block before the block has been initialized.   A `With...End With` block must be initialized by executing the `With` statement entry point.
 
 > [!NOTE]
-> In earlier versions of Visual Basic or VBA this error was also triggered by assigning a value to a variable without using the `Set` keyword (`x = "name"` instead of `Set x = "name"`). The `Set` keyword is no longer valid in Visual Basic .Net.
+> In earlier versions of Visual Basic or VBA, this error was also triggered by assigning a value to a variable without using the `Set` keyword (`x = "name"` instead of `Set x = "name"`). The `Set` keyword is no longer valid in Visual Basic .Net.
 
 ## To correct this error
 
@@ -46,6 +47,6 @@ An invalid object variable is being referenced.   This error can occur for sever
 
 ## See also
 
-- [Object Variable Declaration](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
-- [ReDim Statement](../../../visual-basic/language-reference/statements/redim-statement.md)
-- [With...End With Statement](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [Object Variable Declaration](../../programming-guide/language-features/variables/object-variable-declaration.md)
+- [ReDim Statement](../statements/redim-statement.md)
+- [With...End With Statement](../statements/with-end-with-statement.md)

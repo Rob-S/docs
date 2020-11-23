@@ -1,12 +1,11 @@
 ---
 title: "MDbg.exe (.NET Framework Command-Line Debugger)"
+description: Understand MDbg.exe, the command-line debugger for .NET, which helps tools vendors and application developers find and fix bugs in programs targeting the CLR.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "command-line debugger [.NET Framework]"
   - "MDbg.exe"
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # MDbg.exe (.NET Framework Command-Line Debugger)
 The NET Framework Command-Line Debugger helps tools vendors and application developers find and fix bugs in programs that target the .NET Framework common language runtime. This tool uses the runtime debugging API to provide debugging services. You can use MDbg.exe to debug only managed code; there is no support for debugging unmanaged code.  

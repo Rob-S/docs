@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::Exception Method
+
 Notifies the debugger that an exception has been thrown from managed code.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT Exception (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain in which the exception was thrown.  
   
@@ -40,10 +42,12 @@ HRESULT Exception (
  [in] If this value is `false`, the exception has not yet been processed by the application; otherwise, the exception is unhandled and will terminate the process.  
   
 ## Remarks  
+
  The specific exception can be retrieved from the thread object.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -53,4 +57,4 @@ HRESULT Exception (
   
 ## See also
 
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

@@ -17,19 +17,21 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::SetFieldMarshal Method
+
 Sets the PInvoke marshaling information for the field, method return, or method parameter referenced by the specified token.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT SetFieldMarshal (  
-    [in]  mdToken          tk,   
-    [in]  PCCOR_SIGNATURE  pvNativeType,   
-    [in]  ULONG            cbNativeType   
+    [in]  mdToken          tk,
+    [in]  PCCOR_SIGNATURE  pvNativeType,
+    [in]  ULONG            cbNativeType
 );  
 ```  
   
 ## Parameters  
+
  `tk`  
  [in] The token for target data item. This is either a `mdFieldDef` or a `mdParamDef` token.  
   
@@ -40,7 +42,8 @@ HRESULT SetFieldMarshal (
  [in] The count of bytes in `pvNativeType`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -50,5 +53,5 @@ HRESULT SetFieldMarshal (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::GetUserString Method
+
 Gets the literal string represented by the specified metadata token.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT GetUserString (
 ```  
   
 ## Parameters  
+
  `stk`  
  [in] The String token to return the associated string for.  
   
@@ -44,7 +46,8 @@ HRESULT GetUserString (
  [out] The size in wide characters of the returned `szString`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -54,5 +57,5 @@ HRESULT GetUserString (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

@@ -1,8 +1,6 @@
 ---
 title: Welcome to .NET
 description: Getting started with the .NET family of technologies.
-author: mairaw
-ms.author: mairaw
 ms.date: 12/03/2019
 ms.custom: "updateeachrelease"
 ---
@@ -29,18 +27,17 @@ Also follow the latest .NET events:
 
 For information about the latest features added to the .NET implementations and supported languages, see the following articles:
 
-- [What's new in .NET Core](core/whats-new/index.md)
+- [What's new in .NET Core 3.1](core/whats-new/dotnet-core-3-1.md)
 - [What's new in the .NET Framework](framework/whats-new/index.md)
-- [What's new in C#](csharp/whats-new/index.md)
-- [What's new for Visual Basic](visual-basic/getting-started/whats-new.md)
+- [What's new in C#](./csharp/whats-new/csharp-9.md)
+- [What's new for Visual Basic](visual-basic/whats-new/index.md)
 
 ## Documentation
 
 This documentation covers the breadth of .NET across platforms and languages. You can get started with .NET and its languages in any of the following sections:
 
-- [.NET Guide](standard/index.md)
-- [.NET Core Guide](core/index.md)
-- [.NET Framework Guide](framework/index.md)
+- [.NET fundamentals](fundamentals/index.yml)
+- [.NET Framework Guide](framework/index.yml)
 - [C# Guide](csharp/index.yml)
 - [F# Guide](fsharp/index.yml)
 - [Visual Basic Guide](visual-basic/index.yml)
@@ -48,7 +45,7 @@ This documentation covers the breadth of .NET across platforms and languages. Yo
 - [.NET for Apache Spark](spark/index.yml)
 - [.NET Application Architecture](architecture/index.yml)
 
-Additionally, you can browse the [.NET API reference](/dotnet/api).
+Additionally, you can browse the [.NET API reference](../api/index.md).
 
 ## Videos
 

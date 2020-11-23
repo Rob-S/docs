@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedWriter::Initialize2 Method
+
 Sets the metadata emitter interface with which this writer will be associated, and sets the output file name to which the debugging symbols will be written. This method also lets you set the final location of the program database (PDB) file.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT Initialize2(
 ```  
   
 ## Parameters  
+
  `emitter`  
  [in] A pointer to the metadata emitter interface.  
   
@@ -47,12 +49,14 @@ HRESULT Initialize2(
  [in] A pointer to a `WCHAR` that is the path string to the final location of the PDB file.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [Initialize Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize-method.md)
+- [ISymUnmanagedWriter Interface](isymunmanagedwriter-interface.md)
+- [Initialize Method](isymunmanagedwriter-initialize-method.md)

@@ -23,7 +23,7 @@ Provides the `Next` method, which returns a specified number of `ICorDebugAppDom
   
 |Method|Description|  
 |------------|-----------------|  
-|[Next Method](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomainenum-next-method.md)|Gets the specified number of application domains from the collection, starting at the current cursor position.|  
+|[Next Method](icordebugappdomainenum-next-method.md)|Gets the specified number of application domains from the collection, starting at the current cursor position.|  
   
 ## Remarks  
   
@@ -31,7 +31,8 @@ Provides the `Next` method, which returns a specified number of `ICorDebugAppDom
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -41,5 +42,5 @@ Provides the `Next` method, which returns a specified number of `ICorDebugAppDom
   
 ## See also
 
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebug Interface](icordebug-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

@@ -11,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: c982bcf2-46e5-47a2-bc8f-a5cc32b7dc47
 ---
 # -baseaddress
+
 Specifies a default base address when creating a DLL.  
   
 ## Syntax  
@@ -26,6 +27,7 @@ Specifies a default base address when creating a DLL.
 |`address`|Required. The base address for the DLL. This address must be specified as a hexadecimal number.|  
   
 ## Remarks  
+
  The default base address for a DLL is set by the .NET Framework.  
   
  Be aware that the lower-order word in this address is rounded. For example, if you specify 0x11110001, it is rounded to 0x11110000.  
@@ -40,7 +42,7 @@ Specifies a default base address when creating a DLL.
   
 ## See also
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Command-Line Compiler](index.md)
+- [-target (Visual Basic)](target.md)
+- [Sample Compilation Command Lines](sample-compilation-command-lines.md)
 - [Sn.exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md))

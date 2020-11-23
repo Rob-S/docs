@@ -1,12 +1,11 @@
 ---
 title: "Strong-named assemblies"
+description: Learn about strong-names for .NET assemblies, which creates a unique identity for an assembly and can prevent assembly conflicts.
 ms.date: "08/20/2019"
 helpviewer_keywords:
   - "strong-named assemblies, about strong-named assemblies"
   - "assemblies [.NET Framework], strong-named"
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Strong-named assemblies
 
@@ -25,9 +24,7 @@ When a strong-named assembly is created, it contains the simple text name of the
 
 ## Why strong-name your assemblies?
 
-When you reference a strong-named assembly, you can expect certain benefits, such as versioning and naming protection. In the .NET Framework, strong-named assemblies can be installed in the global assembly cache, which is required to enable some scenarios.
-
-Strong-named assemblies are useful in the following scenarios:
+For .NET Framework, strong-named assemblies are useful in the following scenarios:
 
 - You want to enable your assemblies to be referenced by strong-named assemblies, or you want to give `friend` access to your assemblies from other strong-named assemblies.
 
@@ -37,7 +34,9 @@ Strong-named assemblies are useful in the following scenarios:
 
 - You want to centralize servicing for your app by applying publisher policy, which means the assembly must be installed in the global assembly cache.
 
-If you are an open-source developer and you want the identity benefits of a strong-named assembly, consider checking in the private key associated with an assembly to your source control system.
+For .NET Core, strong-named assemblies do not provide material benefits.
+
+If you are an open-source developer and you want the identity benefits of a strong-named assembly for better compatibility with .NET Framework, consider checking in the private key associated with an assembly to your source control system.
 
 ## See also
 

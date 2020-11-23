@@ -4,19 +4,21 @@ ms.date: "03/30/2017"
 ms.assetid: 49a2451f-d250-4e73-aa96-9ff49d9f11c6
 ---
 # ICorDebugSymbolProvider::GetCodeRange Method
+
 Gets the method start address and size given a relative virtual address (RVA) in a method.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetCodeRange(  
-   [in] ULONG32 codeRva,   
-   [out] ULONG32* pCodeStartAddress,   
+   [in] ULONG32 codeRva,
+   [out] ULONG32* pCodeStartAddress,
    [out] ULONG32* pCodeSize  
 );  
 ```  
   
 ## Parameters  
+
  `codeRva`  
  [in] The relative virtual address (RVA) in a method.  
   
@@ -32,7 +34,8 @@ HRESULT GetCodeRange(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,5 +45,5 @@ HRESULT GetCodeRange(
   
 ## See also
 
-- [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider Interface](icordebugsymbolprovider-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

@@ -17,7 +17,7 @@ increase our productivity. We rely on code analysis tools to improve our
 code quality, and code generators to aid in application construction. As
 these tools get smarter, they need access to more and more of the model
 that only compilers create as they process application code. This is the core mission of
-the Roslyn APIs: opening up the black boxes and allowing tools and end
+the Roslyn APIs: opening up the opaque boxes and allowing tools and end
 users to share in the wealth of information compilers have about our code.
 Instead of being opaque source-code-in and object-code-out translators,
 through Roslyn, compilers become platforms: APIs that you can use for
@@ -41,7 +41,7 @@ and the associated code fixes are packaged together in a single project.
 Analyzers and code fixes use static analysis to understand code. They
 do not run the code or provide other testing benefits. They can, however,
 point out practices that often lead to bugs, unmaintainable code, or
-standard guideline validation.
+standard guideline violation.
 
 The .NET Compiler Platform SDK provides a single set of APIs that enable
 you to examine and understand a C# or Visual Basic codebase. Because you
@@ -85,7 +85,7 @@ each developer's machine to enforce the standards.
 
 ## Provide guidance with library packages
 
-There are a wealth of libraries available for .NET developers on NuGet.
+There is a wealth of libraries available for .NET developers on NuGet.
 Some of these come from Microsoft, some from third-party companies, and
 others from community members and volunteers. These libraries get more
 adoption and higher reviews when developers can succeed with those
@@ -120,7 +120,7 @@ practices.
 The .NET Compiler Platform SDK includes the latest language object models
 for code generation, analysis, and refactoring. This section provides a
 conceptual overview of the .NET Compiler Platform SDK. Further details can be
-found in the quickstarts, samples and tutorials sections.
+found in the quickstarts, samples, and tutorials sections.
 
 You can learn more about the concepts in the .NET Compiler Platform SDK in these five topics:
 

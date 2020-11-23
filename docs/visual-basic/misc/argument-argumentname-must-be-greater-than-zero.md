@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: f9939fbd-6c4f-4871-9452-9ea0267e948e
 ---
 # Argument '\<argumentname>' must be greater than zero
+
 An argument is not valid because it is less than or equal to zero.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ An argument is not valid because it is less than or equal to zero.
   
 ## See also
 
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

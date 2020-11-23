@@ -1,12 +1,11 @@
 ---
 title: "Deploying .NET Framework Applications"
+description: Get started with deploying .NET applications. See articles about how the common language runtime locates assemblies, and best practices for assembly loading.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "deploying applications [.NET Framework]"
   - ".NET Framework, deploying apps"
 ms.assetid: 139d4cb1-5972-40f4-bdd8-1ce68e4dfb80
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Deploying .NET Framework Applications
 This section of the .NET Framework documentation provides essential information for deploying .NET Framework applications, including guidelines for loading assemblies, resolving assembly references, and improving the performance of your application through native image generation.  

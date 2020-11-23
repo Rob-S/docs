@@ -9,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: a2991f43-b4d3-4614-a8e7-da392de9697f
 ---
 # \<listeners> Element for \<source>
+
 Adds or removes listeners in the <xref:System.Diagnostics.TraceSource.Listeners%2A> collection for a <xref:System.Diagnostics.TraceSource>. A listener directs the tracing output to an appropriate target, such as a log, window, or text file.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -20,7 +21,7 @@ Adds or removes listeners in the <xref:System.Diagnostics.TraceSource.Listeners%
 ## Syntax  
   
 ```xml  
-<listeners>   
+<listeners>
   <add>...</add>  
   <remove ... />  
   <clear/>  
@@ -28,9 +29,11 @@ Adds or removes listeners in the <xref:System.Diagnostics.TraceSource.Listeners%
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
+
  None.  
   
 ### Child Elements  
@@ -53,21 +56,23 @@ Adds or removes listeners in the <xref:System.Diagnostics.TraceSource.Listeners%
 ## Remarks  
   
 ## Configuration File  
+
  This element can be used in the machine configuration file (Machine.config) and the application configuration file.  
   
 ## Example  
+
  The following example shows how to use the `<listeners>` element to add a console trace listener to the `mySource` source and to remove the default trace listener.  
   
 ```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
-      <source name="mySource" switchName="sourceSwitch"   
+      <source name="mySource" switchName="sourceSwitch"
         switchType="System.Diagnostics.SourceSwitch">  
         <listeners>  
-          <add name="console"   
+          <add name="console"
             type="System.Diagnostics.ConsoleTraceListener">  
-            <filter type="System.Diagnostics.EventTypeFilter"   
+            <filter type="System.Diagnostics.EventTypeFilter"
               initializeData="Error"/>  
           </add>  
           <remove name="Default"/>  

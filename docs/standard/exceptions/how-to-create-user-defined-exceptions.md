@@ -1,7 +1,7 @@
 ---
 title: "How to: Create User-Defined Exceptions"
+description: Learn how to create user-defined exceptions, which are an alternative to the hierarchy of exception classes derived from the Exception base class in .NET.
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
@@ -11,8 +11,6 @@ helpviewer_keywords:
   - "exceptions, examples"
   - "exceptions, user-defined"
 ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # How to create user-defined exceptions
 

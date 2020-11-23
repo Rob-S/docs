@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # GetVersionFromProcess Function
+
 Gets the version number of the common language runtime (CLR) that is associated with the specified process handle.  
   
  This function has been deprecated in the .NET Framework 4.  
@@ -25,14 +26,15 @@ Gets the version number of the common language runtime (CLR) that is associated 
   
 ```cpp  
 HRESULT GetVersionFromProcess (  
-    [in]  HANDLE  hProcess,   
-    [out] LPWSTR  pVersion,   
-    [in]  DWORD   cchBuffer,   
+    [in]  HANDLE  hProcess,
+    [out] LPWSTR  pVersion,
+    [in]  DWORD   cchBuffer,
     [out] DWORD  *dwLength  
 );  
 ```  
   
 ## Parameters  
+
  `hProcess`  
  [in] A handle to a process.  
   
@@ -46,6 +48,7 @@ HRESULT GetVersionFromProcess (
  [out] A pointer to the length of the version number string.  
   
 ## Return Value  
+
  This method returns standard Component Object Model (COM) error codes, as defined in WinError.h, in addition to the following values.  
   
 |Return code|Description|  
@@ -56,7 +59,8 @@ HRESULT GetVersionFromProcess (
 |E_NOTIMPL|This method is not available on the Microsoft Windows 95, Microsoft Windows 98, or Microsoft Windows Millennium Edition operating system.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -66,6 +70,6 @@ HRESULT GetVersionFromProcess (
   
 ## See also
 
-- [GetRequestedRuntimeInfo Function](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
-- [GetRequestedRuntimeVersion Function](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)
-- [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [GetRequestedRuntimeInfo Function](getrequestedruntimeinfo-function.md)
+- [GetRequestedRuntimeVersion Function](getrequestedruntimeversion-function.md)
+- [Deprecated CLR Hosting Functions](deprecated-clr-hosting-functions.md)

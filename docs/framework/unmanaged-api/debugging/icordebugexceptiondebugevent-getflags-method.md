@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 73225303-8852-487e-9a0e-9f0cb95e99d9
 ---
 # ICorDebugExceptionDebugEvent::GetFlags Method
+
 Gets a flag that indicates whether the exception can be intercepted.  
   
 ## Syntax  
@@ -15,8 +16,9 @@ HRESULT GetFlags(
 ```  
   
 ## Parameters  
+
  `pdwFlags`  
- [out] A pointer to a [CorDebugExceptionFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) value that indicates whether the exception can be intercepted.  
+ [out] A pointer to a [CorDebugExceptionFlags](cordebugexceptionflags-enumeration.md) value that indicates whether the exception can be intercepted.  
   
 ## Remarks  
   
@@ -24,7 +26,8 @@ HRESULT GetFlags(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -34,5 +37,5 @@ HRESULT GetFlags(
   
 ## See also
 
-- [ICorDebugExceptionDebugEvent Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugExceptionDebugEvent Interface](icordebugexceptiondebugevent-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

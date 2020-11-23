@@ -11,11 +11,13 @@ helpviewer_keywords:
 ms.assetid: a1206d5c-c45e-4ac2-970a-4a0be6a05fdd
 ---
 # User-Defined Constants (Visual Basic)
+
 A constant is a meaningful name that takes the place of a number or string that does not change. Constants store values that, as the name implies, remain constant throughout the execution of an application. You can use constants that are defined by the controls or components you work with, or you can create your own. Constants you create yourself are described as *user-defined*.  
   
  You declare a constant with the `Const` statement, using the same guidelines you would for creating a variable name. If `Option Strict` is `On`, you must explicitly declare the constant type.  
   
 ## Const Statement Usage  
+
  A `Const` statement can represent a mathematical or date/time quantity:  
   
  [!code-vb[VbEnumsTask#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#10)]  
@@ -29,6 +31,7 @@ A constant is a meaningful name that takes the place of a number or string that 
  [!code-vb[VbEnumsTask#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#15)]  
   
 ## Scope of User-Defined Constants  
+
  A `Const` statement's scope is the same as that of a variable declared in the same location. You can specify scope in any of the following ways:  
   
 - To create a constant that exists only within a procedure, declare it within that procedure.  
@@ -39,9 +42,10 @@ A constant is a meaningful name that takes the place of a number or string that 
   
 - To create a constant available throughout the application, declare it using the `Public` keyword in the declarations section the class.  
   
- For more information, see [How to: Declare A Constant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md).  
+ For more information, see [How to: Declare A Constant](how-to-declare-a-constant.md).  
   
 ### Avoiding Circular References  
+
  Because constants can be defined in terms of other constants, it is possible to inadvertently create a *cycle*, or circular reference, between two or more constants. A cycle occurs when you have two or more public constants, each of which is defined in terms of the other, as in the following example:  
   
  [!code-vb[VbEnumsTask#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#16)]  
@@ -51,12 +55,12 @@ A constant is a meaningful name that takes the place of a number or string that 
   
 ## See also
 
-- [Const Statement](../../../../visual-basic/language-reference/statements/const-statement.md)
-- [Constant and Literal Data Types](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)
-- [Constants and Enumerations](../../../../visual-basic/programming-guide/language-features/constants-enums/index.md)
-- [Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md)
-- [Enumerations Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
-- [Constants Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
-- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
-- [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
-- [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Const Statement](../../../language-reference/statements/const-statement.md)
+- [Constant and Literal Data Types](constant-and-literal-data-types.md)
+- [Constants and Enumerations](index.md)
+- [Constants and Enumerations](../../../language-reference/constants-and-enumerations.md)
+- [Enumerations Overview](enumerations-overview.md)
+- [Constants Overview](constants-overview.md)
+- [How to: Declare an Enumeration](how-to-declare-enumerations.md)
+- [Enumerations and Name Qualification](enumerations-and-name-qualification.md)
+- [Option Strict Statement](../../../language-reference/statements/option-strict-statement.md)

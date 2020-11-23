@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostIoCompletionManager::SetMinThreads Method
+
 Sets the minimum number of threads that the host should allot to I/O completion.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT SetMinThreads (
 ```  
   
 ## Parameters  
+
  `dwMinIoCompletionThreads`  
  [in] The minimum number of I/O completion threads that the host should create.  
   
@@ -44,10 +46,12 @@ HRESULT SetMinThreads (
 |E_NOTIMPL|The host does not provide an implementation of `SetMinThreads`.|  
   
 ## Remarks  
+
  A host might want exclusive control over the number of threads that can be allotted to process I/O requests, for reasons such as implementation, performance, or scalability. For this reason, the host is not required to implement `SetMinThreads`. In this case, the host should return E_NOTIMPL from this method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -57,6 +61,6 @@ HRESULT SetMinThreads (
   
 ## See also
 
-- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
-- [SetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setmaxthreads-method.md)
-- [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
+- [ICLRIoCompletionManager Interface](iclriocompletionmanager-interface.md)
+- [SetMaxThreads Method](ihostiocompletionmanager-setmaxthreads-method.md)
+- [IHostIoCompletionManager Interface](ihostiocompletionmanager-interface.md)

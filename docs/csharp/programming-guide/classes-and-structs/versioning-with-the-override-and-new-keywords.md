@@ -1,6 +1,6 @@
 ---
 title: "Versioning with the Override and New Keywords - C# Programming Guide"
-ms.custom: seodec18
+description: Learn about versioning for base and derived classes in C#, and how to specify whether a method is intended to override or hide an inherited method.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "C# language, versioning"
@@ -8,17 +8,18 @@ helpviewer_keywords:
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
 ---
 # Versioning with the Override and New Keywords (C# Programming Guide)
+
 The C# language is designed so that versioning between [base](../../language-reference/keywords/base.md) and derived classes in different libraries can evolve and maintain backward compatibility. This means, for example, that the introduction of a new member in a base [class](../../language-reference/keywords/class.md) with the same name as a member in a derived class is completely supported by C# and does not lead to unexpected behavior. It also means that a class must explicitly state whether a method is intended to override an inherited method, or whether a method is a new method that hides a similarly named inherited method.  
   
  In C#, derived classes can contain methods with the same name as base class methods.  
-  
-- The base class method must be defined [virtual](../../language-reference/keywords/virtual.md).  
-  
+
 - If the method in the derived class is not preceded by [new](../../language-reference/keywords/new-modifier.md) or [override](../../language-reference/keywords/override.md) keywords, the compiler will issue a warning and the method will behave as if the `new` keyword were present.  
   
 - If the method in the derived class is preceded with the `new` keyword, the method is defined as being independent of the method in the base class.  
   
 - If the method in the derived class is preceded with the `override` keyword, objects of the derived class will call that method instead of the base class method.  
+
+- In order to apply the `override` keyword to the method in the derived class, the base class method must be defined [virtual](../../language-reference/keywords/virtual.md).
   
 - The base class method can be called from within the derived class using the `base` keyword.  
   
@@ -59,6 +60,7 @@ The C# language is designed so that versioning between [base](../../language-ref
  Using the `new` keyword tells the compiler that your definition hides the definition that is contained in the base class. This is the default behavior.  
   
 ## Override and Method Selection  
+
  When a method is named on a class, the C# compiler selects the best method to call if more than one method is compatible with the call, such as when there are two methods with the same name, and parameters that are compatible with the parameter passed. The following methods would be compatible:  
   
  [!code-csharp[csProgGuideInheritance#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#32)]  

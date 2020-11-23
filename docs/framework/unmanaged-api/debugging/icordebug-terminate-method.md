@@ -17,10 +17,11 @@ topic_type:
   - "apiref"
 ---
 # ICorDebug::Terminate Method
+
 Terminates the `ICorDebug` object.  
   
 > [!NOTE]
-> `Terminate` should not be called until an [ICorDebugManagedCallback::ExitProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) callback has been received for all processes being debugged.  
+> `Terminate` should not be called until an [ICorDebugManagedCallback::ExitProcess](icordebugmanagedcallback-exitprocess-method.md) callback has been received for all processes being debugged.  
   
 ## Syntax  
   
@@ -29,10 +30,12 @@ HRESULT Terminate ();
 ```  
   
 ## Remarks  
+
  `Terminate` must be called when the `ICorDebug` object is no longer needed.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,4 +45,4 @@ HRESULT Terminate ();
   
 ## See also
 
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug Interface](icordebug-interface.md)

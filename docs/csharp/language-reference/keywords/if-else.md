@@ -1,6 +1,6 @@
 ---
+description: "if-else - C# Reference"
 title: "if-else - C# Reference"
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords: 
   - "if_CSharpKeyword"
@@ -66,7 +66,7 @@ In the following example, you enter a character from the keyboard, and the progr
 
 ## Example
 
-You also can nest an `if` statement inside an else block, as the following partial code shows. The example nests `if` statements inside two else blocks and one then block. The comments specify which conditions are true or false in each block.
+You can also nest an `if` statement inside an else block, as the following partial code shows. The example nests `if` statements inside two else blocks and one then block. The comments specify which conditions are true or false in each block.
 
 [!code-csharp[csrefKeywordsSelection#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#5)]
 

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::GenerateCeeMemoryImage Method
+
 Generates an image in memory for the code base.  
   
  This method is obsolete and should not be used.  
@@ -30,11 +31,13 @@ HRESULT GenerateCeeMemoryImage (
 ```  
   
 ## Parameters  
+
  `ppImage`  
  [out] A pointer to the generated image.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -44,4 +47,4 @@ HRESULT GenerateCeeMemoryImage (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

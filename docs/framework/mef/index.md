@@ -1,5 +1,6 @@
 ---
 title: "Managed Extensibility Framework (MEF)"
+description: Explore the Managed Extensibility Framework (MEF), which lets application developers discover and use extensions without configuration in .NET 4 or above.
 ms.date: "03/30/2017"
 dev_langs:
   - "csharp"
@@ -55,7 +56,7 @@ Previous versions of the .NET Framework introduced the Managed Add-in Framework 
 
 The simplest way to see what MEF can do is to build a simple MEF application. In this example, you build a very simple calculator named SimpleCalculator. The goal of SimpleCalculator is to create a console application that accepts basic arithmetic commands, in the form "5+3" or "6-2", and returns the correct answers. Using MEF, you'll be able to add new operators without changing the application code.
 
-To download the complete code for this example, see the [SimpleCalculator sample (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/).
+To download the complete code for this example, see the [SimpleCalculator sample (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/).
 
 > [!NOTE]
 > The purpose of SimpleCalculator is to demonstrate the concepts and syntax of MEF, rather than to necessarily provide a realistic scenario for its use. Many of the applications that would benefit most from the power of MEF are more complex than SimpleCalculator. For more extensive examples, see the [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef) on GitHub.
@@ -333,7 +334,7 @@ public String Calculate(string input)
     int right;
     char operation;
     // Finds the operator.
-    int fn = FindFirstNonDigit(input); 
+    int fn = FindFirstNonDigit(input);
     if (fn < 0) return "Could not parse command.";
 
     try
@@ -477,6 +478,6 @@ This topic covered the basic concepts of MEF.
 
 ## Next steps
 
-To download the complete code for this example, see the [SimpleCalculator sample (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/).
+To download the complete code for this example, see the [SimpleCalculator sample (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/).
 
  For more information and code examples, see [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef). For a list of the MEF types, see the <xref:System.ComponentModel.Composition?displayProperty=nameWithType> namespace.

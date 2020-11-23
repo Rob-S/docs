@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CallFunctionShim Function
+
 Makes a call to the function that has the specified name and parameters in the specified library.  
   
  This function has been deprecated in the .NET Framework 4.  
@@ -34,6 +35,7 @@ HRESULT CallFunctionShim (
 ```  
   
 ## Parameters  
+
  `szDllName`  
  [in] The name of the library containing the function.  
   
@@ -53,7 +55,8 @@ HRESULT CallFunctionShim (
  [in] Reserved for future use. Pass zero in this parameter.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -63,4 +66,4 @@ HRESULT CallFunctionShim (
   
 ## See also
 
-- [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Deprecated CLR Hosting Functions](deprecated-clr-hosting-functions.md)

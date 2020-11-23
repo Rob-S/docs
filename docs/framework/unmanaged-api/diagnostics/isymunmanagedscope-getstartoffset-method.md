@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedScope::GetStartOffset Method
+
 Gets the start offset for this scope.  
   
 ## Syntax  
@@ -27,16 +28,19 @@ HRESULT GetStartOffset(
 ```  
   
 ## Parameters  
+
  `pRetVal`  
  [out] A pointer to a `ULONG32` that contains the starting offset.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedScope Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
-- [GetEndOffset Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getendoffset-method.md)
+- [ISymUnmanagedScope Interface](isymunmanagedscope-interface.md)
+- [GetEndOffset Method](isymunmanagedscope-getendoffset-method.md)

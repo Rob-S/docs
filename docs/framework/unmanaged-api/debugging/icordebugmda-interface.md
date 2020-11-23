@@ -16,17 +16,18 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugMDA Interface
+
 Represents a managed debugging assistant (MDA) message.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetDescription Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getdescription-method.md)|Gets a string containing a description of this MDA.|  
-|[GetFlags Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getflags-method.md)|Gets the flags associated with this MDA.|  
-|[GetName Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getname-method.md)|Gets a string containing the name of this MDA.|  
-|[GetOSThreadId Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getosthreadid-method.md)|Gets the operating system thread identifier upon which this MDA is executing.|  
-|[GetXML Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getxml-method.md)|Gets the full XML stream associated with this MDA.|  
+|[GetDescription Method](icordebugmda-getdescription-method.md)|Gets a string containing a description of this MDA.|  
+|[GetFlags Method](icordebugmda-getflags-method.md)|Gets the flags associated with this MDA.|  
+|[GetName Method](icordebugmda-getname-method.md)|Gets a string containing the name of this MDA.|  
+|[GetOSThreadId Method](icordebugmda-getosthreadid-method.md)|Gets the operating system thread identifier upon which this MDA is executing.|  
+|[GetXML Method](icordebugmda-getxml-method.md)|Gets the full XML stream associated with this MDA.|  
   
 ## Remarks  
   
@@ -34,7 +35,8 @@ Represents a managed debugging assistant (MDA) message.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -44,5 +46,5 @@ Represents a managed debugging assistant (MDA) message.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Diagnosing Errors with Managed Debugging Assistants](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Diagnosing Errors with Managed Debugging Assistants](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

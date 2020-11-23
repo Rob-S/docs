@@ -16,13 +16,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugValue2 Interface
+
 Extends the "ICorDebugValue" interface to provide support for "ICorDebugType" objects.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetExactType Method](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue2-getexacttype-method.md)|Gets an interface pointer to an `ICorDebugType` object that represents the <xref:System.Type> of this value.|  
+|[GetExactType Method](icordebugvalue2-getexacttype-method.md)|Gets an interface pointer to an `ICorDebugType` object that represents the <xref:System.Type> of this value.|  
   
 ## Remarks  
   
@@ -30,7 +31,8 @@ Extends the "ICorDebugValue" interface to provide support for "ICorDebugType" ob
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -40,6 +42,6 @@ Extends the "ICorDebugValue" interface to provide support for "ICorDebugType" ob
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)
 
-- [ICorDebugValue3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)
+- [ICorDebugValue3 Interface](icordebugvalue3-interface.md)

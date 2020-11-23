@@ -1,12 +1,11 @@
 ---
 title: "Code Access Security Policy Compatibility and Migration"
+description: Read a summary and see links about code access security policy compatibility and migration in .NET Framework 4.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "policy migration, compatibility"
   - "CLR policy migration"
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # Code Access Security Policy Compatibility and Migration

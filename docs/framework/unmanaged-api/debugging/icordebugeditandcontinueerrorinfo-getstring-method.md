@@ -17,8 +17,9 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugEditAndContinueErrorInfo::GetString Method
+
 `GetString` is obsolete. Do not call this method.  
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

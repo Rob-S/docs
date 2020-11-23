@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IHostTask::Start Method
-Requests that the host move the task represented by the current [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance from a suspended to a live state, in which code can be executed.  
+
+Requests that the host move the task represented by the current [IHostTask](ihosttask-interface.md) instance from a suspended to a live state, in which code can be executed.  
   
 ## Syntax  
   
@@ -33,10 +34,12 @@ HRESULT Start ();
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the common language runtime (CLR) is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  `Start` always returns an HRESULT value of S_OK, except in cases where a catastrophic failure has occurred.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -46,7 +49,7 @@ HRESULT Start ();
   
 ## See also
 
-- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask Interface](iclrtask-interface.md)
+- [ICLRTaskManager Interface](iclrtaskmanager-interface.md)
+- [IHostTask Interface](ihosttask-interface.md)
+- [IHostTaskManager Interface](ihosttaskmanager-interface.md)

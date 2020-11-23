@@ -16,23 +16,26 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugInternalFrame2 Interface
+
 Provides information about internal frames, including stack address and position in relation to ICorDebugFrame objects.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetFrameAddress Method](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Returns the stack address of the internal frame.|  
-|[IsCloserToLeaf Method](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Checks whether the `this` internal frame is closer to the leaf than the specified ICorDebugFrame object.|  
+|[GetFrameAddress Method](icordebuginternalframe2-getframeaddress-method.md)|Returns the stack address of the internal frame.|  
+|[IsCloserToLeaf Method](icordebuginternalframe2-isclosertoleaf-method.md)|Checks whether the `this` internal frame is closer to the leaf than the specified ICorDebugFrame object.|  
   
 ## Remarks  
+
  This interface extends the ICorDebugInternalFrame interface.  
   
 > [!NOTE]
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,5 +45,5 @@ Provides information about internal frames, including stack address and position
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

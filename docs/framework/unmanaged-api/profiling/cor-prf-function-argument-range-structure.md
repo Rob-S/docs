@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # COR_PRF_FUNCTION_ARGUMENT_RANGE Structure
+
 Represents a block of function arguments stored contiguously in left-to-right order in memory.  
   
 ## Syntax  
@@ -35,7 +36,8 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_RANGE {
 |`length`|The length of the contiguous block.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl  
   
@@ -45,4 +47,4 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_RANGE {
   
 ## See also
 
-- [Profiling Structures](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [Profiling Structures](profiling-structures.md)

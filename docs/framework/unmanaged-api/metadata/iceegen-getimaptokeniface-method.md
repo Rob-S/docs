@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::GetIMapTokenIface Method
+
 Gets the interface referenced by the specified token.  
   
  This method is obsolete and should not be used.  
@@ -30,11 +31,13 @@ HRESULT GetIMapTokenIface (
 ```  
   
 ## Parameters  
+
  `pIMapToken`  
  [in, out] The metadata token for the interface to be returned.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -44,4 +47,4 @@ HRESULT GetIMapTokenIface (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

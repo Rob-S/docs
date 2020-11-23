@@ -16,15 +16,16 @@ topic_type:
   - "apiref"
 ---
 # BucketParameters Structure
+
 Stores the type name of an event and the parameters for the current exception that is associated with the event.  
   
 ## Syntax  
   
 ```cpp  
 typedef struct _BucketParameters {  
-    BOOL  fInited;                    
-    WCHAR pszEventTypeName[255];      
-    WCHAR pszParams[10][255];         
+    BOOL  fInited;
+    WCHAR pszEventTypeName[255];
+    WCHAR pszParams[10][255];
 } BucketParameters;  
 ```  
   
@@ -37,7 +38,8 @@ typedef struct _BucketParameters {
 |`pszParams`|An array of strings, each of which specifies a parameter for the current exception associated with the event.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.idl  
   
@@ -45,4 +47,4 @@ typedef struct _BucketParameters {
   
 ## See also
 
-- [Hosting Structures](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [Hosting Structures](hosting-structures.md)

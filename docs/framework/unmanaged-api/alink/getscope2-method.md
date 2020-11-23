@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # GetScope2 Method
+
 Gets an import scope.  
   
 ## Syntax  
@@ -26,10 +27,11 @@ HRESULT GetScope2(
     mdToken FileToken,  
     DWORD dwScope,  
     IMetaDataImport2** ppImportScope  
-) PURE;   
+) PURE;
 ```  
   
 ## Parameters  
+
  `AssemblyID`  
  ID of target assembly.  
   
@@ -43,9 +45,11 @@ HRESULT GetScope2(
  Receives pointer to [IMetaDataImport2 Interface](../metadata/imetadataimport2-interface.md) interface for indicated scope.  
   
 ## Return Value  
+
  Returns S_OK if the method succeeds.  
   
 ## Requirements  
+
  Requires alink.h.  
   
 ## See also

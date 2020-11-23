@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: ba35fb86-329a-4ceb-864b-045c07661482
 ---
 # Named arguments cannot match ParamArray parameters
+
 Parameter arrays must be passed by value.  
   
 ## To correct this error  
@@ -14,6 +15,6 @@ Parameter arrays must be passed by value.
   
 ## See also
 
-- [Parameter Arrays](../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
-- [Passing Arguments by Position and by Name](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
+- [Parameter Arrays](../programming-guide/language-features/procedures/parameter-arrays.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Position and by Name](../programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)

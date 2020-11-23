@@ -1,5 +1,6 @@
 ---
 title: "Using the CodeDOM"
+description: Use the Code Document Object Model (CodeDOM), which provides types representing many common types of source code elements, to assemble an object graph.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -119,4 +120,4 @@ The CodeDOM provides types that represent many common types of source code eleme
   
  For documentation for the each of the CodeDOM types, see the reference documentation for the <xref:System.CodeDom> namespace.  
   
- For a quick chart to locate the CodeDOM element that represents a specific type of code element, see the [CodeDOM Quick Reference](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).
+ For a quick chart to locate the CodeDOM element that represents a specific type of code element, see the [CodeDOM Quick Reference](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).

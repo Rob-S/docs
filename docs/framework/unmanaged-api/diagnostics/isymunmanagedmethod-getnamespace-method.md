@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedMethod::GetNamespace Method
+
 Gets the namespace within which this method is defined.  
   
 ## Syntax  
@@ -27,15 +28,18 @@ HRESULT GetNamespace(
 ```  
   
 ## Parameters  
+
  `pRetVal`  
- [out] A pointer that is set to the returned [ISymUnmanagedNamespace](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md) interface.  
+ [out] A pointer that is set to the returned [ISymUnmanagedNamespace](isymunmanagednamespace-interface.md) interface.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod Interface](isymunmanagedmethod-interface.md)

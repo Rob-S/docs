@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedWriter3::OpenMethod2 Method
+
 Opens a method and provides its real section offset in the image.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT OpenMethod2(   
+HRESULT OpenMethod2(
     [in] mdMethodDef method,  
     [in] ULONG32 isect,  
     [in] ULONG32 offset);  
 ```  
   
 ## Parameters  
+
  `method`  
  [in] The metadata token for the method to be opened.  
   
@@ -39,12 +41,14 @@ HRESULT OpenMethod2(
  [in] The offset in the image.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedWriter3 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
-- [OpenMethod Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)
+- [ISymUnmanagedWriter3 Interface](isymunmanagedwriter3-interface.md)
+- [OpenMethod Method](isymunmanagedwriter-openmethod-method.md)

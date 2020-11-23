@@ -16,13 +16,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugStepperEnum Interface
+
 Implements ICorDebugEnum methods, and enumerates ICorDebugStepper arrays.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[Next Method](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-next-method.md)|Gets the specified number of `ICorDebugStepper` instances from the enumeration, starting at the current position.|  
+|[Next Method](icordebugstepperenum-next-method.md)|Gets the specified number of `ICorDebugStepper` instances from the enumeration, starting at the current position.|  
   
 ## Remarks  
   
@@ -30,7 +31,8 @@ Implements ICorDebugEnum methods, and enumerates ICorDebugStepper arrays.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -40,4 +42,4 @@ Implements ICorDebugEnum methods, and enumerates ICorDebugStepper arrays.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

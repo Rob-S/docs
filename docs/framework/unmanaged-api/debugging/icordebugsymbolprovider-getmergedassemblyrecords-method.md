@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: cc4c510d-550d-4941-af34-81987caf3425
 ---
 # ICorDebugSymbolProvider::GetMergedAssemblyRecords Method
+
 Gets the symbol records for all the merged assemblies.  
   
 ## Syntax  
@@ -17,6 +18,7 @@ HRESULT GetMergedAssemblyRecords(
 ```  
   
 ## Parameters  
+
  `cRequestedRecords`  
  [in] The number of symbol records requested.  
   
@@ -24,7 +26,7 @@ HRESULT GetMergedAssemblyRecords(
  [out] A pointer to the number of symbol records retrieved by the method.  
   
  `pRecords`  
- A pointer to an array of [ICorDebugMergedAssemblyRecord](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md) objects.  
+ A pointer to an array of [ICorDebugMergedAssemblyRecord](icordebugmergedassemblyrecord-interface.md) objects.  
   
 ## Remarks  
   
@@ -32,7 +34,8 @@ HRESULT GetMergedAssemblyRecords(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,5 +45,5 @@ HRESULT GetMergedAssemblyRecords(
   
 ## See also
 
-- [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider Interface](icordebugsymbolprovider-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

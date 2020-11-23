@@ -8,11 +8,11 @@ This sample demonstrates how to implement a custom UserNamePassword Validator. T
 
 > [!IMPORTANT]
 > The samples may already be installed on your computer. Check for the following (default) directory before continuing.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
+>
 > If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\UserNamePasswordValidator`  
   
 > [!NOTE]
@@ -26,7 +26,7 @@ This sample demonstrates how to implement a custom UserNamePassword Validator. T
 
 - The server is authenticated using the server's X.509 certificate.
 
- The service exposes a single endpoint for communicating with the service, defined using the configuration file, App.config. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard `wsHttpBinding` that defaults to using WS-Security and username authentication. The service behavior specifies the `Custom` mode for validating client username/password pairs along with the type of the validator class. The behavior also specifies the server certificate using the `serviceCertificate` element. The server certificate has to contain the same value for the `SubjectName` as the `findValue` in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
+ The service exposes a single endpoint for communicating with the service, defined using the configuration file, App.config. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard `wsHttpBinding` that defaults to using WS-Security and username authentication. The service behavior specifies the `Custom` mode for validating client username/password pairs along with the type of the validator class. The behavior also specifies the server certificate using the `serviceCertificate` element. The server certificate has to contain the same value for the `SubjectName` as the `findValue` in the [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
 
 ```xml
 <system.serviceModel>
@@ -236,6 +236,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
     -->
     <userNameAuthentication userNamePasswordValidationMode="Custom" customUserNamePasswordValidatorType="Microsoft.ServiceModel.Samples.CalculatorService+CustomUserNameValidator, service" />
    ...
+   </serviceCredentials>
   </behavior>
  </serviceBehaviors>
 </behaviors>
@@ -272,7 +273,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 
 #### To set up and build the sample
 
-1. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+1. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
 2. To run the sample in a single- or cross-machine configuration, use the following instructions.
 
@@ -287,7 +288,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 3. Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### To run the sample across machines  
   
@@ -309,8 +310,8 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 9. On the client machine, launch Client.exe from a command prompt window.  
   
-10. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### To clean up after the sample  
   
-1. Run Cleanup.bat in the samples folder once you have finished running the sample. This removes the server certificate from the certificate store.  
+1. Run Cleanup.bat in the samples folder once you have finished running the sample. This removes the server certificate from the certificate store.

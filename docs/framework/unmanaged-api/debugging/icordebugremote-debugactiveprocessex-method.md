@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugRemote::DebugActiveProcessEx Method
+
 Launches a process on a remote machine under the debugger.  
   
 ## Syntax  
@@ -31,8 +32,9 @@ HRESULT DebugActiveProcessEx (
 ```  
   
 ## Parameters  
+
  `pRemoteTarget`  
- [in] Pointer to an [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). This parameter is used to determine the machine on which the process is running.  
+ [in] Pointer to an [ICorDebugRemoteTarget Interface](icordebugremotetarget-interface.md). This parameter is used to determine the machine on which the process is running.  
   
  `id`  
  [in] The ID of the process to which the debugger is to be attached.  
@@ -44,6 +46,7 @@ HRESULT DebugActiveProcessEx (
  [out] A pointer to the address of an "ICorDebugProcess" object that represents the process to which the debugger has been attached.  
   
 ## Return Value  
+
  S_OK  
  Successfully attached to the process on the remote machine.  
   
@@ -51,10 +54,12 @@ HRESULT DebugActiveProcessEx (
  Unable to attach to the process on the remote machine.  
   
 ## Remarks  
+
  Mixed-mode debugging is not supported in Silverlight.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -64,7 +69,7 @@ HRESULT DebugActiveProcessEx (
   
 ## See also
 
-- [ICorDebugRemote Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebugRemote Interface](icordebugremote-interface.md)
+- [ICorDebug Interface](icordebug-interface.md)
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

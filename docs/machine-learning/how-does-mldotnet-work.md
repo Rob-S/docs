@@ -4,14 +4,12 @@ description: ML.NET gives you the ability to add machine learning to .NET applic
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.author: nakersha
-author: natke
 #Customer intent: As a developer, I want to learn how ML.NET works so that I can leverage machine learning in my applications.
 ---
 
 # What is ML.NET and how does it work?
 
-ML.NET gives you the ability to add machine learning to .NET applications, in either online or offline scenarios. With this capability, you can make automatic predictions using the data available to your application.
+ML.NET gives you the ability to add machine learning to .NET applications, in either online or offline scenarios. With this capability, you can make automatic predictions using the data available to your application. Machine learning applications make use of patterns in the data to make predictions rather than needing to be explicitly programmed.
 
 Central to ML.NET is a machine learning **model**. The model specifies the steps needed to transform your input data into a prediction. With ML.NET, you can train a custom model by specifying an algorithm, or you can import pre-trained TensorFlow and ONNX models.
 
@@ -32,7 +30,7 @@ Examples of the type of predictions that you can make with ML.NET:
 
 ## Hello ML.NET World
 
-The code in the following snippet demonstrates the simplest ML.NET application. This example constructs a linear regression model to predict house prices using house size and price data. 
+The code in the following snippet demonstrates the simplest ML.NET application. This example constructs a linear regression model to predict house prices using house size and price data.
 
  ```csharp
     using System;
@@ -210,7 +208,7 @@ Once the objects in the pipeline have been created, data can be used to train th
 
 Calling `Fit()` uses the input training data to estimate the parameters of the model. This is known as training the model. Remember, the linear regression model above had two model parameters: **bias** and **weight**. After the `Fit()` call, the values of the parameters are known. Most models will have many more parameters than this.
 
-You can learn more about model training in [How to train your model](./how-to-guides/train-machine-learning-model-ml-net.md)
+You can learn more about model training in [How to train your model](./how-to-guides/train-machine-learning-model-ml-net.md).
 
 The resulting model object implements the <xref:Microsoft.ML.ITransformer> interface. That is, the model transforms input data into predictions.
 
@@ -228,7 +226,7 @@ You can transform input data into predictions in bulk, or one input at a time. I
     var price = predEngine.Predict(size);
 ```
 
-The `CreatePredictionEngine()` method takes an input class and an output class. The field names and/or code attributes determine the names of the data columns used during model training and prediction. You can read about  [How to make a single prediction](./how-to-guides/single-predict-model-ml-net.md) in the How-to section.
+The `CreatePredictionEngine()` method takes an input class and an output class. The field names and/or code attributes determine the names of the data columns used during model training and prediction. For more information, see [Make predictions with a trained model](how-to-guides/machine-learning-model-predictions-ml-net.md).
 
 ### Data models and schema
 
@@ -260,7 +258,7 @@ All algorithms also create new columns after they have performed a prediction. T
 
 You can find out more about output columns of different machine learning tasks in the [Machine Learning Tasks](resources/tasks.md) guide.
 
-An important property of DataView objects is that they are evaluated **lazily**. Data views are only loaded and operated on during model training and evaluation, and data prediction. While you are writing and testing your ML.NET application, you can use the Visual Studio debugger to take a peek at any data view object by calling the [Preview](xref:Microsoft.ML.DebuggerExtensions.Preview*) method.
+An important property of DataView objects is that they are evaluated **lazily**. Data views are only loaded and operated on during model training and evaluation, and data prediction. While you are writing and testing your ML.NET application, you can use the Visual Studio debugger to take a peek at any data view object by calling the [Preview](xref:Microsoft.ML.DebuggerExtensions.Preview%2A) method.
 
 ```csharp
     var debug = testPriceDataView.Preview();
@@ -282,4 +280,4 @@ In real-life applications, your model training and evaluation code will be separ
 
 * Learn about specific topics in more depth in the [How To Guides](./how-to-guides/index.md).
 
-* If you're super keen, you can dive straight into the [API Reference documentation](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet).
+* If you're super keen, you can dive straight into the [API Reference documentation](../../api/index.md?view=ml-dotnet).

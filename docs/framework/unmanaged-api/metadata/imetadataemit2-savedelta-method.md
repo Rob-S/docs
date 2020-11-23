@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit2::SaveDelta Method
+
 Saves changes from the current edit-and-continue session to the specified file.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT SaveDelta (  
-    [in] LPCWSTR     szFile,   
+    [in] LPCWSTR     szFile,
     [in] DWORD       dwSaveFlags  
 );  
 ```  
   
 ## Parameters  
+
  `szFile`  
  [in] The file name under which to save changes.  
   
@@ -36,7 +38,8 @@ HRESULT SaveDelta (
  [in] Reserved. Must be zero.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -46,5 +49,5 @@ HRESULT SaveDelta (
   
 ## See also
 
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)

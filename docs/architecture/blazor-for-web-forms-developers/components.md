@@ -3,11 +3,10 @@ title: Build reusable UI components with Blazor
 description: Learn how to build reusable UI components with Blazor and how they compare to ASP.NET Web Forms controls.
 author: danroth27
 ms.author: daroth
+no-loc: [Blazor]
 ms.date: 09/18/2019
 ---
 # Build reusable UI components with Blazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 One of the beautiful things about ASP.NET Web Forms is how it enables encapsulation of reusable pieces of user interface (UI) code into reusable UI controls. Custom user controls can be defined in markup using *.ascx* files. You can also build elaborate server controls in code with full designer support.
 
@@ -49,7 +48,7 @@ Or you can generate a list of items using a normal C# `foreach` loop like this:
 <ul>
 @foreach (var item in items)
 {
-    <li>item.Text</li>
+    <li>@item.Text</li>
 }
 </ul>
 ```
@@ -263,7 +262,7 @@ Event handlers can execute synchronously or asynchronously. For example, the fol
 After an event is handled, the component is rendered to account for any component state changes. With asynchronous event handlers, the component is rendered immediately after the handler execution completes. The component is rendered *again* after the asynchronous `Task` completes. This asynchronous execution mode provides an opportunity to render some appropriate UI while the asynchronous `Task` is still in progress.
 
 ```razor
-<button @onclick="Get message">Get message</button>
+<button @onclick="ShowMessage">Get message</button>
 
 @if (showMessage)
 {
@@ -389,7 +388,7 @@ public class AppState
 
     public void UpdateMessage(string message)
     {
-        shortlist.Add(itinerary);
+        Message = message;
         NotifyStateChanged();
     }
 
@@ -585,7 +584,7 @@ When using a templated component, the template parameters can be specified using
     <Heading>
         <h1>My list</h1>
     </Heading>
-    <ItemTemplate Content="message">
+    <ItemTemplate Context="message">
         <p>The message is: @message</p>
     </ItemTemplate>
 </SimpleListView>
@@ -596,8 +595,8 @@ The output of this component looks like this:
 ```html
 <h1>My list</h1>
 <ul>
-    <li>The message is: message1</li>
-    <li>The message is: message2</li>
+    <li><p>The message is: message1</p></li>
+    <li><p>The message is: message2</p></li>
 <ul>
 ```
 

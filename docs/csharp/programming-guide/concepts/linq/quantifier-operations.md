@@ -1,9 +1,11 @@
 ---
 title: "Quantifier Operations (C#)"
+description: Learn about quantifier operations. These operations return a Boolean value indicating whether some or all elements in a sequence satisfy a condition.
 ms.date: 07/20/2015
 ms.assetid: 84ac2ac2-7a63-4581-bc4c-14e34be1493b
 ---
 # Quantifier Operations (C#)
+
 Quantifier operations return a <xref:System.Boolean> value that indicates whether some or all of the elements in a sequence satisfy a condition.  
   
  The following illustration depicts two different quantifier operations on two different source sequences. The first operation asks if one or more of the elements are the character 'A', and the result is `true`. The second operation asks if all the elements are the character 'A', and the result is `true`.  
@@ -23,16 +25,19 @@ Quantifier operations return a <xref:System.Boolean> value that indicates whethe
 ## Query Expression Syntax Examples  
   
 ### All  
+
 The following example uses the `All` to check that all strings are of a specific length.
   
 [!code-csharp[All](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQQuantifier/CS/Quantifier.cs#All)]  
   
 ### Any  
+
 The following example uses the `Any` to check that any strings are start with 'o'.  
   
 [!code-csharp[Any](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQQuantifier/CS/Quantifier.cs#Any)]  
   
 ### Contains  
+
 The following example uses the `Contains` to check an array have a specific element.  
   
 [!code-csharp[Contains](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQQuantifier/CS/Quantifier.cs#Contains)]  
@@ -41,5 +46,5 @@ The following example uses the `Contains` to check an array have a specific elem
 
 - <xref:System.Linq>
 - [Standard Query Operators Overview (C#)](./standard-query-operators-overview.md)
-- [How to: Dynamically Specify Predicate Filters at Runtime](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
+- [Dynamically specify predicate filters at runtime](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
 - [How to query for sentences that contain a specified set of words (LINQ) (C#)](./how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md)

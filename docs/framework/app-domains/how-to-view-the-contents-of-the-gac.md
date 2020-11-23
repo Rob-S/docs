@@ -1,5 +1,6 @@
 ---
 title: "How to: View the Contents of the Global Assembly Cache"
+description: Learn how to view the contents of the global assembly cache in .NET by using the global assembly cache (GAC) tool (gacutil.exe).
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "assemblies [.NET Framework], global assembly cache"
@@ -31,7 +32,7 @@ gacutil /l
 ```
 
 > [!NOTE]
-> In earlier versions of the .NET Framework, the [Shfusion.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) Windows shell extension enabled you to view the global assembly cache in File Explorer. Beginning with the .NET Framework 4, Shfusion.dll is obsolete.
+> In earlier versions of the .NET Framework, the [Shfusion.dll](/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) Windows shell extension enabled you to view the global assembly cache in File Explorer. Beginning with the .NET Framework 4, Shfusion.dll is obsolete.
 
 ## See also
 

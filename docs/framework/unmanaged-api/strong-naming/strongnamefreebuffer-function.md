@@ -20,6 +20,7 @@ topic_type:
   - "apiref"
 ---
 # StrongNameFreeBuffer Function
+
 Frees memory that was allocated with a previous call to a strong name function such as [StrongNameGetPublicKey](strongnamegetpublickey-function.md), [StrongNameTokenFromPublicKey](strongnametokenfrompublickey-function.md), or [StrongNameSignatureGeneration](strongnamesignaturegeneration-function.md).  
   
  This function has been deprecated. Use the [ICLRStrongName::StrongNameFreeBuffer](../hosting/iclrstrongname-strongnamefreebuffer-method.md) method instead.  
@@ -27,16 +28,18 @@ Frees memory that was allocated with a previous call to a strong name function s
 ## Syntax  
   
 ```cpp  
-VOID StrongNameFreeBuffer (   
+VOID StrongNameFreeBuffer (
    [in] BYTE   *pbMemory  
 );  
 ```  
   
 ## Parameters  
+
  `pbMemory`  
  [in] A pointer to the memory to free.  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** StrongName.h  

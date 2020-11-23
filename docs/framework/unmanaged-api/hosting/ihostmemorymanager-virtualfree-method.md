@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostMemoryManager::VirtualFree Method
+
 Serves as a logical wrapper for the corresponding Win32 function. The Win32 implementation of `VirtualFree` releases, decommits, or releases and decommits a region of pages within the virtual address space of the calling process.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT VirtualFree (
 ```  
   
 ## Parameters  
+
  `lpAddress`  
  [in] A pointer to the base address of the virtual memory pages to be freed.  
   
@@ -52,12 +54,14 @@ HRESULT VirtualFree (
 |HOST_E_INVALIDOPERATION|An attempt was made to free memory that was not allocated through the host.|  
   
 ## Remarks  
- `VirtualFree` frees virtual memory pages associated with the `lpAddress` parameter through an earlier call to the [IHostMemoryManager::VirtualAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualalloc-method.md) function. Attempts to free memory that was not allocated through the host should return HOST_E_INVALIDOPERATION.  
+
+ `VirtualFree` frees virtual memory pages associated with the `lpAddress` parameter through an earlier call to the [IHostMemoryManager::VirtualAlloc](ihostmemorymanager-virtualalloc-method.md) function. Attempts to free memory that was not allocated through the host should return HOST_E_INVALIDOPERATION.  
   
  The semantics are identical to those of the Win32 implementation of `VirtualFree`. For more information, see the Windows Platform documentation.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -67,5 +71,5 @@ HRESULT VirtualFree (
   
 ## See also
 
-- [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
-- [IHostMalloc Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)
+- [IHostMemoryManager Interface](ihostmemorymanager-interface.md)
+- [IHostMalloc Interface](ihostmalloc-interface.md)

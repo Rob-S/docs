@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedMethod::GetParameters Method
+
 Gets the parameters for this method. The parameters are returned in the order in which they are defined within the method's signature.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT GetParameters(
 ```  
   
 ## Parameters  
+
  `cParams`  
  [in] The size of the `params` array.  
   
@@ -40,11 +42,13 @@ HRESULT GetParameters(
  [out] A pointer to the buffer that receives the parameters.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod Interface](isymunmanagedmethod-interface.md)

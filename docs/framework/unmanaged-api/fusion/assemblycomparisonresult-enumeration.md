@@ -16,24 +16,25 @@ topic_type:
   - "apiref"
 ---
 # AssemblyComparisonResult Enumeration
+
 Indicates the equivalence of two assembly identities, as determined by the [CompareAssemblyIdentity](compareassemblyidentity-function.md) function.  
   
 ## Syntax  
   
 ```cpp  
 typedef enum _tagAssemblyComparisonResult {  
-    ACR_Unknown,   
+    ACR_Unknown,
     ACR_EquivalentFullMatch,  
     ACR_EquivalentWeakNamed,  
     ACR_EquivalentFXUnified,  
-    ACR_EquivalentUnified,    
+    ACR_EquivalentUnified,
     ACR_NonEquivalentVersion,  
-    ACR_NonEquivalent,      
+    ACR_NonEquivalent,
     ACR_EquivalentPartialMatch,  
-    ACR_EquivalentPartialWeakNamed,    
+    ACR_EquivalentPartialWeakNamed,
     ACR_EquivalentPartialUnified,  
     ACR_EquivalentPartialFXUnified,  
-    ACR_NonEquivalentPartialVersion    
+    ACR_NonEquivalentPartialVersion
 } AssemblyComparisonResult;  
 ```  
   
@@ -55,6 +56,7 @@ typedef enum _tagAssemblyComparisonResult {
 |`ACR_Unknown`|Indicates that the reason for non-equivalency is not known.|  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Fusion.h  

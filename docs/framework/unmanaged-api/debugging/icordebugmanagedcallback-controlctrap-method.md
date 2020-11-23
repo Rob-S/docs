@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::ControlCTrap Method
+
 Notifies the debugger that a CTRL+C is trapped in the process that is being debugged.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT ControlCTrap (
 ```  
   
 ## Parameters  
+
  `pProcess`  
  [in] A pointer to an ICorDebugProcess object that represents the process in which the CTRL+C is trapped.  
   
@@ -39,10 +41,12 @@ HRESULT ControlCTrap (
 |S_FALSE|The debugger will not handle the CTRL+C trap.|  
   
 ## Remarks  
+
  All application domains within the process are stopped for this callback.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -52,4 +56,4 @@ HRESULT ControlCTrap (
   
 ## See also
 
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

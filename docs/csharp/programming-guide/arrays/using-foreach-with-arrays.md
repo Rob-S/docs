@@ -1,6 +1,6 @@
 ---
 title: "Using foreach with arrays - C# Programming Guide"
-ms.custom: seodec18
+description: The foreach statement in C# iterates through the elements of an array. For single-dimensional arrays, foreach processes elements in increasing index order.
 ms.date: 05/23/2018
 helpviewer_keywords: 
   - "arrays [C#], foreach"

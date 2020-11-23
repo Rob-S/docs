@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugStackWalk::Next Method
-Moves the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object to the next frame.  
+
+Moves the [ICorDebugStackWalk](icordebugstackwalk-interface.md) object to the next frame.  
   
 ## Syntax  
   
@@ -26,6 +27,7 @@ HRESULT Next();
 ```  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -38,10 +40,12 @@ HRESULT Next();
 ## Exceptions  
   
 ## Remarks  
+
  The `Next` method advances the `ICorDebugStackWalk` object to the calling frame only if the runtime can unwind the current frame. Otherwise, the object advances to the next frame that the runtime is able to unwind.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -51,6 +55,6 @@ HRESULT Next();
   
 ## See also
 
-- [ICorDebugStackWalk Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugStackWalk Interface](icordebugstackwalk-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

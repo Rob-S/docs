@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::GetTypeRefProps Method
+
 Gets the metadata associated with the <xref:System.Type> referenced by the specified TypeRef token.  
   
 ## Syntax  
@@ -32,6 +33,7 @@ HRESULT GetTypeRefProps (
 ```  
   
 ## Parameters  
+
  `tr`  
  [in] The TypeRef token that represents the type to return metadata for.  
   
@@ -48,7 +50,8 @@ HRESULT GetTypeRefProps (
  [out] The returned size in wide characters of `szName`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -58,5 +61,5 @@ HRESULT GetTypeRefProps (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

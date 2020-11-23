@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::SetFieldRVA Method
+
 Sets a global variable value for the relative virtual address of the field referenced by the specified token.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT SetFieldRVA (   
-    [in]  mdFieldDef  fd,   
-    [in]  ULONG       ulRVA   
+HRESULT SetFieldRVA (
+    [in]  mdFieldDef  fd,
+    [in]  ULONG       ulRVA
 );  
 ```  
   
 ## Parameters  
+
  `fd`  
  [in] The token for the target field.  
   
@@ -36,7 +38,8 @@ HRESULT SetFieldRVA (
  [in] The address of a code or data area.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -46,5 +49,5 @@ HRESULT SetFieldRVA (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

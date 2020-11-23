@@ -23,8 +23,8 @@ A logical extension of the ICorDebugILFrame interface.
   
 |Method|Description|  
 |------------|-----------------|  
-|[EnumerateTypeParameters Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md)|Gets an ICorDebugTypeEnum object that contains the <xref:System.Type> parameters in this frame.|  
-|[RemapFunction Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-remapfunction-method.md)|Remaps an edited function by specifying the new MSIL offset.|  
+|[EnumerateTypeParameters Method](icordebugilframe2-enumeratetypeparameters-method.md)|Gets an ICorDebugTypeEnum object that contains the <xref:System.Type> parameters in this frame.|  
+|[RemapFunction Method](icordebugilframe2-remapfunction-method.md)|Remaps an edited function by specifying the new MSIL offset.|  
   
 ## Remarks  
   
@@ -32,7 +32,8 @@ A logical extension of the ICorDebugILFrame interface.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,4 +43,4 @@ A logical extension of the ICorDebugILFrame interface.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

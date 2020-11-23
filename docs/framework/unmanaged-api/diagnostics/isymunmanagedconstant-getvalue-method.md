@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedConstant::GetValue Method
+
 Gets the value of the constant.  
   
 ## Syntax  
@@ -28,17 +29,20 @@ HRESULT GetValue(
 ```  
   
 ## Parameters  
+
  `pValue`  
  [out] A pointer to a variable that receives the value.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedConstant Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
-- [GetName Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)
-- [GetSignature Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)
+- [ISymUnmanagedConstant Interface](isymunmanagedconstant-interface.md)
+- [GetName Method](isymunmanagedconstant-getname-method.md)
+- [GetSignature Method](isymunmanagedconstant-getsignature-method.md)

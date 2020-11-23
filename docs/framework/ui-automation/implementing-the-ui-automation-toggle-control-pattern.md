@@ -1,5 +1,6 @@
 ---
 title: "Implementing the UI Automation Toggle Control Pattern"
+description: Review guidelines and conventions to implement the Toggle control pattern in UI Automation. Know required members for the IToggleProvider interface.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "Toggle control pattern"
@@ -15,7 +16,7 @@ ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
   
  The <xref:System.Windows.Automation.TogglePattern> control pattern is used to support controls that can cycle through a set of states and maintain a state once set. For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
+<a name="Implementation_Guidelines_and_Conventions"></a>
 ## Implementation Guidelines and Conventions  
  When implementing the Toggle control pattern, note the following guidelines and conventions:  
   
@@ -27,7 +28,7 @@ ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
   
 - The RadioButton control does not implement <xref:System.Windows.Automation.Provider.IToggleProvider>, as it is not capable of cycling through its valid states.  
   
-<a name="Required_Members_for_IToggleProvider"></a>   
+<a name="Required_Members_for_IToggleProvider"></a>
 ## Required Members for IToggleProvider  
  The following properties and methods are required for implementing <xref:System.Windows.Automation.Provider.IToggleProvider>.  
   
@@ -38,7 +39,7 @@ ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
   
  This control pattern has no associated events.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## Exceptions  
  This control pattern has no associated exceptions.  
   

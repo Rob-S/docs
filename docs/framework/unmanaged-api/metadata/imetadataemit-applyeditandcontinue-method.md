@@ -17,24 +17,27 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::ApplyEditAndContinue Method
+
 Updates the current assembly scope with the changes made in the specified metadata.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT ApplyEditAndContinue (   
+HRESULT ApplyEditAndContinue (
     [in]  IUnknown    *pImport  
 );  
 ```  
   
 ## Parameters  
+
  `pImport`  
  \[in\] Pointer to an [IUnknown](/cpp/atl/iunknown) object that represents the delta metadata from the portable executable (PE) file.
   
  The delta metadata is the block of metadata that includes the changes that were made to the copy of the module's actual metadata.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -44,5 +47,5 @@ HRESULT ApplyEditAndContinue (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

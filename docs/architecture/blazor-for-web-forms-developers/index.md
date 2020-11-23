@@ -3,13 +3,12 @@ title: Blazor for ASP.NET Web Forms Developers
 description: Learn how to build full-stack web apps with .NET using Blazor and .NET Core in a simple and familiar way.
 author: danroth27
 ms.author: daroth
+no-loc: [Blazor, WebAssembly]
 ms.date: 09/11/2019
 ---
 # Blazor for ASP.NET Web Forms Developers
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-![Screenshot that shows the Serverless Apps e-book cover.](./media/index/blazor-for-web-forms-developers-cover.png)
+![Screenshot that shows the Serverless Apps e-book cover.](./media/index/blazor-for-aspnet-web-forms-developers.png)
 
 > DOWNLOAD available at: <https://aka.ms/blazor-ebook>
 
@@ -23,7 +22,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 by Microsoft Corporation
+Copyright © 2020 by Microsoft Corporation
 
 All rights reserved. No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.
 
@@ -47,6 +46,8 @@ Authors:
 
 > **[Scott Addie](https://github.com/scottaddie)**, Senior Content Developer, Microsoft Corp.
 
+> **[Steve "ardalis" Smith](https://ardalis.com)**, Software Architect and Trainer, Ardalis Services LLC
+
 ## Introduction
 
 .NET has long supported web app development through ASP.NET, a comprehensive set of frameworks and tools for building any kind of web app. ASP.NET has its own lineage of web frameworks and technologies starting all the way back with classic Active Server Pages (ASP). Frameworks like ASP.NET Web Forms, ASP.NET MVC, ASP.NET Web Pages, and more recently ASP.NET Core, provide a productive and powerful way to build *server-rendered* web apps, where UI content is dynamically generated on the server in response to HTTP requests. Each ASP.NET framework caters to a different audience and app building philosophy. ASP.NET Web Forms shipped with the original release of the .NET Framework and enabled web development using many of the patterns familiar to desktop developers, like reusable UI controls with simple event handling. However, none of the ASP.NET offerings provide a way to run code that executed in the user's browser. To do that requires writing JavaScript and using any of the many JavaScript frameworks and tools that have phased in and out of popularity over the years: jQuery, Knockout, Angular, React, and so on.
@@ -65,7 +66,7 @@ The first part of this book covers what Blazor is and compares it to web app dev
 
 ## What this book doesn't cover
 
-This book is an introduction to Blazor, not a comprehensive migration guide. While it does include guidance on how to approach migrating a project from ASP.NET Web Forms to Blazor, it does not attempt to cover every nuance and detail. For more general guidance on migrating from ASP.NET to ASP.NET Core, refer to the [migration guidance](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/) in the ASP.NET Core documentation.
+This book is an introduction to Blazor, not a comprehensive migration guide. While it does include guidance on how to approach migrating a project from ASP.NET Web Forms to Blazor, it does not attempt to cover every nuance and detail. For more general guidance on migrating from ASP.NET to ASP.NET Core, refer to the [migration guidance](/aspnet/core/migration/proper-to-2x/) in the ASP.NET Core documentation.
 
 ### Additional resources
 

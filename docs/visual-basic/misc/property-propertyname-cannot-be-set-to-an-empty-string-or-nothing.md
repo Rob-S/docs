@@ -4,6 +4,7 @@ ms.date: 07/20/2015
 ms.assetid: c4f6ceb2-cee0-4e79-9cc6-cb20276d24f8
 ---
 # Property \<propertyname> cannot be set to an empty string or Nothing
+
 The property requires a value other than an empty string ("") or `Nothing`. This may be a result of incorrectly calculating the value.  
   
 ## To correct this error  
@@ -12,6 +13,6 @@ The property requires a value other than an empty string ("") or `Nothing`. This
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
-- [Nothing](../../visual-basic/language-reference/nothing.md)
+- [Error Types](../programming-guide/language-features/error-types.md)
+- [Nothing](../language-reference/nothing.md)
 - <xref:System.NullReferenceException>

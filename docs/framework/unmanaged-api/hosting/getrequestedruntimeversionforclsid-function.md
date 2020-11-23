@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # GetRequestedRuntimeVersionForCLSID Function
+
 Gets the appropriate common language runtime (CLR) version information for the class with the specified `CLSID`.  
   
  This function has been deprecated in the .NET Framework 4.  
@@ -24,15 +25,16 @@ Gets the appropriate common language runtime (CLR) version information for the c
   
 ```cpp  
 HRESULT GetRequestedRuntimeVersionForCLSID (  
-    [in]  REFCLSID   rclsid,   
-    [out]  LPWSTR     pVersion,   
-    [in]  DWORD      cchBuffer,   
-    [out] DWORD*     dwLength,   
+    [in]  REFCLSID   rclsid,
+    [out]  LPWSTR     pVersion,
+    [in]  DWORD      cchBuffer,
+    [out] DWORD*     dwLength,
     [in]  CLSID_RESOLUTION_FLAGS dwResolutionFlags  
 );  
 ```  
   
 ## Parameters  
+
  `rclsid`  
  [in]  The `CLSID` of the component.  
   
@@ -63,7 +65,8 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 |E_POINTER|`dwLength` is null, or `cchBuffer` is large enough to hold the version string, but `pVersion` is null.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -71,4 +74,4 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
   
 ## See also
 
-- [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Deprecated CLR Hosting Functions](deprecated-clr-hosting-functions.md)

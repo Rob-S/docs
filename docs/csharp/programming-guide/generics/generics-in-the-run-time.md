@@ -1,12 +1,13 @@
 ---
 title: "Generics in the Run Time - C# Programming Guide"
-ms.custom: seodec18
+description: Learn about generic types in the run time. See code examples and view additional available resources.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "generics [C#], at run time"
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
 ---
 # Generics in the Run Time (C# Programming Guide)
+
 When a generic type or method is compiled into Microsoft intermediate language (MSIL), it contains metadata that identifies it as having type parameters. How the MSIL for a generic type is used differs based on whether the supplied type parameter is a value type or reference type.  
   
  When a generic type is first constructed with a value type as a parameter, the runtime creates a specialized generic type with the supplied parameter or parameters substituted in the appropriate locations in the MSIL. Specialized generic types are created one time for each unique value type that is used as a parameter.  

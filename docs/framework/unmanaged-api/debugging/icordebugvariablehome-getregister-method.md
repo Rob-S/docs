@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugVariableHome::GetRegister Method
+
 Gets the register that contains a variable with a location type of `VLT_REGISTER`, and the base register for a variable with a location type of `VLT_REGISTER_RELATIVE`.  
   
 ## Syntax  
@@ -28,10 +29,12 @@ HRESULT GetRegister(
 ```  
   
 ## Parameters  
+
  `pRegister`  
  [out] A CorDebugRegister enumeration value  that indicates the register for a variable with a location type of `VLT_REGISTER`, and the base register for a variable with a location type of `VLT_REGISTER_RELATIVE`.  
   
 ## Return Value  
+
  The method returns the following values:  
   
 |Value|Description|  
@@ -40,7 +43,8 @@ HRESULT GetRegister(
 |`E_FAIL`|The variable is not in a register or a register-relative location.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -50,5 +54,5 @@ HRESULT GetRegister(
   
 ## See also
 
-- [VariableLocationType Enumeration](../../../../docs/framework/unmanaged-api/debugging/variablelocationtype-enumeration.md)
-- [ICorDebugVariableHome Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [VariableLocationType Enumeration](variablelocationtype-enumeration.md)
+- [ICorDebugVariableHome Interface](icordebugvariablehome-interface.md)

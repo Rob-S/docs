@@ -1,15 +1,11 @@
 ---
 title: dotnet add package command
 description: The 'dotnet add package' command provides a convenient option to add a NuGet package reference to a project.
-ms.date: 06/26/2019
+ms.date: 11/11/2020
 ---
 # dotnet add package
 
-**This article applies to: ✓** .NET Core 1.x SDK and later versions
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**This article applies to:** ✔️ .NET Core 2.x SDK and later versions
 
 ## Name
 
@@ -17,18 +13,23 @@ ms.date: 06/26/2019
 
 ## Synopsis
 
-`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-f|--framework] [--interactive] [-n|--no-restore] [--package-directory] [-s|--source] [-v|--version]`
+```dotnetcli
+dotnet add [<PROJECT>] package <PACKAGE_NAME>
+    [-f|--framework <FRAMEWORK>] [--interactive]
+    [-n|--no-restore] [--package-directory <PACKAGE_DIRECTORY>]
+    [--prerelease] [-s|--source <SOURCE>] [-v|--version <VERSION>]
+
+dotnet add package -h|--help
+```
 
 ## Description
 
 The `dotnet add package` command provides a convenient option to add a package reference to a project file. After running the command, there's a compatibility check to ensure the package is compatible with the frameworks in the project. If the check passes, a `<PackageReference>` element is added to the project file and [dotnet restore](dotnet-restore.md) is run.
 
-[!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
-
 For example, adding `Newtonsoft.Json` to *ToDo.csproj* produces output similar to the following example:
 
 ```console
-  Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
+Writing C:\Users\me\AppData\Local\Temp\tmp95A8.tmp
 info : Adding PackageReference for package 'Newtonsoft.Json' into project 'C:\projects\ToDo\ToDo.csproj'.
 log  : Restoring packages for C:\Temp\projects\consoleproj\consoleproj.csproj...
 info :   GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/index.json
@@ -45,6 +46,10 @@ The *ToDo.csproj* file now contains a [`<PackageReference>`](/nuget/consume-pack
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 ```
+
+### Implicit restore
+
+[!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
 
 ## Arguments
 
@@ -76,15 +81,19 @@ The *ToDo.csproj* file now contains a [`<PackageReference>`](/nuget/consume-pack
 
 - **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  The directory where to restore the packages. The default package restore location is `%userprofile%\.nuget\packages` on Windows and `~/.nuget/packages` on macOS and Linux. For more information, see [Managing the global packages, cache, and temp folders in NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
+  The directory where to restore the packages. The default package restore location is `%userprofile%\.nuget\packages` on Windows and `~/.nuget/packages` on macOS and Linux. For more information, see [Managing the global packages, cache, and temp folders in NuGet](/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
+
+- **`--prerelease`**
+
+  Allows prerelease packages to be installed.
 
 - **`-s|--source <SOURCE>`**
 
-  The NuGet package source to use during the restore operation.
+  The URI of the NuGet package source to use during the restore operation.
 
 - **`-v|--version <VERSION>`**
 
-  Version of the package. See [NuGet package versioning](https://docs.microsoft.com/nuget/reference/package-versioning).
+  Version of the package. See [NuGet package versioning](/nuget/reference/package-versioning).
 
 ## Examples
 
@@ -108,5 +117,5 @@ The *ToDo.csproj* file now contains a [`<PackageReference>`](/nuget/consume-pack
 
 ## See also
 
-- [Managing the global packages, cache, and temp folders in NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
-- [NuGet package versioning](https://docs.microsoft.com/nuget/reference/package-versioning)
+- [Managing the global packages, cache, and temp folders in NuGet](/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
+- [NuGet package versioning](/nuget/reference/package-versioning)

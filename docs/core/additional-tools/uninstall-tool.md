@@ -2,11 +2,11 @@
 title: Uninstall Tool
 description: An overview of the .NET Core Uninstall Tool, a guided tool that enables the controlled clean-up of .NET Core SDKs and runtimes.
 author: sfoslund
-ms.date: 12/17/2019
+ms.date: 05/27/2020
 ---
 # .NET Core Uninstall Tool
 
-The [.NET Core Uninstall Tool](https://github.com/dotnet/cli-lab/releases) (`dotnet-core-uninstall`) lets you remove .NET Core SDKs and Runtimes from a system. A collection of options is available to specify which versions you want to uninstall.
+The [.NET Core Uninstall Tool](https://aka.ms/dotnet-core-uninstall-tool) (`dotnet-core-uninstall`) lets you remove .NET Core SDKs and Runtimes from a system. A collection of options is available to specify which versions you want to uninstall.
 
 The tool supports Windows and macOS. Linux is currently not supported.
 
@@ -21,10 +21,10 @@ Because of these limitations, the tool may not be able to uninstall all of the .
 
 ## Install the tool
 
-You can download the .NET Core Uninstall Tool from the [dotnet/cli-lab](https://github.com/dotnet/cli-lab/releases) GitHub repository.
+You can download the .NET Core Uninstall Tool from [the tool's releases page](https://aka.ms/dotnet-core-uninstall-tool) and find the source code at the [dotnet/cli-lab](https://github.com/dotnet/cli-lab) GitHub repository.
 
 > [!NOTE]
-> The tool requires elevation to uninstall .NET Core SDKs and runtimes. Therefore, it should be installed in a write-protected directory such as *C:\Program Files* on Windows or */usr/local/bin* on macOS. See also [Elevated access for dotnet commands](../tools/elevated-access.md). Detailed installation instructions are available on the [GitHub Releases page](https://github.com/dotnet/cli-lab/releases).
+> The tool requires elevation to uninstall .NET Core SDKs and runtimes. Therefore, it should be installed in a write-protected directory such as *C:\Program Files* on Windows or */usr/local/bin* on macOS. See also [Elevated access for dotnet commands](../tools/elevated-access.md). For more information, see the [detailed installation instructions](https://aka.ms/dotnet-core-uninstall-tool).
 
 ## Run the tool
 
@@ -38,6 +38,9 @@ The following steps show the recommended approach for running the uninstall tool
 ### Step 1 - Display installed .NET Core SDKs and runtimes
 
 The `dotnet-core-uninstall list` command lists the installed .NET Core SDKs and runtimes that can be removed with this tool. Some SDKs and runtimes may be required by Visual Studio and they're displayed with a note of why it isn't recommended to uninstall them.
+
+> [!NOTE]
+> The output of the `dotnet-core-uninstall list` command will not match the list of installed versions in the output of `dotnet --info` in most cases. Specifically, this tool will not display versions installed by zip files or managed by Visual Studio (any version installed with Visual Studio 2019 16.3 or later). One way to check if a version is managed by Visual Studio is to view it in `Add or Remove Programs`, where Visual Studio managed versions are marked as such in their display names.
 
 **dotnet-core-uninstall list**
 
@@ -57,7 +60,7 @@ dotnet-core-uninstall list [options]
 
 * **`--hosting-bundle`**
 
-  Lists all the .NET Core runtime and hosting bundles that can be uninstalled with this tool.
+  Lists all the .NET Core hosting bundles that can be uninstalled with this tool.
 
 * **`--runtime`**
 
@@ -149,11 +152,11 @@ dotnet-core-uninstall whatif [options] [<VERSION>...]
 
   Removes all .NET Core SDKs and runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Removes only the .NET Core SDKs and runtimes with a version smaller than the specified version. The specified version remains installed.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Removes all .NET Core SDKs and runtimes, except those versions specified.
 
@@ -220,11 +223,11 @@ Notes:
 
   Removes all .NET Core SDKs and runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Removes .NET Core SDKs and runtimes below the specified version. The specified version will remain.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Removes .NET Core SDKs and runtimes, except those versions specified.
 
@@ -291,7 +294,7 @@ Notes:
 
 `dotnet-core-uninstall remove` uninstalls .NET Core SDKs and Runtimes that are specified by a collection of options. The tool can't be used to uninstall SDKs and Runtimes with version 5.0 or above.
 
-Since this tool has a destructive behavior, it's **highly** recommended that you do a dry run before running the remove command. The dry run will show you what .NET Core SDKs and runtimes will be removed when you use the `remove` command. Refer to [Should I remove a version?](../versions/remove-runtime-sdk-versions.md#should-i-remove-a-version) to learn which SDKs and runtimes are safe to remove.
+Since this tool has a destructive behavior, it's **highly** recommended that you do a dry run before running the remove command. The dry run will show you what .NET Core SDKs and runtimes will be removed when you use the `remove` command. Refer to [Should I remove a version?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) to learn which SDKs and runtimes are safe to remove.
 
 > [!CAUTION]
 > Keep in mind the following caveats:
@@ -332,11 +335,11 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
   Removes all .NET Core SDKs and runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Removes only the .NET Core SDKs and runtimes with a version smaller than the specified version. The specified version remains installed.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Removes all .NET Core SDKs and runtimes, except those versions specified.
 
@@ -362,7 +365,7 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
 * **`--hosting-bundle`**
 
-  Removes .NET Core runtime and hosting bundles only.
+  Removes .NET Core hosting bundles only.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
@@ -406,11 +409,11 @@ Notes:
 
   Removes all .NET Core SDKs and runtimes.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Removes .NET Core SDKs and runtimes below the specified version. The specified version will remain.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Removes .NET Core SDKs and runtimes, except those versions specified.
 
@@ -447,7 +450,7 @@ Notes:
   Sets the verbosity level. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. The default value is `normal`.
 
 * **`-y, --yes`**
-  Executes the command without requiring Y/n confirmation.
+  Executes the command without requiring Y/N confirmation.
   
 * **`--force`**
   Forces removal of versions that might be used by Visual Studio or SDKs.
@@ -464,7 +467,7 @@ Notes:
 > [!NOTE]
 > By default, .NET Core SDKs and runtimes that may be required by Visual Studio or other SDKs are kept. In the following examples, some of the specified SDKs and runtimes may remain, depending on the state of the machine. To remove all SDKs and runtimes, list them explicitly as arguments or use the `--force` option.
 
-* Remove all x86 .NET Core runtimes except the version `3.0.0-preview6-27804-01` without requiring Y/n confirmation:
+* Remove all .NET Core runtimes except the version `3.0.0-preview6-27804-01` without requiring Y/N confirmation:
 
   ```console
   dotnet-core-uninstall remove --all-but 3.0.0-preview6-27804-01 --runtime --yes
@@ -479,7 +482,7 @@ Notes:
 * Remove the .NET Core 1.1.11 SDK with no console output:
 
   ```console
-  dotnet-core-uninstall remove 1.1.11 --sdk --yes -verbosity q
+  dotnet-core-uninstall remove 1.1.11 --sdk --yes --verbosity q
   ```
 
 * Remove all .NET Core SDKs that can safely be removed by this tool:
@@ -509,7 +512,7 @@ Notes:
 
 ### Step 4 - Delete the NuGet fallback folder (optional)
 
-In some cases, you no longer need the `NuGetFallbackFolder` and may wish to delete it. For more information about deleting this folder, see [Remove the NuGetFallbackFolder](../versions/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).
+In some cases, you no longer need the `NuGetFallbackFolder` and may wish to delete it. For more information about deleting this folder, see [Remove the NuGetFallbackFolder](../install/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).
 
 ## Uninstall the tool
 

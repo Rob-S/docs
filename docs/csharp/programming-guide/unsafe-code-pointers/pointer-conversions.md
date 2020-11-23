@@ -1,12 +1,13 @@
 ---
 title: "Pointer Conversions - C# Programming Guide"
-ms.custom: seodec18
+description: Learn about pointer conversions. See tables of implicit and explicit pointer conversions, code examples, and view additional available resources.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "pointers [C#], conversions"
 ms.assetid: f0e87502-477a-4ede-a31f-7a3e262e46fb
 ---
 # Pointer Conversions (C# Programming Guide)
+
 The following table shows the predefined implicit pointer conversions. Implicit conversions might occur in many situations, including method invoking and assignment statements.  
   
 ## Implicit pointer conversions  
@@ -27,6 +28,7 @@ The following table shows the predefined implicit pointer conversions. Implicit 
 |Any pointer type|sbyte, byte, short, ushort, int, uint, long, or ulong|  
   
 ## Example  
+
  In the following example, a pointer to `int` is converted to a pointer to `byte`. Notice that the pointer points to the lowest addressed byte of the variable. When you successively increment the result, up to the size of `int` (4 bytes), you can display the remaining bytes of the variable.  
   
  [!code-csharp[csProgGuidePointers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers2.cs#3)]  
@@ -38,7 +40,7 @@ The following table shows the predefined implicit pointer conversions. Implicit 
 - [C# Programming Guide](../index.md)
 - [Pointer types](pointer-types.md)
 - [Reference types](../../language-reference/keywords/reference-types.md)
-- [Value types](../../language-reference/keywords/value-types.md)
+- [Value types](../../language-reference/builtin-types/value-types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)
 - [fixed Statement](../../language-reference/keywords/fixed-statement.md)
 - [stackalloc](../../language-reference/operators/stackalloc.md)

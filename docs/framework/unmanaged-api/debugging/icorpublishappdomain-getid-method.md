@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorPublishAppDomain::GetID Method
-Gets the unique identifier for this [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md).  
+
+Gets the unique identifier for this [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
   
 ## Syntax  
   
@@ -28,14 +29,17 @@ HRESULT GetID (
 ```  
   
 ## Parameters  
+
  `puId`  
  [out] A pointer to the identifier of the application domain.  
   
 ## Remarks  
+
  The identifier is unique only in the scope of the containing process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -45,4 +49,4 @@ HRESULT GetID (
   
 ## See also
 
-- [ICorPublishAppDomain Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md)
+- [ICorPublishAppDomain Interface](icorpublishappdomain-interface.md)

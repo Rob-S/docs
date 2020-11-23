@@ -18,6 +18,7 @@ Tracking profiles manifest themselves as XML elements within a standard .NET Fra
 <system.serviceModel>
     ...
     <tracking>
+     <profiles>
       <trackingProfile name="Sample Tracking Profile">
         <workflow activityDefinitionId="*">
           <workflowInstanceQueries>
@@ -320,7 +321,7 @@ To accomplish this, an annotation is added to a tracking query as shown in the f
 
 ### How to Create a Tracking Profile
 
-Tracking query elements are used to create a tracking profile using either an XML configuration file or [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]code. Here is an example of a tracking profile created using a configuration file.
+Tracking query elements are used to create a tracking profile using either an XML configuration file or [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] code. Here is an example of a tracking profile created using a configuration file.
 
 ```xml
 <system.serviceModel>
@@ -383,5 +384,5 @@ Here are some of the common examples of tracking profiles.
 ## See also
 
 - [SQL Tracking](./samples/sql-tracking.md)
-- [Windows Server App Fabric Monitoring](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [Monitoring Applications with App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Windows Server App Fabric Monitoring](/previous-versions/appfabric/ee677251(v=azure.10))
+- [Monitoring Applications with App Fabric](/previous-versions/appfabric/ee677276(v=azure.10))

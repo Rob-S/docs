@@ -1,13 +1,13 @@
 ---
+description: "Access Modifiers - C# Reference"
 title: "Access Modifiers - C# Reference"
-ms.custom: seodec18
-
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "access modifiers [C#]"
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
 ---
 # Access Modifiers (C# Reference)
+
 Access modifiers are keywords used to specify the declared accessibility of a member or a type. This section introduces the four access modifiers:  
   
 - `public`

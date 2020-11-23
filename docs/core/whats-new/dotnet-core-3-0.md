@@ -3,9 +3,9 @@ title: What's new in .NET Core 3.0
 description: Learn about the new features found in .NET Core 3.0.
 dev_langs:
   - "csharp"
-author: thraka
+author: adegeo
 ms.author: adegeo
-ms.date: 10/22/2019
+ms.date: 01/27/2020
 ---
 
 # What's new in .NET Core 3.0
@@ -22,7 +22,13 @@ For more information about the release, see the [.NET Core 3.0 announcement](htt
 
 ## Language improvements C# 8.0
 
-C# 8.0 is also part of this release, which includes the [nullable reference types](../../csharp/tutorials/nullable-reference-types.md) feature, [async streams](../../csharp/tutorials/generate-consume-asynchronous-stream.md), and [more patterns](../../csharp/tutorials/pattern-matching.md). For more information about C# 8.0 features, see [What's new in C# 8.0](../../csharp/whats-new/csharp-8.md).
+C# 8.0 is also part of this release, which includes the [nullable reference types](../../csharp/language-reference/builtin-types/nullable-reference-types.md) feature, async streams, and more patterns. For more information about C# 8.0 features, see [What's new in C# 8.0](../../csharp/whats-new/csharp-8.md).
+
+Tutorials related to C# 8.0 language features:
+
+- [Tutorial: Express your design intent more clearly with nullable and non-nullable reference types](../../csharp/tutorials/nullable-reference-types.md)
+- [Tutorial: Generate and consume async streams using C# 8.0 and .NET Core 3.0](../../csharp/tutorials/generate-consume-asynchronous-stream.md)
+- [Tutorial: Use pattern matching to build type-driven and data-driven algorithms](../../csharp/tutorials/pattern-matching.md)
 
 Language enhancements were added to support the following API features detailed below:
 
@@ -49,12 +55,40 @@ If you're using Visual Studio, you need [Visual Studio 2019](https://visualstudi
 
 ### Default executables
 
-.NET Core now builds [framework-dependent executables](../deploying/index.md#framework-dependent-executables-fde) by default. This behavior is new for applications that use a globally installed version of .NET Core. Previously, only [self-contained deployments](../deploying/index.md#self-contained-deployments-scd) would produce an executable.
+.NET Core now builds [framework-dependent executables](../deploying/index.md#publish-framework-dependent) by default. This behavior is new for applications that use a globally installed version of .NET Core. Previously, only [self-contained deployments](../deploying/index.md#publish-self-contained) would produce an executable.
 
-During `dotnet build` or `dotnet publish`, an executable is created that matches the environment and platform of the SDK you're using. You can expect the same things with these executables as you would other native executables, such as:
+During `dotnet build` or `dotnet publish`, an executable (known as the **appHost**) is created that matches the environment and platform of the SDK you're using. You can expect the same things with these executables as you would other native executables, such as:
 
 - You can double-click on the executable.
 - You can launch the application from a command prompt directly, such as `myapp.exe` on Windows, and `./myapp` on Linux and macOS.
+
+### macOS appHost and notarization
+
+*macOS only*
+
+Starting with the notarized .NET Core SDK 3.0 for macOS, the setting to produce a default executable (known as the appHost) is disabled by default. For more information, see [macOS Catalina Notarization and the impact on .NET Core downloads and projects](../install/macos-notarization-issues.md).
+
+When the appHost setting is enabled, .NET Core generates a native Mach-O executable when you build or publish. Your app runs in the context of the appHost when it is run from source code with the `dotnet run` command, or by starting the Mach-O executable directly.
+
+Without the appHost, the only way a user can start a [framework-dependent](../deploying/index.md#publish-framework-dependent) app is with the `dotnet <filename.dll>` command. An appHost is always created when you publish your app [self-contained](../deploying/index.md#publish-self-contained).
+
+You can either configure the appHost at the project level, or toggle the appHost for a specific `dotnet` command with the `-p:UseAppHost` parameter:
+
+- Project file
+
+  ```xml
+  <PropertyGroup>
+    <UseAppHost>true</UseAppHost>
+  </PropertyGroup>
+  ```
+
+- Command-line parameter
+
+  ```dotnetcli
+  dotnet run -p:UseAppHost=true
+  ```
+
+For more information about the `UseAppHost` setting, see [MSBuild properties for Microsoft.NET.Sdk](../project-sdk/msbuild-props.md#useapphost).
 
 ### Single-file executables
 
@@ -75,7 +109,7 @@ To publish a single-file executable, set the `PublishSingleFile` in your project
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
 ```
 
-For more information about single-file publishing, see the [single-file bundler design document](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md).
+For more information about single-file publishing, see the [single-file bundler design document](https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md).
 
 ### Assembly linking
 
@@ -103,24 +137,24 @@ It's important to consider that applications or frameworks (including ASP.NET Co
 
 Above all else, be sure to test your app after trimming.
 
-For more information about the IL Linker tool, see the [documentation](https://aka.ms/dotnet-illink) or visit the [mono/linker]( https://github.com/mono/linker) repo.
+For more information about the IL Linker tool, see the [documentation](../deploying/trim-self-contained.md) or visit the [mono/linker]( https://github.com/mono/linker) repo.
 
 ### Tiered compilation
 
-[Tiered compilation](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) is on by default with .NET Core 3.0. This feature enables the runtime to more adaptively use the Just-In-Time (JIT) compiler to get better performance.
+[Tiered compilation](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation.md) (TC) is on by default with .NET Core 3.0. This feature enables the runtime to more adaptively use the just-in-time (JIT) compiler to achieve better performance.
 
-The main benefit of TC is to enable (re-)jitting methods with a lower-quality-but-faster tier or a higher-quality-but-slower tier. This helps increase performance of an application as it goes through various stages of execution, from startup through steady-state. This contrasts with the non-TC approach, where every method is compiled a single way (the same as the high-quality tier), which is biased to steady-state over startup performance.
+The main benefit of tiered compilation is to provide two ways of jitting methods: in a lower-quality-but-faster tier or a higher-quality-but-slower tier. The quality refers to how well the method is optimized. TC helps to improve the performance of an application as it goes through various stages of execution, from startup through steady state. When tiered compilation is disabled, every method is compiled in a single way that's biased to steady-state performance over startup performance.
 
-When TC is enabled, during startup for a method that is called:
+When TC is enabled, the following behavior applies for method compilation when an app starts up:
 
-- If the method has AOT-compiled code (ReadyToRun), the pregenerated code will be used.
-- Otherwise, the method will be jitted. Typically, these methods currently are generics over value types.
-  - Quick JIT produces lower-quality code more quickly. Quick JIT is enabled by default in .NET Core 3.0 for methods that do not contain loops and is preferred during startup.
-  - The fully-optimizing JIT produces higher-quality code more slowly. For methods where Quick JIT would not be used (for example, if the method is attributed with `[MethodImpl(MethodImplOptions.AggressiveOptimization)]`), the fully-optimizing JIT is used.
+- If the method has ahead-of-time-compiled code, or [ReadyToRun](#readytorun-images), the pregenerated code is used.
+- Otherwise, the method is jitted. Typically, these methods are generics over value types.
+  - *Quick JIT* produces lower-quality (or less optimized) code more quickly. In .NET Core 3.0, Quick JIT is enabled by default for methods that don't contain loops and is preferred during startup.
+  - The fully optimizing JIT produces higher-quality (or more optimized) code more slowly. For methods where Quick JIT would not be used (for example, if the method is attributed with <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), the fully optimizing JIT is used.
 
-Eventually, after methods are called a number of times, they are re-jitted with the fully-optimizing JIT in the background.
+For frequently called methods, the just-in-time compiler eventually creates fully optimized code in the background. The optimized code then replaces the pre-compiled code for that method.
 
-Code generated by Quick JIT may run slower, allocate more memory, or use more stack space. If there are issues, Quick JIT may be disabled using this setting in your project file:
+Code generated by Quick JIT may run slower, allocate more memory, or use more stack space. If there are issues, you can disabled Quick JIT using this MSBuild property in the project file:
 
 ```xml
 <PropertyGroup>
@@ -128,7 +162,7 @@ Code generated by Quick JIT may run slower, allocate more memory, or use more st
 </PropertyGroup>
 ```
 
-To disable TC completely, use this setting in your project file:
+To disable TC completely, use this MSBuild property in your project file:
 
 ```xml
 <PropertyGroup>
@@ -136,7 +170,10 @@ To disable TC completely, use this setting in your project file:
 </PropertyGroup>
 ```
 
-Any changes to the above settings in the project file may require a clean build to be reflected (delete the `obj` and `bin` directories and rebuild).
+> [!TIP]
+> If you change these settings in the project file, you may need to perform a clean build for the new settings to be reflected (delete the `obj` and `bin` directories and rebuild).
+
+For more information about configuring compilation at run time, see [Run-time configuration options for compilation](../run-time-config/compilation.md).
 
 ### ReadyToRun images
 
@@ -170,14 +207,16 @@ Exceptions to cross-targeting:
 - Windows x86 can be used to compile Windows ARM32 images.
 - Linux x64 can be used to compile Linux ARM32 and ARM64 images.
 
+For more information, see [Ready to Run](../deploying/ready-to-run.md).
+
 ## Runtime/SDK
 
-### Major-version Roll Forward
+### Major-version runtime roll forward
 
 .NET Core 3.0 introduces an opt-in feature that allows your app to roll forward to the latest major version of .NET Core. Additionally, a new setting has been added to control how roll forward is applied to your app. This can be configured in the following ways:
 
 - Project file property: `RollForward`
-- Runtime configuration file property: `rollForward`
+- Run-time configuration file property: `rollForward`
 - Environment variable: `DOTNET_ROLL_FORWARD`
 - Command-line argument: `--roll-forward`
 
@@ -197,6 +236,8 @@ Roll forward to highest major and highest minor version, even if requested major
 Don't roll forward. Only bind to specified version. This policy isn't recommended for general use because it disables the ability to roll forward to the latest patches. This value is only recommended for testing.
 
 Besides the **Disable** setting, all settings will use the highest available patch version.
+
+By default, if the requested version (as specified in `.runtimeconfig.json` for the application) is a release version, only release versions are considered for roll forward. Any pre-release versions are ignored. If there is no matching release version, then pre-release versions are taken into account. This behavior can be changed by setting `DOTNET_ROLL_FORWARD_TO_PRERELEASE=1`, in which case all versions are always considered.
 
 ### Build copies dependencies
 
@@ -218,6 +259,15 @@ There are some operations, like linking and razor page publishing that will stil
 Local tools rely on a manifest file name `dotnet-tools.json` in your current directory. This manifest file defines the tools to be available at that folder and below. You can distribute the manifest file with your code to ensure that anyone who works with your code can restore and use the same tools.
 
 For both global and local tools, a compatible version of the runtime is required. Many tools currently on NuGet.org target .NET Core Runtime 2.1. To install these tools globally or locally, you would still need to install the [NET Core 2.1 Runtime](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+
+### New global.json options
+
+The *global.json* file has new options that provide more flexibility when you're trying to define which version of the .NET Core SDK is used. The new options are:
+
+- `allowPrerelease`: Indicates whether the SDK resolver should consider prerelease versions when selecting the SDK version to use.
+- `rollForward`: Indicates the roll-forward policy to use when selecting an SDK version, either as a fallback when a specific SDK version is missing or as a directive to use a higher version.
+
+For more information about the changes including default values, supported values, and new matching rules, see [global.json overview](../tools/global-json.md).
 
 ### Smaller Garbage Collection heap sizes
 
@@ -252,7 +302,7 @@ dotnet new winforms
 
 Visual Studio 2019 adds **New Project** templates for .NET Core 3.0 Windows Forms and WPF.
 
-For more information about how to port an existing .NET Framework application, see [Port WPF projects](../../desktop-wpf/migration/convert-project-from-net-framework.md) and [Port Windows Forms projects](../porting/winforms.md).
+For more information about how to port an existing .NET Framework application, see [Port WPF projects](/dotnet/desktop/wpf/migration/convert-project-from-net-framework) and [Port Windows Forms projects](/dotnet/desktop/winforms/migration/?view=netdesktop-5.0&preserve-view=true).
 
 #### WinForms high DPI
 
@@ -282,9 +332,9 @@ Windows offers a rich native API in the form of flat C APIs, COM, and WinRT. Whi
 
 ### MSIX Deployment
 
-[MSIX](https://docs.microsoft.com/windows/msix/) is a new Windows application package format. It can be used to deploy .NET Core 3.0 desktop applications to Windows 10.
+[MSIX](/windows/msix/) is a new Windows application package format. It can be used to deploy .NET Core 3.0 desktop applications to Windows 10.
 
-The [Windows Application Packaging Project](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), available in Visual Studio 2019, allows you to create MSIX packages with [self-contained](../deploying/index.md#self-contained-deployments-scd) .NET Core applications.
+The [Windows Application Packaging Project](/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), available in Visual Studio 2019, allows you to create MSIX packages with [self-contained](../deploying/index.md#publish-self-contained) .NET Core applications.
 
 The .NET Core project file must specify the supported runtimes in the `<RuntimeIdentifiers>` property:
 
@@ -340,19 +390,19 @@ The GPIO packages include APIs for *GPIO*, *SPI*, *I2C*, and *PWM* devices. The 
 When available, .NET Core 3.0 uses **OpenSSL 1.1.1**, **OpenSSL 1.1.0**, or **OpenSSL 1.0.2** on a Linux system. When **OpenSSL 1.1.1** is available, both <xref:System.Net.Security.SslStream?displayProperty=nameWithType> and <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> types will use **TLS 1.3** (assuming both the client and server support **TLS 1.3**).
 
 > [!IMPORTANT]
-> Windows and macOS do not yet support **TLS 1.3**. .NET Core 3.0 will support **TLS 1.3** on these operating systems when support becomes available.
+> Windows and macOS do not yet support **TLS 1.3**.
 
 The following C# 8.0 example demonstrates .NET Core 3.0 on Ubuntu 18.10 connecting to <https://www.cloudflare.com>:
 
-[!code-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
+[!code-csharp[TLSExample](./snippets/dotnet-core-3-0/csharp/TLS.cs#TLS)]
 
 ### Cryptography ciphers
 
-.NET 3.0 adds support for **AES-GCM** and **AES-CCM** ciphers, implemented with <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> and <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> respectively. These algorithms are both [Authenticated Encryption with Association Data (AEAD) algorithms](https://en.wikipedia.org/wiki/Authenticated_encryption).
+.NET Core 3.0 adds support for **AES-GCM** and **AES-CCM** ciphers, implemented with <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> and <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> respectively. These algorithms are both [Authenticated Encryption with Association Data (AEAD) algorithms](https://en.wikipedia.org/wiki/Authenticated_encryption).
 
 The following code demonstrates using `AesGcm` cipher to encrypt and decrypt random data.
 
-[!code-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
+[!code-csharp[AesGcm](./snippets/dotnet-core-3-0/csharp/Cipher.cs#AesGcm)]
 
 ### Cryptographic Key Import/Export
 
@@ -377,7 +427,7 @@ RSA keys also support:
 
 The export methods produce DER-encoded binary data, and the import methods expect the same. If a key is stored in the text-friendly PEM format, the caller will need to base64-decode the content before calling an import method.
 
-[!code-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
+[!code-csharp[RSA](./snippets/dotnet-core-3-0/csharp/RSA.cs#Rsa)]
 
 **PKCS#8** files can be inspected with <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> and **PFX/PKCS#12** files can be inspected with <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>. **PFX/PKCS#12** files can be manipulated with <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
 
@@ -450,7 +500,7 @@ Corresponds to the `scaleB` IEEE operation that takes an integral value, it retu
 Corresponds to the `log2` IEEE operation, it returns the base-2 logarithm. It minimizes rounding error.
 
 - <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-Corresponds to the `fma` IEEE operation, it performs a fused multiply add. That is, it does `(x * y) + z` as a single operation, thereby minimizing the rounding error. An example would be `FusedMultiplyAdd(1e308, 2.0, -1e308)` which returns `1e308`. The regular `(1e308 * 2.0) - 1e308` returns `double.PositiveInfinity`.
+Corresponds to the `fma` IEEE operation, it performs a fused multiply add. That is, it does `(x * y) + z` as a single operation, thereby minimizing the rounding error. An example is `FusedMultiplyAdd(1e308, 2.0, -1e308)`, which returns `1e308`. The regular `(1e308 * 2.0) - 1e308` returns `double.PositiveInfinity`.
 
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
 Corresponds to the `copySign` IEEE operation, it returns the value of `x`, but with the sign of `y`.
@@ -461,7 +511,7 @@ APIs have been added that allow access to certain perf-oriented CPU instructions
 
 Where appropriate, the .NET libraries have begun using these instructions to improve performance.
 
-For more information, see [.NET Platform Dependent Intrinsics](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).
+For more information, see [.NET Platform-Dependent Intrinsics](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
 
 ### Improved .NET Core Version APIs
 
@@ -492,9 +542,13 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### Fast built-in JSON support
 
-.NET users have largely relied on [**Json.NET**](https://www.newtonsoft.com/json) and other popular JSON libraries, which continue to be good choices. **Json.NET** uses .NET strings as its base datatype, which is UTF-16 under the hood.
+.NET users have largely relied on [Newtonsoft.Json](https://www.newtonsoft.com/json) and other popular JSON libraries, which continue to be good choices. `Newtonsoft.Json` uses .NET strings as its base datatype, which is UTF-16 under the hood.
 
-The new built-in JSON support is high-performance, low allocation, and based on `Span<byte>`. For more information about the <xref:System.Text.Json> namespace and types, see [JSON serialization in .NET - overview](../../standard/serialization/system-text-json-overview.md). For tutorials on common JSON serialization scenarios, see [How to serialize and deserialize JSON in .NET](../../standard/serialization/system-text-json-how-to.md).
+The new built-in JSON support is high-performance, low allocation, and works with UTF-8 encoded JSON text. For more information about the <xref:System.Text.Json> namespace and types, see the following articles:
+
+* [JSON serialization in .NET - overview](../../standard/serialization/system-text-json-overview.md)
+* [How to serialize and deserialize JSON in .NET](../../standard/serialization/system-text-json-how-to.md).
+* [How to migrate from Newtonsoft.Json to System.Text.Json](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
 ### HTTP/2 support
 
@@ -502,17 +556,17 @@ The <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> type supports
 
 The default protocol remains HTTP/1.1, but HTTP/2 can be enabled in two different ways. First, you can set the HTTP request message to use HTTP/2:
 
-[!code-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
+[!code-csharp[Http2Request](./snippets/dotnet-core-3-0/csharp/http.cs#Request)]
 
 Second, you can change <xref:System.Net.Http.HttpClient> to use HTTP/2 by default:
 
-[!code-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
+[!code-csharp[Http2Client](./snippets/dotnet-core-3-0/csharp/http.cs#Client)]
 
 Many times when you're developing an application, you want to use an unencrypted connection. If you know the target endpoint will be using HTTP/2, you can turn on unencrypted connections for HTTP/2. You can turn it on by setting the `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` environment variable to `1` or by enabling it in the app context:
 
-[!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
+[!code-csharp[Http2Context](./snippets/dotnet-core-3-0/csharp/http.cs#AppContext)]
 
 ## Next steps
 
 - [Review the breaking changes between .NET Core 2.2 and 3.0.](../compatibility/2.2-3.0.md)
-- [Review the breaking changes between .NET Framework and .NET Core 3.0 for Windows Forms apps.](../porting/winforms-breaking-changes.md)
+- [Review the breaking changes in .NET Core 3.0 for Windows Forms apps.](../compatibility/winforms.md#net-core-30)

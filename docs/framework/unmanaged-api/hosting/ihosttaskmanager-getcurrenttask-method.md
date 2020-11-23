@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostTaskManager::GetCurrentTask Method
+
 Gets an interface pointer to the task that is currently executing on the operating system thread from which this call is made.  
   
 ## Syntax  
@@ -28,8 +29,9 @@ HRESULT GetCurrentTask (
 ```  
   
 ## Parameters  
+
  `pTask`  
- [out] A pointer to the address of an [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance that represents the currently executing task, or null, if no task is currently executing.  
+ [out] A pointer to the address of an [IHostTask](ihosttask-interface.md) instance that represents the currently executing task, or null, if no task is currently executing.  
   
 ## Return Value  
   
@@ -44,10 +46,12 @@ HRESULT GetCurrentTask (
 |HOST_E_INVALIDOPERATION|`GetCurrentTask` was called on an operating system thread outside the control of the host.|  
   
 ## Remarks  
+
  The host can also set the `pTask` parameter to null to prevent a task that it did not initiate from entering the CLR.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -57,7 +61,7 @@ HRESULT GetCurrentTask (
   
 ## See also
 
-- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask Interface](iclrtask-interface.md)
+- [ICLRTaskManager Interface](iclrtaskmanager-interface.md)
+- [IHostTask Interface](ihosttask-interface.md)
+- [IHostTaskManager Interface](ihosttaskmanager-interface.md)

@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: fdb93d25-81ba-417f-b808-41207bfb8440
 ---
 # \<\< Operator (Visual Basic)
+
 Performs an arithmetic left shift on a bit pattern.  
   
 ## Syntax  
@@ -19,6 +20,7 @@ result = pattern << amount
 ```  
   
 ## Parts  
+
  `result`  
  Required. Integral numeric value. The result of shifting the bit pattern. The data type is the same as that of `pattern`.  
   
@@ -29,6 +31,7 @@ result = pattern << amount
  Required. Numeric expression. The number of bits to shift the bit pattern. The data type must be `Integer` or widen to `Integer`.  
   
 ## Remarks  
+
  Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic left shift, the bits shifted beyond the range of the result data type are discarded, and the bit positions vacated on the right are set to zero.  
   
  To prevent a shift by more bits than the result can hold, Visual Basic masks the value of `amount` with a size mask that corresponds to the data type of `pattern`. The binary AND of these values is used for the shift amount. The size masks are as follows:  
@@ -45,9 +48,10 @@ result = pattern << amount
  Arithmetic shifts never generate overflow exceptions.  
   
 > [!NOTE]
-> The `<<` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure that you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> The `<<` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure that you understand its redefined behavior. For more information, see [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## Example  
+
  The following example uses the `<<` operator to perform arithmetic left shifts on integral values. The result always has the same data type as that of the expression being shifted.  
   
  [!code-vb[VbVbalrOperators#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#12)]  
@@ -68,9 +72,9 @@ result = pattern << amount
   
 ## See also
 
-- [Bit Shift Operators](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
-- [Assignment Operators](../../../visual-basic/language-reference/operators/assignment-operators.md)
-- [<<= Operator](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Bit Shift Operators](bit-shift-operators.md)
+- [Assignment Operators](assignment-operators.md)
+- [<<= Operator](left-shift-assignment-operator.md)
+- [Operator Precedence in Visual Basic](operator-precedence.md)
+- [Operators Listed by Functionality](operators-listed-by-functionality.md)
+- [Arithmetic Operators in Visual Basic](../../programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

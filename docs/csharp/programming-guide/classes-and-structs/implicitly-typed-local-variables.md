@@ -1,6 +1,6 @@
 ---
 title: "Implicitly typed local variables - C# Programming Guide"
-ms.custom: seodec18
+description: The var keyword in C# instructs the compiler to infer the type of the variable from the expression on the right side of the initialization statement.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "implicitly-typed local variables [C#]"
@@ -9,7 +9,7 @@ ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
 ---
 # Implicitly typed local variables (C# Programming Guide)
 
-Local variables can be declared without giving an explicit type. The `var` keyword instructs the compiler to infer the type of the variable from the expression on the right side of the initialization statement. The inferred type may be a built-in type, an anonymous type, a user-defined type, or a type defined in the .NET Framework class library. For more information about how to initialize arrays with `var`, see [Implicitly Typed Arrays](../arrays/implicitly-typed-arrays.md).
+Local variables can be declared without giving an explicit type. The `var` keyword instructs the compiler to infer the type of the variable from the expression on the right side of the initialization statement. The inferred type may be a built-in type, an anonymous type, a user-defined type, or a type defined in the .NET class library. For more information about how to initialize arrays with `var`, see [Implicitly Typed Arrays](../arrays/implicitly-typed-arrays.md).
 
 The following examples show various ways in which local variables can be declared with `var`:
 
@@ -43,7 +43,7 @@ For more information, see [How to use implicitly typed local variables and array
 
 ## var and anonymous types
 
-In many cases the use of `var` is optional and is just a syntactic convenience. However, when a variable is initialized with an anonymous type you must declare the variable as `var` if you need to access the properties of the object at a later point. This is a common scenario in [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query expressions. For more information, see [Anonymous Types](anonymous-types.md).
+In many cases the use of `var` is optional and is just a syntactic convenience. However, when a variable is initialized with an anonymous type you must declare the variable as `var` if you need to access the properties of the object at a later point. This is a common scenario in LINQ query expressions. For more information, see [Anonymous Types](anonymous-types.md).
 
 From the perspective of your source code, an anonymous type has no name. Therefore, if a query variable has been initialized with `var`, then the only way to access the properties in the returned sequence of objects is to use `var` as the type of the iteration variable in the `foreach` statement.
 
@@ -83,7 +83,7 @@ The `var` keyword can also be useful when the specific type of the variable is t
 
 [!code-csharp[cscsrefQueryKeywords#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#13)]
 
-However, the use of `var` does have at least the potential to make your code more difficult to understand for other developers. For that reason, the C# documentation generally uses `var` only when it is required.
+The use of `var` helps simplify your code, but its use should be restricted to cases where it is required, or when it makes your code easier to read. For more information about when to use `var` properly, see the [Implicitly typed local variables](../inside-a-program/coding-conventions.md#implicitly-typed-local-variables) section on the C# Coding Guidelines article.
 
 ## See also
 

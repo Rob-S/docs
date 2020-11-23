@@ -1,6 +1,6 @@
 ---
 title: "Generic Classes - C# Programming Guide"
-ms.custom: seodec18
+description: Learn about generic classes used in collections like linked lists, hash tables, stacks, queues, and trees.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "C# language, generic classes"
@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
 ---
 # Generic Classes (C# Programming Guide)
+
 Generic classes encapsulate operations that are not specific to a particular data type. The most common use for generic classes is with collections like linked lists, hash tables, stacks, queues, trees, and so on. Operations such as adding and removing items from the collection are performed in basically the same way regardless of the type of data being stored.  
   
  For most scenarios that require collection classes, the recommended approach is to use the ones provided in the .NET class library. For more information about using these classes, see [Generic Collections in .NET](../../../standard/generics/collections.md).  
@@ -65,5 +66,5 @@ Generic classes encapsulate operations that are not specific to a particular dat
 - <xref:System.Collections.Generic>
 - [C# Programming Guide](../index.md)
 - [Generics](./index.md)
-- [Saving the State of Enumerators](https://blogs.msdn.microsoft.com/wesdyer/2006/01/13/saving-the-state-of-enumerators/)
-- [An Inheritance Puzzle, Part One](https://blogs.msdn.microsoft.com/ericlippert/2007/07/27/an-inheritance-puzzle-part-one/)
+- [Saving the State of Enumerators](/archive/blogs/wesdyer/saving-the-state-of-enumerators)
+- [An Inheritance Puzzle, Part One](/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)

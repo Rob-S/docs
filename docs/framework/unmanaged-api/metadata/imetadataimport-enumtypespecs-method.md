@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::EnumTypeSpecs Method
+
 Enumerates TypeSpec tokens defined in the current metadata scope.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT EnumTypeSpecs (
 ```  
   
 ## Parameters  
+
  `phEnum`  
  [in, out] A pointer to the enumerator. This value must be NULL for the first call of this method.  
   
@@ -51,10 +53,12 @@ HRESULT EnumTypeSpecs (
 |`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeSpecs` is zero.|  
   
 ## Remarks  
- The TypeSpec tokens are created by the [IMetaDataEmit::GetTokenFromTypeSpec](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) method.  
+
+ The TypeSpec tokens are created by the [IMetaDataEmit::GetTokenFromTypeSpec](imetadataemit-gettokenfromtypespec-method.md) method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -64,5 +68,5 @@ HRESULT EnumTypeSpecs (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

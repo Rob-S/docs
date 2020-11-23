@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ExceptionUnwindFunctionLeave Method
+
 Notifies the profiler that the unwind phase of exception handling has finished unwinding a function.  
   
 ## Syntax  
@@ -26,6 +27,7 @@ HRESULT ExceptionUnwindFunctionLeave();
 ```  
   
 ## Remarks  
+
  When the `ExceptionUnwindFunctionLeave` method is called, the function instance and its stack data are removed from the stack.  
   
  The profiler should not block during this call because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and a garbage collection is attempted, the runtime will block until this callback returns.  
@@ -33,7 +35,8 @@ HRESULT ExceptionUnwindFunctionLeave();
  Also, during this call, the profiler must not call into managed code or in any way cause a managed-memory allocation.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -43,5 +46,5 @@ HRESULT ExceptionUnwindFunctionLeave();
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionUnwindFunctionEnter Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfunctionenter-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ExceptionUnwindFunctionEnter Method](icorprofilercallback-exceptionunwindfunctionenter-method.md)

@@ -1,5 +1,6 @@
 ---
 title: "Resources in .NET apps"
+description: Understand resources in .NET apps. A resource is any nonexecutable data that's logically deployed with an app.
 ms.date: "07/25/2018"
 helpviewer_keywords:
   - "deploying applications [.NET Framework], resources"
@@ -18,7 +19,7 @@ Nearly every production-quality app has to use resources. A resource is any none
 
 The .NET Framework and .NET Core provide comprehensive support for the creation and localization of resources. In addition, .NET supports a simple model for packaging and deploying localized resources.
 
-For information about resources in ASP.NET, see [ASP.NET Web Page Resources Overview](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).
+For information about resources in ASP.NET, see [ASP.NET Web Page Resources Overview](/previous-versions/aspnet/ms227427(v=vs.100)).
 
 ## Create and localize resources
 
@@ -60,7 +61,6 @@ You can then retrieve resources for the current UI culture or for a specific cul
 
 - <xref:System.Globalization.CultureInfo>
 - <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>
-- [Application Essentials](../../standard/application-essentials.md)
 - [Creating Resource Files](creating-resource-files-for-desktop-apps.md)
 - [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Creating Satellite Assemblies](creating-satellite-assemblies-for-desktop-apps.md)

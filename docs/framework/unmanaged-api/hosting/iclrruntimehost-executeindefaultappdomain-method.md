@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRRuntimeHost::ExecuteInDefaultAppDomain Method
+
 Calls the specified method of the specified type in the specified managed assembly.  
   
 ## Syntax  
@@ -24,7 +25,7 @@ Calls the specified method of the specified type in the specified managed assemb
 ```cpp  
 HRESULT ExecuteInDefaultAppDomain (  
     [in] LPCWSTR pwzAssemblyPath,  
-    [in] LPCWSTR pwzTypeName,   
+    [in] LPCWSTR pwzTypeName,
     [in] LPCWSTR pwzMethodName,  
     [in] LPCWSTR pwzArgument,  
     [out] DWORD *pReturnValue  
@@ -32,6 +33,7 @@ HRESULT ExecuteInDefaultAppDomain (
 ```  
   
 ## Parameters  
+
  `pwzAssemblyPath`  
  [in] The path to the <xref:System.Reflection.Assembly> that defines the <xref:System.Type> whose method is to be invoked.  
   
@@ -59,6 +61,7 @@ HRESULT ExecuteInDefaultAppDomain (
 |E_FAIL|An unknown catastrophic failure occurred. If a method returns E_FAIL, the CRL is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The invoked method must have the following signature:  
   
 ```cpp  
@@ -68,7 +71,8 @@ static int pwzMethodName (String pwzArgument)
  where `pwzMethodName` represents the name of the invoked method, and `pwzArgument` represents the string value passed as a parameter to that method. If the HRESULT value is set to S_OK, `pReturnValue` is set to the integer value returned by the invoked method. Otherwise, `pReturnValue` is not set.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -78,4 +82,4 @@ static int pwzMethodName (String pwzArgument)
   
 ## See also
 
-- [ICLRRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
+- [ICLRRuntimeHost Interface](iclrruntimehost-interface.md)

@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugProcess5::GetObject Method
+
 Converts an object address to an "ICorDebugObjectValue" object.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetObject(  
-    [in] CORDB_ADDRESS addr,   
+    [in] CORDB_ADDRESS addr,
     [out] ICorDebugObjectValue **ppObject  
 );  
 ```  
   
 ## Parameters  
+
  `addr`  
  [in] The object address.  
   
@@ -36,10 +38,12 @@ HRESULT GetObject(
  [out] A pointer to the address of an  "ICorDebugObjectValue" object.  
   
 ## Remarks  
+
  If `addr` does not point to a valid managed object, the `GetObject` method returns `E_FAIL`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -49,5 +53,5 @@ HRESULT GetObject(
   
 ## See also
 
-- [ICorDebugProcess5 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5 Interface](icordebugprocess5-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

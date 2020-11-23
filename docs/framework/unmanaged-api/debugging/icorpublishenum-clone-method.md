@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorPublishEnum::Clone Method
-Creates a copy of this [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) object.  
+
+Creates a copy of this [ICorPublishEnum](icorpublishenum-interface.md) object.  
   
 ## Syntax  
   
@@ -28,11 +29,13 @@ HRESULT Clone (
 ```  
   
 ## Parameters  
+
  `ppEnum`  
  [out] A pointer to the address of an `ICorPublishEnum` object that is a copy of this `ICorPublishEnum` object.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -42,4 +45,4 @@ HRESULT Clone (
   
 ## See also
 
-- [ICorPublishEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md)
+- [ICorPublishEnum Interface](icorpublishenum-interface.md)

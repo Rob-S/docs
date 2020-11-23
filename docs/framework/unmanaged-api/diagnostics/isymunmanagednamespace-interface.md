@@ -16,19 +16,21 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedNamespace Interface
+
 Represents a namespace.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetName Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|Gets the name of this namespace.|  
-|[GetNamespaces Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|Gets the children of this namespace.|  
-|[GetVariables Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|Returns all variables defined at global scope within this namespace.|  
+|[GetName Method](isymunmanagednamespace-getname-method.md)|Gets the name of this namespace.|  
+|[GetNamespaces Method](isymunmanagednamespace-getnamespaces-method.md)|Gets the children of this namespace.|  
+|[GetVariables Method](isymunmanagednamespace-getvariables-method.md)|Returns all variables defined at global scope within this namespace.|  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Diagnostics Symbol Store Interfaces](diagnostics-symbol-store-interfaces.md)

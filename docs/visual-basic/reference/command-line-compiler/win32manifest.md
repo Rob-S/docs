@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
 ---
 # -win32manifest (Visual Basic)
+
 Identifies a user-defined Win32 application manifest file to be embedded into a project's portable executable (PE) file.  
   
 ## Syntax  
@@ -23,10 +24,11 @@ Identifies a user-defined Win32 application manifest file to be embedded into a 
 |`fileName`|The path of the custom manifest file.|  
   
 ## Remarks  
+
  By default, the Visual Basic compiler embeds an application manifest that specifies a requested execution level of asInvoker. It creates the manifest in the same folder in which the executable file is built, typically the bin\Debug or bin\Release folder when you use Visual Studio. If you want to supply a custom manifest, for example to specify a requested execution level of highestAvailable or requireAdministrator, use this option to specify the name of the file.  
   
 > [!NOTE]
-> This option and the [-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) option are mutually exclusive. If you try to use both options in the same command line, you will get a build error.  
+> This option and the [-win32resource](win32resource.md) option are mutually exclusive. If you try to use both options in the same command line, you will get a build error.  
   
  An application that has no application manifest that specifies a requested execution level will be subject to file/registry virtualization under the User Account Control feature in Windows Vista. For more information about virtualization, see [ClickOnce Deployment on Windows Vista](/visualstudio/deployment/clickonce-deployment-on-windows-vista).  
   
@@ -41,6 +43,7 @@ Identifies a user-defined Win32 application manifest file to be embedded into a 
  You can provide the application manifest as a custom post-build step or as part of a Win32 resource file by using the `-nowin32manifest` option. Use that same option if you want your application to be subject to file or registry virtualization on Windows Vista. This will prevent the compiler from creating and embedding a default manifest in the PE file.  
   
 ## Example  
+
  The following example shows the default manifest that the Visual Basic compiler inserts into a PE.  
   
 > [!NOTE]
@@ -62,5 +65,5 @@ Identifies a user-defined Win32 application manifest file to be embedded into a 
   
 ## See also
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)
+- [Visual Basic Command-Line Compiler](index.md)
+- [-nowin32manifest (Visual Basic)](nowin32manifest.md)

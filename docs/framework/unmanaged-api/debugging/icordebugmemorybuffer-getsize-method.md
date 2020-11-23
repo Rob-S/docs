@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 9ffd5482-268e-4680-9fd1-bfb0b7d66450
 ---
 # ICorDebugMemoryBuffer::GetSize Method
+
 Gets the size of the memory buffer in bytes.  
   
 ## Syntax  
@@ -15,6 +16,7 @@ HRESULT GetSize(
 ```  
   
 ## Parameters  
+
  `pcbBufferLength`  
  [out] A pointer to the size of the memory buffer.  
   
@@ -24,7 +26,8 @@ HRESULT GetSize(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -34,5 +37,5 @@ HRESULT GetSize(
   
 ## See also
 
-- [ICorDebugMemoryBuffer Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugMemoryBuffer Interface](icordebugmemorybuffer-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

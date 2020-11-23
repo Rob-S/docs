@@ -1,14 +1,13 @@
 ---
 title: "How to: Create time zones without adjustment rules"
 ms.date: "04/10/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
-  - "time zones [.NET Framework], adjustment rule"
-  - "time zones [.NET Framework], creating"
-  - "adjustment rule [.NET Framework]"
+  - "time zones [.NET], adjustment rule"
+  - "time zones [.NET], creating"
+  - "adjustment rule [.NET]"
 ms.assetid: a6af8647-7893-4f29-95a9-d94c65a6e8dd
 ---
 # How to: Create time zones without adjustment rules
@@ -21,12 +20,12 @@ The precise time zone information that is required by an application may not be 
 
 - The time zone exists but does not have accurate information about time zone adjustments for a particular historic period.
 
-In these cases, you can call the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method to define the time zone required by your application. You can use the overloads of this method to create a time zone with or without adjustment rules. If the time zone supports daylight saving time, you can define adjustments with either fixed or floating adjustment rules. (For definitions of these terms, see the "Time Zone Terminology" section in [Time zone overview](../../../docs/standard/datetime/time-zone-overview.md).)
+In these cases, you can call the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method to define the time zone required by your application. You can use the overloads of this method to create a time zone with or without adjustment rules. If the time zone supports daylight saving time, you can define adjustments with either fixed or floating adjustment rules. (For definitions of these terms, see the "Time Zone Terminology" section in [Time zone overview](time-zone-overview.md).)
 
 > [!IMPORTANT]
 > Custom time zones created by calling the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method are not added to the registry. Instead, they can be accessed only through the object reference returned by the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method call.
 
-This topic shows how to create a time zone without adjustment rules. To create a time zone that supports daylight saving time adjustment rules, see [How to: Create time zones with adjustment rules](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md).
+This topic shows how to create a time zone without adjustment rules. To create a time zone that supports daylight saving time adjustment rules, see [How to: Create time zones with adjustment rules](create-time-zones-with-adjustment-rules.md).
 
 ### To create a time zone without adjustment rules
 
@@ -62,6 +61,6 @@ This example requires:
 
 ## See also
 
-- [Dates, times, and time zones](../../../docs/standard/datetime/index.md)
-- [Time zone overview](../../../docs/standard/datetime/time-zone-overview.md)
-- [How to: Create time zones with adjustment rules](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)
+- [Dates, times, and time zones](index.md)
+- [Time zone overview](time-zone-overview.md)
+- [How to: Create time zones with adjustment rules](create-time-zones-with-adjustment-rules.md)

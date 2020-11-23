@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback2::ExceptionUnwind Method
+
 Provides a status notification during the exception unwinding process.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT ExceptionUnwind (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain containing the thread on which the exception was thrown.  
   
@@ -41,15 +43,17 @@ HRESULT ExceptionUnwind (
  [in] A value of the CorDebugExceptionUnwindCallbackType enumeration that specifies the event that is being signaled by the callback during the unwind phase.  
   
  `dwFlags`  
- [in] A value of the [CorDebugExceptionFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) enumeration that specifies additional information about the exception.  
+ [in] A value of the [CorDebugExceptionFlags](cordebugexceptionflags-enumeration.md) enumeration that specifies additional information about the exception.  
   
 ## Remarks  
+
  `ExceptionUnwind` is called at various points during the unwind phase of the exception-handling process. `ExceptionUnwind` can be called more than once while unwinding a single exception.  
   
  If `dwEventType` = DEBUG_EXCEPTION_INTERCEPTED, the instruction pointer will be in the leaf frame of the thread, at the sequence point before (this may be several instructions before) the instruction that led to the exception.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -59,5 +63,5 @@ HRESULT ExceptionUnwind (
   
 ## See also
 
-- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 Interface](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

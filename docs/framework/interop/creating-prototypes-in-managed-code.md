@@ -1,5 +1,6 @@
 ---
 title: "Creating Prototypes in Managed Code"
+description: Create prototypes in .NET managed code, so you can access unmanaged functions and use attribute fields that annotate method definition in managed code.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -230,7 +231,7 @@ interface IDemandStubsItf
 - [Specifying an Entry Point](specifying-an-entry-point.md)
 - [Specifying a Character Set](specifying-a-character-set.md)
 - [Platform Invoke Examples](platform-invoke-examples.md)
-- [Platform Invoke Security Considerations](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
+- [Platform Invoke Security Considerations](/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identifying Functions in DLLs](identifying-functions-in-dlls.md)
 - [Creating a Class to Hold DLL Functions](creating-a-class-to-hold-dll-functions.md)
 - [Calling a DLL Function](calling-a-dll-function.md)

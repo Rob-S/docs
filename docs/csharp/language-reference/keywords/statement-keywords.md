@@ -1,7 +1,6 @@
 ---
+description: "Statement keywords - C# Reference"
 title: "Statement keywords - C# Reference"
-ms.custom: seodec18
-
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "keywords [C#], statements"

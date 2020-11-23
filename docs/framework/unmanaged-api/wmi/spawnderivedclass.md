@@ -16,7 +16,8 @@ topic_type:
   - "Reference"
 ---
 # SpawnDerivedClass function
-Creates a newly derived class object from a specified object.    
+
+Creates a newly derived class object from a specified object.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -24,10 +25,10 @@ Creates a newly derived class object from a specified object.
   
 ```cpp  
 HRESULT SpawnDerivedClass (
-   [in] int                  vFunc, 
-   [in] IWbemClassObject*    ptr, 
+   [in] int                  vFunc,
+   [in] IWbemClassObject*    ptr,
    [in] LONG                 lFlags,
-   [out] IWbemClassObject**  ppNewClass); 
+   [out] IWbemClassObject**  ppNewClass);
 ```  
 
 ## Parameters
@@ -66,6 +67,7 @@ This function wraps a call to the [IWbemClassObject::SpawnDerivedClass](/windows
 The new object returned in `ppNewClass` automatically becomes a subclass of the current object. This behavior cannot be overridden. There is no other method by which subclasses (derived classes) can be created.
 
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** WMINet_Utils.idl  

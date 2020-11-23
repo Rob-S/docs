@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugModule::GetFunctionFromToken Method
+
 Gets the function that is specified by the metadata token.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT GetFunctionFromToken(
 ```  
   
 ## Parameters  
+
  `methodDef`  
  [in] A `mdMethodDef` metadata token that references the function's metadata.  
   
@@ -36,10 +38,12 @@ HRESULT GetFunctionFromToken(
  [out] A pointer to the address of a ICorDebugFunction interface object that represents the function.  
   
 ## Remarks  
+
  The `GetFunctionFromToken` method returns a CORDBG_E_FUNCTION_NOT_IL HRESULT if the value passed in `methodDef` does not refer to a Microsoft intermediate language (MSIL) method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

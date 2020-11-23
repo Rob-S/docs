@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IValidator::Validate Method
+
 Validates the specified portable executable (PE) or Microsoft intermediate language (MSIL) file.  
   
 ## Syntax  
@@ -35,6 +36,7 @@ HRESULT Validate (
 ```  
   
 ## Parameters  
+
  `veh`  
  [in] A pointer to an `IVEHandler` instance that handles validation errors.  
   
@@ -42,7 +44,7 @@ HRESULT Validate (
  [in] A pointer to the application domain in which the file is loaded.  
   
  `ulFlags`  
- [in] A bitwise combination of [ValidatorFlags](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) values, indicating the validations that should be performed.  
+ [in] A bitwise combination of [ValidatorFlags](validatorflags-enumeration.md) values, indicating the validations that should be performed.  
   
  `ulMaxError`  
  [in] The maximum number of errors to allow before exiting the validation.  
@@ -60,7 +62,8 @@ HRESULT Validate (
  [in] The size, in bytes, of the file to be validated.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** IValidator.idl, IValidator.h  
   

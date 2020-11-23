@@ -23,10 +23,11 @@ A subclass of "ICorDebugValue" that applies to all values. This interface provid
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetValue Method](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-getvalue-method.md)|Copies the value into the specified buffer.|  
-|[SetValue Method](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md)|Copies a new value from the specified buffer.|  
+|[GetValue Method](icordebuggenericvalue-getvalue-method.md)|Copies the value into the specified buffer.|  
+|[SetValue Method](icordebuggenericvalue-setvalue-method.md)|Copies a new value from the specified buffer.|  
   
 ## Remarks  
+
  `ICorDebugGenericValue` is a sub-interface because it is non-remotable.  
   
  For reference types, the value is the reference rather than the contents of the reference.  
@@ -37,7 +38,8 @@ A subclass of "ICorDebugValue" that applies to all values. This interface provid
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -47,4 +49,4 @@ A subclass of "ICorDebugValue" that applies to all values. This interface provid
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

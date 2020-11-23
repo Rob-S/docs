@@ -7,9 +7,11 @@ helpviewer_keywords:
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
 ---
 # Using Regular Expressions with the MaskedTextBox Control in Visual Basic
+
 This example demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.  
   
 ## Description of the Masking Language  
+
  The standard <xref:System.Windows.Forms.MaskedTextBox> masking language is based on the one used by the `Masked Edit` control in Visual Basic 6.0 and should be familiar to users migrating from that platform.  
   
  The <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property of the <xref:System.Windows.Forms.MaskedTextBox> control specifies what input mask to use. The mask must be a string composed of one or more of the masking elements from the following table.  
@@ -38,6 +40,7 @@ This example demonstrates how to convert simple regular expressions to work with
  The decimal (.), thousandths (,), time (:), date (/), and currency ($) symbols default to displaying those symbols as defined by the application's culture. You can force them to display symbols for another culture by using the <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> property.  
   
 ## Regular Expressions and Masks  
+
  Although you can use regular expressions and masks to validate user input, they are not completely equivalent. Regular expressions can express more complex patterns than masks, but masks can express the same information more succinctly and in a culturally relevant format.  
   
  The following table compares four regular expressions and the equivalent mask for each.  
@@ -46,12 +49,12 @@ This example demonstrates how to convert simple regular expressions to work with
 |------------------------|----------|-----------|  
 |`\d{2}/\d{2}/\d{4}`|`00/00/0000`|The `/` character in the mask is a logical date separator, and it will appear to the user as the date separator appropriate to the application's current culture.|  
 |`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|A date (day, month abbreviation, and year) in United States format in which the three-letter month abbreviation is displayed with an initial uppercase letter followed by two lowercase letters.|  
-|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|United States phone number, area code optional. If the user does not wish to enter the optional characters, she can either enter spaces or place the mouse pointer directly at the position in the mask represented by the first 0.|  
-|`$\d{6}.00`|`$999,999.00`|A currency value in the range of 0 to 999999. The currency, thousandth, and decimal characters will be replaced at run-time with their culture-specific equivalents.|  
+|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|United States phone number, area code optional. If the user does not wish to enter the optional characters, they can either enter spaces or place the mouse pointer directly at the position in the mask represented by the first 0.|  
+|`$\d{6}.00`|`$999,999.00`|A currency value in the range of 0 to 999999. The currency, thousandth, and decimal characters will be replaced at run time with their culture-specific equivalents.|  
   
 ## See also
 
 - <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
 - <xref:System.Windows.Forms.MaskedTextBox>
-- [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
-- [MaskedTextBox Control](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [Validating Strings in Visual Basic](validating-strings.md)
+- [MaskedTextBox Control](/dotnet/desktop/winforms/controls/maskedtextbox-control-windows-forms)

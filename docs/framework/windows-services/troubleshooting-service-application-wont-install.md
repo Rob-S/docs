@@ -1,5 +1,6 @@
 ---
 title: "Troubleshooting: Service Application Won't Install"
+description: Do troubleshooting if your service application won't install. Make sure the ServiceName property for the service class is set correctly.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "troubleshooting service applications"
@@ -9,7 +10,6 @@ helpviewer_keywords:
   - "troubleshooting NT services"
   - "Windows Service applications, troubleshooting"
 ms.assetid: 45c48e2e-b97d-44bc-8896-14f328e0ce33
-author: "ghogen"
 ---
 # Troubleshooting: Service Application Won't Install
 If your service application will not install correctly, check to make sure that the <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> property for the service class is set to the same value as is shown in the installer for that service. The value must be the same in both instances in order for your service to install correctly.  

@@ -1,7 +1,6 @@
 ---
 title: "Potential pitfalls with PLINQ"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
@@ -39,7 +38,7 @@ In this case, it is best to parallelize only the outer data source (customers) u
 
 - The target system is known to have enough processors to handle the number of threads that will be produced by parallelizing the query on `cust.Orders`.
 
-In all cases, the best way to determine the optimum query shape is to test and measure. For more information, see [How to: Measure PLINQ Query Performance](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).
+In all cases, the best way to determine the optimum query shape is to test and measure. For more information, see [How to: Measure PLINQ Query Performance](how-to-measure-plinq-query-performance.md).
 
 ## Avoid calls to non-thread-safe methods
 
@@ -57,7 +56,7 @@ a.AsParallel().Where(...).OrderBy(...).Select(...).ForAll(x => fs.Write(x));
 
 ## Limit calls to thread-safe methods
 
-Most static methods in the .NET Framework are thread-safe and can be called from multiple threads concurrently. However, even in these cases, the synchronization involved can lead to significant slowdown in the query.
+Most static methods in .NET are thread-safe and can be called from multiple threads concurrently. However, even in these cases, the synchronization involved can lead to significant slowdown in the query.
 
 > [!NOTE]
 > You can test for this yourself by inserting some calls to <xref:System.Console.WriteLine%2A> in your queries. Although this method is used in the documentation examples for demonstration purposes, do not use it in PLINQ queries.
@@ -118,4 +117,4 @@ In particular, one iteration of a parallel loop should never wait on another ite
 
 ## See also
 
-- [Parallel LINQ (PLINQ)](parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](introduction-to-plinq.md)

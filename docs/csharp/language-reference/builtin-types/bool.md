@@ -1,9 +1,14 @@
 ---
+description: Learn about the built-in boolean type in C#
 title: "bool type - C# reference"
 ms.date: 11/26/2019
 f1_keywords: 
-  - "bool"
-  - "bool_CSharpKeyword"
+  - bool
+  - bool_CSharpKeyword
+  - "true"
+  - "false"
+  - true_CSharpKeyword
+  - false_CSharpKeyword
 helpviewer_keywords: 
   - "bool data type [C#]"
   - "Boolean [C#]"
@@ -21,7 +26,7 @@ The default value of the `bool` type is `false`.
 
 You can use the `true` and `false` literals to initialize a `bool` variable or to pass a `bool` value:
 
-[!code-csharp-interactive[bool literals](~/samples/csharp/language-reference/builtin-types/BoolType.cs#Literals)]
+[!code-csharp-interactive[bool literals](snippets/shared/BoolType.cs#Literals)]
 
 ## Three-valued Boolean logic
 
@@ -40,5 +45,5 @@ For more information, see [The bool type](~/_csharplang/spec/types.md#the-bool-t
 ## See also
 
 - [C# reference](../index.md)
-- [Built-in types table](../keywords/built-in-types-table.md)
+- [Value types](value-types.md)
 - [true and false operators](../operators/true-false-operators.md)

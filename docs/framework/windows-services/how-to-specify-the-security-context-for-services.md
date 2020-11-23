@@ -1,5 +1,6 @@
 ---
 title: "How to: Specify the Security Context for Services"
+description: Specify the security context for services. Services run in the default system account context have other system resource access rights than the logged-in user.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "Windows Service applications, security"
@@ -10,7 +11,6 @@ helpviewer_keywords:
   - "services, security"
   - "ServiceInstaller class, security context"
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
-author: "ghogen"
 ---
 # How to: Specify the Security Context for Services
 By default, services run in a different security context than that of the logged-in user. Services run in the context of the default system account, called `LocalSystem`, which gives them different access privileges to system resources than the user. You can change this behavior to specify a different user account under which your service should run.  

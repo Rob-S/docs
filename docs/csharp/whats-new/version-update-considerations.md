@@ -1,6 +1,7 @@
 ---
 title: Version and update considerations for C# developers
 description: Introducing new languages features in your library can impact the code that uses it.
+ms.topic: reference
 ms.date: 09/19/2018
 ---
 
@@ -57,4 +58,4 @@ New code:
 public double CalculateSquare(in double value) => value * value;
 ```
 
-The [What's new](index.md) articles note if introducing a feature that affects public declarations is source compatible or binary compatible.
+The [What's new](./csharp-9.md) articles note if introducing a feature that affects public declarations is source compatible or binary compatible.

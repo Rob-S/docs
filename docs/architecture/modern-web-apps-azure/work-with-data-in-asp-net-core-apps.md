@@ -3,7 +3,8 @@ title: Work with data in ASP.NET Core Apps
 description: Architect Modern Web Applications with ASP.NET Core and Azure | Working with data in ASP.NET Core apps
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
+ms.date: 08/12/2020
+no-loc: [Blazor, WebAssembly]
 ---
 # Working with Data in ASP.NET Core Apps
 
@@ -49,7 +50,7 @@ public class CatalogContext : DbContext
 }
 ```
 
-Your DbContext must have a constructor that accepts DbContextOptions and pass this argument to the base DbContext constructor. Note that if you have only one DbContext in your application, you can pass an instance of DbContextOptions, but if you have more than one you must use the generic DbContextOptions\<T> type, passing in your DbContext type as the generic parameter.
+Your DbContext must have a constructor that accepts DbContextOptions and pass this argument to the base DbContext constructor. If you have only one DbContext in your application, you can pass an instance of DbContextOptions, but if you have more than one you must use the generic DbContextOptions\<T> type, passing in your DbContext type as the generic parameter.
 
 ### Configuring EF Core
 
@@ -121,10 +122,10 @@ var brandsWithItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-You can include multiple relationships, and you can also include sub-relationships using ThenInclude. EF Core will execute a single query to retrieve the resulting set of entities. Alternately you can include navigation properties of navigation properties by passing a '.'-separated string to the `.Include()` extension method, like so:
+You can include multiple relationships, and you can also include subrelationships using ThenInclude. EF Core will execute a single query to retrieve the resulting set of entities. Alternately you can include navigation properties of navigation properties by passing a '.'-separated string to the `.Include()` extension method, like so:
 
 ```csharp
-    .Include(“Items.Products”)
+    .Include("Items.Products")
 ```
 
 In addition to encapsulating filtering logic, a specification can specify the shape of the data to be returned, including which properties to populate. The eShopOnWeb sample includes several specifications that demonstrate encapsulating eager loading information within the specification. You can see how the specification is used as part of a query here:
@@ -174,7 +175,7 @@ public class Basket : BaseEntity
 }
 ```
 
-Note that this entity type doesn’t expose a public `List` or `ICollection` property, but instead exposes an `IReadOnlyCollection` type that wraps the underlying List type. When using this pattern, you can indicate to Entity Framework Core to use the backing field like so:
+This entity type doesn't expose a public `List` or `ICollection` property, but instead exposes an `IReadOnlyCollection` type that wraps the underlying List type. When using this pattern, you can indicate to Entity Framework Core to use the backing field like so:
 
 ```csharp
 private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
@@ -194,13 +195,13 @@ private void ConfigureOrder(EntityTypeBuilder<Order> builder)
 }
 ```
 
-In this example, the `ShipToAddress` property is of type `Address`. `Address` is a value object with several properties such as `Street` and `City`. EF Core maps the `Order` object to its table with one column per `Address` property, prefixing each column name with the name of the property. In this example, the `Order` table would include columns such as `ShipToAddress_Street` and `ShipToAddress_City`.
+In this example, the `ShipToAddress` property is of type `Address`. `Address` is a value object with several properties such as `Street` and `City`. EF Core maps the `Order` object to its table with one column per `Address` property, prefixing each column name with the name of the property. In this example, the `Order` table would include columns such as `ShipToAddress_Street` and `ShipToAddress_City`. It's also possible to store owned types in separate tables, if desired.
 
-[EF Core 2.2 introduces support for collections of owned entities](https://docs.microsoft.com/ef/core/what-is-new/ef-core-2.2#collections-of-owned-entities)
+Learn more about owned [entity support in EF Core](/ef/core/modeling/owned-entities).
 
 ### Resilient connections
 
-External resources like SQL databases may occasionally be unavailable. In cases of temporary unavailability, applications can use retry logic to avoid raising an exception. This technique is commonly referred to as _connection resiliency_. You can implement your [own retry with exponential backoff](https://docs.microsoft.com/azure/architecture/patterns/retry) technique by attempting to retry with an exponentially increasing wait time, until a maximum retry count has been reached. This technique embraces the fact that cloud resources might intermittently be unavailable for short periods of time, resulting in failure of some requests.
+External resources like SQL databases may occasionally be unavailable. In cases of temporary unavailability, applications can use retry logic to avoid raising an exception. This technique is commonly referred to as _connection resiliency_. You can implement your [own retry with exponential backoff](/azure/architecture/patterns/retry) technique by attempting to retry with an exponentially increasing wait time, until a maximum retry count has been reached. This technique embraces the fact that cloud resources might intermittently be unavailable for short periods of time, resulting in failure of some requests.
 
 For Azure SQL DB, Entity Framework Core already provides internal database connection resiliency and retry logic. But you need to enable the Entity Framework execution strategy for each DbContext connection if you want to have resilient EF Core connections.
 
@@ -230,11 +231,11 @@ public class Startup
 
 #### Execution strategies and explicit transactions using BeginTransaction and multiple DbContexts
 
-When retries are enabled in EF Core connections, each operation you perform using EF Core becomes its own retriable operation. Each query and each call to SaveChanges will be retried as a unit if a transient failure occurs.
+When retries are enabled in EF Core connections, each operation you perform using EF Core becomes its own retryable operation. Each query and each call to SaveChanges will be retried as a unit if a transient failure occurs.
 
 However, if your code initiates a transaction using BeginTransaction, you are defining your own group of operations that need to be treated as a unit; everything inside the transaction has to be rolled back if a failure occurs. You will see an exception like the following if you attempt to execute that transaction when using an EF execution strategy (retry policy) and you include several SaveChanges from multiple DbContexts in it.
 
-System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retryable unit.
 
 The solution is to manually invoke the EF execution strategy with a delegate representing everything that needs to be executed. If a transient failure occurs, the execution strategy will invoke the delegate again. The following code shows how to implement this approach:
 
@@ -255,7 +256,7 @@ await strategy.ExecuteAsync(async () =>
 
         // Save to EventLog only if product price changed
         if (raiseProductPriceChangedEvent)
-        await _integrationEventLogService.SaveEventAsync(priceChangedEvent);
+            await _integrationEventLogService.SaveEventAsync(priceChangedEvent);
         transaction.Commit();
     }
 });
@@ -265,18 +266,18 @@ The first DbContext is the \_catalogContext and the second DbContext is within t
 
 > ### References – Entity Framework Core
 >
-> - **EF Core Docs**  
+> - **EF Core Docs**
 >   <https://docs.microsoft.com/ef/>
-> - **EF Core: Related Data**  
+> - **EF Core: Related Data**
 >   <https://docs.microsoft.com/ef/core/querying/related-data>
-> - **Avoid Lazy Loading Entities in ASPNET Applications**  
+> - **Avoid Lazy Loading Entities in ASPNET Applications**
 >   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## EF Core or micro-ORM?
 
-While EF Core is a great choice for managing persistence, and for the most part encapsulates database details from application developers, it is not the only choice. Another popular open source alternative is [Dapper](https://github.com/StackExchange/Dapper), a so-called micro-ORM. A micro-ORM is a lightweight, less full-featured tool for mapping objects to data structures. In the case of Dapper, its design goals focus on performance, rather than fully encapsulating the underlying queries it uses to retrieve and update data. Because it doesn't abstract SQL from the developer, Dapper is "closer to the metal" and lets developers write the exact queries they want to use for a given data access operation.
+While EF Core is a great choice for managing persistence, and for the most part encapsulates database details from application developers, it isn't the only choice. Another popular open-source alternative is [Dapper](https://github.com/StackExchange/Dapper), a so-called micro-ORM. A micro-ORM is a lightweight, less full-featured tool for mapping objects to data structures. In the case of Dapper, its design goals focus on performance, rather than fully encapsulating the underlying queries it uses to retrieve and update data. Because it doesn't abstract SQL from the developer, Dapper is "closer to the metal" and lets developers write the exact queries they want to use for a given data access operation.
 
-EF Core has two significant features it provides which separate it from Dapper but also add to its performance overhead. The first is translation from LINQ expressions into SQL. These translations are cached, but even so there is overhead in performing them the first time. The second is change tracking on entities (so that efficient update statements can be generated). This behavior can be turned off for specific queries by using the AsNotTracking extension. EF Core also generates SQL queries that usually are very efficient and in any case perfectly acceptable from a performance standpoint, but if you need fine control over the precise query to be executed, you can pass in custom SQL (or execute a stored procedure) using EF Core, too. In this case, Dapper still outperforms EF Core, but only slightly. Julie Lerman presents some performance data in her May 2016 MSDN article [Dapper, Entity Framework, and Hybrid Apps](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Additional performance benchmark data for a variety of data access methods can be found on [the Dapper site](https://github.com/StackExchange/Dapper).
+EF Core has two significant features it provides which separate it from Dapper but also add to its performance overhead. The first is translation from LINQ expressions into SQL. These translations are cached, but even so there is overhead in performing them the first time. The second is change tracking on entities (so that efficient update statements can be generated). This behavior can be turned off for specific queries by using the <xref:System.Data.Entity.DbExtensions.AsNoTracking%2A> extension. EF Core also generates SQL queries that usually are very efficient and in any case perfectly acceptable from a performance standpoint, but if you need fine control over the precise query to be executed, you can pass in custom SQL (or execute a stored procedure) using EF Core, too. In this case, Dapper still outperforms EF Core, but only slightly. Julie Lerman presents some performance data in her May 2016 MSDN article [Dapper, Entity Framework, and Hybrid Apps](/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Additional performance benchmark data for a variety of data access methods can be found on [the Dapper site](https://github.com/StackExchange/Dapper).
 
 To see how the syntax for Dapper varies from EF Core, consider these two versions of the same method for retrieving a list of items:
 
@@ -320,13 +321,13 @@ var data = connection.Query<Post, User, Post>(sql,
 (post, user) => { post.Owner = user; return post;});
 ```
 
-Because it offers less encapsulation, Dapper requires developers know more about how their data is stored, how to query it efficiently, and write more code to fetch it. When the model changes, instead of simply creating a new migration (another EF Core feature), and/or updating mapping information in one place in a DbContext, every query that is impacted must be updated. These queries have no compile time guarantees, so they may break at runtime in response to changes to the model or database, making errors more difficult to detect quickly. In exchange for these tradeoffs, Dapper offers extremely fast performance.
+Because it offers less encapsulation, Dapper requires developers know more about how their data is stored, how to query it efficiently, and write more code to fetch it. When the model changes, instead of simply creating a new migration (another EF Core feature), and/or updating mapping information in one place in a DbContext, every query that is impacted must be updated. These queries have no compile-time guarantees, so they may break at run time in response to changes to the model or database, making errors more difficult to detect quickly. In exchange for these tradeoffs, Dapper offers extremely fast performance.
 
 For most applications, and most parts of almost all applications, EF Core offers acceptable performance. Thus, its developer productivity benefits are likely to outweigh its performance overhead. For queries that can benefit from caching, the actual query may only be executed a tiny percentage of the time, making relatively small query performance differences moot.
 
 ## SQL or NoSQL
 
-Traditionally, relational databases like SQL Server have dominated the marketplace for persistent data storage, but they are not the only solution available. NoSQL databases like [MongoDB](https://www.mongodb.com/what-is-mongodb) offer a different approach to storing objects. Rather than mapping objects to tables and rows, another option is to serialize the entire object graph, and store the result. The benefits of this approach, at least initially, are simplicity and performance. It's certainly simpler to store a single serialized object with a key than to decompose the object into many tables with relationships and update and rows that may have changed since the object was last retrieved from the database. Likewise, fetching and deserializing a single object from a key-based store is typically much faster and easier than complex joins or multiple database queries required to fully compose the same object from a relational database. The lack of locks or transactions or a fixed schema also makes NoSQL databases very amenable to scaling across many machines, supporting very large datasets.
+Traditionally, relational databases like SQL Server have dominated the marketplace for persistent data storage, but they are not the only solution available. NoSQL databases like [MongoDB](https://www.mongodb.com/what-is-mongodb) offer a different approach to storing objects. Rather than mapping objects to tables and rows, another option is to serialize the entire object graph, and store the result. The benefits of this approach, at least initially, are simplicity and performance. It's simpler to store a single serialized object with a key than to decompose the object into many tables with relationships and update and rows that may have changed since the object was last retrieved from the database. Likewise, fetching and deserializing a single object from a key-based store is typically much faster and easier than complex joins or multiple database queries required to fully compose the same object from a relational database. The lack of locks or transactions or a fixed schema also makes NoSQL databases amenable to scaling across many machines, supporting very large datasets.
 
 On the other hand, NoSQL databases (as they are typically called) have their drawbacks. Relational databases use normalization to enforce consistency and avoid duplication of data. This reduces the total size of the database and ensures that updates to shared data are available immediately throughout the database. In a relational database, an Address table might reference a Country table by ID, such that if the name of a country/region were changed, the address records would benefit from the update without themselves having to be updated. However, in a NoSQL database, Address and its associated Country might be serialized as part of many stored objects. An update to a country/region name would require all such objects to be updated, rather than a single row. Relational databases can also ensure relational integrity by enforcing rules like foreign keys. NoSQL databases typically do not offer such constraints on their data.
 
@@ -334,7 +335,7 @@ Another complexity NoSQL databases must deal with is versioning. When an object'
 
 It's possible in NoSQL databases to store multiple versions of objects, something fixed schema relational databases typically do not support. However, in this case your application code will need to account for the existence of previous versions of objects, adding additional complexity.
 
-NoSQL databases typically do not enforce [ACID](https://en.wikipedia.org/wiki/ACID), which means they have both performance and scalability benefits over relational databases. They're well-suited to extremely large datasets and objects that are not well-suited to storage in normalized table structures. There is no reason why a single application cannot take advantage of both relational and NoSQL databases, using each where it is best suited.
+NoSQL databases typically do not enforce [ACID](https://en.wikipedia.org/wiki/ACID), which means they have both performance and scalability benefits over relational databases. They're well suited to extremely large datasets and objects that are not well suited to storage in normalized table structures. There is no reason why a single application cannot take advantage of both relational and NoSQL databases, using each where it is best suited.
 
 ## Azure Cosmos DB
 
@@ -348,7 +349,7 @@ The Azure Cosmos DB query language is a simple yet powerful interface for queryi
 
 **References – Azure Cosmos DB**
 
-- Azure Cosmos DB Introduction  
+- Azure Cosmos DB Introduction
   <https://docs.microsoft.com/azure/cosmos-db/introduction>
 
 ## Other persistence options
@@ -365,8 +366,8 @@ In addition to relational and NoSQL storage options, ASP.NET Core applications c
 
 **References – Azure Storage**
 
-- Azure Storage Introduction  
-  <https://docs.microsoft.com/azure/storage/storage-introduction>
+- Azure Storage Introduction
+  <https://docs.microsoft.com/azure/storage/common/storage-introduction>
 
 ## Caching
 
@@ -379,10 +380,9 @@ When implementing caching, it's important to keep in mind separation of concerns
 ASP.NET Core supports two levels of response caching. The first level does not cache anything on the server, but adds HTTP headers that instruct clients and proxy servers to cache responses. This is implemented by adding the ResponseCache attribute to individual controllers or actions:
 
 ```csharp
-    [ResponseCache(Duration = 60)]
-    public IActionResult Contact()
-    { }
-
+[ResponseCache(Duration = 60)]
+public IActionResult Contact()
+{
     ViewData["Message"] = "Your contact page.";
     return View();
 }
@@ -479,9 +479,9 @@ services.AddScoped<ICatalogService, CachedCatalogService>();
 services.AddScoped<CatalogService>();
 ```
 
-With this in place, the database calls to fetch the catalog data will only be made once per minute, rather than on every request. Depending on the traffic to the site, this can have a very significant impact on the number of queries made to the database, and the average page load time for the home page that currently depends on all three of the queries exposed by this service.
+With this in place, the database calls to fetch the catalog data will only be made once per minute, rather than on every request. Depending on the traffic to the site, this can have a significant impact on the number of queries made to the database, and the average page load time for the home page that currently depends on all three of the queries exposed by this service.
 
-An issue that arises when caching is implemented is _stale data_ – that is, data that has changed at the source but an out of date version remains in the cache. A simple way to mitigate this issue is to use small cache durations, since for a busy application there is limited additional benefit to extending the length data is cached. For example, consider a page that makes a single database query, and is requested 10 times per second. If this page is cached for one minute, it will result in the number of database queries made per minute to drop from 600 to 1, a reduction of 99.8%. If instead the cache duration were made one hour, the overall reduction would be 99.997%, but now the likelihood and potential age of stale data are both increased dramatically.
+An issue that arises when caching is implemented is _stale data_ – that is, data that has changed at the source but an out-of-date version remains in the cache. A simple way to mitigate this issue is to use small cache durations, since for a busy application there is limited additional benefit to extending the length data is cached. For example, consider a page that makes a single database query, and is requested 10 times per second. If this page is cached for one minute, it will result in the number of database queries made per minute to drop from 600 to 1, a reduction of 99.8%. If instead the cache duration were made one hour, the overall reduction would be 99.997%, but now the likelihood and potential age of stale data are both increased dramatically.
 
 Another approach is to proactively remove cache entries when the data they contain is updated. Any individual entry can be removed if its key is known:
 
@@ -489,7 +489,7 @@ Another approach is to proactively remove cache entries when the data they conta
 _cache.Remove(cacheKey);
 ```
 
-If your application exposes functionality for updating entries that it caches, you can remove the corresponding cache entries in your code that performs the updates. Sometimes there may be many different entries that depend on a particular set of data. In that case, it can be useful to create dependencies between cache entries, by using a CancellationChangeToken. With a CancellationChangeToken, you can expire multiple cache entries at once by cancelling the token.
+If your application exposes functionality for updating entries that it caches, you can remove the corresponding cache entries in your code that performs the updates. Sometimes there may be many different entries that depend on a particular set of data. In that case, it can be useful to create dependencies between cache entries, by using a CancellationChangeToken. With a CancellationChangeToken, you can expire multiple cache entries at once by canceling the token.
 
 ```csharp
 // configure CancellationToken and add entry to cache
@@ -503,7 +503,53 @@ new CancellationChangeToken(cts.Token));
 _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
-Caching can dramatically improve the performance of web pages that repeatedly request the same values from the database. Be sure to measure data access and page performance before applying caching, and only apply caching where you see a need for improvement. Caching consumes web server memory resources and increases the complexity of the application, so it’s important you don’t prematurely optimize using this technique.
+Caching can dramatically improve the performance of web pages that repeatedly request the same values from the database. Be sure to measure data access and page performance before applying caching, and only apply caching where you see a need for improvement. Caching consumes web server memory resources and increases the complexity of the application, so it's important you don't prematurely optimize using this technique.
+
+## Getting data to Blazor WebAssembly apps
+
+If you're building apps that use Blazor Server, you can use Entity Framework and other direct data access technologies as they've been discussed thus far in this chapter. However, when building Blazor WebAssembly apps, like other SPA frameworks, you will need a different strategy for data access. Typically, these applications access data and interact with the server through web API endpoints.
+
+If the data or operations being performed are sensitive, be sure to review the section on security in the [previous chapter](develop-asp-net-core-mvc-apps.md) and protect your APIs against unauthorized access.
+
+You'll find an example of a Blazor WebAssembly app in the [eShopOnWeb reference application](https://github.com/dotnet-architecture/eShopOnWeb), in the BlazorAdmin project. This project is hosted within the eShopOnWeb Web project, and allows users in the Administrators group to manage the items in the store. You can see a screenshot of the application in Figure 8-3.
+
+![eShopOnWeb Catalog Admin Screenshot](./media/image8-3.jpg)
+
+**Figure 8-3.** eShopOnWeb Catalog Admin Screenshot.
+
+When fetching data from web APIs within a Blazor WebAssembly app, you just use an instance of `HttpClient` as you would in any .NET application. The basic steps involved are to create the request to send (if required, usually for POST or PUT requests), await the request itself, verify the status code, and deserialize the response. If you're going to make many requests to a given set of APIs, it's a good idea to encapsulate your APIs and configure the `HttpClient` base address centrally. This way, if you need to adjust any of these settings between environments, you can make the changes in just one place. You should add support for this service in your `Program.Main`:
+
+```csharp
+builder.Services.AddScoped(sp =>
+    new HttpClient
+    {
+        BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+    });
+```
+
+If you need to access services securely, you should access a secure token and configure the `HttpClient` to pass this token as an Authentication header with every request:
+
+```csharp
+_httpClient.DefaultRequestHeaders.Authorization =
+    new AuthenticationHeaderValue("Bearer", token);
+```
+
+This can be done from any component that has the `HttpClient` injected into it, provided that `HttpClient` wasn't added to the application's services with a `Transient` lifetime. Every reference to `HttpClient` in the application references the same instance, so changes to it in one component flow through the entire application. A good place to perform this authentication check (followed by specifying the token) is in a shared component like the main navigation for the site. Learn more about this approach in the `BlazorAdmin` project in the [eShopOnWeb reference application](https://github.com/dotnet-architecture/eShopOnWeb).
+
+One benefit of Blazor WebAssembly over traditional JavaScript SPAs is that you don't need to keep to copies of your data transfer objects(DTOs) synchronized. Your Blazor WebAssembly project and your web API project can both share the same DTOs in a common shared project. This eliminates some of the friction involved in developing SPAs.
+
+To quickly get data from an API endpoint, you can use the built-in helper method, `GetFromJsonAsync`. There are similar methods for POST, PUT, etc. The following shows how to get a CatalogItem from an API endpoint using a configured `HttpClient` in a Blazor WebAssembly app:
+
+```csharp
+var item = await _httpClient.GetFromJsonAsync<CatalogItem>($"catalog-items/{id}");
+```
+
+Once you have the data you need, you'll typically track changes locally. When you want to make updates to the backend data store, you'll call additional web APIs for this purpose.
+
+**References – Blazor Data**
+
+- Call a web API from ASP.NET Core Blazor
+  <https://docs.microsoft.com/aspnet/core/blazor/call-web-api>
 
 >[!div class="step-by-step"]
 >[Previous](develop-asp-net-core-mvc-apps.md)

@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 9d5e01db-d3e7-446a-8d39-6600c73fea20
 ---
 # Operator is not valid for type '\<typename>'
+
 An operator is not appropriate for the types.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ An operator is not appropriate for the types.
   
 ## See also
 
-- [Operators](../../visual-basic/language-reference/operators/index.md)
+- [Operators](../language-reference/operators/index.md)

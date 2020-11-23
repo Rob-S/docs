@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # CeeSectionAttr Enumeration
-Provides values that specify attributes of a section for use by the [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.  
+
+Provides values that specify attributes of a section for use by the [ICeeGen](iceegen-interface.md) interface.  
   
 ## Syntax  
   
@@ -41,7 +42,8 @@ typedef enum  {
 |`sdExecute`|Section contains executable code that is allowed to be read and executed.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -51,4 +53,4 @@ typedef enum  {
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

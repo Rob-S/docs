@@ -16,14 +16,15 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugStringValue Interface
+
 A subclass of ICorDebugHeapValue that applies to string values.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetLength Method](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Gets the number of characters in the string referenced by this `ICorDebugStringValue`.|  
-|[GetString Method](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Gets the string referenced by this `ICorDebugStringValue`.|  
+|[GetLength Method](icordebugstringvalue-getlength-method.md)|Gets the number of characters in the string referenced by this `ICorDebugStringValue`.|  
+|[GetString Method](icordebugstringvalue-getstring-method.md)|Gets the string referenced by this `ICorDebugStringValue`.|  
   
 ## Remarks  
   
@@ -31,7 +32,8 @@ A subclass of ICorDebugHeapValue that applies to string values.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -41,4 +43,4 @@ A subclass of ICorDebugHeapValue that applies to string values.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

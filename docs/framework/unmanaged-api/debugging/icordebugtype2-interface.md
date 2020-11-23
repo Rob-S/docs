@@ -16,22 +16,25 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugType2 Interface
+
 Extends the ICorDebugType interface to retrieve the type identifier  of a base type or complex (user-defined) type.  
   
 ## Methods  
   
 |Method||  
 |------------|-|  
-|[GetTypeID Method](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-gettypeid-method.md)|Gets a [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) for this type.|  
+|[GetTypeID Method](icordebugtype2-gettypeid-method.md)|Gets a [COR_TYPEID](cor-typeid-structure.md) for this type.|  
   
 ## Remarks  
+
  This interface is a logical extension of the ICorDebugType interface.  
   
 > [!NOTE]
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Example  
- The following code fragment illustrates the use of the [ICorDebugType2::GetTypeID](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) method.  
+
+ The following code fragment illustrates the use of the [ICorDebugType2::GetTypeID](icordebugtype2-gettypeid-method.md) method.  
   
 ```cpp  
 // (error checking omitted for brevity)  
@@ -47,7 +50,8 @@ pType2->GetTypeID(&id);
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -57,4 +61,4 @@ pType2->GetTypeID(&id);
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

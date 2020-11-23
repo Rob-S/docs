@@ -1,13 +1,13 @@
 ---
 title: "Trimming and Removing Characters from Strings in .NET"
+description: Learn to trim blank spaces from the beginning or end of a string, or remove any number of spaces or characters from a specified position in the string in .NET.
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
   - "cpp"
 helpviewer_keywords: 
-  - "strings [.NET Framework], removing characters"
+  - "strings [.NET], removing characters"
   - "Remove method"
   - "TrimEnd method"
   - "Trim method"
@@ -17,6 +17,7 @@ helpviewer_keywords:
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
 ---
 # Trimming and Removing Characters from Strings in .NET
+
 If you are parsing a sentence into individual words, you might end up with words that have blank spaces (also called white spaces) on either end of the word. In this situation, you can use one of the trim methods in the **System.String** class to remove any number of spaces or other characters from a specified position in the string. The following table describes the available trim methods.  
   
 |Method name|Use|  
@@ -71,7 +72,7 @@ If you are parsing a sentence into individual words, you might end up with words
   
  This code displays `World!` to the console.  
   
-## Remove 
+## Remove
 
  The <xref:System.String.Remove%2A?displayProperty=nameWithType> method removes a specified number of characters that begin at a specified position in an existing string. This method assumes a zero-based index.  
   
@@ -90,4 +91,4 @@ If you are parsing a sentence into individual words, you might end up with words
   
 ## See also
 
-- [Basic String Operations](../../../docs/standard/base-types/basic-string-operations.md)
+- [Basic String Operations](basic-string-operations.md)

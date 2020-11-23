@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedVariable::GetAddressField2 Method
+
 Gets the second address field for this variable. Its meaning depends on the kind of address.  
   
 ## Syntax  
@@ -27,18 +28,21 @@ HRESULT GetAddressField2(
 ```  
   
 ## Parameters  
+
  `pRetVal`  
  [out] A pointer to a `ULONG32` that receives the second address field.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedVariable Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
-- [GetAddressField1 Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield1-method.md)
-- [GetAddressField3 Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield3-method.md)
-- [GetAddressKind Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddresskind-method.md)
+- [ISymUnmanagedVariable Interface](isymunmanagedvariable-interface.md)
+- [GetAddressField1 Method](isymunmanagedvariable-getaddressfield1-method.md)
+- [GetAddressField3 Method](isymunmanagedvariable-getaddressfield3-method.md)
+- [GetAddressKind Method](isymunmanagedvariable-getaddresskind-method.md)

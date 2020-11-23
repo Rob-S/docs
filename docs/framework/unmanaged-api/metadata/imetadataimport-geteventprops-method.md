@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::GetEventProps Method
+
 Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.  
   
 ## Syntax  
@@ -24,22 +25,23 @@ Gets metadata information for the event represented by the specified event token
 ```cpp  
 HRESULT GetEventProps (  
    [in]  mdEvent       ev,  
-   [out] mdTypeDef     *pClass,   
-   [out] LPCWSTR       szEvent,   
-   [in]  ULONG         cchEvent,   
-   [out] ULONG         *pchEvent,   
+   [out] mdTypeDef     *pClass,
+   [out] LPCWSTR       szEvent,
+   [in]  ULONG         cchEvent,
+   [out] ULONG         *pchEvent,
    [out] DWORD         *pdwEventFlags,  
    [out] mdToken       *ptkEventType,  
-   [out] mdMethodDef   *pmdAddOn,   
-   [out] mdMethodDef   *pmdRemoveOn,   
-   [out] mdMethodDef   *pmdFire,   
-   [out] mdMethodDef   rmdOtherMethod[],   
+   [out] mdMethodDef   *pmdAddOn,
+   [out] mdMethodDef   *pmdRemoveOn,
+   [out] mdMethodDef   *pmdFire,
+   [out] mdMethodDef   rmdOtherMethod[],
    [in]  ULONG         cMax,  
    [out] ULONG         *pcOtherMethod  
 );  
 ```  
   
 ## Parameters  
+
  `ev`  
  [in] The event metadata token representing the event to get metadata for.  
   
@@ -77,7 +79,8 @@ HRESULT GetEventProps (
  [out] The number of tokens returned in `rmdOtherMethod`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -87,5 +90,5 @@ HRESULT GetEventProps (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

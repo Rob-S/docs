@@ -1,8 +1,9 @@
 ---
+description: "private protected - C# Reference"
 title: "private protected - C# Reference"
-ms.custom: seodec18
-
 ms.date: 11/15/2017
+f1_keywords:
+  - "privateprotected_CSharpKeyword"
 author: "sputier"
 ---
 # private protected (C# Reference)
@@ -14,11 +15,9 @@ The `private protected` keyword combination is a member access modifier. A priva
 
 ## Example
 
-A private protected member of a base class is accessible from derived types in its containing assembly only if the static type of the variable is the derived class type. For example, consider the following code segment:  
+A private protected member of a base class is accessible from derived types in its containing assembly only if the static type of the variable is the derived class type. For example, consider the following code segment:
 
 ```csharp
-// Assembly1.cs  
-// Compile with: /target:library  
 public class BaseClass
 {
     private protected int myValue = 0;
@@ -32,7 +31,7 @@ public class DerivedClass1 : BaseClass
 
         // Error CS1540, because myValue can only be accessed by
         // classes derived from BaseClass.
-        // baseObject.myValue = 5;  
+        // baseObject.myValue = 5;
 
         // OK, accessed through the current derived class instance
         myValue = 5;
@@ -41,8 +40,8 @@ public class DerivedClass1 : BaseClass
 ```
 
 ```csharp
-// Assembly2.cs  
-// Compile with: /reference:Assembly1.dll  
+// Assembly2.cs
+// Compile with: /reference:Assembly1.dll
 class DerivedClass2 : BaseClass
 {
     void Access()
@@ -56,13 +55,16 @@ class DerivedClass2 : BaseClass
 
 This example contains two files, `Assembly1.cs` and `Assembly2.cs`.
 The first file contains a public base class, `BaseClass`, and a type derived from it, `DerivedClass1`. `BaseClass` owns a private protected member, `myValue`, which `DerivedClass1` tries to access in two ways. The first attempt to access `myValue` through an instance of `BaseClass` will produce an error. However, the attempt to use it as an inherited member in `DerivedClass1` will succeed.
+
 In the second file, an attempt to access `myValue` as an inherited member of `DerivedClass2` will produce an error, as it is only accessible by derived types in Assembly1.
 
-Struct members cannot be `private protected` because the struct cannot be inherited.  
+If `Assembly1.cs` contains an <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> that names `Assembly2`, the derived class `DerivedClass1` will have access to `private protected` members declared in `BaseClass`. `InternalsVisibleTo` makes `private protected` members visible to derived classes in other assemblies.
+
+Struct members cannot be `private protected` because the struct cannot be inherited.
 
 ## C# language specification
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## See also
 
@@ -75,4 +77,4 @@ Struct members cannot be `private protected` because the struct cannot be inheri
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Security concerns for internal virtual keywords](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Security concerns for internal virtual keywords](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

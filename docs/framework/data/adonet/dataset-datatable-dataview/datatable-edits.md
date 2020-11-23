@@ -7,6 +7,7 @@ dev_langs:
 ms.assetid: f08008a9-042e-4de9-94f3-4f0e502b1eb5
 ---
 # DataTable Edits
+
 When you make changes to column values in a <xref:System.Data.DataRow>, the changes are immediately placed in the current state of the row. The <xref:System.Data.DataRowState> is then set to **Modified**, and the changes are accepted or rejected using the <xref:System.Data.DataRow.AcceptChanges%2A> or <xref:System.Data.DataRow.RejectChanges%2A> methods of the **DataRow**. The **DataRow** also provides three methods that you can use to suspend the state of the row while you are editing it. These methods are <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A>, and <xref:System.Data.DataRow.CancelEdit%2A>.  
   
  When you modify column values in a **DataRow** directly, the **DataRow** manages the column values using the **Current**, **Default**, and **Original** row versions. In addition to these row versions, the **BeginEdit**, **EndEdit**, and **CancelEdit** methods use a fourth row version: **Proposed**. For more information about row versions, see [Row States and Row Versions](row-states-and-row-versions.md).  
@@ -32,7 +33,7 @@ workTable.Rows.Add(workRow)
   
 workRow.BeginEdit()  
 ' Causes the ColumnChanged event to write a message and cancel the edit.  
-workRow(0) = ""       
+workRow(0) = ""
 workRow.EndEdit()  
   
 ' Displays "Smith, New".  
@@ -53,7 +54,7 @@ End Sub
 DataTable workTable  = new DataTable();  
 workTable.Columns.Add("LastName", typeof(String));  
   
-workTable.ColumnChanged +=   
+workTable.ColumnChanged +=
   new DataColumnChangeEventHandler(OnColumnChanged);  
   
 DataRow workRow = workTable.NewRow();  
@@ -62,11 +63,11 @@ workTable.Rows.Add(workRow);
   
 workRow.BeginEdit();  
 // Causes the ColumnChanged event to write a message and cancel the edit.  
-workRow[0] = "";       
+workRow[0] = "";
 workRow.EndEdit();  
   
 // Displays "Smith, New".  
-Console.WriteLine("{0}, {1}", workRow[0], workRow.RowState);    
+Console.WriteLine("{0}, {1}", workRow[0], workRow.RowState);
   
 protected static void OnColumnChanged(  
   Object sender, DataColumnChangeEventArgs args)  

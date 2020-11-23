@@ -57,7 +57,7 @@ The next figure shows the initial app screenshots.
 
 ![ASP.NET MVC and ASP.NET Web Forms applications (existing/legacy technologies)](./media/image5-2.png)
 
-Dependencies in ASP.NET 4.x or earlier versions (either for MVC or for Web Forms) means that these applications won’t run on .NET Core unless the code is fully rewritten by using ASP.NET Core MVC.
+Dependencies in ASP.NET 4.x or earlier versions (either for MVC or for Web Forms) means that these applications won't run on .NET Core unless the code is fully rewritten by using ASP.NET Core MVC.
 
 ### Scenario 2: WCF service and WinForms client app (3-Tier app)
 
@@ -73,8 +73,8 @@ The benefits of this walkthrough are simple: Just get familiar with the code and
 
 Explore this content more in-depth on the GitHub wiki:
 
-- [Tour on the baseline ASP.NET MVC and Web Forms “legacy” apps](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
-- [Tour on the baseline WCF service and WinForms (3-Tier) “legacy” app](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
+- [Tour on the baseline ASP.NET MVC and Web Forms "legacy" apps](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
+- [Tour on the baseline WCF service and WinForms (3-Tier) "legacy" app](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
 
 ## Walkthrough 2: Containerize your existing .NET applications with Windows Containers
 
@@ -168,7 +168,7 @@ Azure currently provides a VM named **Windows Server 2016 with Containers**. You
 
 ### Benefits
 
-Although Windows Containers can be deployed to on-premises Windows Server 2016 VMs, when you deploy to Azure, you get an easier way to get started, with ready-to-use Windows Server Container VMs. You also get a common online location that’s accessible to testers, and automatic scalability through Azure virtual machine scale sets.
+Although Windows Containers can be deployed to on-premises Windows Server 2016 VMs, when you deploy to Azure, you get an easier way to get started, with ready-to-use Windows Server Container VMs. You also get a common online location that's accessible to testers, and automatic scalability through Azure virtual machine scale sets.
 
 ### Next steps
 
@@ -186,7 +186,7 @@ The full technical walkthrough is available in the eShopModernizing GitHub repo 
 
 ### Overview
 
-[Azure Container Instances (ACI)](https://docs.microsoft.com/azure/container-instances/) is the quickest way to have a Containers dev/test/staging environment where you can deploy single instances of containers.
+[Azure Container Instances (ACI)](/azure/container-instances/) is the quickest way to have a Containers dev/test/staging environment where you can deploy single instances of containers.
 
 ### Goals
 
@@ -208,7 +208,7 @@ Deploying Windows Containers with either full .NET Framework / ASP.NET or SQL Se
 
 As main conclusion, using Azure Container Instances is a very compelling option for Dev/Test scenarios and for CI/CD pipelines.
 
-## Next steps
+### Next steps
 
 Explore this content more in-depth on the GitHub wiki:
 
@@ -270,7 +270,7 @@ With Kubernetes, developers can progress from thinking about physical and virtua
 
 - Application health checks
 
-## Next steps
+### Next steps
 
 Explore this content more in-depth on the GitHub wiki: <https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
@@ -298,7 +298,7 @@ The goal of this walkthrough is to learn how to deploy a Windows Container–bas
 
 Deploying to Azure App Service for Containers offers the benefits of containers paired with the PaaS benefits of Azure App Service. The app service can easily be scaled both vertically and horizontally, and can be configured to autoscale to meet changing demands. Updates can be performed with zero downtime and configuration of continuous deployment from a registry is easily configured as well.
 
-## Next steps
+### Next steps
 
 Explore this content more in-depth on the GitHub wiki: <https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 

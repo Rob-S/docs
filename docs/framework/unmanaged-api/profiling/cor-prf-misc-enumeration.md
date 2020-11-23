@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # COR_PRF_MISC Enumeration
+
 Contains constant values that specify special identifiers.  
   
 ## Syntax  
@@ -32,12 +33,13 @@ typedef enum {
   
 |Member|Description|  
 |------------|-----------------|  
-|`PROFILER_PARENT_UNKNOWN`|The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.|  
+|`PROFILER_PARENT_UNKNOWN`|The default identifier used by [ICorProfilerInfo::GetModuleInfo](icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.|  
 |`PROFILER_GLOBAL_CLASS`|The default class identifier for global constants that do not belong to a class.|  
 |`PROFILER_GLOBAL_MODULE`|The default module identifier for global objects that do not belong to a module.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -47,4 +49,4 @@ typedef enum {
   
 ## See also
 
-- [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Profiling Enumerations](profiling-enumerations.md)

@@ -2,7 +2,7 @@
 
 Some browsers, such as Chrome and Firefox, made breaking changes to their implementations of `SameSite` for cookies. The changes impact remote authentication scenarios, such as OpenID Connect and WS-Federation, which must opt out by sending `SameSite=None`. However, `SameSite=None` breaks on iOS 12 and some older versions of other browsers. The app needs to sniff these versions and omit `SameSite`.
 
-For discussion on this issue, see [aspnet/AspNetCore#14996](https://github.com/aspnet/AspNetCore/issues/14996).
+For discussion on this issue, see [dotnet/aspnetcore#14996](https://github.com/dotnet/aspnetcore/issues/14996).
 
 #### Version introduced
 
@@ -18,7 +18,7 @@ Google proposed a new draft standard that isn't backwards compatible. The standa
 
 ASP.NET Core 3.1 has been updated to implement the new `SameSite` behavior. The update redefines the behavior of `SameSiteMode.None` to emit `SameSite=None` and adds a new value `SameSiteMode.Unspecified` to omit the `SameSite` attribute. All cookie APIs now default to `Unspecified`, though some components that use cookies set values more specific to their scenarios such as the OpenID Connect correlation and nonce cookies.
 
-For other recent changes in this area, see [HTTP: Some cookie SameSite defaults changed to None](/dotnet/core/compatibility/2.2-3.0#http-some-cookie-samesite-defaults-changed-to-none). In ASP.NET Core 3.0, most defaults were changed from <xref:Microsoft.AspNetCore.Http.SameSiteMode.Lax?displayProperty=nameWithType> to <xref:Microsoft.AspNetCore.Http.SameSiteMode.None?displayProperty=nameWithType> (but still using the prior standard).
+For other recent changes in this area, see [HTTP: Some cookie SameSite defaults changed to None](../../../../docs/core/compatibility/2.2-3.0.md#http-some-cookie-samesite-defaults-changed-to-none). In ASP.NET Core 3.0, most defaults were changed from <xref:Microsoft.AspNetCore.Http.SameSiteMode.Lax?displayProperty=nameWithType> to <xref:Microsoft.AspNetCore.Http.SameSiteMode.None?displayProperty=nameWithType> (but still using the prior standard).
 
 #### Reason for change
 
@@ -75,35 +75,35 @@ In *Startup.cs*, add the following code:
 ```csharp
 private void CheckSameSite(HttpContext httpContext, CookieOptions options)
 {
-    if (options.SameSite == SameSiteMode.None) 
-    { 
+    if (options.SameSite == SameSiteMode.None)
+    {
         var userAgent = httpContext.Request.Headers["User-Agent"].ToString();
-        // TODO: Use your User Agent library of choice here. 
-        if (/* UserAgent doesn't support new behavior */) 
-        { 
+        // TODO: Use your User Agent library of choice here.
+        if (/* UserAgent doesn't support new behavior */)
+        {
             options.SameSite = SameSiteMode.Unspecified;
         }
     }
 }
 
-public void ConfigureServices(IServiceCollection services) 
-{ 
-    services.Configure<CookiePolicyOptions>(options => 
-    { 
+public void ConfigureServices(IServiceCollection services)
+{
+    services.Configure<CookiePolicyOptions>(options =>
+    {
         options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
         options.OnAppendCookie = cookieContext =>
             CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
         options.OnDeleteCookie = cookieContext =>
             CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
-    }); 
-} 
+    });
+}
 
-public void Configure(IApplicationBuilder app) 
-{ 
+public void Configure(IApplicationBuilder app)
+{
     // Before UseAuthentication or anything else that writes cookies.
     app.UseCookiePolicy();
 
-    app.UseAuthentication(); 
+    app.UseAuthentication();
     // code omitted for brevity
 }
 ```
@@ -113,10 +113,10 @@ public void Configure(IApplicationBuilder app)
 The `Microsoft.AspNetCore.SuppressSameSiteNone` compatibility switch enables you to temporarily opt out of the new ASP.NET Core cookie behavior. Add the following JSON to a *runtimeconfig.template.json* file in your project:
 
 ```json
-{ 
-  "configProperties": { 
-    "Microsoft.AspNetCore.SuppressSameSiteNone": "true" 
-  } 
+{
+  "configProperties": {
+    "Microsoft.AspNetCore.SuppressSameSiteNone": "true"
+  }
 }
 ```
 

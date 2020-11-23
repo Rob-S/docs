@@ -3,7 +3,7 @@ title: Add WCF Web Service Reference
 description: An overview of the Microsoft WCF Web Service Reference Provider Tool that adds functionality for .NET Core and ASP.NET Core projects, similar to Add Service Reference for .NET Framework projects.
 author: dasetser
 ms.date: 10/29/2019
-ms.custom: "mvc, seodec18"
+ms.custom: "mvc"
 ---
 
 # Use the WCF Web Service Reference Provider Tool
@@ -79,7 +79,7 @@ When these processes complete, you can create an instance of the generated WCF c
 
 ## Feedback & questions
 
-If you have any questions or feedback, report it at [Developer Community](https://developercommunity.visualstudio.com/) using the [Report a problem](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) tool.
+If you have any product feedback, report it at [Developer Community](https://aka.ms/feedback/report?space=61) using the [Report a problem](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) tool.
 
 ## Release notes
 

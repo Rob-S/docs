@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 4bcc4724-2b4e-4df8-9b4b-16054607f87d
 ---
 # How to: Return a Value from a Procedure (Visual Basic)
+
 A `Function` procedure returns a value to the calling code either by executing a `Return` statement or by encountering an `Exit Function` or `End Function` statement.  
   
 ### To return a value using the Return statement  
@@ -36,7 +37,7 @@ A `Function` procedure returns a value to the calling code either by executing a
   
 4. You can have only one `End Function` statement in a `Function` procedure.  
   
-     For more information and an example, see "Return Value" in [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+     For more information and an example, see "Return Value" in [Function Statement](../../../language-reference/statements/function-statement.md).  
   
 ## See also
 
@@ -45,7 +46,7 @@ A `Function` procedure returns a value to the calling code either by executing a
 - [Property Procedures](./property-procedures.md)
 - [Operator Procedures](./operator-procedures.md)
 - [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md)
-- [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [Return Statement](../../../../visual-basic/language-reference/statements/return-statement.md)
+- [Function Statement](../../../language-reference/statements/function-statement.md)
+- [Return Statement](../../../language-reference/statements/return-statement.md)
 - [How to: Create a Procedure that Returns a Value](./how-to-create-a-procedure-that-returns-a-value.md)
 - [How to: Call a Procedure That Returns a Value](./how-to-call-a-procedure-that-returns-a-value.md)

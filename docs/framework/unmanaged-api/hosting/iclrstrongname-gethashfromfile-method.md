@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRStrongName::GetHashFromFile Method
+
 Generates a hash over the contents of the specified file.  
   
 ## Syntax  
@@ -24,14 +25,15 @@ Generates a hash over the contents of the specified file.
 ```cpp  
 HRESULT GetHashFromFile (  
     [in]  LPCSTR   szFilePath,  
-    [in, out] unsigned int   *piHashAlg,   
-    [out] BYTE     *pbHash,      
-    [in]  DWORD    cchHash,      
+    [in, out] unsigned int   *piHashAlg,
+    [out] BYTE     *pbHash,
+    [in]  DWORD    cchHash,
     [out] DWORD    *pchHash  
 );  
 ```  
   
 ## Parameters  
+
  `szFilePath`  
  [in] The name of the file to hash.  
   
@@ -48,13 +50,16 @@ HRESULT GetHashFromFile (
  [out] The size, in bytes, of the returned `pbHash`.  
   
 ## Return Value  
- `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).  
+
+ `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) for a list).  
   
 ## Remarks  
- This method is the same as the [ICLRStrongName::GetHashFromFileW](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md) method, except that the file name specification is ANSI instead of Unicode.  
+
+ This method is the same as the [ICLRStrongName::GetHashFromFileW](iclrstrongname-gethashfromfilew-method.md) method, except that the file name specification is ANSI instead of Unicode.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -64,5 +69,5 @@ HRESULT GetHashFromFile (
   
 ## See also
 
-- [GetHashFromFileW Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md)
-- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [GetHashFromFileW Method](iclrstrongname-gethashfromfilew-method.md)
+- [ICLRStrongName Interface](iclrstrongname-interface.md)

@@ -1,13 +1,10 @@
 ---
 title: "XDR Validation with XmlSchemaCollection"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # XDR Validation with XmlSchemaCollection
 

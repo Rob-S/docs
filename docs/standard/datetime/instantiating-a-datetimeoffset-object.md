@@ -1,13 +1,13 @@
 ---
 title: "Instantiating a DateTimeOffset object"
+description: Read how to instantiate (make an instance of) a DateTimeOffset object in .NET. Learn about date & time literals, constructors, implicit type conversion, & more.
 ms.date: "04/10/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
   - "instantiating time zone objects"
-  - "time zone objects [.NET Framework], instantiation"
+  - "time zone objects [.NET], instantiation"
   - "DateTimeOffset structure, converting to DateTime"
   - "DateTimeOffset structure, instantiating"
 ms.assetid: 9648375f-d368-4373-a976-3332ece00c0a
@@ -88,4 +88,4 @@ The following example illustrates calls to each of these four string conversion 
 
 ## See also
 
-- [Dates, times, and time zones](../../../docs/standard/datetime/index.md)
+- [Dates, times, and time zones](index.md)

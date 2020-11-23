@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
 ---
 # Accessing XML in Visual Basic
+
 Visual Basic provides XML axis properties for accessing and navigating [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] structures. These properties use a special syntax to enable you to access elements and attributes by specifying the XML names.  
   
  The following table lists the language features that enable you to access XML elements and attributes in Visual Basic.  
@@ -25,30 +26,32 @@ Visual Basic provides XML axis properties for accessing and navigating [!INCLUDE
 |*value*|`contacts...<name>.Value`|Gets the string representation of the first object in the sequence, or `Nothing` if the sequence is empty.|  
   
 ## In This Section  
- [How to: Access XML Descendant Elements](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  
+
+ [How to: Access XML Descendant Elements](how-to-access-xml-descendant-elements.md)  
  Shows how to use a descendant axis property to access all XML elements that have a specified name and that are contained under a specified XML element.  
   
- [How to: Access XML Child Elements](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-child-elements.md)  
+ [How to: Access XML Child Elements](how-to-access-xml-child-elements.md)  
  Shows how to use a child axis property to access all XML child elements that have a specified name in an XML element.  
   
- [How to: Access XML Attributes](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-attributes.md)  
+ [How to: Access XML Attributes](how-to-access-xml-attributes.md)  
  Shows how to use an attribute axis property to access all XML attributes that have a specified name in an XML element.  
   
- [How to: Declare and Use XML Namespace Prefixes](../../../../visual-basic/programming-guide/language-features/xml/how-to-declare-and-use-xml-namespace-prefixes.md)  
+ [How to: Declare and Use XML Namespace Prefixes](how-to-declare-and-use-xml-namespace-prefixes.md)  
  Shows how to declare an XML namespace prefix and use it to create and access XML elements.  
   
 ## Related Sections  
- [XML Axis Properties](../../../../visual-basic/language-reference/xml-axis/index.md)  
+
+ [XML Axis Properties](../../../language-reference/xml-axis/index.md)  
  Provides links to sections describing the various XML access properties.  
   
- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
+ [Overview of LINQ to XML in Visual Basic](overview-of-linq-to-xml.md)  
  Provides an introduction to using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.  
   
- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ [Creating XML in Visual Basic](creating-xml.md)  
  Provides an introduction to using XML literals in Visual Basic.  
   
- [Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
+ [Manipulating XML in Visual Basic](manipulating-xml.md)  
  Provides links to sections about loading and modifying XML in Visual Basic.  
   
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
+ [XML](index.md)  
  Provides links to sections describing how to use [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.

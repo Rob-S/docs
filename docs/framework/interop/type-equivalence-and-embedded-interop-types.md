@@ -1,5 +1,6 @@
 ---
 title: "Type equivalence and embedded interop types"
+description: Understand type equivalence between .NET types and members with a managed assembly, and COM types that are embedded into that assembly. For .NET 4 and above.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "type equivalence"
@@ -48,5 +49,5 @@ If a type does not have the <xref:System.Runtime.InteropServices.TypeIdentifierA
 ## See also
 
 - <xref:System.Type.IsEquivalentTo%2A>
-- [Using COM Types in Managed Code](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Using COM Types in Managed Code](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Importing a Type Library as an Assembly](importing-a-type-library-as-an-assembly.md)

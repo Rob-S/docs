@@ -1,30 +1,54 @@
 ---
-title: Get Started with .NET
-description: Lists various articles for getting started with .NET, both from a language and platform perspective.
-author: cartermp
-ms.author: mairaw
-ms.date: 05/01/2017
-ms.technology: dotnet-standard
-ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
+title: Tutorials for getting started with .NET
+description: Choose a tutorial for learning .NET app development or one of the .NET programming languages.
+author: tdykstra
+ms.date: 09/30/2020
 ---
-# Get Started
+# Tutorials for getting started with .NET
 
-There are a number of ways to get started with .NET. Because .NET is a massive platform, there are multiple articles in this documentation which show how you can get started with .NET, each from a different perspective.
+The following step-by-step tutorials run on Windows, Linux, or macOS, except as noted.
 
-## Get started using .NET languages
+## Tutorials for creating apps
 
-* The [C# Getting Started](../csharp/getting-started/index.md) articles and [C# Tutorials](../csharp/tutorials/index.md) provide a number of ways to get started in a C#-centric way.
+* Create a console app
+  * [using Visual Studio Code](../core/tutorials/with-visual-studio-code.md)
+  * [using Visual Studio](../core/tutorials/with-visual-studio.md) (Windows)
+  * [using Visual Studio for Mac](../core/tutorials/with-visual-studio-mac.md) (macOS)
+* Create a web app
+  * [with server-side web UI](/aspnet/core/tutorials/razor-pages/razor-pages-start)
+  * [with client-side web UI](https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/intro)
+* [Create a web API](/aspnet/core/tutorials/first-web-api)
+* [Create a remote procedure call web app](/aspnet/core/tutorials/grpc/grpc-start)
+* [Create a real-time web app](/aspnet/core/tutorials/signalr)
+* [Create a serverless function in the cloud](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-csharp)
+* [Create a mobile app for Android and iOS](https://dotnet.microsoft.com/learn/xamarin/hello-world-tutorial/intro) (Windows)
+* Create a Windows desktop app
+  * [WPF](/visualstudio/get-started/csharp/tutorial-wpf)
+  * [Windows Forms](/visualstudio/ide/create-csharp-winform-visual-studio)
+  * [Universal Windows Platform (UWP)](/visualstudio/get-started/csharp/tutorial-uwp)
+* [Create a game using Unity](https://dotnet.microsoft.com/learn/games/unity-tutorial/intro)
+* [Create a Windows service](/aspnet/core/host-and-deploy/windows-service)
 
-* The [F# Getting Started](../fsharp/get-started/index.md) tutorials provide three primary ways you can use F#: with Visual Studio, Visual Studio Code, or command-line tools.
+## Tutorials for creating class libraries
 
-* The [Visual Basic Getting Started](../visual-basic/getting-started/index.md) articles provide guides for using Visual Basic in Visual Studio.
+* Create a class library
+  * [using Visual Studio Code](../core/tutorials/library-with-visual-studio-code.md)
+  * [using Visual Studio](../core/tutorials/library-with-visual-studio.md) (Windows)
+  * [using Visual Studio for Mac](../core/tutorials/library-with-visual-studio-mac.md) (macOS)
 
-## Get started using .NET Core
+## Resources for learning .NET languages
 
-* [Getting Started with .NET Core](../core/get-started.md) provides an overview of articles which show how to get started with .NET Core on different operating systems and using different tools.
+* [Get started with C#](../csharp/getting-started/index.md)
+* [Get started with F#](../fsharp/get-started/index.md)
+* [Get started with Visual Basic](../visual-basic/getting-started/index.md)
 
-* The [.NET Core Tutorials](../core/tutorials/index.md) detail a number of ways you can get started with .NET Core using your operating system and tooling of choice.
+## Other get-started resources
 
-## Get started using .NET Core on Docker
+The following resources are for getting started with developing .NET apps but aren't step-by-step tutorials:
 
-[Introduction to .NET and Docker](../core/docker/introduction.md) shows how you can use .NET Core on Windows Docker containers.
+* [Internet of Things (IoT)](https://dotnet.microsoft.com/apps/iot)
+* [Machine learning](../machine-learning/index.yml)
+
+## Next steps
+
+To learn more about .NET, see [Introduction to .NET](../core/introduction.md).

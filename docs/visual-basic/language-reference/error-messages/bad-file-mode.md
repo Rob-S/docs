@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
 ---
 # Bad file mode
+
 Statements used in manipulating file contents must be appropriate to the mode in which the file was opened. Possible causes include:  
   
 - A `FilePutObject` or `FileGetObject` statement specifies a sequential file.  
@@ -31,4 +32,4 @@ Statements used in manipulating file contents must be appropriate to the mode in
 ## See also
 
 - <xref:Microsoft.VisualBasic.FileSystem>
-- [Troubleshooting: Reading from and Writing to Text Files](../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
+- [Troubleshooting: Reading from and Writing to Text Files](../../developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

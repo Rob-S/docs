@@ -1,8 +1,9 @@
 ---
+description: "protected internal - C# Reference"
 title: "protected internal - C# Reference"
-ms.custom: seodec18
-
 ms.date: 11/15/2017
+f1_keywords:
+  - "protectedinternal_CSharpKeyword"
 author: "sputier"
 ---
 # protected internal (C# Reference)
@@ -72,4 +73,4 @@ Struct members cannot be `protected internal` because the struct cannot be inher
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Security concerns for internal virtual keywords](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Security concerns for internal virtual keywords](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

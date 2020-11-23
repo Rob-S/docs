@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # StackTrace_SimpleContext Structure
+
 Provides a simple context that can be used in place of a full `CONTEXT` structure.  
   
 ## Syntax  
@@ -39,10 +40,12 @@ struct StackTrace_SimpleContext
 |`InstructionOffset`|The instruction pointer, or the enter instruction pointer (EIP) on x86 platforms.|  
   
 ## Remarks  
+
  Because stack trace functions typically need to return only the address, frame offset, and stack address, you can optionally use the `SimpleContext` structure instead of a large `CONTEXT` structure.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** SOS_Stacktrace.h  
   
@@ -50,5 +53,5 @@ struct StackTrace_SimpleContext
   
 ## See also
 
-- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Debugging Structures](debugging-structures.md)
+- [Debugging](index.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRPolicyManager::SetDefaultAction Method
+
 Specifies the policy action the common language runtime (CLR) should take when the specified operation occurs.  
   
 ## Syntax  
@@ -29,11 +30,12 @@ HRESULT SetDefaultAction (
 ```  
   
 ## Parameters  
+
  `operation`  
- [in] One of the [EClrOperation](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) values, indicating the action for which CLR behavior should be customized.  
+ [in] One of the [EClrOperation](eclroperation-enumeration.md) values, indicating the action for which CLR behavior should be customized.  
   
  `action`  
- [in] One of the [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) values, indicating the policy action the CLR should take when `operation` occurs.  
+ [in] One of the [EPolicyAction](epolicyaction-enumeration.md) values, indicating the policy action the CLR should take when `operation` occurs.  
   
 ## Return Value  
   
@@ -48,6 +50,7 @@ HRESULT SetDefaultAction (
 |E_INVALIDARG|An invalid `action` was specified for the `operation`, or an invalid value was supplied for `operation`.|  
   
 ## Remarks  
+
  Not all policy action values can be specified as the default behavior for CLR operations. `SetDefaultAction` can typically be used only to escalate behavior. For example, a host can specify that thread aborts be turned into rude thread aborts, but cannot specify the opposite. The table below describes the valid `action` values for each possible `operation` value.  
   
 |Value for `operation`|Valid values for `action`|  
@@ -60,7 +63,8 @@ HRESULT SetDefaultAction (
 |OPR_FinalizerRun|-   eNoAction<br />-   eAbortThread<br />-   eRudeAbortThread<br />-   eUnloadAppDomain<br />-   eRudeUnloadAppDomain<br />-   eExitProcess<br />-   eFastExitProcess<br />-   eRudeExitProcess<br />-   eDisableRuntime|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -70,6 +74,6 @@ HRESULT SetDefaultAction (
   
 ## See also
 
-- [EClrOperation Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)
-- [EPolicyAction Enumeration](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)
-- [ICLRPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
+- [EClrOperation Enumeration](eclroperation-enumeration.md)
+- [EPolicyAction Enumeration](epolicyaction-enumeration.md)
+- [ICLRPolicyManager Interface](iclrpolicymanager-interface.md)

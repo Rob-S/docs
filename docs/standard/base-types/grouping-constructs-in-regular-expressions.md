@@ -1,7 +1,7 @@
 ---
 title: "Grouping Constructs in Regular Expressions"
+description: Learn to use grouping constructs in .NET. Grouping constructs delineate subexpressions of a regular expression and capture substrings of an input string.
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
@@ -9,17 +9,18 @@ helpviewer_keywords:
   - "lookbehinds"
   - "regular expressions, grouping constructs"
   - "lookaheads"
-  - ".NET Framework regular expressions, grouping constructs"
+  - ".NET regular expressions, grouping constructs"
   - "constructs, grouping"
   - "grouping constructs"
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 ---
 # Grouping Constructs in Regular Expressions
+
 Grouping constructs delineate the subexpressions of a regular expression and capture the substrings of an input string. You can use grouping constructs to do the following:  
   
 - Match a subexpression that is repeated in the input string.  
   
-- Apply a quantifier to a subexpression that has multiple regular expression language elements. For more information about quantifiers, see [Quantifiers](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+- Apply a quantifier to a subexpression that has multiple regular expression language elements. For more information about quantifiers, see [Quantifiers](quantifiers-in-regular-expressions.md).  
   
 - Include a subexpression in the string that is returned by the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> methods.  
   
@@ -38,12 +39,14 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |[Zero-width negative lookahead assertions](#zerowidth_negative_lookahead_assertion)|Noncapturing|  
 |[Zero-width positive lookbehind assertions](#zerowidth_positive_lookbehind_assertion)|Noncapturing|  
 |[Zero-width negative lookbehind assertions](#zerowidth_negative_lookbehind_assertion)|Noncapturing|  
-|[Nonbacktracking subexpressions](#nonbacktracking_subexpression)|Noncapturing|  
+|[Atomic groups](#atomic_groups)|Noncapturing|  
   
  For information on groups and the regular expression object model, see [Grouping constructs and regular expression objects](#Objects).  
   
-<a name="matched_subexpression"></a>   
+<a name="matched_subexpression"></a>
+
 ## Matched Subexpressions  
+
  The following grouping construct captures a matched subexpression:  
   
  `(` *subexpression* `)`  
@@ -81,8 +84,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`(\1)`|Match the string in the first captured group. This is the second capturing group. The example assigns it to a captured group so that the starting position of the duplicate word can be retrieved from the `Match.Index` property.|  
 |`\W`|Match a non-word character, including white space and punctuation. This prevents the regular expression pattern from matching a word that starts with the word from the first captured group.|  
   
-<a name="named_matched_subexpression"></a>   
+<a name="named_matched_subexpression"></a>
+
 ## Named Matched Subexpressions  
+
  The following grouping construct captures a matched subexpression and lets you access it by name or by number:  
   
 `(?<name>subexpression)`  
@@ -155,8 +160,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`\D+`|Match one or more non-decimal digit characters.|  
 |`(?<digit>\d+)?`|Match zero or one occurrence of one or more decimal digit characters. Assign the match to the `digit` named group.|  
   
-<a name="balancing_group_definition"></a>   
+<a name="balancing_group_definition"></a>
+
 ## Balancing Group Definitions  
+
  A balancing group definition deletes the definition of a previously defined group and stores, in the current group, the interval between the previously defined group and the current group. This grouping construct has the following format:  
   
 `(?<name1-name2>subexpression)`  
@@ -197,7 +204,7 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`(?(Open)(?!))`|If the `Open` group exists, abandon the match if an empty string can be matched, but do not advance the position of the regular expression engine in the string. This is a zero-width negative lookahead assertion. Because an empty string is always implicitly present in an input string, this match always fails. Failure of this match indicates that the angle brackets are not balanced.|  
 |`$`|Match the end of the input string.|  
   
- The final subexpression, `(?(Open)(?!))`, indicates whether the nesting constructs in the input string are properly balanced (for example, whether each left angle bracket is matched by a right angle bracket). It uses conditional matching based on a valid captured group; for more information, see [Alternation Constructs](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md). If the `Open` group is defined, the regular expression engine attempts to match the subexpression `(?!)` in the input string. The `Open` group should be defined only if nesting constructs are unbalanced. Therefore, the pattern to be matched in the input string should be one that always causes the match to fail. In this case, `(?!)` is a zero-width negative lookahead assertion that always fails, because an empty string is always implicitly present at the next position in the input string.  
+ The final subexpression, `(?(Open)(?!))`, indicates whether the nesting constructs in the input string are properly balanced (for example, whether each left angle bracket is matched by a right angle bracket). It uses conditional matching based on a valid captured group; for more information, see [Alternation Constructs](alternation-constructs-in-regular-expressions.md). If the `Open` group is defined, the regular expression engine attempts to match the subexpression `(?!)` in the input string. The `Open` group should be defined only if nesting constructs are unbalanced. Therefore, the pattern to be matched in the input string should be one that always causes the match to fail. In this case, `(?!)` is a zero-width negative lookahead assertion that always fails, because an empty string is always implicitly present at the next position in the input string.  
   
  In the example, the regular expression engine evaluates the input string "\<abc><mno\<xyz>>" as shown in the following table.  
   
@@ -228,8 +235,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |23|`(?(Open)(?!))`|The `Open` group is not defined, so no match is attempted.|  
 |24|`$`|Matches the end of the input string.|  
   
-<a name="noncapturing_group"></a>   
+<a name="noncapturing_group"></a>
+
 ## Noncapturing Groups  
+
  The following grouping construct does not capture the substring that is matched by a subexpression:  
   
 `(?:subexpression)`
@@ -254,13 +263,15 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`(?:\b(?:\w+)\W*)+`|Match the pattern of one or more word characters starting at a word boundary, followed by zero or more non-word characters, one or more times. Do not assign the matched text to a captured group.|  
 |`\.`|Match a period.|  
   
-<a name="group_options"></a>   
+<a name="group_options"></a>
+
 ## Group Options  
+
  The following grouping construct applies or disables the specified options within a subexpression:  
   
  `(?imnsx-imnsx:` *subexpression* `)`  
   
- where *subexpression* is any valid regular expression pattern. For example, `(?i-s:)` turns on case insensitivity and disables single-line mode. For more information about the inline options you can specify, see [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md).  
+ where *subexpression* is any valid regular expression pattern. For example, `(?i-s:)` turns on case insensitivity and disables single-line mode. For more information about the inline options you can specify, see [Regular Expression Options](regular-expression-options.md).  
   
 > [!NOTE]
 > You can specify options that apply to an entire regular expression rather than a subexpression by using a <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> class constructor or a static method. You can also specify inline options that apply after a specific point in a regular expression by using the `(?imnsx-imnsx)` language construct.  
@@ -278,8 +289,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
  [!code-csharp[Conceptual.Regex.Language.Options#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#8)]
  [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]  
   
-<a name="zerowidth_positive_lookahead_assertion"></a>   
+<a name="zerowidth_positive_lookahead_assertion"></a>
+
 ## Zero-Width Positive Lookahead Assertions  
+
  The following grouping construct defines a zero-width positive lookahead assertion:  
   
  `(?=` *subexpression* `)`  
@@ -301,8 +314,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`\w+`|Match one or more word characters.|  
 |`(?=\sis\b)`|Determine whether the word characters are followed by a white-space character and the string "is", which ends on a word boundary. If so, the match is successful.|  
   
-<a name="zerowidth_negative_lookahead_assertion"></a>   
+<a name="zerowidth_negative_lookahead_assertion"></a>
+
 ## Zero-Width Negative Lookahead Assertions  
+
  The following grouping construct defines a zero-width negative lookahead assertion:  
   
  `(?!` *subexpression* `)`  
@@ -339,8 +354,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`\b`|End the match at a word boundary.|  
 |`\p{P})`|If the next character is not a punctuation symbol (such as a period or a comma), the match succeeds.|  
   
-<a name="zerowidth_positive_lookbehind_assertion"></a>   
+<a name="zerowidth_positive_lookbehind_assertion"></a>
+
 ## Zero-Width Positive Lookbehind Assertions  
+
  The following grouping construct defines a zero-width positive lookbehind assertion:  
   
  `(?<=` *subexpression* `)`  
@@ -364,8 +381,10 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
   
  Zero-width positive lookbehind assertions are also used to limit backtracking when the last character or characters in a captured group must be a subset of the characters that match that group's regular expression pattern. For example, if a group captures all consecutive word characters, you can use a zero-width positive lookbehind assertion to require that the last character be alphabetical.  
   
-<a name="zerowidth_negative_lookbehind_assertion"></a>   
+<a name="zerowidth_negative_lookbehind_assertion"></a>
+
 ## Zero-Width Negative Lookbehind Assertions  
+
  The following grouping construct defines a zero-width negative lookbehind assertion:  
   
  `(?<!` *subexpression* `)`  
@@ -389,9 +408,11 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`\d{4}\b`|Match four decimal digits, and end the match at a word boundary.|  
 |<code>(?<!(Saturday&#124;Sunday) )</code>|If the match is preceded by something other than the strings "Saturday" or "Sunday" followed by a space, the match is successful.|  
   
-<a name="nonbacktracking_subexpression"></a>   
-## Nonbacktracking Subexpressions  
- The following grouping construct represents a nonbacktracking subexpression (also known as a "greedy" subexpression):  
+<a name="atomic_groups"></a>
+
+## Atomic groups  
+
+ The following grouping construct represents an atomic group (known in some other regular expression engines as a nonbacktracking subexpression, an atomic subexpression, or a once-only subexpression):
   
  `(?>` *subexpression* `)`  
   
@@ -403,7 +424,7 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
   
  This option is recommended if you know that backtracking will not succeed. Preventing the regular expression engine from performing unnecessary searching improves performance.  
   
- The following example illustrates how a nonbacktracking subexpression modifies the results of a pattern match. The backtracking regular expression successfully matches a series of repeated characters followed by one more occurrence of the same character on a word boundary, but the nonbacktracking regular expression does not.  
+ The following example illustrates how an atomic group modifies the results of a pattern match. The backtracking regular expression successfully matches a series of repeated characters followed by one more occurrence of the same character on a word boundary, but the nonbacktracking regular expression does not.  
   
  [!code-csharp[RegularExpressions.Language.Grouping#11](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/nonbacktracking1.cs#11)]
  [!code-vb[RegularExpressions.Language.Grouping#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/nonbacktracking1.vb#11)]  
@@ -418,13 +439,15 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
 |`\b`|End the match on a word boundary.|  
 |`(?>(\w)\1+)`|Match one or more occurrences of a duplicated word character, but do not backtrack to match the last character on a word boundary.|  
   
-<a name="Objects"></a>   
+<a name="Objects"></a>
+
 ## Grouping Constructs and Regular Expression Objects  
+
  Substrings that are matched by a regular expression capturing group are represented by <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> objects, which can be retrieved from the <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> object that is returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property. The <xref:System.Text.RegularExpressions.GroupCollection> object is populated as follows:  
   
 - The first <xref:System.Text.RegularExpressions.Group> object in the collection (the object at index zero) represents the entire match.  
   
-- The next set of <xref:System.Text.RegularExpressions.Group> objects represent unnamed (numbered) capturing groups. They appear in the order in which they are defined in the regular expression, from left to right. The index values of these groups range from 1 to the number of unnamed capturing groups in the collection. (The index of a particular group is equivalent to its numbered backreference. For more information about backreferences, see [Backreference Constructs](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)  
+- The next set of <xref:System.Text.RegularExpressions.Group> objects represent unnamed (numbered) capturing groups. They appear in the order in which they are defined in the regular expression, from left to right. The index values of these groups range from 1 to the number of unnamed capturing groups in the collection. (The index of a particular group is equivalent to its numbered backreference. For more information about backreferences, see [Backreference Constructs](backreference-constructs-in-regular-expressions.md).)  
   
 - The final set of <xref:System.Text.RegularExpressions.Group> objects represent named capturing groups. They appear in the order in which they are defined in the regular expression, from left to right. The index value of the first named capturing group is one greater than the index of the last unnamed capturing group. If there are no unnamed capturing groups in the regular expression, the index value of the first named capturing group is one.  
   
@@ -448,5 +471,5 @@ Grouping constructs delineate the subexpressions of a regular expression and cap
   
 ## See also
 
-- [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [Backtracking](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
+- [Regular Expression Language - Quick Reference](regular-expression-language-quick-reference.md)
+- [Backtracking](backtracking-in-regular-expressions.md)

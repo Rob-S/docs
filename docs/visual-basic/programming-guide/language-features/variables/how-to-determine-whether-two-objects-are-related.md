@@ -22,6 +22,7 @@ You can compare two objects to determine the relationship, if any, between the c
     <xref:System.Type.IsInstanceOfType%2A> returns `True` if its argument type inherits from the <xref:System.Type?displayProperty=nameWithType> object type.
 
 ## Example
+
  The following example determines whether one object represents a class derived from another object's class.
 
 ```vb
@@ -47,7 +48,7 @@ Note the unexpected placement of the two object variables in the call to <xref:S
 - <xref:System.Object.GetType%2A>
 - <xref:System.Type?displayProperty=nameWithType>
 - <xref:System.Type.IsInstanceOfType%2A>
-- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)
-- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [Object Variable Values](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [How to: Determine Whether Two Objects Are Identical](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+- [Object Data Type](../../../language-reference/data-types/object-data-type.md)
+- [Object Variables](object-variables.md)
+- [Object Variable Values](object-variable-values.md)
+- [How to: Determine Whether Two Objects Are Identical](how-to-determine-whether-two-objects-are-identical.md)

@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: de70697d-e2aa-4661-bfbb-f7ba34539516
 ---
 # Cannot determine array type because it is Nothing
+
 The type of your array cannot be determined because it has been set to the value `Nothing`.  
   
 ## To correct this error  
@@ -14,5 +15,5 @@ The type of your array cannot be determined because it has been set to the value
   
 ## See also
 
-- [Arrays](../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Nothing](../../visual-basic/language-reference/nothing.md)
+- [Arrays](../programming-guide/language-features/arrays/index.md)
+- [Nothing](../language-reference/nothing.md)

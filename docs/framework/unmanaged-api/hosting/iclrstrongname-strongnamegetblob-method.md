@@ -18,6 +18,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRStrongName::StrongNameGetBlob Method
+
 Fills the specified buffer with the binary representation of the executable file at the specified address.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT StrongNameGetBlob (
 ```  
   
 ## Parameters  
+
  `wszFilePath`  
  [in] A valid path to the executable file to be loaded.  
   
@@ -41,10 +43,12 @@ HRESULT StrongNameGetBlob (
  [in, out] The requested maximum size, in bytes, of `pbBlob`. Upon return, the actual size, in bytes, of `pbBlob`.  
   
 ## Return Value  
- `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).  
+
+ `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) for a list).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -54,5 +58,5 @@ HRESULT StrongNameGetBlob (
   
 ## See also
 
-- [StrongNameGetBlobFromImage Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
-- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameGetBlobFromImage Method](iclrstrongname-strongnamegetblobfromimage-method.md)
+- [ICLRStrongName Interface](iclrstrongname-interface.md)

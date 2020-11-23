@@ -8,7 +8,7 @@ helpviewer_keywords:
   - "BC30068"
 ms.assetid: d65141e1-f31e-4ac5-a3b8-0b2e02a71ebf
 ---
-# Expression is a value and therefore cannot be the target of an assignment
+# BC30068: Expression is a value and therefore cannot be the target of an assignment
 
 A statement attempts to assign a value to an expression. You can assign a value only to a writable variable, property, or array element at run time. The following example illustrates how this error can occur.
 
@@ -54,6 +54,6 @@ exitButton.Location = exitLocation
 
 ## See also
 
-- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Statements](../../../visual-basic/programming-guide/language-features/statements.md)
-- [Troubleshooting Procedures](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)
+- [Operators and Expressions](../../programming-guide/language-features/operators-and-expressions/index.md)
+- [Statements](../../programming-guide/language-features/statements.md)
+- [Troubleshooting Procedures](../../programming-guide/language-features/procedures/troubleshooting-procedures.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorPublishEnum::Reset Method
+
 Moves the cursor of to the beginning of the enumeration.  
   
 ## Syntax  
@@ -26,10 +27,12 @@ HRESULT Reset ();
 ```  
   
 ## Parameters  
+
  `Reset` takes no parameters.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -39,4 +42,4 @@ HRESULT Reset ();
   
 ## See also
 
-- [ICorPublishEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md)
+- [ICorPublishEnum Interface](icorpublishenum-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: "<system.serviceModel>"
+description: Learn about the WCF ServiceModel configuration elements, which enable you to configure WCF service and client applications.
 ms.date: "03/30/2017"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#system.ServiceModel"
@@ -10,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
 ---
 # \<system.serviceModel>
+
 This configuration section contains all the Windows Communication Foundation (WCF) ServiceModel configuration elements.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -49,9 +51,11 @@ This configuration section contains all the Windows Communication Foundation (WC
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
+
  None  
   
 ### Child Elements  
@@ -79,6 +83,7 @@ This configuration section contains all the Windows Communication Foundation (WC
 |\<configuration>|The root element for all configuration elements in a .NET configuration file.|  
   
 ## Remarks  
+
  WCF does not add elements to the configuration sections of other products.  
   
  WCF services are defined in the `services` section of the configuration file. An assembly can contain any number of services. Each service has its own `service` configuration section. The section and its content define the service contract, behavior, and endpoints of the particular service.  
@@ -92,6 +97,7 @@ This configuration section contains all the Windows Communication Foundation (WC
  Bindings are linked to endpoints through the combination of the attributes `name` and `bindingConfiguration`. The `binding` attribute defines in which section the binding is defined. The `bindingConfiguration` attribute defines which configured binding within the binding section is used. A binding section can define several configured bindings.  
   
 ## Example  
+
  This is an example of a WCF configuration file.  
   
 ```xml  

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorPublishProcess::GetProcessID Method
+
 Gets the operating system identifier for this process.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT GetProcessID (
 ```  
   
 ## Parameters  
+
  `pid`  
- [out] A pointer to the identifier of the process represented by this [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) object.  
+ [out] A pointer to the identifier of the process represented by this [ICorPublishProcess](icorpublishprocess-interface.md) object.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -42,4 +45,4 @@ HRESULT GetProcessID (
   
 ## See also
 
-- [ICorPublishProcess Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)
+- [ICorPublishProcess Interface](icorpublishprocess-interface.md)

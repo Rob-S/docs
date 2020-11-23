@@ -16,13 +16,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugCode4 Interface
+
 Provides a method that enables a debugger to enumerate the local variables and arguments in a function.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[EnumerateVariableHomes Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-enumeratevariablehomes-method.md)|Gets an enumerator to the local variables and arguments in a function.|  
+|[EnumerateVariableHomes Method](icordebugcode4-enumeratevariablehomes-method.md)|Gets an enumerator to the local variables and arguments in a function.|  
   
 ## Remarks  
   
@@ -30,7 +31,8 @@ Provides a method that enables a debugger to enumerate the local variables and a
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -40,5 +42,5 @@ Provides a method that enables a debugger to enumerate the local variables and a
   
 ## See also
 
-- [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugCode3 Interface](icordebugcode3-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

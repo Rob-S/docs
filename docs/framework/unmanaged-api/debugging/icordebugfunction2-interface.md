@@ -23,10 +23,10 @@ Logically extends the ICorDebugFunction interface to provide support for Just My
   
 |Method|Description|  
 |------------|-----------------|  
-|[EnumerateNativeCode Method](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-enumeratenativecode-method.md)|(Not yet implemented.) Gets an interface pointer to an ICorDebugCodeEnum that contains the native code statements in the function referenced by this ICorDebugFunction2 object.|  
-|[GetJMCStatus Method](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getjmcstatus-method.md)|Gets a value that indicates whether this function is marked as user code.|  
-|[GetVersionNumber Method](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md)|Gets the Edit and Continue version of this function.|  
-|[SetJMCStatus Method](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-setjmcstatus-method.md)|Marks this function for Just My Code stepping.|  
+|[EnumerateNativeCode Method](icordebugfunction2-enumeratenativecode-method.md)|(Not yet implemented.) Gets an interface pointer to an ICorDebugCodeEnum that contains the native code statements in the function referenced by this ICorDebugFunction2 object.|  
+|[GetJMCStatus Method](icordebugfunction2-getjmcstatus-method.md)|Gets a value that indicates whether this function is marked as user code.|  
+|[GetVersionNumber Method](icordebugfunction2-getversionnumber-method.md)|Gets the Edit and Continue version of this function.|  
+|[SetJMCStatus Method](icordebugfunction2-setjmcstatus-method.md)|Marks this function for Just My Code stepping.|  
   
 ## Remarks  
   
@@ -34,7 +34,8 @@ Logically extends the ICorDebugFunction interface to provide support for Just My
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -44,4 +45,4 @@ Logically extends the ICorDebugFunction interface to provide support for Just My
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

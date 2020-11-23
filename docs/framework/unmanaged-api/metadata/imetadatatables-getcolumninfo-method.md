@@ -17,12 +17,13 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataTables::GetColumnInfo Method
+
 Gets data about the specified column in the specified table.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT GetColumnInfo (   
+HRESULT GetColumnInfo (
     [in]  ULONG        ixTbl,  
     [in]  ULONG        ixCol,  
     [out] ULONG        *poCol,  
@@ -33,6 +34,7 @@ HRESULT GetColumnInfo (
 ```  
   
 ## Parameters
+
 =======
 
  `ixTbl`  
@@ -52,7 +54,7 @@ HRESULT GetColumnInfo (
   
  `ppName`  
  [out] A pointer to a pointer to the column name.  
- 
+
 ## Remarks
 
 The returned column type falls within a range of values:
@@ -80,7 +82,8 @@ Values that are stored in the *heap* (that is, `IsHeapType == true`) can be read
 > To use the constants defined in the table above, include the directive `#define _DEFINE_META_DATA_META_CONSTANTS` provided by the *cor.h* header file.
 
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -90,5 +93,5 @@ Values that are stored in the *heap* (that is, `IsHeapType == true`) can be read
   
 ## See also
 
-- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables Interface](imetadatatables-interface.md)
+- [IMetaDataTables2 Interface](imetadatatables2-interface.md)

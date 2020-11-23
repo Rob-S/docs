@@ -1,7 +1,7 @@
 ---
 title: "Regular Expression Language - Quick Reference"
+description: In this quick reference, learn to use regular expression patterns to match input text. A pattern has one or more character literals, operators, or constructs.
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 f1_keywords:
   - "VS.RegularExpressionBuilder"
 helpviewer_keywords:
@@ -10,9 +10,9 @@ helpviewer_keywords:
   - "searching with regular expressions, language elements"
   - "pattern-matching with regular expressions, language elements"
   - "regular expressions, language elements"
-  - "regular expressions [.NET Framework]"
+  - "regular expressions [.NET]"
   - "cheat sheet"
-  - ".NET Framework regular expressions, language elements"
+  - ".NET regular expressions, language elements"
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 ---
 # Regular Expression Language - Quick Reference
@@ -87,15 +87,15 @@ Grouping constructs delineate subexpressions of a regular expression and typical
 |Grouping construct|Description|Pattern|Matches|
 |------------------------|-----------------|-------------|-------------|
 |`(` *subexpression* `)`|Captures the matched subexpression and assigns it a one-based ordinal number.|`(\w)\1`|`"ee"` in `"deep"`|
-|`(?<` *name* `>` *subexpression* `)`|Captures the matched subexpression into a named group.|`(?<double>\w)\k<double>`|`"ee"` in `"deep"`|
-|`(?<` *name1* `-` *name2* `>` *subexpression* `)`|Defines a balancing group definition. For more information, see the "Balancing Group Definition" section in [Grouping Constructs](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` in `"3+2^((1-3)*(3-1))"`|
+|`(?<` *name* `>` *subexpression* `)`<br /> or <br />`(?'` *name* `'` *subexpression* `)`|Captures the matched subexpression into a named group.|`(?<double>\w)\k<double>`|`"ee"` in `"deep"`|
+|`(?<` *name1* `-` *name2* `>` *subexpression* `)` <br /> or <br /> `(?'` *name1* `-` *name2* `'` *subexpression* `)`|Defines a balancing group definition. For more information, see the "Balancing Group Definition" section in [Grouping Constructs](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` in `"3+2^((1-3)*(3-1))"`|
 |`(?:` *subexpression* `)`|Defines a noncapturing group.|`Write(?:Line)?`|`"WriteLine"` in `"Console.WriteLine()"`<br /><br /> `"Write"` in `"Console.Write(value)"`|
 |`(?imnsx-imnsx:` *subexpression* `)`|Applies or disables the specified options within *subexpression*. For more information, see [Regular Expression Options](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` in `"A12xl A12XL a12xl"`|
 |`(?=` *subexpression* `)`|Zero-width positive lookahead assertion.|`\w+(?=\.)`|`"is"`, `"ran"`, and `"out"` in `"He is. The dog ran. The sun is out."`|
 |`(?!` *subexpression* `)`|Zero-width negative lookahead assertion.|`\b(?!un)\w+\b`|`"sure"`, `"used"` in `"unsure sure unity used"`|
 |`(?<=` *subexpression* `)`|Zero-width positive lookbehind assertion.|`(?<=19)\d{2}\b`|`"99"`, `"50"`, `"05"` in `"1851 1999 1950 1905 2003"`|
 |`(?<!` *subexpression* `)`|Zero-width negative lookbehind assertion.|`(?<!19)\d{2}\b`|`"51"`, `"03"` in `"1851 1999 1950 1905 2003"`|
-|`(?>` *subexpression* `)`|Nonbacktracking (or "greedy") subexpression.|`[13579](?>A+B+)`|`"1ABB"`, `"3ABB"`, and `"5AB"` in `"1ABB 3ABBC 5AB 5AC"`|
+|`(?>` *subexpression* `)`|Atomic group.|`[13579](?>A+B+)`|`"1ABB"`, `"3ABB"`, and `"5AB"` in `"1ABB 3ABBC 5AB 5AC"`|
 
 ## Quantifiers
 
@@ -185,6 +185,5 @@ Miscellaneous constructs either modify a regular expression pattern or provide i
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
 - [Regular Expressions](regular-expressions.md)
 - [Regular Expression Classes](the-regular-expression-object-model.md)
-- [Regular Expression Examples](regular-expression-examples.md)
 - [Regular Expressions - Quick Reference (download in Word format)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
 - [Regular Expressions - Quick Reference (download in PDF format)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

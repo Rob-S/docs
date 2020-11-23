@@ -1,15 +1,11 @@
 ---
 title: dotnet add reference command
 description: The dotnet add reference command provides a convenient option to add project to project references.
-ms.date: 06/26/2019
+ms.date: 02/14/2020
 ---
 # dotnet add reference
 
-**This article applies to: ✓** .NET Core 1.x SDK and later versions
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**This article applies to:** ✔️ .NET Core 2.x SDK and later versions
 
 ## Name
 
@@ -17,7 +13,12 @@ ms.date: 06/26/2019
 
 ## Synopsis
 
-`dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help] [--interactive]`
+```dotnetcli
+dotnet add [<PROJECT>] reference [-f|--framework <FRAMEWORK>]
+     [--interactive] <PROJECT_REFERENCES>
+
+dotnet add reference -h|--help
+```
 
 ## Description
 
@@ -43,17 +44,17 @@ The `dotnet add reference` command provides a convenient option to add project r
 
 ## Options
 
+- **`-f|--framework <FRAMEWORK>`**
+
+  Adds project references only when targeting a specific [framework](../../standard/frameworks.md) using the TFM format.
+
 - **`-h|--help`**
 
   Prints out a short help for the command.
 
-- **`-f|--framework <FRAMEWORK>`**
-
-  Adds project references only when targeting a specific [framework](../../standard/frameworks.md).
-
 - **`--interactive`**
 
-  Allows the command to stop and wait for user input or action (for example, to complete authentication). Available since .NET Core 3.0 SDK.
+  Allows the command to stop and wait for user input or action (typically used to complete authentication). Available since .NET Core 3.0 SDK.
 
 ## Examples
 

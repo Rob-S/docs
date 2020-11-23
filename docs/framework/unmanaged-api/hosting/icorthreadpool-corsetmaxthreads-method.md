@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorThreadpool::CorSetMaxThreads Method
+
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  
   
 ## Syntax  
@@ -29,7 +30,8 @@ HRESULT CorSetMaxThreads (
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -39,4 +41,4 @@ HRESULT CorSetMaxThreads (
   
 ## See also
 
-- [ICorThreadpool Interface](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)
+- [ICorThreadpool Interface](icorthreadpool-interface.md)

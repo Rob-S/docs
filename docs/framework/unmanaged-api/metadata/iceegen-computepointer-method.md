@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::ComputePointer Method
+
 Determines the buffer for the specified code section.  
   
  This method is obsolete and should not be used.  
@@ -26,12 +27,13 @@ Determines the buffer for the specified code section.
 ```cpp  
 HRESULT ComputePointer (  
     [in]  HCEESECTION  section,  
-    [in]  ULONG        RVA,   
+    [in]  ULONG        RVA,
     [out] UCHAR        **lpBuffer  
 );  
 ```  
   
 ## Parameters  
+
  `section`  
  [in] The code section for which to return a buffer.  
   
@@ -42,7 +44,8 @@ HRESULT ComputePointer (
  [out] A pointer to the returned buffer.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -52,4 +55,4 @@ HRESULT ComputePointer (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

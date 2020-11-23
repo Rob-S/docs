@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::GetInterfaceImplProps Method
+
 Gets a pointer to the metadata tokens for the <xref:System.Type> that implements the specified method, and for the interface that declares that method.
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT GetInterfaceImplProps (
 ```  
   
 ## Parameters  
+
  `iiImpl`  
  [in] The metadata token representing the method to return the class and interface tokens for.  
   
@@ -42,9 +44,9 @@ HRESULT GetInterfaceImplProps (
 ## Remarks
 
  You obtain the value for `iImpl` by calling the [EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md) method.
- 
+
  For example, suppose that a class has an `mdTypeDef` token value of 0x02000007 and that it implements three
-interfaces whose types have tokens: 
+interfaces whose types have tokens:
 
 - 0x02000003 (TypeDef)
 - 0x0100000A (TypeRef)
@@ -65,10 +67,11 @@ Recall, the token is a 4-byte value:
 - The lower 3 bytes hold the row number, or RID.
 - The upper byte holds the token type – 0x09 for `mdtInterfaceImpl`.
 
-`GetInterfaceImplProps` returns the information held in the row whose token you provide in the `iImpl` argument. 
+`GetInterfaceImplProps` returns the information held in the row whose token you provide in the `iImpl` argument.
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -78,5 +81,5 @@ Recall, the token is a 4-byte value:
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

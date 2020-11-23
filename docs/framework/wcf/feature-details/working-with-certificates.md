@@ -1,5 +1,6 @@
 ---
 title: "Working with Certificates"
+description: Learn about X.509 digital certificate features and how to use them in WCF. Resources in this article can further explain these concepts.
 ms.date: "03/30/2017"
 dev_langs:
   - "csharp"
@@ -12,7 +13,7 @@ ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
 
 To program Windows Communication Foundation (WCF) security, X.509 digital certificates are commonly used to authenticate clients and servers, encrypt, and digitally sign messages. This topic briefly explains X.509 digital certificate features and how to use them in WCF, and includes links to topics that explain these concepts further or that show how to accomplish common tasks using WCF and certificates.
 
-In brief, a digital certificate is a part of a *public key infrastructure* (PKI), which is a system of digital certificates, certificate authorities, and other registration authorities that verify and authenticate the validity of each party involved in an electronic transaction through the use of public key cryptography. A certification authority issues certificates and each certificate has a set of fields that contain data, such as *subject* (the entity to which the certificate is issued), validity dates (when the certificate is valid), issuer (the entity that issued the certificate), and a public key. In WCF, each of these properties is processed as a <xref:System.IdentityModel.Claims.Claim>, and each claim is further divided into two types: identity and right. For more information about X.509 certificates see [X.509 Public Key Certificates](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). For more information about Claims and Authorization in WCF see [Managing Claims and Authorization with the Identity Model](managing-claims-and-authorization-with-the-identity-model.md). For more information about implementing a PKI, see [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/).
+In brief, a digital certificate is a part of a *public key infrastructure* (PKI), which is a system of digital certificates, certificate authorities, and other registration authorities that verify and authenticate the validity of each party involved in an electronic transaction through the use of public key cryptography. A certification authority issues certificates and each certificate has a set of fields that contain data, such as *subject* (the entity to which the certificate is issued), validity dates (when the certificate is valid), issuer (the entity that issued the certificate), and a public key. In WCF, each of these properties is processed as a <xref:System.IdentityModel.Claims.Claim>, and each claim is further divided into two types: identity and right. For more information about X.509 certificates see [X.509 Public Key Certificates](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). For more information about Claims and Authorization in WCF see [Managing Claims and Authorization with the Identity Model](managing-claims-and-authorization-with-the-identity-model.md). For more information about implementing a PKI, see [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services](/archive/blogs/yungchou/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2).
 
 The primary function of a certificate is to authenticate the identity of the owner of the certificate to others. A certificate contains the *public key* of the owner, while the owner retains the private key. The public key can be used to encrypt messages sent to the owner of the certificate. Only the owner has access to the private key, so only the owner can decrypt those messages.
 
@@ -75,17 +76,17 @@ When creating a new service, you may be using a certificate that is not issued b
 
 You can also set the property using configuration. The following elements are used to specify the validation mode:
 
-- [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)
+- [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)
 
-- [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)
+- [\<peerAuthentication>](../../configure-apps/file-schema/wcf/peerauthentication-element.md)
 
-- [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)
+- [\<messageSenderAuthentication>](../../configure-apps/file-schema/wcf/messagesenderauthentication-element.md)
 
 ## Custom Authentication
 
 The `CertificateValidationMode` property also enables you to customize how certificates are authenticated. By default, the level is set to `ChainTrust`. To use the <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> value, you must also set the `CustomCertificateValidatorType` attribute to an assembly and type used to validate the certificate. To create a custom validator, you must inherit from the abstract <xref:System.IdentityModel.Selectors.X509CertificateValidator> class.
 
-When creating a custom authenticator, the most important method to override is the <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> method. For an example of custom authentication, see the [X.509 Certificate Validator](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) sample. For more information, see [Custom Credential and Credential Validation](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).
+When creating a custom authenticator, the most important method to override is the <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> method. For an example of custom authentication, see the [X.509 Certificate Validator](../samples/x-509-certificate-validator.md) sample. For more information, see [Custom Credential and Credential Validation](../extending/custom-credential-and-credential-validation.md).
 
 ## Using the PowerShell New-SelfSignedCertificate Cmdlet to Build a Certificate Chain
 
@@ -129,7 +130,7 @@ At any time during the validity period, the certification authority can revoke a
 
 When this occurs, any chains that descend from the revoked certificate are also invalid, and are not trusted during authentication procedures. To find out which certificates are revoked, each issuer publishes a time- and date-stamped *certificate revocation list* (CRL). The list can be checked using either online revocation or offline revocation by setting the `RevocationMode` or `DefaultRevocationMode` property of the following classes to one of the <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> enumeration values: <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>, <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>, <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>, and the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> classes. The default value for all properties is `Online`.
 
-You can also set the mode in configuration using the `revocationMode` attribute of both the [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (of the [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)) and the [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (of the [\<endpointBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)).
+You can also set the mode in configuration using the `revocationMode` attribute of both the [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (of the [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md)) and the [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (of the [\<endpointBehaviors>](../../configure-apps/file-schema/wcf/endpointbehaviors.md)).
 
 ## The SetCertificate Method
 
@@ -154,15 +155,15 @@ A store may contain multiple certificates with the same subject name. This means
 
 ## Certificates in Configuration
 
-You can also set certificates by using configuration. If you are creating a service, credentials, including certificates, are specified under the [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). When you are programming a client, certificates are specified under the [\<endpointBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md).
+You can also set certificates by using configuration. If you are creating a service, credentials, including certificates, are specified under the [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md). When you are programming a client, certificates are specified under the [\<endpointBehaviors>](../../configure-apps/file-schema/wcf/endpointbehaviors.md).
 
 ## Mapping a Certificate to a User Account
 
-A feature of IIS and Active Directory is the ability to map a certificate to a Windows user account. For more information about the feature, see [Map certificates to user accounts](https://go.microsoft.com/fwlink/?LinkId=88917).
+A feature of IIS and Active Directory is the ability to map a certificate to a Windows user account. For more information about the feature, see [Map certificates to user accounts](/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10)).
 
-For more information about using Active Directory mapping, see [Mapping Client Certificates with Directory Service Mapping](https://go.microsoft.com/fwlink/?LinkId=88918).
+For more information about using Active Directory mapping, see [Mapping Client Certificates with Directory Service Mapping](/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10)).
 
-With this capability enabled, you can set the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> property of the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> class to `true`. In configuration, you can set the `mapClientCertificateToWindowsAccount` attribute of the [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element to `true`, as shown in the following code.
+With this capability enabled, you can set the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> property of the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> class to `true`. In configuration, you can set the `mapClientCertificateToWindowsAccount` attribute of the [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element to `true`, as shown in the following code.
 
 ```xml
 <serviceBehaviors>
@@ -188,4 +189,4 @@ In the first release of WCF, mapping is done without consulting the domain polic
 - <xref:System.ServiceModel.Security>
 - <xref:System.ServiceModel>
 - <xref:System.Security.Cryptography.X509Certificates.X509FindType>
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Securing Services and Clients](securing-services-and-clients.md)

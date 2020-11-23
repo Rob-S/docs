@@ -23,7 +23,7 @@ An extension of ICorDebugHeapValue that provides support for common language run
   
 |Method|Description|  
 |------------|-----------------|  
-|[CreateHandle Method](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue2-createhandle-method.md)|Creates a handle of the specified type for this `ICorDebugHeapValue2` object.|  
+|[CreateHandle Method](icordebugheapvalue2-createhandle-method.md)|Creates a handle of the specified type for this `ICorDebugHeapValue2` object.|  
   
 ## Remarks  
   
@@ -31,7 +31,8 @@ An extension of ICorDebugHeapValue that provides support for common language run
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -41,4 +42,4 @@ An extension of ICorDebugHeapValue that provides support for common language run
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

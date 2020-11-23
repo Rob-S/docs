@@ -16,22 +16,25 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback3 Interface
+
 Provides a callback method that indicates that an enabled custom debugger notification has been raised.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[CustomNotification Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md)|Indicates that an enabled custom debugger notification has been raised.|  
+|[CustomNotification Method](icordebugmanagedcallback3-customnotification-method.md)|Indicates that an enabled custom debugger notification has been raised.|  
   
 ## Remarks  
- This interface is a logical extension of the [ICorDebugManagedCallback](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md) and [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) interfaces.  
+
+ This interface is a logical extension of the [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) and [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) interfaces.  
   
 > [!NOTE]
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -41,7 +44,7 @@ Provides a callback method that indicates that an enabled custom debugger notifi
   
 ## See also
 
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
-- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 Interface](icordebugmanagedcallback2-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

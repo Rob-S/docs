@@ -1,16 +1,23 @@
 ---
 title: "XML Serializer Generator Tool (Sgen.exe)"
+description: The XML Serializer Generator creates an XML serialization assembly for types in an assembly, which improves the startup performance of XmlSerializer.
 ms.date: "03/30/2017"
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
 ---
 # XML Serializer Generator Tool (Sgen.exe)
-The XML Serializer Generator creates an XML serialization assembly for types in a specified assembly in order to improve the startup performance of a <xref:System.Xml.Serialization.XmlSerializer> when it serializes or deserializes objects of the specified types.  
+
+The XML Serializer Generator creates an XML serialization assembly for types in a specified assembly. The serialization assembly improves the startup performance of a <xref:System.Xml.Serialization.XmlSerializer> when it serializes or deserializes objects of the specified types.
   
-## Syntax  
+## Syntax
+
+Run the tool from the command line.
   
 ```console  
 sgen [options]  
-```  
+```
+  
+> [!TIP]
+> For .NET Framework tools to function properly, you must set your `Path`, `Include`, and `Lib` environment variables correctly. Set these environment variables by running SDKVars.bat, which is located in the \<SDK>\\\<version>\Bin directory. SDKVars.bat must be executed in every command shell.
   
 ## Parameters  
   
@@ -32,6 +39,7 @@ sgen [options]
 |**/?**|Displays command syntax and options for the tool.|  
   
 ## Remarks  
+
  When the XML Serializer Generator is not used, a <xref:System.Xml.Serialization.XmlSerializer> generates serialization code and a serialization assembly for each type every time an application is run. To improve the performance of XML serialization startup, use the Sgen.exe tool to generate those assemblies in advance. These assemblies can then be deployed with the application.  
   
  The XML Serializer Generator can also improve the performance of clients that use XML Web service proxies to communicate with servers because the serialization process will not incur a performance hit when the type is loaded the first time.  
@@ -41,15 +49,16 @@ sgen [options]
  If the assembly containing the type to serialize is named MyType.dll, then the associated serialization assembly will be named MyType.XmlSerializers.dll.  
   
 ## Examples  
+
  The following command creates an assembly named Data.XmlSerializers.dll for serializing all the types contained in the assembly named Data.dll.  
   
 ```console  
-sgen Data.dll   
+sgen Data.dll
 ```  
   
  The Data.XmlSerializers.dll assembly can be referenced from code that needs to serialize and deserialize the types in Data.dll.  
   
 ## See also
 
-- [Tools](../../../docs/framework/tools/index.md)
-- [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Tools](../../framework/tools/index.md)
+- [Command Prompts](../../framework/tools/developer-command-prompt-for-vs.md)

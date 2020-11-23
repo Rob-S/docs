@@ -1,7 +1,7 @@
 ---
 title: Interfaces
 description: Learn how F# Interfaces specify sets of related members that other classes implement.
-ms.date: 05/16/2016
+ms.date: 08/15/2020
 ---
 # Interfaces
 
@@ -53,6 +53,16 @@ The keywords `interface` and `end`, which mark the start and end of the definiti
 
 The .NET coding style is to begin all interfaces with a capital `I`.
 
+You can specify multiple parameters in two ways: F#-style and .NET-style. Both will compile the same way for .NET consumers, but F#-style will force F# callers to use F#-style parameter application and .NET-style will force F# callers to use tupled argument application.
+
+```fsharp
+type INumeric1 =
+    abstract Add: x: int -> y: int -> int
+
+type INumeric2 =
+    abstract Add: x: int * y: int -> int
+```
+
 ## Implementing Interfaces by Using Class Types
 
 You can implement one or more interfaces in a class type by using the `interface` keyword, the name of the interface, and the `with` keyword, followed by the interface member definitions, as shown in the following code.
@@ -84,6 +94,67 @@ Object expressions provide a short way to implement an interface. They are usefu
 Interfaces can inherit from one or more base interfaces.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2805.fs)]
+
+## Implementing interfaces with default implementations
+
+C# supports defining interfaces with default implementations, like so:
+
+```csharp
+using System;
+
+namespace CSharp
+{
+    public interface MyDim
+    {
+        public int Z => 0;
+    }
+}
+```
+
+These are directly consumable from F#:
+
+```fsharp
+open CSharp
+
+// You can implement the interface via a class
+type MyType() =
+    member _.M() = ()
+
+    interface MyDim
+
+let md = MyType() :> MyDim
+printfn $"DIM from C#: %d{md.Z}"
+
+// You can also implement it via an object expression
+let md' = { new MyDim }
+printfn $"DIM from C# but via Object Expression: %d{md'.Z}"
+```
+
+You can override a default implementation with `override`, like overriding any virtual member.
+
+Any members in an interface that do not have a default implementation must still be explicitly implemented.
+
+## Implementing the same interface at different generic instantiations
+
+F# supports implementing the same interface at different generic instantiations like so:
+
+```fsharp
+type IA<'T> =
+    abstract member Get : unit -> 'T
+
+type MyClass() =
+    interface IA<int> with
+        member x.Get() = 1
+    interface IA<string> with
+        member x.Get() = "hello"
+
+let mc = MyClass()
+let iaInt = mc :> IA<int>
+let iaString = mc :> IA<string>
+
+iaInt.Get() // 1
+iaString.Get() // "hello"
+```
 
 ## See also
 

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport2::GetGenericParamProps Method
+
 Gets the metadata associated with the generic parameter represented by the specified token.  
   
 ## Syntax  
@@ -35,6 +36,7 @@ HRESULT GetGenericParamProps (
 ```  
   
 ## Parameters  
+
  `gp`  
  [in] The token that represents the generic parameter for which to return metadata.  
   
@@ -42,7 +44,7 @@ HRESULT GetGenericParamProps (
  [out] The ordinal position of the `Type` parameter in the parent constructor or method.  
   
  `pdwParamFlags`  
- [out] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the `Type` for the generic parameter.  
+ [out] A value of the [CorGenericParamAttr](corgenericparamattr-enumeration.md) enumeration that describes the `Type` for the generic parameter.  
   
  `ptOwner`  
  [out] A TypeDef or MethodDef token that represents the owner of the parameter.  
@@ -60,7 +62,8 @@ HRESULT GetGenericParamProps (
  [out] The returned size of the name, in wide characters.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -70,5 +73,5 @@ HRESULT GetGenericParamProps (
   
 ## See also
 
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)

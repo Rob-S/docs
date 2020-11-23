@@ -1,17 +1,16 @@
 ---
 title: "How to: Access the predefined UTC and local time zone objects"
 ms.date: "04/10/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
-  - "time zones [.NET Framework], local"
+  - "time zones [.NET], local"
   - "predefined time zones"
   - "UTC times, predefined"
   - "local time zone access"
-  - "time zones [.NET Framework], retrieving"
-  - "time zones [.NET Framework], UTC"
+  - "time zones [.NET], retrieving"
+  - "time zones [.NET], UTC"
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
 ---
 # How to: Access the predefined UTC and local time zone objects
@@ -47,6 +46,6 @@ This example requires:
 
 ## See also
 
-- [Dates, times, and time zones](../../../docs/standard/datetime/index.md)
-- [Finding the time zones defined on a local system](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
-- [How to: Instantiate a TimeZoneInfo object](../../../docs/standard/datetime/instantiate-time-zone-info.md)
+- [Dates, times, and time zones](index.md)
+- [Finding the time zones defined on a local system](finding-the-time-zones-on-local-system.md)
+- [How to: Instantiate a TimeZoneInfo object](instantiate-time-zone-info.md)

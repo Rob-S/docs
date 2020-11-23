@@ -17,12 +17,13 @@ topic_type:
   - "apiref"
 ---
 # ICLRStrongName::StrongNameSignatureGeneration Method
+
 Generates a strong name signature for the specified assembly.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT StrongNameSignatureGeneration (   
+HRESULT StrongNameSignatureGeneration (
     [in]  LPCWSTR   wszFilePath,  
     [in]  LPCWSTR   wszKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
@@ -33,6 +34,7 @@ HRESULT StrongNameSignatureGeneration (
 ```  
   
 ## Parameters  
+
  `wszFilePath`  
  [in] The path to the file that contains the manifest of the assembly for which the strong name signature will be generated.  
   
@@ -54,21 +56,24 @@ HRESULT StrongNameSignatureGeneration (
  `ppbSignatureBlob`  
  [out] A pointer to the location to which the common language runtime returns the signature. If `ppbSignatureBlob` is null, the runtime stores the signature in the file specified by `wszFilePath`.  
   
- If `ppbSignatureBlob` is not null, the common language runtime allocates space in which to return the signature. The caller must free this space by using the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method.  
+ If `ppbSignatureBlob` is not null, the common language runtime allocates space in which to return the signature. The caller must free this space by using the [ICLRStrongName::StrongNameFreeBuffer](iclrstrongname-strongnamefreebuffer-method.md) method.  
   
  `pcbSignatureBlob`  
  [out] The size, in bytes, of the returned signature.  
   
 ## Return Value  
- `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).  
+
+ `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) for a list).  
   
 ## Remarks  
+
  Specify null for `wszFilePath` to calculate the size of the signature without creating the signature.  
   
  The signature can be stored either directly in the file, or returned to the caller.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -78,5 +83,5 @@ HRESULT StrongNameSignatureGeneration (
   
 ## See also
 
-- [StrongNameSignatureGenerationEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)
-- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameSignatureGenerationEx Method](iclrstrongname-strongnamesignaturegenerationex-method.md)
+- [ICLRStrongName Interface](iclrstrongname-interface.md)

@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 661fdb90-ee7d-40ce-b30b-5e7267bd957a
 ---
 # Sub or Function not defined (Visual Basic)
+
 A `Sub` or `Function` must be defined in order to be called. Possible causes of this error include:  
   
 - Misspelling the procedure name.  
@@ -26,7 +27,7 @@ A `Sub` or `Function` must be defined in order to be called. Possible causes of 
   
 ## See also
 
-- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../../programming-guide/language-features/error-types.md)
 - [Managing references in a project](/visualstudio/ide/managing-references-in-a-project)
-- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Sub Statement](../statements/sub-statement.md)
+- [Function Statement](../statements/function-statement.md)

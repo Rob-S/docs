@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugAppDomain::GetModuleFromMetaDataInterface Method
+
 Gets the module that corresponds to the given metadata interface.  
   
 ## Syntax  
@@ -29,14 +30,16 @@ HRESULT GetModuleFromMetaDataInterface (
 ```  
   
 ## Parameters  
+
  `pIMetaData`  
- [in] A pointer to an object that is one of the [Metadata interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md).  
+ [in] A pointer to an object that is one of the [Metadata interfaces](../metadata/metadata-interfaces.md).  
   
  `ppModule`  
  [out] A pointer to the address of an ICorDebugModule object that represents the module corresponding to the given metadata interface.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

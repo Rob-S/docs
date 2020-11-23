@@ -1,12 +1,11 @@
 ---
 title: "Best Practices for Developing World-Ready Applications"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 helpviewer_keywords:
   - "global applications, best practices"
   - "world-ready applications, best practices"
-  - "globalization [.NET Framework], best practices"
-  - "international applications [.NET Framework], best practices"
+  - "globalization [.NET], best practices"
+  - "international applications [.NET], best practices"
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
 ---
 # Best practices for developing world-ready applications
@@ -43,7 +42,7 @@ This section describes the best practices to follow when developing world-ready 
 
 9. Test your application functionality on international operating system versions, using international data.
 
-10. If a security decision is based on the result of a string comparison or case change operation, use a culture-insensitive string operation. This practice ensures that the result is not affected by the value of `CultureInfo.CurrentCulture`. See the ["String Comparisons that Use the Current Culture"](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) section of [Best Practices for Using Strings](../../../docs/standard/base-types/best-practices-strings.md) for an example that demonstrates how culture-sensitive string comparisons can produce inconsistent results.
+10. If a security decision is based on the result of a string comparison or case change operation, use a culture-insensitive string operation. This practice ensures that the result is not affected by the value of `CultureInfo.CurrentCulture`. See the ["String Comparisons that Use the Current Culture"](../base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture) section of [Best Practices for Using Strings](../base-types/best-practices-strings.md) for an example that demonstrates how culture-sensitive string comparisons can produce inconsistent results.
 
 ## Localization best practices
 
@@ -63,11 +62,11 @@ This section describes the best practices to follow when developing world-ready 
 
 8. Use the <xref:System.Resources.ResourceManager?displayProperty=nameWithType> class to retrieve resources based on culture.
 
-9. Use [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) to create Windows Forms dialog boxes so they can be localized using the [Windows Forms Resource Editor (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md). Do not code Windows Forms dialog boxes by hand.
+9. Use [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) to create Windows Forms dialog boxes so they can be localized using the [Windows Forms Resource Editor (Winres.exe)](../../framework/tools/winres-exe-windows-forms-resource-editor.md). Do not code Windows Forms dialog boxes by hand.
 
 10. Arrange for professional localization (translation).
 
-11. For a complete description of creating and localizing resources, see [Resources in Applications](../../../docs/framework/resources/index.md).
+11. For a complete description of creating and localizing resources, see [Resources in Applications](../../framework/resources/index.md).
 
 ## Globalization best practices for ASP.NET applications
 
@@ -85,7 +84,7 @@ This section describes the best practices to follow when developing world-ready 
 
 4. Specify the values for the requestEncoding, responseEncoding, fileEncoding, culture, and uiCulture attributes in the following three places in an ASP.NET application:
 
-    - In the globalization section of a Web.config file. This file is external to the ASP.NET application. For more information, see [\<globalization> Element](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
+    - In the globalization section of a Web.config file. This file is external to the ASP.NET application. For more information, see [\<globalization> Element](/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)).
 
     - In a page directive. Note that, when an application is in a page, the file has already been read. Therefore, it is too late to specify fileEncoding and requestEncoding. Only uiCulture, Culture, and responseEncoding can be specified in a page directive.
 
@@ -95,5 +94,5 @@ This section describes the best practices to follow when developing world-ready 
 
 ## See also
 
-- [Globalization and Localization](../../../docs/standard/globalization-localization/index.md)
-- [Resources in Desktop Apps](../../../docs/framework/resources/index.md)
+- [Globalization and Localization](index.md)
+- [Resources in Desktop Apps](../../framework/resources/index.md)

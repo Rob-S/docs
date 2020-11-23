@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorPublishEnum::Skip Method
+
 Moves the cursor forward in the enumeration by the specified number of items.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT Skip (
 ```  
   
 ## Parameters  
+
  `celt`  
  [in] The number of items by which to move the cursor forward.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -42,4 +45,4 @@ HRESULT Skip (
   
 ## See also
 
-- [ICorPublishEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md)
+- [ICorPublishEnum Interface](icorpublishenum-interface.md)

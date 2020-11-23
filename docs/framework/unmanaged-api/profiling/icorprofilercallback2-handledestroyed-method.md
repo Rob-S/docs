@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback2::HandleDestroyed Method
+
 Notifies the code profiler that a garbage collection handle has been destroyed.  
   
 ## Syntax  
@@ -27,11 +28,13 @@ HRESULT HandleDestroyed(
 ```  
   
 ## Parameters  
+
  `handleId`  
  [in] The ID of the handle for the garbage collection.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -41,5 +44,5 @@ HRESULT HandleDestroyed(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 Interface](icorprofilercallback2-interface.md)

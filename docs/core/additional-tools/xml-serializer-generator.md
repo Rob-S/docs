@@ -4,7 +4,7 @@ description: An overview of the Microsoft XML Serializer Generator. Use the XML 
 author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
-ms.custom: "mvc, seodec18"
+ms.custom: "mvc"
 ---
 # Using Microsoft XML Serializer Generator on .NET Core
 
@@ -44,7 +44,7 @@ dotnet new console
 
 ### Add a reference to the Microsoft.XmlSerializer.Generator package in the MyApp project
 
-Use the [`dotnet add package`](../tools//dotnet-add-package.md) command to add the reference in your project.
+Use the [`dotnet add package`](../tools/dotnet-add-package.md) command to add the reference in your project.
 
 Type:
 
@@ -58,7 +58,7 @@ Open your code editor and let's get started! We're still working from the *MyApp
 
 Open *MyApp.csproj* in your text editor.
 
-After running the [`dotnet add package`](../tools//dotnet-add-package.md) command, the following lines are added to your *MyApp.csproj* project file:
+After running the [`dotnet add package`](../tools/dotnet-add-package.md) command, the following lines are added to your *MyApp.csproj* project file:
 
  ```xml
  <ItemGroup>
@@ -97,7 +97,7 @@ var serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyClass));
 
 ### Build and run the application
 
-Still within the *MyApp* folder, run the application via [`dotnet run`](../tools/dotnet-run.md) and it automatically loads and uses the pre-generated serializers at runtime.
+Still within the *MyApp* folder, run the application via [`dotnet run`](../tools/dotnet-run.md) and it automatically loads and uses the pre-generated serializers at run time.
 
 Type the following command in your console window:
 
@@ -125,5 +125,5 @@ Congratulations! You have just:
 ## Related resources
 
 - [Introducing XML Serialization](../../standard/serialization/introducing-xml-serialization.md)
-- [How to serialize using XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
-- [How to: Serialize Using XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+- [How to serialize using XmlSerializer (C#)](../../standard/linq/serialize-xmlserializer.md)
+- [How to: Serialize Using XmlSerializer (Visual Basic)](../../standard/linq/serialize-xmlserializer.md)

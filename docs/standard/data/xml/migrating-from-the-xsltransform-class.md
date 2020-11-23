@@ -1,13 +1,10 @@
 ---
 title: "Migrating From the XslTransform Class"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # Migrating From the XslTransform Class
@@ -23,7 +20,7 @@ The <xref:System.Xml.Xsl.XslCompiledTransform> class includes many performance i
 The <xref:System.Xml.Xsl.XslCompiledTransform> class also includes other optimizations that make it much faster than the <xref:System.Xml.Xsl.XslTransform> class.
 
 > [!NOTE]
-> Although the overall performance of the <xref:System.Xml.Xsl.XslCompiledTransform> class is better than the <xref:System.Xml.Xsl.XslTransform> class, the <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> method of the <xref:System.Xml.Xsl.XslCompiledTransform> class might perform more slowly than the <xref:System.Xml.Xsl.XslTransform.Load%2A> method of the <xref:System.Xml.Xsl.XslTransform> class the first time it is called on a transformation. This is because the XSLT file must be compiled before it is loaded. For more information, see the following blog post: [XslCompiledTransform Slower than XslTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)
+> Although the overall performance of the <xref:System.Xml.Xsl.XslCompiledTransform> class is better than the <xref:System.Xml.Xsl.XslTransform> class, the <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> method of the <xref:System.Xml.Xsl.XslCompiledTransform> class might perform more slowly than the <xref:System.Xml.Xsl.XslTransform.Load%2A> method of the <xref:System.Xml.Xsl.XslTransform> class the first time it is called on a transformation. This is because the XSLT file must be compiled before it is loaded. For more information, see the following blog post: [XslCompiledTransform Slower than XslTransform?](/archive/blogs/antosha/xslcompiledtransform-slower-than-xsltransform)
 
 ## Security
 
@@ -32,7 +29,7 @@ By default, the <xref:System.Xml.Xsl.XslCompiledTransform> class disables suppor
 [!code-csharp[XML_Migration#16](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#16)]
 [!code-vb[XML_Migration#16](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#16)]
 
-For more information, see [XSLT Security Considerations](../../../../docs/standard/data/xml/xslt-security-considerations.md).
+For more information, see [XSLT Security Considerations](xslt-security-considerations.md).
 
 ## New Features
 
@@ -94,7 +91,7 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 
 ### Discretionary Behavior
 
-The W3C XSL Transformations (XSLT) Version 1.0 Recommendation includes areas in which the implementation provider may decide how to handle a situation. These areas are considered to be discretionary behavior. There are several areas where the <xref:System.Xml.Xsl.XslCompiledTransform> behaves differently than the <xref:System.Xml.Xsl.XslTransform> class. For more information, see [Recoverable XSLT Errors](../../../../docs/standard/data/xml/recoverable-xslt-errors.md).
+The W3C XSL Transformations (XSLT) Version 1.0 Recommendation includes areas in which the implementation provider may decide how to handle a situation. These areas are considered to be discretionary behavior. There are several areas where the <xref:System.Xml.Xsl.XslCompiledTransform> behaves differently than the <xref:System.Xml.Xsl.XslTransform> class. For more information, see [Recoverable XSLT Errors](recoverable-xslt-errors.md).
 
 ### Extension Objects and Script Functions
 
@@ -106,7 +103,7 @@ The W3C XSL Transformations (XSLT) Version 1.0 Recommendation includes areas in 
 
 In <xref:System.Xml.Xsl.XslCompiledTransform>, a binding (method name lookup) to script functions occurs at compile time, and style sheets that worked with XslTransform may cause an exception when they are loaded with <xref:System.Xml.Xsl.XslCompiledTransform>.
 
-<xref:System.Xml.Xsl.XslCompiledTransform> supports having `msxsl:using` and `msxsl:assembly` child elements within the `msxsl:script` element. The `msxsl:using` and `msxsl:assembly` elements are used to declare additional namespaces and assemblies for use in the script block. See [Script Blocks Using msxsl:script](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md) for more information.
+<xref:System.Xml.Xsl.XslCompiledTransform> supports having `msxsl:using` and `msxsl:assembly` child elements within the `msxsl:script` element. The `msxsl:using` and `msxsl:assembly` elements are used to declare additional namespaces and assemblies for use in the script block. See [Script Blocks Using msxsl:script](script-blocks-using-msxsl-script.md) for more information.
 
 <xref:System.Xml.Xsl.XslCompiledTransform> prohibits extension objects that have multiple overloads with the same number of arguments.
 
@@ -114,15 +111,15 @@ In <xref:System.Xml.Xsl.XslCompiledTransform>, a binding (method name lookup) to
 
 Support for additional MSXML functions have been added to the <xref:System.Xml.Xsl.XslCompiledTransform> class. The following list describes new or improved functionality:
 
-- msxsl:node-set: <xref:System.Xml.Xsl.XslTransform> required the argument of the [node-set Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) function to be a result tree fragment. The <xref:System.Xml.Xsl.XslCompiledTransform> class does not have this requirement.
+- msxsl:node-set: <xref:System.Xml.Xsl.XslTransform> required the argument of the [node-set Function](/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) function to be a result tree fragment. The <xref:System.Xml.Xsl.XslCompiledTransform> class does not have this requirement.
 
 - msxsl:version: This function is supported in <xref:System.Xml.Xsl.XslCompiledTransform>.
 
-- XPath extension functions: The [ms:string-compare Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [ms:utc Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [ms:namespace-uri Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [ms:local-name Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [ms:number Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), [ms:format-date Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100)), and [ms:format-time Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) functions are now supported.
+- XPath extension functions: The [ms:string-compare Function](/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [ms:utc Function](/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [ms:namespace-uri Function](/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [ms:local-name Function](/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [ms:number Function](/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), [ms:format-date Function](/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100)), and [ms:format-time Function](/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) functions are now supported.
 
 - Schema-related XPath extension functions: These functions are not supported natively by <xref:System.Xml.Xsl.XslCompiledTransform>. However, they can be implemented as extension functions.
 
 ## See also
 
-- [XSLT Transformations](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [XSLT Transformations](xslt-transformations.md)
+- [Using the XslCompiledTransform Class](using-the-xslcompiledtransform-class.md)

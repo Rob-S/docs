@@ -3046,6 +3046,7 @@ f1_keywords:
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
 ---
 # Sorry, we don't have specifics on this Visual Basic error
+
 We’re sorry, but we don’t have any specific information about this error. You can search for the error number and message text to find information on the web. Or, you can ask other developers using one of these forums:  
   
  [Visual Basic Language](https://social.msdn.microsoft.com/Forums/home?forum=vblanguage)  
@@ -3064,9 +3065,9 @@ We’re sorry, but we don’t have any specific information about this error. Yo
  Provides a forum for questions about and issues with Visual Basic.  
   
  Also see:  
- [Additional Resources for Visual Basic Programmers](../../visual-basic/getting-started/additional-resources.md)  
+ [Additional Resources for Visual Basic Programmers](../getting-started/additional-resources.md)  
   
 ## See also
 
-- [Visual Basic Programming Guide](../../visual-basic/programming-guide/index.md)
-- [Visual Basic Reference](../../visual-basic/reference/index.md)
+- [Visual Basic Programming Guide](../programming-guide/index.md)
+- [Visual Basic Reference](../reference/index.md)

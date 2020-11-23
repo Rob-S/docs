@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::GetStringSection Method
+
 Gets a string representation of the code section referenced by the specified handle.  
   
  This method is obsolete and should not be used.  
@@ -30,11 +31,13 @@ HRESULT GetStringSection (
 ```  
   
 ## Parameters  
+
  `section`  
  [in, out] The handle to the code section.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -44,4 +47,4 @@ HRESULT GetStringSection (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

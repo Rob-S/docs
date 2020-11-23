@@ -1,11 +1,10 @@
 ---
 title: "ETW Events in Task Parallel Library and PLINQ"
+description: Read about ETW events in the Task Parallel Library and PLINQ. Use these events to profile and troubleshoot applications.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "tasks, ETW events"
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # ETW Events in Task Parallel Library and PLINQ
 
@@ -112,4 +111,4 @@ EVENT_DESCRIPTOR.Id = 1
 
 - [ETW Events in the .NET Framework](etw-events.md)
 - [Task Parallel Library (TPL)](../../standard/parallel-programming/task-parallel-library-tpl.md)
-- [Parallel LINQ (PLINQ)](../../standard/parallel-programming/parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](../../standard/parallel-programming/introduction-to-plinq.md)

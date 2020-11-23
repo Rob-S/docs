@@ -23,10 +23,11 @@ Represents a breakpoint in a function, or a watch point on a value.
   
 |Method|Description|  
 |------------|-----------------|  
-|[Activate Method](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-activate-method.md)|Sets the active state of this `ICorDebugBreakpoint`.|  
-|[IsActive Method](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-isactive-method.md)|Gets a value that indicates whether this `ICorDebugBreakpoint` is active.|  
+|[Activate Method](icordebugbreakpoint-activate-method.md)|Sets the active state of this `ICorDebugBreakpoint`.|  
+|[IsActive Method](icordebugbreakpoint-isactive-method.md)|Gets a value that indicates whether this `ICorDebugBreakpoint` is active.|  
   
 ## Remarks  
+
  Breakpoints do not directly support conditional expressions. If such functionality is desired, a debugger must implement it on top of `ICorDebugBreakpoint`.  
   
  The ICorDebugFunctionBreakpoint interface extends `ICorDebugBreakpoint` to support breakpoints within functions.  
@@ -35,7 +36,8 @@ Represents a breakpoint in a function, or a watch point on a value.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -45,4 +47,4 @@ Represents a breakpoint in a function, or a watch point on a value.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

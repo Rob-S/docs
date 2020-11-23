@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRGCManager::GetStats Method
+
 Gets a set of current statistics about the common language runtime's garbage collection system.  
   
 ## Syntax  
@@ -28,8 +29,9 @@ HRESULT GetStats (
 ```  
   
 ## Parameters  
+
  `pStats`  
- [in, out] A [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) instance that contains the requested statistics.  
+ [in, out] A [COR_GC_STATS](cor-gc-stats-structure.md) instance that contains the requested statistics.  
   
 ## Return Value  
   
@@ -43,9 +45,10 @@ HRESULT GetStats (
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The CLR calculates and returns only those statistics that are specified by the `Flags` field of `pStats`.  
   
- Set the `Flags` field to one or more values of the [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) enumeration to specify which statistics in the [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) structure are to be set.  
+ Set the `Flags` field to one or more values of the [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) enumeration to specify which statistics in the [COR_GC_STATS](cor-gc-stats-structure.md) structure are to be set.  
   
  An example of the usage is as follows:  
   
@@ -56,7 +59,8 @@ pCLRGCManager->GetStats(&GCStats);
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -67,11 +71,11 @@ pCLRGCManager->GetStats(&GCStats);
 ## See also
 
 - [Automatic Memory Management](../../../standard/automatic-memory-management.md)
-- [COR_GC_STATS Structure](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)
-- [COR_GC_STAT_TYPES Enumeration](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md)
+- [COR_GC_STATS Structure](cor-gc-stats-structure.md)
+- [COR_GC_STAT_TYPES Enumeration](cor-gc-stat-types-enumeration.md)
 - [Garbage Collection](../../../standard/garbage-collection/index.md)
-- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [ICLRGCManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)
-- [CLR Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRControl Interface](iclrcontrol-interface.md)
+- [ICLRGCManager Interface](iclrgcmanager-interface.md)
+- [CLR Hosting Interfaces](clr-hosting-interfaces.md)
+- [Hosting Interfaces](hosting-interfaces.md)
+- [Hosting](index.md)

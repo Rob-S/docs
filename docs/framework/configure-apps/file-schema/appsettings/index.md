@@ -7,8 +7,6 @@ helpviewer_keywords:
   - "Windows Forms, app settings schema"
   - "configuration schema [.NET Framework], app settings"
 ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # App Settings schema
 
@@ -66,5 +64,5 @@ The following example shows an application configuration file that consumes the 
 
 ## See also
 
-- [Application Settings Overview](../../../winforms/advanced/application-settings-overview.md)
-- [Application Settings Architecture](../../../winforms/advanced/application-settings-architecture.md)
+- [Application Settings Overview](/dotnet/desktop/winforms/advanced/application-settings-overview)
+- [Application Settings Architecture](/dotnet/desktop/winforms/advanced/application-settings-architecture)

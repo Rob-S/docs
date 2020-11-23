@@ -1,13 +1,10 @@
 ---
 title: "Extending the DOM"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Extending the DOM
 
@@ -38,9 +35,9 @@ End Class 'LineInfoDocument
 ```
 
 ```csharp
-class LineInfoDocument : XmlDocument 
+class LineInfoDocument : XmlDocument
 {
-    public override XmlElement CreateElement(string prefix, string localname, string nsURI) 
+    public override XmlElement CreateElement(string prefix, string localname, string nsURI)
     {
         LineInfoElement elem = new LineInfoElement(prefix, localname, nsURI, this);
         return elem;
@@ -240,7 +237,7 @@ The .NET Framework implementation of the DOM also includes an event system that 
 
 The event-handling process works exactly the same in derived classes as it would in the original DOM classes.
 
-For more information regarding node event handling, see [Events](../../../../docs/standard/events/index.md) and <xref:System.Xml.XmlNodeChangedEventHandler>.
+For more information regarding node event handling, see [Events](../../events/index.md) and <xref:System.Xml.XmlNodeChangedEventHandler>.
 
 ## Default Attributes and the CreateElement Method
 

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugHeapValue::CreateRelocBreakpoint Method
+
 This method is not implemented in the current version of the .NET Framework.  
   
 ## Syntax  
@@ -28,7 +29,8 @@ HRESULT CreateRelocBreakpoint (
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

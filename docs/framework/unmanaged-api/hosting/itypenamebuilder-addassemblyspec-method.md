@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ITypeNameBuilder::AddAssemblySpec Method
+
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  
   
 ## Syntax  
@@ -28,7 +29,8 @@ HRESULT AddAssemblySpec (
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -38,4 +40,4 @@ HRESULT AddAssemblySpec (
   
 ## See also
 
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hosting Interfaces](hosting-interfaces.md)

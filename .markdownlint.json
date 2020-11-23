@@ -2,7 +2,6 @@
     "default": true,
     "MD001": false,
     "MD004": false,
-    "MD009": false,
     "MD013": false,
     "MD022": false,
     "MD024": false,
@@ -24,6 +23,8 @@
             "ol",
             "p",
             "pre",
+            "span",
+            "sub",
             "sup",
             "table",
             "tbody",
@@ -35,11 +36,17 @@
             "ul"
         ]
     },
-    "MD034": false,
     "MD036": false,
     "MD040": false,
     "MD041": false,
     "MD046": {
         "style": "fenced"
+    },
+    "proper-names": {
+        "code_blocks": false,
+        "names": [
+            "ASP.NET",
+            "PowerShell"
+        ]
     }
 }

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerThreadEnum::GetCount Method
+
 Gets the number of threads that are used by the application.  
   
 ## Syntax  
@@ -27,11 +28,13 @@ HRESULT GetCount (    [out] ULONG * pcelt
 ```  
   
 ## Parameters  
+
  `celt`  
  [out] The number of threads used by the application.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -41,5 +44,5 @@ HRESULT GetCount (    [out] ULONG * pcelt
   
 ## See also
 
-- [ICorProfilerThreadEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerThreadEnum Interface](icorprofilerthreadenum-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)

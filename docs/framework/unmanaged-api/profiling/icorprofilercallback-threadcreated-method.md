@@ -17,24 +17,28 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ThreadCreated Method
+
 Notifies the profiler that a thread has been created.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT ThreadCreated(  
-    [in] ThreadID threadId);   
+    [in] ThreadID threadId);
 ```  
   
 ## Parameters  
+
  `threadId`  
  [in] The ID of the thread that has been created.  
   
 ## Remarks  
+
  The `threadId` value is immediately valid.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -44,5 +48,5 @@ HRESULT ThreadCreated(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ThreadDestroyed Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ThreadDestroyed Method](icorprofilercallback-threaddestroyed-method.md)

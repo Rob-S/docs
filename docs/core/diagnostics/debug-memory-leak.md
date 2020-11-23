@@ -1,14 +1,13 @@
 ---
 title: Debug a memory leak tutorial
 description: Learn how to debug a memory leak in .NET Core.
-author: sdmaclea
-ms.author: stmaclea
 ms.topic: tutorial
-ms.date: 12/17/2019
+ms.date: 04/20/2020
 ---
-# Tutorial: Debug a memory leak in .NET Core
 
-**This article applies to: ✓** .NET Core 3.0 SDK and later versions
+# Debug a memory leak in .NET Core
+
+**This article applies to:** ✔️ .NET Core 3.1 SDK and later versions
 
 This tutorial demonstrates the tools to analyze a .NET Core memory leak.
 
@@ -26,11 +25,11 @@ In this tutorial, you will:
 
 The tutorial uses:
 
-- [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version.
+- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version.
 - [dotnet-trace](dotnet-trace.md) to list processes.
 - [dotnet-counters](dotnet-counters.md) to check managed memory usage.
 - [dotnet-dump](dotnet-dump.md) to collect and analyze a dump file.
-- A [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) app to diagnose.
+- A [sample debug target](/samples/dotnet/samples/diagnostic-scenarios/) app to diagnose.
 
 The tutorial assumes the sample and tools are installed and ready to use.
 
@@ -38,7 +37,7 @@ The tutorial assumes the sample and tools are installed and ready to use.
 
 Before you start collecting diagnostics data to help us root cause this scenario, you need to make sure you're actually seeing a memory leak (memory growth). You can use the [dotnet-counters](dotnet-counters.md) tool to confirm that.
 
-Open a console window and navigate to the directory where you downloaded and unzipped the [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Run the target:
+Open a console window and navigate to the directory where you downloaded and unzipped the [sample debug target](/samples/dotnet/samples/diagnostic-scenarios/). Run the target:
 
 ```dotnetcli
 dotnet run
@@ -98,7 +97,7 @@ Focusing on this line:
 
 You can see that the managed heap memory is 4 MB right after startup.
 
-Now, hit the URL `http://localhost:5000/api/diagscenario/memleak/20000`.
+Now, hit the URL `https://localhost:5001/api/diagscenario/memleak/20000`.
 
 Observe that the memory usage has grown to 30 MB.
 
@@ -112,7 +111,7 @@ By watching the memory usage, you can safely say that memory is growing or leaki
 
 When analyzing possible memory leaks, you need access to the app's memory heap. Then you can analyze the memory contents. Looking at relationships between objects, you create theories on why memory isn't being freed. A common diagnostics data source is a memory dump on Windows or the equivalent core dump on Linux. To generate a dump of a .NET Core application, you can use the [dotnet-dump)](dotnet-dump.md) tool.
 
-Using the [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) previously started, run the following command to generate a Linux core dump:
+Using the [sample debug target](/samples/dotnet/samples/diagnostic-scenarios/) previously started, run the following command to generate a Linux core dump:
 
 ```dotnetcli
 dotnet-dump collect -p 4807
@@ -129,11 +128,11 @@ Complete
 
 Once the dump is collected, you should have sufficient information to diagnose the failed process. If the failed process is running on a production server, now it's the ideal time for short-term remediation by restarting the process.
 
-In this tutorial, you're now done with the [Sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) and you can close it. Navigate to the terminal that started the server and press `Control-C`.
+In this tutorial, you're now done with the [Sample debug target](/samples/dotnet/samples/diagnostic-scenarios/) and you can close it. Navigate to the terminal that started the server, and press <kbd>Ctrl+C</kbd>.
 
 ### Analyze the core dump
 
-Now that you have a core dump generated, use the [dotnet-dump)](dotnet-dump.md) tool to analyze the dump:
+Now that you have a core dump generated, use the [dotnet-dump](dotnet-dump.md) tool to analyze the dump:
 
 ```dotnetcli
 dotnet-dump analyze core_20190430_185145
@@ -142,7 +141,7 @@ dotnet-dump analyze core_20190430_185145
 Where `core_20190430_185145` is the name of the core dump you want to analyze.
 
 > [!NOTE]
-> If you see an error complaining that *libdl.so* cannot be found, you may have to install the *libc6-dev* package. For more information, see [Prerequisites for .NET Core on Linux](../linux-prerequisites.md).
+> If you see an error complaining that *libdl.so* cannot be found, you may have to install the *libc6-dev* package. For more information, see [Prerequisites for .NET Core on Linux](../install/linux.md).
 
 You'll be presented with a prompt where you can enter SOS commands. Commonly, the first thing you want to look at is the overall state of the managed heap:
 
@@ -228,14 +227,14 @@ In this tutorial, you started a sample web server. This server should have been 
 
 You can also delete the dump file that was created.
 
+## See also
+
+- [dotnet-trace](dotnet-trace.md) to list processes
+- [dotnet-counters](dotnet-counters.md) to check managed memory usage
+- [dotnet-dump](dotnet-dump.md) to collect and analyze a dump file
+- [dotnet/diagnostics](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
+
 ## Next steps
 
-Congratulations on completing this tutorial.
-
-We're still publishing more diagnostic tutorials. You can read the draft versions on the [dotnet/diagnostics](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial) repository.
-
-This tutorial covered the basics of key .NET diagnostic tools. For advanced usage, see the following reference documentation:
-
-* [dotnet-trace](dotnet-trace.md) to list processes.
-* [dotnet-counters](dotnet-counters.md) to check managed memory usage.
-* [dotnet-dump](dotnet-dump.md) to collect and analyze a dump file.
+> [!div class="nextstepaction"]
+> [Debug high CPU in .NET Core](debug-highcpu.md)

@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IHostSyncManager::SetCLRSyncManager Method
-Sets the [ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md) instance to associate with the current [IHostSyncManager](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md) instance.  
+
+Sets the [ICLRSyncManager](iclrsyncmanager-interface.md) instance to associate with the current [IHostSyncManager](ihostsyncmanager-interface.md) instance.  
   
 ## Syntax  
   
@@ -28,6 +29,7 @@ HRESULT SetCLRSyncManager (
 ```  
   
 ## Parameters  
+
  `pManager`  
  [in] A pointer to an `ICLRSyncManager` instance supplied by the common language runtime (CLR).  
   
@@ -43,10 +45,12 @@ HRESULT SetCLRSyncManager (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  To facilitate communication between the host and the CLR, hosting interfaces generally come in pairs. One member of the pair is implemented by the host, and the other member is implemented by the CLR. As a host-side implementation, the `IHostSyncManager` interface corresponds to the `ICLRSyncManager` interface implemented by the CLR. The CLR calls `SetCLRSyncManager` to supply an `ICLRSyncManager` instance for the host to associate with the current `IHostSyncManager` instance.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -56,5 +60,5 @@ HRESULT SetCLRSyncManager (
   
 ## See also
 
-- [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager Interface](iclrsyncmanager-interface.md)
+- [IHostSyncManager Interface](ihostsyncmanager-interface.md)

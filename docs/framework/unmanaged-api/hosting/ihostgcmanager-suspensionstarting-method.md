@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostGCManager::SuspensionStarting Method
+
 Notifies the host that the common language runtime (CLR) is suspending execution of tasks, to perform a garbage collection.  
   
 ## Syntax  
@@ -37,13 +38,15 @@ HRESULT SuspensionStarting ();
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The CLR calls `SuspensionStarting` to inform the host that garbage collection is occurring.  
   
 > [!IMPORTANT]
-> Do not reschedule this task. The host must reschedule a task when [ThreadIsBlockingForSuspension](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-threadisblockingforsuspension-method.md) is called.  
+> Do not reschedule this task. The host must reschedule a task when [ThreadIsBlockingForSuspension](ihostgcmanager-threadisblockingforsuspension-method.md) is called.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -53,8 +56,8 @@ HRESULT SuspensionStarting ();
   
 ## See also
 
-- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
-- [IHostGCManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)
+- [ICLRTask Interface](iclrtask-interface.md)
+- [ICLRTaskManager Interface](iclrtaskmanager-interface.md)
+- [IHostTask Interface](ihosttask-interface.md)
+- [IHostTaskManager Interface](ihosttaskmanager-interface.md)
+- [IHostGCManager Interface](ihostgcmanager-interface.md)

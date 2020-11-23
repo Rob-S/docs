@@ -17,13 +17,14 @@ topic_type:
   - "apiref"
 ---
 # ICLRRuntimeInfo::GetVersionString Method
-Gets common language runtime (CLR) version information associated with a given [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface.  
+
+Gets common language runtime (CLR) version information associated with a given [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) interface.  
   
  This method supersedes the following functions:  
   
-- [GetRequestedRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
+- [GetRequestedRuntimeInfo](getrequestedruntimeinfo-function.md)  
   
-- [GetRequestedRuntimeVersion](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
+- [GetRequestedRuntimeVersion](getrequestedruntimeversion-function.md)  
   
 ## Syntax  
   
@@ -34,6 +35,7 @@ HRESULT GetVersionString(
 ```  
   
 ## Parameters  
+
  `pwzBuffer`  
  [out] The .NET Framework compilation version in the format "v*A*.*B*[.*X*]". *A*, *B*, and *X* are decimal numbers that correspond to the major version, the minor version, and the build number. *X* is optional. If *X* is not present, there is no trailing period.  
   
@@ -46,6 +48,7 @@ HRESULT GetVersionString(
  [in, out] Specifies the size of `pwzBuffer` to avoid buffer overruns. If `pwzBuffer` is `null`, `pchBuffer` returns the required size of `pwzBuffer` to allow preallocation.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -54,7 +57,8 @@ HRESULT GetVersionString(
 |E_POINTER|`pwzBuffer` or `pchBuffer` is null.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -64,7 +68,7 @@ HRESULT GetVersionString(
   
 ## See also
 
-- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [CLR Hosting Interfaces Added in the .NET Framework 4 and 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo Interface](iclrruntimeinfo-interface.md)
+- [Hosting Interfaces](hosting-interfaces.md)
+- [CLR Hosting Interfaces Added in the .NET Framework 4 and 4.5](clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)
+- [Hosting](index.md)

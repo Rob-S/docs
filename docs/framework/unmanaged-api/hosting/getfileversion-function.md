@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # GetFileVersion Function
+
 Gets the common language runtime (CLR) version information of the specified file, using the specified buffer.  
   
  This function has been deprecated in the .NET Framework 4.  
@@ -24,14 +25,15 @@ Gets the common language runtime (CLR) version information of the specified file
   
 ```cpp  
 HRESULT GetFileVersion (  
-    [in]  LPCWSTR      szFilename,   
-    [in, out] LPWSTR   szBuffer,   
-    [in]  DWORD        cchBuffer,   
+    [in]  LPCWSTR      szFilename,
+    [in, out] LPWSTR   szBuffer,
+    [in]  DWORD        cchBuffer,
     [out] DWORD        *dwLength  
 );  
 ```  
   
 ## Parameters  
+
  `szFilename`  
  [in] The path of the file to be examined.  
   
@@ -45,7 +47,8 @@ HRESULT GetFileVersion (
  [out] The size, in bytes, of the returned `szBuffer`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -53,4 +56,4 @@ HRESULT GetFileVersion (
   
 ## See also
 
-- [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Deprecated CLR Hosting Functions](deprecated-clr-hosting-functions.md)

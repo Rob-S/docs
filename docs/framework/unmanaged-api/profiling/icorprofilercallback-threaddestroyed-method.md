@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ThreadDestroyed Method
+
 Notifies the profiler that a thread has been destroyed.  
   
 ## Syntax  
@@ -27,14 +28,17 @@ HRESULT ThreadDestroyed(
 ```  
   
 ## Parameters  
+
  `threadId`  
  [in] The ID of the thread that has been destroyed.  
   
 ## Remarks  
+
  The `threadId` value is no longer valid at the time of this call.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -44,5 +48,5 @@ HRESULT ThreadDestroyed(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ThreadCreated Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadcreated-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ThreadCreated Method](icorprofilercallback-threadcreated-method.md)

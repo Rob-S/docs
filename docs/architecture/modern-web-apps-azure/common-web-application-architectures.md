@@ -3,7 +3,7 @@ title: Common web application architectures
 description: Architect Modern Web Applications with ASP.NET Core and Azure | Explore the common web application architectures
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
+ms.date: 12/04/2019
 ---
 # Common web application architectures
 
@@ -34,7 +34,7 @@ To address these issues, applications often evolve into multi-project solutions,
 
 ## What are layers?
 
-As applications grow in complexity, one way to manage that complexity is to break up the application according to its responsibilities or concerns. This follows the separation of concerns principle, and can help keep a growing codebase organized so that developers can easily find where certain functionality is implemented. Layered architecture offers a number of advantages beyond just code organization, though.
+As applications grow in complexity, one way to manage that complexity is to break up the application according to its responsibilities or concerns. This follows the separation of concerns principle and can help keep a growing codebase organized so that developers can easily find where certain functionality is implemented. Layered architecture offers a number of advantages beyond just code organization, though.
 
 By organizing code into layers, common low-level functionality can be reused throughout the application. This reuse is beneficial because it means less code needs to be written and because it can allow the application to standardize on a single implementation, following the [don't repeat yourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle.
 
@@ -42,7 +42,7 @@ With a layered architecture, applications can enforce restrictions on which laye
 
 Layers (and encapsulation) make it much easier to replace functionality within the application. For example, an application might initially use its own SQL Server database for persistence, but later could choose to use a cloud-based persistence strategy, or one behind a web API. If the application has properly encapsulated its persistence implementation within a logical layer, that SQL Server specific layer could be replaced by a new one implementing the same public interface.
 
-In addition to the potential of swapping out implementations in response to future changes in requirements, application layers can also make it easier to swap out implementations for testing purposes. Instead of having to write tests that operate against the real data layer or UI layer of the application, these layers can be replaced at test time with fake implementations that provide known responses to requests. This typically makes tests much easier to write and much faster to run when compared to running tests again the application's real infrastructure.
+In addition to the potential of swapping out implementations in response to future changes in requirements, application layers can also make it easier to swap out implementations for testing purposes. Instead of having to write tests that operate against the real data layer or UI layer of the application, these layers can be replaced at test time with fake implementations that provide known responses to requests. This typically makes tests much easier to write and much faster to run when compared to running tests against the application's real infrastructure.
 
 Logical layering is a common technique for improving the organization of code in enterprise software applications, and there are several ways in which code can be organized into layers.
 
@@ -93,8 +93,7 @@ The simplest approach to scaling a web application in Azure is to configure scal
 
 Applications that follow the Dependency Inversion Principle as well as the Domain-Driven Design (DDD) principles tend to arrive at a similar architecture. This architecture has gone by many names over the years. One of the first names was Hexagonal Architecture, followed by Ports-and-Adapters. More recently, it's been cited as the [Onion Architecture](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) or [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). The latter name, Clean Architecture, is used as the name for this architecture in this e-book.
 
-> [!NOTE]
-> The term Clean Architecture can be applied to applications that are built using DDD Principles as well as to those that are not built using DDD. In the case of the former, this combination may be referred to as "Clean DDD Architecture".
+The eShopOnWeb reference application uses the Clean Architecture approach in organizing its code into projects. You can find a solution template you can use as a starting point for your own ASP.NET Core on the [ardalis/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) GitHub repository.
 
 Clean architecture puts the business logic and application model at the center of the application. Instead of having business logic depend on data access or other infrastructure concerns, this dependency is inverted: infrastructure and implementation details depend on the Application Core. This is achieved by defining abstractions, or interfaces, in the Application Core, which are then implemented by types defined in the Infrastructure layer. A common way of visualizing this architecture is to use a series of concentric circles, similar to an onion. Figure 5-7 shows an example of this style of architectural representation.
 
@@ -140,28 +139,34 @@ For monolithic applications the Application Core, Infrastructure, and UI project
 
 In a Clean Architecture solution, each project has clear responsibilities. As such, certain types belong in each project and you'll frequently find folders corresponding to these types in the appropriate project.
 
+#### Application Core
+
 The Application Core holds the business model, which includes entities, services, and interfaces. These interfaces include abstractions for operations that will be performed using Infrastructure, such as data access, file system access, network calls, etc. Sometimes services or interfaces defined at this layer will need to work with non-entity types that have no dependencies on UI or Infrastructure. These can be defined as simple Data Transfer Objects (DTOs).
 
-### Application Core types
+##### Application Core types
 
 - Entities (business model classes that are persisted)
 - Interfaces
 - Services
 - DTOs
 
+#### Infrastructure
+
 The Infrastructure project typically includes data access implementations. In a typical ASP.NET Core web application, these implementations include the Entity Framework (EF) DbContext, any EF Core `Migration` objects that have been defined, and data access implementation classes. The most common way to abstract data access implementation code is through the use of the [Repository design pattern](https://deviq.com/repository-pattern/).
 
 In addition to data access implementations, the Infrastructure project should contain implementations of services that must interact with infrastructure concerns. These services should implement interfaces defined in the Application Core, and so Infrastructure should have a reference to the Application Core project.
 
-### Infrastructure types
+##### Infrastructure types
 
 - EF Core types (`DbContext`, `Migration`)
 - Data access implementation types (Repositories)
 - Infrastructure-specific services (for example, `FileLogger` or `SmtpNotifier`)
 
+#### UI Layer
+
 The user interface layer in an ASP.NET Core MVC application is the entry point for the application. This project should reference the Application Core project, and its types should interact with infrastructure strictly through interfaces defined in Application Core. No direct instantiation of or static calls to the Infrastructure layer types should be allowed in the UI layer.
 
-### UI layer types
+##### UI Layer types
 
 - Controllers
 - Filters
@@ -194,7 +199,7 @@ The monolithic approach is common, and many organizations are developing with th
 
 ![Figure 5-14](./media/image5-14.png)
 
-Deploying monolithic applications in Microsoft Azure can be achieved using dedicated VMs for each instance. Using [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), you can easily scale the VMs. [Azure App Services](https://azure.microsoft.com/services/app-service/) can run monolithic applications and easily scale instances without having to manage the VMs. Azure App Services can run single instances of Docker containers as well, simplifying the deployment. Using Docker, you can deploy a single VM as a Docker host, and run multiple instances. Using the Azure balancer, as shown in the Figure 5-14, you can manage scaling.
+Deploying monolithic applications in Microsoft Azure can be achieved using dedicated VMs for each instance. Using [Azure Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/), you can easily scale the VMs. [Azure App Services](https://azure.microsoft.com/services/app-service/) can run monolithic applications and easily scale instances without having to manage the VMs. Azure App Services can run single instances of Docker containers as well, simplifying the deployment. Using Docker, you can deploy a single VM as a Docker host, and run multiple instances. Using the Azure balancer, as shown in the Figure 5-14, you can manage scaling.
 
 The deployment to the various hosts can be managed with traditional deployment techniques. The Docker hosts can be managed with commands like **docker run** performed manually, or through automation such as Continuous Delivery (CD) pipelines.
 
@@ -206,7 +211,7 @@ Deploying updates as Docker images is far faster and network efficient. Docker I
 
 As containers are inherently immutable by design, you never need to worry about corrupted VMs, whereas update scripts might forget to account for some specific configuration or file left on disk.
 
-You can use Docker containers for monolithic deployment of simpler web applications. This improves continuous integration and continuous deployment pipelines and helps achieve deployment-to-production success. No more “It works in my machine, why does it not work in production?”
+You can use Docker containers for monolithic deployment of simpler web applications. This improves continuous integration and continuous deployment pipelines and helps achieve deployment-to-production success. No more “It works on my machine, why does it not work in production?”
 
 A microservices-based architecture has many benefits, but those benefits come at a cost of increased complexity. In some cases, the costs outweigh the benefits, so a monolithic deployment application running in a single container or in just a few containers is a better option.
 
@@ -214,7 +219,7 @@ A monolithic application might not be easily decomposable into well-separated mi
 
 An application might not yet need to scale features independently. Many applications, when they need to scale beyond a single instance, can do so through the relatively simple process of cloning that entire instance. The additional work to separate the application into discrete services provides minimal benefit when scaling full instances of the application is simple and cost-effective.
 
-Early in the development of an application, you might not have a clear idea where the natural functional boundaries are. As you develop a minimum viable product, the natural separation might not yet have emerged. Some of these conditions might be temporary. You might start by creating a monolithic application, and later separate some features to be developed and deployed as microservices. Other conditions might be essential to the application’s problem space, meaning that the application might never be broken into multiple microservices.
+Early in the development of an application, you might not have a clear idea where the natural functional boundaries are. As you develop a minimum viable product, the natural separation might not yet have emerged. Some of these conditions might be temporary. You might start by creating a monolithic application, and later separate some features to be developed and deployed as microservices. Other conditions might be essential to the application's problem space, meaning that the application might never be broken into multiple microservices.
 
 Separating an application into many discrete processes also introduces overhead. There's more complexity in separating features into different processes. The communication protocols become more complex. Instead of method calls, you must use asynchronous communications between services. As you move to a microservices architecture, you need to add many of the building blocks implemented in the microservices version of the eShopOnContainers application: event bus handling, message resiliency and retries, eventual consistency, and more.
 
@@ -256,22 +261,20 @@ networks:
 
 The `docker-compose.yml` file references the `Dockerfile` in the `Web` project. The `Dockerfile` is used to specify which base container will be used and how the application will be configured on it. The `Web`' `Dockerfile`:
 
-```Dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+```dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /app
 
+COPY *.sln .
 COPY . .
 WORKDIR /app/src/Web
 RUN dotnet restore
 
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/src/Web/out ./
-
-# Optional: Set this here if not setting it from docker-compose.yml
-# ENV ASPNETCORE_ENVIRONMENT Development
 
 ENTRYPOINT ["dotnet", "Web.dll"]
 ```
@@ -292,7 +295,7 @@ If you want to add Docker support to your application using Visual Studio, make 
   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 - **The Repository Pattern**  
   <https://deviq.com/repository-pattern/>
-- **Clean Architecture Solution Sample**  
+- **Clean Architecture Solution Template**  
   <https://github.com/ardalis/cleanarchitecture>
 - **Architecting Microservices e-book**  
   <https://aka.ms/MicroservicesEbook>

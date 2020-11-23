@@ -1,5 +1,6 @@
 ---
 title: "<netTcpBinding>"
+description: Represents a secure, reliable, optimized binding intended only for WCF cross-machine communication using TCP. Reliable messaging is off by default.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "netTcpBinding Element"
@@ -80,8 +81,8 @@ The following sections describe attributes, child elements, and parent elements.
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](security-of-nettcpbinding.md)|Defines the security settings for the binding. This element is of type <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>.|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding. This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Specifies if reliable sessions are established between channel endpoints.|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding. This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<reliableSession>](/previous-versions/ms731375(v=vs.90))|Specifies if reliable sessions are established between channel endpoints.|  
   
 ### Parent elements  
   

@@ -7,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: 6e698461-e944-4c0f-ae48-87429f1fe740
 ---
 # Information and Interaction Summary (Visual Basic)
+
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
   
 |Action|Language element|  
@@ -21,5 +22,5 @@ Visual Basic language keywords and run-time library members are organized by pur
   
 ## See also
 
-- [Keywords](../../../visual-basic/language-reference/keywords/index.md)
-- [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Keywords](index.md)
+- [Visual Basic Runtime Library Members](../runtime-library-members.md)

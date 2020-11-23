@@ -9,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: 6abf2dd7-92d2-488a-8e2b-819be9b30c3f
 ---
 # Math Summary (Visual Basic)
+
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
   
 |Action|Language element|  
@@ -22,6 +23,6 @@ Visual Basic language keywords and run-time library members are organized by pur
   
 ## See also
 
-- [Derived Math Functions](../../../visual-basic/language-reference/keywords/derived-math-functions.md)
-- [Keywords](../../../visual-basic/language-reference/keywords/index.md)
-- [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)
+- [Derived Math Functions](derived-math-functions.md)
+- [Keywords](index.md)
+- [Visual Basic Runtime Library Members](../runtime-library-members.md)

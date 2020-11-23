@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugDataTarget::GetThreadContext Method
+
 Returns the current thread context for the specified thread.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT GetThreadContext(
 ```  
   
 ## Parameters  
+
  `dwThreadID`  
  [in] The identifier of the thread whose context is to be retrieved. The identifier is defined by the operating system.  
   
@@ -43,10 +45,12 @@ HRESULT GetThreadContext(
  [out] The buffer where the thread context will be stored.  
   
 ## Remarks  
- On Windows platforms, `pContext` must be a `CONTEXT` structure (defined in WinNT.h) that is appropriate for the machine type specified by the [ICorDebugDataTarget::GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) method. `contextFlags` must have the same values as the `ContextFlags` field of the `CONTEXT` structure. The `CONTEXT` structure is processor-specific; refer to the WinNT.h file for details.  
+
+ On Windows platforms, `pContext` must be a `CONTEXT` structure (defined in WinNT.h) that is appropriate for the machine type specified by the [ICorDebugDataTarget::GetPlatform](icordebugdatatarget-getplatform-method.md) method. `contextFlags` must have the same values as the `ContextFlags` field of the `CONTEXT` structure. The `CONTEXT` structure is processor-specific; refer to the WinNT.h file for details.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -56,6 +60,6 @@ HRESULT GetThreadContext(
   
 ## See also
 
-- [ICorDebugDataTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget Interface](icordebugdatatarget-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

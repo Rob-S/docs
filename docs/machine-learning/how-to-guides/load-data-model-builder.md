@@ -4,7 +4,7 @@ description: Learn how to load training data from a SQL Server database or a fil
 ms.date: 10/29/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
+ms.custom: mvc, how-to, mlnet-tooling
 #Customer intent: As a developer, I want to load data in Model Builder
 ---
 
@@ -105,6 +105,6 @@ In the folder structure illustrated below, the top-level directory is *flower_ph
 Follow these tutorials to build machine learning apps with Model Builder:
 
 - [Predict prices using regression](../tutorials/predict-prices-with-model-builder.md)
-- [Analyze sentiment in a web application using binary classification](../tutorials/sentiment-analysis-model-builder.md )
+- [Analyze sentiment in a web application using binary classification](../tutorials/sentiment-analysis-model-builder.md)
 
 If you're training a model using code, [learn how to load data using the ML.NET API](load-data-ml-net.md).

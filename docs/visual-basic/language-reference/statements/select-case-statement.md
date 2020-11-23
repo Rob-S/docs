@@ -23,6 +23,7 @@ helpviewer_keywords:
 ms.assetid: 68877b65-5419-4bf0-a465-20cd0e4c7d44
 ---
 # Select...Case Statement (Visual Basic)
+
 Runs one of several groups of statements, depending on the value of an expression.  
   
 ## Syntax  
@@ -47,6 +48,7 @@ End Select
 |`End Select`|Terminates the definition of the `Select`...`Case` construction.|  
   
 ## Remarks  
+
  If `testexpression` matches any `Case` `expressionlist` clause, the statements following that `Case` statement run up to the next `Case`, `Case Else`, or `End Select` statement. Control then passes to the statement following `End Select`. If `testexpression` matches an `expressionlist` clause in more than one `Case` clause, only the statements following the first match run.  
   
  The `Case Else` statement is used to introduce the `elsestatements` to run if no match is found between the `testexpression` and an `expressionlist` clause in any of the other `Case` statements. Although not required, it is a good idea to have a `Case Else` statement in your `Select Case` construction to handle unforeseen `testexpression` values. If no `Case` `expressionlist` clause matches `testexpression` and there is no `Case Else` statement, control passes to the statement following `End Select`.  
@@ -56,7 +58,7 @@ End Select
  `Case 1 To 4, 7 To 9, 11, 13, Is > maxNumber`  
   
 > [!NOTE]
-> The `Is` keyword used in the `Case` and `Case Else` statements is not the same as the [Is Operator](../../../visual-basic/language-reference/operators/is-operator.md), which is used for object reference comparison.  
+> The `Is` keyword used in the `Case` and `Case Else` statements is not the same as the [Is Operator](../operators/is-operator.md), which is used for object reference comparison.  
   
  You can specify ranges and multiple expressions for character strings. In the following example, `Case` matches any string that is exactly equal to "apples", has a value between "nuts" and "soup" in alphabetical order, or contains the exact same value as the current value of `testItem`.  
   
@@ -65,13 +67,14 @@ End Select
  The setting of `Option Compare` can affect string comparisons. Under `Option Compare Text`, the strings "Apples" and "apples" compare as equal, but under `Option Compare Binary`, they do not.  
   
 > [!NOTE]
-> A `Case` statement with multiple clauses can exhibit behavior known as *short-circuiting*. Visual Basic evaluates the clauses from left to right, and if one produces a match with `testexpression`, the remaining clauses are not evaluated. Short-circuiting can improve performance, but it can produce unexpected results if you are expecting every expression in `expressionlist` to be evaluated. For more information on short-circuiting, see [Boolean Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md).  
+> A `Case` statement with multiple clauses can exhibit behavior known as *short-circuiting*. Visual Basic evaluates the clauses from left to right, and if one produces a match with `testexpression`, the remaining clauses are not evaluated. Short-circuiting can improve performance, but it can produce unexpected results if you are expecting every expression in `expressionlist` to be evaluated. For more information on short-circuiting, see [Boolean Expressions](../../programming-guide/language-features/operators-and-expressions/boolean-expressions.md).  
   
  If the code within a `Case` or `Case Else` statement block does not need to run any more of the statements in the block, it can exit the block by using the `Exit Select` statement. This transfers control immediately to the statement following `End Select`.  
   
  `Select Case` constructions can be nested. Each nested `Select Case` construction must have a matching `End Select` statement and must be completely contained within a single `Case` or `Case Else` statement block of the outer `Select Case` construction within which it is nested.  
   
 ## Example  
+
  The following example uses a `Select Case` construction to write a line corresponding to the value of the variable `number`. The second `Case` statement contains the value that matches the current value of `number`, so the statement that writes "Between 6 and 8, inclusive" runs.  
   
  [!code-vb[VbVbalrStatements#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#54)]  
@@ -79,7 +82,7 @@ End Select
 ## See also
 
 - <xref:Microsoft.VisualBasic.Interaction.Choose%2A>
-- [End Statement](../../../visual-basic/language-reference/statements/end-statement.md)
-- [If...Then...Else Statement](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
-- [Option Compare Statement](../../../visual-basic/language-reference/statements/option-compare-statement.md)
-- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)
+- [End Statement](end-statement.md)
+- [If...Then...Else Statement](if-then-else-statement.md)
+- [Option Compare Statement](option-compare-statement.md)
+- [Exit Statement](exit-statement.md)

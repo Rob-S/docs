@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::AddSectionReloc Method
+
 Adds a .reloc instruction to the code base.  
   
  This method is obsolete and should not be used.  
@@ -27,12 +28,13 @@ Adds a .reloc instruction to the code base.
 HRESULT AddSectionReloc (  
    [in] HCEESECTION            section,  
    [in] ULONG                  offset,  
-   [in] HCEESECTION            relativeTo,   
+   [in] HCEESECTION            relativeTo,
    [in] CeeSectionRelocType    relocType  
 );  
 ```  
   
 ## Parameters  
+
  `section`  
  [in] The section of in-memory code to which to add a .reloc instruction.  
   
@@ -43,10 +45,11 @@ HRESULT AddSectionReloc (
  [in] The section to which `offset` refers.  
   
  `relocType`  
- [in] One of the [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) values, indicating the kind of .reloc instruction to add.  
+ [in] One of the [CeeSectionRelocType](ceesectionreloctype-enumeration.md) values, indicating the kind of .reloc instruction to add.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -56,4 +59,4 @@ HRESULT AddSectionReloc (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

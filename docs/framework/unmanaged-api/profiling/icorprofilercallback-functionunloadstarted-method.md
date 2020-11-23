@@ -17,24 +17,29 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::FunctionUnloadStarted Method
+
 Notifies the profiler that the runtime has started to unload a function.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT FunctionUnloadStarted(  
-    [in] FunctionID functionId);   
+    [in] FunctionID functionId);
 ```  
   
-## Parameters  
- `functionId`  
- [in] The ID of the function that is being unloaded.  
-  
+## Parameters
+
+- `functionId`
+
+  \[in] The ID of the function that is being unloaded.
+
 ## Remarks  
+
  The value of the `functionId` parameter is no longer valid after this method returns to the caller.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -44,4 +49,4 @@ HRESULT FunctionUnloadStarted(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

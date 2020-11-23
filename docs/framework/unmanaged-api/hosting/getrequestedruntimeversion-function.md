@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # GetRequestedRuntimeVersion Function
+
 Gets the version number of the common language runtime (CLR) requested by the specified application. If that version is not installed, gets the most recent version that is installed before the requested version.  
   
  This function has been deprecated in the .NET Framework 4.  
@@ -25,14 +26,15 @@ Gets the version number of the common language runtime (CLR) requested by the sp
   
 ```cpp  
 HRESULT GetRequestedRuntimeVersion (  
-    [in]  LPWSTR  pExe,   
-    [out] LPWSTR  pVersion,   
-    [in]  DWORD   cchBuffer,   
+    [in]  LPWSTR  pExe,
+    [out] LPWSTR  pVersion,
+    [in]  DWORD   cchBuffer,
     [out] DWORD  *pdwLength  
 );  
 ```  
   
 ## Parameters  
+
  `pExe`  
  [in] The name of the application.  
   
@@ -46,6 +48,7 @@ HRESULT GetRequestedRuntimeVersion (
  [out] A pointer to the length of the version number string.  
   
 ## Return Value  
+
  This method returns standard Component Object Model (COM) error codes, as defined in WinError.h, in addition to the following values.  
   
 |Return code|Description|  
@@ -55,7 +58,8 @@ HRESULT GetRequestedRuntimeVersion (
 |E_POINTER|`pdwLength` is null.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -65,6 +69,6 @@ HRESULT GetRequestedRuntimeVersion (
   
 ## See also
 
-- [GetRequestedRuntimeInfo Function](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
-- [GetVersionFromProcess Function](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)
-- [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [GetRequestedRuntimeInfo Function](getrequestedruntimeinfo-function.md)
+- [GetVersionFromProcess Function](getversionfromprocess-function.md)
+- [Deprecated CLR Hosting Functions](deprecated-clr-hosting-functions.md)

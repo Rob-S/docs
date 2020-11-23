@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # CorDebugPlatform Enumeration
-Provides target platform values that are used by the [ICorDebugDataTarget::GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) method.  
+
+Provides target platform values that are used by the [ICorDebugDataTarget::GetPlatform](icordebugdatatarget-getplatform-method.md) method.  
   
 ## Syntax  
   
@@ -46,7 +47,8 @@ typedef enum CorDebugPlatform
 |CORDB_PLATFORM_MAC_AMD64|The target platform is the Macintosh operating system running on AMD64 hardware.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -58,4 +60,4 @@ typedef enum CorDebugPlatform
   
 ## See also
 
-- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Debugging Enumerations](debugging-enumerations.md)

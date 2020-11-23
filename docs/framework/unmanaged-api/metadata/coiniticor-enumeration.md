@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # COINITICOR Enumeration
-Specifies constants used by [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) when it initializes the common language runtime.  
+
+Specifies constants used by [CoInitializeCor](../hosting/coinitializecor-function.md) when it initializes the common language runtime.  
   
 ## Syntax  
   
@@ -34,7 +35,8 @@ typedef enum tagCOINITCOR
 |`COINITCOR`|Indicates the default initialization mode.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -44,4 +46,4 @@ typedef enum tagCOINITCOR
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

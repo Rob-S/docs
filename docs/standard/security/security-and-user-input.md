@@ -1,15 +1,13 @@
 ---
 title: "Security and User Input"
-ms.date: "03/30/2017"
-ms.technology: dotnet-standard
+description: Your code might pass user-entered data as parameters to other code, which can affect security. You can do range checking to reject problematic input.
+ms.date: 07/15/2020
 helpviewer_keywords:
-  - "security [.NET Framework], user input"
+  - "security [.NET], user input"
   - "user input, security"
   - "secure coding, user input"
   - "code security, user input"
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Security and User Input
 
@@ -55,4 +53,5 @@ Some important considerations involving user data include the following:
 
 ## See also
 
-- [Secure Coding Guidelines](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Secure Coding Guidelines](secure-coding-guidelines.md)
+- [ASP.NET Core Security](/aspnet/core/security/)

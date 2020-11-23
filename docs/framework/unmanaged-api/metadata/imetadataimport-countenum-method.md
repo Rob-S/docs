@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::CountEnum Method
+
 Gets the number of elements in the enumeration that was retrieved by the specified enumerator.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT CountEnum (  
-   [in]  HCORENUM    hEnum,   
+   [in]  HCORENUM    hEnum,
    [out] ULONG       *pulCount  
 );  
 ```  
   
 ## Parameters  
+
  `hEnum`  
  [in] The handle for the enumerator.  
   
@@ -36,10 +38,12 @@ HRESULT CountEnum (
  [out] The number of elements enumerated.  
   
 ## Remarks  
- The handle specified by `hEnum` is obtained from a previous `Enum`*Name* call (for example, [IMetaDataImport::EnumTypeDefs](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
+
+ The handle specified by `hEnum` is obtained from a previous `Enum`*Name* call (for example, [IMetaDataImport::EnumTypeDefs](imetadataimport-enumtypedefs-method.md)).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -49,5 +53,5 @@ HRESULT CountEnum (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IDebuggerThreadControl::ReleaseAllRuntimeThreads Method
+
 Notifies the host that the debugging services are about to release all threads that are blocked.  
   
 ## Syntax  
@@ -26,10 +27,12 @@ HRESULT ReleaseAllRuntimeThreads ( );
 ```  
   
 ## Remarks  
+
  The `ReleaseAllRuntimeThreads` method will never be called on a runtime thread. If the host has a runtime thread blocked, it should release it now.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -39,4 +42,4 @@ HRESULT ReleaseAllRuntimeThreads ( );
   
 ## See also
 
-- [IDebuggerThreadControl Interface](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)
+- [IDebuggerThreadControl Interface](idebuggerthreadcontrol-interface.md)

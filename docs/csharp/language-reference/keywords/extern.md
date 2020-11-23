@@ -1,7 +1,6 @@
 ---
+description: "extern modifier - C# Reference"
 title: "extern modifier - C# Reference"
-ms.custom: seodec18
-
 ms.date: 07/20/2015
 f1_keywords:
   - "extern_CSharpKeyword"

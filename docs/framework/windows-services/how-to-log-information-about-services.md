@@ -1,5 +1,6 @@
 ---
 title: "How to: Log Information About Services"
+description: Know how to log information about services. Set the AutoLog property if you want your Windows Service project to interact with the Application event log.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -12,7 +13,6 @@ helpviewer_keywords:
   - "application event logs, service applications"
   - "logs, service applications"
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
-author: "ghogen"
 ---
 # How to: Log Information About Services
 By default, all Windows Service projects have the ability to interact with the Application event log and write information and exceptions to it. You use the <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> property to indicate whether you want this functionality in your application. By default, logging is turned on for any service you create with the Windows Service project template. You can use a static form of the <xref:System.Diagnostics.EventLog> class to write service information to a log without having to create an instance of an <xref:System.Diagnostics.EventLog> component or manually register a source.  

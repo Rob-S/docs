@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 52e15795-907e-4b10-acb7-5c37a76ce594
 ---
 # This key is already associated with an element of this collection
+
 The specified a key for a collection member already identifies another member of the collection. A key is a string specified in the `Add` method that uniquely identifies a specific member of a collection.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ The specified a key for a collection member already identifies another member of
   
 ## See also
 
-- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../../programming-guide/language-features/error-types.md)

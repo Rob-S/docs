@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedReader::UpdateSymbolStore Method
+
 Updates the existing symbol store with a delta symbol store. This method is used in edit-and-continue scenarios to update the symbol store to match deltas to the original portable executable (PE) file.  
   
 > [!NOTE]
@@ -31,6 +32,7 @@ HRESULT UpdateSymbolStore (
 ```  
   
 ## Parameters  
+
  `filename`  
  [in] The name of the file that contains the symbol store.  
   
@@ -38,11 +40,13 @@ HRESULT UpdateSymbolStore (
  [in] The file stream, used as an alternative to the `filename` parameter.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedReader Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader Interface](isymunmanagedreader-interface.md)

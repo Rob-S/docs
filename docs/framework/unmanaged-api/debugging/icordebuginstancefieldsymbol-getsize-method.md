@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: a4af1e3b-6a9f-4855-95ba-5317565c8e2b
 ---
 # ICorDebugInstanceFieldSymbol::GetSize Method
+
 Gets the size in bytes of the instance field.  
   
 ## Syntax  
@@ -15,6 +16,7 @@ HRESULT GetSize(
 ```  
   
 ## Parameters  
+
  `pcbSize`  
  [out] A pointer to length of the field.  
   
@@ -24,7 +26,8 @@ HRESULT GetSize(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -34,5 +37,5 @@ HRESULT GetSize(
   
 ## See also
 
-- [ICorDebugInstanceFieldSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugInstanceFieldSymbol Interface](icordebuginstancefieldsymbol-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

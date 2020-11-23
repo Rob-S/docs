@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorDebugStepReason Enumeration
+
 Indicates the outcome of an individual step.  
   
 ## Syntax  
@@ -45,7 +46,8 @@ typedef enum CorDebugStepReason {
 |`STEP_EXIT`|The thread exited before the step was completed.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -55,5 +57,5 @@ typedef enum CorDebugStepReason {
   
 ## See also
 
-- [StepComplete Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md)
-- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [StepComplete Method](icordebugmanagedcallback-stepcomplete-method.md)
+- [Debugging Enumerations](debugging-enumerations.md)

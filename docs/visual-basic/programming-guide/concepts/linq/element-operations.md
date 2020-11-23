@@ -4,6 +4,7 @@ ms.date: 07/20/2015
 ms.assetid: 5fcb0631-dce5-45ff-8abb-353cae21e14f
 ---
 # Element Operations (Visual Basic)
+
 Element operations return a single, specific element from a sequence.  
   
  The standard query operator methods that perform element operations are listed in the following section.  
@@ -24,5 +25,5 @@ Element operations return a single, specific element from a sequence.
 ## See also
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)
+- [Standard Query Operators Overview (Visual Basic)](standard-query-operators-overview.md)
+- [How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)](how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)

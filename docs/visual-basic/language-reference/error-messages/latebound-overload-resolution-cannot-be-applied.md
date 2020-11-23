@@ -9,7 +9,7 @@ helpviewer_keywords:
   - "BC30933"
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
 ---
-# Latebound overload resolution cannot be applied to '\<procedurename>' because the accessing instance is an interface type
+# BC30933: Latebound overload resolution cannot be applied to '\<procedurename>' because the accessing instance is an interface type
 
 The compiler is attempting to resolve a reference to an overloaded property or procedure, but the reference fails because an argument is of type `Object` and the referring object has the data type of an interface. The `Object` argument forces the compiler to resolve the reference as late-bound.
 
@@ -62,6 +62,6 @@ Each of the preceding lines of code explicitly casts the `Object` variable `o1` 
 
 ## See also
 
-- [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
-- [Overload Resolution](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
-- [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md)
+- [Procedure Overloading](../../programming-guide/language-features/procedures/procedure-overloading.md)
+- [Overload Resolution](../../programming-guide/language-features/procedures/overload-resolution.md)
+- [CType Function](../functions/ctype-function.md)

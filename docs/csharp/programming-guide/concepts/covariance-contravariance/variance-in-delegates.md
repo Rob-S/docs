@@ -1,9 +1,11 @@
 ---
 title: "Variance in Delegates (C#)"
+description: Learn how the variance support in .NET allows you to match method signatures with delegate types in all delegates.
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
 ---
 # Variance in Delegates (C#)
+
 .NET Framework 3.5 introduced variance support for matching method signatures with delegate types in all delegates in C#. This means that you can assign to delegates not only methods that have matching signatures, but also methods that return more derived types (covariance) or that accept parameters that have less derived types (contravariance) than that specified by the delegate type. This includes both generic and non-generic delegates.  
   
  For example, consider the following code, which has two classes and two delegates: generic and non-generic.  
@@ -30,7 +32,7 @@ public static Second ASecondRSecond(Second second)
 public static First AFirstRFirst(First first)  
 { return new First(); }  
   
-// The return type is more derived   
+// The return type is more derived
 // and the argument type is less derived.  
 public static Second AFirstRSecond(First first)  
 { return new Second(); }  
@@ -39,10 +41,10 @@ public static Second AFirstRSecond(First first)
  The following code example illustrates the implicit conversion between the method signature and the delegate type.  
   
 ```csharp  
-// Assigning a method with a matching signature   
+// Assigning a method with a matching signature
 // to a non-generic delegate. No conversion is necessary.  
 SampleDelegate dNonGeneric = ASecondRFirst;  
-// Assigning a method with a more derived return type   
+// Assigning a method with a more derived return type
 // and less derived argument type to a non-generic delegate.  
 // The implicit conversion is used.  
 SampleDelegate dNonGenericConversion = AFirstRSecond;  
@@ -50,7 +52,7 @@ SampleDelegate dNonGenericConversion = AFirstRSecond;
 // Assigning a method with a matching signature to a generic delegate.  
 // No conversion is necessary.  
 SampleGenericDelegate<Second, First> dGeneric = ASecondRFirst;  
-// Assigning a method with a more derived return type   
+// Assigning a method with a more derived return type
 // and less derived argument type to a generic delegate.  
 // The implicit conversion is used.  
 SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;  
@@ -59,6 +61,7 @@ SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;
  For more examples, see [Using Variance in Delegates (C#)](./using-variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (C#)](./using-variance-for-func-and-action-generic-delegates.md).  
   
 ## Variance in Generic Type Parameters  
+
  In .NET Framework 4 or later you can enable implicit conversion between delegates, so that generic delegates that have different types specified by generic type parameters can be assigned to each other, if the types are inherited from each other as required by variance.  
   
  To enable implicit conversion, you must explicitly declare generic parameters in a delegate as covariant or contravariant by using the `in` or `out` keyword.  
@@ -75,7 +78,7 @@ public static void Test()
   
     // You can assign delegates to each other,  
     // because the type T is declared covariant.  
-    SampleGenericDelegate <Object> dObject = dString;             
+    SampleGenericDelegate <Object> dObject = dString;
 }  
 ```  
   
@@ -92,7 +95,7 @@ public static void Test()
   
     // You can assign the dObject delegate  
     // to the same lambda expression as dString delegate  
-    // because of the variance support for   
+    // because of the variance support for
     // matching method signatures with delegate types.  
     SampleGenericDelegate<Object> dObject = () => " ";  
   
@@ -103,8 +106,9 @@ public static void Test()
 }  
 ```  
   
-### Generic Delegates That Have Variant Type Parameters in the .NET Framework  
- .NET Framework 4 introduced variance support for generic type parameters in several existing generic delegates:  
+### Generic Delegates That Have Variant Type Parameters in .NET
+
+.NET Framework 4 introduced variance support for generic type parameters in several existing generic delegates:  
   
 - `Action` delegates from the <xref:System> namespace, for example, <xref:System.Action%601> and <xref:System.Action%602>  
   
@@ -119,6 +123,7 @@ public static void Test()
  For more information and examples, see [Using Variance for Func and Action Generic Delegates (C#)](./using-variance-for-func-and-action-generic-delegates.md).  
   
 ### Declaring Variant Type Parameters in Generic Delegates  
+
  If a generic delegate has covariant or contravariant generic type parameters, it can be referred to as a *variant generic delegate*.  
   
  You can declare a generic type parameter covariant in a generic delegate by using the `out` keyword. The covariant type can be used only as a method return type and not as a type of method arguments. The following code example shows how to declare a covariant generic delegate.  
@@ -143,6 +148,7 @@ public delegate R DVariant<in A, out R>(A a);
 ```  
   
 ### Instantiating and Invoking Variant Generic Delegates  
+
  You can instantiate and invoke variant delegates just as you instantiate and invoke invariant delegates. In the following example, the delegate is instantiated by a lambda expression.  
   
 ```csharp  
@@ -151,7 +157,8 @@ dvariant("test");
 ```  
   
 ### Combining Variant Generic Delegates  
- You should not combine variant delegates. The <xref:System.Delegate.Combine%2A> method does not support variant delegate conversion and expects delegates to be of exactly the same type. This can lead to a run-time exception when you combine delegates either by using the <xref:System.Delegate.Combine%2A> method or by using the `+` operator, as shown in the following code example.  
+
+Don't combine variant delegates. The <xref:System.Delegate.Combine%2A> method does not support variant delegate conversion and expects delegates to be of exactly the same type. This can lead to a run-time exception when you combine delegates either by using the <xref:System.Delegate.Combine%2A> method or by using the `+` operator, as shown in the following code example.  
   
 ```csharp  
 Action<object> actObj = x => Console.WriteLine("object: {0}", x);  
@@ -163,6 +170,7 @@ Action<string> actStr = x => Console.WriteLine("string: {0}", x);
 ```  
   
 ## Variance in Generic Type Parameters for Value and Reference Types  
+
  Variance for generic type parameters is supported for reference types only. For example, `DVariant<int>` can't be implicitly converted to `DVariant<Object>` or `DVariant<long>`, because integer is a value type.  
   
  The following example demonstrates that variance in generic type parameters is not supported for value types.  
@@ -186,7 +194,7 @@ public static void Test()
     // DInvariant<Object> dObject = dInt;  
     // DInvariant<long> dLong = dInt;  
     // DVariant<Object> dVariantObject = dVariantInt;  
-    // DVariant<long> dVariantLong = dVariantInt;              
+    // DVariant<long> dVariantLong = dVariantInt;
 }  
 ```  
   

@@ -1,12 +1,11 @@
 ---
 title: "Contention ETW events - .NET"
+description: Get details about contention ETW events, which are raised whenever there's contention for System.Threading.Monitor locks or native locks used by the runtime.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "contention events [.NET Framework]"
   - "ETW, contention events (CLR)"
 ms.assetid: 6933e753-2f2a-425b-ae84-42138c957d76
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Contention ETW events
 

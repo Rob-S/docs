@@ -1,6 +1,6 @@
 ---
 title: "Using type dynamic - C# Programming Guide"
-ms.custom: seodec18
+description: Learn how to use the dynamic type. The dynamic type is a static type, but dynamic objects bypass static type checking.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "dynamic [C#], about dynamic type"
@@ -54,7 +54,7 @@ Overload resolution occurs at run time instead of at compile time if one or more
 
 ## Dynamic language runtime
 
-The dynamic language runtime (DLR) is a new API in .NET Framework 4. It provides the infrastructure that supports the `dynamic` type in C#, and also the implementation of dynamic programming languages such as IronPython and IronRuby. For more information about the DLR, see [Dynamic Language Runtime Overview](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).
+The dynamic language runtime (DLR) is an API that was introduced in .NET Framework 4. It provides the infrastructure that supports the `dynamic` type in C#, and also the implementation of dynamic programming languages such as IronPython and IronRuby. For more information about the DLR, see [Dynamic Language Runtime Overview](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).
 
 ## COM interop
 
@@ -73,4 +73,4 @@ Many COM methods allow for variation in argument types and return type by design
 |[dynamic](../../language-reference/builtin-types/reference-types.md)|Describes the usage of the `dynamic` keyword.|
 |[Dynamic Language Runtime Overview](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Provides an overview of the DLR, which is a runtime environment that adds a set of services for dynamic languages to the common language runtime (CLR).|
 |[Walkthrough: Creating and Using Dynamic Objects](walkthrough-creating-and-using-dynamic-objects.md)|Provides step-by-step instructions for creating a custom dynamic object and for creating a project that accesses an `IronPython` library.|
-|[How to: Access Office Interop Objects by Using Visual C# Features](../interop/how-to-access-office-onterop-objects.md)|Demonstrates how to create a project that uses named and optional arguments, the `dynamic` type, and other enhancements that simplify access to Office API objects.|
+|[How to access Office interop objects by using C# features](../interop/how-to-access-office-onterop-objects.md)|Demonstrates how to create a project that uses named and optional arguments, the `dynamic` type, and other enhancements that simplify access to Office API objects.|

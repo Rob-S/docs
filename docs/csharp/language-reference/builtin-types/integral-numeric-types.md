@@ -35,7 +35,7 @@ helpviewer_keywords:
 ---
 # Integral numeric types  (C# reference)
 
-The **integral numeric types** are a subset of the **simple types** and can be initialized with [*literals*](#integer-literals). All integral types are also value types. All integral numeric types support [arithmetic](../operators/arithmetic-operators.md), [bitwise logical](../operators/bitwise-and-shift-operators.md), [comparison](../operators/comparison-operators.md), and [equality](../operators/equality-operators.md) operators.
+The *integral numeric types* represent integer numbers. All integral numeric types are [value types](value-types.md). They are also [simple types](value-types.md#built-in-value-types) and can be initialized with [literals](#integer-literals). All integral numeric types support [arithmetic](../operators/arithmetic-operators.md), [bitwise logical](../operators/bitwise-and-shift-operators.md), [comparison](../operators/comparison-operators.md), and [equality](../operators/equality-operators.md) operators.
 
 ## Characteristics of the integral types
 
@@ -103,7 +103,7 @@ byte b = 300;   // CS0031: Constant value '300' cannot be converted to a 'byte'
 
 As the preceding example shows, if the literal's value is not within the range of the destination type, a compiler error [CS0031](../../misc/cs0031.md) occurs.
 
-You also can use a cast to convert the value represented by an integer literal to the type other than the determined type of the literal:
+You can also use a cast to convert the value represented by an integer literal to the type other than the determined type of the literal:
 
 ```csharp
 var signedByte = (sbyte)42;
@@ -112,7 +112,7 @@ var longVariable = (long)42;
 
 ## Conversions
 
-You can convert any integral numeric type to any other integral numeric type. If the destination type can store all values of the source type, the conversion is implicit. Otherwise, you need to use the [cast operator `()`](../operators/type-testing-and-cast.md#cast-operator-) to invoke an explicit conversion. For more information, see [Built-in numeric conversions](numeric-conversions.md).
+You can convert any integral numeric type to any other integral numeric type. If the destination type can store all values of the source type, the conversion is implicit. Otherwise, you need to use a [cast expression](../operators/type-testing-and-cast.md#cast-expression) to perform an explicit conversion. For more information, see [Built-in numeric conversions](numeric-conversions.md).
 
 ## C# language specification
 
@@ -124,7 +124,7 @@ For more information, see the following sections of the [C# language specificati
 ## See also
 
 - [C# reference](../index.md)
-- [Built-in types table](../keywords/built-in-types-table.md)
+- [Value types](value-types.md)
 - [Floating-point types](floating-point-numeric-types.md)
-- [Formatting numeric results table](../keywords/formatting-numeric-results-table.md)
+- [Standard numeric format strings](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Numerics in .NET](../../../standard/numerics.md)

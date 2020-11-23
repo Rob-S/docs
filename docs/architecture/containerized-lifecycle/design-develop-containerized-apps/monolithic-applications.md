@@ -1,7 +1,7 @@
 ---
 title: Monolithic applications
 description: Understand the core concepts for containerizing monolithic applications.
-ms.date: 02/15/2019
+ms.date: 08/06/2020
 ---
 # Monolithic applications
 
@@ -31,7 +31,7 @@ From an infrastructure perspective, each server can run many applications within
 
 Finally, from an availability perspective, monolithic applications must be deployed as a whole; that means that in case you must *stop and start*, all functionality and all users will be affected during the deployment window. In certain situations, the use of Azure and containers can minimize these situations and reduce the probability of downtime of your application, as you can see in Figure 4-3.
 
-You can deploy monolithic applications in Azure by using dedicated VMs for each instance. Using [Azure VM Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), you can scale the VMs easily.
+You can deploy monolithic applications in Azure by using dedicated VMs for each instance. Using [Azure VM Scale Sets](/azure/virtual-machine-scale-sets/), you can scale the VMs easily.
 
 You can also use [Azure App Services](https://azure.microsoft.com/services/app-service/) to run monolithic applications and easily scale instances without having to manage the VMs. Azure App Services can run single instances of Docker containers, as well, simplifying the deployment.
 
@@ -55,7 +55,7 @@ Because containers are inherently immutable, by design, you never need to worry 
 
 Although monolithic apps can benefit from Docker, we're touching on only the tips of the benefits. The larger benefits of managing containers come from deploying with container orchestrators that manage the various instances and life cycle of each container instance. Breaking up the monolithic application into subsystems that can be scaled, developed, and deployed individually is your entry point into the realm of microservices.
 
-To learn about how to “lift and shift” monolithic applications with containers and how you can modernize your applications, you can read this additional Microsoft guide, [Modernize existing .NET applications with Azure cloud and Windows Containers](../../modernize-with-azure-containers/index.md), which you can also download as PDF from <https://aka.ms/LiftAndShiftWithContainersEbook>.
+To learn about how to "lift and shift" monolithic applications with containers and how you can modernize your applications, you can read this additional Microsoft guide, [Modernize existing .NET applications with Azure cloud and Windows Containers](../../modernize-with-azure-containers/index.md), which you can also download as PDF from <https://aka.ms/LiftAndShiftWithContainersEbook>.
 
 ## Publish a single Docker container app to Azure App Service
 

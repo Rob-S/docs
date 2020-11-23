@@ -1,19 +1,17 @@
 ---
 title: "XSLT Stylesheet Scripting Using <msxsl:script>"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # XSLT Stylesheet Scripting Using \<msxsl:script>
+
 The <xref:System.Xml.Xsl.XslTransform> class supports embedded scripting using the `script` element.  
   
 > [!NOTE]
-> The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the .NET Framework 2.0. You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class. See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.  
+> The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the .NET Framework 2.0. You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class. See [Using the XslCompiledTransform Class](using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](migrating-from-the-xsltransform-class.md) for more information.  
   
  The <xref:System.Xml.Xsl.XslTransform> class supports embedded scripting using the `script` element. When the style sheet is loaded, any defined functions are compiled to Microsoft intermediate language (MSIL) by being wrapped in a class definition and have no performance loss as a result.  
   
@@ -39,7 +37,7 @@ The <xref:System.Xml.Xsl.XslTransform> class supports embedded scripting using t
   
  To get the evidence from your assembly, use `this.GetType().Assembly.Evidence`. To get the evidence from a Uniform Resource Identifier (URI), use `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`.  
   
- If you use <xref:System.Xml.Xsl.XslTransform.Load%2A> methods that take an <xref:System.Xml.XmlResolver> but no `Evidence`, the security zone for the assembly defaults to Full Trust. For more information, see <xref:System.Security.SecurityZone> and [Named Permission Sets](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
+ If you use <xref:System.Xml.Xsl.XslTransform.Load%2A> methods that take an <xref:System.Xml.XmlResolver> but no `Evidence`, the security zone for the assembly defaults to Full Trust. For more information, see <xref:System.Security.SecurityZone> and [Named Permission Sets](/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
   
  Functions can be declared within the `msxsl:script` element. The following table shows the namespaces that are supported by default. You can use classes outside the listed namespaces. However, these classes must be fully qualified.  
   
@@ -95,6 +93,7 @@ The <xref:System.Xml.Xsl.XslTransform> class supports embedded scripting using t
  This throws an exception because the ampersands are not escaped. The document is loaded as XML, and no special treatment is applied to the text between the `msxsl:script` element tags.  
   
 ## Example  
+
  The following example uses an embedded script to calculate the circumference of a circle given its radius.  
   
 ```vb  
@@ -118,14 +117,14 @@ Public Class Sample
     'Load the XML data file.  
     Dim doc As XPathDocument = New XPathDocument(filename)  
   
-    'Create an XmlTextWriter to output to the console.               
+    'Create an XmlTextWriter to output to the console.
     Dim writer As XmlTextWriter = New XmlTextWriter(Console.Out)  
     writer.Formatting = Formatting.Indented  
   
     'Transform the file.  
     xslt.Transform(doc, Nothing, writer, Nothing)  
     writer.Close()  
-  End Sub   
+  End Sub
 End Class  
 ```  
   
@@ -150,7 +149,7 @@ public class Sample
     //Load the XML data file.  
     XPathDocument doc = new XPathDocument(filename);  
   
-    //Create an XmlTextWriter to output to the console.               
+    //Create an XmlTextWriter to output to the console.
     XmlTextWriter writer = new XmlTextWriter(Console.Out);  
     writer.Formatting = Formatting.Indented;  
   
@@ -162,6 +161,7 @@ public class Sample
 ```  
   
 ## Input  
+
  number.xml  
   
 ```xml  
@@ -194,14 +194,14 @@ public class Sample
       ]]>  
    </msxsl:script>  
   
-  <xsl:template match="data">    
+  <xsl:template match="data">
   <circles>  
   
   <xsl:for-each select="circle">  
     <circle>  
     <xsl:copy-of select="node()"/>  
        <circumference>  
-          <xsl:value-of select="user:circumference(radius)"/>   
+          <xsl:value-of select="user:circumference(radius)"/>
        </circumference>  
     </circle>  
   </xsl:for-each>  
@@ -222,9 +222,9 @@ public class Sample
     <radius>37.5</radius>  
     <circumference>235.5</circumference>  
   </circle>  
-</circles>    
+</circles>
 ```  
   
 ## See also
 
-- [XslTransform Class Implements the XSLT Processor](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [XslTransform Class Implements the XSLT Processor](xsltransform-class-implements-the-xslt-processor.md)

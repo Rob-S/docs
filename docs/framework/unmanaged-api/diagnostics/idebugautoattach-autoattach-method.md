@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IDebugAutoAttach::AutoAttach Method
+
 Performs server-invoked debugger auto attach.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT AutoAttach
 ```  
   
 ## Parameters  
+
  `guidPort`  
  [in] Always set to `GUID_NULL`.  
   
@@ -49,11 +51,13 @@ HRESULT AutoAttach
  [in] String passed by the debug verb.  
   
 ## Return Value  
+
  S_OK if the method succeeds.  
   
 ## Requirements  
+
  **Header:** DbgAutoAttach.h  
   
 ## See also
 
-- [IDebugAutoAttach Interface](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-interface.md)
+- [IDebugAutoAttach Interface](idebugautoattach-interface.md)

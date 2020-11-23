@@ -1,5 +1,6 @@
 ---
 title: "Using the Assert Method"
+description: See how you can use the Assert method to enable your code (and downstream callers' code) to do things your code has permission for but not its callers.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -16,10 +17,9 @@ helpviewer_keywords:
   - "permissions [.NET Framework], overriding security checks"
   - "permissions [.NET Framework], assertions"
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Using the Assert Method
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  <xref:System.Security.CodeAccessPermission.Assert%2A> is a method that can be called on code access permission classes and on the <xref:System.Security.PermissionSet> class. You can use **Assert** to enable your code (and downstream callers) to perform actions that your code has permission to do but its callers might not have permission to do. A security assertion changes the normal process that the runtime performs during a security check. When you assert a permission, it tells the security system not to check the callers of your code for the asserted permission.  
@@ -51,7 +51,7 @@ ms.author: "mairaw"
   
 - Method A is contained in assembly A, method B is contained in assembly B, and so on.  
   
- ![Diagram that shows the Assert method assemblies.](./media/using-the-assert-method/assert-method-assemblies.gif)    
+ ![Diagram that shows the Assert method assemblies.](./media/using-the-assert-method/assert-method-assemblies.gif)
   
  In this scenario, method A calls B, B calls C, C calls E, and E calls F. Method C asserts permission to read files on the C drive (permission P1), and method E demands permission to read .txt files on the C drive (permission P1A). When the demand in F is encountered at run time, a stack walk is performed to check the permissions of all callers of F, starting with E. E has been granted P1A permission, so the stack walk proceeds to examine the permissions of C, where C's assertion is discovered. Because the demanded permission (P1A) is a subset of the asserted permission (P1), the stack walk stops and the security check automatically succeeds. It does not matter that assemblies A and B have not been granted permission P1A. By asserting P1, method C ensures that its callers can access the resource protected by P1, even if the callers have not been granted permission to access that resource.  
   
@@ -80,7 +80,7 @@ Namespace LogUtil
   
       End Sub  
   
-     <FileIOPermission(SecurityAction.Assert, All := "C:\Log.txt")> Public Sub   
+     <FileIOPermission(SecurityAction.Assert, All := "C:\Log.txt")> Public Sub
       MakeLog()  
          Dim TextStream As New StreamWriter("C:\Log.txt")  
          TextStream.WriteLine("This  Log was created on {0}", DateTime.Now) '  
@@ -100,17 +100,17 @@ namespace LogUtil
    public class Log  
    {  
       public Log()  
-      {      
-      }     
+      {
+      }
       [FileIOPermission(SecurityAction.Assert, All = @"C:\Log.txt")]  
       public void MakeLog()  
-      {     
+      {
          StreamWriter TextStream = new StreamWriter(@"C:\Log.txt");  
          TextStream.WriteLine("This  Log was created on {0}", DateTime.Now);  
          TextStream.Close();  
       }  
    }  
-}   
+}
 ```  
   
  The following code fragments show imperative syntax for overriding security checks using the **Assert** method. In this example, an instance of the **FileIOPermission** object is declared. Its constructor is passed **FileIOPermissionAccess.AllAccess** to define the type of access allowed, followed by a string describing the file's location. Once the **FileIOPermission** object is defined, you only need to call its **Assert** method to override the security check.  
@@ -147,11 +147,11 @@ namespace LogUtil
    public class Log  
    {  
       public Log()  
-      {      
-      }     
+      {
+      }
       public void MakeLog()  
       {  
-         FileIOPermission FilePermission = new FileIOPermission(FileIOPermissionAccess.AllAccess,@"C:\Log.txt");   
+         FileIOPermission FilePermission = new FileIOPermission(FileIOPermissionAccess.AllAccess,@"C:\Log.txt");
          FilePermission.Assert();  
          StreamWriter TextStream = new StreamWriter(@"C:\Log.txt");  
          TextStream.WriteLine("This  Log was created on {0}", DateTime.Now);  

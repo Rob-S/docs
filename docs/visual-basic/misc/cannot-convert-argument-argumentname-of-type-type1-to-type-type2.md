@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: fdf6c571-9c6c-4db2-8960-f394720b01e5
 ---
 # Cannot convert argument '\<argumentname>' of type '\<type1>' to type '\<type2>'
+
 A conversion operation attempts to convert an argument to an incompatible type.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ A conversion operation attempts to convert an argument to an incompatible type.
   
 ## See also
 
-- [Type Conversions in Visual Basic](../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Type Conversions in Visual Basic](../programming-guide/language-features/data-types/type-conversions.md)

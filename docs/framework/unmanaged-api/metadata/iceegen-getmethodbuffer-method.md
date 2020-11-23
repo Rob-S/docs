@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::GetMethodBuffer Method
+
 Gets a buffer of the appropriate size for the method at the specified relative virtual address.  
   
  This method is obsolete and should not be used.  
@@ -31,6 +32,7 @@ HRESULT GetMethodBuffer (
 ```  
   
 ## Parameters  
+
  `RVA`  
  [in] The relative virtual address of the method for which to return a buffer.  
   
@@ -38,7 +40,8 @@ HRESULT GetMethodBuffer (
  [out] A pointer to the returned buffer.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -48,4 +51,4 @@ HRESULT GetMethodBuffer (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

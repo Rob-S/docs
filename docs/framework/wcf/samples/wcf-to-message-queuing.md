@@ -125,11 +125,11 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
  When you run the sample, the client and service activities are displayed in both the service and client console windows. You can see the service receive messages from the client. Press ENTER in each console window to shut down the service and client. Note that because queuing is in use, the client and service do not have to be up and running at the same time. For example, you could run the client, shut it down, and then start up the service and it would still receive its messages.
 
 > [!NOTE]
-> This sample requires the installation of Message Queuing. See the installation instructions in [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968).
+> This sample requires the installation of Message Queuing. See the installation instructions in [Message Queuing](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)).
 
 ## Set up, build, and run the sample
 
-1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. If the service is run first, it will check to ensure that the queue is present. If the queue is not present, the service will create one. You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager. Follow these steps to create a queue in Windows 2008.
 
@@ -143,9 +143,9 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 
     5. Enter `ServiceModelSamplesTransacted` as the name of the new queue.
 
-3. To build the C# or Visual Basic edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. To build the C# or Visual Basic edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-4. To run the sample in a single-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. To run the sample in a single-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](running-the-samples.md).
 
 ## Run the sample across computers
 
@@ -170,5 +170,5 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 
 ## See also
 
-- [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968)
+- [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Message Queuing](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

@@ -12,7 +12,7 @@ Services frequently publish metadata to enable automatic generation and configur
   
 ### To build the sample  
   
-1. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
 ### To run the sample on the same computer  
   
@@ -22,7 +22,7 @@ Services frequently publish metadata to enable automatic generation and configur
   
 3. Run the client application from \client\bin\Debug. Client activity is displayed on the client console application.  
   
-4. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 5. Remove the certificates by running Cleanup.bat when you have finished with the sample. Other security samples use the same certificates.  
   
@@ -30,7 +30,7 @@ Services frequently publish metadata to enable automatic generation and configur
   
 1. On the server, in a Developer Command Prompt for Visual Studio run with administrator privileges, type `setup.bat service`. Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the computer and exports the service certificate to a file named Service.cer.  
   
-2. On the server, edit App.config to reflect the new certificate name. That is, change the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) element to the fully-qualified domain name of the computer.  
+2. On the server, edit App.config to reflect the new certificate name. That is, change the `findValue` attribute in the [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) element to the fully-qualified domain name of the computer.  
   
 3. Copy the Service.cer file from the service directory to the client directory on the client computer.  
   
@@ -48,7 +48,7 @@ Services frequently publish metadata to enable automatic generation and configur
   
 10. On the client computer, run client.exe.  
   
-    1. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+    1. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### To clean up after the sample  
   
@@ -59,4 +59,4 @@ Services frequently publish metadata to enable automatic generation and configur
   
 ## See also
 
-- [Using Metadata](../../../../docs/framework/wcf/feature-details/using-metadata.md)
+- [Using Metadata](../feature-details/using-metadata.md)

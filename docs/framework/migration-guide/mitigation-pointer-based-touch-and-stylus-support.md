@@ -1,7 +1,8 @@
 ---
 title: "Mitigation: Pointer-based Touch and Stylus Support"
+description: Learn about the effects of enabling an optional WPF touch/stylus stack for WPF apps that target .NET Framework 4.7.
 ms.date: "04/07/2017"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "retargeting changes"
   - ".NET Framework 4.7 retargeting changes"
   - "WPF retargeting changes"
@@ -10,7 +11,7 @@ ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
 ---
 # Mitigation: Pointer-based Touch and Stylus Support
 
-WPF applications that target the .NET Framework 4.7 and are running on Windows Systems starting with Windows 10 Creators Update can enable an optional `WM_POINTER`-based WPF touch/stylus stack.
+WPF applications that target the .NET Framework 4.7 and are running on Windows starting with Windows 10 Creators Update can enable an optional `WM_POINTER`-based WPF touch/stylus stack.
 
 ## Impact
 
@@ -34,7 +35,7 @@ The following are current known issues with the optional `WM_POINTER`-based touc
 
 ## Opting in to WM_POINTER-based touch/stylus support
 
-Developers who wish to enable this stack can add the following to their application's app.config file:
+Developers who wish to enable this stack can add the following to their application's *app.config* file.
 
 ```xml
 <configuration>

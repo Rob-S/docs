@@ -16,13 +16,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugStepper2 Interface
+
 Provides support for just my code (JMC) debugging.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[SetJMC Method](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper2-setjmc-method.md)|Sets a value that specifies whether this ICorDebugStepper steps only through code that is authored by an application's developer.|  
+|[SetJMC Method](icordebugstepper2-setjmc-method.md)|Sets a value that specifies whether this ICorDebugStepper steps only through code that is authored by an application's developer.|  
   
 ## Remarks  
   
@@ -30,7 +31,8 @@ Provides support for just my code (JMC) debugging.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -40,4 +42,4 @@ Provides support for just my code (JMC) debugging.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

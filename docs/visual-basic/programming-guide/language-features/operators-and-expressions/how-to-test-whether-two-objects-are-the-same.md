@@ -11,11 +11,12 @@ helpviewer_keywords:
 ms.assetid: f760e828-8704-4256-bc2d-c22a4c93b524
 ---
 # How to: Test Whether Two Objects Are the Same (Visual Basic)
+
 If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.  
   
 ### To test whether two objects are the same  
   
-- Use the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) or the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) with the two variables as operands.  
+- Use the [Is Operator](../../../language-reference/operators/is-operator.md) or the [IsNot Operator](../../../language-reference/operators/isnot-operator.md) with the two variables as operands.  
   
      [!code-vb[VbVbalrOperators#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#69)]  
   
@@ -25,4 +26,4 @@ If you have two variables that refer to objects, you can use either the `Is` or 
   
 ## See also
 
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Comparison Operators in Visual Basic](comparison-operators.md)

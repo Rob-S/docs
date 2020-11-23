@@ -18,7 +18,7 @@ This topic describes how to use `My.Computer.Ports` to show the available serial
 
  This example loops over all the strings that the `My.Computer.Ports.SerialPortNames` property returns. These strings are the names of the available serial ports on the computer.  
   
- Typically, a user selects which serial port the application should use from the list of available ports. In this example, the serial port names are stored in a <xref:System.Windows.Forms.ListBox> control. For more information, see [ListBox Control](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
+ Typically, a user selects which serial port the application should use from the list of available ports. In this example, the serial port names are stored in a <xref:System.Windows.Forms.ListBox> control. For more information, see [ListBox Control](/dotnet/desktop/winforms/controls/listbox-control-windows-forms).  
   
  [!code-vb[VbVbalrMyComputer#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#45)]  
   
@@ -30,7 +30,7 @@ This topic describes how to use `My.Computer.Ports` to show the available serial
   
 - A project reference to System.Windows.Forms.dll.  
   
-- Access to the members of the <xref:System.Windows.Forms> namespace. Add an `Imports` statement if you are not fully qualifying member names in your code. For more information, see [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Access to the members of the <xref:System.Windows.Forms> namespace. Add an `Imports` statement if you are not fully qualifying member names in your code. For more information, see [Imports Statement (.NET Namespace and Type)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 - That your form have a <xref:System.Windows.Forms.ListBox> control named `ListBox1`.  
   
@@ -44,6 +44,6 @@ This topic describes how to use `My.Computer.Ports` to show the available serial
 ## See also
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
-- [How to: Dial Modems Attached to Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
-- [How to: Send Strings to Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
-- [How to: Receive Strings From Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+- [How to: Dial Modems Attached to Serial Ports](how-to-dial-modems-attached-to-serial-ports.md)
+- [How to: Send Strings to Serial Ports](how-to-send-strings-to-serial-ports.md)
+- [How to: Receive Strings From Serial Ports](how-to-receive-strings-from-serial-ports.md)

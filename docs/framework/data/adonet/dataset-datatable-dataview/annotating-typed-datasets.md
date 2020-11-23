@@ -7,6 +7,7 @@ dev_langs:
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
 ---
 # Annotating Typed DataSets
+
 Annotations enable you to modify the names of the elements in your typed <xref:System.Data.DataSet> without modifying the underlying schema. Modifying the names of the elements in your underlying schema would cause the typed **DataSet** to refer to objects that do not exist in the data source, as well as lose a reference to the objects that do exist in the data source.  
   
  Using annotations, you can customize the names of objects in your typed **DataSet** with more meaningful names, making code more readable and your typed **DataSet** easier for clients to use, while leaving underlying schema intact. For example, the following schema element for the **Customers** table of the **Northwind** database would result in a **DataRow** object name of **CustomersRow** and a <xref:System.Data.DataRowCollection> named **Customers**.  
@@ -78,10 +79,10 @@ xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
-<xs:schema id="CustomerDataSet"   
+<xs:schema id="CustomerDataSet"
       xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
-      xmlns=""   
-      xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+      xmlns=""
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
       xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="CustomerDataSet" msdata:IsDataSet="true">  
     <xs:complexType>  
@@ -105,10 +106,10 @@ type="xs:int" minOccurs="0" />
               <xs:element name="CustomerID"  
 codegen:typedName="CustomerID"                  codegen:nullValue="" type="xs:string" minOccurs="0" />  
               <xs:element name="EmployeeID"  
-codegen:typedName="EmployeeID" codegen:nullValue="0"   
+codegen:typedName="EmployeeID" codegen:nullValue="0"
 type="xs:int" minOccurs="0" />  
               <xs:element name="OrderAdapter"  
-codegen:typedName="OrderAdapter" codegen:nullValue="1980-01-01T00:00:00"   
+codegen:typedName="OrderAdapter" codegen:nullValue="1980-01-01T00:00:00"
 type="xs:dateTime" minOccurs="0" />  
             </xs:sequence>  
           </xs:complexType>  
@@ -181,7 +182,7 @@ SqlDataAdapter customerAdapter = new SqlDataAdapter(
     "SELECT CustomerID, CompanyName, Phone FROM Customers",  
     connection);  
 SqlDataAdapter orderAdapter = new SqlDataAdapter(  
-    "SELECT OrderID, CustomerID, EmployeeID, OrderAdapter FROM Orders",   
+    "SELECT OrderID, CustomerID, EmployeeID, OrderAdapter FROM Orders",
     connection);  
   
 // Populate a strongly typed DataSet.  
@@ -192,11 +193,11 @@ orderAdapter.Fill(customers, "Orders");
 connection.Close();  
   
 // Add a strongly typed event.  
-customers.Customers.CustomerChanged += new   
+customers.Customers.CustomerChanged += new
   CustomerDataSet.CustomerChangeEventHandler(OnCustomerChanged);  
   
 // Add a strongly typed DataRow.  
-CustomerDataSet.Customer newCustomer =   
+CustomerDataSet.Customer newCustomer =
     customers.Customers.NewCustomer();  
 newCustomer.CustomerID = "NEW01";  
 newCustomer.CompanyName = "My New Company";  

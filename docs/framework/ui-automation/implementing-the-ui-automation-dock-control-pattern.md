@@ -1,5 +1,6 @@
 ---
 title: "Implementing the UI Automation Dock Control Pattern"
+description: Learn to implement the UI Automation dock control pattern. Use the DockPattern control pattern to expose a control's dock properties. Implement IDockProvider.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "control patterns, dock"
@@ -18,7 +19,7 @@ ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
  ![Docking container with two docked children.](./media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
 Docking Example from Visual Studio Where "Class View" Window Is DockPosition.Right and "Error List" Window Is DockPosition.Bottom  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
+<a name="Implementation_Guidelines_and_Conventions"></a>
 ## Implementation Guidelines and Conventions  
  When implementing the Dock control pattern, note the following guidelines and conventions:  
   
@@ -30,7 +31,7 @@ Docking Example from Visual Studio Where "Class View" Window Is DockPosition.Rig
   
 - On a multi-monitor system, controls should dock to the left or right side of the current monitor. If that is not possible, they should dock to the left side of the leftmost monitor or the right side of the rightmost monitor.  
   
-<a name="Required_Members_for_IDockProvider"></a>   
+<a name="Required_Members_for_IDockProvider"></a>
 ## Required Members for IDockProvider  
  The following properties and methods are required for implementing the IDockProvider interface.  
   
@@ -41,7 +42,7 @@ Docking Example from Visual Studio Where "Class View" Window Is DockPosition.Rig
   
  This control pattern has no associated events.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## Exceptions  
  Providers must throw the following exceptions.  
   

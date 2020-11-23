@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo::GetModuleInfo Method
+
 Given a module ID, returns the file name of the module and the ID of the module's parent assembly.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT GetModuleInfo(
 ```  
   
 ## Parameters  
+
  `moduleId`  
  [in] The ID of the module for which information will be retrieved.  
   
@@ -52,16 +54,18 @@ HRESULT GetModuleInfo(
  [out] A pointer to the ID of the module's parent assembly.  
   
 ## Remarks  
+
  For dynamic modules, the `szName` parameter is an empty string, and the base address is 0 (zero).  
   
- Although the `GetModuleInfo` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.  
+ Although the `GetModuleInfo` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](icorprofilercallback-moduleattachedtoassembly-method.md) callback.  
   
  When `GetModuleInfo` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo` again.  
   
  Alternatively, you can first call `GetModuleInfo` with a zero-length `szName` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo` again.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -71,7 +75,7 @@ HRESULT GetModuleInfo(
   
 ## See also
 
-- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)
-- [GetModuleInfo2 Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md)
+- [ICorProfilerInfo Interface](icorprofilerinfo-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)
+- [Profiling](index.md)
+- [GetModuleInfo2 Method](icorprofilerinfo3-getmoduleinfo2-method.md)

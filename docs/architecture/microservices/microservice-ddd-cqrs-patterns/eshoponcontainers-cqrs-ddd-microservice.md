@@ -1,7 +1,7 @@
 ---
 title: Applying CQRS and CQS approaches in a DDD microservice in eShopOnContainers
 description: .NET Microservices Architecture for Containerized .NET Applications | Understand the way CQRS is implemented in the ordering microservice in eShopOnContainers.
-ms.date: 10/08/2018
+ms.date: 03/03/2020
 ---
 # Apply CQRS and CQS approaches in a DDD microservice in eShopOnContainers
 
@@ -9,7 +9,7 @@ The design of the ordering microservice at the eShopOnContainers reference appli
 
 The essence of those patterns, and the important point here, is that queries are idempotent: no matter how many times you query a system, the state of that system won't change. In other words, queries are side-effect free.
 
-Therefore, you could use a different “reads” data model than the transactional logic “writes” domain model, even though the ordering microservices are using the same database. Hence, this is a simplified CQRS approach.
+Therefore, you could use a different "reads" data model than the transactional logic "writes" domain model, even though the ordering microservices are using the same database. Hence, this is a simplified CQRS approach.
 
 On the other hand, commands, which trigger transactions and data updates, change state in the system. With commands, you need to be careful when dealing with complexity and ever-changing business rules. This is where you want to apply DDD techniques to have a better modeled system.
 
@@ -17,13 +17,13 @@ The DDD patterns presented in this guide should not be applied universally. They
 
 One such pattern is the Aggregate pattern, which we examine more in later sections. Briefly, in the Aggregate pattern, you treat many domain objects as a single unit as a result of their relationship in the domain. You might not always gain advantages from this pattern in queries; it can increase the complexity of query logic. For read-only queries, you do not get the advantages of treating multiple objects as a single Aggregate. You only get the complexity.
 
-As shown in Figure 7-2, this guide suggests using DDD patterns only in the transactional/updates area of your microservice (that is, as triggered by commands). Queries can follow a simpler approach and should be separated from commands, following a CQRS approach.
+As shown in Figure 7-2 in the previous section, this guide suggests using DDD patterns only in the transactional/updates area of your microservice (that is, as triggered by commands). Queries can follow a simpler approach and should be separated from commands, following a CQRS approach.
 
-For implementing the “queries side”, you can choose between many approaches, from your full-blown ORM like EF Core, AutoMapper projections, stored procedures, views, materialized views or a micro ORM.
+For implementing the "queries side", you can choose between many approaches, from your full-blown ORM like EF Core, AutoMapper projections, stored procedures, views, materialized views or a micro ORM.
 
-In this guide and in eShopOnContainers (specifically the ordering microservice) we chose to implement straight queries using a micro ORM like [Dapper](https://github.com/StackExchange/dapper-dot-net). This lets you implement any query based on SQL statements to get the best performance, thanks to a light framework with very little overhead.
+In this guide and in eShopOnContainers (specifically the ordering microservice) we chose to implement straight queries using a micro ORM like [Dapper](https://github.com/StackExchange/dapper-dot-net). This lets you implement any query based on SQL statements to get the best performance, thanks to a light framework with little overhead.
 
-Note that when you use this approach, any updates to your model that impact how entities are persisted to a SQL database also need separate updates to SQL queries used by Dapper or any other separate (non-EF) approaches to querying.
+When you use this approach, any updates to your model that impact how entities are persisted to a SQL database also need separate updates to SQL queries used by Dapper or any other separate (non-EF) approaches to querying.
 
 ## CQRS and DDD patterns are not top-level architectures
 
@@ -42,7 +42,7 @@ There is only one application architecture: the architecture of the system or en
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>
 
 - **Udi Dahan. Clarified CQRS** \
-  <http://udidahan.com/2009/12/09/clarified-cqrs/>
+  <https://udidahan.com/2009/12/09/clarified-cqrs/>
 
 >[!div class="step-by-step"]
 >[Previous](apply-simplified-microservice-cqrs-ddd-patterns.md)

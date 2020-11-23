@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # CoInitializeCor Function
+
 `CoInitializeCor` is obsolete.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ STDAPI CoInitializeCor (
 ```  
   
 ## Remarks  
- To initialize the common language runtime, use either [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) or [CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md).  
+
+ To initialize the common language runtime, use either [CorBindToRuntimeEx](corbindtoruntimeex-function.md) or [CorBindToCurrentRuntime](corbindtocurrentruntime-function.md).  
   
 ## Requirements  
+
  **Header:** Cor.h  
   
 ## See also
 
-- [Metadata Global Static Functions](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [Metadata Global Static Functions](../metadata/metadata-global-static-functions.md)

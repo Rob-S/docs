@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorCallingConvention Enumeration
+
 Contains values that describe the types of calling conventions that are made in managed code.  
   
 ## Syntax  
@@ -61,7 +62,8 @@ typedef enum CorCallingConvention
 |`IMAGE_CEE_CS_CALLCONV_GENERIC`|Indicates a generic method signature with an explicit number of type arguments. This precedes an ordinary parameter count.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorHdr.h  
   
@@ -69,4 +71,4 @@ typedef enum CorCallingConvention
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

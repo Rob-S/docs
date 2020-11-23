@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IApartmentCallback::DoCallback Method
+
 Executes the specified function within an apartment.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT _stdcall DoCallback(
 ```  
   
 ## Parameters  
+
  `pFunc`  
  [in] A pointer to the function to be executed within the apartment.  
   
@@ -36,7 +38,8 @@ HRESULT _stdcall DoCallback(
  [in] A pointer to the function's argument.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -46,4 +49,4 @@ HRESULT _stdcall DoCallback(
   
 ## See also
 
-- [IApartmentCallback Interface](../../../../docs/framework/unmanaged-api/hosting/iapartmentcallback-interface.md)
+- [IApartmentCallback Interface](iapartmentcallback-interface.md)

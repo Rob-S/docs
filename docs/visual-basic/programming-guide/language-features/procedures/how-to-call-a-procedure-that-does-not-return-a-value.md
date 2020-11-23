@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 259b49a3-a3c1-4254-ba8c-73cdc4127703
 ---
 # How to: Call a Procedure that Does Not Return a Value (Visual Basic)
+
 A `Sub` procedure does not return a value to the calling code. You call it explicitly with a stand-alone calling statement. You cannot call it by simply using its name within an expression.  
   
 ### To call a Sub procedure  
@@ -29,7 +30,7 @@ A `Sub` procedure does not return a value to the calling code. You call it expli
 - [Procedures](./index.md)
 - [Sub Procedures](./sub-procedures.md)
 - [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md)
-- [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Sub Statement](../../../language-reference/statements/sub-statement.md)
 - [How to: Create a Procedure](./how-to-create-a-procedure.md)
 - [How to: Call a Procedure That Returns a Value](./how-to-call-a-procedure-that-returns-a-value.md)
 - [How to: Call an Event Handler in Visual Basic](./how-to-call-an-event-handler.md)

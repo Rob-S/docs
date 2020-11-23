@@ -7,7 +7,7 @@ ms.assetid: 4a0dcce0-c27b-4199-baa8-ee4528da6a56
 ---
 # Reading from and Writing to the Registry Using the Microsoft.Win32 Namespace (Visual Basic)
 
-Although `My.Computer.Registry` should cover your basic needs when programming against the registry, you can also use the <xref:Microsoft.Win32.Registry> and <xref:Microsoft.Win32.RegistryKey> classes in the <xref:Microsoft.Win32> namespace of the .NET Framework.  
+Although `My.Computer.Registry` should cover your basic needs when programming against the registry, you can also use the <xref:Microsoft.Win32.Registry> and <xref:Microsoft.Win32.RegistryKey> classes in the <xref:Microsoft.Win32> namespace of .NET.
   
 ## Keys in the Registry Class  
 
@@ -41,6 +41,6 @@ Although `My.Computer.Registry` should cover your basic needs when programming a
 - <xref:System.SystemException>
 - <xref:System.ApplicationException>
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
-- [Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [Reading from and Writing to the Registry](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
-- [Security and the Registry](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
+- [Try...Catch...Finally Statement](../../../language-reference/statements/try-catch-finally-statement.md)
+- [Reading from and Writing to the Registry](reading-from-and-writing-to-the-registry.md)
+- [Security and the Registry](security-and-the-registry.md)

@@ -1,9 +1,11 @@
 ---
 title: "How to combine LINQ queries with regular expressions (C#)"
+description: This example creates a regular expression for matching in text strings by using the Regex class in C#.
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
 ---
 # How to combine LINQ queries with regular expressions (C#)
+
 This example shows how to use the <xref:System.Text.RegularExpressions.Regex> class to create a regular expression for more complex matching in text strings. The LINQ query makes it easy to filter on exactly the files that you want to search with the regular expression, and to shape the results.  
   
 ## Example  
@@ -30,7 +32,7 @@ class QueryWithRegEx
         // This query produces a list of files where a match  
         // was found, and a list of the matchedValues in that file.  
         // Note: Explicit typing of "Match" in select clause.  
-        // This is required because MatchCollection is not a   
+        // This is required because MatchCollection is not a
         // generic IEnumerable collection.  
         var queryMatchingFiles =  
             from file in fileList  
@@ -50,7 +52,7 @@ class QueryWithRegEx
   
         foreach (var v in queryMatchingFiles)  
         {  
-            // Trim the path a bit, then write   
+            // Trim the path a bit, then write
             // the file name in which a match was found.  
             string s = v.name.Substring(startFolder.Length - 1);  
             Console.WriteLine(s);  
@@ -67,7 +69,7 @@ class QueryWithRegEx
         Console.ReadKey();  
     }  
   
-    // This method assumes that the application has discovery   
+    // This method assumes that the application has discovery
     // permissions for all folders under the specified path.  
     static IEnumerable<System.IO.FileInfo> GetFiles(string path)  
     {  
@@ -90,6 +92,7 @@ class QueryWithRegEx
  Note that you can also query the <xref:System.Text.RegularExpressions.MatchCollection> object that is returned by a `RegEx` search. In this example only the value of each match is produced in the results. However, it is also possible to use LINQ to perform all kinds of filtering, sorting, and grouping on that collection. Because <xref:System.Text.RegularExpressions.MatchCollection> is a non-generic <xref:System.Collections.IEnumerable> collection, you have to explicitly state the type of the range variable in the query.  
   
 ## Compiling the Code  
+
  Create a C# console application project with `using` directives for the System.Linq and System.IO namespaces.  
   
 ## See also

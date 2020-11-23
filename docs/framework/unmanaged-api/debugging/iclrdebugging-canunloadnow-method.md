@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICLRDebugging::CanUnloadNow Method
-Determines whether a library that was provided by an [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) interface is still in use or can be unloaded.  
+
+Determines whether a library that was provided by an [ICLRDebuggingLibraryProvider](iclrdebugginglibraryprovider-interface.md) interface is still in use or can be unloaded.  
   
 ## Syntax  
   
@@ -26,10 +27,12 @@ HRESULT CanUnloadNow(HMODULE hModule);
 ```  
   
 ## Parameters  
+
  `hmodule`  
  [in] The base address of a module in the target process.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -41,10 +44,12 @@ HRESULT CanUnloadNow(HMODULE hModule);
 ## Exceptions  
   
 ## Remarks  
- This method checks to see if all instances of `ICorDebug*` interfaces have been released and no thread is currently within a call to the [ICLRDebugging::OpenVirtualProcess](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) method.  
+
+ This method checks to see if all instances of `ICorDebug*` interfaces have been released and no thread is currently within a call to the [ICLRDebugging::OpenVirtualProcess](iclrdebugging-openvirtualprocess-method.md) method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -54,5 +59,5 @@ HRESULT CanUnloadNow(HMODULE hModule);
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

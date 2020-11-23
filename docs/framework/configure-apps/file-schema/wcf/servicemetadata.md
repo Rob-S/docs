@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
 ---
 # \<serviceMetadata>
+
 Specifies the publication of service metadata and associated information.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,6 +30,7 @@ Specifies the publication of service metadata and associated information.
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
@@ -38,7 +40,7 @@ Specifies the publication of service metadata and associated information.
 |externalMetadataLocation|A Uri that contains the location of a WSDL file, which is returned to the user in response to WSDL and MEX requests instead of the auto-generated WSDL. When this attribute is not set, the default WSDL is returned. The default is an empty string.|  
 |httpGetBinding|A string that specifies the type of the binding that will be used for metadata retrieval via HTTP GET. This setting is optional. If it is not specified, the default bindings will be used.<br /><br /> Only bindings with inner binding elements that support <xref:System.ServiceModel.Channels.IReplyChannel> will be supported. Additionally, the <xref:System.ServiceModel.Channels.MessageVersion> property of the binding must be <xref:System.ServiceModel.Channels.MessageVersion.None%2A>.|  
 |httpGetBindingConfiguration|A string that sets the name of the binding that is specified in the `httpGetBinding` attribute, which references to the additional configuration information of this binding. The same name must be defined in the `<bindings>` section.|  
-|httpGetEnabled|A Boolean value that specifies whether to publish service metadata for retrieval using an HTTP/Get request. The default is `false`.<br /><br /> If the httpGetUrl attribute is not specified, the address at which the metadata is published is the service address plus a "?wsdl". For example, if the service address is "http://localhost:8080/CalculatorService", the HTTP/Get metadata address is "http://localhost:8080/CalculatorService?wsdl".<br /><br /> If this property is `false`, or the address of the service is not based on HTTP or HTTPS, "?wsdl" is ignored.|  
+|httpGetEnabled|A Boolean value that specifies whether to publish service metadata for retrieval using an HTTP/Get request. The default is `false`.<br /><br /> If the httpGetUrl attribute is not specified, the address at which the metadata is published is the service address plus a "?wsdl". For example, if the service address is `http://localhost:8080/CalculatorService`, the HTTP/Get metadata address is `http://localhost:8080/CalculatorService?wsdl`.<br /><br /> If this property is `false`, or the address of the service is not based on HTTP or HTTPS, "?wsdl" is ignored.|  
 |httpGetUrl|A Uri that specifies the address at which the metadata is published for retrieval using an HTTP/Get request. If a relative Uri is specified it will be treated as relative to the service’s base address.|  
 |httpsGetBinding|A string that specifies the type of the binding that will be used for metadata retrieval via HTTPS GET. This setting is optional. If it is not specified, the default bindings will be used.<br /><br /> Only bindings with inner binding elements that support <xref:System.ServiceModel.Channels.IReplyChannel> will be supported. Additionally, the <xref:System.ServiceModel.Channels.MessageVersion> property of the binding must be <xref:System.ServiceModel.Channels.MessageVersion.None%2A>.|  
 |httpsGetBindingConfiguration|A string that sets the name of the binding that is specified in the `httpsGetBinding` attribute, which references to the additional configuration information of this binding. The same name must be defined in the `<bindings>` section.|  
@@ -47,6 +49,7 @@ Specifies the publication of service metadata and associated information.
 |policyVersion|A string that specifies the version of the WS-Policy specification being used. This attribute is of type <xref:System.ServiceModel.Description.PolicyVersion>.|  
   
 ### Child Elements  
+
  None  
   
 ### Parent Elements  
@@ -56,6 +59,7 @@ Specifies the publication of service metadata and associated information.
 |[\<behavior>](behavior-of-endpointbehaviors.md)|Specifies a behavior element.|  
   
 ## Remarks  
+
  This configuration element allows you to control the metadata publishing features of a service. To prevent unintentional disclosure of potentially sensitive service metadata, the default configuration for Windows Communication Foundation (WCF) services disables metadata publishing. This behavior is secure by default, but also means that you cannot use a metadata import tool (such as Svcutil.exe) to generate the client code required to call the service unless the service’s metadata publishing behavior is explicitly enabled in configuration. Using this configuration element, you can enable this publishing behavior for your service.  
   
  For a detailed example of configuring this behavior, see [Metadata Publishing Behavior](../../../wcf/samples/metadata-publishing-behavior.md).  
@@ -76,6 +80,7 @@ Specifies the publication of service metadata and associated information.
 ```  
   
 ## Example  
+
  The following example configure a service to expose metadata by using the \<serviceMetadata> element. It also configures an endpoint to expose the `IMetadataExchange` contract as an implementation of a WS-MetadataExchange (MEX) protocol. The example uses the `mexHttpBinding`, which is a convenience standard binding that is equivalent to the `wsHttpBinding` with the security mode set to `None`. A relative address of "mex" is used in the endpoint, which when resolved against the services base address results in an endpoint address of `http://localhost/servicemodelsamples/service.svc/mex`.  
   
 ```xml  

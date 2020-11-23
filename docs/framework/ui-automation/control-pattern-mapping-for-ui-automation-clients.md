@@ -1,5 +1,6 @@
 ---
 title: "Control Pattern Mapping for UI Automation Clients"
+description: View a control pattern mapping table for UI Automation clients. Actions for certain control types may be supported, conditionally supported, or not supported.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "control patterns, for UI Automation clients"
@@ -23,7 +24,7 @@ ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
 > [!NOTE]
 > Some controls have conditional support for several control patterns depending on the functionality of the control. For example, the menu item control has conditional support for the <xref:System.Windows.Automation.InvokePattern>, <xref:System.Windows.Automation.ExpandCollapsePattern>, <xref:System.Windows.Automation.TogglePattern>, or <xref:System.Windows.Automation.SelectionItemPattern> control pattern, depending on its function in the menu control.  
   
-<a name="control_mapping_clients"></a>   
+<a name="control_mapping_clients"></a>
 ## UI Automation Control Patterns for Clients  
   
 |Control Type|Supported|Conditional Support|Not Supported|  

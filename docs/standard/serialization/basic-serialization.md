@@ -1,5 +1,6 @@
 ---
 title: "Basic serialization"
+description: This article shows you how to make a class serializable with the SerializableAttribute and includes examples of serialization and deserialization.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "binary serialization, basic serialization"
@@ -52,19 +53,17 @@ Console.WriteLine("n2: {0}", obj.n2);
 Console.WriteLine("str: {0}", obj.str);  
 ```  
   
-The <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> used above is very efficient and produces a compact byte stream. All objects serialized with this formatter can also be deserialized with it, which makes it an ideal tool for serializing objects that will be deserialized on the .NET Framework. It is important to note that constructors are not called when an object is deserialized. This constraint is placed on deserialization for performance reasons. However, this violates some of the usual contracts the runtime makes with the object writer, and developers should ensure that they understand the ramifications when marking an object as serializable.  
+The <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> used above is very efficient and produces a compact byte stream. All objects serialized with this formatter can also be deserialized with it, which makes it an ideal tool for serializing objects that will be deserialized on .NET. It is important to note that constructors are not called when an object is deserialized. This constraint is placed on deserialization for performance reasons. However, this violates some of the usual contracts the runtime makes with the object writer, and developers should ensure that they understand the ramifications when marking an object as serializable.  
   
 If portability is a requirement, use the <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> instead. Simply replace the **BinaryFormatter** in the code above with **SoapFormatter,** and call **Serialize** and **Deserialize** as before. This formatter produces the following output for the example used above.  
   
 ```xml  
 <SOAP-ENV:Envelope  
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"  
-  SOAP-ENV:encodingStyle=  
-  "http://schemas.microsoft.com/soap/encoding/clr/1.0"  
-  "http://schemas.xmlsoap.org/soap/encoding/"  
+  SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:a1="http://schemas.microsoft.com/clr/assem/ToFile">  
   
   <SOAP-ENV:Body>  
@@ -80,7 +79,7 @@ If portability is a requirement, use the <xref:System.Runtime.Serialization.Form
 It's important to note that the [Serializable](xref:System.SerializableAttribute) attribute cannot be inherited. If you derive a new class from `MyObject`, the new class must be marked with the attribute as well, or it cannot be serialized. For example, when you attempt to serialize an instance of the class below, you'll get a <xref:System.Runtime.Serialization.SerializationException> informing you that the `MyStuff` type is not marked as serializable.  
   
 ```csharp  
-public class MyStuff : MyObject   
+public class MyStuff : MyObject
 {  
   public int n3;  
 }  

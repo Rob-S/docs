@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedDocument::GetCheckSum Method
+
 Gets the checksum.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT GetCheckSum(
 ```  
   
 ## Parameters  
+
  `cData`  
  [in] The length of the buffer provided by the `data` parameter  
   
@@ -39,8 +41,9 @@ HRESULT GetCheckSum(
  [out] The buffer that receives the checksum.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, an error code.  
   
 ## See also
 
-- [ISymUnmanagedDocument Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [ISymUnmanagedDocument Interface](isymunmanageddocument-interface.md)

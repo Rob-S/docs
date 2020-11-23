@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugStackWalk::GetFrame Method
-Gets the current frame in the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object.  
+
+Gets the current frame in the [ICorDebugStackWalk](icordebugstackwalk-interface.md) object.  
   
 ## Syntax  
   
@@ -26,10 +27,12 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
 ```  
   
 ## Parameters  
+
  `pFrame`  
  [in] A pointer to the address of the created frame object that represents the current frame in the stack.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -43,10 +46,12 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
 ## Exceptions  
   
 ## Remarks  
- `ICorDebugStackWalk` returns only actual stack frames. Use the [ICorDebugThread3::GetActiveInternalFrames](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) method to return internal frames. (Internal frames are data structures pushed onto the stack by the runtime to store temporary data.)  
+
+ `ICorDebugStackWalk` returns only actual stack frames. Use the [ICorDebugThread3::GetActiveInternalFrames](icordebugthread3-getactiveinternalframes-method.md) method to return internal frames. (Internal frames are data structures pushed onto the stack by the runtime to store temporary data.)  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -56,6 +61,6 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
 ## See also
 
-- [ICorDebugStackWalk Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugStackWalk Interface](icordebugstackwalk-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

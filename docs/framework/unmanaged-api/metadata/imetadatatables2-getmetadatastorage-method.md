@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataTables2::GetMetaDataStorage Method
+
 Gets the size and contents of the metadata stored in the specified section.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT GetMetaDataStorage (
 ```  
   
 ## Parameters  
+
  `ppvMd`  
  [in, out] A pointer to a metadata section.  
   
@@ -36,7 +38,8 @@ HRESULT GetMetaDataStorage (
  [out] The size of the metadata stream.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -46,5 +49,5 @@ HRESULT GetMetaDataStorage (
   
 ## See also
 
-- [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
-- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [IMetaDataTables2 Interface](imetadatatables2-interface.md)
+- [IMetaDataTables Interface](imetadatatables-interface.md)

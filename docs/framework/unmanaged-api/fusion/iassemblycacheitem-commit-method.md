@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IAssemblyCacheItem::Commit Method
+
 Commits the cached assembly reference to memory.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT Commit (  
-    [in] DWORD dwFlags,   
+    [in] DWORD dwFlags,
     [out, optional] ULONG *pulDisposition  
 );  
 ```  
   
 ## Parameters  
+
  `dwFlags`  
  [in] Flags defined in Fusion.idl.  
   
@@ -36,6 +38,7 @@ HRESULT Commit (
  [out, optional] A value that indicates the result of the operation.  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Fusion.h  

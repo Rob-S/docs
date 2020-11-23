@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataTables::GetTableInfo Method
+
 Gets the name, row size, number of rows, number of columns, and key column index of the specified table.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT GetTableInfo (
 ```  
   
 ## Parameters  
+
  `ixTbl`  
  [in] The identifier of the table whose properties to return.  
   
@@ -52,7 +54,8 @@ HRESULT GetTableInfo (
  [out] A pointer to a pointer to the table name.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -62,5 +65,5 @@ HRESULT GetTableInfo (
   
 ## See also
 
-- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables Interface](imetadatatables-interface.md)
+- [IMetaDataTables2 Interface](imetadatatables2-interface.md)

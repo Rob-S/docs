@@ -1,5 +1,6 @@
 ---
 title: "Lc.exe (License Compiler)"
+description: Use Lc.exe, the License Compiler. This tool reads text files that have licensing information and makes a binary file to embed in a CLR executable as a resource.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "Lc.exe"
@@ -75,8 +76,8 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
   
 ```text  
 /target:hostapp.exe  
-/complist:hostapplic.txt   
-/i:WFCPrj.dll   
+/complist:hostapplic.txt
+/i:WFCPrj.dll
 /outdir:"C:\My Folder"  
 ```  
   

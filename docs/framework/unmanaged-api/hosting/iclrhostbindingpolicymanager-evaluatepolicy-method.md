@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRHostBindingPolicyManager::EvaluatePolicy Method
+
 Evaluates binding policy on behalf of the host.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT EvaluatePolicy (
 ```  
   
 ## Parameters  
+
  `pwzReferenceIdentity`  
  [in] A reference to the assembly before the policy evaluation.  
   
@@ -49,7 +51,7 @@ HRESULT EvaluatePolicy (
  [in, out] A pointer to the size of the assembly identity reference buffer after the evaluation of the new policy data.  
   
  `pdwPoliciesApplied`  
- [out] A pointer to a logical OR combination of [EBindPolicyLevels](../../../../docs/framework/unmanaged-api/hosting/ebindpolicylevels-enumeration.md) values, indicating which policies have been applied.  
+ [out] A pointer to a logical OR combination of [EBindPolicyLevels](ebindpolicylevels-enumeration.md) values, indicating which policies have been applied.  
   
 ## Return Value  
   
@@ -65,10 +67,12 @@ HRESULT EvaluatePolicy (
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The `EvaluatePolicy` method allows the host to influence binding policy to maintain host-specific assembly versioning requirements. The policy engine itself remains inside the CLR.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -78,4 +82,4 @@ HRESULT EvaluatePolicy (
   
 ## See also
 
-- [ICLRHostBindingPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
+- [ICLRHostBindingPolicyManager Interface](iclrhostbindingpolicymanager-interface.md)

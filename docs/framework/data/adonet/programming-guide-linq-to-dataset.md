@@ -4,9 +4,11 @@ ms.date: "03/30/2017"
 ms.assetid: 977aedd7-0084-46a0-b56f-345787a55da1
 ---
 # Programming Guide (LINQ to DataSet)
+
 This section provides conceptual information and examples for programming with LINQ to DataSet.  
   
 ## In This Section  
+
  [Queries in LINQ to DataSet](queries-in-linq-to-dataset.md)  
  Provides information about how to write LINQ to DataSet queries.  
   
@@ -35,9 +37,10 @@ This section provides conceptual information and examples for programming with L
  Describes security issues in LINQ to DataSet.  
   
  [LINQ to DataSet Examples](linq-to-dataset-examples.md)  
- Provides query examples that use the [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] operators.  
+ Provides query examples that use the LINQ operators.  
   
 ## Reference  
+
  <xref:System.Data.DataRowComparer>  
   
  <xref:System.Data.DataRowExtensions>  

@@ -1,5 +1,6 @@
 ---
 title: "What's New in Windows Communication Foundation 4.5"
+description: This article describes the features new to Windows Communication Foundation (WCF) version 4.5 and links to additional resources.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "WCF [WCF], what's new"
@@ -31,7 +32,7 @@ WCF now has support for contract-first development. The svcutil.exe has a /servi
 
 ### Add Service Reference from a Portable Subset Project
 
-Portable subset projects enable .NET assembly programmers to maintain a single source tree and build system while still supporting multiple .NET platforms (desktop, Silverlight, Windows Phone, and XBOX). Portable subset projects only reference .NET portable libraries which are a .NET framework assembly that can be used on any .NET platform. The developer experience is the same as adding a service reference within any other WCF client application. For more information, see [Add Service Reference in a Portable Subset Project](add-service-reference-in-a-portable-subset-project.md).
+Portable subset projects enable .NET assembly programmers to maintain a single source tree and build system while still supporting multiple .NET platforms (desktop, Silverlight, Windows Phone, and Xbox). Portable subset projects only reference .NET portable libraries that are assemblies that can be used on any .NET platform. The developer experience is the same as adding a service reference within any other WCF client application. For more information, see [Add Service Reference in a Portable Subset Project](add-service-reference-in-a-portable-subset-project.md).
 
 ### ASP.NET Compatibility Mode Default Changed
 
@@ -87,7 +88,7 @@ In order to help new and existing WCF service developers to configure their serv
 
 ## Configuring WCF Services in Code
 
-Windows Communication Foundation (WCF) allows developers to configure services using configuration files or code. Configuration files are useful when a service needs to be configured after being deployed. When using configuration files, an IT professional only needs to update the configuration file, no recompilation is required. Configuration files, however, can be complex and difficult to maintain. There is no support for debugging configuration files and configuration elements are referenced by names which makes authoring configuration files error-prone and difficult. WCF also allows you to configure services in code. In earlier versions of WCF (4.0 and earlier) configuring services in code was easy in self-hosted scenarios, the <xref:System.ServiceModel.ServiceHost> class allowed you to configure endpoints and behaviors prior to calling ServiceHost.Open. In web hosted scenarios, however, you don’t have access to the <xref:System.ServiceModel.ServiceHost> class. To configure a web hosted service you were required to create a `System.ServiceModel.ServiceHostFactory` that created the <xref:System.ServiceModel.Activation.ServiceHostFactory> and performed any needed configuration. Starting with .NET 4.5, WCF provides an easier way to configure both self-hosted and web hosted services in code. For more information, see [Configuring WCF Services in Code](configuring-wcf-services-in-code.md).
+Windows Communication Foundation (WCF) allows developers to configure services using configuration files or code. Configuration files are useful when a service needs to be configured after being deployed. When using configuration files, an IT professional only needs to update the configuration file, no recompilation is required. Configuration files, however, can be complex and difficult to maintain. There is no support for debugging configuration files and configuration elements are referenced by names which makes authoring configuration files error-prone and difficult. WCF also allows you to configure services in code. In earlier versions of WCF (4.0 and earlier) configuring services in code was easy in self-hosted scenarios, the <xref:System.ServiceModel.ServiceHost> class allowed you to configure endpoints and behaviors prior to calling ServiceHost.Open. In web hosted scenarios, however, you don’t have access to the <xref:System.ServiceModel.ServiceHost> class. To configure a web hosted service you were required to create a `System.ServiceModel.ServiceHostFactory` that created the <xref:System.ServiceModel.Activation.ServiceHostFactory> and performed any needed configuration. Starting with .NET Framework 4.5, WCF provides an easier way to configure both self-hosted and web hosted services in code. For more information, see [Configuring WCF Services in Code](configuring-wcf-services-in-code.md).
 
 ## ChannelFactory Caching
 

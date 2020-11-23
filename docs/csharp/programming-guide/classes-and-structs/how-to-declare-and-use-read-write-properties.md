@@ -1,6 +1,6 @@
 ---
 title: "How to declare and use read write properties - C# Programming Guide"
-ms.custom: seodec18
+description: Learn how to use read/write properties in C#. This sample includes two properties, each of which has get and set accessors, so the properties are read/write.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "get accessor [C#], declaring properties"
@@ -8,17 +8,22 @@ helpviewer_keywords:
   - "properties [C#], declaring"
   - "read/write properties [C#]"
   - "accessors [C#], declaring properties with"
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
 ---
 # How to declare and use read write properties (C# Programming Guide)
+
 Properties provide the convenience of public data members without the risks that come with unprotected, uncontrolled, and unverified access to an object's data. This is accomplished through *accessors*: special methods that assign and retrieve values from the underlying data member. The [set](../../language-reference/keywords/set.md) accessor enables data members to be assigned, and the [get](../../language-reference/keywords/get.md) accessor retrieves data member values.  
   
  This sample shows a `Person` class that has two properties: `Name` (string) and `Age` (int). Both properties provide `get` and `set` accessors, so they are considered read/write properties.  
   
 ## Example  
+
  [!code-csharp[csProgGuideObjects#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#33)]  
   
 ## Robust Programming  
+
  In the previous example, the `Name` and `Age` properties are [public](../../language-reference/keywords/public.md) and include both a `get` and a `set` accessor. This allows any object to read and write these properties. It is sometimes desirable, however, to exclude one of the accessors. Omitting the `set` accessor, for example, makes the property read-only:  
   
  [!code-csharp[csProgGuideObjects#87](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#87)]  
@@ -40,7 +45,7 @@ Properties provide the convenience of public data members without the risks that
  If separate `set` and `get` methods were used to model properties, the equivalent code might look like this:  
   
 ```csharp  
-person.SetAge(person.GetAge() + 1);   
+person.SetAge(person.GetAge() + 1);
 ```  
   
  The `ToString` method is overridden in this example:  

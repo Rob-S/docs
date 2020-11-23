@@ -1,15 +1,11 @@
 ---
 title: dotnet build command
 description: The dotnet build command builds a project and all of its dependencies.
-ms.date: 10/14/2019
+ms.date: 02/14/2020
 ---
 # dotnet build
 
-**This article applies to: ✓** .NET Core 1.x SDK and later versions
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**This article applies to:** ✔️ .NET Core 2.x SDK and later versions
 
 ## Name
 
@@ -18,11 +14,13 @@ ms.date: 10/14/2019
 ## Synopsis
 
 ```dotnetcli
-dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force]
-    [--interactive] [--no-dependencies] [--no-incremental] [--no-restore] [--nologo] 
-    [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
+    [-f|--framework <FRAMEWORK>] [--force] [--interactive] [--no-dependencies]
+    [--no-incremental] [--no-restore] [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
+    [-r|--runtime <RUNTIME_IDENTIFIER>] [--source <SOURCE>]
+    [-v|--verbosity <LEVEL>] [--version-suffix <VERSION_SUFFIX>]
 
-dotnet build [-h|--help]
+dotnet build -h|--help
 ```
 
 ## Description
@@ -35,13 +33,17 @@ The `dotnet build` command builds the project and its dependencies into a set of
 - A *.runtimeconfig.json* file, which specifies the shared runtime and its version for an application.
 - Other libraries that the project depends on (via project references or NuGet package references).
 
-For executable projects targeting versions earlier than .NET Core 3.0, library dependencies from NuGet are typically NOT copied to the output folder.  They're resolved from the NuGet global packages folder at run time. With that in mind, the product of `dotnet build` isn't ready to be transferred to another machine to run. To create a version of the application that can be deployed, you need to publish it (for example, with the [dotnet publish](dotnet-publish.md) command). For more information, see [.NET Core Application Deployment](../deploying/index.md).
+For executable projects targeting versions earlier than .NET Core 3.0, library dependencies from NuGet are typically NOT copied to the output folder.  They're resolved from the NuGet global packages folder at run time. With that in mind, the product of `dotnet build` isn't ready to be transferred to another machine to run. To create a version of the application that can be deployed, you need to publish it (for example, with the [dotnet publish](dotnet-publish.md) command). For more information, see [.NET Application Deployment](../deploying/index.md).
 
 For executable projects targeting .NET Core 3.0 and later, library dependencies are copied to the output folder. This means that if there isn't any other publish-specific logic (such as Web projects have), the build output should be deployable.
 
-Building requires the *project.assets.json* file, which lists the dependencies of your application. The file is created when [`dotnet restore`](dotnet-restore.md) is executed. Without the assets file in place, the tooling can't resolve reference assemblies, which results in errors. With .NET Core 1.x SDK, you needed to explicitly run `dotnet restore` before running `dotnet build`. Starting with .NET Core 2.0 SDK, `dotnet restore` runs implicitly when you run `dotnet build`. If you want to disable implicit restore when running the build command, you can pass the `--no-restore` option.
+### Implicit restore
+
+Building requires the *project.assets.json* file, which lists the dependencies of your application. The file is created when [`dotnet restore`](dotnet-restore.md) is executed. Without the assets file in place, the tooling can't resolve reference assemblies, which results in errors.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
+
+### Executable or library output
 
 Whether the project is executable or not is determined by the `<OutputType>` property in the project file. The following example shows a project that produces executable code:
 
@@ -69,7 +71,7 @@ The project or solution file to build. If a project or solution file isn't speci
 
 ## Options
 
-- **`-c|--configuration {Debug|Release}`**
+- **`-c|--configuration <CONFIGURATION>`**
 
   Defines the build configuration. The default for most projects is `Debug`, but you can override the build configuration settings in your project.
 
@@ -79,7 +81,7 @@ The project or solution file to build. If a project or solution file isn't speci
 
 - **`--force`**
 
-  Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the *project.assets.json* file. Available since .NET Core 2.0 SDK.
+  Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the *project.assets.json* file.
 
 - **`-h|--help`**
 
@@ -99,7 +101,7 @@ The project or solution file to build. If a project or solution file isn't speci
 
 - **`--no-restore`**
 
-  Doesn't execute an implicit restore during build. Available since .NET Core 2.0 SDK.
+  Doesn't execute an implicit restore during build.
 
 - **`--nologo`**
 
@@ -112,6 +114,10 @@ The project or solution file to build. If a project or solution file isn't speci
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
   Specifies the target runtime. For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).
+
+- **`--source <SOURCE>`**
+
+  The URI of the NuGet package source to use during the restore operation.
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -141,7 +147,7 @@ The project or solution file to build. If a project or solution file isn't speci
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
-- Build the project and use the specified NuGet package source during the restore operation (.NET Core 2.0 SDK and later versions):
+- Build the project and use the specified NuGet package source during the restore operation:
 
   ```dotnetcli
   dotnet build --source c:\packages\mypackages

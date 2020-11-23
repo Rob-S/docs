@@ -17,12 +17,13 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataTables::GetRow Method
+
 Gets the row at the specified row index, in the table at the specified table index.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT GetRow (   
+HRESULT GetRow (
     [in]  ULONG   ixTbl,  
     [in]  ULONG   rid,  
     [out] void    **ppRow  
@@ -30,6 +31,7 @@ HRESULT GetRow (
 ```  
   
 ## Parameters  
+
  `ixTbl`  
  [in] The index of the table from which the row will be retrieved.  
   
@@ -40,10 +42,12 @@ HRESULT GetRow (
  [out] A pointer to a pointer to the row.  
   
 ## Remarks  
- We do not recommend the use of this method, because it does not return consistent results. For information about the GUID table, see the Common Language Infrastructure (CLI) documentation, especially "Partition II: Metadata Definition and Semantics". The documentation is available online; see [ECMA C# and Common Language Infrastructure Standards](https://go.microsoft.com/fwlink/?LinkID=99212) on MSDN and [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) on the Ecma International Web site.  
+
+  We do not recommend the use of this method, because it does not return consistent results. For information about the GUID table, see the Common Language Infrastructure (CLI) documentation, especially "Partition II: Metadata Definition and Semantics". The documentation is available online; see [ECMA C# and Common Language Infrastructure Standards](../../../standard/components.md#applicable-standards) and [Standard ECMA-335 - Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -53,5 +57,5 @@ HRESULT GetRow (
   
 ## See also
 
-- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables Interface](imetadatatables-interface.md)
+- [IMetaDataTables2 Interface](imetadatatables2-interface.md)

@@ -14,6 +14,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRDataTarget3::GetExceptionThreadID Method
+
 Called by the common language runtime (CLR) data access services to get the ID of the thread that threw the exception.  
   
 ## Syntax  
@@ -25,10 +26,12 @@ HRESULT GetExceptionThreadID(
 ```  
   
 ## Parameters  
+
  `threadID`  
  [out] The ID of the thread that threw the exception.  
   
 ## Return Value  
+
  The return value is `S_OK` on success, or a failure `HRESULT` code on failure. The `HRESULT` codes can include but are not limited to the following:  
   
 |Return code|Description|  
@@ -37,10 +40,12 @@ HRESULT GetExceptionThreadID(
 |`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|Could not find a valid thread ID for the exception.|  
   
 ## Remarks  
+
  This method is implemented by the writer of the debugging application.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** ClrData.idl, ClrData.h  
   
@@ -50,6 +55,6 @@ HRESULT GetExceptionThreadID(
   
 ## See also
 
-- [ICLRDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)
-- [GetExceptionContextRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)
-- [GetExceptionRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionrecord-method.md)
+- [ICLRDataTarget3 Interface](iclrdatatarget3-interface.md)
+- [GetExceptionContextRecord Method](iclrdatatarget3-getexceptioncontextrecord-method.md)
+- [GetExceptionRecord Method](iclrdatatarget3-getexceptionrecord-method.md)

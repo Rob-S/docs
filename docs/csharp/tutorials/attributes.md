@@ -1,5 +1,5 @@
 ---
-title: Attributes - C#
+title: "Tutorial: Use attributes - C#"
 description: Learn how attributes work in C#.
 author: mgroves
 ms.technology: csharp-fundamentals
@@ -18,9 +18,9 @@ In this tutorial, you'll be introduced to how to add attributes to your code, ho
 attributes that are built into .NET Core.
 
 ## Prerequisites
+
 You’ll need to set up your machine to run .NET core. You can find the
-installation instructions on the [.NET Core Downloads](https://dotnet.microsoft.com/download)
-page.
+installation instructions on the [.NET Core Downloads](https://dotnet.microsoft.com/download) page.
 You can run this application on Windows, Ubuntu Linux, macOS or in a Docker container.
 You’ll need to install your favorite code editor. The descriptions below
 use [Visual Studio Code](https://code.visualstudio.com/) which is an open

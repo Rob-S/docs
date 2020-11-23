@@ -16,23 +16,24 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedDocument Interface
+
 Represents a document referenced by a symbol store. A document is defined by a uniform resource locator (URL) and a document type GUID. You can locate the document regardless of how it is stored by using the URL and document type GUID. You can store the document source in the symbol store and retrieve it through this interface.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[FindClosestLine Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-findclosestline-method.md)|Returns the closest line that is a sequence point, given a line in this document that may or may not be a sequence point.|  
-|[GetCheckSum Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getchecksum-method.md)|Gets the checksum.|  
-|[GetCheckSumAlgorithmId Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getchecksumalgorithmid-method.md)|Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.|  
-|[GetDocumentType Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getdocumenttype-method.md)|Gets the document type of this document.|  
-|[GetLanguage Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getlanguage-method.md)|Gets the language identifier of this document.|  
-|[GetLanguageVendor Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getlanguagevendor-method.md)|Gets the language vendor of this document.|  
-|[GetSourceLength Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getsourcelength-method.md)|Gets the length, in bytes, of the embedded source.|  
-|[GetSourceRange Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-getsourcerange-method.md)|Returns the specified range of the embedded source into the given buffer.|  
-|[GetURL Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-geturl-method.md)|Returns the URL for this document.|  
-|[HasEmbeddedSource Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-hasembeddedsource-method.md)|Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.|  
+|[FindClosestLine Method](isymunmanageddocument-findclosestline-method.md)|Returns the closest line that is a sequence point, given a line in this document that may or may not be a sequence point.|  
+|[GetCheckSum Method](isymunmanageddocument-getchecksum-method.md)|Gets the checksum.|  
+|[GetCheckSumAlgorithmId Method](isymunmanageddocument-getchecksumalgorithmid-method.md)|Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.|  
+|[GetDocumentType Method](isymunmanageddocument-getdocumenttype-method.md)|Gets the document type of this document.|  
+|[GetLanguage Method](isymunmanageddocument-getlanguage-method.md)|Gets the language identifier of this document.|  
+|[GetLanguageVendor Method](isymunmanageddocument-getlanguagevendor-method.md)|Gets the language vendor of this document.|  
+|[GetSourceLength Method](isymunmanageddocument-getsourcelength-method.md)|Gets the length, in bytes, of the embedded source.|  
+|[GetSourceRange Method](isymunmanageddocument-getsourcerange-method.md)|Returns the specified range of the embedded source into the given buffer.|  
+|[GetURL Method](isymunmanageddocument-geturl-method.md)|Returns the URL for this document.|  
+|[HasEmbeddedSource Method](isymunmanageddocument-hasembeddedsource-method.md)|Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.|  
   
 ## See also
 
-- [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Diagnostics Symbol Store Interfaces](diagnostics-symbol-store-interfaces.md)

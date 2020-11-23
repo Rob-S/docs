@@ -17,20 +17,22 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataAssemblyImport::EnumFiles Method
+
 Enumerates the files referenced in the current assembly manifest.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT EnumFiles (  
-    [in, out] HCORENUM    *phEnum,   
-    [out] mdFile          rFiles[],   
-    [in]  ULONG           cMax,   
+    [in, out] HCORENUM    *phEnum,
+    [out] mdFile          rFiles[],
+    [in]  ULONG           cMax,
     [out] ULONG           *pcTokens  
 );  
 ```  
   
 ## Parameters  
+
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be a null value for the first call of this method.  
   
@@ -51,7 +53,8 @@ HRESULT EnumFiles (
 |`S_FALSE`|There are no tokens to enumerate. In this case, `pcTokens` is set to zero.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -61,4 +64,4 @@ HRESULT EnumFiles (
   
 ## See also
 
-- [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport Interface](imetadataassemblyimport-interface.md)

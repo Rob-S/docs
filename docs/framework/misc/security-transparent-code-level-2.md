@@ -1,5 +1,6 @@
 ---
 title: "Security-Transparent Code, Level 2"
+description: Understand Level 2 transparent code. See usage examples and behaviors, override patterns, inheritance rules, and more.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "transparency"
@@ -7,8 +8,6 @@ helpviewer_keywords:
   - "security-transparent code"
   - "security-critical code"
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Security-Transparent Code, Level 2
 
@@ -176,4 +175,4 @@ The <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A>
 ## See also
 
 - [Security-Transparent Code, Level 1](security-transparent-code-level-1.md)
-- [Security Changes](../security/security-changes.md)
+- [Security Changes](/previous-versions/dotnet/framework/security/security-changes)

@@ -17,9 +17,10 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugEval::NewArray Method
+
 Allocates a new array of the specified element type and dimensions.  
   
- This method is obsolete in the .NET Framework version 2.0. Use [ICorDebugEval2::NewParameterizedArray](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) instead.  
+ This method is obsolete in the .NET Framework version 2.0. Use [ICorDebugEval2::NewParameterizedArray](icordebugeval2-newparameterizedarray-method.md) instead.  
   
 ## Syntax  
   
@@ -34,6 +35,7 @@ HRESULT NewArray (
 ```  
   
 ## Parameters  
+
  `elementType`  
  [in] A value of the CorElementType enumeration that specifies the element type of the array.  
   
@@ -50,10 +52,12 @@ HRESULT NewArray (
  [in] Optional. The lower bound of each dimension of the array. If this value is omitted, a lower bound of zero is assumed for each dimension.  
   
 ## Remarks  
+
  The array is always created in the application domain in which the thread is currently executing.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

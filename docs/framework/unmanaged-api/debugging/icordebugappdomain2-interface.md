@@ -23,8 +23,8 @@ Provides methods to work with arrays, pointers, function pointers, and reference
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetArrayOrPointerType Method](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getarrayorpointertype-method.md)|Gets an array of the specified type, or a pointer or reference to the specified type.|  
-|[GetFunctionPointerType](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getfunctionpointertype-method.md)|Gets a pointer to a function that has a given signature.|  
+|[GetArrayOrPointerType Method](icordebugappdomain2-getarrayorpointertype-method.md)|Gets an array of the specified type, or a pointer or reference to the specified type.|  
+|[GetFunctionPointerType](icordebugappdomain2-getfunctionpointertype-method.md)|Gets a pointer to a function that has a given signature.|  
   
 ## Remarks  
   
@@ -32,7 +32,8 @@ Provides methods to work with arrays, pointers, function pointers, and reference
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,4 +43,4 @@ Provides methods to work with arrays, pointers, function pointers, and reference
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

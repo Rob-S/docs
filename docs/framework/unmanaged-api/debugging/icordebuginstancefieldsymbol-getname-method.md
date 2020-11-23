@@ -4,19 +4,21 @@ ms.date: "03/30/2017"
 ms.assetid: d9c12b1f-9c1d-4943-8e9e-93b55faf085f
 ---
 # ICorDebugInstanceFieldSymbol::GetName Method
+
 Gets the name of the instance field.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetName(  
-   [in] ULONG32 cchName,   
-   [out] ULONG32 *pcchName,   
+   [in] ULONG32 cchName,
+   [out] ULONG32 *pcchName,
    [out, size_is(cchName), length_is(*pcchName)] WCHAR szName[]  
 );  
 ```  
   
 ## Parameters  
+
  `cchName`  
  [in] The number of characters in the `szName` buffer.  
   
@@ -32,7 +34,8 @@ HRESULT GetName(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,5 +45,5 @@ HRESULT GetName(
   
 ## See also
 
-- [ICorDebugInstanceFieldSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugInstanceFieldSymbol Interface](icordebuginstancefieldsymbol-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

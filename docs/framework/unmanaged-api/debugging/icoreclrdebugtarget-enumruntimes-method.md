@@ -19,6 +19,7 @@ topic_type:
   - "apiref"
 ---
 # ICoreClrDebugTarget::EnumRuntimes Method
+
 Enumerates the common language runtimes (CLRs) in the specified process that is running on a remote computer.  
   
 ## Syntax  
@@ -32,16 +33,18 @@ HRESULT EnumRuntimes (
 ```  
   
 ## Parameters  
+
  `dwInternalProcessID`  
- [in] The internal process ID of the process for which you want to enumerate runtimes. This will be `m_dwInternalID` from the corresponding [CoreClrDebugProcInfo](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md).  
+ [in] The internal process ID of the process for which you want to enumerate runtimes. This will be `m_dwInternalID` from the corresponding [CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md).  
   
  `pcRuntimes`  
  [out] The number of runtimes returned in `ppRuntimes`. This value can be 0 (zero).  
   
  `ppRuntimes`  
- [out] An array of [CoreClrDebugRuntimeInfo](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugruntimeinfo-structure.md) structures that represent the runtimes loaded in the remote target process.  
+ [out] An array of [CoreClrDebugRuntimeInfo](coreclrdebugruntimeinfo-structure.md) structures that represent the runtimes loaded in the remote target process.  
   
 ## Return Value  
+
  S_OK  
  Success.  
   
@@ -55,10 +58,12 @@ HRESULT EnumRuntimes (
  Other failures.  
   
 ## Remarks  
- To free the memory that was allocated by this method, call the [ICoreClrDebugTarget::FreeMemory](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) method.  
+
+ To free the memory that was allocated by this method, call the [ICoreClrDebugTarget::FreeMemory](icoreclrdebugtarget-freememory-method.md) method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CoreClrRemoteDebuggingInterfaces.h  
   
@@ -68,4 +73,4 @@ HRESULT EnumRuntimes (
   
 ## See also
 
-- [ICoreClrDebugTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)
+- [ICoreClrDebugTarget Interface](icoreclrdebugtarget-interface.md)

@@ -32,7 +32,8 @@ To read this JSON document using one of the readers previously mentioned, use th
 Furthermore, if the JSON message in the example is received by WCF and logged, you would see the XML fragment in the preceding log.
 
 ## Mapping Between JSON and the XML Infoset
-Formally, the mapping is between JSON as described in [RFC 4627](https://go.microsoft.com/fwlink/?LinkId=98808) (except with certain restrictions relaxed and certain other restrictions added) and the XML infoset (and not textual XML) as described in [XML Information Set](https://go.microsoft.com/fwlink/?LinkId=98809). See this topic for the definitions of *information items* and fields in [square brackets].
+
+Formally, the mapping is between JSON as described in [RFC 4627](https://www.ietf.org/rfc/rfc4627.txt) (except with certain restrictions relaxed and certain other restrictions added) and the XML infoset (and not textual XML) as described in [XML Information Set](https://www.w3.org/TR/2004/REC-xml-infoset-20040204/). See this topic for the definitions of *information items* and fields in [square brackets].
 
 A blank JSON document maps to a blank XML document, and a blank XML document maps to a blank JSON document. On the XML to JSON mapping, preceding white space and trailing white space after the document are not allowed.
 
@@ -145,9 +146,9 @@ Member Records work as follows:
 Example: The following element maps to a JSON fragment.
 
 ```xml
-<root type="object"/>
-<myLocalName type="string">aaa</myLocalName>
-</root >
+<root type="object">
+    <myLocalName type="string">aaa</myLocalName>
+</root>
 ```
 
 The following JSON fragment is displayed.
@@ -195,13 +196,13 @@ Array Records work as follows:
 Example: The following element maps to a JSON fragment.
 
 ```xml
-<root type="array"/>
+<root type="array">
     <item type="string">myValue1</item>
     <item type="number">2</item>
     <item type="array">
     <item type="boolean">true</item>
     <item type="null"/></item>
-</root >
+</root>
 ```
 
 The following is the JSON fragment.

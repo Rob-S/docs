@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugInternalFrame2::GetFrameAddress Method
+
 Returns the stack address of the internal frame.  
   
 ## Syntax  
@@ -26,10 +27,12 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 ```  
   
 ## Parameters  
+
  `pAddress`  
  [out] Pointer to the `CORDB_ADDRESS` for the internal frame.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -39,10 +42,12 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 |E_INVALIDARG|`pAddress` is `null`.|  
   
 ## Remarks  
+
  The value returned in `pAddress` can be used to determine the location of the internal frame relative to other frames on the stack. Even on IA-64-based computers, the internal frame lives on the stack only, and there is no corresponding pointer to a backing store.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -52,6 +57,6 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
   
 ## See also
 
-- [ICorDebugInternalFrame2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugInternalFrame2 Interface](icordebuginternalframe2-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

@@ -1,14 +1,11 @@
 ---
 title: "Validating an XML Document in the DOM"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
   - "cpp"
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Validating an XML Document in the DOM
 
@@ -88,5 +85,5 @@ Validation errors are handled by the <xref:System.Xml.Schema.ValidationEventHand
 - <xref:System.Xml.XmlReader>
 - <xref:System.Xml.Schema.ValidationEventHandler>
 - <xref:System.Xml.XmlReaderSettings>
-- [Process XML Data Using the DOM Model](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
-- [Working with XML Schemas](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+- [Process XML Data Using the DOM Model](process-xml-data-using-the-dom-model.md)
+- [Working with XML Schemas](working-with-xml-schemas.md)

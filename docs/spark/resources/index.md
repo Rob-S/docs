@@ -1,7 +1,7 @@
 ---
 title: .NET for Apache Spark resources
 description: Explore these .NET for Apache Spark resources to assist with custom data science solutions creation and integration into your .NET applications.
-ms.date: 05/06/2019
+ms.date: 10/09/2020
 ---
 # .NET for Apache Spark resources
 

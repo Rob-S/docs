@@ -12,6 +12,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugFunction3 Interface
+
 [Supported in the .NET Framework 4.5.2 and later versions]  
   
  Logically extends the ICorDebugFunction interface to provide access to code from a ReJIT request.  
@@ -20,12 +21,13 @@ topic_type:
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetActiveReJitRequestILCode Method](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction3-getactiverejitrequestilcode-method.md)|Gets an interface pointer to an [ICorDebugILCode](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-interface.md) that contains the IL from an active ReJIT request.|  
+|[GetActiveReJitRequestILCode Method](icordebugfunction3-getactiverejitrequestilcode-method.md)|Gets an interface pointer to an [ICorDebugILCode](icordebugilcode-interface.md) that contains the IL from an active ReJIT request.|  
   
 ## Remarks  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -35,6 +37,6 @@ topic_type:
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [ReJIT: A How-To Guide](https://blogs.msdn.microsoft.com/davbr/2011/10/12/rejit-a-how-to-guide/)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)
+- [ReJIT: A How-To Guide](/archive/blogs/davbr/rejit-a-how-to-guide)

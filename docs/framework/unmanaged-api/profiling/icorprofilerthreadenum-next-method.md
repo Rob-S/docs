@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerThreadEnum::Next Method
+
 Gets the specified number of contiguous threads from a sequential collection of threads, starting at the enumerator's current position in the sequence.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT Next (    [in]  ULONG      celt,
 ```  
   
 ## Parameters  
+
  `celt`  
  [in] The number of threads to retrieve.  
   
@@ -40,6 +42,7 @@ HRESULT Next (    [in]  ULONG      celt,
  [out] A pointer to the number of threads actually returned in the `ids` array.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -48,7 +51,8 @@ HRESULT Next (    [in]  ULONG      celt,
 |S_FALSE|Fewer than `celt` elements were returned, which indicates that the enumeration is complete.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -58,5 +62,5 @@ HRESULT Next (    [in]  ULONG      celt,
   
 ## See also
 
-- [ICorProfilerThreadEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerThreadEnum Interface](icorprofilerthreadenum-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)

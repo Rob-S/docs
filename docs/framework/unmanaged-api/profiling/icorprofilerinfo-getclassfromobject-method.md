@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo::GetClassFromObject Method
+
 Gets the `ClassID` of an object, given its `ObjectID`.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT GetClassFromObject(
 ```  
   
 ## Parameters  
+
  `objectId`  
  [in] The ID of the object for which to get the `ClassID`.  
   
@@ -35,10 +37,12 @@ HRESULT GetClassFromObject(
  [out] A pointer to the returned `ClassID`.  
   
 ## Remarks  
+
  A null `pClassId` indicates that `objectId` has a type that is unloading.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -48,4 +52,4 @@ HRESULT GetClassFromObject(
   
 ## See also
 
-- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo Interface](icorprofilerinfo-interface.md)

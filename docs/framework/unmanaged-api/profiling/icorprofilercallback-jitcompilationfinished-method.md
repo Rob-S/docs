@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::JITCompilationFinished Method
+
 Notifies the profiler that the just-in-time (JIT) compiler has finished compiling a function.  
   
 ## Syntax  
@@ -28,20 +29,25 @@ HRESULT JITCompilationFinished(
     [in] BOOL       fIsSafeToBlock);  
 ```  
   
-## Parameters  
- `functionId`  
- [in] The ID of the function that was compiled.  
-  
- `hrStatus`  
- [in] A value indicating whether compilation was successful.  
-  
- `fIsSafeToBlock`  
- [in] A value indicating to the profiler whether blocking will affect the operation of the runtime. The value is `true` if blocking may cause the runtime to wait for the calling thread to return from this callback; otherwise, `false`.  
-  
- Although a value of `true` will not harm the runtime, it can skew the profiling results.  
-  
+## Parameters
+
+- `functionId`
+
+  \[in] The ID of the function that was compiled.
+
+- `hrStatus`
+
+  \[in] A value indicating whether compilation was successful.
+
+- `fIsSafeToBlock`
+
+  \[in] A value indicating to the profiler whether blocking will affect the operation of the runtime. The value is `true` if blocking may cause the runtime to wait for the calling thread to return from this callback; otherwise, `false`.
+
+  Although a value of `true` will not harm the runtime, it can skew the profiling results.
+
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -51,5 +57,5 @@ HRESULT JITCompilationFinished(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [JITCompilationStarted Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [JITCompilationStarted Method](icorprofilercallback-jitcompilationstarted-method.md)

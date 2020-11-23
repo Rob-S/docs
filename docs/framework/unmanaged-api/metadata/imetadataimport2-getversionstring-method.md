@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport2::GetVersionString Method
+
 Gets the version number of the runtime that was used to build the assembly.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT GetVersionString (
 ```  
   
 ## Parameters  
+
  `pwzBuf`  
  [out] An array to store the string that specifies the version.  
   
@@ -40,10 +42,12 @@ HRESULT GetVersionString (
  [out] The number of wide characters, including a null terminator, returned in the `pwzBuf` array.  
   
 ## Remarks  
+
  The `GetVersionString` method gets the built-for version of the current metadata scope. If the scope has never been saved, it will not have a built-for version, and an empty string will be returned.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -53,5 +57,5 @@ HRESULT GetVersionString (
   
 ## See also
 
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)

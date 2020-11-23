@@ -1,5 +1,6 @@
 ---
 title: "Aximp.exe (Windows Forms ActiveX Control Importer)"
+description: Understand Aximp.exe, the Windows Forms ActiveX Control Importer. This tool converts type definitions in a COM type library for ActiveX into Windows Forms.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "ActiveX controls, hosting in Windows Forms"
@@ -8,8 +9,6 @@ helpviewer_keywords:
   - "Aximp.exe"
   - "Windows Forms ActiveX Control Importer"
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Aximp.exe (Windows Forms ActiveX Control Importer)
 The ActiveX Control Importer converts type definitions in a COM type library for an ActiveX control into a Windows Forms control.  
@@ -69,7 +68,7 @@ aximp [options]{file.dll | file.ocx}
 ## Example  
  The following command generates MediaPlayer.dll and AxMediaPlayer.dll for the Media Player control `msdxm.ocx`.  
   
-```console 
+```console
 aximp c:\systemroot\system32\msdxm.ocx  
 ```  
   

@@ -1,6 +1,6 @@
 ---
+description: "try-catch - C# Reference"
 title: "try-catch - C# Reference"
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords: 
   - "try"
@@ -57,7 +57,7 @@ catch (FileNotFoundException e)
 }
 catch (IOException e)
 {
-    // Extract some information from this exception, and then 
+    // Extract some information from this exception, and then
     // throw it to the parent method.
     if (e.Source != null)
         Console.WriteLine("IOException source: {0}", e.Source);
@@ -68,7 +68,7 @@ catch (IOException e)
 You can catch one exception and throw a different exception. When you do this, specify the exception that you caught as the inner exception, as shown in the following example.
 
 ```csharp
-catch (InvalidCastException e) 
+catch (InvalidCastException e)
 {
     // Perform some action here, and then throw a new exception.
     throw new YourCustomException("Put your error message here.", e);
@@ -93,21 +93,21 @@ catch (InvalidCastException e)
 
 > [!NOTE]
 > It is also possible to use an exception filter to get a similar result in an often cleaner fashion (as well as not modifying the stack, as explained earlier in this document). The following example has a similar behavior for callers as the previous example. The function throws the `InvalidCastException` back to the caller when `e.Data` is `null`.
-> 
+>
 > ```csharp
-> catch (InvalidCastException e) when (e.Data != null) 
+> catch (InvalidCastException e) when (e.Data != null)
 > {
 >     // Take some action.
 > }
-> ``` 
+> ```
 
 From inside a `try` block, initialize only variables that are declared therein. Otherwise, an exception can occur before the execution of the block is completed. For example, in the following code example, the variable `n` is initialized inside the `try` block. An attempt to use this variable outside the `try` block in the `Write(n)` statement will generate a compiler error.
 
 ```csharp
-static void Main() 
+static void Main()
 {
     int n;
-    try 
+    try
     {
         // Do not initialize this variable here.
         n = 123;
@@ -126,9 +126,9 @@ For more information about catch, see [try-catch-finally](try-catch-finally.md).
 
 An async method is marked  by an  [async](async.md) modifier and usually contains one or more await expressions or statements. An await expression applies the [await](../operators/await.md) operator to a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>.
 
-When control reaches an `await` in the async method, progress in the method is suspended until the awaited task completes. When the task  is complete, execution can resume in the method. For more information, see [Asynchronous Programming with async and await](../../programming-guide/concepts/async/index.md) and [Control Flow in Async Programs](../../programming-guide/concepts/async/control-flow-in-async-programs.md).
+When control reaches an `await` in the async method, progress in the method is suspended until the awaited task completes. When the task  is complete, execution can resume in the method. For more information, see [Asynchronous programming with async and await](../../programming-guide/concepts/async/index.md).
 
-The completed task to which `await` is applied might be in a faulted state because of an unhandled exception in the method that returns the task. Awaiting the task throws an exception. A task can also end up in a canceled state if the asynchronous process that returns it is canceled. Awaiting a canceled task throws  an `OperationCanceledException`. For more information about how to cancel an asynchronous process, see [Fine-Tuning Your Async Application](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).
+The completed task to which `await` is applied might be in a faulted state because of an unhandled exception in the method that returns the task. Awaiting the task throws an exception. A task can also end up in a canceled state if the asynchronous process that returns it is canceled. Awaiting a canceled task throws an `OperationCanceledException`.
 
 To catch the exception, await the task in a `try` block, and catch the exception in the associated `catch` block. For an example, see the [Async method example](#async-method-example) section.
 
@@ -136,7 +136,7 @@ A task can be in a faulted state because multiple exceptions occurred in the awa
 
 ## Example
 
-In the following example, the `try` block contains a call to the `ProcessString` method that may cause an exception. The `catch` clause contains the exception handler that just displays a message on the screen. When the `throw` statement is called from inside `MyMethod`, the system looks for the `catch` statement and displays the message `Exception caught`.
+In the following example, the `try` block contains a call to the `ProcessString` method that may cause an exception. The `catch` clause contains the exception handler that just displays a message on the screen. When the `throw` statement is called from inside `ProcessString`, the system looks for the `catch` statement and displays the message `Exception caught`.
 
 [!code-csharp[csrefKeywordsExceptions#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#2)]
 

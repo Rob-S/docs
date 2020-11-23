@@ -1,6 +1,6 @@
 ---
+description: "extern alias - C# Reference"
 title: "extern alias - C# Reference"
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords: 
   - "alias_CSharpKeyword"
@@ -11,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
 ---
 # extern alias (C# Reference)
+
 You might have to reference two versions of assemblies that have the same fully-qualified type names. For example, you might have to use two or more versions of an assembly in the same application. By using an external assembly alias, the namespaces from each assembly can be wrapped inside root-level namespaces named by the alias, which enables them to be used in the same file.  
   
 > [!NOTE]
@@ -32,7 +33,30 @@ You might have to reference two versions of assemblies that have the same fully-
   
  In the previous example, `GridV1::Grid` would be the grid control from `grid.dll`, and `GridV2::Grid` would be the grid control from `grid20.dll`.  
   
+## Using Visual Studio
+
+If you are using Visual Studio, aliases can be provided in similar way.
+
+Add reference of *grid.dll* and *grid20.dll* to your project in Visual Studio. Open a property tab and change the Aliases from global to GridV1 and GridV2 respectively.
+
+Use these aliases the same way above
+
+```csharp
+ extern alias GridV1;  
+  
+ extern alias GridV2;  
+```
+
+Now you can create alias for a namespace or a type by *using alias directive*. For more information, see [using directive](using-directive.md).
+
+```csharp
+using Class1V1 = GridV1::Namespace.Class1;
+
+using Class1V2 = GridV2::Namespace.Class1;
+```
+
 ## C# Language Specification  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## See also

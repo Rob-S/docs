@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostTaskManager::Sleep Method
+
 Notifies the host that the current task is going to sleep.  
   
 ## Syntax  
@@ -29,11 +30,12 @@ HRESULT Sleep (
 ```  
   
 ## Parameters  
+
  `dwMilliseconds`  
  [in] The time interval, in milliseconds, that the thread will sleep.  
   
  `option`  
- [in] One of the [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) enumeration values, indicating what action the host should take if this action blocks.  
+ [in] One of the [WAIT_OPTION](wait-option-enumeration.md) enumeration values, indicating what action the host should take if this action blocks.  
   
 ## Return Value  
   
@@ -47,10 +49,12 @@ HRESULT Sleep (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The CLR typically calls `IHostTaskManager::Sleep` when <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> is called from user code.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -60,7 +64,7 @@ HRESULT Sleep (
   
 ## See also
 
-- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask Interface](iclrtask-interface.md)
+- [ICLRTaskManager Interface](iclrtaskmanager-interface.md)
+- [IHostTask Interface](ihosttask-interface.md)
+- [IHostTaskManager Interface](ihosttaskmanager-interface.md)

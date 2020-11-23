@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # INotifySink2::OnSyncCallExit Method
+
 Gets invoked when exiting a call.  
   
 ## Syntax  
@@ -31,8 +32,9 @@ HRESULT OnSyncCallExit
 ```  
   
 ## Parameters  
+
  `in_CallID`  
- [in] ID of the call being exited. See [CALL_ID Structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ [in] ID of the call being exited. See [CALL_ID Structure](call-id-structure.md).  
   
  `out_ppBuffer`  
  [out] Call buffer.  
@@ -41,13 +43,15 @@ HRESULT OnSyncCallExit
  [out] Size of the call buffer, in bytes.  
   
 ## Return Value  
+
  S_OK if the method succeeds.  
   
 ## Requirements  
+
  **Header:** ProtocolNotify2.idl  
   
 ## See also
 
-- [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [INotifySink2 Interface](inotifysink2-interface.md)
+- [INotifySource2 Interface](inotifysource2-interface.md)
+- [INotifyConnection2 Interface](inotifyconnection2-interface.md)

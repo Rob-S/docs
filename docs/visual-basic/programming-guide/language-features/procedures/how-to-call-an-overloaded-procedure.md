@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: 3bb331fb-f6bc-406f-9ca0-9609b497014c
 ---
 # How to: Call an Overloaded Procedure (Visual Basic)
+
 The advantage of overloading a procedure is in the flexibility of the call. The calling code can obtain the information it needs to pass to the procedure and then call a single procedure name, no matter what arguments it is passing.  
   
 ### To call a procedure that has more than one version defined  
@@ -37,4 +38,4 @@ The advantage of overloading a procedure is in the flexibility of the call. The 
 - [How to: Overload a Procedure that Takes an Indefinite Number of Parameters](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Considerations in Overloading Procedures](./considerations-in-overloading-procedures.md)
 - [Overload Resolution](./overload-resolution.md)
-- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Overloads](../../../language-reference/modifiers/overloads.md)

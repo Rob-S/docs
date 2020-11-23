@@ -16,13 +16,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugValueBreakpoint Interface
+
 Extends the ICorDebugBreakpoint interface to provide access to specific values.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetValue Method](../../../../docs/framework/unmanaged-api/debugging/icordebugvaluebreakpoint-getvalue-method.md)|Gets an interface pointer to an ICorDebugValue object that represents the value of the object upon which the breakpoint is set.|  
+|[GetValue Method](icordebugvaluebreakpoint-getvalue-method.md)|Gets an interface pointer to an ICorDebugValue object that represents the value of the object upon which the breakpoint is set.|  
   
 ## Remarks  
   
@@ -30,7 +31,8 @@ Extends the ICorDebugBreakpoint interface to provide access to specific values.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -40,4 +42,4 @@ Extends the ICorDebugBreakpoint interface to provide access to specific values.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

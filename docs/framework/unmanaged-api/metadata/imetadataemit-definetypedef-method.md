@@ -17,21 +17,23 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::DefineTypeDef Method
+
 Creates a type definition for a common language runtime type, and gets a metadata token for that type definition.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT DefineTypeDef (   
-    [in]  LPCWSTR     szTypeDef,   
-    [in]  DWORD       dwTypeDefFlags,   
-    [in]  mdToken     tkExtends,   
-    [in]  mdToken     rtkImplements[],   
+HRESULT DefineTypeDef (
+    [in]  LPCWSTR     szTypeDef,
+    [in]  DWORD       dwTypeDefFlags,
+    [in]  mdToken     tkExtends,
+    [in]  mdToken     rtkImplements[],
     [out] mdTypeDef   *ptd  
 );  
 ```  
   
 ## Parameters  
+
  `szTypeDef`  
  [in] The name of the type in Unicode.  
   
@@ -48,6 +50,7 @@ HRESULT DefineTypeDef (
  [out] The `mdTypeDef` token assigned.  
   
 ## Remarks  
+
  A flag in `dwTypeDefFlags` specifies whether the type being created is a common type system reference type (class or interface) or a common type system value type.  
   
  Depending on the parameters supplied, this method, as a side effect, may also create an `mdInterfaceImpl` record for each interface that is inherited or implemented by this type. However, this method does not return any of these `mdInterfaceImpl` tokens. If a client wants to later add or modify an `mdInterfaceImpl` token, it must use the `IMetaDataImport` interface to enumerate them. If you want to use COM semantics of the `[default]` interface, you should supply the default interface as the first element in `rtkImplements`; a custom attribute set on the class will indicate that the class has a default interface (which is always assumed to be the first `mdInterfaceImpl` token declared for the class).  
@@ -55,7 +58,8 @@ HRESULT DefineTypeDef (
  Each element of the `rtkImplements` array holds an `mdTypeDef` or `mdTypeRef` token. The last element in the array must be `mdTokenNil`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -65,5 +69,5 @@ HRESULT DefineTypeDef (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

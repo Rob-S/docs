@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # ETaskType Enumeration
-Contains values that indicate the type of task that is represented by either an [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) or an [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) interface.  
+
+Contains values that indicate the type of task that is represented by either an [ICLRTask](iclrtask-interface.md) or an [IHostTask](ihosttask-interface.md) interface.  
   
 ## Syntax  
   
@@ -53,7 +54,8 @@ typedef enum ETaskType {
 |`TT_USER`|The interface represents a user task.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -63,4 +65,4 @@ typedef enum ETaskType {
   
 ## See also
 
-- [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Hosting Enumerations](hosting-enumerations.md)

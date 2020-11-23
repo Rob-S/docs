@@ -3,12 +3,11 @@ title: Unit testing C# code in .NET Core using dotnet test and xUnit
 description: Learn unit test concepts in C# and .NET Core through an interactive experience building a sample solution step-by-step using dotnet test and xUnit.
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.custom: "seodec18"
+ms.date: 10/21/2020
 ---
 # Unit testing C# in .NET Core using dotnet test and xUnit
 
-This tutorial shows how to build a solution containing a unit test project and source code project. To follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+This tutorial shows how to build a solution containing a unit test project and source code project. To follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## Create the solution
 
@@ -47,18 +46,18 @@ The following instructions provide the steps to create the test solution. See [C
 * Replace the code in *PrimeService.cs* with the following code:
   
   ```csharp
-    using System;
+  using System;
 
-    namespace Prime.Services
-    {
-        public class PrimeService
-        {
-            public bool IsPrime(int candidate)
-            {
-                throw new NotImplementedException("Not implemented.");
-            }
-        }
-    }
+  namespace Prime.Services
+  {
+      public class PrimeService
+      {
+          public bool IsPrime(int candidate)
+          {
+              throw new NotImplementedException("Not implemented.");
+          }
+      }
+  }
   ```
 
 * The preceding code:
@@ -80,7 +79,7 @@ The following instructions provide the steps to create the test solution. See [C
   ```
 
 * The preceding command:
-  * Creates the *PrimeService.Tests* project in the *PrimeService.Tests* directory. The test project uses [xUnit](https://xunit.github.io/) as the test library.
+  * Creates the *PrimeService.Tests* project in the *PrimeService.Tests* directory. The test project uses [xUnit](https://xunit.net/) as the test library.
   * Configures the test runner by adding the following `<PackageReference />`elements to the project file:
     * "Microsoft.NET.Test.Sdk"
     * "xunit"
@@ -137,17 +136,11 @@ namespace Prime.UnitTests.Services
 {
     public class PrimeService_IsPrimeShould
     {
-        private readonly PrimeService _primeService;
-
-        public PrimeService_IsPrimeShould()
-        {
-            _primeService = new PrimeService();
-        }
-
         [Fact]
         public void IsPrime_InputIs1_ReturnFalse()
         {
-            var result = _primeService.IsPrime(1);
+            var primeService = new PrimeService();
+            bool result = primeService.IsPrime(1);
 
             Assert.False(result, "1 should not be prime");
         }
@@ -177,7 +170,8 @@ Run `dotnet test`. The test passes.
 Add prime number tests for 0 and -1. You could copy the preceding test and change the following code to use 0 and -1:
 
 ```csharp
-var result = _primeService.IsPrime(1);
+var primeService = new PrimeService();
+bool result = primeService.IsPrime(1);
 
 Assert.False(result, "1 should not be prime");
 ```
@@ -185,7 +179,6 @@ Assert.False(result, "1 should not be prime");
 Copying test code when only a parameter changes results in code duplication and test bloat. The following xUnit attributes enable writing a suite of similar tests:
 
 - `[Theory]` represents a suite of tests that execute the same code but have different input arguments.
-
 - `[InlineData]` attribute specifies values for those inputs.
 
 Rather than creating new tests, apply the preceding xUnit attributes to create a single theory. Replace the following code:
@@ -194,7 +187,8 @@ Rather than creating new tests, apply the preceding xUnit attributes to create a
 [Fact]
 public void IsPrime_InputIs1_ReturnFalse()
 {
-    var result = _primeService.IsPrime(1);
+    var primeService = new PrimeService();
+    bool result = primeService.IsPrime(1);
 
     Assert.False(result, "1 should not be prime");
 }
@@ -202,7 +196,7 @@ public void IsPrime_InputIs1_ReturnFalse()
 
 with the following code:
 
-[!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
+[!code-csharp[Sample_TestCode](../../../samples/snippets/core/testing/unit-testing-using-dotnet-test/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
 In the preceding code, `[Theory]` and `[InlineData]` enable testing several values less than two. Two is the smallest prime number.
 
@@ -225,6 +219,6 @@ The completed `IsPrime` method is not an efficient algorithm for testing primali
 
 ### Additional resources
 
-- [xUnit.net official site](https://xunit.github.io)
+- [xUnit.net official site](https://xunit.net)
 - [Testing controller logic in ASP.NET Core](/aspnet/core/mvc/controllers/testing)
 - [`dotnet add reference`](../tools/dotnet-add-reference.md)

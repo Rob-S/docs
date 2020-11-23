@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorDebugUnmappedStop Enumeration
+
 Specifies the type of unmapped code that can trigger a halt in code execution by the stepper.  
   
 ## Syntax  
@@ -45,10 +46,12 @@ typedef enum CorDebugUnmappedStop {
 |`STOP_ALL`|Stop in all types of unmapped code.|  
   
 ## Remarks  
- Use the [ICorDebugStepper::SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) method to set the flags that specify the unmapped code in which the stepper will stop.  
+
+ Use the [ICorDebugStepper::SetUnmappedStopMask](icordebugstepper-setunmappedstopmask-method.md) method to set the flags that specify the unmapped code in which the stepper will stop.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -58,4 +61,4 @@ typedef enum CorDebugUnmappedStop {
   
 ## See also
 
-- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Debugging Enumerations](debugging-enumerations.md)

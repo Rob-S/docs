@@ -4,19 +4,21 @@ ms.date: "03/30/2017"
 ms.assetid: e2be4af2-15d1-4e6a-8b68-1d78c93294a4
 ---
 # ICorDebugStaticFieldSymbol::GetName Method
+
 Gets the name of the static field.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetName(  
-   [in] ULONG32 cchName,   
-   [out] ULONG32 *pcchName,   
+   [in] ULONG32 cchName,
+   [out] ULONG32 *pcchName,
    [out, size_is(cchName), length_is(*pcchName)] WCHAR szName[]  
 );  
 ```  
   
 ## Parameters  
+
  `cchName`  
  [in] The number of characters in the `szName` buffer.  
   
@@ -32,7 +34,8 @@ HRESULT GetName(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,5 +45,5 @@ HRESULT GetName(
   
 ## See also
 
-- [ICorDebugStaticFieldSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugStaticFieldSymbol Interface](icordebugstaticfieldsymbol-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

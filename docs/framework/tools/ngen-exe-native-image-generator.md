@@ -1,5 +1,6 @@
 ---
 title: "Ngen.exe (Native Image Generator)"
+description: Review Ngen.exe, the Native Image Generator. Improve managed application performance by creating native images and installing into the local native image cache.
 ms.date: "03/30/2017"
 dev_langs:
   - "csharp"
@@ -24,7 +25,7 @@ ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 The Native Image Generator (Ngen.exe) is a tool that improves the performance of managed applications. Ngen.exe creates native images, which are files containing compiled processor-specific machine code, and installs them into the native image cache on the local computer. The runtime can use native images from the cache instead of using the just-in-time (JIT) compiler to compile the original assembly.
 
 > [!NOTE]
-> Ngen.exe compiles native images for assemblies that target the .NET Framework only. The equivalent native image generator for .NET Core is [CrossGen](https://github.com/dotnet/coreclr/blob/master/Documentation/building/crossgen.md). 
+> Ngen.exe compiles native images for assemblies that target the .NET Framework only. The equivalent native image generator for .NET Core is [CrossGen](https://github.com/dotnet/runtime/blob/master/docs/workflow/building/coreclr/crossgen.md).
 
 Changes to Ngen.exe in the .NET Framework 4:
 
@@ -49,7 +50,7 @@ On Windows 8, see [Native Image Task](#native-image-task).
 For additional information on using Ngen.exe and the native image service, see [Native Image Service](#native-image-service).
 
 > [!NOTE]
-> Ngen.exe syntax for versions 1.0 and 1.1 of the .NET Framework can be found in [Native Image Generator (Ngen.exe) Legacy Syntax](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms165073(v=vs.100)).
+> Ngen.exe syntax for versions 1.0 and 1.1 of the .NET Framework can be found in [Native Image Generator (Ngen.exe) Legacy Syntax](/previous-versions/dotnet/netframework-4.0/ms165073(v=vs.100)).
 
 This tool is automatically installed with Visual Studio. To run the tool, use the Developer Command Prompt for Visual Studio (or the Visual Studio Command Prompt in Windows 7). For more information, see [Command Prompts](developer-command-prompt-for-vs.md).
 

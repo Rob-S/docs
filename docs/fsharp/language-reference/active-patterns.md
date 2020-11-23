@@ -11,7 +11,7 @@ ms.date: 05/16/2016
 
 ```fsharp
 // Active pattern of one choice.
-let (|identifier|) [arguments] valueToMatch= expression
+let (|identifier|) [arguments] valueToMatch = expression
 
 // Active Pattern with multiple choices.
 // Uses a FSharp.Core.Choice<_,...,_> based on the number of case names. In F#, the limitation n <= 7 applies.
@@ -86,7 +86,7 @@ The output of the previous example is as follows:
 Something else : Not matched.
 ```
 
-When using partial active patterns, sometimes the individual choices can be disjoint or mutually exclusive, but they need not be. In the following example, the pattern Square and the pattern Cube are not disjoint, because some numbers are both squares and cubes, such as 64. The following program uses the AND pattern to combine the Square and Cube patterns. It print out all integers up to 1000 that are both squares and cubes, as well as those which are only cubes.
+When using partial active patterns, sometimes the individual choices can be disjoint or mutually exclusive, but they need not be. In the following example, the pattern Square and the pattern Cube are not disjoint, because some numbers are both squares and cubes, such as 64. The following program uses the AND pattern to combine the Square and Cube patterns. It prints out all integers up to 1000 that are both squares and cubes, as well as those which are only cubes.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
 

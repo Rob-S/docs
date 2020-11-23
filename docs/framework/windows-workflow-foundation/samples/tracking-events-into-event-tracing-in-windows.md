@@ -41,7 +41,7 @@ The tracking participant subscribes for a subset of the emitted tracking records
 
 3. To run the solution, press F5.
 
-    By default, the service is listening on port 53797 (http://localhost:53797/SampleWorkflowService.xamlx).
+    By default, the service is listening on port 53797 (`http://localhost:53797/SampleWorkflowService.xamlx`).
 
 4. Using File Explorer, open the WCF test client.
 
@@ -147,4 +147,4 @@ The health monitoring tracking profile emits workflow instance records and activ
 
 ## See also
 
-- [AppFabric Monitoring Samples](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [AppFabric Monitoring Samples](/previous-versions/appfabric/ff383407(v=azure.10))

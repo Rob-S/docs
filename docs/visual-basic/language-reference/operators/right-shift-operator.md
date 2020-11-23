@@ -12,6 +12,7 @@ helpviewer_keywords:
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
 ---
 # >> Operator (Visual Basic)
+
 Performs an arithmetic right shift on a bit pattern.  
   
 ## Syntax  
@@ -21,6 +22,7 @@ result = pattern >> amount
 ```  
   
 ## Parts  
+
  `result`  
  Required. Integral numeric value. The result of shifting the bit pattern. The data type is the same as that of `pattern`.  
   
@@ -31,6 +33,7 @@ result = pattern >> amount
  Required. Numeric expression. The number of bits to shift the bit pattern. The data type must be `Integer` or widen to `Integer`.  
   
 ## Remarks  
+
  Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic right shift, the bits shifted beyond the rightmost bit position are discarded, and the leftmost (sign) bit is propagated into the bit positions vacated at the left. This means that if `pattern` has a negative value, the vacated positions are set to one; otherwise they are set to zero.  
   
  Note that the data types `Byte`, `UShort`, `UInteger`, and `ULong` are unsigned, so there is no sign bit to propagate. If `pattern` is of any unsigned type, the vacated positions are always set to zero.  
@@ -49,9 +52,11 @@ result = pattern >> amount
  Arithmetic shifts never generate overflow exceptions.  
   
 ## Overloading  
- The `>>` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+
+ The `>>` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## Example  
+
  The following example uses the `>>` operator to perform arithmetic right shifts on integral values. The result always has the same data type as that of the expression being shifted.  
   
  [!code-vb[VbVbalrOperators#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#14)]  
@@ -82,9 +87,9 @@ result = pattern >> amount
   
 ## See also
 
-- [Bit Shift Operators](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
-- [Assignment Operators](../../../visual-basic/language-reference/operators/assignment-operators.md)
-- [>>= Operator](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Bit Shift Operators](bit-shift-operators.md)
+- [Assignment Operators](assignment-operators.md)
+- [>>= Operator](right-shift-assignment-operator.md)
+- [Operator Precedence in Visual Basic](operator-precedence.md)
+- [Operators Listed by Functionality](operators-listed-by-functionality.md)
+- [Arithmetic Operators in Visual Basic](../../programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

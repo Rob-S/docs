@@ -9,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: 19d461f5-d72f-4de9-8c1d-0a6650316990
 ---
 # WithEvents (Visual Basic)
+
 Specifies that one or more declared member variables refer to an instance of a class that can raise events.
 
 ## Remarks
@@ -25,7 +26,7 @@ You can declare only individual variables—not arrays—with `WithEvents`.
 
 **Element Types.** You must declare `WithEvents` variables to be object variables so that they can accept class instances. However, you cannot declare them as `Object`. You must declare them as the specific class that can raise the events.
 
-The `WithEvents` modifier can be used in this context: [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)
+The `WithEvents` modifier can be used in this context: [Dim Statement](../statements/dim-statement.md)
 
 ## Example
 
@@ -35,6 +36,6 @@ Dim WithEvents app As Application
 
 ## See also
 
-- [Handles](../../../visual-basic/language-reference/statements/handles-clause.md)
-- [Keywords](../../../visual-basic/language-reference/keywords/index.md)
-- [Events](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Handles](../statements/handles-clause.md)
+- [Keywords](../keywords/index.md)
+- [Events](../../programming-guide/language-features/events/index.md)

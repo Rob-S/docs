@@ -1,7 +1,6 @@
 ---
 title: "Numerics in .NET"
 ms.date: "10/18/2018"
-ms.technology: dotnet-standard
 helpviewer_keywords: 
   - "SIMD"
   - "System.Numerics.Vectors"
@@ -54,11 +53,11 @@ The <xref:System.Numerics.BigInteger?displayProperty=nameWithType> structure is 
   
 Both <xref:System.Single> and <xref:System.Double> types support special values that represent not-a-number and infinity. For example, the <xref:System.Double> type provides the following values: <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>, and <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>. You use the <xref:System.Double.IsNaN%2A?displayProperty=nameWithType>, <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType>, <xref:System.Double.IsPositiveInfinity%2A?displayProperty=nameWithType>, and <xref:System.Double.IsNegativeInfinity%2A?displayProperty=nameWithType> methods to test for these special values.
 
-Each floating-point type supports a set of standard arithmetic operators. The <xref:System.Math?displayProperty=nameWithType> class provides methods for a broader set of mathematical functions. .NET Core 2.0 and later includes the <xref:System.MathF?displayProperty=nameWithType> class that provides methods which accept arguments of the <xref:System.Single> type.
+Each floating-point type supports a set of standard arithmetic operators. The <xref:System.Math?displayProperty=nameWithType> class provides methods for a broader set of mathematical functions. .NET Core 2.0 and later includes the <xref:System.MathF?displayProperty=nameWithType> class, which provides methods that accept arguments of the <xref:System.Single> type.
 
-You can also work with the individual bits in <xref:System.Double> and <xref:System.Single> values by using the <xref:System.BitConverter?displayProperty=nameWithType> class. The <xref:System.Decimal?displayProperty=nameWithType> structure has its own methods, <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> and <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>, for working with a decimal value's individual bits, as well as its own set of methods for performing some additional mathematical operations.
+You can also work with the individual bits in <xref:System.Double> and <xref:System.Single> values by using the <xref:System.BitConverter?displayProperty=nameWithType> class. The <xref:System.Decimal?displayProperty=nameWithType> structure has its own methods, <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> and <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29>, for working with a decimal value's individual bits, as well as its own set of methods for performing some additional mathematical operations.
   
-The <xref:System.Double> and <xref:System.Single> types are intended to be used for values that by their nature are imprecise (for example, the distance between two stars) and for applications in which a high degree of precision and small rounding error is not required. You should use the <xref:System.Decimal?displayProperty=nameWithType> type for cases in which greater precision is required and rounding errors should be minimized.
+The <xref:System.Double> and <xref:System.Single> types are intended to be used for values that, by their nature, are imprecise (for example, the distance between two stars) and for applications in which a high degree of precision and small rounding error is not required. Use the <xref:System.Decimal?displayProperty=nameWithType> type for cases in which greater precision is required and rounding errors should be minimized.
 
 > [!NOTE]
 > The <xref:System.Decimal> type doesn't eliminate the need for rounding. Rather, it minimizes errors due to rounding.
@@ -82,12 +81,14 @@ The .NET SIMD-enabled types include the following:
 - The <xref:System.Numerics.Quaternion> type, which represents a vector that is used to encode three-dimensional physical rotations.
 
 - The <xref:System.Numerics.Vector%601> type, which represents a vector of a specified numeric type and provides a broad set of operators that benefit from SIMD support. The count of a <xref:System.Numerics.Vector%601> instance is fixed, but its value <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> depends on the CPU of the machine, on which code is executed.
+
   > [!NOTE]
-  > The <xref:System.Numerics.Vector%601> type is not included into the .NET Framework. You must install the [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors) NuGet package to get access to this type.
+  > The <xref:System.Numerics.Vector%601> type is included with .NET Core and .NET 5+, but not .NET Framework. If you're using .NET Framework, install the [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors) NuGet package to get access to this type.
   
-The SIMD-enabled types are implemented in such a way that they can be used with non-SIMD-enabled hardware or JIT compilers. To take advantage of SIMD instructions, your 64-bit apps must be run by the runtime that uses the RyuJIT compiler, which is included in .NET Core and in the .NET Framework 4.6 and later versions. It adds SIMD support when targeting 64-bit processors.
+The SIMD-enabled types are implemented in such a way that they can be used with non-SIMD-enabled hardware or JIT compilers. To take advantage of SIMD instructions, your 64-bit apps must be run by the runtime that uses the RyuJIT compiler, which is included in .NET Core and in .NET Framework 4.6 and later versions. It adds SIMD support when targeting 64-bit processors.
+
+For more information, see [Use SIMD-accelerated numeric types](simd.md).
 
 ## See also
 
-- [Application Essentials](application-essentials.md)
 - [Standard Numeric Format Strings](base-types/standard-numeric-format-strings.md)

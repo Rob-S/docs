@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # HOST_TYPE Enumeration
+
 Contains values that specify the type of host that is launching an application.  
   
 ## Syntax  
@@ -37,7 +38,8 @@ typedef enum {
 |`HOST_TYPE_DEFAULT`|Same as HOST_TYPE_APPLAUNCH.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -47,4 +49,4 @@ typedef enum {
   
 ## See also
 
-- [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Hosting Enumerations](hosting-enumerations.md)

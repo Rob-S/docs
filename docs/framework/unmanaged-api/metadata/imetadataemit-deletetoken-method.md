@@ -17,22 +17,25 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::DeleteToken Method
+
 Deletes the specified token from the current metadata scope.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT DeleteToken (   
-    [in]  mdToken     tkObj   
+HRESULT DeleteToken (
+    [in]  mdToken     tkObj
 );  
 ```  
   
 ## Parameters  
+
  `tkObj`  
  [in] The token to be deleted.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -42,5 +45,5 @@ HRESULT DeleteToken (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

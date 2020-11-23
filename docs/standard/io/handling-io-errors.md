@@ -1,7 +1,7 @@
 ---
 title: "Handling I/O errors in .NET"
+description: Learn how to handle I/O errors in .NET. Map error codes to exceptions, handle exceptions in I/O operations, and handle IOException.
 ms.date: "08/27/2018"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
@@ -33,13 +33,13 @@ Because the file system is an operating system resource, I/O methods in both .NE
 
 For example, on the Windows operating system, a method call that returns an error code of `ERROR_FILE_NOT_FOUND` (or 0x02) maps to a <xref:System.IO.FileNotFoundException>, and an error code of `ERROR_PATH_NOT_FOUND` (or 0x03) maps to a <xref:System.IO.DirectoryNotFoundException>.
 
-However, the precise conditions under which the operating system returns particular error codes is often undocumented or poorly documented. As a result, unexpected exceptions can occur. For example, because you are working with a directory rather than a file, you would expect that providing an invalid directory path to the <xref:System.IO.DirectoryInfo.%23ctor%2A?displayProperty=nameWithType> constructor throws a <xref:System.IO.DirectoryNotFoundException>. However, it may also throw a <xref:System.IO.FileNotFoundException>.
+However, the precise conditions under which the operating system returns particular error codes is often undocumented or poorly documented. As a result, unexpected exceptions can occur. For example, because you are working with a directory rather than a file, you would expect that providing an invalid directory path to the <xref:System.IO.DirectoryInfo.%23ctor%2A> constructor throws a <xref:System.IO.DirectoryNotFoundException>. However, it may also throw a <xref:System.IO.FileNotFoundException>.
 
 ## Exception handling in I/O operations
 
 Because of this reliance on the operating system, identical exception conditions (such as the directory not found error in our example) can result in an I/O method throwing any one of the entire class of I/O exceptions. This means that, when calling I/O APIs, your code should be prepared to handle most or all of these exceptions, as shown in the following table:
 
-| Exception type | .NET Core | .NET Framework |
+| Exception type | .NET Core/.NET 5+ | .NET Framework |
 |---|---|---|
 | <xref:System.IO.IOException> | Yes | Yes |
 | <xref:System.IO.FileNotFoundException> | Yes | Yes |

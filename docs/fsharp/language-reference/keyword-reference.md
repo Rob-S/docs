@@ -1,7 +1,83 @@
 ---
 title: Keyword Reference
 description: Find links to information about all of the F# language keywords.
-ms.date: 11/04/2019
+f1_keywords:
+- new_FS
+- use_FS
+- end_FS
+- lsl_FS
+- exception_FS
+- asr_FS
+- if_FS
+- internal_FS
+- default_FS
+- in_FS
+- lsr_FS
+- open_FS
+- static_FS
+- assert_FS
+- match_FS
+- land_FS
+- with_FS
+- inherit_FS
+- mutable_FS
+- downto_FS
+- false_FS
+- sig_FS
+- and_FS
+- true_FS
+- namespace_FS
+- public_FS
+- lxor_FS
+- val_FS
+- void_FS
+- downcast_FS
+- function_FS
+- while_FS
+- for_FS
+- class_FS
+- done_FS
+- to_FS
+- module_FS
+- let_FS
+- delegate_FS
+- abstract_FS
+- then_FS
+- when_FS
+- lazy_FS
+- try_FS
+- inline_FS
+- do_FS
+- upcast_FS
+- begin_FS
+- base_FS
+- fun_FS
+- struct_FS
+- as_FS
+- extern_FS
+- null_FS
+- lor_FS
+- return_FS
+- mod_FS
+- private_FS
+- of_FS
+- or_FS
+- member_FS
+- type_FS
+- rec_FS
+- elif_FS
+- override_FS
+- interface_FS
+- yield_FS
+- else_FS
+- finally_FS
+- global_FS
+- select_FS
+- use!_FS
+- const_FS
+dev_langs:
+- FSharp
+ms.date: 08/15/2020
 ---
 # Keyword Reference
 
@@ -83,6 +159,7 @@ The following table shows all F# keywords in alphabetical order, together with b
 |`with`|[Match Expressions](match-expressions.md)<br /><br />[Object Expressions](object-expressions.md)<br /><br />[Copy and Update Record Expressions](copy-and-update-record-expressions.md)<br /><br />[Type Extensions](type-extensions.md)<br /><br />[Exceptions: The `try...with` Expression](./exception-handling/the-try-with-expression.md)|Used together with the `match` keyword in pattern matching expressions. Also used in object expressions, record copying expressions, and type extensions to introduce member definitions, and to introduce exception handlers.|
 |`yield`|[Lists](lists.md), [Arrays](arrays.md), [Sequences](sequences.md)|Used in a list, array, or sequence expression to produce a value for a sequence. Typically can be omitted, as it is implicit in most situations.|
 |`yield!`|[Computation Expressions](computation-expressions.md)<br /><br />[Asynchronous Workflows](asynchronous-workflows.md)|Used in a computation expression to append the result of a given computation expression to a collection of results for the containing computation expression.|
+|`const`|[Type Providers](../tutorials/type-providers/index.md)| Type Providers allow the use of `const` as a keyword to specify a constant literal as a type parameter argument.|
 
 The following tokens are reserved in F# because they are keywords in the OCaml language:
 

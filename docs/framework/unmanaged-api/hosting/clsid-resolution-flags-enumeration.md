@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CLSID_RESOLUTION_FLAGS Enumeration
+
 Contains values that indicate how the common language runtime (CLR) should resolve a `CLSID`.  
   
 ## Syntax  
@@ -35,7 +36,8 @@ typedef enum {
 |`CLSID_RESOLUTION_REGISTERED`|Indicates that the runtime searches the registry and applies shim policy.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -43,4 +45,4 @@ typedef enum {
   
 ## See also
 
-- [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Hosting Enumerations](hosting-enumerations.md)

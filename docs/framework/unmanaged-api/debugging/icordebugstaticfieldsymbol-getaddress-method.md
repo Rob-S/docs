@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 5a6c9a5a-ec72-4c40-a9c3-cee7baa63687
 ---
 # ICorDebugStaticFieldSymbol::GetAddress Method
+
 Gets the address of a static field.  
   
 ## Syntax  
@@ -15,6 +16,7 @@ HRESULT GetAddress(
 ```  
   
 ## Parameters  
+
  pRVA  
  [out] A pointer to the relative virtual address (RVA) of the static field.  
   
@@ -24,7 +26,8 @@ HRESULT GetAddress(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -34,5 +37,5 @@ HRESULT GetAddress(
   
 ## See also
 
-- [ICorDebugStaticFieldSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugStaticFieldSymbol Interface](icordebugstaticfieldsymbol-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

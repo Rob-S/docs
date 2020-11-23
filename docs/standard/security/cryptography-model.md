@@ -1,55 +1,53 @@
 ---
-title: ".NET Framework Cryptography Model"
-ms.date: "03/30/2017"
-ms.technology: dotnet-standard
+title: ".NET Cryptography Model"
+description: Review implementations of usual cryptographic algorithms in .NET. Learn the extensible cryptography model of object inheritance, stream design, & configuration.
+ms.date: 07/14/2020
+dev_langs:
+  - "csharp"
+  - "vb"
 helpviewer_keywords:
-  - "cryptography [.NET Framework], model"
-  - "encryption [.NET Framework], model"
+  - "cryptography [.NET], model"
+  - "encryption [.NET], model"
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-author: "mairaw"
-ms.author: "mairaw"
 ---
-# .NET Framework Cryptography Model
+# .NET Cryptography Model
 
-The .NET Framework provides implementations of many standard cryptographic algorithms. These algorithms are easy to use and have the safest possible default properties. In addition, the .NET Framework cryptography model of object inheritance, stream design, and configuration is extremely extensible.
+.NET provides implementations of many standard cryptographic algorithms, and the .NET cryptography model is extensible.
 
 ## Object Inheritance
 
-The .NET Framework security system implements an extensible pattern of derived class inheritance. The hierarchy is as follows:
+The .NET cryptography system implements an extensible pattern of derived class inheritance. The hierarchy is as follows:
 
-- Algorithm type class, such as <xref:System.Security.Cryptography.SymmetricAlgorithm>,  <xref:System.Security.Cryptography.AsymmetricAlgorithm> or <xref:System.Security.Cryptography.HashAlgorithm>. This level is abstract.
+- Algorithm type class, such as <xref:System.Security.Cryptography.SymmetricAlgorithm>,  <xref:System.Security.Cryptography.AsymmetricAlgorithm>, or <xref:System.Security.Cryptography.HashAlgorithm>. This level is abstract.
 
-- Algorithm class that inherits from an algorithm type class; for example, <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RC2>, or <xref:System.Security.Cryptography.ECDiffieHellman>. This level is abstract.
+- Algorithm class that inherits from an algorithm type class; for example, <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RSA>, or <xref:System.Security.Cryptography.ECDiffieHellman>. This level is abstract.
 
 - Implementation of an algorithm class that inherits from an algorithm class; for example, <xref:System.Security.Cryptography.AesManaged>, <xref:System.Security.Cryptography.RC2CryptoServiceProvider>, or <xref:System.Security.Cryptography.ECDiffieHellmanCng>. This level is fully implemented.
 
-Using this pattern of derived classes, it is easy to add a new algorithm or a new implementation of an existing algorithm. For example, to create a new public-key algorithm, you would inherit from the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class. To create a new implementation of a specific algorithm, you would create a non-abstract derived class of that algorithm.
+This pattern of derived classes lets you add a new algorithm or a new implementation of an existing algorithm. For example, to create a new public-key algorithm, you would inherit from the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class. To create a new implementation of a specific algorithm, you would create a non-abstract derived class of that algorithm.
 
-## How Algorithms Are Implemented in the .NET Framework
+## How Algorithms Are Implemented in .NET
 
-As an example of the different implementations available for an algorithm, consider symmetric algorithms. The base for all symmetric algorithms is <xref:System.Security.Cryptography.SymmetricAlgorithm>, which is inherited by the following algorithms:
+As an example of the different implementations available for an algorithm, consider symmetric algorithms. The base for all symmetric algorithms is <xref:System.Security.Cryptography.SymmetricAlgorithm>, which is inherited by <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.TripleDES>, and others that are no longer recommended.
 
-1. <xref:System.Security.Cryptography.Aes>
+<xref:System.Security.Cryptography.Aes> is inherited by <xref:System.Security.Cryptography.AesCryptoServiceProvider>, <xref:System.Security.Cryptography.AesCng>, and <xref:System.Security.Cryptography.AesManaged>.
 
-2. <xref:System.Security.Cryptography.DES>
+In .NET Framework on Windows:
 
-3. <xref:System.Security.Cryptography.RC2>
+* `*CryptoServiceProvider` algorithm classes, such as <xref:System.Security.Cryptography.AesCryptoServiceProvider>, are wrappers around the Windows Cryptography API (CAPI) implementation of an algorithm.
+* `*Cng` algorithm classes, such as <xref:System.Security.Cryptography.ECDiffieHellmanCng>, are wrappers around the Windows Cryptography Next Generation (CNG) implementation.
+* `*Managed` classes, such as <xref:System.Security.Cryptography.AesManaged>, are written entirely in managed code. `*Managed` implementations are not certified by the Federal Information Processing Standards (FIPS), and may be slower than the `*CryptoServiceProvider` and `*Cng` wrapper classes.
 
-4. <xref:System.Security.Cryptography.Rijndael>
+In .NET Core and .NET 5 and later versions, all implementation classes (`*CryptoServiceProvider`, `*Managed`, and `*Cng`) are wrappers for the operating system (OS) algorithms. If the OS algorithms are FIPS-certified, then .NET uses FIPS-certified algorithms. For more information, see [Cross-Platform Cryptography](cross-platform-cryptography.md).
 
-5. <xref:System.Security.Cryptography.TripleDES>
+In most cases, you don't need to directly reference an algorithm implementation class, such as `AesCryptoServiceProvider`. The methods and properties you typically need are on the base algorithm class, such as `Aes`. Create an instance of a default implementation class by using a factory method on the base algorithm class, and refer to the base algorithm class. For example, see the highlighted line of code in the following example:
 
-<xref:System.Security.Cryptography.Aes> is inherited by two classes: <xref:System.Security.Cryptography.AesCryptoServiceProvider> and <xref:System.Security.Cryptography.AesManaged>. The <xref:System.Security.Cryptography.AesCryptoServiceProvider> class is a wrapper around the Windows Cryptography API (CAPI) implementation of Aes, whereas the <xref:System.Security.Cryptography.AesManaged> class is written entirely in managed code. There is also a third type of implementation, Cryptography Next Generation (CNG), in addition to the managed and CAPI implementations. An example of a CNG algorithm is <xref:System.Security.Cryptography.ECDiffieHellmanCng>. CNG algorithms are available on Windows Vista and later.
-
-You can choose which implementation is best for you.  The managed implementations are available on all platforms that support the .NET Framework.  The CAPI implementations are available on older operating systems, and are no longer being developed. CNG is the very latest implementation where new development will take place. However, the managed implementations are not certified by the Federal Information Processing Standards (FIPS), and may be slower than the wrapper classes.
-
-## Stream Design
-
-The common language runtime uses a stream-oriented design for implementing symmetric algorithms and hash algorithms. The core of this design is the <xref:System.Security.Cryptography.CryptoStream> class, which derives from the <xref:System.IO.Stream> class. Stream-based cryptographic objects support a single standard interface (`CryptoStream`) for handling the data transfer portion of the object. Because all the objects are built on a standard interface, you can chain together multiple objects (such as a hash object followed by an encryption object), and you can perform multiple operations on the data without needing any intermediate storage for it. The streaming model also enables you to build objects from smaller objects. For example, a combined encryption and hash algorithm can be viewed as a single stream object, although this object might be built from a set of stream objects.
+:::code language="csharp" source="snippets/encrypting-data/csharp/aes-encrypt.cs" highlight="16":::
+:::code language="vb" source="snippets/encrypting-data/vb/aes-encrypt.vb" highlight="12":::
 
 ## Cryptographic Configuration
 
-Cryptographic configuration lets you resolve a specific implementation of an algorithm to an algorithm name, allowing extensibility of the .NET Framework cryptography classes. You can add your own hardware or software implementation of an algorithm and map the implementation to the algorithm name of your choice. If an algorithm is not specified in the configuration file, the default settings are used. For more information about cryptographic configuration, see [Configuring Cryptography Classes](../../../docs/framework/configure-apps/configure-cryptography-classes.md).
+Cryptographic configuration lets you resolve a specific implementation of an algorithm to an algorithm name, allowing extensibility of the .NET cryptography classes. You can add your own hardware or software implementation of an algorithm and map the implementation to the algorithm name of your choice. If an algorithm is not specified in the configuration file, the default settings are used.
 
 ## Choosing an Algorithm
 
@@ -58,35 +56,23 @@ You can select an algorithm for different reasons: for example, for data integri
 Here is a list of recommended algorithms by application:
 
 - Data privacy:
-
   - <xref:System.Security.Cryptography.Aes>
-
 - Data integrity:
-
   - <xref:System.Security.Cryptography.HMACSHA256>
-
   - <xref:System.Security.Cryptography.HMACSHA512>
-
 - Digital signature:
-
   - <xref:System.Security.Cryptography.ECDsa>
-
   - <xref:System.Security.Cryptography.RSA>
-
 - Key exchange:
-
   - <xref:System.Security.Cryptography.ECDiffieHellman>
-
   - <xref:System.Security.Cryptography.RSA>
-
 - Random number generation:
-
-  - <xref:System.Security.Cryptography.RNGCryptoServiceProvider>
-
+  - <xref:System.Security.Cryptography.RandomNumberGenerator.Create%2A?displayProperty=nameWithType>
 - Generating a key from a password:
-
   - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>
 
 ## See also
 
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Cryptographic Services](cryptographic-services.md)
+- [Cross-Platform Cryptography](cross-platform-cryptography.md)
+- [ASP.NET Core Data Protection](/aspnet/core/security/data-protection/introduction)

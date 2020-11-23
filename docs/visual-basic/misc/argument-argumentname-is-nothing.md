@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: abbde904-c191-4911-8822-c9dd2f81d616
 ---
 # Argument '\<argumentname>' is Nothing
+
 An expression contains a null argument.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ An expression contains a null argument.
   
 ## See also
 
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

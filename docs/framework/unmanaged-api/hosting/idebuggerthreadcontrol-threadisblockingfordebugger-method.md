@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IDebuggerThreadControl::ThreadIsBlockingForDebugger Method
+
 Notifies the host that the thread that is sending this callback is about to block within the debugging services.  
   
 ## Syntax  
@@ -26,12 +27,14 @@ HRESULT ThreadIsBlockingForDebugger ( );
 ```  
   
 ## Remarks  
+
  The `ThreadIsBlockingForDebugger` method will always be called on a runtime thread.  
   
  The `ThreadIsBlockingForDebugger` method gives the host an opportunity to perform another action while the thread blocks.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -41,4 +44,4 @@ HRESULT ThreadIsBlockingForDebugger ( );
   
 ## See also
 
-- [IDebuggerThreadControl Interface](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)
+- [IDebuggerThreadControl Interface](idebuggerthreadcontrol-interface.md)

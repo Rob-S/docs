@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # COR_PRF_GC_REASON Enumeration
+
 Indicates the reason that garbage collection is occurring.  
   
 ## Syntax  
@@ -35,7 +36,8 @@ typedef enum {
 |`COR_PRF_GC_OTHER`|The reason is unspecified.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -45,4 +47,4 @@ typedef enum {
   
 ## See also
 
-- [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Profiling Enumerations](profiling-enumerations.md)

@@ -1,11 +1,11 @@
 ---
-title: .NET Core Runtime IDentifier (RID) catalog
-description: Learn about the Runtime IDentifier (RID) and how RIDs are used in .NET Core.
+title: .NET Core Runtime Identifier (RID) catalog
+description: Learn about the Runtime Identifier (RID) and how RIDs are used in .NET Core.
 ms.date: 02/22/2019
 ---
 # .NET Core RID Catalog
 
-RID is short for *Runtime IDentifier*. RID values are used to identify target platforms where the application runs.
+RID is short for *Runtime Identifier*. RID values are used to identify target platforms where the application runs.
 They're used by .NET packages to represent platform-specific assets in NuGet packages. The following values are examples of RIDs: `linux-x64`, `ubuntu.14.04-x64`, `win7-x64`, or `osx.10.12-x64`.
 For the packages with native dependencies, the RID designates on which platforms the package can be restored.
 
@@ -33,7 +33,7 @@ RIDs that represent concrete operating systems usually follow this pattern: `[os
 
 ## RID graph
 
-The RID graph or runtime fallback graph is a list of RIDs that are compatible with each other. The RIDs are defined in the [Microsoft.NETCore.Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) package. You can see the list of supported RIDs and the RID graph in the [*runtime.json*](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file, which is located at the CoreFX repo. In this file, you can see that all RIDs, except for the base one, contain an `"#import"` statement. These statements indicate compatible RIDs.
+The RID graph or runtime fallback graph is a list of RIDs that are compatible with each other. The RIDs are defined in the [Microsoft.NETCore.Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) package. You can see the list of supported RIDs and the RID graph in the [*runtime.json*](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) file, which is located at the `dotnet/runtime` repository. In this file, you can see that all RIDs, except for the base one, contain an `"#import"` statement. These statements indicate compatible RIDs.
 
 When NuGet restores packages, it tries to find an exact match for the specified runtime.
 If an exact match is not found, NuGet walks back the graph until it finds the closest compatible system according to the RID graph.
@@ -66,7 +66,7 @@ All RIDs eventually map back to the root `any` RID.
 
 There are some considerations about RIDs that you have to keep in mind when working with them:
 
-- RIDs are **opaque strings** and should be treated as black boxes.
+- Don't try to parse RIDs to retrieve component parts.
 - Don't build RIDs programmatically.
 - Use RIDs that are already defined for the platform.
 - The RIDs need to be specific, so don't assume anything from the actual RID value.
@@ -74,7 +74,7 @@ There are some considerations about RIDs that you have to keep in mind when work
 ## Using RIDs
 
 To be able to use RIDs, you have to know which RIDs exist. New values are added regularly to the platform.
-For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo.
+For the latest and complete version, see the [runtime.json](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) file on the `dotnet/runtime` repository.
 
 .NET Core 2.0 SDK introduces the concept of portable RIDs. They are new values added to the RID graph that aren't tied to a specific version or OS distribution and are the preferred choice when using .NET Core 2.0 and higher. They're particularly useful when dealing with multiple Linux distros since most distribution RIDs are mapped to the portable RIDs.
 
@@ -82,7 +82,7 @@ The following list shows a small subset of the most common RIDs used for each OS
 
 ## Windows RIDs
 
-Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo.
+Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) file on `dotnet/runtime` repository.
 
 - Portable (.NET Core 2.0 or later versions)
   - `win-x64`
@@ -102,16 +102,17 @@ Only common values are listed. For the latest and complete version, see the [run
   - `win10-arm`
   - `win10-arm64`
 
-See [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-windows) for more information.
+For more information, see [.NET Core dependencies and requirements](./install/windows.md#dependencies).
 
 ## Linux RIDs
 
-Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo. Devices running a distribution not listed below may work with one of the Portable RIDs. For example, Raspberry Pi devices running a Linux distribution not listed can be targeted with `linux-arm`.
+Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) file on the `dotnet/runtime` repository. Devices running a distribution not listed below may work with one of the Portable RIDs. For example, Raspberry Pi devices running a Linux distribution not listed can be targeted with `linux-arm`.
 
 - Portable (.NET Core 2.0 or later versions)
-  - `linux-x64` (Most desktop distributions like CentOS, Debian, Fedora, Ubuntu and derivatives)
+  - `linux-x64` (Most desktop distributions like CentOS, Debian, Fedora, Ubuntu, and derivatives)
   - `linux-musl-x64` (Lightweight distributions using [musl](https://wiki.musl-libc.org/projects-using-musl.html) like Alpine Linux)
-  - `linux-arm` (Linux distributions running on ARM like Raspberry Pi)
+  - `linux-arm` (Linux distributions running on ARM like Raspbian on Raspberry Pi Model 2+)
+  - `linux-arm64` (Linux distributions running on 64-bit ARM like Ubuntu Server 64-bit on Raspberry Pi Model 3+)
 - Red Hat Enterprise Linux
   - `rhel-x64` (Superseded by `linux-x64` for RHEL above version 6)
   - `rhel.6-x64` (.NET Core 2.0 or later versions)
@@ -120,11 +121,11 @@ Only common values are listed. For the latest and complete version, see the [run
   - `tizen.4.0.0`
   - `tizen.5.0.0`
 
-See [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-linux) for more information.
+For more information, see [.NET Core dependencies and requirements](./install/linux.md).
 
 ## macOS RIDs
 
-macOS RIDs use the older "OSX" branding. Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/runtime.json) file on CoreFX repo.
+macOS RIDs use the older "OSX" branding. Only common values are listed. For the latest and complete version, see the [runtime.json](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) file on the `dotnet/runtime` repository.
 
 - Portable (.NET Core 2.0 or later versions)
   - `osx-x64` (Minimum OS version is macOS 10.12 Sierra)
@@ -139,8 +140,8 @@ macOS RIDs use the older "OSX" branding. Only common values are listed. For the 
 - macOS 10.14 Mojave (.NET Core 1.1 or later versions)
   - `osx.10.14-x64`
 
-See [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-macos) for more information.
+For more information, see [.NET Core dependencies and requirements](./install/macos.md#dependencies).
 
 ## See also
 
-- [Runtime IDs](https://github.com/dotnet/corefx/blob/master/src/pkg/Microsoft.NETCore.Platforms/readme.md)
+- [Runtime IDs](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/readme.md)

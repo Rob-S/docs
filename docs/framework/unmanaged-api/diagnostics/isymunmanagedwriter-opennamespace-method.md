@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedWriter::OpenNamespace Method
+
 Opens a new namespace. Call this method before defining methods or variables that occupy a namespace. Namespaces can be nested.  
   
 ## Syntax  
@@ -27,16 +28,19 @@ HRESULT OpenNamespace(
 ```  
   
 ## Parameters  
+
  `name`  
  [in] A pointer to the name of the new namespace.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [CloseNamespace Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)
+- [ISymUnmanagedWriter Interface](isymunmanagedwriter-interface.md)
+- [CloseNamespace Method](isymunmanagedwriter-closenamespace-method.md)

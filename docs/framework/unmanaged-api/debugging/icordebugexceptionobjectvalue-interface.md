@@ -16,19 +16,22 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugExceptionObjectValue Interface
+
 Extends the "ICorDebugObjectValue" interface to provide stack trace information from a managed exception object.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[EnumerateExceptionCallStack Method](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Gets an enumerator to the call stack embedded in an exception object.|  
+|[EnumerateExceptionCallStack Method](icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Gets an enumerator to the call stack embedded in an exception object.|  
   
 ## Remarks  
+
  The call to `QueryInterface` will succeed for managed objects that derive from <xref:System.Exception?displayProperty=nameWithType>.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -38,5 +41,5 @@ Extends the "ICorDebugObjectValue" interface to provide stack trace information 
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

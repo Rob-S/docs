@@ -17,12 +17,13 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataTables::GetCodedTokenInfo Method
+
 Gets a pointer to an array of tokens associated with the specified row index.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT GetCodedTokenInfo (   
+HRESULT GetCodedTokenInfo (
     [in]  ULONG       ixCdTkn,  
     [out] ULONG       *pcTokens,  
     [out] ULONG       **ppTokens,  
@@ -31,6 +32,7 @@ HRESULT GetCodedTokenInfo (
 ```  
   
 ## Parameters  
+
  `ixCdTkn`  
  [in] The kind of coded token to return.  
   
@@ -44,7 +46,8 @@ HRESULT GetCodedTokenInfo (
  [out] A pointer to a pointer to the name of the token at `ixCdTkn`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -54,5 +57,5 @@ HRESULT GetCodedTokenInfo (
   
 ## See also
 
-- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables Interface](imetadatatables-interface.md)
+- [IMetaDataTables2 Interface](imetadatatables2-interface.md)

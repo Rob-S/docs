@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ObjectsAllocatedByClass Method
+
 Notifies the profiler about the number of instances of each specified class that have been created since the most recent garbage collection.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT ObjectsAllocatedByClass(
 ```  
   
 ## Parameters  
+
  `cClassCount`  
  [in] The size of the `classIds` and `cObjects` arrays.  
   
@@ -39,14 +41,16 @@ HRESULT ObjectsAllocatedByClass(
  [in] An array of integers, where each integer specifies the number of instances for the corresponding class in the `classIds` array.  
   
 ## Remarks  
+
  The `classIds` and `cObjects` arrays are parallel arrays. For example, `classIds[i]` and `cObjects[i]` reference the same class. If no instance of a class has been created since the previous garbage collection, the class is omitted. The `ObjectsAllocatedByClass` callback will not report objects allocated in the large object heap.  
   
- The numbers reported by `ObjectsAllocatedByClass` are only estimates. For exact counts, use [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ The numbers reported by `ObjectsAllocatedByClass` are only estimates. For exact counts, use [ICorProfilerCallback::ObjectAllocated](icorprofilercallback-objectallocated-method.md).  
   
  The `classIds` array may contain one or more null entries if the corresponding `cObjects` array has types that are unloading.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -56,4 +60,4 @@ HRESULT ObjectsAllocatedByClass(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
 ---
 # \<system.web> Element (Web Settings)
+
 Contains information about how the ASP.NET hosting layer manages process-wide behavior.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -53,9 +54,9 @@ The following example shows how to configure ASP.NET process-wide behavior in th
 ```xml  
 <configuration>  
   <system.web>  
-    <applicationPool   
-        maxConcurrentRequestsPerCPU="5000"   
-        maxConcurrentThreadsPerCPU="0"   
+    <applicationPool
+        maxConcurrentRequestsPerCPU="5000"
+        maxConcurrentThreadsPerCPU="0"
         requestQueueLimit="5000" />  
   </system.web>  
 </configuration>  

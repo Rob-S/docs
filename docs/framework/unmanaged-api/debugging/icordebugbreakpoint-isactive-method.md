@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugBreakpoint::IsActive Method
+
 Gets a value that indicates whether this `ICorDebugBreakpoint` is active.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT IsActive (
 ```  
   
 ## Parameters  
+
  `pbActive`  
  [out] `true` if this breakpoint is active; otherwise, `false`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

@@ -1,6 +1,6 @@
 ---
 title: "Command-Line Arguments - C# Programming Guide"
-ms.custom: seodec18
+description: Learn about command-line arguments. See an example that uses command-line arguments in a console application.
 ms.date: 07/20/2015
 helpviewer_keywords:
   - "command-line arguments [C#]"
@@ -20,6 +20,9 @@ You can send arguments to the `Main` method by defining the method in one of the
 The parameter of the `Main` method is a <xref:System.String> array that represents the command-line arguments. Usually you determine whether arguments exist by testing the `Length` property, for example:
 
 [!code-csharp[csProgGuideMain#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#4)]
+
+> [!TIP]
+> The `args` array cannot be null. So, it's safe to access the `Length` property without null checking.
 
 You can also convert the string arguments to numeric types by using the <xref:System.Convert> class or the `Parse` method. For example, the following statement converts the `string` to a `long` number by using the <xref:System.Int64.Parse%2A> method:
 
@@ -73,6 +76,6 @@ To compile and run the application from a command prompt, follow these steps:
 - <xref:System.Environment?displayProperty=nameWithType>
 - [C# Programming Guide](../index.md)
 - [Main() and Command-Line Arguments](index.md)
-- [How to: Display Command Line Arguments](how-to-display-command-line-arguments.md)
+- [How to display command line arguments](how-to-display-command-line-arguments.md)
 - [Main() Return Values](main-return-values.md)
 - [Classes](../classes-and-structs/classes.md)

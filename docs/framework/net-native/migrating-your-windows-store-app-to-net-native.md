@@ -5,7 +5,7 @@ ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 ---
 # Migrate Your Windows Store App to .NET Native
 
-.NET Native provides static compilation of apps in the Windows Store or on the developer’s computer. This differs from the dynamic compilation performed for Windows Store apps by the just-in-time (JIT) compiler or the [Native Image Generator (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) on the device. Despite the differences, .NET Native tries to maintain compatibility with the [.NET for Windows Store apps](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). For the most part, things that work on the .NET for Windows Store apps also work with .NET Native.  However, in some cases, you may encounter behavioral changes. This document discusses these differences between the standard .NET for Windows Store apps and .NET Native in the following areas:
+.NET Native provides static compilation of apps in the Windows Store or on the developer's computer. This differs from the dynamic compilation performed for Windows Store apps by the just-in-time (JIT) compiler or the [Native Image Generator (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) on the device. Despite the differences, .NET Native tries to maintain compatibility with the [.NET for Windows Store apps](/previous-versions/windows/apps/br230302(v=vs.140)). For the most part, things that work on the .NET for Windows Store apps also work with .NET Native.  However, in some cases, you may encounter behavioral changes. This document discusses these differences between the standard .NET for Windows Store apps and .NET Native in the following areas:
 
 - [General runtime differences](#Runtime)
 
@@ -73,13 +73,13 @@ In .NET Native:
 
 - Private reflection over types and members in the .NET Framework class library is not supported. You can, however, reflect over your own private types and members, as well as types and members in third-party libraries.
 
-- The <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> property correctly returns `false` for a <xref:System.Reflection.ParameterInfo> object that represents a return value. In the .NET for Windows Store apps, it returns `true`. Intermediate language (IL) doesn’t support this directly, and interpretation is left to the language.
+- The <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> property correctly returns `false` for a <xref:System.Reflection.ParameterInfo> object that represents a return value. In the .NET for Windows Store apps, it returns `true`. Intermediate language (IL) doesn't support this directly, and interpretation is left to the language.
 
 - Public members on the <xref:System.RuntimeFieldHandle> and <xref:System.RuntimeMethodHandle> structures aren't supported. These types are supported only for LINQ, expression trees, and static array initialization.
 
 - <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType> and <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> include hidden members in base classes and thus may be overridden without explicit overrides. This is also true of other [RuntimeReflectionExtensions.GetRuntime*](xref:System.Reflection.RuntimeReflectionExtensions) methods.
 
-- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> and <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> don't fail when you try to create certain combinations (for example, an array of byrefs).
+- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> and <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> don't fail when you try to create certain combinations (for example, an array of `byref` objects).
 
 - You can't use reflection to invoke members that have pointer parameters.
 
@@ -111,7 +111,7 @@ The following sections list unsupported scenarios and APIs for general developme
 
 - If you override the <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> and <xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType> methods for a value type, don't call the base class implementations. In .NET for Windows Store apps, these methods rely on reflection. At compile time, .NET Native generates an implementation that doesn't rely on runtime reflection. This means that if you don't override these two methods, they will work as expected, because .NET Native generates the implementation at compile time. However, overriding these methods but calling the base class implementation results in an exception.
 
-- Value types larger than one megabyte aren't supported.
+- Value types larger than 1 megabyte aren't supported.
 
 - Value types can't have a parameterless constructor in .NET Native. (C# and Visual Basic prohibit parameterless constructors on value types. However, these can be created in IL.)
 
@@ -171,7 +171,7 @@ Some additional behavior differences are covered in the following subsections.
 
 **Proxy**
 
-The <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> class doesn’t support configuring or overriding the proxy on a per-request basis.  This means that all requests on .NET Native use the system-configured proxy server or no proxy server, depending on the value of the <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> property.  In .NET for Windows Store apps, the proxy server is defined by the <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> property.  On .NET Native, setting the <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> to a value other than `null` throws a <xref:System.PlatformNotSupportedException> exception.  The <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType> property returns `false` on .NET Native, whereas it returns `true` in the standard .NET Framework for Windows Store apps.
+The <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> class doesn't support configuring or overriding the proxy on a per-request basis.  This means that all requests on .NET Native use the system-configured proxy server or no proxy server, depending on the value of the <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> property.  In .NET for Windows Store apps, the proxy server is defined by the <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> property.  On .NET Native, setting the <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> to a value other than `null` throws a <xref:System.PlatformNotSupportedException> exception.  The <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType> property returns `false` on .NET Native, whereas it returns `true` in the standard .NET Framework for Windows Store apps.
 
 **Automatic redirection**
 
@@ -202,7 +202,9 @@ In .NET Native:
 - The `SetCookie2` header in responses is ignored as obsolete.
 
 <a name="Interop"></a>
+
 ### Interop differences
+
  **Deprecated APIs**
 
  A number of infrequently used APIs for interoperability with managed code have been deprecated. When used with .NET Native, these APIs may throw a <xref:System.NotImplementedException> or <xref:System.PlatformNotSupportedException> exception, or result in a compiler error. In .NET for Windows Store apps, these APIs are marked as obsolete, although calling them generates a compiler warning rather than a compiler error.
@@ -219,9 +221,9 @@ In .NET Native:
 - <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>
 
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> is supported, but it throws an exception in some scenarios, such as when it is used with [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) or byref variants.
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> is supported, but it throws an exception in some scenarios, such as when it is used with [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) or `byref` variants.
 
- Deprecated APIs for [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) support include:
+ Deprecated APIs for [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) support include:
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual?displayProperty=fullName>
@@ -272,7 +274,7 @@ Other unsupported interop features include:
 
 - Delegates
 
-- Strings (Unicode, Ansi, and HSTRING)
+- Strings (Unicode, ANSI, and HSTRING)
 
 - Structs (`byref` and `byval`)
 
@@ -318,7 +320,7 @@ However, .NET Native doesn't support the following:
 
 - Implementing the <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> interface on a managed type
 
-- Implementing the [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) interface on a managed type through the <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> attribute. However, note that you can't call COM objects through `IDispatch`, and your managed object can't implement `IDispatch`.
+- Implementing the [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) interface on a managed type through the <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> attribute. However, you can't call COM objects through `IDispatch`, and your managed object can't implement `IDispatch`.
 
 Using reflection to invoke a platform invoke method isn't supported. You can work around this limitation by wrapping the method call in another method and using reflection to call the wrapper instead.
 
@@ -326,7 +328,7 @@ Using reflection to invoke a platform invoke method isn't supported. You can wor
 
 ### Other differences from .NET APIs for Windows Store apps
 
-This section lists the remaining APIs that aren't supported in .NET Native. The largest set of the unsupported APIs are Windows Communication Foundation (WCF) APIs.
+This section lists the remaining APIs that aren't supported in .NET Native. The largest set of the unsupported APIs is the Windows Communication Foundation (WCF) APIs.
 
 **DataAnnotations (System.ComponentModel.DataAnnotations)**
 
@@ -390,7 +392,7 @@ The `System.Net.Http.RtcRequestFactory` class isn't supported in .NET Native.
 
 **Windows Communication Foundation (WCF) (System.ServiceModel.\*)**
 
-The types in the [System.ServiceModel.* namespaces](xref:System.ServiceModel) aren't supported in .NET Native. These includes the following types:
+The types in the [System.ServiceModel.* namespaces](xref:System.ServiceModel) aren't supported in .NET Native. These include the following types:
 
 - <xref:System.ServiceModel.ActionNotSupportedException?displayProperty=nameWithType>
 - <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>
@@ -591,27 +593,27 @@ The following differences concern serialization and deserialization with the <xr
 
 - The following constructors of the serialization types aren't guaranteed to work as expected:
 
-  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29?displayProperty=nameWithType>
+  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29>
 
-  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Runtime.Serialization.DataContractSerializerSettings%29?displayProperty=nameWithType>
+  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Runtime.Serialization.DataContractSerializerSettings%29>
 
-  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29?displayProperty=nameWithType>
+  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29>
 
-  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Xml.XmlDictionaryString%2CSystem.Xml.XmlDictionaryString%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29?displayProperty=nameWithType>
+  - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Xml.XmlDictionaryString%2CSystem.Xml.XmlDictionaryString%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29>
 
-  - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.%23ctor%28System.Type%2CSystem.Runtime.Serialization.Json.DataContractJsonSerializerSettings%29?displayProperty=nameWithType>
+  - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.%23ctor%28System.Type%2CSystem.Runtime.Serialization.Json.DataContractJsonSerializerSettings%29>
 
-  - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.%23ctor%28System.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29?displayProperty=nameWithType>
+  - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.%23ctor%28System.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29>
 
-  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.String%29?displayProperty=nameWithType>
+  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.String%29>
 
-  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType>
+  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29>
 
-  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%29?displayProperty=nameWithType>
+  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%29>
 
-  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlRootAttribute%29?displayProperty=nameWithType>
+  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlRootAttribute%29>
 
-  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%29?displayProperty=nameWithType>
+  - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%29>
 
 - <xref:System.Xml.Serialization.XmlSerializer> fails to generate code for a type that has methods attributed with any of the following attributes:
 
@@ -659,5 +661,5 @@ Enabling .NET Native on a Unit Test Library for a Windows Store apps project isn
 
 - [Getting Started](getting-started-with-net-native.md)
 - [Runtime Directives (rd.xml) Configuration File Reference](runtime-directives-rd-xml-configuration-file-reference.md)
-- [.NET For Windows Store apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
-- [.NET Framework Support for Windows Store Apps and Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [.NET For Windows Store apps overview](/previous-versions/windows/apps/br230302(v=vs.140))
+- [.NET Framework Support for Windows Store Apps and Windows Runtime](../cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

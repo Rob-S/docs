@@ -1,5 +1,6 @@
 ---
 title: "Windows Workflow Foundation 4 Performance"
+description: This article explains performance characteristics of the major revision of Windows Workflow Foundation, which is part of .NET Framework 4.
 ms.date: "03/30/2017"
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
 ---
@@ -13,9 +14,9 @@ ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
 
  The version of [!INCLUDE[wf1](../../../includes/wf1-md.md)] introduced in .NET Framework 4 will be referred to as WF4 for the rest of this topic. [!INCLUDE[wf1](../../../includes/wf1-md.md)] was introduced in .NET Framework 3.0 and had a few minor revisions through .NET Framework 3.5 SP1. The .NET Framework 3.5 version of Workflow Foundation will be referred to as WF3 for the rest of this topic. WF3 is shipped in .NET Framework 4 side-by-side with WF4. For more information about migrating WF3 artifacts to WF4 see: [Windows Workflow Foundation 4 Migration Guide](migration-guidance.md).
 
- Windows Communication Foundation (WCF) is Microsoft’s unified programming model for building service-oriented applications. It was first introduced as part of .NET 3.0 together with WF3 and now is one of the key components of the .NET Framework.
+ Windows Communication Foundation (WCF) is Microsoft’s unified programming model for building service-oriented applications. It was first introduced as part of .NET Framework 3.0 together with WF3 and now is one of the key components of the .NET Framework.
 
- Windows Server AppFabric is a set of integrated technologies that make it easier to build, scale and manage Web and composite applications that run on IIS. It provides tools for monitoring and managing services and workflows. For more information, see [Windows Server AppFabric 1.0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
+ Windows Server AppFabric is a set of integrated technologies that make it easier to build, scale and manage Web and composite applications that run on IIS. It provides tools for monitoring and managing services and workflows. For more information, see [Windows Server AppFabric 1.0](/previous-versions/appfabric/ff384253(v=azure.10)).
 
 ## Goals
  The goal of this topic is to show the performance characteristics of WF4 with data measured for different scenarios. It also provides detailed comparisons between WF4 and WF3, and thus shows the great improvements that have been made in this new revision. The scenarios and data presented in this article quantify the underlying cost of different aspects of WF4 and WF3. This data is useful in understanding the performance characteristics of WF4 and can be helpful in planning migrations from WF3 to WF4 or using WF4 in application development. However, care should be taken in the conclusions drawn from the data presented in this article. The performance of a composite workflow application is highly dependent on how the workflow is implemented and how different components are integrated. One must measure each application to determine the performance characteristics of that application.
@@ -44,7 +45,7 @@ ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
  Applications usually have better performance and scalability with asynchronous programming for long running blocking operations such as I/O or distributed computing operations. WF4 provides asynchronous support through base activity types <xref:System.Activities.AsyncCodeActivity>, <xref:System.Activities.AsyncCodeActivity%601>. The runtime natively understands asynchronous activities and therefore can automatically put the instance in a no-persist zone while the asynchronous work is outstanding. Custom activities can derive from these types to perform asynchronous work without holding the workflow scheduler thread and blocking any activities that may be able to run in parallel.
 
 ### Messaging
- Initially WF3 had very limited messaging support through external events or web services invocations. In .NET 3.5, workflows could be implemented as WCF clients or exposed as WCF services through <xref:System.Workflow.Activities.SendActivity> and <xref:System.Workflow.Activities.ReceiveActivity>. In WF4, the concept of workflow-based messaging programming has been further strengthened through the tight integration of WCF messaging logic into WF.
+ Initially WF3 had very limited messaging support through external events or web services invocations. In .NET Framework 3.5, workflows could be implemented as WCF clients or exposed as WCF services through <xref:System.Workflow.Activities.SendActivity> and <xref:System.Workflow.Activities.ReceiveActivity>. In WF4, the concept of workflow-based messaging programming has been further strengthened through the tight integration of WCF messaging logic into WF.
 
  The unified message processing pipeline provided in WCF in .NET 4 helps WF4 services to have significantly better performance and scalability than WF3. WF4 also provides richer messaging programming support that can model complex Message Exchange Patterns (MEPs). Developers can use either typed service contracts to achieve easy programming or un-typed service contracts to achieve better performance without paying serialization costs. The client-side channel caching support through the <xref:System.ServiceModel.Activities.SendMessageChannelCache> class in WF4 helps developers build fast applications with minimal effort. For more information, see [Changing the Cache Sharing Levels for Send Activities](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).
 
@@ -434,7 +435,7 @@ public class Workflow1 : Activity
  ![Environment setup for workflow performance test](./media/performance/performance-test-environment.gif)
 
 ### Test Results
- 
+
 The following table shows the results of running a workflow containing five activities in a sequence in various configurations.
 
 |Test|Throughput (workflows/sec)|

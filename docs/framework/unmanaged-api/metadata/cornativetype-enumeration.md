@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorNativeType Enumeration
+
 Contains values that describe native unmanaged types.  
   
 ## Syntax  
@@ -72,7 +73,7 @@ typedef enum CorNativeType {
     NATIVE_TYPE_IINSPECTABLE         = 0x2e,  
     NATIVE_TYPE_HSTRING              = 0x2f,  
   
-    NATIVE_TYPE_ERROR                = 0x2d,   
+    NATIVE_TYPE_ERROR                = 0x2d,
   
     NATIVE_TYPE_MAX                  = 0x50  
   
@@ -132,7 +133,8 @@ typedef enum CorNativeType {
 |`NATIVE_TYPE_MAX`|An invalid value.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorHdr.h  
   
@@ -141,4 +143,4 @@ typedef enum CorNativeType {
 ## See also
 
 - <xref:System.Runtime.InteropServices.UnmanagedType>
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

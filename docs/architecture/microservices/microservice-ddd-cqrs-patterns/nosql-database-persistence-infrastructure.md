@@ -1,7 +1,7 @@
 ---
 title: Using NoSQL databases as a persistence infrastructure
-description: .NET Microservices Architecture for Containerized .NET Applications | Understand the use of NoSql databases in general, and Azure Cosmos DB in particular, as an option to implement persistance.
-ms.date: 10/08/2018
+description: Understand the use of NoSql databases in general, and Azure Cosmos DB in particular, as an option to implement persistence.
+ms.date: 01/30/2020
 ---
 # Use NoSQL databases as a persistence infrastructure
 
@@ -17,7 +17,7 @@ For example, in a document-oriented database, it is okay for an aggregate root t
 
 A benefit when using NoSQL databases is that the entities are more denormalized, so you do not set a table mapping. Your domain model can be more flexible than when using a relational database.
 
-When you design your domain model based on aggregates, moving to NoSQL and document-oriented databases might be even easier than using a relational database, because the aggregates you design are similar to serialized documents in a document-oriented database. Then you can include in those “bags” all the information you might need for that aggregate.
+When you design your domain model based on aggregates, moving to NoSQL and document-oriented databases might be even easier than using a relational database, because the aggregates you design are similar to serialized documents in a document-oriented database. Then you can include in those "bags" all the information you might need for that aggregate.
 
 For instance, the following JSON code is a sample implementation of an order aggregate when using a document-oriented database. It is similar to the order aggregate we implemented in the eShopOnContainers sample, but without using EF Core underneath.
 
@@ -46,7 +46,7 @@ For instance, the following JSON code is a sample implementation of an order agg
 
 ## Introduction to Azure Cosmos DB and the native Cosmos DB API
 
-[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) is Microsoft's globally distributed database service for mission-critical applications. Azure Cosmos DB provides [turn-key global distribution](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), [elastic scaling of throughput and storage](https://docs.microsoft.com/azure/cosmos-db/partition-data) worldwide, single-digit millisecond latencies at the 99th percentile, [five well-defined consistency levels](https://docs.microsoft.com/azure/cosmos-db/consistency-levels), and guaranteed high availability, all backed by [industry-leading SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automatically indexes data](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) without requiring you to deal with schema and index management. It is multi-model and supports document, key-value, graph, and columnar data models.
+[Azure Cosmos DB](/azure/cosmos-db/introduction) is Microsoft's globally distributed database service for mission-critical applications. Azure Cosmos DB provides [turn-key global distribution](/azure/cosmos-db/distribute-data-globally), [elastic scaling of throughput and storage](/azure/cosmos-db/partition-data) worldwide, single-digit millisecond latencies at the 99th percentile, [five well-defined consistency levels](/azure/cosmos-db/consistency-levels), and guaranteed high availability, all backed by [industry-leading SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automatically indexes data](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) without requiring you to deal with schema and index management. It is multi-model and supports document, key-value, graph, and columnar data models.
 
 ![Diagram showing the Azure Cosmos DB global distribution.](./media/nosql-database-persistence-infrastructure/azure-cosmos-db-global-distribution.png)
 
@@ -58,7 +58,7 @@ When you use a C\# model to implement the aggregate to be used by the Azure Cosm
 // C# EXAMPLE OF AN ORDER AGGREGATE BEING PERSISTED WITH AZURE COSMOS DB API
 // *** Domain Model Code ***
 // Aggregate: Create an Order object with its child entities and/or value objects.
-// Then, use AggregateRoot’s methods to add the nested objects so invariants and
+// Then, use AggregateRoot's methods to add the nested objects so invariants and
 // logic is consistent across the nested properties (value objects and entities).
 
 Order orderAggregate = new Order
@@ -116,9 +116,9 @@ However, when you persist your model into the NoSQL database, the code and API c
 
 You can access Azure Cosmos DB databases from .NET code running in containers, like from any other .NET application. For instance, the Locations.API and Marketing.API microservices in eShopOnContainers are implemented so they can consume Azure Cosmos DB databases.
 
-However, there’s a limitation in Azure Cosmos DB from a Docker development environment point of view. Even when there’s a on-premises [Azure Cosmos DB Emulator](https://docs.microsoft.com/azure/cosmos-db/local-emulator) able to run in a local development machine (like a PC), as of late 2017, it just supports Windows, not Linux.
+However, there’s a limitation in Azure Cosmos DB from a Docker development environment point of view. Even though there’s an on-premises [Azure Cosmos DB Emulator](/azure/cosmos-db/local-emulator) that can run in a local development machine, it only supports Windows. Linux and macOS aren't supported.
 
-There is also the possibility to run this emulator on Docker, but just on Windows Containers, not with Linux Containers. That is an initial handicap for the development environment if your application is deployed as Linux containers, since, currently, you cannot deploy Linux and Windows Containers on Docker for Windows at the same time. Either all containers being deployed have to be for Linux or for Windows.
+There's also the possibility to run this emulator on Docker, but just on Windows Containers, not with Linux Containers. That's an initial handicap for the development environment if your application is deployed as Linux containers, since, currently, you can't deploy Linux and Windows Containers on Docker for Windows at the same time. Either all containers being deployed have to be for Linux or for Windows.
 
 The ideal and more straightforward deployment for a dev/test solution is to be able to deploy your database systems as containers along with your custom containers so your dev/test environments are always consistent.
 
@@ -132,29 +132,29 @@ Cosmos DB databases support MongoDB API for .NET as well as the native MongoDB w
 
 This is a very convenient approach for proof of concepts in Docker environments with Linux containers because the [MongoDB Docker image](https://hub.docker.com/r/_/mongo/) is a multi-arch image that supports Docker Linux containers and Docker Windows containers.
 
-As shown in the following image, by using the MongoDB API, eShopOnContainers supports MongoDB Linux and Windows containers for the local development environment but then, you can move to a scalable, PaaS cloud solution as Azure Cosmos DB by simply [changing the MongoDB connection string to point to Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+As shown in the following image, by using the MongoDB API, eShopOnContainers supports MongoDB Linux and Windows containers for the local development environment but then, you can move to a scalable, PaaS cloud solution as Azure Cosmos DB by simply [changing the MongoDB connection string to point to Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account).
 
 ![Diagram showing that the Location microservice in eShopOnContainers can use either Cosmos DB or Mongo DB.](./media/nosql-database-persistence-infrastructure/eshoponcontainers-mongodb-containers.png)
 
 **Figure 7-21**. eShopOnContainers using MongoDB containers for dev-env or Azure Cosmos DB for production
 
-The production Azure Cosmos DB would be running in Azure’s cloud as a PaaS and scalable service.
+The production Azure Cosmos DB would be running in Azure's cloud as a PaaS and scalable service.
 
-Your custom .NET Core containers can run on a local development Docker host (that is using Docker for Windows in a Windows 10 machine) or be deployed into a production environment, like Kubernetes in Azure AKS or Azure Service Fabric. In this second environment, you would deploy only the .NET Core custom containers but not the MongoDB container since you’d be using Azure Cosmos DB in the cloud for handling the data in production.
+Your custom .NET Core containers can run on a local development Docker host (that is using Docker for Windows in a Windows 10 machine) or be deployed into a production environment, like Kubernetes in Azure AKS or Azure Service Fabric. In this second environment, you would deploy only the .NET Core custom containers but not the MongoDB container since you'd be using Azure Cosmos DB in the cloud for handling the data in production.
 
 A clear benefit of using the MongoDB API is that your solution could run in both database engines, MongoDB or Azure Cosmos DB, so migrations to different environments should be easy. However, sometimes it is worthwhile to use a native API (that is the native Cosmos DB API) in order to take full advantage of the capabilities of a specific database engine.
 
-For further comparison between simply using MongoDB versus Cosmos DB in the cloud, see the [Benefits of using Azure Cosmos DB in this page](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction).
+For further comparison between simply using MongoDB versus Cosmos DB in the cloud, see the [Benefits of using Azure Cosmos DB in this page](/azure/cosmos-db/mongodb-introduction).
 
 ### Analyze your approach for production applications: MongoDB API vs. Cosmos DB API
 
-In eShopOnContainers, we’re using MongoDB API because our priority was fundamentally to have a consistent dev/test environment using a NoSQL database that could also work with Azure Cosmos DB.
+In eShopOnContainers, we're using MongoDB API because our priority was fundamentally to have a consistent dev/test environment using a NoSQL database that could also work with Azure Cosmos DB.
 
-However, if you planning to use MongoDB API to access Azure Cosmos DB in Azure for production applications, you should analyze the differences in capabilities and performance when using MongoDB API to access Azure Cosmos DB databases compared to using the native Azure Cosmos DB API. If it is similar you can use MongoDB API and you get the benefit of supporting two NoSQL database engines at the same time.
+However, if you are planning to use MongoDB API to access Azure Cosmos DB in Azure for production applications, you should analyze the differences in capabilities and performance when using MongoDB API to access Azure Cosmos DB databases compared to using the native Azure Cosmos DB API. If it is similar you can use MongoDB API and you get the benefit of supporting two NoSQL database engines at the same time.
 
-You could also use MongoDB clusters as the production database in Azure’s cloud, too, with [MongoDB Azure Service](https://www.mongodb.com/scale/mongodb-azure-service). But that is not a PaaS service provided by Microsoft. In this case, Azure is just hosting that solution coming from MongoDB.
+You could also use MongoDB clusters as the production database in Azure's cloud, too, with [MongoDB Azure Service](https://www.mongodb.com/scale/mongodb-azure-service). But that is not a PaaS service provided by Microsoft. In this case, Azure is just hosting that solution coming from MongoDB.
 
-Basically, this is just a disclaimer stating that you shouldn’t always use MongoDB API against Azure Cosmos DB, as we did in eShopOnContainers because it was a convenient choice for Linux containers. The decision should be based on the specific needs and tests you need to do for your production application.
+Basically, this is just a disclaimer stating that you shouldn't always use MongoDB API against Azure Cosmos DB, as we did in eShopOnContainers because it was a convenient choice for Linux containers. The decision should be based on the specific needs and tests you need to do for your production application.
 
 ### The code: Use MongoDB API in .NET Core applications
 
@@ -168,7 +168,7 @@ Let's investigate the code in the following sections.
 
 #### A Model used by MongoDB API
 
-First, you need to define a model that will hold the data coming from the database in your application’s memory space. Here’s an example of the model used for Locations at eShopOnContainers.
+First, you need to define a model that will hold the data coming from the database in your application's memory space. Here's an example of the model used for Locations at eShopOnContainers.
 
 ```csharp
 using MongoDB.Bson;
@@ -260,21 +260,21 @@ public async Task<Locations> GetAsync(int locationId)
 
 #### Use an env-var in the docker-compose.override.yml file for the MongoDB connection string
 
-When creating a MongoClient object, it needs a fundamental parameter which is precisely the `ConnectionString` parameter pointing to the right database. In the case of eShopOnContainers, the connection string can point to a local MongoDB Docker container or to a “production” Azure Cosmos DB database.  That connection string comes from the environment variables defined in the `docker-compose.override.yml` files used when deploying with docker-compose or Visual Studio, as in the following yml code.
+When creating a MongoClient object, it needs a fundamental parameter which is precisely the `ConnectionString` parameter pointing to the right database. In the case of eShopOnContainers, the connection string can point to a local MongoDB Docker container or to a "production" Azure Cosmos DB database.  That connection string comes from the environment variables defined in the `docker-compose.override.yml` files used when deploying with docker-compose or Visual Studio, as in the following yml code.
 
 ```yml
 # docker-compose.override.yml
 version: '3.4'
 services:
   # Other services
-  locations.api:
+  locations-api:
     environment:
       # Other settings
-      - ConnectionString=${ESHOP_AZURE_COSMOSDB:-mongodb://nosql.data}
+      - ConnectionString=${ESHOP_AZURE_COSMOSDB:-mongodb://nosqldata}
 
 ```
 
-The `ConnectionString` environment variable is resolved this way: If the `ESHOP_AZURE_COSMOSDB` global variable is defined in the `.env` file with the Azure Cosmos DB connection string, it will use it to access the Azure Cosmos DB database in the cloud. If it’s not defined, it will take the `mongodb://nosql.data` value and use the development mongodb container.
+The `ConnectionString` environment variable is resolved this way: If the `ESHOP_AZURE_COSMOSDB` global variable is defined in the `.env` file with the Azure Cosmos DB connection string, it will use it to access the Azure Cosmos DB database in the cloud. If it’s not defined, it will take the `mongodb://nosqldata` value and use the development MongoDB container.
 
 The following code shows the `.env` file with the Azure Cosmos DB connection string global environment variable, as implemented in eShopOnContainers:
 
@@ -293,16 +293,16 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-You should uncomment the ESHOP_AZURE_COSMOSDB line and update it with your Azure Cosmos DB connection string obtained from the Azure portal as explained in [Connect a MongoDB application to Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
+Uncomment the ESHOP_AZURE_COSMOSDB line and update it with your Azure Cosmos DB connection string obtained from the Azure portal as explained in [Connect a MongoDB application to Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account).
 
-If the `ESHOP_AZURE_COSMOSDB` global variable is empty, meaning that it is commented out in the `.env` file, then the container uses a default MongoDB connection string pointing to the local MongoDB container deployed in eShopOnContainers which is named `nosql.data` and was defined at the docker-compose file, as shown in the following .yml code.
+If the `ESHOP_AZURE_COSMOSDB` global variable is empty, meaning it's commented out in the `.env` file, then the container uses a default MongoDB connection string. This connection string points to the local MongoDB container deployed in eShopOnContainers that is named `nosqldata` and was defined at the docker-compose file, as shown in the following .yml code:
 
 ``` yml
 # docker-compose.yml
 version: '3.4'
 services:
   # ...Other services...
-  nosql.data:
+  nosqldata:
     image: mongo
 ```
 
@@ -336,5 +336,5 @@ services:
   <https://docs.microsoft.com/azure/cosmos-db/mongodb-mongochef>
 
 >[!div class="step-by-step"]
->[Previous](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+>[Previous](infrastructure-persistence-layer-implementation-entity-framework-core.md)
 >[Next](microservice-application-layer-web-api-design.md)

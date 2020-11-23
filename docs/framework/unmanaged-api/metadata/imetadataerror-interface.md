@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataError Interface
+
 Provides a callback mechanism for reporting errors during the metadata merge.  
   
 > [!NOTE]
@@ -25,10 +26,11 @@ Provides a callback mechanism for reporting errors during the metadata merge.
   
 |Method|Description|  
 |------------|-----------------|  
-|[OnError Method](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|Provides notification of errors that occur during the metadata merge.|  
+|[OnError Method](imetadataerror-onerror-method.md)|Provides notification of errors that occur during the metadata merge.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -38,4 +40,4 @@ Provides a callback mechanism for reporting errors during the metadata merge.
   
 ## See also
 
-- [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+- [Metadata Interfaces](metadata-interfaces.md)

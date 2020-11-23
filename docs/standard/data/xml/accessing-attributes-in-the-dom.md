@@ -1,13 +1,10 @@
 ---
 title: "Accessing Attributes in the DOM"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # Accessing Attributes in the DOM
@@ -257,4 +254,4 @@ XmlAttribute attr = doc.DocumentElement.Attributes[0];
 
 ## See also
 
-- [XML Document Object Model (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML Document Object Model (DOM)](xml-document-object-model-dom.md)

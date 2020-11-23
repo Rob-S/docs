@@ -12,6 +12,7 @@ helpviewer_keywords:
 ms.assetid: 60da0c76-9458-4afc-97e9-44a7939c064c
 ---
 # Value Comparisons (Visual Basic)
+
 Comparison operators can be used to construct expressions that compare the values of numeric variables. These expressions return a `Boolean` value based on whether the comparison is true or false. Examples of such an expression are as follows.  
   
  `45 > 26`  
@@ -40,8 +41,8 @@ Comparison operators can be used to construct expressions that compare the value
   
 ## See also
 
-- [Boolean Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
-- [Operators and Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [How to: Calculate Numeric Values](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-calculate-numeric-values.md)
-- [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Boolean Expressions](boolean-expressions.md)
+- [Operators and Expressions](index.md)
+- [Comparison Operators in Visual Basic](comparison-operators.md)
+- [How to: Calculate Numeric Values](how-to-calculate-numeric-values.md)
+- [Operator Precedence in Visual Basic](../../../language-reference/operators/operator-precedence.md)

@@ -1,6 +1,6 @@
 ---
 title: "Anonymous Types - C# Programming Guide"
-ms.custom: seodec18
+description: Anonymous types in C# encapsulate a set of read-only properties in an object without having to explicitly define a type. The compiler generates a name.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "anonymous types [C#]"
@@ -42,6 +42,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 ```  
   
 ## Remarks  
+
  Anonymous types are [class](../../language-reference/keywords/class.md) types that derive directly from [object](../../language-reference/builtin-types/reference-types.md), and that cannot be cast to any type except [object](../../language-reference/builtin-types/reference-types.md). The compiler provides a name for each anonymous type, although your application cannot access it. From the perspective of the common language runtime, an anonymous type is no different from any other reference type.  
   
  If two or more anonymous object initializers in an assembly specify a sequence of properties that are in the same order and that have the same names and types, the compiler treats the objects as instances of the same type. They share the same compiler-generated type information.  
@@ -54,5 +55,5 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 
 - [C# Programming Guide](../index.md)
 - [Object and Collection Initializers](./object-and-collection-initializers.md)
-- [Getting Started with LINQ in C#](/dotnet/csharp/programming-guide/concepts/linq/)
+- [Getting Started with LINQ in C#](../concepts/linq/index.md)
 - [LINQ in C#](../../linq/index.md)

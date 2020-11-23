@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 7dc22e29-8baa-4d82-a1a6-2de64ba9b25d
 ---
 # Division by zero (Visual Basic Error)
+
 The value of an expression used as a divisor is zero.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ The value of an expression used as a divisor is zero.
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../programming-guide/language-features/error-types.md)

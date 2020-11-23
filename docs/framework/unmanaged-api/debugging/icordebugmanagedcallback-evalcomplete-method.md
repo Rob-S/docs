@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::EvalComplete Method
+
 Notifies the debugger that an evaluation has been completed.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT EvalComplete (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain in which the evaluation was performed.  
   
@@ -40,7 +42,8 @@ HRESULT EvalComplete (
  [in] A pointer to an ICorDebugEval object that represents the code that performed the evaluation.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -50,4 +53,4 @@ HRESULT EvalComplete (
   
 ## See also
 
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

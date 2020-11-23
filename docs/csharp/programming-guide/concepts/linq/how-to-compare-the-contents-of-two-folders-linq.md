@@ -1,9 +1,11 @@
 ---
 title: "How to compare the contents of two folders (LINQ) (C#)"
+description: This example demonstrates three ways to compare file listings by using LINQ queries in C#. Adapt these techniques to compare sequences of objects of any type.
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
 ---
 # How to compare the contents of two folders (LINQ) (C#)
+
 This example demonstrates three ways to compare two file listings:  
   
 - By querying for a Boolean value that specifies whether the two file lists are identical.  
@@ -28,7 +30,7 @@ namespace QueryCompareTwoDirs
         static void Main(string[] args)  
         {  
   
-            // Create two identical or different temporary folders   
+            // Create two identical or different temporary folders
             // on a local drive and change these file paths.  
             string pathA = @"C:\TestDir";  
             string pathB = @"C:\TestDir2";  
@@ -58,7 +60,7 @@ namespace QueryCompareTwoDirs
                 Console.WriteLine("The two folders are not the same");  
             }  
   
-            // Find the common files. It produces a sequence and doesn't   
+            // Find the common files. It produces a sequence and doesn't
             // execute until the foreach statement.  
             var queryCommonFiles = list1.Intersect(list2, myFileCompare);  
   
@@ -105,7 +107,7 @@ namespace QueryCompareTwoDirs
                     f1.Length == f2.Length);  
         }  
   
-        // Return a hash that reflects the comparison criteria. According to the   
+        // Return a hash that reflects the comparison criteria. According to the
         // rules for IEqualityComparer<T>, if Equals is true, then the hash codes must  
         // also be equal. Because equality as defined here is a simple value equality, not  
         // reference identity, it is possible that two or more objects will produce the same  
@@ -120,6 +122,7 @@ namespace QueryCompareTwoDirs
 ```  
   
 ## Compiling the Code  
+
  Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.  
   
 ## See also

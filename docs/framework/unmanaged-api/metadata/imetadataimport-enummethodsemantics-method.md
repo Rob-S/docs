@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::EnumMethodSemantics Method
+
 Enumerates the properties and the property-change events to which the specified method is related.  
   
 ## Syntax  
@@ -24,7 +25,7 @@ Enumerates the properties and the property-change events to which the specified 
 ```cpp  
 HRESULT EnumMethodSemantics (  
    [in, out] HCORENUM    *phEnum,  
-   [in]  mdMethodDef     mb,   
+   [in]  mdMethodDef     mb,
    [out] mdToken         rEventProp[],  
    [in]  ULONG           cMax,  
    [out] ULONG           *pcEventProp  
@@ -32,6 +33,7 @@ HRESULT EnumMethodSemantics (
 ```  
   
 ## Parameters  
+
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
@@ -55,10 +57,12 @@ HRESULT EnumMethodSemantics (
 |`S_FALSE`|There are no events or properties to enumerate. In that case, `pcEventProp` is zero.|  
   
 ## Remarks  
+
  Many common language runtime types define *Property*`Changed` events and `On`*Property*`Changed` methods related to their properties. For example, the <xref:System.Windows.Forms.Control?displayProperty=nameWithType> type defines a <xref:System.Windows.Forms.Control.Font%2A> property, a <xref:System.Windows.Forms.Control.FontChanged> event, and an <xref:System.Windows.Forms.Control.OnFontChanged%2A> method. The set accessor method of the <xref:System.Windows.Forms.Control.Font%2A> property calls <xref:System.Windows.Forms.Control.OnFontChanged%2A> method, which in turn raises the <xref:System.Windows.Forms.Control.FontChanged> event. You would call `EnumMethodSemantics` using the MethodDef for <xref:System.Windows.Forms.Control.OnFontChanged%2A> to get references to the <xref:System.Windows.Forms.Control.Font%2A> property and the <xref:System.Windows.Forms.Control.FontChanged> event.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -68,5 +72,5 @@ HRESULT EnumMethodSemantics (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

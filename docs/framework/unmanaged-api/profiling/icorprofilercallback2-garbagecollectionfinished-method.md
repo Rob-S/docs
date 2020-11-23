@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback2::GarbageCollectionFinished Method
+
 Notifies the profiler that garbage collection has completed and all garbage collection callbacks have been issued for it.  
   
 ## Syntax  
@@ -26,10 +27,12 @@ HRESULT GarbageCollectionFinished();
 ```  
   
 ## Remarks  
+
  It is safe for the profiler to inspect objects in their final locations when the `GarbageCollectionFinished` method is called.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -39,5 +42,5 @@ HRESULT GarbageCollectionFinished();
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 Interface](icorprofilercallback2-interface.md)

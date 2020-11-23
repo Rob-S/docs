@@ -1,4 +1,5 @@
 ---
+description: "-target (C# Compiler Options)"
 title: "-target (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -11,7 +12,8 @@ helpviewer_keywords:
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
 ---
 # -target (C# Compiler Options)
-The **-target** compiler option can be specified in one of four forms:  
+
+The **-target** compiler option can be specified in one of the following forms:  
   
  [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
  To create an .exe file for Windows 8.x Store apps.  
@@ -31,7 +33,7 @@ The **-target** compiler option can be specified in one of four forms:
  [-target:winmdobj](./target-winmdobj-compiler-option.md)  
  To create an intermediate .winmdobj file.  
   
- Unless you specify **-target:module**, **-target** causes a .NET Framework assembly manifest to be placed in an output file. For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Unless you specify **-target:module**, **-target** causes a .NET Framework assembly manifest to be placed in an output file. For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../attributes/global.md).  
   
  The assembly manifest is placed in the first .exe output file in the compilation or in the first DLL, if there is no .exe output file. For example, in the following command line, the manifest will be placed in `1.exe`:  
   

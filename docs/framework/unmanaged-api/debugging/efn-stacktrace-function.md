@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # \_EFN\_StackTrace Function
+
 Provides a text representation of a managed stack trace and an array of `CONTEXT` records, one for each transition between unmanaged and managed code.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT CALLBACK _EFN_StackTrace(
 ```  
   
 ## Parameters  
+
  `Client`  
  [in] The client being debugged.  
   
@@ -55,6 +57,7 @@ HRESULT CALLBACK _EFN_StackTrace(
  [in] Set to either 0 or SOS_STACKTRACE_SHOWADDRESSES (0x01) to show the EBP register and the enter stack pointer (ESP) in front of each `module!functionname` line.  
   
 ## Remarks  
+
  The `_EFN_StackTrace` structure can be called from a WinDbg programmatic interface. Parameters are used as follows:  
   
 - If `wszTextOut` is null and `puiTextLength` is not null, the function returns the string length in `puiTextLength`.  
@@ -65,7 +68,7 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 - If `pTransitionContexts` is null and `puiTransitionContextCount` is not null, the function returns the necessary number of context entries in `puiTransitionContextCount`.  
   
-- If `pTransitionContexts` is not null, the function treats it as an array of structures of length `puiTransitionContextCount`. The structure size is given by `uiSizeOfContext`, and must be the size of [SimpleContext](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) or `CONTEXT` for the architecture.  
+- If `pTransitionContexts` is not null, the function treats it as an array of structures of length `puiTransitionContextCount`. The structure size is given by `uiSizeOfContext`, and must be the size of [SimpleContext](stacktrace-simplecontext-structure.md) or `CONTEXT` for the architecture.  
   
 - `wszTextOut` is written in the following format:  
   
@@ -87,7 +90,8 @@ HRESULT CALLBACK _EFN_StackTrace(
     ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** SOS_Stacktrace.h  
   
@@ -95,4 +99,4 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 ## See also
 
-- [Debugging Global Static Functions](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [Debugging Global Static Functions](debugging-global-static-functions.md)

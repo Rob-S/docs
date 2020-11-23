@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # COR_PRF_JIT_CACHE Enumeration
+
 Indicates the result of a cached function search.  
   
 > [!NOTE]
@@ -38,7 +39,8 @@ typedef enum {
 |`COR_PRF_FUNCTION_NOT_FOUND`|The search did not find the function.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -48,4 +50,4 @@ typedef enum {
   
 ## See also
 
-- [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Profiling Enumerations](profiling-enumerations.md)

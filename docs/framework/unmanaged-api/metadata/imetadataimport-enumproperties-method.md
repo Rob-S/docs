@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::EnumProperties Method
+
 Enumerates PropertyDef tokens representing the properties of the type referenced by the specified TypeDef token.  
   
 ## Syntax  
@@ -32,6 +33,7 @@ HRESULT EnumProperties (
 ```  
   
 ## Parameters  
+
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
@@ -55,7 +57,8 @@ HRESULT EnumProperties (
 |`S_FALSE`|There are no tokens to enumerate. In that case, `pcProperties` is zero.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -65,5 +68,5 @@ HRESULT EnumProperties (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

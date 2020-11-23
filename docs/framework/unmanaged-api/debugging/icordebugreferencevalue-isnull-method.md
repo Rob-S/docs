@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugReferenceValue::IsNull Method
+
 Gets a value that indicates whether this ICorDebugReferenceValue is a null value, in which case the `ICorDebugReferenceValue` does not point to an object.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT IsNull (
 ```  
   
 ## Parameters  
+
  `pbNull`  
  [out] A pointer to a Boolean value that is `true` if this `ICorDebugReferenceValue` object is null; otherwise, `pbNull` is `false`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

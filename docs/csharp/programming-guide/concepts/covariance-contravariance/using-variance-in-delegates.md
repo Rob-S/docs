@@ -1,14 +1,17 @@
 ---
 title: "Using Variance in Delegates (C#)"
+description: Learn how to use variance in delegates using the included covariance and contravariance code examples.
 ms.date: 07/20/2015
 ms.assetid: 1638c95d-dc8b-40c1-972c-c2dcf84be55e
 ---
 # Using Variance in Delegates (C#)
+
 When you assign a method to a delegate, *covariance* and *contravariance* provide flexibility for matching a delegate type with a method signature. Covariance permits a method to have return type that is more derived than that defined in the delegate. Contravariance permits a method that has parameter types that are less derived than those in the delegate type.  
   
 ## Example 1: Covariance  
   
 ### Description  
+
  This example demonstrates how delegates can be used with methods that have return types that are derived from the return type in the delegate signature. The data type returned by `DogsHandler` is of type `Dogs`, which derives from the `Mammals` type that is defined in the delegate.  
   
 ### Code  
@@ -60,7 +63,7 @@ This example demonstrates how delegates can be used with methods that have param
    public delegate void MouseEventHandler(object sender, MouseEventArgs e)
    ```
 
-The example defines an event handler with an <xref:System.EventArgs> parameter and uses it to handle both the `Button.KeyDown` and `Button.MouseClick` events. It can do this because <xref:System.EventArgs> is a base type of both <xref:System.Windows.Forms.KeyEventArgs>  and <xref:System.Windows.Forms.MouseEventArgs>. 
+The example defines an event handler with an <xref:System.EventArgs> parameter and uses it to handle both the `Button.KeyDown` and `Button.MouseClick` events. It can do this because <xref:System.EventArgs> is a base type of both <xref:System.Windows.Forms.KeyEventArgs>  and <xref:System.Windows.Forms.MouseEventArgs>.
   
 ### Code  
   
@@ -79,7 +82,7 @@ public Form1()
     // although the event expects the KeyEventArgs parameter.  
     this.button1.KeyDown += this.MultiHandler;  
   
-    // You can use the same method   
+    // You can use the same method
     // for an event that expects the MouseEventArgs parameter.  
     this.button1.MouseClick += this.MultiHandler;  
   

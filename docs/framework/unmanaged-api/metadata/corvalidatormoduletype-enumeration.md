@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorValidatorModuleType Enumeration
+
 Specifies the type of a module.  
   
 ## Syntax  
@@ -46,7 +47,8 @@ typedef enum
 |`ValidatorModuleTypeMax`|The maximum value of the `CorValidatorModuleType` enum.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -56,4 +58,4 @@ typedef enum
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

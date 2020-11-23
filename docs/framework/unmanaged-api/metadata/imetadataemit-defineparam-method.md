@@ -17,24 +17,26 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::DefineParam Method
+
 Creates a parameter definition with the specified signature for the method referenced by the specified token, and gets a token for that parameter definition.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT DefineParam (  
-    [in]  mdMethodDef md,   
-    [in]  ULONG       ulParamSeq,   
-    [in]  LPCWSTR     szName,   
-    [in]  DWORD       dwParamFlags,   
-    [in]  DWORD       dwCPlusTypeFlag,   
+    [in]  mdMethodDef md,
+    [in]  ULONG       ulParamSeq,
+    [in]  LPCWSTR     szName,
+    [in]  DWORD       dwParamFlags,
+    [in]  DWORD       dwCPlusTypeFlag,
     [in]  void const  *pValue,  
-    [in]  ULONG       cchValue,   
-    [out] mdParamDef  *ppd   
+    [in]  ULONG       cchValue,
+    [out] mdParamDef  *ppd
 );  
 ```  
   
 ## Parameters  
+
  `md`  
  [in] The token for the method whose parameter is being defined.  
   
@@ -60,10 +62,12 @@ HRESULT DefineParam (
  [out] The `mdParamDef` token assigned.  
   
 ## Remarks  
+
  The sequence values in `ulParamSeq` begin with 1 for parameters. A return value has a sequence number of 0.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -73,5 +77,5 @@ HRESULT DefineParam (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymENCUnmanagedMethod::GetDocumentsForMethod Method
+
 Gets the documents that this method has lines in.  
   
 ## Syntax  
@@ -24,11 +25,12 @@ Gets the documents that this method has lines in.
 ```cpp  
 HRESULT GetDocumentsForMethod(  
     [in]  ULONG32  cDocs,  
-    [out] ULONG32  *pcDocs,   
+    [out] ULONG32  *pcDocs,
     [in, size_is(cDocs)] ISymUnmanagedDocument* documents[]);  
 ```  
   
 ## Parameters  
+
  `cDocs`  
  [in] The length of the buffer pointed to by `pcDocs`.  
   
@@ -39,11 +41,13 @@ HRESULT GetDocumentsForMethod(
  [in] The buffer that contains the documents.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, an error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymENCUnmanagedMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod Interface](isymencunmanagedmethod-interface.md)

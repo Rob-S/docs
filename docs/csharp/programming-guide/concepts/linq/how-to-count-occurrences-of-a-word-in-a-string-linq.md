@@ -1,9 +1,11 @@
 ---
 title: "How to count occurrences of a word in a string (LINQ) (C#)"
+description: This example uses a LINQ query in C# to count the occurrences of a specified word in a string. It uses the Split method to create an array of words.
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
 ---
 # How to count occurrences of a word in a string (LINQ) (C#)
+
 This example shows how to use a LINQ query to count the occurrences of a specified word in a string. Note that to perform the count, first the <xref:System.String.Split%2A> method is called to create an array of words. There is a performance cost to the <xref:System.String.Split%2A> method. If the only operation on the string is to count the words, you should consider using the <xref:System.Text.RegularExpressions.Regex.Matches%2A> or <xref:System.String.IndexOf%2A> methods instead. However, if performance is not a critical issue, or you have already split the sentence in order to perform other types of queries over it, then it makes sense to use LINQ to count the words or phrases as well.  
   
 ## Example  
@@ -16,7 +18,7 @@ class CountWords
         string text = @"Historically, the world of data and the world of objects" +  
           @" have not been well integrated. Programmers work in C# or Visual Basic" +  
           @" and also in SQL or XQuery. On the one side are concepts such as classes," +  
-          @" objects, fields, inheritance, and .NET Framework APIs. On the other side" +  
+          @" objects, fields, inheritance, and .NET APIs. On the other side" +  
           @" are tables, columns, rows, nodes, and separate languages for dealing with" +  
           @" them. Data types often require translation between the two worlds; there are" +  
           @" different standard functions. Because the object world has no notion of query, a" +  
@@ -29,7 +31,7 @@ class CountWords
         //Convert the string into an array of words  
         string[] source = text.Split(new char[] { '.', '?', '!', ' ', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);  
   
-        // Create the query.  Use ToLowerInvariant to match "data" and "Data"   
+        // Create the query.  Use ToLowerInvariant to match "data" and "Data"
         var matchQuery = from word in source  
                          where word.ToLowerInvariant() == searchTerm.ToLowerInvariant()  
                          select word;  
@@ -49,6 +51,7 @@ class CountWords
 ```  
   
 ## Compiling the Code  
+
  Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.  
   
 ## See also

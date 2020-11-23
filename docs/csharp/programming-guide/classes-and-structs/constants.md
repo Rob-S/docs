@@ -1,6 +1,6 @@
 ---
 title: "Constants - C# Programming Guide"
-ms.custom: seodec18
+description: Constants in C# are compile-time literal values, which do not change once the program is compiled. Only C# built-in types can be constants.
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "C# language, constants"
@@ -8,7 +8,8 @@ helpviewer_keywords:
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
 ---
 # Constants (C# Programming Guide)
-Constants are immutable values which are known at compile time and do not change for the life of the program. Constants are declared with the [const](../../language-reference/keywords/const.md) modifier. Only the C# built-in types (excluding <xref:System.Object?displayProperty=nameWithType>) may be declared as `const`. For a list of the built-in types, see [Built-In Types Table](../../language-reference/keywords/built-in-types-table.md). User-defined types, including classes, structs, and arrays, cannot be `const`. Use the [readonly](../../language-reference/keywords/readonly.md) modifier to create a class, struct, or array that is initialized one time at runtime (for example in a constructor) and thereafter cannot be changed.  
+
+Constants are immutable values which are known at compile time and do not change for the life of the program. Constants are declared with the [const](../../language-reference/keywords/const.md) modifier. Only the C# [built-in types](../../language-reference/builtin-types/built-in-types.md) (excluding <xref:System.Object?displayProperty=nameWithType>) may be declared as `const`. User-defined types, including classes, structs, and arrays, cannot be `const`. Use the [readonly](../../language-reference/keywords/readonly.md) modifier to create a class, struct, or array that is initialized one time at runtime (for example in a constructor) and thereafter cannot be changed.  
   
  C# does not support `const` methods, properties, or events.  
   
@@ -18,7 +19,7 @@ Constants are immutable values which are known at compile time and do not change
   
  [!code-csharp[csProgGuideObjects#64](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#64)]  
   
- In this example, the constant `months` is always 12, and it cannot be changed even by the class itself. In fact, when the compiler encounters a constant identifier in C# source code (for example, `months`), it substitutes the literal value directly into the intermediate language (IL) code that it produces. Because there is no variable address associated with a constant at run time, `const` fields cannot be passed by reference and cannot appear as an l-value in an expression.  
+ In this example, the constant `Months` is always 12, and it cannot be changed even by the class itself. In fact, when the compiler encounters a constant identifier in C# source code (for example, `Months`), it substitutes the literal value directly into the intermediate language (IL) code that it produces. Because there is no variable address associated with a constant at run time, `const` fields cannot be passed by reference and cannot appear as an l-value in an expression.  
   
 > [!NOTE]
 > Use caution when you refer to constant values defined in other code such as DLLs. If a new version of the DLL defines a new value for the constant, your program will still hold the old literal value until it is recompiled against the new version.  
@@ -38,6 +39,7 @@ Constants are immutable values which are known at compile time and do not change
  [!code-csharp[csProgGuideObjects#67](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#67)]  
   
 ## C# Language Specification  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## See also
@@ -47,4 +49,4 @@ Constants are immutable values which are known at compile time and do not change
 - [Properties](./properties.md)
 - [Types](../types/index.md)
 - [readonly](../../language-reference/keywords/readonly.md)
-- [Immutability in C# Part One: Kinds of Immutability](https://blogs.msdn.microsoft.com/ericlippert/2007/11/13/immutability-in-c-part-one-kinds-of-immutability)
+- [Immutability in C# Part One: Kinds of Immutability](/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)

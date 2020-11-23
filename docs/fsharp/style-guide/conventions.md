@@ -1,7 +1,7 @@
 ---
 title: F# coding conventions
 description: Learn general guidelines and idioms when writing F# code.
-ms.date: 11/04/2019
+ms.date: 01/15/2020
 ---
 # F# coding conventions
 
@@ -42,7 +42,7 @@ type MyClass() =
 
 ### Carefully apply `[<AutoOpen>]`
 
-The `[<AutoOpen>]` construct can pollute the scope of what is available to callers, and the answer to where something comes from is "magic". This is generally not a good thing. An exception to this rule is the F# Core Library itself (though this fact is also a bit controversial).
+The `[<AutoOpen>]` construct can pollute the scope of what is available to callers, and the answer to where something comes from is "magic". This is not a good thing. An exception to this rule is the F# Core Library itself (though this fact is also a bit controversial).
 
 However, it is a convenience if you have helper functionality for a public API that you wish to organize separately from that public API.
 
@@ -85,7 +85,7 @@ let parsed = StringTokenization.parse s // Must qualify to use 'parse'
 
 In F#, the order of declarations matters, including with `open` statements. This is unlike C#, where the effect of `using` and `using static` is independent of the ordering of those statements in a file.
 
-In F#, elements opened into a scope can shadow others already present. This means that reordering `open` statements could alter the meaning of code. As a result, any arbitrary sorting of all `open` statements (for example, alphanumerically) is generally not recommended, lest you generate different behavior that you might expect.
+In F#, elements opened into a scope can shadow others already present. This means that reordering `open` statements could alter the meaning of code. As a result, any arbitrary sorting of all `open` statements (for example, alphanumerically) is not recommended, lest you generate different behavior that you might expect.
 
 Instead, we recommend that you sort them [topologically](https://en.wikipedia.org/wiki/Topological_sorting); that is, order your `open` statements in the order in which _layers_ of your system are defined. Doing alphanumeric sorting within different topological layers may also be considered.
 
@@ -102,34 +102,19 @@ open System.IO
 open System.Reflection
 open System.Text
 
-open Microsoft.FSharp.Compiler
-open Microsoft.FSharp.Compiler.AbstractIL
-open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
-open Microsoft.FSharp.Compiler.AbstractIL.IL
-open Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader
-open Microsoft.FSharp.Compiler.AbstractIL.Internal
-open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library
+open FSharp.Compiler
+open FSharp.Compiler.AbstractIL
+open FSharp.Compiler.AbstractIL.Diagnostics
+open FSharp.Compiler.AbstractIL.IL
+open FSharp.Compiler.AbstractIL.ILBinaryReader
+open FSharp.Compiler.AbstractIL.Internal
+open FSharp.Compiler.AbstractIL.Internal.Library
 
-open Microsoft.FSharp.Compiler.AccessibilityLogic
-open Microsoft.FSharp.Compiler.Ast
-open Microsoft.FSharp.Compiler.CompileOps
-open Microsoft.FSharp.Compiler.CompileOptions
-open Microsoft.FSharp.Compiler.Driver
-open Microsoft.FSharp.Compiler.ErrorLogger
-open Microsoft.FSharp.Compiler.Infos
-open Microsoft.FSharp.Compiler.InfoReader
-open Microsoft.FSharp.Compiler.Lexhelp
-open Microsoft.FSharp.Compiler.Layout
-open Microsoft.FSharp.Compiler.Lib
-open Microsoft.FSharp.Compiler.NameResolution
-open Microsoft.FSharp.Compiler.PrettyNaming
-open Microsoft.FSharp.Compiler.Parser
-open Microsoft.FSharp.Compiler.Range
-open Microsoft.FSharp.Compiler.Tast
-open Microsoft.FSharp.Compiler.Tastops
-open Microsoft.FSharp.Compiler.TcGlobals
-open Microsoft.FSharp.Compiler.TypeChecker
-open Microsoft.FSharp.Compiler.SourceCodeServices.SymbolHelpers
+open FSharp.Compiler.AccessibilityLogic
+open FSharp.Compiler.Ast
+open FSharp.Compiler.CompileOps
+open FSharp.Compiler.CompileOptions
+open FSharp.Compiler.Driver
 
 open Internal.Utilities
 open Internal.Utilities.Collections
@@ -231,7 +216,7 @@ Use `nullArg`, `invalidArg` and `invalidOp` as the mechanism to throw `ArgumentN
 
 The `failwith` and `failwithf` functions should generally be avoided because they raise the base `Exception` type, not a specific exception. As per the [Exception Design Guidelines](../../standard/design-guidelines/exceptions.md), you want to raise more specific exceptions when you can.
 
-### Using exception-handling syntax
+### Use exception-handling syntax
 
 F# supports exception patterns via the `try...with` syntax:
 
@@ -314,7 +299,7 @@ Types such as `Result<'Success, 'Error>` are appropriate for basic operations wh
 
 ## Partial application and point-free programming
 
-F# supports partial application, and thus, various ways to program in a point-free style. This can be beneficial for code reuse within a module or the implementation of something, but it is generally not something to expose publicly. In general, point-free programming is not a virtue in and of itself, and can add a significant cognitive barrier for people who are not immersed in the style.
+F# supports partial application, and thus, various ways to program in a point-free style. This can be beneficial for code reuse within a module or the implementation of something, but it is not something to expose publicly. In general, point-free programming is not a virtue in and of itself, and can add a significant cognitive barrier for people who are not immersed in the style.
 
 ### Do not use partial application and currying in public APIs
 
@@ -437,11 +422,118 @@ Finally, automatic generalization is not always a boon for people who are new to
 
 ## Performance
 
+### Consider structs for small types with high allocation rates
+
+Using structs (also called Value Types) can often result in higher performance for some code because it typically avoids allocating objects. However, structs are not always a "go faster" button: if the size of the data in a struct exceeds 16 bytes, copying the data can often result in more CPU time spend than using a reference type.
+
+To determine if you should use a struct, consider the following conditions:
+
+- If the size of your data is 16 bytes or smaller.
+- If you're likely to have many instances of these types resident in memory in a running program.
+
+If the first condition applies, you should generally use a struct. If both apply, you should almost always use a struct. There may be some cases where the previous conditions apply, but using a struct is no better or worse than using a reference type, but they are likely to be rare. It's important to always measure when making changes like this, though, and not operate on assumption or intuition.
+
+#### Consider struct tuples when grouping small value types with high allocation rates
+
+Consider the following two functions:
+
+```fsharp
+let rec runWithTuple t offset times =
+    let offsetValues x y z offset =
+        (x + offset, y + offset, z + offset)
+
+    if times <= 0 then
+        t
+    else
+        let (x, y, z) = t
+        let r = offsetValues x y z offset
+        runWithTuple r offset (times - 1)
+
+let rec runWithStructTuple t offset times =
+    let offsetValues x y z offset =
+        struct(x + offset, y + offset, z + offset)
+
+    if times <= 0 then
+        t
+    else
+        let struct(x, y, z) = t
+        let r = offsetValues x y z offset
+        runWithStructTuple r offset (times - 1)
+```
+
+When you benchmark these functions with a statistical benchmarking tool like [BenchmarkDotNet](https://benchmarkdotnet.org/), you'll find that the `runWithStructTuple` function that uses struct tuples runs 40% faster and allocates no memory.
+
+However, these results won't always be the case in your own code. If you mark a function as `inline`, code that uses reference tuples may get some additional optimizations, or code that would allocate could simply be optimized away. You should always measure results whenever performance is concerned, and never operate based on assumption or intuition.
+
+#### Consider struct records when the type is small and has high allocation rates
+
+The rule of thumb described earlier also holds for [F# record types](../language-reference/records.md). Consider the following data types and functions that process them:
+
+```fsharp
+type Point = { X: float; Y: float; Z: float }
+
+[<Struct>]
+type SPoint = { X: float; Y: float; Z: float }
+
+let rec processPoint (p: Point) offset times =
+    let inline offsetValues (p: Point) offset =
+        { p with X = p.X + offset; Y = p.Y + offset; Z = p.Z + offset }
+
+    if times <= 0 then
+        p
+    else
+        let r = offsetValues p offset
+        processPoint r offset (times - 1)
+
+let rec processStructPoint (p: SPoint) offset times =
+    let inline offsetValues (p: SPoint) offset =
+        { p with X = p.X + offset; Y = p.Y + offset; Z = p.Z + offset }
+
+    if times <= 0 then
+        p
+    else
+        let r = offsetValues p offset
+        processStructPoint r offset (times - 1)
+```
+
+This is similar to the previous tuple code, but this time the example uses records and an inlined inner function.
+
+When you benchmark these functions with a statistical benchmarking tool like [BenchmarkDotNet](https://benchmarkdotnet.org/), you'll find that `processStructPoint` runs nearly 60% faster and allocates nothing on the managed heap.
+
+#### Consider struct discriminated unions when the data type is small with high allocation rates
+
+The previous observations about performance with struct tuples and records also holds for [F# Discriminated Unions](../language-reference/discriminated-unions.md). Consider the following code:
+
+```fsharp
+    type Name = Name of string
+
+    [<Struct>]
+    type SName = SName of string
+
+    let reverseName (Name s) =
+        s.ToCharArray()
+        |> Array.rev
+        |> string
+        |> Name
+
+    let structReverseName (SName s) =
+        s.ToCharArray()
+        |> Array.rev
+        |> string
+        |> SName
+```
+
+It's common to define single-case Discriminated Unions like this for domain modeling. When you benchmark these functions with a statistical benchmarking tool like [BenchmarkDotNet](https://benchmarkdotnet.org/), you'll find that `structReverseName` runs about 25% faster than `reverseName` for small strings. For large strings, both perform about the same. So, in this case, it's always preferable to use a struct. As previously mentioned, always measure and do not operate on assumptions or intuition.
+
+Although the previous example showed that a struct Discriminated Union yielded better performance, it is common to have larger Discriminated Unions when modeling a domain. Larger data types like that may not perform as well if they are structs depending on the operations on them, since more copying could be involved.
+
+### Functional programming and mutation
+
 F# values are immutable by default, which allows you to avoid certain classes of bugs (especially those involving concurrency and parallelism). However, in certain cases, in order to achieve optimal (or even reasonable) efficiency of execution time or memory allocations, a span of work may best be implemented by using in-place mutation of state. This is possible in an opt-in basis with F# with the `mutable` keyword.
 
-However, use of `mutable` in F# may feel at odds with functional purity. This is fine, if you adjust expectations from purity to [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency). Referential transparency - not purity - is the end goal when writing F# functions. This allows you to write a functional interface over a mutation-based implementation for performance critical code.
+Use of `mutable` in F# may feel at odds with functional purity. This is understandable, but functional purity everywhere can be at odds with performance goals. A compromise is to encapsulate mutation such that callers need not care about what happens when they call a function. This allows you to write a functional interface over a mutation-based implementation for performance-critical code.
 
-### Wrap mutable code in immutable interfaces
+#### Wrap mutable code in immutable interfaces
 
 With referential transparency as a goal, it is critical to write code that does not expose the mutable underbelly of performance-critical functions. For example, the following code implements the `Array.contains` function in the F# core library:
 
@@ -459,7 +551,7 @@ let inline contains value (array:'T[]) =
 
 Calling this function multiple times does not change the underlying array, nor does it require you to maintain any mutable state in consuming it. It is referentially transparent, even though almost every line of code within it uses mutation.
 
-### Consider encapsulating mutable data in classes
+#### Consider encapsulating mutable data in classes
 
 The previous example used a single function to encapsulate operations using mutable data. This is not always sufficient for more complex sets of data. Consider the following sets of functions:
 
@@ -505,9 +597,9 @@ type Closure1Table() =
 
 `Closure1Table` encapsulates the underlying mutation-based data structure, thereby not forcing callers to maintain the underlying data structure. Classes are a powerful way to encapsulate data and routines that are mutation-based without exposing the details to callers.
 
-### Prefer `let mutable` to reference cells
+#### Prefer `let mutable` to reference cells
 
-Reference cells are a way to represent the reference to a value rather than the value itself. Although they can be used for performance-critical code, they are generally not recommended. Consider the following example:
+Reference cells are a way to represent the reference to a value rather than the value itself. Although they can be used for performance-critical code, they are not recommended. Consider the following example:
 
 ```fsharp
 let kernels =
@@ -577,7 +669,7 @@ F# has full support for objects and object-oriented (OO) concepts. Although many
 
 [Object Expressions](../language-reference/object-expressions.md) allow you to implement interfaces on the fly, binding the implemented interface to a value without needing to do so inside of a class. This is convenient, especially if you _only_ need to implement the interface and have no need for a full class.
 
-For example, here is the code that is run in [Ionide](http://ionide.io/) to provide a code fix action if you've added a symbol that you don't have an `open` statement for:
+For example, here is the code that is run in [Ionide](https://ionide.io/) to provide a code fix action if you've added a symbol that you don't have an `open` statement for:
 
 ```fsharp
     let private createProvider () =
@@ -605,7 +697,7 @@ Because there is no need for a class when interacting with the Visual Studio Cod
 
 ## Consider Type Abbreviations to shorten signatures
 
-[Type Abbreviations](../language-reference/type-abbreviations.md) are a convenient way to assign a label to another type, such as a function signature or a more complex type. For example, the following alias assigns a label to what's needed to define a computation with [CNTK](https://docs.microsoft.com/cognitive-toolkit/), a deep learning library:
+[Type Abbreviations](../language-reference/type-abbreviations.md) are a convenient way to assign a label to another type, such as a function signature or a more complex type. For example, the following alias assigns a label to what's needed to define a computation with [CNTK](/cognitive-toolkit/), a deep learning library:
 
 ```fsharp
 open CNTK

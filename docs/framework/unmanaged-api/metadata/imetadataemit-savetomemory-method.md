@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::SaveToMemory Method
+
 Saves all metadata in the current scope to the specified area of memory.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT SaveToMemory (   
-    [out]  void        *pbData,   
-    [in]   ULONG       cbData   
+HRESULT SaveToMemory (
+    [out]  void        *pbData,
+    [in]   ULONG       cbData
 );  
 ```  
   
 ## Parameters  
+
  `pbData`  
  [out] The address at which to begin writing metadata.  
   
@@ -36,7 +38,8 @@ HRESULT SaveToMemory (
  [in] The size, in bytes, of the allocated memory.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -46,5 +49,5 @@ HRESULT SaveToMemory (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

@@ -16,17 +16,19 @@ topic_type:
   - "apiref"
 ---
 # IManagedObject Interface
+
 Provides methods for controlling a managed object.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetObjectIdentity Method](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getobjectidentity-method.md)|Gets the identity of this managed object.|  
-|[GetSerializedBuffer Method](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getserializedbuffer-method.md)|Gets the string representation of this managed object.|  
+|[GetObjectIdentity Method](imanagedobject-getobjectidentity-method.md)|Gets the identity of this managed object.|  
+|[GetSerializedBuffer Method](imanagedobject-getserializedbuffer-method.md)|Gets the string representation of this managed object.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -36,4 +38,4 @@ Provides methods for controlling a managed object.
   
 ## See also
 
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hosting Interfaces](hosting-interfaces.md)

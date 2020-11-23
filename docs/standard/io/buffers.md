@@ -1,7 +1,6 @@
 ---
 title: "System.Buffers - .NET"
 ms.date: 12/05/2019
-ms.technology: dotnet-standard
 helpviewer_keywords: 
   - "buffers [.NET]"
   - "I/O [.NET], buffers"
@@ -73,7 +72,7 @@ The `ReadOnlySequence<T>` exposes data as an enumerable of `ReadOnlyMemory<T>`. 
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet3)]
 
-The preceding method searches each segment for a specific byte. If you need to keep track of each segment's `SequencePosition`, 
+The preceding method searches each segment for a specific byte. If you need to keep track of each segment's `SequencePosition`,
 <xref:System.Buffers.ReadOnlySequence%601.TryGet%2A?displayProperty=nameWithType> is more appropriate. The next sample changes the preceding code to return a `SequencePosition` instead of an integer. Returning a `SequencePosition` has the benefit of allowing the caller to avoid a second scan to get the data at a specific index.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet4)]
@@ -110,6 +109,8 @@ The following example parses a 4-byte big-endian integer length from the start o
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet5)]
 
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
+
 ##### Process text data
 
 The following example:
@@ -141,7 +142,7 @@ There are several unusual outcomes when dealing with a `ReadOnlySequence<T>`/`Se
 - Two `SequencePosition` can't be compared, making it difficult to:
   - Know if one position is greater than or less than another position.
   - Write some parsing algorithms.
-- `ReadOnlySequence<T>` is bigger than an object reference and should be passed by [in](../../csharp/language-reference/keywords/in-parameter-modifier.md) or [ref](../../csharp/language-reference/keywords/ref.md) where possible. Passing `ReadOnlySequence<T>` by `in` or `ref` reduces copies of the [struct](../../csharp/language-reference/keywords/struct.md).
+- `ReadOnlySequence<T>` is bigger than an object reference and should be passed by [in](../../csharp/language-reference/keywords/in-parameter-modifier.md) or [ref](../../csharp/language-reference/keywords/ref.md) where possible. Passing `ReadOnlySequence<T>` by `in` or `ref` reduces copies of the [struct](../../csharp/language-reference/builtin-types/struct.md).
 - Empty segments:
   - Are valid within a `ReadOnlySequence<T>`.
   - Can appear when iterating using the `ReadOnlySequence<T>.TryGet` method.
@@ -184,5 +185,5 @@ The following example parses a 4-byte big-endian integer length from the start o
 ### SequenceReader\<T\> common problems
 
 - Because `SequenceReader<T>` is a mutable struct, it should always be passed by [reference](../../csharp/language-reference/keywords/ref.md).
-- `SequenceReader<T>` is a [ref struct](../../csharp/language-reference/keywords/ref.md#ref-struct-types) so it can only be used in synchronous methods and can't be stored in fields. For more information, see [Write safe and efficient C# code](../../csharp/write-safe-efficient-code.md).
+- `SequenceReader<T>` is a [ref struct](../../csharp/language-reference/builtin-types/struct.md#ref-struct) so it can only be used in synchronous methods and can't be stored in fields. For more information, see [Write safe and efficient C# code](../../csharp/write-safe-efficient-code.md).
 - `SequenceReader<T>` is optimized for use as a forward-only reader. `Rewind` is intended for small backups that can't be addressed utilizing other `Read`, `Peek`, and `IsNext` APIs.

@@ -1,12 +1,14 @@
 ---
+description: "C# Compiler Options Listed by Category"
 title: "C# Compiler Options Listed by Category"
-ms.date: 05/15/2018
+ms.date: 06/04/2020
 helpviewer_keywords: 
   - "Visual C# compiler, options listed by category"
   - "compiler options [C#], listed by category"
   - "Visual C#, compiler options listed by category"
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
 ---
+
 # C# Compiler Options Listed by Category
 
 The following compiler options are sorted by category. For an alphabetical list, see [C# Compiler Options Listed Alphabetically](listed-alphabetically.md).
@@ -31,10 +33,10 @@ The following compiler options are sorted by category. For an alphabetical list,
 |[-preferreduilang](preferreduilang-compiler-option.md)|Specify a language for compiler output.|
 |[-refout](refout-compiler-option.md)|Generate a reference assembly in addition to the primary assembly.|
 |[-refonly](refonly-compiler-option.md)|Generate a reference assembly instead of a primary assembly.|
-|[-target](target-compiler-option.md)|Specifies the format of the output file using one of five options: [-target:appcontainerexe](target-appcontainerexe-compiler-option.md), [-target:exe](target-exe-compiler-option.md), [-target:library](target-library-compiler-option.md), [-target:module](target-module-compiler-option.md), [-target:winexe](target-winexe-compiler-option.md), or [-target:winmdobj](target-winmdobj-compiler-option.md).|
+|[-target](target-compiler-option.md)|Specifies the format of the output file using one of the following options: [-target:appcontainerexe](target-appcontainerexe-compiler-option.md), [-target:exe](target-exe-compiler-option.md), [-target:library](target-library-compiler-option.md), [-target:module](target-module-compiler-option.md), [-target:winexe](target-winexe-compiler-option.md), or [-target:winmdobj](target-winmdobj-compiler-option.md).|
 |-modulename:\<string>|Specify the name of the source module|
 
-## .NET Framework Assemblies
+## .NET Assemblies
 
 |Option|Purpose|
 |------------|-------------|
@@ -50,6 +52,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 |-additionalfile|Names additional files that don't directly affect code generation but may be used by analyzers for producing errors or warnings.|
 |-embed|Embed all source files in the PDB.|
 |-embed:\<file list>|Embed specific files in the PDB.|
+
 ## Debugging/Error Checking
 
 |Option|Purpose|
@@ -60,6 +63,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 |[-errorreport](errorreport-compiler-option.md)|Sets error reporting behavior.|
 |[-fullpaths](fullpaths-compiler-option.md)|Specifies the absolute path to the file in compiler output.|
 |[-nowarn](nowarn-compiler-option.md)|Suppresses the compiler's generation of specified warnings.|
+|[-nullable](nullable-compiler-option.md)|Specifies nullable context option.|
 |[-warn](warn-compiler-option.md)|Sets the warning level.|
 |[-warnaserror](warnaserror-compiler-option.md)|Promotes warnings to errors.|
 |-ruleset:\<file>|Specify a ruleset file that disables specific diagnostics.|
@@ -76,7 +80,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 |------------|-------------|
 |[-link](link-compiler-option.md)|Makes COM type information in specified assemblies available to the project.|
 |[-linkresource](linkresource-compiler-option.md)|Creates a link to a managed resource.|
-|[-resource](resource-compiler-option.md)|Embeds a .NET Framework resource into the output file.|
+|[-resource](resource-compiler-option.md)|Embeds a .NET resource into the output file.|
 |[-win32icon](win32icon-compiler-option.md)|Specifies an .ico file to insert into the output file.|
 |[-win32res](win32res-compiler-option.md)|Specifies a Win32 resource to insert into the output file.|
 
@@ -99,7 +103,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 |[-unsafe](unsafe-compiler-option.md)|Enables compilation of code that uses the [unsafe](../keywords/unsafe.md) keyword.|
 |[-utf8output](utf8output-compiler-option.md)|Displays compiler output using UTF-8 encoding.|
 |-parallel[+&#124;-]|Specifies whether to use concurrent build (+).|
-|-checksumalgorithm:\<alg>|Specify the algorithm for calculating the source file checksum stored in PDB.  Supported values are: SHA1 (default) or SHA256.<br>Due to collision problems with SHA1, Microsoft recommends SHA256.|
+|-checksumalgorithm:\<alg>|Specify the algorithm for calculating the source file checksum stored in PDB.  Supported values are: SHA256 (default) or SHA1.<br>Due to collision problems with SHA1, Microsoft recommends SHA256.|
 
 ## Obsolete Options
 

@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: b2b1e6ce-d262-4644-8085-e48a2e2f06a6
 ---
 # Operator is not valid for '\<name1>' and '\<name2>'
+
 An operator is not appropriate for the types being operated on.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ An operator is not appropriate for the types being operated on.
   
 ## See also
 
-- [Operators](../../visual-basic/language-reference/operators/index.md)
+- [Operators](../language-reference/operators/index.md)

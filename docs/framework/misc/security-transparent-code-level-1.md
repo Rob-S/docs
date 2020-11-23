@@ -1,5 +1,6 @@
 ---
 title: "Security-Transparent Code, Level 1"
+description: Review the Level 1 transparency code model, transparency attributes, and security transparency examples.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "transparent"
@@ -9,10 +10,9 @@ helpviewer_keywords:
   - "security-transparent code"
   - "security [.NET Framework], security-transparent code"
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Security-Transparent Code, Level 1
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Transparency helps developers write more secure .NET Framework libraries that expose functionality to partially trusted code. Level 1 transparency was introduced in the .NET Framework version 2.0 and was primarily used only within Microsoft. Starting with the .NET Framework 4, you can use [level 2 transparency](security-transparent-code-level-2.md). However, level 1 transparency has been retained so that you can identify legacy code that must run with the earlier security rules.  
@@ -28,7 +28,7 @@ ms.author: "mairaw"
   
 - [Security Transparency Examples](#security_transparency_examples)  
   
-<a name="the_level_1_transparency_model"></a>   
+<a name="the_level_1_transparency_model"></a>
 ## The Level 1 Transparency Model  
  When you use Level 1 transparency, you are using a security model that separates code into security-transparent, security-safe-critical, and security-critical methods.  
   
@@ -51,7 +51,7 @@ ms.author: "mairaw"
   
  For backward compatibility with earlier versions of the .NET Framework, all members that are not annotated with transparency attributes are considered to be security-safe-critical. All types that are not annotated are considered to be transparent. There are no static analysis rules to validate transparency. Therefore, you may need to debug transparency errors at run time.  
   
-<a name="transparency_attributes"></a>   
+<a name="transparency_attributes"></a>
 ## Transparency Attributes  
  The following table describes the three attributes that you use to annotate your code for transparency.  
   
@@ -74,7 +74,7 @@ ms.author: "mairaw"
 |`SecurityCritical(SecurityCriticalScope.Everything)`|All types and members are security-critical.|  
 |`SecurityCritical`|All code defaults to transparent. However, individual types and members can have other attributes.|  
   
-<a name="security_transparency_examples"></a>   
+<a name="security_transparency_examples"></a>
 ## Security Transparency Examples  
  To use the .NET Framework 2.0 transparency rules (level 1 transparency), use the following assembly annotation:  
   
@@ -127,4 +127,4 @@ public class B
 ## See also
 
 - [Security-Transparent Code, Level 2](security-transparent-code-level-2.md)
-- [Security Changes](../security/security-changes.md)
+- [Security Changes](/previous-versions/dotnet/framework/security/security-changes)

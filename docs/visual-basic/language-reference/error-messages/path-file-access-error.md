@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 6ce3a161-7316-46bd-a785-0d50e5414020
 ---
 # Path/File access error
+
 During a file-access or disk-access operation, the operating system could not make a connection between the path and the file name.  
   
 ## To correct this error  
@@ -20,4 +21,4 @@ During a file-access or disk-access operation, the operating system could not ma
   
 ## See also
 
-- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../../programming-guide/language-features/error-types.md)

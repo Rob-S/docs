@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # GetHashFromFileW Function
+
 Generates a hash over the contents of the file specified by a Unicode string.  
   
  This function has been deprecated. Use the [ICLRStrongName::GetHashFromFileW](../hosting/iclrstrongname-gethashfromfilew-method.md) method instead.  
@@ -23,16 +24,17 @@ Generates a hash over the contents of the file specified by a Unicode string.
 ## Syntax  
   
 ```cpp  
-HRESULT GetHashFromFileW (   
+HRESULT GetHashFromFileW (
     [in]  LPCWSTR   wszFilePath,  
     [in, out] unsigned int   *piHashAlg,  
     [out] BYTE      *pbHash,  
     [in]  DWORD     cchHash,  
     [out] DWORD     *pchHash  
-);   
+);
 ```  
   
 ## Parameters  
+
  `wszFilePath`  
  [in] The Unicode name of the file to hash.  
   
@@ -49,9 +51,11 @@ HRESULT GetHashFromFileW (
  [out] The size, in bytes, of `pbHash`.  
   
 ## Remarks  
+
  This function is the same as [GetHashFromFile](gethashfromfile-function.md), except that the file name specification is Unicode instead of ANSI.  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** StrongName.h  

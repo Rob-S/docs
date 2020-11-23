@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugAppDomain::EnumerateBreakpoints Method
+
 Gets an enumerator for all active breakpoints in the application domain.  
   
 ## Syntax  
@@ -28,14 +29,17 @@ HRESULT EnumerateBreakpoints (
 ```  
   
 ## Parameters  
+
  `ppBreakpoints`  
  [out] A pointer to the address of an ICorDebugBreakpointEnum object that is the enumerator for all active breakpoints in the application domain.  
   
 ## Remarks  
+
  The enumerator includes all types of breakpoints, including function breakpoints and data breakpoints.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

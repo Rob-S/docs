@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostThreadPoolManager::GetMinThreads Method
+
 Gets the minimum number of idle threads that the host maintains in the thread pool in anticipation of requests.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT GetMinThreads (
 ```  
   
 ## Parameters  
+
  `MinThreads`  
  [out] A pointer to the minimum number of idle worker threads that the host currently maintains.  
   
@@ -44,10 +46,12 @@ HRESULT GetMinThreads (
 |E_NOTIMPL|The host does not provide an implementation of `GetMinThreads`.|  
   
 ## Remarks  
+
  The host is not required to provide an implementation of `GetMinThreads`. In this case, it should return an HRESULT value of E_NOTIMPL.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -59,6 +63,6 @@ HRESULT GetMinThreads (
 
 - <xref:System.Threading.ThreadPool.GetMinThreads%2A>
 - <xref:System.Threading.ThreadPool>
-- [GetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)
-- [SetMinThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)
-- [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
+- [GetMaxThreads Method](ihostthreadpoolmanager-getmaxthreads-method.md)
+- [SetMinThreads Method](ihostthreadpoolmanager-setminthreads-method.md)
+- [IHostThreadPoolManager Interface](ihostthreadpoolmanager-interface.md)

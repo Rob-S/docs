@@ -1,12 +1,11 @@
 ---
 title: "Thread Pool ETW Events"
+description: Review thread pool ETW events, which collect information about threads in .NET. Thread pool events are worker thread pool events or I/O thread pool events.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "thread pool events [.NET Framework]"
   - "ETW, thread pool events (CLR)"
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Thread Pool ETW Events
 These events collect information about worker and I/O threads.  
@@ -195,7 +194,7 @@ These events collect information about worker and I/O threads.
   
 |Event|Event ID|Raised when|  
 |-----------|--------------|-----------------|  
-|`IOThreadTerminate`|45|An I/O thread is created in the thread pool.|  
+|`IOThreadTerminate`|45|An I/O thread is terminated in the thread pool.|  
   
  The following table shows the event data.  
   

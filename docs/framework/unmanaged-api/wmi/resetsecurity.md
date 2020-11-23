@@ -16,7 +16,8 @@ topic_type:
   - "Reference"
 ---
 # ResetSecurity function
-Assigns the supplied impersonation token to the current thread.   
+
+Assigns the supplied impersonation token to the current thread.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -25,13 +26,13 @@ Assigns the supplied impersonation token to the current thread.
 ```cpp  
 HRESULT ResetSecurity (
    [in] HANDLE token
-); 
+);
 ```  
 
 ## Parameters
 
 `token`  
-[in] The impersonation token to associate with the current thread. Its value can be `null`. 
+[in] The impersonation token to associate with the current thread. Its value can be `null`.
 
 ## Return value
 
@@ -40,6 +41,7 @@ If the function succeeds, the return value is `S_OK` (0).
 If the function fails, the return value is a non-zero error code. To get extended error information, call the [GetErrorInfo](geterrorinfo.md) function.
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** WMINet_Utils.idl  

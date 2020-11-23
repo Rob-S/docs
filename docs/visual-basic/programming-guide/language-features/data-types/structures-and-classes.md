@@ -11,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
 ---
 # Structures and Classes (Visual Basic)
+
 Visual Basic unifies the syntax for structures and classes, with the result that both entities support most of the same features. However, there are also important differences between structures and classes.  
   
  Classes have the advantage of being reference types — passing a reference is more efficient than passing a structure variable with all its data. On the other hand, structures do not require allocation of memory on the global heap.  
@@ -18,6 +19,7 @@ Visual Basic unifies the syntax for structures and classes, with the result that
  Because you cannot inherit from a structure, structures should be used only for objects that do not need to be extended. Use structures when the object you wish to create has a small instance size, and take into account the performance characteristics of classes versus structures.  
   
 ## Similarities  
+
  Structures and classes are similar in the following respects:  
   
 - Both are *container* types, meaning that they contain other types as members.  
@@ -35,6 +37,7 @@ Visual Basic unifies the syntax for structures and classes, with the result that
 - Both can declare and raise events, and both can declare delegates.  
   
 ## Differences  
+
  Structures and classes differ in the following particulars:  
   
 - Structures are *value types*; classes are *reference types*. A variable of a structure type contains the structure's data, rather than containing a reference to the data as a class type does.  
@@ -47,7 +50,7 @@ Visual Basic unifies the syntax for structures and classes, with the result that
   
 - Structure elements cannot be declared as `Protected`; class members can.  
   
-- A structure procedure can handle events only if it is a [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)`Sub` procedure, and only by means of the [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md); any class procedure can handle events, using either the [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) keyword or the `AddHandler` statement. For more information, see [Events](../../../../visual-basic/programming-guide/language-features/events/index.md).  
+- A structure procedure can handle events only if it is a [Shared](../../../language-reference/modifiers/shared.md)`Sub` procedure, and only by means of the [AddHandler Statement](../../../language-reference/statements/addhandler-statement.md); any class procedure can handle events, using either the [Handles](../../../language-reference/statements/handles-clause.md) keyword or the `AddHandler` statement. For more information, see [Events](../events/index.md).  
   
 - Structure variable declarations cannot specify initializers or initial sizes for arrays; class variable declarations can.  
   
@@ -64,13 +67,14 @@ Visual Basic unifies the syntax for structures and classes, with the result that
  Every structure has an implicit public constructor without parameters. This constructor initializes all the structure's data elements to their default values. You cannot redefine this behavior.  
   
 ## Instances and Variables  
+
  Because structures are value types, each structure variable is permanently bound to an individual structure instance. But classes are reference types, and an object variable can refer to various class instances at different times. This distinction affects your usage of structures and classes in the following ways:  
   
 - **Initialization.** A structure variable implicitly includes an initialization of the elements using the structure's parameterless constructor. Therefore, `Dim s As struct1` is equivalent to `Dim s As struct1 = New struct1()`.  
   
 - **Assigning Variables.** When you assign one structure variable to another, or pass a structure instance to a procedure argument, the current values of all the variable elements are copied to the new structure. When you assign one object variable to another, or pass an object variable to a procedure, only the reference pointer is copied.  
   
-- **Assigning Nothing.** You can assign the value [Nothing](../../../../visual-basic/language-reference/nothing.md) to a structure variable, but the instance continues to be associated with the variable. You can still call its methods and access its data elements, although variable elements are reinitialized by the assignment.  
+- **Assigning Nothing.** You can assign the value [Nothing](../../../language-reference/nothing.md) to a structure variable, but the instance continues to be associated with the variable. You can still call its methods and access its data elements, although variable elements are reinitialized by the assignment.  
   
      In contrast, if you set an object variable to `Nothing`, you dissociate it from any class instance, and you cannot access any members through the variable until you assign another instance to it.  
   
@@ -82,10 +86,10 @@ Visual Basic unifies the syntax for structures and classes, with the result that
   
 ## See also
 
-- [Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
-- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Structures and Other Programming Elements](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)
-- [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Data Types](index.md)
+- [Composite Data Types](composite-data-types.md)
+- [Value Types and Reference Types](value-types-and-reference-types.md)
+- [Structures](structures.md)
+- [Troubleshooting Data Types](troubleshooting-data-types.md)
+- [Structures and Other Programming Elements](structures-and-other-programming-elements.md)
+- [Objects and Classes](../objects-and-classes/index.md)

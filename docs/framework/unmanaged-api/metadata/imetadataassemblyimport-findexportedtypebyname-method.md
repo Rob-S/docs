@@ -17,19 +17,21 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataAssemblyImport::FindExportedTypeByName Method
+
 Gets a pointer to an exported type, given its name and enclosing type.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT FindExportedTypeByName (  
-    [in]  LPCWSTR           szName,   
-    [in]  mdToken           mdtExportedType,   
+    [in]  LPCWSTR           szName,
+    [in]  mdToken           mdtExportedType,
     [out] mdExportedType    *ptkExportedType  
 );  
 ```  
   
 ## Parameters  
+
  `szName`  
  [in] The name of the exported type.  
   
@@ -40,10 +42,12 @@ HRESULT FindExportedTypeByName (
  [out] A pointer to the `mdExportedType` token that represents the exported type.  
   
 ## Remarks  
+
  The `FindExportedTypeByName` method uses the standard rules employed by the common language runtime for resolving references.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -53,5 +57,5 @@ HRESULT FindExportedTypeByName (
   
 ## See also
 
-- [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [How the Runtime Locates Assemblies](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [IMetaDataAssemblyImport Interface](imetadataassemblyimport-interface.md)
+- [How the Runtime Locates Assemblies](../../deployment/how-the-runtime-locates-assemblies.md)

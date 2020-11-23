@@ -1,5 +1,6 @@
 ---
 title: "<servicePointManager> Element (Network Settings)"
+description: The <servicePointManager> network settings element configures connections to network resources options in the .NET Framework.
 ms.date: "03/30/2017"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager"
@@ -10,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
 ---
 # \<servicePointManager> Element (Network Settings)
+
 Configures connections to network resources.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -32,6 +34,7 @@ Configures connections to network resources.
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
@@ -47,6 +50,7 @@ Configures connections to network resources.
 |`useNagleAlgorithm`|Specifies whether connections controlled by the service point manager use the Nagle algorithm. The default value is `true`.|  
   
 ### Child Elements  
+
  None.  
   
 ### Parent Elements  
@@ -58,6 +62,7 @@ Configures connections to network resources.
 ## Remarks  
   
 ## Configuration Files  
+
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## See also

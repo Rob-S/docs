@@ -17,10 +17,11 @@ topic_type:
   - "apiref"
 ---
 # IGCHost::SetGCStartupLimits Method
+
 Sets the segment size and the maximum size for generation 0.  
   
 > [!IMPORTANT]
-> Starting with the .NET Framework 4.5, you can set segment size and maximum generation 0 size to values greater than `DWORD` by using the [IGCHost2::SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) method.  
+> Starting with the .NET Framework 4.5, you can set segment size and maximum generation 0 size to values greater than `DWORD` by using the [IGCHost2::SetGCStartupLimitsEx](igchost2-setgcstartuplimitsex-method.md) method.  
   
 ## Syntax  
   
@@ -32,6 +33,7 @@ HRESULT SetGCStartupLimits (
 ```  
   
 ## Parameters  
+
  `SegmentSize`  
  [in] The size of the segment used by the garbage collection system.  
   
@@ -39,10 +41,12 @@ HRESULT SetGCStartupLimits (
  [in] The maximum size for generation 0.  
   
 ## Remarks  
+
  The `SetGCStartupLimits` method may be called only once. These values cannot be changed later.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** GCHost.idl, GCHost.h  
   
@@ -52,4 +56,4 @@ HRESULT SetGCStartupLimits (
   
 ## See also
 
-- [IGCHost Interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+- [IGCHost Interface](igchost-interface.md)

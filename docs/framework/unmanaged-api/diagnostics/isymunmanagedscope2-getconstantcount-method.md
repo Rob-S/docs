@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedScope2::GetConstantCount Method
+
 Gets a count of the constants defined within this scope.  
   
 ## Syntax  
@@ -27,15 +28,18 @@ HRESULT GetConstantCount(
 ```  
   
 ## Parameters  
+
  `pRetVal`  
  [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the constants.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedScope2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope2-interface.md)
+- [ISymUnmanagedScope2 Interface](isymunmanagedscope2-interface.md)

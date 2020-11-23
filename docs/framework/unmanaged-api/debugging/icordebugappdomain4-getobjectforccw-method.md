@@ -4,18 +4,20 @@ ms.date: "03/30/2017"
 ms.assetid: 2cacdb85-e7b8-42e7-b310-c3e8c22e5d33
 ---
 # ICorDebugAppDomain4::GetObjectForCCW Method
+
 Gets a managed object from a COM callable wrapper (CCW) pointer.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetObjectForCCW(  
-   [in]CORDB_ADDRESS ccwPointer,   
+   [in]CORDB_ADDRESS ccwPointer,
    [out]ICorDebugValue **ppManagedObject  
 );  
 ```  
   
 ## Parameters  
+
  `ccwPointer`  
  [in] A COM callable wrapper (CCW) pointer.  
   
@@ -25,7 +27,8 @@ HRESULT GetObjectForCCW(
 ## Remarks  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -35,5 +38,5 @@ HRESULT GetObjectForCCW(
   
 ## See also
 
-- [ICorDebugAppDomain4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain4-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugAppDomain4 Interface](icordebugappdomain4-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

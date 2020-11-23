@@ -7,6 +7,7 @@ dev_langs:
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
 ---
 # Retrieving Binary Data
+
 By default, the **DataReader** loads incoming data as a row as soon as an entire row of data is available. Binary large objects (BLOBs) need different treatment, however, because they can contain gigabytes of data that cannot be contained in a single row. The **Command.ExecuteReader** method has an overload that will take a <xref:System.Data.CommandBehavior> argument to modify the default behavior of the **DataReader**. You can pass <xref:System.Data.CommandBehavior.SequentialAccess> to the **ExecuteReader** method to modify the default behavior of the **DataReader** so that instead of loading rows of data, it will load data sequentially as it is received. This is ideal for loading BLOBs or other large data structures. Note that this behavior may depend on your data source. For example, returning a BLOB from Microsoft Access will load the entire BLOB being loaded into memory, rather than sequentially as it is received.  
   
  When setting the **DataReader** to use **SequentialAccess**, it is important to note the sequence in which you access the fields returned. The default behavior of the **DataReader**, which loads an entire row as soon as it is available, allows you to access the fields returned in any order until the next row is read. When using **SequentialAccess** however, you must access the fields returned by the **DataReader** in order. For example, if your query returns three columns, the third of which is a BLOB, you must return the values of the first and second fields before accessing the BLOB data in the third field. If you access the third field before the first or second fields, the first and second field values are no longer available. This is because **SequentialAccess** has modified the **DataReader** to return data in sequence and the data is not available after the **DataReader** has read past it.  
@@ -14,6 +15,7 @@ By default, the **DataReader** loads incoming data as a row as soon as an entire
  When accessing the data in the BLOB field, use the **GetBytes** or **GetChars** typed accessors of the **DataReader**, which fill an array with data. You can also use **GetString** for character data; however. to conserve system resources you might not want to load an entire BLOB value into a single string variable. You can instead specify a specific buffer size of data to be returned, and a starting location for the first byte or character to be read from the returned data. **GetBytes** and **GetChars** will return a `long` value, which represents the number of bytes or characters returned. If you pass a null array to **GetBytes** or **GetChars**, the long value returned will be the total number of bytes or characters in the BLOB. You can optionally specify an index in the array as a starting position for the data being read.  
   
 ## Example  
+
  The following example returns the publisher ID and logo from the **pubs** sample database in Microsoft SQL Server. The publisher ID (`pub_id`) is a character field, and the logo is an image, which is a BLOB. Because the **logo** field is a bitmap, the example returns binary data using **GetBytes**. Notice that the publisher ID is accessed for the current row of data before the logo, because the fields must be accessed sequentially.  
   
 ```vb  
@@ -22,20 +24,20 @@ Dim command As SqlCommand = New SqlCommand( _
   "SELECT pub_id, logo FROM pub_info", connection)  
   
 ' Writes the BLOB to a file (*.bmp).  
-Dim stream As FileStream                   
+Dim stream As FileStream
 ' Streams the binary data to the FileStream object.  
-Dim writer As BinaryWriter                 
+Dim writer As BinaryWriter
 ' The size of the BLOB buffer.  
-Dim bufferSize As Integer = 100        
+Dim bufferSize As Integer = 100
 ' The BLOB byte() buffer to be filled by GetBytes.  
-Dim outByte(bufferSize - 1) As Byte    
+Dim outByte(bufferSize - 1) As Byte
 ' The bytes returned from GetBytes.  
-Dim retval As Long                     
+Dim retval As Long
 ' The starting position in the BLOB output.  
-Dim startIndex As Long = 0             
+Dim startIndex As Long = 0
   
 ' The publisher id to use in the file name.  
-Dim pubID As String = ""              
+Dim pubID As String = ""
   
 ' Open the connection and read data into the DataReader.  
 connection.Open()  
@@ -86,21 +88,21 @@ SqlCommand command = new SqlCommand(
   "SELECT pub_id, logo FROM pub_info", connection);  
   
 // Writes the BLOB to a file (*.bmp).  
-FileStream stream;                            
+FileStream stream;
 // Streams the BLOB to the FileStream object.  
-BinaryWriter writer;                          
+BinaryWriter writer;
   
 // Size of the BLOB buffer.  
-int bufferSize = 100;                     
+int bufferSize = 100;
 // The BLOB byte[] buffer to be filled by GetBytes.  
-byte[] outByte = new byte[bufferSize];    
+byte[] outByte = new byte[bufferSize];
 // The bytes returned from GetBytes.  
-long retval;                              
+long retval;
 // The starting position in the BLOB output.  
-long startIndex = 0;                      
+long startIndex = 0;
   
 // The publisher id to use in the file name.  
-string pubID = "";                       
+string pubID = "";
   
 // Open the connection and read data into the DataReader.  
 connection.Open();  
@@ -109,7 +111,7 @@ SqlDataReader reader = command.ExecuteReader(CommandBehavior.SequentialAccess);
 while (reader.Read())  
 {  
   // Get the publisher id, which must occur before getting the logo.  
-  pubID = reader.GetString(0);    
+  pubID = reader.GetString(0);
   
   // Create a file to hold the output.  
   stream = new FileStream(  

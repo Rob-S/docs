@@ -1,5 +1,6 @@
 ---
 title: "<system.Net> Element (Network Settings)"
+description: The <system.Net> network settings element contains settings that specify how the .NET Framework connects to the network options in the .NET Framework.
 ms.date: "03/30/2017"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#system.Net"
@@ -10,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
 ---
 # \<system.Net> Element (Network Settings)
+
 Contains settings that specify how the .NET Framework connects to the network.  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -18,14 +20,16 @@ Contains settings that specify how the .NET Framework connects to the network.
 ## Syntax  
   
 ```xml  
-<system.net>   
+<system.net>
 </system.net>  
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
+
  None.  
   
 ### Child Elements  
@@ -47,9 +51,11 @@ Contains settings that specify how the .NET Framework connects to the network.
 |[configuration](../configuration-element.md)|Contains settings for all namespaces.|  
   
 ## Remarks  
+
  The [\<system.net>](system-net-element-network-settings.md) element contains settings for classes in the <xref:System.Net> and related child namespaces. The settings configure authentication modules, connection management, mail settings, the proxy server, and Internet request modules for receiving information from Internet hosts.  
   
 ## Example  
+
  The following example shows a typical configuration used by <xref:System.Net> classes.  
   
 ```xml  

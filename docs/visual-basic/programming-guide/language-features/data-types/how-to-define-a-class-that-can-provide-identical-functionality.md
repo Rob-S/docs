@@ -28,6 +28,7 @@ helpviewer_keywords:
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
 ---
 # How to: Define a Class That Can Provide Identical Functionality on Different Data Types (Visual Basic)
+
 You can define a class from which you can create objects that provide identical functionality on different data types. To do this, you specify one or more *type parameters* in the definition. The class can then serve as a template for objects that use various data types. A class defined in this way is called a *generic class*.  
   
  The advantage of defining a generic class is that you define it just once, and your code can use it to create many objects that use a wide variety of data types. This results in better performance than defining the class with the `Object` type.  
@@ -50,7 +51,7 @@ You can define a class from which you can create objects that provide identical 
   
     - Exposes a parameterless constructor  
   
-     If you do not specify any constraints, the only operations and members your code can use are those supported by the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md). For more information, see [Type List](../../../../visual-basic/language-reference/statements/type-list.md).  
+     If you do not specify any constraints, the only operations and members your code can use are those supported by the [Object Data Type](../../../language-reference/data-types/object-data-type.md). For more information, see [Type List](../../../language-reference/statements/type-list.md).  
   
 5. Identify every class member that is to be declared with a supplied type, and declare it `As` `typeparameter`. This applies to internal storage, procedure parameters, and return values.  
   
@@ -70,10 +71,10 @@ You can define a class from which you can create objects that provide identical 
   
 ## See also
 
-- [Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Data Types](index.md)
+- [Generic Types in Visual Basic](generic-types.md)
 - [Language Independence and Language-Independent Components](../../../../standard/language-independence-and-language-independent-components.md)
-- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
-- [Type List](../../../../visual-basic/language-reference/statements/type-list.md)
-- [How to: Use a Generic Class](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Of](../../../language-reference/statements/of-clause.md)
+- [Type List](../../../language-reference/statements/type-list.md)
+- [How to: Use a Generic Class](how-to-use-a-generic-class.md)
+- [Object Data Type](../../../language-reference/data-types/object-data-type.md)

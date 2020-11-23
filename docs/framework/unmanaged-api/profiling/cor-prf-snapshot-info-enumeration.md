@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # COR_PRF_SNAPSHOT_INFO Enumeration
-Specifies how much data to pass back with a stack snapshot in each call to the profiler's [StackSnapshotCallback](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md) function.  
+
+Specifies how much data to pass back with a stack snapshot in each call to the profiler's [StackSnapshotCallback](stacksnapshotcallback-function.md) function.  
   
 ## Syntax  
   
@@ -37,10 +38,12 @@ typedef enum _COR_PRF_SNAPSHOT_INFO {
 |`COR_PRF_SNAPSHOT_X86_OPTIMIZED`|Indicates that a simpler, alternative stack-walking algorithm will be used.|  
   
 ## Remarks  
- Values that are provided by the `COR_PRF_SNAPSHOT_INFO` enumeration are passed as parameters to the [DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method.  
+
+ Values that are provided by the `COR_PRF_SNAPSHOT_INFO` enumeration are passed as parameters to the [DoStackSnapshot](icorprofilerinfo2-dostacksnapshot-method.md) method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -50,5 +53,5 @@ typedef enum _COR_PRF_SNAPSHOT_INFO {
   
 ## See also
 
-- [DoStackSnapshot Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md)
-- [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [DoStackSnapshot Method](icorprofilerinfo2-dostacksnapshot-method.md)
+- [Profiling Enumerations](profiling-enumerations.md)

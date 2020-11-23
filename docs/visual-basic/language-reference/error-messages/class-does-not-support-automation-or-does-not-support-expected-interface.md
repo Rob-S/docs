@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: d985bb7e-e48e-443e-86f2-ddb86758757c
 ---
 # Class does not support Automation or does not support expected interface
+
 Either the class you specified in the `GetObject` or `CreateObject` function call has not exposed a programmability interface, or you changed a project from .dll to .exe, or vice versa.  
   
 ## To correct this error  
@@ -16,5 +17,5 @@ Either the class you specified in the `GetObject` or `CreateObject` function cal
   
 ## See also
 
-- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../../programming-guide/language-features/error-types.md)
 - [Talk to Us](/visualstudio/ide/feedback-options)

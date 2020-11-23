@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRAppDomainResourceMonitor::GetCurrentCpuTime Method
+
 Gets the total processor time that has been used by all threads while executing in the current application domain, since the application domain was created.  
   
 ## Syntax  
@@ -27,6 +28,7 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
 ```  
   
 ## Parameters  
+
  `dwAppDomainId`  
  [in] The ID of the requested application domain.  
   
@@ -42,10 +44,12 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
 |E_FAIL|Application domain resource monitoring is not enabled.<br /><br /> -or-<br /><br /> All other failures.|  
   
 ## Remarks  
+
  This method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> property.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -55,7 +59,7 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
   
 ## See also
 
-- [ICLRAppDomainResourceMonitor Interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRAppDomainResourceMonitor Interface](iclrappdomainresourcemonitor-interface.md)
+- [Hosting Interfaces](hosting-interfaces.md)
 - [Application Domain Resource Monitoring](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [Hosting](index.md)

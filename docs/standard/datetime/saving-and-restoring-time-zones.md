@@ -1,21 +1,20 @@
 ---
 title: "Saving and restoring time zones"
 ms.date: "04/10/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
   - "restoring time zones"
-  - "deserialization [.NET Framework], time zones"
-  - "serialization [.NET Framework], time zones"
-  - "time zone objects [.NET Framework], restoring"
+  - "deserialization [.NET], time zones"
+  - "serialization [.NET], time zones"
+  - "time zone objects [.NET], restoring"
   - "saving time zones"
-  - "time zone objects [.NET Framework], deserializing"
-  - "time zones [.NET Framework], saving"
-  - "time zones [.NET Framework], restoring"
-  - "time zone objects [.NET Framework], serializing"
-  - "time zone objects [.NET Framework], saving"
+  - "time zone objects [.NET], deserializing"
+  - "time zones [.NET], saving"
+  - "time zones [.NET], restoring"
+  - "time zone objects [.NET], serializing"
+  - "time zone objects [.NET], saving"
 ms.assetid: 4028b310-e7ce-49d4-a646-1e83bfaf6f9d
 ---
 # Saving and restoring time zones
@@ -64,8 +63,8 @@ The previous examples have stored time zone information to a string variable and
 
 Storing a serialized time zone string in this manner also separates the time zone creation routine from the application itself. For example, a time zone creation routine can execute and create a data file that contains historical time zone information that an application can use. The data file can be then be installed with the application, and it can be opened and one or more of its time zones can be deserialized when the application requires them.
 
-For an example that uses an embedded resource to store serialized time zone data, see [How to: Save time zones to an embedded resource](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) and [How to: Restore time zones from an embedded resource](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
+For an example that uses an embedded resource to store serialized time zone data, see [How to: Save time zones to an embedded resource](save-time-zones-to-an-embedded-resource.md) and [How to: Restore time zones from an embedded resource](restore-time-zones-from-an-embedded-resource.md).
 
 ## See also
 
-- [Dates, times, and time zones](../../../docs/standard/datetime/index.md)
+- [Dates, times, and time zones](index.md)

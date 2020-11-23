@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedReader::GetMethodFromDocumentPosition Method
+
 Returns the method that contains the breakpoint at the given position in a document.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT GetMethodFromDocumentPosition (
 ```  
   
 ## Parameters  
+
  `document`  
  [in] The specified document.  
   
@@ -40,14 +42,16 @@ HRESULT GetMethodFromDocumentPosition (
  [in] The column of the specified document.  
   
  `pRetVal`  
- [out] A pointer to the address of a [ISymUnmanagedMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents the method containing the breakpoint.  
+ [out] A pointer to the address of a [ISymUnmanagedMethod Interface](isymunmanagedmethod-interface.md) object that represents the method containing the breakpoint.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedReader Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader Interface](isymunmanagedreader-interface.md)

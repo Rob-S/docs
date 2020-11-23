@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::ExitAppDomain Method
+
 Notifies the debugger that an application domain has exited.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT ExitAppDomain (
 ```  
   
 ## Parameters  
+
  `pProcess`  
  [in] A pointer to an ICorDebugProcess object that represents the process that contains the given application domain.  
   
@@ -36,7 +38,8 @@ HRESULT ExitAppDomain (
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain that has exited.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -46,4 +49,4 @@ HRESULT ExitAppDomain (
   
 ## See also
 
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

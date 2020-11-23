@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::RemotingServerReceivingMessage Method
+
 Notifies the profiler that the process has received a remote method invocation or activation request.  
   
 ## Syntax  
@@ -28,8 +29,9 @@ HRESULT RemotingClientSendingMessage(
 ```  
   
 ## Parameters  
+
  `pCookie`  
- [in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingClientSendingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) under these conditions:  
+ [in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingClientSendingMessage](icorprofilercallback-remotingclientsendingmessage-method.md) under these conditions:  
   
 - Remoting GUID cookies are active.  
   
@@ -43,10 +45,12 @@ HRESULT RemotingClientSendingMessage(
  [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
   
 ## Remarks  
+
  If the message request is asynchronous, the request can be serviced by any arbitrary thread.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -56,4 +60,4 @@ HRESULT RemotingClientSendingMessage(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

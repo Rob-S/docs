@@ -1,33 +1,33 @@
 ---
 title: "How to: Define and Use Custom Numeric Format Providers"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
-  - "numeric format strings [.NET Framework]"
-  - "formatting [.NET Framework], numbers"
-  - "number formatting [.NET Framework]"
+  - "numeric format strings [.NET]"
+  - "formatting [.NET], numbers"
+  - "number formatting [.NET]"
   - "custom numeric format strings"
-  - "numbers [.NET Framework], custom numeric format strings"
+  - "numbers [.NET], custom numeric format strings"
   - "displaying date and time data"
-  - "format providers [.NET Framework]"
+  - "format providers [.NET]"
   - "custom format strings"
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
 ---
 # How to: Define and Use Custom Numeric Format Providers
-The .NET Framework gives you extensive control over the string representation of numeric values. It supports the following features for customizing the format of numeric values:  
+
+.NET gives you extensive control over the string representation of numeric values. It supports the following features for customizing the format of numeric values:  
   
-- Standard numeric format strings, which provide a predefined set of formats for converting numbers to their string representation. You can use them with any numeric formatting method, such as <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, that has a `format` parameter. For details, see [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
+- Standard numeric format strings, which provide a predefined set of formats for converting numbers to their string representation. You can use them with any numeric formatting method, such as <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, that has a `format` parameter. For details, see [Standard Numeric Format Strings](standard-numeric-format-strings.md).  
   
-- Custom numeric format strings, which provide a set of symbols that can be combined to define custom numeric format specifiers. They can also be used with any numeric formatting method, such as <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, that has a `format` parameter. For details, see [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).  
+- Custom numeric format strings, which provide a set of symbols that can be combined to define custom numeric format specifiers. They can also be used with any numeric formatting method, such as <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, that has a `format` parameter. For details, see [Custom Numeric Format Strings](custom-numeric-format-strings.md).  
   
 - Custom <xref:System.Globalization.CultureInfo> or <xref:System.Globalization.NumberFormatInfo> objects, which define the symbols and format patterns used in displaying the string representations of numeric values. You can use them with any numeric formatting method, such as <xref:System.Int32.ToString%2A>, that has a `provider` parameter. Typically, the `provider` parameter is used to specify culture-specific formatting.  
   
- In some cases (such as when an application must display a formatted account number, an identification number, or a postal code) these three techniques are inappropriate. The .NET Framework also enables you to define a formatting object that is neither a <xref:System.Globalization.CultureInfo> nor a <xref:System.Globalization.NumberFormatInfo> object to determine how a numeric value is formatted. This topic provides the step-by-step instructions for implementing such an object, and provides an example that formats telephone numbers.  
+ In some cases (such as when an application must display a formatted account number, an identification number, or a postal code) these three techniques are inappropriate. .NET also enables you to define a formatting object that is neither a <xref:System.Globalization.CultureInfo> nor a <xref:System.Globalization.NumberFormatInfo> object to determine how a numeric value is formatted. This topic provides the step-by-step instructions for implementing such an object, and provides an example that formats telephone numbers.  
   
-### To define a custom format provider  
+## Define a custom format provider  
   
 1. Define a class that implements the <xref:System.IFormatProvider> and <xref:System.ICustomFormatter> interfaces.  
   
@@ -49,13 +49,14 @@ The .NET Framework gives you extensive control over the string representation of
   
     4. Return the string representation of the `arg` parameter.  
   
-### To use a custom numeric formatting object  
+## Use a custom numeric formatting object  
   
 1. Create a new instance of the custom formatting class.  
   
 2. Call the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> formatting method, passing it the custom formatting object, the formatting specifier (or <xref:System.String.Empty?displayProperty=nameWithType>, if one is not used), and the numeric value to be formatted.  
   
-## Example  
+## Example
+
  The following example defines a custom numeric format provider named `TelephoneFormatter` that converts a number that represents a U.S. telephone number to its NANP or E.123 format. The method handles two format specifiers, "N" (which outputs the NANP format) and "I" (which outputs the international E.123 format).  
   
  [!code-csharp[Formatting.HowTo.NumericValue#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#1)]
@@ -78,8 +79,4 @@ The .NET Framework gives you extensive control over the string representation of
  [!code-csharp[System.ICustomFormatter.Format#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.ICustomFormatter.Format/cs/format.cs#1)]
  [!code-vb[System.ICustomFormatter.Format#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ICustomFormatter.Format/vb/Format.vb#1)]  
   
- In the case of this example, the method that implements <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> is intended to serve as a callback method for the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method. Therefore, it examines the `formatProvider` parameter to determine whether it contains a reference to the current `TelephoneFormatter` object. However, the method can also be called directly from code. In that case, you can use the `formatProvider` parameter to provide a <xref:System.Globalization.CultureInfo> or <xref:System.Globalization.NumberFormatInfo> object that supplies culture-specific formatting information.  
-  
-## See also
-
-- [Performing Formatting Operations](../../../docs/standard/base-types/performing-formatting-operations.md)
+ In the case of this example, the method that implements <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> is intended to serve as a callback method for the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method. Therefore, it examines the `formatProvider` parameter to determine whether it contains a reference to the current `TelephoneFormatter` object. However, the method can also be called directly from code. In that case, you can use the `formatProvider` parameter to provide a <xref:System.Globalization.CultureInfo> or <xref:System.Globalization.NumberFormatInfo> object that supplies culture-specific formatting information.

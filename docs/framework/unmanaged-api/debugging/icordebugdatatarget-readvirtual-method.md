@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugDataTarget::ReadVirtual Method
+
 Gets a block of contiguous memory starting at the specified address, and returns it in the supplied buffer.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT ReadVirtual(
 ```  
   
 ## Parameters  
+
  `address`  
  [in] The start address of requested memory.  
   
@@ -44,10 +46,12 @@ HRESULT ReadVirtual(
  [out] The number of bytes actually read from the target address. This can be fewer than `bytesRequested`.  
   
 ## Remarks  
+
  If the first byte (at the specified start address) can be read, the call should return success (to support efficient reading of data structures with self-describing length, like null-terminated strings).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -57,6 +61,6 @@ HRESULT ReadVirtual(
   
 ## See also
 
-- [ICorDebugDataTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget Interface](icordebugdatatarget-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

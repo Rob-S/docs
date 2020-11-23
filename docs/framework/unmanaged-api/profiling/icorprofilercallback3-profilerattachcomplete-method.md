@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback3::ProfilerAttachComplete Method
-Called by the common language runtime (CLR) to indicate that the profiler can now call the [ICorProfilerInfo3::EnumJITedFunctions](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enumjitedfunctions-method.md) and [ICorProfilerInfo3::EnumModules](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enummodules-method.md) catch-up methods.  
+
+Called by the common language runtime (CLR) to indicate that the profiler can now call the [ICorProfilerInfo3::EnumJITedFunctions](icorprofilerinfo3-enumjitedfunctions-method.md) and [ICorProfilerInfo3::EnumModules](icorprofilerinfo3-enummodules-method.md) catch-up methods.  
   
 ## Syntax  
   
@@ -26,7 +27,8 @@ HRESULT ProfilerAttachComplete ();
 ```  
   
 ## Remarks  
- The `ProfilerAttachComplete` callback is issued after the [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) method is called. It indicates the following:  
+
+ The `ProfilerAttachComplete` callback is issued after the [ICorProfilerCallback3::InitializeForAttach](icorprofilercallback3-initializeforattach-method.md) method is called. It indicates the following:  
   
 - The callbacks that were requested by the profiler in `InitializeForAttach` have been activated.  
   
@@ -35,7 +37,8 @@ HRESULT ProfilerAttachComplete ();
  The CLR ignores the return value from this callback.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -45,7 +48,7 @@ HRESULT ProfilerAttachComplete ();
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ICorProfilerInfo3 Interface](icorprofilerinfo3-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)
+- [Profiling](index.md)

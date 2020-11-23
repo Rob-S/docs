@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::COMClassicVTableDestroyed Method
+
 Notifies the profiler that a COM interop vtable is being destroyed.  
   
 > [!NOTE]
@@ -31,23 +32,29 @@ HRESULT COMClassicVTableDestroyed(
     [in] void    *pVTable);  
 ```  
   
-## Parameters  
- `wrappedClassId`  
- [in] The ID of the class for which this vtable was created.  
-  
- `implementedIID`  
- [in] The ID of the interface implemented by the class. This value may be NULL if the interface is internal only.  
-  
- `pVTable`  
- [in] A pointer to the start of the vtable.  
-  
+## Parameters
+
+- `wrappedClassId`
+
+  \[in] The ID of the class for which this vtable was created.
+
+- `implementedIID`
+
+  \[in] The ID of the interface implemented by the class. This value may be NULL if the interface is internal only.
+
+- `pVTable`
+
+  \[in] A pointer to the start of the vtable.
+
 ## Remarks  
+
  The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
   
  The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -57,5 +64,5 @@ HRESULT COMClassicVTableDestroyed(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [COMClassicVTableCreated Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-comclassicvtablecreated-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [COMClassicVTableCreated Method](icorprofilercallback-comclassicvtablecreated-method.md)

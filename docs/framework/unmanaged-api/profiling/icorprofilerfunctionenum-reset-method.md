@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerFunctionEnum::Reset Method
+
 Moves the enumerator's cursor to the starting position of the sequence.  
   
 ## Syntax  
@@ -26,7 +27,8 @@ HRESULT Reset();
 ```  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -36,5 +38,5 @@ HRESULT Reset();
   
 ## See also
 
-- [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerFunctionEnum Interface](icorprofilerfunctionenum-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)

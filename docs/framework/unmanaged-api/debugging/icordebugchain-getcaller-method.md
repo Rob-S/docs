@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugChain::GetCaller Method
+
 Gets the chain that called this chain.  
   
 ## Syntax  
@@ -28,16 +29,19 @@ HRESULT GetCaller (
 ```  
   
 ## Parameters  
+
  `ppChain`  
  [out] A pointer to the address of an ICorDebugChain object that represents the calling chain.  
   
  If this chain was spontaneously called (as would be the case if this chain or the debugger initialized the call stack), `ppChain` will be null.  
   
 ## Remarks  
+
  The calling chain may be on a different thread, if the call was marshaled across threads.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IHostSyncManager::CreateSemaphore Method
-Creates an [IHostSemaphore](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md) object for the common language runtime (CLR) to use as a semaphore for wait events.  
+
+Creates an [IHostSemaphore](ihostsemaphore-interface.md) object for the common language runtime (CLR) to use as a semaphore for wait events.  
   
 ## Syntax  
   
@@ -30,6 +31,7 @@ HRESULT CreateSemaphore (
 ```  
   
 ## Parameters  
+
  `dwInitial`  
  [in] The initial count for `ppSemaphore`.  
   
@@ -52,10 +54,12 @@ HRESULT CreateSemaphore (
 |E_OUTOFMEMORY|Not enough memory was available to create the requested event object.|  
   
 ## Remarks  
+
  `CreateSemaphore` mirrors the Win32 function that has the same name. The `dwInitial` and `dwMax` parameters use the same semantics for the semaphore count as the Win32 `lInitialCount` and `lMaximumCount` parameters, respectively. `dwInitial` must be between zero and `dwMax`, inclusive. `dwMax` must be greater than zero.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -65,6 +69,6 @@ HRESULT CreateSemaphore (
   
 ## See also
 
-- [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostSemaphore Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)
-- [IHostSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager Interface](iclrsyncmanager-interface.md)
+- [IHostSemaphore Interface](ihostsemaphore-interface.md)
+- [IHostSyncManager Interface](ihostsyncmanager-interface.md)

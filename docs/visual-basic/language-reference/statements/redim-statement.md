@@ -28,6 +28,7 @@ helpviewer_keywords:
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
 ---
 # ReDim Statement (Visual Basic)
+
 Reallocates storage space for an array variable.  
   
 ## Syntax  
@@ -41,15 +42,16 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
 |Term|Definition|  
 |----------|----------------|  
 |`Preserve`|Optional. Modifier used to preserve the data in the existing array when you change the size of only the last dimension.|  
-|`name`|Required. Name of the array variable. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`name`|Required. Name of the array variable. See [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`boundlist`|Required. List of bounds of each dimension of the redefined array.|  
   
 ## Remarks  
+
  You can use the `ReDim` statement to change the size of one or more dimensions of an array that has already been declared. If you have a large array and you no longer need some of its elements, `ReDim` can free up memory by reducing the array size. On the other hand, if your array needs more elements, `ReDim` can add them.  
   
  The `ReDim` statement is intended only for arrays. It's not valid on scalars (variables that contain only a single value), collections, or structures. Note that if you declare a variable to be of type `Array`, the `ReDim` statement doesn't have sufficient type information to create the new array.  
   
- You can use `ReDim` only at procedure level. Therefore, the declaration context for the variable must be a procedure; it can't be a source file, a namespace, an interface, a class, a structure, a module, or a block. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ You can use `ReDim` only at procedure level. Therefore, the declaration context for the variable must be a procedure; it can't be a source file, a namespace, an interface, a class, a structure, a module, or a block. For more information, see [Declaration Contexts and Default Access Levels](declaration-contexts-and-default-access-levels.md).  
   
 ## Rules  
   
@@ -80,6 +82,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
 - **Initialization with Preserve.** If you specify `Preserve`, Visual Basic copies the elements from the existing array to the new array.  
   
 ## Example  
+
  The following example increases the size of the last dimension of a dynamic array without losing any existing data in the array, and then decreases the size with partial data loss. Finally, it decreases the size back to its original value and reinitializes all the array elements.  
   
  [!code-vb[VbVbalrStatements#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#52)]  
@@ -92,13 +95,13 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
  The third `ReDim` creates another new array and removes another five columns from the end of every row in every layer. This time it does not copy any existing elements. This statement reverts the array to its original size. Because the statement doesn't include the `Preserve` modifier, it sets all array elements to their original default values.  
   
- For additional examples, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ For additional examples, see [Arrays](../../programming-guide/language-features/arrays/index.md).  
   
 ## See also
 
 - <xref:System.IndexOutOfRangeException>
-- [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md)
-- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)
-- [Erase Statement](../../../visual-basic/language-reference/statements/erase-statement.md)
-- [Nothing](../../../visual-basic/language-reference/nothing.md)
-- [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Const Statement](const-statement.md)
+- [Dim Statement](dim-statement.md)
+- [Erase Statement](erase-statement.md)
+- [Nothing](../nothing.md)
+- [Arrays](../../programming-guide/language-features/arrays/index.md)

@@ -16,18 +16,19 @@ topic_type:
   - "Reference"
 ---
 # DeleteMethod function
+
 Deletes the specified method from a CIM class definition.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
   
 ```cpp  
 HRESULT Delete (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr, 
-   [in] LPCWSTR           wszName 
-); 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr,
+   [in] LPCWSTR           wszName
+);
 ```  
 
 ## Parameters
@@ -58,6 +59,7 @@ This function wraps a call to the [IWbemClassObject::DeleteMethod](/windows/desk
 Method deletion is not supported for [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointers that point to CIM instances.
 
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** WMINet_Utils.idl  

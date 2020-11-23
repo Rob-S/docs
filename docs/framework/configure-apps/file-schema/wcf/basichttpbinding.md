@@ -1,11 +1,13 @@
 ---
 title: "<basicHttpBinding>"
+description: Defines a binding that a WCF service can use to configure and expose endpoints to communicate with services conforming to the WS-I Basic Profile 1.1.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "basicHttpBinding Element"
 ms.assetid: 85cf1a4f-26c2-48c7-bda6-6c960d5d3fb3
 ---
 # \<basicHttpBinding>
+
 Represents a binding that a Windows Communication Foundation (WCF) service can use to configure and expose endpoints that are able to communicate with ASMX-based Web services and clients and other services that conform to the WS-I Basic Profile 1.1.  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -50,6 +52,7 @@ Represents a binding that a Windows Communication Foundation (WCF) service can u
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
@@ -57,7 +60,7 @@ Represents a binding that a Windows Communication Foundation (WCF) service can u
 |Attribute|Description|  
 |---------------|-----------------|  
 |`allowCookies`|A Boolean value that indicates whether the client accepts cookies and propagates them on future requests. The default is `false`.<br /><br /> You can use this property when you interact with ASMX Web services that use cookies. In this way, you can be sure that the cookies returned from the server are automatically copied to all future client requests for that service.|  
-|`bypassProxyOnLocal`|A Boolean value that indicates whether to bypass the proxy server for local addresses. The default is `false`.<br /><br /> An Internet resource is local if it has a local address. A local address is one that is on same computer, the local LAN or intranet and is identified, syntactically, by the lack of a period (.) as in the URIs "http://webserver/" and "http://localhost/".<br /><br /> Setting this attribute determines whether endpoints configured with the BasicHttpBinding use the proxy server when accessing local resources. If this attribute is `true`, requests to local Internet resources do not use the proxy server. Use the host name (rather than localhost) if you want clients to go through a proxy when talking to services on the same machine when this attribute is set to `true`.<br /><br /> When this attribute is `false`, all Internet requests are made through the proxy server.|  
+|`bypassProxyOnLocal`|A Boolean value that indicates whether to bypass the proxy server for local addresses. The default is `false`.<br /><br /> An Internet resource is local if it has a local address. A local address is one that is on same computer, the local LAN or intranet and is identified, syntactically, by the lack of a period (.) as in the URIs `http://webserver/` and `http://localhost/`.<br /><br /> Setting this attribute determines whether endpoints configured with the BasicHttpBinding use the proxy server when accessing local resources. If this attribute is `true`, requests to local Internet resources do not use the proxy server. Use the host name (rather than localhost) if you want clients to go through a proxy when talking to services on the same machine when this attribute is set to `true`.<br /><br /> When this attribute is `false`, all Internet requests are made through the proxy server.|  
 |`closeTimeout`|A <xref:System.TimeSpan> value that specifies the interval of time provided for a close operation to complete. This value should be greater than or equal to <xref:System.TimeSpan.Zero>. The default is 00:01:00.|  
 |`hostNameComparisonMode`|Specifies the HTTP hostname comparison mode used to parse URIs. This attribute is of type <xref:System.ServiceModel.HostNameComparisonMode>, which indicates whether the hostname is used to reach the service when matching on the URI. The default value is <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, which ignores the hostname in the match.|  
 |`maxBufferPoolSize`|An integer value that specifies the maximum amount of memory that is allocated for use by the manager of the message buffers that receive messages from the channel. The default value is 524288 (0x80000) bytes.<br /><br /> The Buffer Manager minimizes the cost of using buffers by using a buffer pool. Buffers are required to process messages by the service when they come out of the channel. If there is not sufficient memory in the buffer pool to process the message load, the Buffer Manager must allocate additional memory from the CLR heap, which increases the garbage collection overhead. Extensive allocation from the CLR garbage heap is an indication that the buffer pool size is too small and that performance can be improved with a larger allocation by increasing the limit specified by this attribute.|  
@@ -78,7 +81,7 @@ Represents a binding that a Windows Communication Foundation (WCF) service can u
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](security-of-basichttpbinding.md)|Defines the security settings for the binding. This element is of type <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding. This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding. This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### Parent Elements  
   
@@ -87,11 +90,13 @@ Represents a binding that a Windows Communication Foundation (WCF) service can u
 |[\<bindings>](bindings.md)|This element holds a collection of standard and custom bindings.|  
   
 ## Remarks  
+
  The BasicHttpBinding uses HTTP as the transport for sending SOAP 1.1 messages. A service can use this binding to expose endpoints that conform to WS-I BP 1.1, such as those that ASMX clients consume. Similarly, a client can use the BasicHttpBinding to communicate with services exposing endpoints that conform to WS-I BP 1.1, such as ASMX Web services or services configured with the BasicHttpBinding.  
   
  Security is turned off by default, but can be added setting the mode attribute of the [\<security>](security-of-basichttpbinding.md) child element to a value other than `None`. It uses a "Text" message encoding and UTF-8 text encoding by default.  
   
 ## Example  
+
  The following example demonstrates the use of <xref:System.ServiceModel.BasicHttpBinding> that provides HTTP communication and maximum interoperability with first- and second-generation Web services. The binding is specified in the configuration files for the client and service. The binding type is specified using the `binding` attribute of the `<endpoint>` element. If you want to configure the basic binding and change some of its settings, it is necessary to define a binding configuration. The endpoint must reference the binding configuration by name by using the `bindingConfiguration` attribute of the `<endpoint>` element, as shown in the following configuration code for the service.  
   
 ```xml  
@@ -129,6 +134,7 @@ Represents a binding that a Windows Communication Foundation (WCF) service can u
 ```  
   
 ## Example  
+
  Starting with .NET Framework 4, bindings and behaviors are not required to have a name. The functionality from the previous example can be accomplished by removing the bindingConfiguration from the endpoint address and the name from the binding.  
   
 ```xml  

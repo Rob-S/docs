@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 3c564396-ac64-4ef3-b4f6-df96f1d46fc7
 ---
 # ICorDebugSymbolProvider::GetObjectSize Method
+
 Returns the object size for an object based on its typespec signature.  
   
 ## Syntax  
@@ -17,6 +18,7 @@ HRESULT GetObjectSize(
 ```  
   
 ## Parameters  
+
  `cbSignature`  
  [in] The number of bytes in the typespec signature.  
   
@@ -32,7 +34,8 @@ HRESULT GetObjectSize(
 > This method is available with .NET Native only.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,5 +45,5 @@ HRESULT GetObjectSize(
   
 ## See also
 
-- [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider Interface](icordebugsymbolprovider-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)

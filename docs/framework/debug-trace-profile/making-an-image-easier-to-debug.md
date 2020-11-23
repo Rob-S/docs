@@ -7,8 +7,6 @@ helpviewer_keywords:
   - "executable image for debugging"
   - "debugging [.NET Framework], executable images for"
 ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # Making an image easier to debug in .NET
@@ -52,4 +50,4 @@ The **DebuggableAttribute** applies to a whole assembly at a time, not to indivi
 
 - [Debugging, Tracing, and Profiling](index.md)
 - [Enabling JIT-Attach Debugging](enabling-jit-attach-debugging.md)
-- [Enabling Profiling](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/s5ec0es1(v=vs.100))
+- [Enabling Profiling](/previous-versions/dotnet/netframework-4.0/s5ec0es1(v=vs.100))

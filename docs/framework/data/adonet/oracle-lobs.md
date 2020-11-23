@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
 ---
 # Oracle LOBs
+
 The .NET Framework Data Provider for Oracle includes the <xref:System.Data.OracleClient.OracleLob> class, which is used to work with Oracle **LOB** data types.  
   
  An **OracleLob** may be one of these <xref:System.Data.OracleClient.OracleType> data types:  
@@ -17,13 +18,14 @@ The .NET Framework Data Provider for Oracle includes the <xref:System.Data.Oracl
  An **OracleLob** differs from an <xref:System.Data.OracleClient.OracleBFile> in that the data is stored on the server instead of in a physical file in the operating system. It can also be a read-write object, unlike an **OracleBFile**, which is always read-only.  
   
 ## Creating, Retrieving, and Writing to a LOB  
+
  The following C# example demonstrates how you can create LOBs in an Oracle table, and then retrieve and write to them in the form of **OracleLob** objects. The example demonstrates using the <xref:System.Data.OracleClient.OracleDataReader> object and the **OracleLob** **Read** and **Write** methods. The example uses Oracle **BLOB**, **CLOB**, and **NCLOB** data types.  
   
 ```csharp  
 using System;  
-using System.IO;              
-using System.Text;             
-using System.Data;              
+using System.IO;
+using System.Text;
+using System.Data;
 using System.Data.OracleClient;  
   
 // LobExample  
@@ -77,31 +79,31 @@ public class LobExample
          //Example - Reading binary data (in chunks).  
          byte[] buffer = new byte[100];  
          while((actual = blob.Read(buffer, 0, buffer.Length)) >0)  
-            Console.WriteLine(blob.LobType + ".Read(" + buffer + ", " +   
+            Console.WriteLine(blob.LobType + ".Read(" + buffer + ", " +
               buffer.Length + ") => " + actual);  
   
          // Example - Reading CLOB/NCLOB data (in chunks).  
-         // Note: You can read character data as raw Unicode bytes   
+         // Note: You can read character data as raw Unicode bytes
          // (using OracleLob.Read as in the above example).  
-         // However, because the OracleLob object inherits directly   
-         // from the .NET stream object,   
-         // all the existing classes that manipluate streams can   
-         // also be used. For example, the   
-         // .NET StreamReader makes it easier to convert the raw bytes   
+         // However, because the OracleLob object inherits directly
+         // from the .NET stream object,
+         // all the existing classes that manipluate streams can
+         // also be used. For example, the
+         // .NET StreamReader makes it easier to convert the raw bytes
          // into actual characters.  
-         StreamReader streamreader =   
+         StreamReader streamreader =
            new StreamReader(clob, Encoding.Unicode);  
          char[] cbuffer = new char[100];  
-         while((actual = streamreader.Read(cbuffer,   
+         while((actual = streamreader.Read(cbuffer,
            0, cbuffer.Length)) >0)  
             Console.WriteLine(clob.LobType + ".Read(  
-              " + new string(cbuffer, 0, actual) + ", " +   
+              " + new string(cbuffer, 0, actual) + ", " +
               cbuffer.Length + ") => " + actual);  
   
          // Example - Reading data (all at once).  
-         // You could use StreamReader.ReadToEnd to obtain   
+         // You could use StreamReader.ReadToEnd to obtain
          // all the string data, or simply  
-         // call OracleLob.Value to obtain a contiguous allocation   
+         // call OracleLob.Value to obtain a contiguous allocation
          // of all the data.  
          Console.WriteLine(nclob.LobType + ".Value => " + nclob.Value);  
       }  
@@ -127,15 +129,15 @@ public class LobExample
          // Obtain a LOB.  
          OracleLob blob = reader.GetOracleLob(1/*0:based ordinal*/);  
   
-         // Perform any desired operations on the LOB   
+         // Perform any desired operations on the LOB
          // (read, position, and so on).  
   
          // Example - Writing binary data (directly to the backend).  
          // To write, you can use any of the stream classes, or write  
-         // raw binary data using   
-         // the OracleLob write method. Writing character vs. binary   
+         // raw binary data using
+         // the OracleLob write method. Writing character vs. binary
          // is the same;  
-         // however note that character is always in terms of   
+         // however note that character is always in terms of
          // Unicode byte counts  
          // (for example, even number of bytes - 2 bytes for every  
          // Unicode character).  
@@ -147,7 +149,7 @@ public class LobExample
          Console.WriteLine(blob.LobType + ".Write(  
            " + buffer + ", 0, 2) => " + blob.Value);  
   
-         // Example - Obtaining a temp LOB and copying data   
+         // Example - Obtaining a temp LOB and copying data
          // into it from another LOB.  
          OracleLob templob = CreateTempLob(cmd, blob.LobType);  
          long actual = blob.CopyTo(templob);  
@@ -155,7 +157,7 @@ public class LobExample
             " + templob.Value + ") => " + actual);  
   
          // Commit the transaction now that everything succeeded.  
-         // Note: On error, Transaction.Dispose is called   
+         // Note: On error, Transaction.Dispose is called
          // (from the using statement)  
          // and will automatically roll back the pending transaction.  
          cmd.Transaction.Commit();  
@@ -199,10 +201,10 @@ public class LobExample
       {  
       }  
   
-      cmd.CommandText =   
+      cmd.CommandText =
         "CREATE TABLE tablewithlobs (a int, b BLOB, c CLOB, d NCLOB)";  
       cmd.ExecuteNonQuery();  
-      cmd.CommandText =   
+      cmd.CommandText =
         "INSERT INTO tablewithlobs VALUES (1, 'AA', 'AAA', N'AAAA')";  
       cmd.ExecuteNonQuery();  
    }  
@@ -210,6 +212,7 @@ public class LobExample
 ```  
   
 ## Creating a Temporary LOB  
+
  The following C# example demonstrates how to create a temporary LOB.  
   
 ```csharp  
@@ -221,7 +224,7 @@ OracleTransaction tx = conn.BeginTransaction();
   
 OracleCommand cmd = conn.CreateCommand();  
 cmd.Transaction = tx;  
-cmd.CommandText =   
+cmd.CommandText =
   "declare xx blob; begin dbms_lob.createtemporary(  
   xx, false, 0); :tempblob := xx; end;";  
 cmd.Parameters.Add(new OracleParameter("tempblob",  
@@ -233,7 +236,7 @@ tempLob.Write(tempbuff,0,tempbuff.Length);
 tempLob.EndBatch();  
 cmd.Parameters.Clear();  
 cmd.CommandText = "myTable.myProc";  
-cmd.CommandType = CommandType.StoredProcedure;    
+cmd.CommandType = CommandType.StoredProcedure;
 cmd.Parameters.Add(new OracleParameter(  
   "ImportDoc", OracleType.Blob)).Value = tempLob;  
 cmd.ExecuteNonQuery();  

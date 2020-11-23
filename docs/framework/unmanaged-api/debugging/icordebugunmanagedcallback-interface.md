@@ -16,13 +16,14 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugUnmanagedCallback Interface
+
 Provides notification of native events that are not directly related to the common language runtime (CLR).  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[DebugEvent Method](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md)|Notifies the debugger that a native event has been fired.|  
+|[DebugEvent Method](icordebugunmanagedcallback-debugevent-method.md)|Notifies the debugger that a native event has been fired.|  
   
 ## Remarks  
   
@@ -30,7 +31,8 @@ Provides notification of native events that are not directly related to the comm
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -40,4 +42,4 @@ Provides notification of native events that are not directly related to the comm
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

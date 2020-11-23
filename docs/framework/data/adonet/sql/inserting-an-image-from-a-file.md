@@ -7,11 +7,13 @@ dev_langs:
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
 ---
 # Inserting an Image from a File
+
 You can write a binary large object (BLOB) to a database as either binary or character data, depending on the type of field at your data source. BLOB is a generic term that refers to the `text`, `ntext`, and `image` data types, which typically contain documents and pictures.  
   
  To write a BLOB value to your database, issue the appropriate INSERT or UPDATE statement and pass the BLOB value as an input parameter (see [Configuring Parameters and Parameter Data Types](../configuring-parameters-and-parameter-data-types.md)). If your BLOB is stored as text, such as a SQL Server `text` field, you can pass the BLOB as a string parameter. If the BLOB is stored in binary format, such as a SQL Server `image` field, you can pass an array of type `byte` as a binary parameter.  
   
 ## Example  
+
  The following code example adds employee information to the Employees table in the Northwind database. A photo of the employee is read from a file and added to the Photo field in the table, which is an image field.  
   
 ```vb  
@@ -33,7 +35,7 @@ Public Shared Sub AddEmployee( _
     "INSERT INTO Employees (LastName, FirstName, Title, " & _  
     "HireDate, ReportsTo, Photo) " & _  
     "Values(@LastName, @FirstName, @Title, " & _  
-    "@HireDate, @ReportsTo, @Photo)", connection)   
+    "@HireDate, @ReportsTo, @Photo)", connection)
   
   command.Parameters.Add("@LastName",  _  
     SqlDbType.NVarChar, 20).Value = lastName  
@@ -71,12 +73,12 @@ End Function
   
 ```csharp  
 public static void AddEmployee(  
-  string lastName,   
-  string firstName,   
-  string title,   
-  DateTime hireDate,   
-  int reportsTo,   
-  string photoFilePath,   
+  string lastName,
+  string firstName,
+  string title,
+  DateTime hireDate,
+  int reportsTo,
+  string photoFilePath,
   string connectionString)  
 {  
   byte[] photo = GetPhoto(photoFilePath);  
@@ -88,17 +90,17 @@ public static void AddEmployee(
     "INSERT INTO Employees (LastName, FirstName, " +  
     "Title, HireDate, ReportsTo, Photo) " +  
     "Values(@LastName, @FirstName, @Title, " +  
-    "@HireDate, @ReportsTo, @Photo)", connection);   
+    "@HireDate, @ReportsTo, @Photo)", connection);
   
-  command.Parameters.Add("@LastName",    
+  command.Parameters.Add("@LastName",
      SqlDbType.NVarChar, 20).Value = lastName;  
-  command.Parameters.Add("@FirstName",   
+  command.Parameters.Add("@FirstName",
       SqlDbType.NVarChar, 10).Value = firstName;  
-  command.Parameters.Add("@Title",       
+  command.Parameters.Add("@Title",
       SqlDbType.NVarChar, 30).Value = title;  
-  command.Parameters.Add("@HireDate",   
+  command.Parameters.Add("@HireDate",
        SqlDbType.DateTime).Value = hireDate;  
-  command.Parameters.Add("@ReportsTo",   
+  command.Parameters.Add("@ReportsTo",
       SqlDbType.Int).Value = reportsTo;  
   
   command.Parameters.Add("@Photo",  

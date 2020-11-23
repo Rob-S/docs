@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::DebuggerError Method
+
 Notifies the debugger that an error has occurred while attempting to handle an event from the common language runtime (CLR).  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT DebuggerError (
 ```  
   
 ## Parameters  
+
  `pProcess`  
  [in] A pointer to an "ICorDebugProcess" object that represents the process in which the event occurred.  
   
@@ -40,12 +42,14 @@ HRESULT DebuggerError (
  [in] An integer that specifies the CLR error.  
   
 ## Remarks  
+
  The process may be placed into pass-through mode, depending on the nature of the error.  
   
- The `DebugError` callback indicates that debugging services have been disabled due to an error, so debuggers should make the error message available to the user. [ICorDebugProcess::GetID](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getid-method.md) will be safe to call, but all other methods, including [ICorDebug::Terminate](../../../../docs/framework/unmanaged-api/debugging/icordebug-terminate-method.md), should not be called. The debugger should use operating-system facilities for terminating processes.  
+ The `DebugError` callback indicates that debugging services have been disabled due to an error, so debuggers should make the error message available to the user. [ICorDebugProcess::GetID](icordebugprocess-getid-method.md) will be safe to call, but all other methods, including [ICorDebug::Terminate](icordebug-terminate-method.md), should not be called. The debugger should use operating-system facilities for terminating processes.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -55,4 +59,4 @@ HRESULT DebuggerError (
   
 ## See also
 
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

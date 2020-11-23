@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRAppDomainResourceMonitor::GetCurrentAllocated Method
+
 Gets the total size, in bytes, of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been garbage-collected.  
   
 ## Syntax  
@@ -27,6 +28,7 @@ HRESULT GetCurrentAllocated([in]  DWORD dwAppDomainId,
 ```  
   
 ## Parameters  
+
  `dwAppDomainId`  
  [in] The ID of the requested application domain.  
   
@@ -34,6 +36,7 @@ HRESULT GetCurrentAllocated([in]  DWORD dwAppDomainId,
  [out] A pointer to the total size of all memory allocations.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -42,10 +45,12 @@ HRESULT GetCurrentAllocated([in]  DWORD dwAppDomainId,
 |COR_E_APPDOMAINUNLOADED|The application domain has been unloaded or does not exist.|  
   
 ## Remarks  
+
  This method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> property.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -55,7 +60,7 @@ HRESULT GetCurrentAllocated([in]  DWORD dwAppDomainId,
   
 ## See also
 
-- [ICLRAppDomainResourceMonitor Interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
+- [ICLRAppDomainResourceMonitor Interface](iclrappdomainresourcemonitor-interface.md)
 - [Application Domain Resource Monitoring](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [Hosting Interfaces](hosting-interfaces.md)
+- [Hosting](index.md)

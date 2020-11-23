@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # ICorPublish::GetProcess Method
-Gets an [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instance that represents the process with the specified identifier.  
+
+Gets an [ICorPublishProcess](icorpublishprocess-interface.md) instance that represents the process with the specified identifier.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetProcess(  
-    [in] unsigned              pid,   
+    [in] unsigned              pid,
     [out] ICorPublishProcess   **ppProcess  
 );  
 ```  
   
 ## Parameters  
+
  `pid`  
  [in] The identifier of the process.  
   
@@ -36,10 +38,12 @@ HRESULT GetProcess(
  [out] A pointer to the address of an `ICorPublishProcess` instance that represents the process.  
   
 ## Remarks  
+
  `GetProcess` fails if the process doesn't exist, or isn't a managed process that can be debugged by the current user.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -49,4 +53,4 @@ HRESULT GetProcess(
   
 ## See also
 
-- [ICorPublish Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)
+- [ICorPublish Interface](icorpublish-interface.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorPublishProcessEnum::Next Method
+
 Gets the specified number of processes from the collection, starting at the current cursor position.  
   
 ## Syntax  
@@ -31,17 +32,19 @@ HRESULT Next (
 ```  
   
 ## Parameters  
+
  `celt`  
  [in] The number of processes to be retrieved.  
   
  `objects`  
- [out] A pointer to the array of retrieved [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objects, each of which represents a process.  
+ [out] A pointer to the array of retrieved [ICorPublishProcess](icorpublishprocess-interface.md) objects, each of which represents a process.  
   
  `pceltFetched`  
  [out] Pointer to the number of processes actually returned. This value may be null if `celt` is one.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorPub.idl, CorPub.h  
   
@@ -51,4 +54,4 @@ HRESULT Next (
   
 ## See also
 
-- [ICorPublishProcessEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-interface.md)
+- [ICorPublishProcessEnum Interface](icorpublishprocessenum-interface.md)

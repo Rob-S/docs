@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebug::EnumerateProcesses Method
+
 Gets an enumerator for the processes that are being debugged.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT EnumerateProcesses (
 ```  
   
 ## Parameters  
+
  `ppProcess`  
  A pointer to the address of an ICorDebugProcessEnum object that is the enumerator for the processes being debugged.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -42,4 +45,4 @@ HRESULT EnumerateProcesses (
   
 ## See also
 
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug Interface](icordebug-interface.md)

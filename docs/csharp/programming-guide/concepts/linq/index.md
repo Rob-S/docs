@@ -1,5 +1,6 @@
 ---
 title: "Language-Integrated Query (LINQ) (C#)"
+description: Learn about Language-Integrated Queries (LINQs) and review an example of the complete query operation.
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
 ---
@@ -8,7 +9,7 @@ ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
 
 Language-Integrated Query (LINQ) is the name for a set of technologies based on the integration of query capabilities directly into the C# language. Traditionally, queries against data are expressed as simple strings without type checking at compile time or IntelliSense support. Furthermore, you have to learn a different query language for each type of data source: SQL databases, XML documents, various Web services, and so on. With LINQ, a query is a first-class language construct, just like classes, methods, events. You write queries against strongly typed collections of objects by using language keywords and familiar operators. The LINQ family of technologies provides a consistent query experience for objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).
 
-For a developer who writes queries, the most visible "language-integrated" part of LINQ is the query expression. Query expressions are written in a declarative *query syntax*. By using query syntax, you can perform filtering, ordering, and grouping operations on data sources with a minimum of code. You use the same basic query expression patterns to query and transform data in SQL databases, ADO .NET Datasets, XML documents and streams, and .NET collections.
+For a developer who writes queries, the most visible "language-integrated" part of LINQ is the query expression. Query expressions are written in a declarative *query syntax*. By using query syntax, you can perform filtering, ordering, and grouping operations on data sources with a minimum of code. You use the same basic query expression patterns to query and transform data in SQL databases, ADO.NET Datasets, XML documents and streams, and .NET collections.
 
 You can write LINQ queries in C# for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports <xref:System.Collections.IEnumerable> or the generic <xref:System.Collections.Generic.IEnumerable%601> interface. LINQ support is also provided by third parties for many Web services and other database implementations.
 
@@ -35,7 +36,7 @@ The following illustration from Visual Studio shows a partially-completed LINQ q
 
 To learn more details about LINQ, start by becoming familiar with some basic concepts in [Query expression basics](../../../linq/query-expression-basics.md), and then read the documentation for the LINQ technology in which you are interested:
 
-- XML documents: [LINQ to XML](linq-to-xml-overview.md)  
+- XML documents: [LINQ to XML](../../../../standard/linq/linq-xml-overview.md)  
 - ADO.NET Entity Framework: [LINQ to entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)
 - .NET collections, files, strings and so on: [LINQ to objects](linq-to-objects.md)
 

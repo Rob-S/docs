@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::AllocateMethodBuffer Method
+
 Creates a buffer of the specified size for a method, and gets the relative virtual address of the method.  
   
  This method is obsolete and should not be used.  
@@ -24,14 +25,15 @@ Creates a buffer of the specified size for a method, and gets the relative virtu
 ## Syntax  
   
 ```cpp  
-HRESULT AllocateMethodBuffer (   
-    [in]  ULONG    cchBuffer,   
+HRESULT AllocateMethodBuffer (
+    [in]  ULONG    cchBuffer,
     [out] UCHAR    **lpBuffer,  
     [out] ULONG    *RVA  
 );  
 ```  
   
 ## Parameters  
+
  `cchBuffer`  
  [in] The length of the buffer to create.  
   
@@ -42,7 +44,8 @@ HRESULT AllocateMethodBuffer (
  [out] The relative virtual address of the method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -52,4 +55,4 @@ HRESULT AllocateMethodBuffer (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorConfiguration::SetGCHostControl Method
+
 Sets the callback interface to be used by the garbage collector to request the host to change the limits of virtual memory.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT SetGCHostControl (
 ```  
   
 ## Parameters  
+
  `pGCHostControl`  
- [in] A pointer to an [IGCHostControl](../../../../docs/framework/unmanaged-api/hosting/igchostcontrol-interface.md) object that allows the garbage collector to request the host to change the limits of virtual memory.  
+ [in] A pointer to an [IGCHostControl](igchostcontrol-interface.md) object that allows the garbage collector to request the host to change the limits of virtual memory.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -42,4 +45,4 @@ HRESULT SetGCHostControl (
   
 ## See also
 
-- [ICorConfiguration Interface](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)
+- [ICorConfiguration Interface](icorconfiguration-interface.md)

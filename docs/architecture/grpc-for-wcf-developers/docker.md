@@ -10,15 +10,15 @@ This section covers the creation of Docker images for ASP.NET Core gRPC applicat
 
 ## Microsoft base images for ASP.NET Core applications
 
-Microsoft provides a range of base images for building and running .NET Core applications. To create an ASP.NET Core 3.0 image, you use two base images: 
+Microsoft provides a range of base images for building and running .NET Core applications. To create an ASP.NET Core 3.0 image, you use two base images:
 
 - An SDK image to build and publish the application.
 - A runtime image for deployment.
 
 | Image | Description |
 | ----- | ----------- |
-| [mcr.microsoft.com/dotnet/core/sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) | For building applications with `docker build`. Not to be used in production. |
-| [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) | Contains the runtime and ASP.NET Core dependencies. For production. |
+| [mcr.microsoft.com/dotnet/sdk](https://hub.docker.com/_/microsoft-dotnet-sdk/) | For building applications with `docker build`. Not to be used in production. |
+| [mcr.microsoft.com/dotnet/aspnet](https://hub.docker.com/_/microsoft-dotnet-aspnet/) | Contains the runtime and ASP.NET Core dependencies. For production. |
 
 For each image, there are four variants based on different Linux distributions, distinguished by tags.
 
@@ -40,7 +40,7 @@ A Docker image is defined by a *Dockerfile*. This is a text file that contains a
 
 ```dockerfile
 # Application build steps
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0 as builder
+FROM mcr.microsoft.com/dotnet/sdk:3.0 as builder
 
 WORKDIR /src
 
@@ -51,7 +51,7 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o /published src/StockData/StockData.csproj
 
 # Runtime image creation
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
+FROM mcr.microsoft.com/dotnet/aspnet:3.0
 
 # Uncomment the line below if running with HTTPS
 # ENV ASPNETCORE_URLS=https://+:443
@@ -90,7 +90,7 @@ Microsoft base images for Docker set the `ASPNETCORE_URLS` environment variable 
 
 ```dockerfile
 # Runtime image creation
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
+FROM mcr.microsoft.com/dotnet/aspnet:3.0
 
 ENV ASPNETCORE_URLS=https://+:443
 ```
@@ -128,11 +128,11 @@ To run the image in your local Docker instance, use the `docker run` command.
 docker run -ti -p 5000:80 stockdata
 ```
 
-The `-ti` flag connects your current terminal to the container's terminal, and runs in interactive mode. The `-p 5000:80` publishes (links) port 80 on the container to port 80 on the localhost network interface.
+The `-ti` flag connects your current terminal to the container's terminal, and runs in interactive mode. The `-p 5000:80` publishes (links) port 80 on the container to port 5000 on the localhost network interface.
 
 ## Push the image to a registry
 
-After you've verified that the image works, push it to a Docker registry to make it available on other systems. Internal networks will need to provision a Docker registry. This can be as simple as running [Docker's own `registry` image](https://docs.docker.com/registry/deploying/) (the Docker registry runs in a Docker container), but there are various more comprehensive solutions available. For external sharing and cloud use, there are various managed registries available, such as [Azure Container Registry](https://docs.microsoft.com/azure/container-registry/) or [Docker Hub](https://docs.docker.com/docker-hub/repos/).
+After you've verified that the image works, push it to a Docker registry to make it available on other systems. Internal networks will need to provision a Docker registry. This can be as simple as running [Docker's own `registry` image](https://docs.docker.com/registry/deploying/) (the Docker registry runs in a Docker container), but there are various more comprehensive solutions available. For external sharing and cloud use, there are various managed registries available, such as [Azure Container Registry](/azure/container-registry/) or [Docker Hub](https://docs.docker.com/docker-hub/repos/).
 
 To push to Docker Hub, prefix the image name with your user or organization name.
 

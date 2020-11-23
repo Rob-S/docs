@@ -1,5 +1,6 @@
 ---
 title: "What Is Windows Communication Foundation"
+description: Learn about the Windows Communication Foundation, which is a framework for building service-oriented applications.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "Windows Communication Foundation [WCF], technology overview"
@@ -46,7 +47,7 @@ WCF includes the following set of features. For more information, see [WCF Featu
 
 - **Data Contracts**
 
-     Because WCF is built using the .NET Framework, it also includes code-friendly methods of supplying the contracts you want to enforce. One of the universal types of contracts is the data contract. In essence, as you code your service using Visual C# or Visual Basic, the easiest way to handle data is by creating classes that represent a data entity with properties that belong to the data entity. WCF includes a comprehensive system for working with data in this easy manner. Once you have created the classes that represent data, your service automatically generates the metadata that allows clients to comply with the data types you have designed. For more information, see [Using Data Contracts](../../../docs/framework/wcf/feature-details/using-data-contracts.md).
+     Because WCF is built using the .NET Framework, it also includes code-friendly methods of supplying the contracts you want to enforce. One of the universal types of contracts is the data contract. In essence, as you code your service using Visual C# or Visual Basic, the easiest way to handle data is by creating classes that represent a data entity with properties that belong to the data entity. WCF includes a comprehensive system for working with data in this easy manner. Once you have created the classes that represent data, your service automatically generates the metadata that allows clients to comply with the data types you have designed. For more information, see [Using Data Contracts](feature-details/using-data-contracts.md).
 
 - **Security**
 
@@ -97,4 +98,4 @@ The hosting features of Windows Server AppFabric application server are specific
 - [Getting Started Tutorial](getting-started-tutorial.md)
 - [Guide to the Documentation](guide-to-the-documentation.md)
 - [Basic WCF Programming](basic-wcf-programming.md)
-- [Windows Communication Foundation Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)
+- [Windows Communication Foundation Samples](/previous-versions/dotnet/netframework-3.5/ms751514(v=vs.90))

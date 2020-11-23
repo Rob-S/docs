@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICLRTask::ExitTask Method
-Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance is ending, and attempts to shut the task down gracefully.  
+
+Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](iclrtask-interface.md) instance is ending, and attempts to shut the task down gracefully.  
   
 ## Syntax  
   
@@ -37,10 +38,12 @@ HRESULT ExitTask ();
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  `ExitTask` attempts a clean shutdown of a task, in a manner analogous to detaching a thread from an unmanaged type library.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -50,7 +53,7 @@ HRESULT ExitTask ();
   
 ## See also
 
-- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask Interface](iclrtask-interface.md)
+- [ICLRTaskManager Interface](iclrtaskmanager-interface.md)
+- [IHostTask Interface](ihosttask-interface.md)
+- [IHostTaskManager Interface](ihosttaskmanager-interface.md)

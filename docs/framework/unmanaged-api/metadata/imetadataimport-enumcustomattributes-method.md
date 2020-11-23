@@ -17,22 +17,24 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataImport::EnumCustomAttributes Method
+
 Enumerates custom attribute-definition tokens associated with the specified type or member.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT EnumCustomAttributes (   
+HRESULT EnumCustomAttributes (
    [in, out] HCORENUM      *phEnum,  
-   [in]  mdToken            tk,   
-   [in]  mdToken            tkType,   
-   [out] mdCustomAttribute  rCustomAttributes[],   
+   [in]  mdToken            tk,
+   [in]  mdToken            tkType,
+   [out] mdCustomAttribute  rCustomAttributes[],
    [in]  ULONG              cMax,  
    [out, optional] ULONG   *pcCustomAttributes  
 );  
 ```  
   
 ## Parameters  
+
  `phEnum`  
  [in, out] A pointer to the returned enumerator.  
   
@@ -59,7 +61,8 @@ HRESULT EnumCustomAttributes (
 |`S_FALSE`|There are no custom attributes to enumerate. In that case, `pcCustomAttributes` is zero.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -69,5 +72,5 @@ HRESULT EnumCustomAttributes (
   
 ## See also
 
-- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport Interface](imetadataimport-interface.md)
+- [IMetaDataImport2 Interface](imetadataimport2-interface.md)

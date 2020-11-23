@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::LoadModule Method
+
 Notifies the debugger that a common language runtime (CLR) module has been successfully loaded.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT LoadModule (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain into which the module has been loaded.  
   
@@ -36,10 +38,12 @@ HRESULT LoadModule (
  [in] A pointer to an ICorDebugModule object that represents the CLR module.  
   
 ## Remarks  
+
  The `LoadModule` callback provides an appropriate time to examine metadata for the module, set just-in-time (JIT) compiler flags, or enable or disable class loading callbacks for the module.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -49,5 +53,5 @@ HRESULT LoadModule (
   
 ## See also
 
-- [UnloadModule Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadmodule-method.md)
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [UnloadModule Method](icordebugmanagedcallback-unloadmodule-method.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

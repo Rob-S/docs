@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IGCHost::Collect Method
+
 Forces a collection to occur for the given generation, regardless of the state of the current garbage collection.  
   
 ## Syntax  
@@ -28,11 +29,13 @@ HRESULT Collect (
 ```  
   
 ## Parameters  
+
  `Generation`  
  [in] The generation on which to perform the garbage collection. A value of -1 indicates that all generations will undergo a garbage collection.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** GCHost.idl, GCHost.h  
   
@@ -42,4 +45,4 @@ HRESULT Collect (
   
 ## See also
 
-- [IGCHost Interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+- [IGCHost Interface](igchost-interface.md)

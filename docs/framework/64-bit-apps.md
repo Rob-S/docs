@@ -1,5 +1,6 @@
 ---
 title: "64-bit Applications"
+description: Get information about configuring applications on a Windows 64-bit OS, as either a native 64-bit application or under WOW64 (Windows 32-bit on Windows 64-bit).
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "applications [C++], 64-bit"
@@ -30,7 +31,7 @@ When you compile an application, you can specify that it should run on a Windows
   
 - Code that casts `IntPtr` to `Int32`.  
   
- For more information about how to port a 32-bit application to run on the 64-bit CLR, see [Migrating 32-bit Managed Code to 64-bit](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
+ For more information about how to port a 32-bit application to run on the 64-bit CLR, see [Migrating 32-bit Managed Code to 64-bit](/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
   
 ## General 64-Bit Programming Information  
  For general information about 64-bit programming, see the following documents:  

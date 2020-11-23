@@ -16,19 +16,21 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedConstant Interface
+
 Provides access to unmanaged constants.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[GetName Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)|Gets the name of the constant.|  
-|[GetSignature Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)|Gets the signature of the constant.|  
-|[GetValue Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)|Gets the value of the constant.|  
+|[GetName Method](isymunmanagedconstant-getname-method.md)|Gets the name of the constant.|  
+|[GetSignature Method](isymunmanagedconstant-getsignature-method.md)|Gets the signature of the constant.|  
+|[GetValue Method](isymunmanagedconstant-getvalue-method.md)|Gets the value of the constant.|  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Diagnostics Symbol Store Interfaces](diagnostics-symbol-store-interfaces.md)

@@ -17,8 +17,12 @@ metadata:
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
-  - title: About .NET for Apache Spark
+  - title: .NET for Apache Spark basics
     linkLists:
+      - linkListType: whats-new
+        links:
+        - text: "What's new in .NET docs"
+          url: ../whats-new/index.yml
       - linkListType: overview
         links:
           - text: What is .NET for Apache Spark?
@@ -26,10 +30,10 @@ landingContent:
       - linkListType: reference
         links:
           - text: API Reference
-            url: /dotnet/api/?view=spark-dotnet
+            url: ../../api/index.md?view=spark-dotnet
           - text: GitHub
             url: https://github.com/dotnet/spark
-  - title: Get started
+  - title: Get started in 10 minutes
     linkLists:
       - linkListType: tutorial
         links:
@@ -53,5 +57,15 @@ landingContent:
         links:
           - text: Debug your application
             url: how-to-guides/debug.md
-    
-    
+          - text: Deploy worker and UDF binaries
+            url: how-to-guides/deploy-worker-udf-binaries.md
+  - title: Big Data processing
+    linkLists:
+    - linkListType: tutorial
+      links:
+      - text: Batch processing
+        url: tutorials/batch-processing.md
+      - text: Structured streaming
+        url: tutorials/streaming.md
+      - text: Sentiment analysis
+        url: tutorials/ml-sentiment-analysis.md

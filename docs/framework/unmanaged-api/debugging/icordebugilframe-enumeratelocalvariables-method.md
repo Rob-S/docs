@@ -17,25 +17,29 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugILFrame::EnumerateLocalVariables Method
+
 Gets an enumerator for the local variables in this frame.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT EnumerateLocalVariables(   
+HRESULT EnumerateLocalVariables(
     [out] ICorDebugValueEnum    **ppValueEnum  
 );  
 ```  
   
 ## Parameters  
+
  `ppValueEnum`  
  [out] A pointer to the address of an ICorDebugValueEnum object that is the enumerator for the local variables in this frame.  
   
 ## Remarks  
+
  `EnumerateLocalVariables` gets an enumerator that can list the local variables available in the call frame that is represented by this ICorDebugILFrame object. The list may not include all of the local variables in the running function, because some of them may not be active.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

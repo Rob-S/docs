@@ -3,14 +3,16 @@ title: "Serverless apps: Architecture, patterns, and Azure implementation"
 description: Guide to serverless architecture. Learn when, why, and how to implement a serverless architecture (as opposed to Infrastructure as a Service [IaaS] or Platform as a Service [PaaS]) for your enterprise applications.
 author: JEREMYLIKNESS
 ms.author: jeliknes
-ms.date: 06/26/2018
+ms.date: 04/22/2020
 ---
 
 # Serverless apps: Architecture, patterns, and Azure implementation
 
-![Screenshot that shows the Serverless Apps e-book cover.](./media/index/serverless-apps-cover.jpg)
+![Screenshot that shows the Serverless Apps e-book cover.](./media/index/serverless-apps-cover-v3.png)
 
-> DOWNLOAD available at: <https://aka.ms/serverless-ebook>
+**EDITION v3.0** - Updated to Azure Functions v3
+
+> DOWNLOAD available at: <https://aka.ms/serverlessbookpdf>
 
 PUBLISHED BY
 
@@ -22,7 +24,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2018 by Microsoft Corporation
+Copyright &copy; 2018-2020 by Microsoft Corporation
 
 All rights reserved. No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.
 
@@ -38,7 +40,7 @@ All other marks and logos are property of their respective owners.
 
 Author:
 
-> **[Jeremy Likness](https://twitter.com/jeremylikness)**, Senior Cloud Advocate, Microsoft Corp.
+> **[Jeremy Likness](https://twitter.com/jeremylikness)**, Senior .NET Data Program Manager, Microsoft Corp.
 
 Contributor:
 
@@ -67,7 +69,7 @@ Participants and reviewers:
 
 This guide focuses on cloud native development of applications that use serverless. The book highlights the benefits and exposes the potential drawbacks of developing serverless apps and provides a survey of serverless architectures. Many examples of how serverless can be used are illustrated along with various serverless design patterns.
 
-This guide explains the components of the Azure serverless platform and focuses specifically on implementation of serverless using [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview). You'll learn about triggers and bindings as well as how to implement serverless apps that rely on state using durable functions. Finally, business examples and case studies will help provide context and a frame of reference to determine whether serverless is the right approach for your projects.
+This guide explains the components of the Azure serverless platform and focuses specifically on implementation of serverless using [Azure Functions](/azure/azure-functions/functions-overview). You'll learn about triggers and bindings as well as how to implement serverless apps that rely on state using durable functions. Finally, business examples and case studies will help provide context and a frame of reference to determine whether serverless is the right approach for your projects.
 
 ## Evolution of cloud platforms
 
@@ -92,7 +94,7 @@ IaaS still requires heavy overhead because operations is still responsible for v
 - Keeping the operating system up-to-date.
 - Monitoring the application.
 
-The next evolution reduced the overhead by providing Platform as a Service (PaaS). With PaaS, the cloud provider handles operating systems, security patches, and even the required packages to support a specific platform. Instead of building a VM then configuring the .NET Framework and standing up Internet Information Services (IIS) servers, developers simply choose a "platform target" such as "web application" or "API endpoint" and deploy code directly. The infrastructure questions are reduced to:
+The next evolution reduced the overhead by providing Platform as a Service (PaaS). With PaaS, the cloud provider handles operating systems, security patches, and even the required packages to support a specific platform. Instead of building a VM then configuring .NET and standing up Internet Information Services (IIS) servers, developers simply choose a "platform target" such as "web application" or "API endpoint" and deploy code directly. The infrastructure questions are reduced to:
 
 - What size services are needed?
 - How do the services scale out (add more servers or nodes)?
@@ -109,12 +111,12 @@ Another feature of serverless is micro-billing. It's common for web applications
 
 ## What this guide doesn't cover
 
-This guide specifically emphasizes architecture approaches and design patterns and isn't a deep dive into the implementation details of Azure Functions, [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps), or other serverless platforms. This guide doesn't cover, for example, advanced workflows with Logic Apps or features of Azure Functions such as configuring Cross-Origin Resource Sharing (CORS), applying custom domains, or uploading SSL certificates. These details are available through the online [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/functions-reference).
+This guide specifically emphasizes architecture approaches and design patterns and isn't a deep dive into the implementation details of Azure Functions, [Logic Apps](/azure/logic-apps/logic-apps-what-are-logic-apps), or other serverless platforms. This guide doesn't cover, for example, advanced workflows with Logic Apps or features of Azure Functions such as configuring Cross-Origin Resource Sharing (CORS), applying custom domains, or uploading SSL certificates. These details are available through the online [Azure Functions documentation](/azure/azure-functions/functions-reference).
 
 ### Additional resources
 
-- [Azure Architecture center](https://docs.microsoft.com/azure/architecture/)
-- [Best practices for cloud applications](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
+- [Azure Architecture center](/azure/architecture/)
+- [Best practices for cloud applications](/azure/architecture/best-practices/api-design)
 
 ## Who should use the guide
 

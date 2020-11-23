@@ -4,6 +4,7 @@ ms.date: "03/30/2017"
 ms.assetid: 15b8526e-4f5d-475c-a1e3-d8b2d145c879
 ---
 # ISymUnmanagedWriter5 Interface
+
 ISymUnmanagedWriter5 interface.  
   
 ## Syntax  
@@ -13,18 +14,20 @@ ISymUnmanagedWriter5 interface.
 ```  
   
 ## Methods  
+
  This interface contains the following methods:  
   
 |Method|Description|  
 |------------|-----------------|  
-|[CloseMapTokensToSourceSpans Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md)|Close the special custom data section for token-to- source span mapping information. After it is closed, no more mapping information can be added.|  
-|[MapTokenToSourceSpan Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-maptokentosourcespan-method.md)|Maps the given metadata token to the given source line span in the specified source file.<br /><br /> Must be called between calls to [OpenMapTokensToSourceSpans Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md) and [CloseMapTokensToSourceSpans Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-closemaptokenstosourcespans-method.md).|  
-|[OpenMapTokensToSourceSpans Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-openmaptokenstosourcespans-method.md)|Open a special custom data section to emit token-to- source span mapping information into. Opening this section when a method is already open, or vice versa, is an error.|  
+|[CloseMapTokensToSourceSpans Method](isymunmanagedwriter5-closemaptokenstosourcespans-method.md)|Close the special custom data section for token-to- source span mapping information. After it is closed, no more mapping information can be added.|  
+|[MapTokenToSourceSpan Method](isymunmanagedwriter5-maptokentosourcespan-method.md)|Maps the given metadata token to the given source line span in the specified source file.<br /><br /> Must be called between calls to [OpenMapTokensToSourceSpans Method](isymunmanagedwriter5-openmaptokenstosourcespans-method.md) and [CloseMapTokensToSourceSpans Method](isymunmanagedwriter5-closemaptokenstosourcespans-method.md).|  
+|[OpenMapTokensToSourceSpans Method](isymunmanagedwriter5-openmaptokenstosourcespans-method.md)|Open a special custom data section to emit token-to- source span mapping information into. Opening this section when a method is already open, or vice versa, is an error.|  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [ISymUnmanagedWriter4 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-interface.md)
+- [Diagnostics Symbol Store Interfaces](diagnostics-symbol-store-interfaces.md)
+- [ISymUnmanagedWriter4 Interface](isymunmanagedwriter4-interface.md)

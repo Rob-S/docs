@@ -1,24 +1,36 @@
 ---
-title: dotnet-dump - .NET Core
-description: Installing and using the dotnet-dump command-line tool.
-author: sdmaclea
-ms.author: stmaclea
-ms.date: 10/14/2019
+title: dotnet-dump diagnostic tool - .NET CLI
+description: Learn how to install and use the dotnet-dump CLI tool to collect and analyze Windows and Linux dumps without any native debugger.
+ms.date: 11/17/2020
 ---
-# Dump collection and analysis utility (`dotnet-dump`)
+# Dump collection and analysis utility (dotnet-dump)
 
-**This article applies to: ✓** .NET Core 3.0 SDK and later versions
+**This article applies to:** ✔️ .NET Core 3.0 SDK and later versions
 
 > [!NOTE]
-> `dotnet-dump` isn't supported on macOS.
+> `dotnet-dump` for macOS is only supported with .NET 5.0 and later versions.
 
-## Installing `dotnet-dump`
+## Install
 
-To install the latest release version of the `dotnet-dump` [NuGet package](https://www.nuget.org/packages/dotnet-dump), use the [dotnet tool install](../tools/dotnet-tool-install.md) command:
+There are two ways to download and install `dotnet-dump`:
 
-```dotnetcli
-dotnet tool install -g dotnet-dump
-```
+- **dotnet global tool:**
+
+  To install the latest release version of the `dotnet-dump` [NuGet package](https://www.nuget.org/packages/dotnet-dump), use the [dotnet tool install](../tools/dotnet-tool-install.md) command:
+
+  ```dotnetcli
+  dotnet tool install --global dotnet-dump
+  ```
+
+- **Direct download:**
+
+  Download the tool executable that matches your platform:
+
+  | OS  | Platform |
+  | --- | -------- |
+  | Windows | [x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [arm](https://aka.ms/dotnet-dump/win-arm) \| [arm-x64](https://aka.ms/dotnet-dump/win-arm64) |
+  | macOS   | [x64](https://aka.ms/dotnet-dump/osx-x64) |
+  | Linux   | [x64](https://aka.ms/dotnet-dump/linux-x64) \| [arm](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [musl-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [musl-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64) |
 
 ## Synopsis
 
@@ -34,7 +46,7 @@ The `dotnet-dump` global tool is a way to collect and analyze Windows and Linux 
 
 - **`--version`**
 
-  Displays the version of the dotnet-counters utility.
+  Displays the version of the dotnet-dump utility.
 
 - **`-h|--help`**
 
@@ -54,7 +66,7 @@ Captures a dump from a process.
 ### Synopsis
 
 ```console
-dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag]
+dotnet-dump collect [-h|--help] [-p|--process-id] [-n|--name] [--type] [-o|--output] [--diag]
 ```
 
 ### Options
@@ -65,16 +77,21 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`-p|--process-id <PID>`**
 
-  Specifies the process ID number to collect a memory dump from.
+  Specifies the process ID number to collect a dump from.
 
-- **`--type <Heap|Mini>`**
+- **`-n|--name <name>`**
 
-  Specifies the dump type, which determines the kinds of information that are collected from the process. There are two types:
+  Specifies the name of the process to collect a dump from.
 
+- **`--type <Full|Heap|Mini>`**
+
+  Specifies the dump type, which determines the kinds of information that are collected from the process. There are three types:
+
+  - `Full` - The largest dump containing all memory including the module images.
   - `Heap` - A large and relatively comprehensive dump containing module lists, thread lists, all stacks, exception information, handle information, and all memory except for mapped images.
   - `Mini` - A small dump containing module lists, thread lists, exception information, and all stacks.
 
-  If not specified, `Heap` is the default.
+  If not specified, `Full` is the default.
 
 - **`-o|--output <output_dump_path>`**
 
@@ -154,7 +171,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 
 ## Using `dotnet-dump`
 
-The first step is to collect a dump. This step can be skipped if a core dump has already been generated. The operating system or the .NET Core runtime's built-in [dump generation feature](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/xplat-minidump-generation.md#configurationpolicy) can each create core dumps.
+The first step is to collect a dump. This step can be skipped if a core dump has already been generated. The operating system or the .NET Core runtime's built-in [dump generation feature](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) can each create core dumps.
 
 ```console
 $ dotnet-dump collect --process-id 1902
@@ -219,3 +236,8 @@ On Microsoft .NET Core SDK Linux Docker images, some `dotnet-dump` commands can 
 > Unhandled exception: System.DllNotFoundException: Unable to load shared library 'libdl.so' or one of its dependencies' exception.
 
 To work around this problem, install the "libc6-dev" package.
+
+## See also
+
+- [Collecting and analyzing memory dumps blog](https://devblogs.microsoft.com/dotnet/collecting-and-analyzing-memory-dumps/)
+- [Heap analysis tool (dotnet-gcdump)](dotnet-gcdump.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::RemotingClientReceivingReply Method
+
 Notifies the profiler that the server-side portion of a remoting call has completed and the client is now receiving and about to process the reply.  
   
 ## Syntax  
@@ -24,12 +25,13 @@ Notifies the profiler that the server-side portion of a remoting call has comple
 ```cpp  
 HRESULT RemotingClientReceivingReply(  
     [in] GUID *pCookie,  
-    [in] BOOL fIsAsync);   
+    [in] BOOL fIsAsync);
 ```  
   
 ## Parameters  
+
  `pCookie`  
- [in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingServerSendingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserversendingreply-method.md) under these conditions:  
+ [in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingServerSendingReply](icorprofilercallback-remotingserversendingreply-method.md) under these conditions:  
   
 - Remoting GUID cookies are active.  
   
@@ -43,7 +45,8 @@ HRESULT RemotingClientReceivingReply(
  [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -53,4 +56,4 @@ HRESULT RemotingClientReceivingReply(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # USER_THREAD Structure
-Provides information to a debugger about a thread. For more information, see the [INotifySource2::SetNotifyFilter](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) method.  
+
+Provides information to a debugger about a thread. For more information, see the [INotifySource2::SetNotifyFilter](inotifysource2-setnotifyfilter-method.md) method.  
   
 ## Syntax  
   
@@ -38,9 +39,10 @@ typedef struct tagUSER_THREAD
 |`dwTid`|Thread ID.|  
   
 ## Requirements  
+
  **Header:** ProtocolNotify2.idl  
   
 ## See also
 
-- [SetNotifyFilter Method](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)
-- [Diagnostics Symbol Store Structures](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+- [SetNotifyFilter Method](inotifysource2-setnotifyfilter-method.md)
+- [Diagnostics Symbol Store Structures](diagnostics-symbol-store-structures.md)

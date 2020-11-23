@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs Method
+
 Gets the `FunctionID` of a function by using the specified metadata token, containing class, and `ClassID` values of any type arguments.  
   
 ## Syntax  
@@ -32,6 +33,7 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
 ```  
   
 ## Parameters  
+
  `moduleID`  
  [in] The ID of the module in which the function resides.  
   
@@ -51,14 +53,16 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
  [out] A pointer to the `FunctionID` of the specified function.  
   
 ## Remarks  
+
  Calling the `GetFunctionFromTokenAndTypeArgs` method with an `mdMethodRef` metadata instead of an `mdMethodDef` metadata token can have unpredictable results. Callers should resolve the `mdMethodRef` to an `mdMethodDef` when passing it.  
   
  If the function is not already loaded, calling `GetFunctionFromTokenAndTypeArgs` will cause loading to occur, which is a dangerous operation in many contexts. For example, calling this method during loading of modules or types could lead to an infinite loop as the runtime attempts to circularly load things.  
   
- In general, use of `GetFunctionFromTokenAndTypeArgs` is discouraged. If profilers are interested in events for a particular function, they should store the `ModuleID` and `mdMethodDef` of that function, and use [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) to check whether a given `FunctionID` is that of the desired function.  
+ In general, use of `GetFunctionFromTokenAndTypeArgs` is discouraged. If profilers are interested in events for a particular function, they should store the `ModuleID` and `mdMethodDef` of that function, and use [ICorProfilerInfo2::GetFunctionInfo2](icorprofilerinfo2-getfunctioninfo2-method.md) to check whether a given `FunctionID` is that of the desired function.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -68,5 +72,5 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
   
 ## See also
 
-- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo Interface](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 Interface](icorprofilerinfo2-interface.md)

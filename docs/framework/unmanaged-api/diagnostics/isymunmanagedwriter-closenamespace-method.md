@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedWriter::CloseNamespace Method
+
 Closes the most recently opened namespace.  
   
 ## Syntax  
@@ -26,12 +27,14 @@ HRESULT CloseNamespace();
 ```  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [OpenNamespace Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-opennamespace-method.md)
+- [ISymUnmanagedWriter Interface](isymunmanagedwriter-interface.md)
+- [OpenNamespace Method](isymunmanagedwriter-opennamespace-method.md)

@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # EApiCategories Enumeration
+
 Describes the categories of capabilities that the host can block from running in partially trusted code.  
   
 ## Syntax  
@@ -53,12 +54,14 @@ typedef enum {
 |`eUI`|Specifies that managed classes and members that allow or require human interaction be blocked from running in partially trusted code.|  
   
 ## Remarks  
- The [ICLRHostProtectionManager::SetProtectedCategories](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-setprotectedcategories-method.md) method takes a parameter of type `EApiCategories`.  
+
+ The [ICLRHostProtectionManager::SetProtectedCategories](iclrhostprotectionmanager-setprotectedcategories-method.md) method takes a parameter of type `EApiCategories`.  
   
  The `EApiCategories` enumeration and the `SetProtectedCategories` method are directly related to the managed <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> class. The managed class is used with the <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType> enumeration, whose values correspond directly to the `EApiCategories` values, to mark managed types and members that expose capabilities corresponding to the categories described by `EApiCategories`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -68,5 +71,5 @@ typedef enum {
   
 ## See also
 
-- [ICLRHostProtectionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-interface.md)
-- [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRHostProtectionManager Interface](iclrhostprotectionmanager-interface.md)
+- [Hosting Enumerations](hosting-enumerations.md)

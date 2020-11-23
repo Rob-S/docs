@@ -1,13 +1,12 @@
 ---
 title: "SOS.dll (SOS Debugging Extension)"
+description: Use SOS.dll, the SOS debugging extension. Debug managed programs in Visual Studio and in WinDbg.exe by getting information about the internal CLR environment.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "debugging extensions"
   - "SOS debugging extensions"
   - "SOS.dll"
 ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # SOS.dll (SOS debugging extension)

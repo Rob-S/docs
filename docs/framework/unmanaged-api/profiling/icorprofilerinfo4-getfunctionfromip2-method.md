@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo4::GetFunctionFromIP2 Method
+
 Maps a managed code instruction pointer to the JIT-recompiled version of a function.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT GetFunctionFromIP2(
 ```  
   
 ## Parameters  
+
  `ip`  
  [in] The instruction pointer in managed code.  
   
@@ -39,13 +41,15 @@ HRESULT GetFunctionFromIP2(
  [out] The identity of the JIT-recompiled version of the function.  
   
 ## Remarks  
+
  `GetFunctionFromIP2` is similar to `GetFunctionFromIP`, except that it gets the JIT-recompiled ID instead of the function ID of the function that contains the specified IP address.  
   
 > [!NOTE]
-> `GetFunctionFromIP2` can trigger a garbage collection, whereas `GetFunctionFromIP` will not.  For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).  
+> `GetFunctionFromIP2` can trigger a garbage collection, whereas `GetFunctionFromIP` will not.  For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -55,4 +59,4 @@ HRESULT GetFunctionFromIP2(
   
 ## See also
 
-- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo Interface](icorprofilerinfo-interface.md)

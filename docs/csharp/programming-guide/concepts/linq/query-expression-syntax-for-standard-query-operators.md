@@ -1,12 +1,15 @@
 ---
 title: "Query Expression Syntax for Standard Query Operators (C#)"
+description: Learn about query expression syntax for standard query operators. See a list of standard query operators with equivalent query expression clauses.
 ms.date: 07/20/2015
 ms.assetid: e1e17ef2-68ff-4c26-b6e2-015668227fa5
 ---
 # Query Expression Syntax for Standard Query Operators (C#)
+
 Some of the more frequently used standard query operators have dedicated C# language keyword syntax that enables them to be called as part of a *query expression*. A query expression is a different, more readable form of expressing a query than its *method-based*  equivalent. Query expression clauses are translated into calls to the query methods at compile time.  
   
 ## Query Expression Syntax Table  
+
  The following table lists the standard query operators that have equivalent query expression clauses.  
   
 |Method|C# Query Expression Syntax|  

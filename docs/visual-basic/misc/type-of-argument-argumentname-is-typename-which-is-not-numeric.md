@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 6eca32a6-9a44-4f05-8791-abdb4cb316d2
 ---
 # Type of argument '\<argumentname>' is '\<typename>', which is not numeric
+
 A non-numeric argument occurs in a situation in which a numeric argument is expected.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ A non-numeric argument occurs in a situation in which a numeric argument is expe
   
 ## See also
 
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

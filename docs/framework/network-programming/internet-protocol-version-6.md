@@ -1,5 +1,6 @@
 ---
 title: "Internet Protocol Version 6"
+description: Learn about the IPv6 protocol and how it differs from IPv4. .NET Framework applications support IPv6, but might require configuration.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "IPv6, improvements"
@@ -49,10 +50,10 @@ The Internet Protocol version 6 (IPv6) is a new suite of standard protocols for 
   
 - RFC 2374, An IPv6 Aggregatable Global Unicast Address Format.  
   
- You can also find IPv6-related information on the [IP Version 6 (IPv6)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498%28v=ws.10%29).  
+ You can also find IPv6-related information on the [IP Version 6 (IPv6)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498(v=ws.10)).  
   
 ## See also
 
-- [IPv6 Sockets Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms180981%28v=vs.85%29)
+- [IPv6 Sockets Sample](/previous-versions/dotnet/netframework-3.0/ms180981(v=vs.85))
 - [Network Programming Samples](network-programming-samples.md)
 - [Sockets](sockets.md)

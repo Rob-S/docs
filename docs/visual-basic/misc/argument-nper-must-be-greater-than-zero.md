@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: d49242df-dbd1-4b26-bd8c-ed56d24fdfcd
 ---
 # Argument 'NPer' must be greater than zero
+
 The `NPer` function, which returns a `Double` specifying the number of periods for an annuity based on periodic fixed payments and a fixed interest rate, requires an argument greater than zero.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ The `NPer` function, which returns a `Double` specifying the number of periods f
   
 ## See also
 
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

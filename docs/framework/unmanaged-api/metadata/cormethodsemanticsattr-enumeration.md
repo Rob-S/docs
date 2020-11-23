@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorMethodSemanticsAttr Enumeration
+
 Contains values that describe the relationship between a method and an associated property or event.  
   
 ## Syntax  
@@ -45,7 +46,8 @@ typedef enum CorMethodSemanticsAttr {
 |`msFire`|Specifies that the method raises an event.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorHdr.h  
   
@@ -53,4 +55,4 @@ typedef enum CorMethodSemanticsAttr {
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

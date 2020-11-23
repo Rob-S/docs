@@ -1,5 +1,6 @@
 ---
 title: "<connectionManagement> Element (Network Settings)"
+description: The <connectionManagement> network settings element specifies the maximum number of connections to a network host in the .NET Framework.
 ms.date: "03/30/2017"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement"
@@ -10,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
 ---
 # \<connectionManagement> Element (Network Settings)
+
 Specifies the maximum number of connections to a network host.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -19,14 +21,16 @@ Specifies the maximum number of connections to a network host.
 ## Syntax  
   
 ```xml  
-<connectionManagement>   
+<connectionManagement>
 </connectionManagement>  
 ```  
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
+
  None.  
   
 ### Child Elements  
@@ -44,12 +48,15 @@ Specifies the maximum number of connections to a network host.
 |[system.net](system-net-element-network-settings.md)|Contains settings that specify how the .NET Framework connects to the network.|  
   
 ## Remarks  
+
  The `connectionManagement` element defines the maximum number of connections to a server or group of servers.  
   
 ## Configuration Files  
+
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
+
  The following example configures an application to use four connections to the server `www.contoso.com` and two connections to all other servers.  
   
 ```xml  

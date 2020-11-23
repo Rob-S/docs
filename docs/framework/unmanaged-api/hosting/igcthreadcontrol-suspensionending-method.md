@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IGCThreadControl::SuspensionEnding Method
+
 Notifies the host that the runtime is resuming threads after a garbage collection or other suspension.  
   
 ## Syntax  
@@ -28,14 +29,17 @@ HRESULT SuspensionEnding (
 ```  
   
 ## Parameters  
+
  `Generation`  
  [in] The generation on which a garbage collection has been performed.  
   
 ## Remarks  
+
  Do not reschedule any threads during the `SuspensionEnding` callback.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -45,4 +49,4 @@ HRESULT SuspensionEnding (
   
 ## See also
 
-- [IGCThreadControl Interface](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-interface.md)
+- [IGCThreadControl Interface](igcthreadcontrol-interface.md)

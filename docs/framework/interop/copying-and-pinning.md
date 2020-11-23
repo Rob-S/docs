@@ -1,5 +1,6 @@
 ---
 title: "Copying and Pinning"
+description: Review how the interop marshaler can copy or pin data that's being marshaled. Copying data places a copy of data from one memory location into another location.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "pinning, interop marshaling"
@@ -75,5 +76,5 @@ When a <xref:System.Text.StringBuilder?displayProperty=nameWithType> is passed b
 ## See also
 
 - [Default Marshaling Behavior](default-marshaling-behavior.md)
-- [Directional Attributes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
+- [Directional Attributes](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [Interop Marshaling](interop-marshaling.md)

@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 3a1f1297-f3d9-46db-a956-058a1d272047
 ---
 # User interrupt occurred
+
 A user pressed CTRL+BREAK or another interrupt key.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ A user pressed CTRL+BREAK or another interrupt key.
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../programming-guide/language-features/error-types.md)

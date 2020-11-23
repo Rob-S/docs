@@ -1,13 +1,12 @@
 ---
 title: "CLR ETW Events"
+description: "See articles about common language runtime (CLR) event tracing for Windows (ETW) events. There are two event providers: runtime provider and rundown provider."
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "CLR ETW events"
   - "ETW, common language runtime"
   - "ETW, CLR events"
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # CLR ETW Events
 The topics in this section describe event tracing for Windows (ETW) events. Each event has an associated keyword and level, which are described in the [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md) topic. The CLR has two providers for the events:  
@@ -57,8 +56,7 @@ The topics in this section describe event tracing for Windows (ETW) events. Each
   
 ## See also
 
-- [Improve Debugging And Performance Tuning With ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
-- [Windows Performance Blog](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/)
+- [Improve Debugging And Performance Tuning With ETW](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
 - [Controlling .NET Framework Logging](controlling-logging.md)
 - [CLR ETW Providers](clr-etw-providers.md)
 - [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)

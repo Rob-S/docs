@@ -346,9 +346,9 @@ This sample demonstrates how to implement a custom client SAML token provider. A
 
 #### To set up and build the sample
 
-1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
 > [!NOTE]
 > If you use Svcutil.exe to regenerate the configuration for this sample, be sure to modify the endpoint name in the client configuration to match the client code.
@@ -364,7 +364,7 @@ This sample demonstrates how to implement a custom client SAML token provider. A
   
 3. Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### To run the sample across computers  
   
@@ -386,8 +386,8 @@ This sample demonstrates how to implement a custom client SAML token provider. A
   
 9. On the client computer, launch `Client.exe` from a command prompt window.  
   
-10. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### To clean up after the sample  
   
-1. Run Cleanup.bat in the samples folder once you have finished running the sample.  
+1. Run Cleanup.bat in the samples folder once you have finished running the sample.

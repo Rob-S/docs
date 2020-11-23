@@ -12,6 +12,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugProcess7 Interface
+
 [Supported in the .NET Framework 4.5.2 and later versions]  
   
  Provides a method that configures the debugger to handle in-memory metadata updates in the target process.  
@@ -20,12 +21,13 @@ topic_type:
   
 |Method|Description|  
 |------------|-----------------|  
-|[SetWriteableMetadataUpdateMode Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)|Sets a value that determines how the debugger handles in-memory updates to metadata within the target process.|  
+|[SetWriteableMetadataUpdateMode Method](icordebugprocess7-setwriteablemetadataupdatemode-method.md)|Sets a value that determines how the debugger handles in-memory updates to metadata within the target process.|  
   
 ## Remarks  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -35,5 +37,5 @@ topic_type:
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

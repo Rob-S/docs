@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebug::GetProcess Method
+
 Gets a pointer to the "ICorDebugProcess" instance for the specified process.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT GetProcess (
 ```  
   
 ## Parameters  
+
  `dwProcessId`  
  [in] The ID of the process.  
   
@@ -36,7 +38,8 @@ HRESULT GetProcess (
  [out] A pointer to the address of a `ICorDebugProcess` instance for the specified process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -46,4 +49,4 @@ HRESULT GetProcess (
   
 ## See also
 
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug Interface](icordebug-interface.md)

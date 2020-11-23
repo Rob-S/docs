@@ -1,5 +1,6 @@
 ---
 title: "Generating and Compiling Source Code from a CodeDOM Graph"
+description: Generate and compile source code from a CodeDOM graph in .NET. Use a CodeDOM code provider to generate source code and compile assemblies.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -90,4 +91,4 @@ The <xref:System.CodeDom.Compiler> namespace provides interfaces for generating 
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>
 - [Dynamic Source Code Generation and Compilation](dynamic-source-code-generation-and-compilation.md)
-- [CodeDOM Quick Reference](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))
+- [CodeDOM Quick Reference](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))

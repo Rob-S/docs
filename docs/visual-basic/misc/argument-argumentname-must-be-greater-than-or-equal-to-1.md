@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: e7769937-5227-4530-89ca-3d6ffc505005
 ---
 # Argument '\<argumentname>' must be greater than or equal to 1
+
 An argument's value is less than 1.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ An argument's value is less than 1.
   
 ## See also
 
-- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Passing Arguments by Value and by Reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

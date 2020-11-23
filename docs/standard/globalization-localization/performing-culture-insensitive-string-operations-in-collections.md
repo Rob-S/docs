@@ -1,7 +1,6 @@
 ---
 title: "Performing Culture-Insensitive String Operations in Collections"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs:
   - "csharp"
   - "vb"
@@ -9,7 +8,7 @@ helpviewer_keywords:
   - "CaseInsensitiveComparer class, using"
   - "CollectionsUtil.CreateCaseInsensitiveHashtable method"
   - "culture-insensitive string operations, collections"
-  - "collections [.NET Framework], culture-insensitive string operations"
+  - "collections [.NET], culture-insensitive string operations"
   - "CaseInsensitiveHashCodeProvider class, using"
   - "ArrayList.Sort method"
   - "SortedList class, culture-insensitive string operations"
@@ -139,5 +138,5 @@ Overloads of the `ArrayList.Sort` method perform culture-sensitive sorts by defa
 - <xref:System.Collections.SortedList>
 - <xref:System.Collections.Hashtable>
 - <xref:System.Collections.IComparer>
-- [Performing Culture-Insensitive String Operations](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Performing Culture-Insensitive String Operations](performing-culture-insensitive-string-operations.md)
 - <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType>

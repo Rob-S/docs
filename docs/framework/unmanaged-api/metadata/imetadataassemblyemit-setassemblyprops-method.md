@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataAssemblyEmit::SetAssemblyProps Method
+
 Modifies the specified `Assembly` metadata structure.  
   
 ## Syntax  
@@ -34,6 +35,7 @@ HRESULT SetAssemblyProps (
 ```  
   
 ## Parameters  
+
  `pma`  
  [in] The metadata token that specifies the `Assembly` metadata structure to be modified.  
   
@@ -53,13 +55,15 @@ HRESULT SetAssemblyProps (
  [in] A pointer to the ASSEMBLYMETADATA that contains version, platform, and locale information for the assembly.  
   
  `dwAssemblyFlags`  
- [in] A bitwise combination of [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) values that specify various attributes of the assembly.  
+ [in] A bitwise combination of [AssemblyFlags](assemblyflags-enumeration.md) values that specify various attributes of the assembly.  
   
 ## Remarks  
- To create an `Assembly` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) method.  
+
+ To create an `Assembly` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssembly](imetadataassemblyemit-defineassembly-method.md) method.  
   
 ## Requirements  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platform:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -69,4 +73,4 @@ HRESULT SetAssemblyProps (
   
 ## See also
 
-- [IMetaDataAssemblyEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit Interface](imetadataassemblyemit-interface.md)

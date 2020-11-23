@@ -7,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
 ---
 # Conditional Compilation in Visual Basic
+
 In *conditional compilation*, particular blocks of code in a program are compiled selectively while others are ignored.  
   
  For example, you may want to write debugging statements that compare the speed of different approaches to the same programming task, or you may want to localize an application for multiple languages. Conditional compilation statements are designed to run during compile time, not at run time.  
@@ -21,6 +22,7 @@ In *conditional compilation*, particular blocks of code in a program are compile
 > Autocompletion will not function when editing code and using conditional compilation directives if the code is not part of the current branch.  
   
 ## Declaring Conditional Compilation Constants  
+
  You can set conditional compilation constants in one of three ways:  
   
 - In the **Project Designer**  
@@ -43,7 +45,7 @@ In *conditional compilation*, particular blocks of code in a program are compile
   
 |To set constants at the command line|  
 |---|  
-|-   Use the **-d** switch to enter conditional compilation constants, as in the following example:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     No space is required between the **-d** switch and the first constant. For more information, see [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Command-line declarations override declarations entered in the **Project Designer**, but do not erase them. Arguments set in **Project Designer** remain in effect for subsequent compilations.<br />     When writing constants in the code itself, there are no strict rules as to their placement, since their scope is the entire module in which they are declared.|  
+|-   Use the **-d** switch to enter conditional compilation constants, as in the following example:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     No space is required between the **-d** switch and the first constant. For more information, see [-define (Visual Basic)](../../reference/command-line-compiler/define.md).<br />     Command-line declarations override declarations entered in the **Project Designer**, but do not erase them. Arguments set in **Project Designer** remain in effect for subsequent compilations.<br />     When writing constants in the code itself, there are no strict rules as to their placement, since their scope is the entire module in which they are declared.|  
   
 |To set constants in your code|  
 |---|  
@@ -53,11 +55,12 @@ In *conditional compilation*, particular blocks of code in a program are compile
   
 |Title|Description|  
 |---|---|  
-|[Program Structure and Code Conventions](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Provides suggestions for making your code easy to read and maintain.|  
+|[Program Structure and Code Conventions](program-structure-and-code-conventions.md)|Provides suggestions for making your code easy to read and maintain.|  
   
 ## Reference  
- [#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md)  
+
+ [#Const Directive](../../language-reference/directives/const-directive.md)  
   
- [#If...Then...#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If...Then...#Else Directives](../../language-reference/directives/if-then-else-directives.md)  
   
- [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
+ [-define (Visual Basic)](../../reference/command-line-compiler/define.md)

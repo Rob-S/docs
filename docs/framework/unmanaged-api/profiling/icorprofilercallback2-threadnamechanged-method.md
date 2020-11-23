@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback2::ThreadNameChanged Method
+
 Notifies the code profiler that the name of a thread has changed.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT ThreadNameChanged(
 ```  
   
 ## Parameters  
+
  `threadId`  
  [in] The ID of the thread.  
   
@@ -39,7 +41,8 @@ HRESULT ThreadNameChanged(
  [in] The new name of the thread. The name is not null-terminated.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -49,5 +52,5 @@ HRESULT ThreadNameChanged(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 Interface](icorprofilercallback2-interface.md)

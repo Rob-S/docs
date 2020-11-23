@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebug::CreateProcess Method
+
 Launches a process and its primary thread under the control of the debugger.  
   
 ## Syntax  
@@ -39,6 +40,7 @@ HRESULT CreateProcess (
 ```  
   
 ## Parameters  
+
  `lpApplicationName`  
  [in] Pointer to a null-terminated string that specifies the module to be executed by the launched process. The module is executed in the security context of the calling process.  
   
@@ -55,7 +57,7 @@ HRESULT CreateProcess (
  [in] Set to `true` to indicate that each inheritable handle in the calling process is inherited by the launched process, or `false` to indicate that the handles are not inherited. The inherited handles have the same value and access rights as the original handles.  
   
  `dwCreationFlags`  
- [in] A bitwise combination of the [Win32 Process Creation Flags](https://go.microsoft.com/fwlink/?linkid=69981) that control the priority class and the behavior of the launched process.  
+ [in] A bitwise combination of the [Win32 Process Creation Flags](/windows/win32/procthread/process-creation-flags) that control the priority class and the behavior of the launched process.  
   
  `lpEnvironment`  
  [in] Pointer to an environment block for the new process.  
@@ -76,6 +78,7 @@ HRESULT CreateProcess (
  [out] A pointer to the address of a ICorDebugProcess object that represents the process.  
   
 ## Remarks  
+
  The parameters of this method are the same as those of the Win32 `CreateProcess` method.  
   
  To enable unmanaged mixed-mode debugging, set `dwCreationFlags` to DEBUG_PROCESS &#124; DEBUG_ONLY_THIS_PROCESS. If you want to use only managed debugging, do not set these flags.  
@@ -85,7 +88,8 @@ HRESULT CreateProcess (
  Interop debugging is not supported on Win9x and non-x86 platforms such as IA-64-based and AMD64-based platforms.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -95,4 +99,4 @@ HRESULT CreateProcess (
   
 ## See also
 
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug Interface](icordebug-interface.md)

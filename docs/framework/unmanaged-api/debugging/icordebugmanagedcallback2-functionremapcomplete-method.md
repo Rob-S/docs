@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback2::FunctionRemapComplete Method
+
 Notifies the debugger that code execution has switched to a new version of an edited function.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT FunctionRemapComplete (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain containing the edited function.  
   
@@ -40,10 +42,12 @@ HRESULT FunctionRemapComplete (
  [in] A pointer to an ICorDebugFunction object that represents the version of the function currently running on the thread.  
   
 ## Remarks  
+
  This callback gives the debugger an opportunity to recreate any steppers that previously existed.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -53,5 +57,5 @@ HRESULT FunctionRemapComplete (
   
 ## See also
 
-- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 Interface](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

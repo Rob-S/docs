@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # COR_PRF_CODE_INFO Structure
+
 Represents one contiguous block of native code stored in memory.  
   
 ## Syntax  
@@ -35,7 +36,8 @@ typedef struct _COR_PRF_CODE_INFO {
 |`size`|The size of the block.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl  
   
@@ -45,4 +47,4 @@ typedef struct _COR_PRF_CODE_INFO {
   
 ## See also
 
-- [Profiling Structures](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [Profiling Structures](profiling-structures.md)

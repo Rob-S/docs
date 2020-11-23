@@ -23,7 +23,7 @@ Implements ICorDebugEnum methods, and enumerates ICorDebugBreakpoint arrays.
   
 |Method|Description|  
 |------------|-----------------|  
-|[Next Method](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-next-method.md)|Gets the specified number of `ICorDebugBreakpoint` instances from the enumeration, starting at the current position.|  
+|[Next Method](icordebugbreakpointenum-next-method.md)|Gets the specified number of `ICorDebugBreakpoint` instances from the enumeration, starting at the current position.|  
   
 ## Remarks  
   
@@ -31,7 +31,8 @@ Implements ICorDebugEnum methods, and enumerates ICorDebugBreakpoint arrays.
 > This interface does not support being called remotely, either cross-machine or cross-process.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -41,4 +42,4 @@ Implements ICorDebugEnum methods, and enumerates ICorDebugBreakpoint arrays.
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging Interfaces](debugging-interfaces.md)

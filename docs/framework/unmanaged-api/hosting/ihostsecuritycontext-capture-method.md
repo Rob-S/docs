@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IHostSecurityContext::Capture Method
-Gets a clone of the [IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) instance returned from a call to [IHostSecurityManager::GetSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md).  
+
+Gets a clone of the [IHostSecurityContext](ihostsecuritycontext-interface.md) instance returned from a call to [IHostSecurityManager::GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md).  
   
 ## Syntax  
   
@@ -28,6 +29,7 @@ HRESULT Capture (
 ```  
   
 ## Parameters  
+
  `ppClonedContext`  
  [out] A pointer to the address of a clone of the `IHostSecurityContext` object to be captured.  
   
@@ -43,10 +45,12 @@ HRESULT Capture (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The interface pointer returned from `Capture` is a clone of the captured context. When this information is moved across an asynchronous code point, its lifetime is separated from that of the pointer against which the call was made. The original pointer can therefore be released.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -56,5 +60,5 @@ HRESULT Capture (
   
 ## See also
 
-- [IHostSecurityContext Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
-- [IHostSecurityManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
+- [IHostSecurityContext Interface](ihostsecuritycontext-interface.md)
+- [IHostSecurityManager Interface](ihostsecuritymanager-interface.md)

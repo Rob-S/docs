@@ -1,5 +1,6 @@
 ---
 title: "Data and modeling - .NET"
+description: View links to articles that describe modeling and how to access data in .NET. The articles cover WCF Data Services, ADO.NET, and transaction processing.
 ms.date: "09/09/2019"
 helpviewer_keywords: 
   - ".NET Framework, data access"
@@ -33,5 +34,5 @@ This section provides information on how to access data in the .NET Framework.
  [XML Documents and Data](../../standard/data/xml/index.md)  
  Provides an overview to a comprehensive and integrated set of classes that work with XML documents and data in the .NET Framework.  
   
- [XML Standards Reference](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256177(v=vs.100))  
- Provides reference information on XML standards that Microsoft supports.  
+ [XML Standards Reference](/previous-versions/dotnet/netframework-4.0/ms256177(v=vs.100))  
+ Provides reference information on XML standards that Microsoft supports.

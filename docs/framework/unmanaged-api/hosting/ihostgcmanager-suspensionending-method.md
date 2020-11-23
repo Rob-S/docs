@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostGCManager::SuspensionEnding Method
+
 Notifies the host that the common language runtime (CLR) is resuming execution of tasks on threads that had been suspended for a garbage collection.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT SuspensionEnding (
 ```  
   
 ## Parameters  
+
  `generation`  
  [in] The garbage collection generation that is just finishing, from which the thread is resuming.  
   
@@ -43,13 +45,15 @@ HRESULT SuspensionEnding (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The CLR calls `SuspensionEnding` after it performs a garbage collection, to inform the host that the thread is resuming execution.  
   
 > [!IMPORTANT]
 > Do not reschedule the thread the method call was made from.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -59,8 +63,8 @@ HRESULT SuspensionEnding (
   
 ## See also
 
-- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
-- [IHostGCManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)
+- [ICLRTask Interface](iclrtask-interface.md)
+- [ICLRTaskManager Interface](iclrtaskmanager-interface.md)
+- [IHostTask Interface](ihosttask-interface.md)
+- [IHostTaskManager Interface](ihosttaskmanager-interface.md)
+- [IHostGCManager Interface](ihostgcmanager-interface.md)

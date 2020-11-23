@@ -1,6 +1,6 @@
 ---
+description: "new constraint - C# Reference"
 title: "new constraint - C# Reference"
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords: 
   - "new constraint keyword [C#]"
@@ -28,7 +28,7 @@ For more information, see the [Type parameter constraints](~/_csharplang/spec/cl
 
 ## See also
 
-- [C# Reference](../../language-reference/index.md)
+- [C# Reference](../index.md)
 - [C# Programming Guide](../../programming-guide/index.md)
 - [C# Keywords](index.md)
 - [Generics](../../programming-guide/generics/index.md)

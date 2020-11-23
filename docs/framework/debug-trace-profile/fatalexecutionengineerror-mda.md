@@ -1,5 +1,6 @@
 ---
 title: "fatalExecutionEngineError MDA"
+description: Review the fatalExecutionEngineError managed debugging assistant (MDA) in .NET, which may activate because of an unexpected process termination.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "corrupted CLR"
@@ -12,8 +13,6 @@ helpviewer_keywords:
   - "FatalExecutionEngineError MDA"
   - "managed debugging assistants (MDAs), fatal errors"
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # fatalExecutionEngineError MDA
 The `fatalExecutionEngineError` managed debugging assistant (MDA) is activated when a fatal error in the common language runtime (CLR) has been detected. The process will be terminated.  

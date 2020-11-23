@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo4::GetObjectSize2 Method
-Returns the size of a specified object. Replaces the [ICorProfilerInfo::GetObjectSize](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md) method by reporting sizes of objects that are larger than what can be expressed in a `ULONG`.  
+
+Returns the size of a specified object. Replaces the [ICorProfilerInfo::GetObjectSize](icorprofilerinfo-getobjectsize-method.md) method by reporting sizes of objects that are larger than what can be expressed in a `ULONG`.  
   
 ## Syntax  
   
@@ -28,6 +29,7 @@ HRESULT GetObjectSize2(
 ```  
   
 ## Parameters  
+
  `objectId`  
  [in] The ID of the object.  
   
@@ -35,10 +37,12 @@ HRESULT GetObjectSize2(
  [out] A pointer to the object's size, in bytes.  
   
 ## Remarks  
+
  Different objects of the same types often have the same size. However, some types, such as arrays or strings, may have a different size for each object.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -48,4 +52,4 @@ HRESULT GetObjectSize2(
   
 ## See also
 
-- [ICorProfilerInfo4 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)
+- [ICorProfilerInfo4 Interface](icorprofilerinfo4-interface.md)

@@ -2,10 +2,9 @@
 title: Deconstructing tuples and other types
 description: Learn how to deconstruct tuples and other types.
 ms.technology: csharp-fundamentals
-ms.date: 07/18/2016
+ms.date: 11/23/2017
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
 ---
-
 # Deconstructing tuples and other types
 
 A tuple provides a lightweight way to retrieve multiple values from a method call. But once you retrieve the tuple, you have to handle its individual elements. Doing this on an element-by-element basis is cumbersome, as the following example shows. The `QueryCityData` method returns a 3-tuple, and each of its elements is assigned to a variable in a separate operation.
@@ -72,7 +71,7 @@ You can then deconstruct an instance of the `Person` class named `p` with an ass
 The following example overloads the `Deconstruct` method to return various combinations of properties of a `Person` object. Individual overloads return:
 
 - A first and last name.
-- A first, last, and middle name.
+- A first, middle, and last name.
 - A first name, a last name, a city name, and a state name.
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class2.cs)]
@@ -102,4 +101,4 @@ The following example defines two `Deconstruct` extension methods for the <xref:
 ## See also
 
 - [Discards](discards.md)
-- [Tuples](tuples.md)
+- [Tuple types](language-reference/builtin-types/value-tuples.md)

@@ -8,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
 ---
 # Directories and Files Summary (Visual Basic)
+
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
   
  Using the `My` feature gives you greater productivity and performance in file I/O operations than using these members. For more information, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
@@ -29,9 +30,9 @@ Visual Basic language keywords and run-time library members are organized by pur
   
 ## See also
 
-- [Keywords](../../../visual-basic/language-reference/keywords/index.md)
-- [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)
-- [Reading from Files](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Writing to Files](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
-- [Creating, Deleting, and Moving Files and Directories](../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [Parsing Text Files with the TextFieldParser Object](../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [Keywords](index.md)
+- [Visual Basic Runtime Library Members](../runtime-library-members.md)
+- [Reading from Files](../../developing-apps/programming/drives-directories-files/reading-from-files.md)
+- [Writing to Files](../../developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [Creating, Deleting, and Moving Files and Directories](../../developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
+- [Parsing Text Files with the TextFieldParser Object](../../developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)

@@ -1,5 +1,6 @@
 ---
 title: "Network Settings Schema"
+description: Learn about the schema for the network settings that specify how the .NET Framework connects to the Internet and handles URIs.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "elements [.NET Framework], network configuration elements"
@@ -14,6 +15,7 @@ helpviewer_keywords:
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
 ---
 # Network Settings Schema
+
 Network settings specify how the .NET Framework connects to the Internet.
 
 The \<system.net> settings specify how the .NET Framework connects to the network. The following table describes the function of each child configuration element under the [\<system.Net> Element (Network Settings)](system-net-element-network-settings.md).  

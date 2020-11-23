@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # ASM_NAME Enumeration
+
 Indicates the version, build, culture, signature, and so on, of the assembly whose properties will be retrieved or set by [IAssemblyName](iassemblyname-interface.md) methods.  
   
 ## Syntax  
@@ -41,7 +42,7 @@ typedef enum {
     ASM_NAME_NULL_PUBLIC_KEY,  
     ASM_NAME_NULL_PUBLIC_KEY_TOKEN,  
     ASM_NAME_CUSTOM,  
-    ASM_NAME_NULL_CUSTOM,   
+    ASM_NAME_NULL_CUSTOM,
     ASM_NAME_MVID,  
     ASM_NAME_FILE_MAJOR_VERSION,  
     ASM_NAME_FILE_MINOR_VERSION,  
@@ -57,6 +58,7 @@ typedef enum {
 ```  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Fusion.h  

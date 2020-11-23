@@ -1,7 +1,7 @@
 ---
 title: Testing ASP.NET Core services and web apps
 description: .NET Microservices Architecture for Containerized .NET Applications | Explore an architecture for testing ASP.NET Core services and web apps in containers.
-ms.date: 10/02/2018
+ms.date: 08/07/2020
 ---
 
 # Testing ASP.NET Core services and web apps
@@ -14,7 +14,7 @@ You need to test how the controller behaves based on valid or invalid inputs, an
 
 - Integration tests. These ensure that component interactions work as expected against external artifacts like databases. Assertions can test component API, UI, or the side effects of actions like database I/O, logging, etc.
 
-- Functional tests for each microservice. These ensure that the application works as expected from the user’s perspective.
+- Functional tests for each microservice. These ensure that the application works as expected from the user's perspective.
 
 - Service tests. These ensure that end-to-end service use cases, including testing multiple services at the same time, are tested. For this type of testing, you need to prepare the environment first. In this case, it means starting the services (for example, by using docker-compose up).
 
@@ -63,7 +63,7 @@ Unlike unit testing, integration tests frequently involve application infrastruc
 
 Because integration tests exercise larger segments of code than unit tests, and because integration tests rely on infrastructure elements, they tend to be orders of magnitude slower than unit tests. Thus, it is a good idea to limit how many integration tests you write and run.
 
-ASP.NET Core includes a built-in test web host that can be used to handle HTTP requests without network overhead, meaning that you can run those tests faster when using a real web host. The test web host (TestServer) is available in a NuGet component as Microsoft.AspNetCore.TestHost. It can be added to integration test projects and used to host ASP.NET Core applications.
+ASP.NET Core includes a built-in test web host that can be used to handle HTTP requests without network overhead, meaning that you can run those tests faster than when using a real web host. The test web host (TestServer) is available in a NuGet component as Microsoft.AspNetCore.TestHost. It can be added to integration test projects and used to host ASP.NET Core applications.
 
 As you can see in the following code, when you create integration tests for ASP.NET Core controllers, you instantiate the controllers through the test host. This is comparable to an HTTP request, but it runs faster.
 
@@ -115,7 +115,7 @@ public class PrimeWebDefaultRequestShould
     <https://github.com/moq/moq>
 
 - **NUnit**. Official site. \
-    <https://www.nunit.org/>
+    <https://nunit.org/>
 
 ### Implementing service tests on a multi-container application
 
@@ -135,9 +135,7 @@ The reference application (eShopOnContainers) tests were recently restructured a
 
 3. **Application functional/integration tests**, which focus on microservices integration, with test cases that exert several microservices. These tests are located in project **Application.FunctionalTests**.
 
-4. **Load tests**, which focus on response times for each microservice. These tests are located in project **LoadTest** and need Visual Studio 2017 Enterprise Edition.
-
-Unit and integration test per microservice are contained in a test folder in each microservice and Application a Load tests are contained under the test folder in the solution folder, as shown in Figure 6-25.
+While unit and integration tests are organized in a test folder within the microservice project, application and load tests are managed separately under the root folder, as shown in Figure 6-25.
 
 ![Screenshot of VS pointing out some of the test projects in the solution.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
@@ -155,9 +153,9 @@ services:
     image: redis:alpine
   rabbitmq:
     image: rabbitmq:3-management-alpine
-  sql.data:
-    image: microsoft/mssql-server-linux:2017-latest
-  nosql.data:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+  nosqldata:
     image: mongo
 ```
 
@@ -174,13 +172,13 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-  sql.data:
+  sqldata:
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
       - "5433:1433"
-  nosql.data:
+  nosqldata:
     ports:
       - "27017:27017"
 ```
@@ -195,11 +193,11 @@ As you can see, these docker-compose files only start the Redis, RabbitMQ, SQL S
 
 ### Additional resources
 
-- **Tests README file** on the eShopOnContainers repo on GitHub \
-    <https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/test>
+- **Unit & Integration testing** on the eShopOnContainers \
+    <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Unit-and-integration-testing>
 
-- **Load tests README file** on the eShopOnContainers repo on GitHub \
-    <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/test/ServicesTests/LoadTest/>
+- **Load testing** on the eShopOnContainers \
+    <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Load-testing>
 
 > [!div class="step-by-step"]
 > [Previous](subscribe-events.md)

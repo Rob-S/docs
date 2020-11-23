@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 40b178c3-7dc4-4216-8460-17ff8d9aedf1
 ---
 # Method or data member not found
+
 The method or data member you have tried to access was not found.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ The method or data member you have tried to access was not found.
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../programming-guide/language-features/error-types.md)

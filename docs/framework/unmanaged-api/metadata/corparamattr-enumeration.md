@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorParamAttr Enumeration
+
 Contains values that describe the metadata of a method parameter.  
   
 ## Syntax  
@@ -49,7 +50,8 @@ typedef enum CorParamAttr {
 |`pdUnused`|Unused.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorHdr.h  
   
@@ -57,4 +59,4 @@ typedef enum CorParamAttr {
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

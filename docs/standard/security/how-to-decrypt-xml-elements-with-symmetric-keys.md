@@ -1,25 +1,22 @@
 ---
 title: "How to: Decrypt XML Elements with Symmetric Keys"
-ms.date: "03/30/2017"
-ms.technology: dotnet-standard
+ms.date: 07/14/2020
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
   - "symmetric keys"
   - "System.Security.Cryptography.EncryptedXml class"
-  - "System.Security.Cryptography.RijndaelManaged class"
+  - "System.Security.Cryptography.Aes class"
   - "XML encryption"
-  - "Rijndael"
   - "decryption"
 ms.assetid: 6038aff0-f92c-4e29-a618-d793410410d8
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # How to: Decrypt XML Elements with Symmetric Keys
-You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace to encrypt an element within an XML document.  XML Encryption allows you to store or transport sensitive XML, without worrying about the data being easily read.  This code example decrypts an XML element using the Advanced Encryption Standard (AES) algorithm, also known as Rijndael.  
+
+You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace to encrypt an element within an XML document.  XML Encryption allows you to store or transport sensitive XML, without worrying about the data being easily read.  This code example decrypts an XML element using the Advanced Encryption Standard (AES) algorithm.
   
- For information about how to encrypt an XML element using this procedure, see [How to: Encrypt XML Elements with Symmetric Keys](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md).  
+ For information about how to encrypt an XML element using this procedure, see [How to: Encrypt XML Elements with Symmetric Keys](how-to-encrypt-xml-elements-with-symmetric-keys.md).  
   
  When you use a symmetric algorithm like AES to encrypt XML data, you must use the same key to encrypt and decrypt the XML data.  The example in this procedure assumes that the encrypted XML was encrypted using the same key, and that the encrypting and decrypting parties agree on the algorithm and key to use.  This example does not store or encrypt the AES key within the encrypted XML.  
   
@@ -27,7 +24,7 @@ You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace
   
 ### To decrypt an XML element with a symmetric key  
   
-1. Encrypt an XML element with the previously generated key using the techniques described in [How to: Encrypt XML Elements with Symmetric Keys](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md).  
+1. Encrypt an XML element with the previously generated key using the techniques described in [How to: Encrypt XML Elements with Symmetric Keys](how-to-encrypt-xml-elements-with-symmetric-keys.md).  
   
 2. Find the <`EncryptedData`> element (defined by the XML Encryption standard) in an <xref:System.Xml.XmlDocument> object that contains the encrypted XML and create a new <xref:System.Xml.XmlElement> object to represent that element.  
   
@@ -50,6 +47,7 @@ You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace
      [!code-vb[HowToEncryptXMLElementSymmetric#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#13)]  
   
 ## Example  
+
  This example assumes that a file named `"test.xml"` exists in the same directory as the compiled program.  It also assumes that `"test.xml"` contains a `"creditcard"` element.  You can place the following XML into a file called `test.xml` and use it with this example.  
   
 ```xml  
@@ -66,16 +64,23 @@ You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace
   
 ## Compiling the Code  
   
-- To compile this example, you need to include a reference to `System.Security.dll`.  
+- In a project that targets .NET Framework, include a reference to `System.Security.dll`.
+
+- In a project that targets .NET Core or .NET 5, install NuGet package [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Include the following namespaces: <xref:System.Xml>, <xref:System.Security.Cryptography>, and <xref:System.Security.Cryptography.Xml>.  
   
-## .NET Framework Security  
- Never store a cryptographic key in plaintext or transfer a key between machines in plaintext.  
+## .NET Security
   
- When you are done using a symmetric cryptographic key, clear it from memory by setting each byte to zero or by calling the <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> method of the managed cryptography class.  
+Never store a cryptographic key in plaintext or transfer a key between machines in plaintext.  
+  
+When you are done using a symmetric cryptographic key, clear it from memory by setting each byte to zero or by calling the <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> method of the managed cryptography class.  
   
 ## See also
 
+- [Cryptography Model](cryptography-model.md)
+- [Cryptographic Services](cryptographic-services.md)
+- [Cross-Platform Cryptography](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
-- [How to: Encrypt XML Elements with Symmetric Keys](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md)
+- [How to: Encrypt XML Elements with Symmetric Keys](how-to-encrypt-xml-elements-with-symmetric-keys.md)
+- [ASP.NET Core Data Protection](/aspnet/core/security/data-protection/introduction)

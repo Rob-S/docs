@@ -1,9 +1,7 @@
 ---
 title: How the .NET Core Runtime and SDK are versioned
 description: This article teaches you how the .NET Core SDK and Runtime are versioned (similar to semantic versioning).
-author: bleroy
-ms.date: 07/26/2018
-ms.custom: "seodec18"
+ms.date: 06/24/2020
 ---
 
 # Overview of how .NET Core is versioned
@@ -20,7 +18,7 @@ The .NET Core SDK doesn't follow semantic versioning. The .NET Core SDK releases
 
 The third position of the SDK version number communicates both the minor and patch number. The minor version is multiplied by 100. Minor version 1, patch version 2 would be represented as 102. The final two digits represent the patch number. For example, the release of .NET Core 2.2 may create releases like the following table:
 
-| Change                | .NET Core Runtime | .NET Core SDK (*) |
+| Change                | .NET Core Runtime | .NET Core SDK (\*) |
 |-----------------------|-------------------|-------------------|
 | Initial release       | 2.2.0             | 2.2.100           |
 | SDK Patch             | 2.2.0             | 2.2.101           |
@@ -100,11 +98,14 @@ Each version of .NET Core implements a version of .NET Standard. Implementing a 
 | 2.1       | up to 2.0     |
 | 2.2       | up to 2.0     |
 | 3.0       | up to 2.1     |
+| 3.1       | up to 2.1     |
+
+For an interactive table of the .NET Standard versions, and how they correspond to .NET implementations, see [.NET Standard versions](https://dotnet.microsoft.com/platform/dotnet-standard#versions).
 
 ## See also
 
 - [Target frameworks](../../standard/frameworks.md)
-- [.NET Core distribution packaging](../build/distribution-packaging.md)
+- [.NET Core distribution packaging](../distribution-packaging.md)
 - [.NET Core Support Lifecycle Fact Sheet](https://dotnet.microsoft.com/platform/support/policy)
 - [.NET Core 2+ Version Binding](https://github.com/dotnet/designs/issues/3)
-- [Docker images for .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)
+- [Docker images for .NET Core](https://hub.docker.com/_/microsoft-dotnet/)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::AssemblyLoadFinished Method
+
 Notifies the profiler that an assembly has finished loading.  
   
 ## Syntax  
@@ -27,20 +28,25 @@ HRESULT AssemblyLoadFinished(
     [in] HRESULT    hrStatus);  
 ```  
   
-## Parameters  
- `assemblyId`  
- [in] Identifies the assembly that was loaded.  
-  
- `hrStatus`  
- [in] An HRESULT that indicates whether the assembly finished loading successfully.  
-  
+## Parameters
+
+- `assemblyId`
+
+  \[in] Identifies the assembly that was loaded.
+
+- `hrStatus`
+
+  \[in] An HRESULT that indicates whether the assembly finished loading successfully.
+
 ## Remarks  
+
  The value of `assemblyId` is not valid for an information request until the `AssemblyLoadFinished` method is called.  
   
  Some parts of loading the assembly might continue after the `AssemblyLoadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of loading the assembly has succeeded.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -50,4 +56,4 @@ HRESULT AssemblyLoadFinished(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: "Adding Columns to a DataTable"
+description: A DataTable contains DataColumn objects referenced by the Columns property of the table. Use this example code to add columns to a table in ADO.NET.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -7,6 +8,7 @@ dev_langs:
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
 ---
 # Adding Columns to a DataTable
+
 A <xref:System.Data.DataTable> contains a collection of <xref:System.Data.DataColumn> objects referenced by the **Columns** property of the table. This collection of columns, along with any constraints, defines the schema, or structure, of the table.  
   
  You create **DataColumn** objects within a table by using the **DataColumn** constructor, or by calling the **Add** method of the **Columns** property of the table, which is a <xref:System.Data.DataColumnCollection>. The **Add** method accepts optional **ColumnName**, **DataType**, and **Expression** arguments and creates a new **DataColumn** as a member of the collection. It also accepts an existing **DataColumn** object and adds it to the collection, and returns a reference to the added **DataColumn** if requested. Because **DataTable** objects are not specific to any data source, .NET Framework types are used when specifying the data type of a **DataColumn**.  

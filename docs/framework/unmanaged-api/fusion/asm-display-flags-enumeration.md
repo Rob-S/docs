@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # ASM_DISPLAY_FLAGS Enumeration
+
 Indicates the version, build, culture, signature, and so on, of the assembly whose display name will be retrieved by the [IAssemblyName::GetDisplayName](iassemblyname-getdisplayname-method.md) method.  
   
 ## Syntax  
@@ -33,20 +34,22 @@ typedef enum {
     ASM_DISPLAYF_RETARGET                = 0x80,  
     ASM_DISPLAYF_CONFIG_MASK             = 0x100,  
     ASM_DISPLAYF_MVID                    = 0x200,  
-    ASM_DISPLAYF_FULL                    =   
-                      ASM_DISPLAYF_VERSION           |   
-                      ASM_DISPLAYF_CULTURE           |   
-                      ASM_DISPLAYF_PUBLIC_KEY_TOKEN  |   
-                      ASM_DISPLAYF_RETARGET          |   
+    ASM_DISPLAYF_FULL                    =
+                      ASM_DISPLAYF_VERSION           |
+                      ASM_DISPLAYF_CULTURE           |
+                      ASM_DISPLAYF_PUBLIC_KEY_TOKEN  |
+                      ASM_DISPLAYF_RETARGET          |
                       ASM_DISPLAYF_PROCESSORARCHITECTURE  
   
 } ASM_DISPLAY_FLAGS;  
 ```  
   
 ## Remarks  
+
  `ASM_DISPLAYF_FULL` reflects any changes made to the version of the [IAssemblyName](iassemblyname-interface.md) object. Do not assume that the returned value is immutable.  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Fusion.h  

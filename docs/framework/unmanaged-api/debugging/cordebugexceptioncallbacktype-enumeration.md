@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # CorDebugExceptionCallbackType Enumeration
-Indicates the type of callback that is made from an [ICorDebugManagedCallback2::Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) event.  
+
+Indicates the type of callback that is made from an [ICorDebugManagedCallback2::Exception](icordebugmanagedcallback2-exception-method.md) event.  
   
 ## Syntax  
   
@@ -39,7 +40,8 @@ typedef enum CorDebugExceptionCallbackType {
 |`DEBUG_EXCEPTION_UNHANDLED`|The exception was not handled.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -49,4 +51,4 @@ typedef enum CorDebugExceptionCallbackType {
   
 ## See also
 
-- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Debugging Enumerations](debugging-enumerations.md)

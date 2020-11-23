@@ -72,6 +72,7 @@ with expression trees. That complexity is necessary to provide the capabilities 
 the rich vocabulary provided by the C# language.
 
 ## Navigating the APIs
+
 There are Expression node types that map to almost all of the syntax elements of the
 C# language. Each type has specific methods for that type of language element. It's a lot
 to keep in your head at one time. Rather than try to memorize everything, here are the techniques
@@ -85,5 +86,5 @@ can build any expression type from a set of its child nodes.
 
 You'll find more as you look at each of those three areas. Invariably, you will find what you need when
 you start with one of those three steps.
- 
+
  [Next -- Executing Expression Trees](expression-trees-execution.md)

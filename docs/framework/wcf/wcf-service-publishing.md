@@ -1,5 +1,6 @@
 ---
 title: "WCF Service Publishing"
+description: WCF Service Publishing helps you deploy your application to a production environment for testing purposes. 
 ms.date: "03/30/2017"
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
 ---
@@ -15,7 +16,7 @@ WCF Service Publishing supports publishing WCF services created from the set of 
 
 - Syndication Service Library.
 
-You can find these service templates by choosing **File** > **New Project** > [**Visual Basic** or **Visual C#**] > **WCF**. For other WCF templates in this location (including WCF Workflow Service Application and WCF Service Application), you can publish using [One-Click publishing for web applications](https://docs.microsoft.com/previous-versions/aspnet/dd465337(v=vs.110)).
+You can find these service templates by choosing **File** > **New Project** > [**Visual Basic** or **Visual C#**] > **WCF**. For other WCF templates in this location (including WCF Workflow Service Application and WCF Service Application), you can publish using [One-Click publishing for web applications](/previous-versions/aspnet/dd465337(v=vs.110)).
 
 The service can be published to the following target locations.
 

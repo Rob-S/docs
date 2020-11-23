@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: a7382c0a-e8a4-4125-9690-db3fa030a06a
 ---
 # Cast from string &quot;\<string>&quot; to type '\<typename>' is not valid
+
 An attempt to convert a string variable to another type is not valid.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ An attempt to convert a string variable to another type is not valid.
   
 ## See also
 
-- [Type Conversions in Visual Basic](../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Type Conversions in Visual Basic](../programming-guide/language-features/data-types/type-conversions.md)

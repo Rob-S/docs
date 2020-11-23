@@ -16,7 +16,8 @@ topic_type:
   - "apiref"
 ---
 # GetTypeLibInfo Function
-Returns information about the specified type library by examining its [TLIBATTR](https://docs.microsoft.com/windows/win32/api/oaidl/ns-oaidl-tlibattr) structure.  
+
+Returns information about the specified type library by examining its [TLIBATTR](/windows/win32/api/oaidl/ns-oaidl-tlibattr) structure.  
   
 ## Syntax  
   
@@ -32,6 +33,7 @@ HRESULT GetTypeLibInfo(
 ```  
   
 ## Parameters  
+
  `szFile`  
  [in] The file name of the type library.  
   
@@ -42,7 +44,7 @@ HRESULT GetTypeLibInfo(
  [out] The localization ID of the type library.  
   
  `pTypeLibPlatform`  
- [out] A [SYSKIND](https://docs.microsoft.com/windows/win32/api/oaidl/ne-oaidl-syskind) flag that identifies the target operating system for the type library. Common values are SYS_WIN32 and SYS_WIN64.  
+ [out] A [SYSKIND](/windows/win32/api/oaidl/ne-oaidl-syskind) flag that identifies the target operating system for the type library. Common values are SYS_WIN32 and SYS_WIN64.  
   
  `pTypeLibMajorVer`  
  [out] The major version number of the type library. For example, for version *x.y*, the major version number is *x*.  
@@ -51,11 +53,13 @@ HRESULT GetTypeLibInfo(
  [out] The minor version number of the type library. For example, for version *x.y*, the minor version number is *y*.  
   
 ## Remarks  
+
  The `GetTypeLibInfo` function is called by the [Tlbexp.exe (Type Library Exporter)](../../tools/tlbexp-exe-type-library-exporter.md). This tool generates a type library that describes the types in a common language runtime (CLR) assembly.  
   
  If any parameter is null, the function returns an `HRESULT` of `E_POINTER`. Otherwise, it returns `S_OK`.  
   
 ## Requirements  
+
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** TlbRef.h  
@@ -67,4 +71,4 @@ HRESULT GetTypeLibInfo(
 ## See also
 
 - [Tlbexp Helper Functions](index.md)
-- [LoadTypeLibEx Function](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [LoadTypeLibEx Function](/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

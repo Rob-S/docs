@@ -1,7 +1,7 @@
 ---
 title: "Task-based asynchronous programming - .NET"
+description: In this article, learn about task-based asynchronous programming through the Task Parallel Library (TPL) in .NET.
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
@@ -21,14 +21,14 @@ The Task Parallel Library (TPL) is based on the concept of a *task*, which repre
 
      Tasks and the framework built around them provide a rich set of APIs that support waiting, cancellation, continuations, robust exception handling, detailed status, custom scheduling, and more.
 
-For both of these reasons, in the .NET Framework, TPL is the preferred API for writing multi-threaded, asynchronous, and parallel code.
+For both of these reasons, TPL is the preferred API for writing multi-threaded, asynchronous, and parallel code in .NET.
 
 ## Creating and running tasks implicitly
 
 The <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> method provides a convenient way to run any number of arbitrary statements concurrently. Just pass in an <xref:System.Action> delegate for each item of work. The easiest way to create these delegates is to use lambda expressions. The lambda expression can either call a named method or provide the code inline. The following example shows a basic <xref:System.Threading.Tasks.Parallel.Invoke%2A> call that creates and starts two tasks that run concurrently. The first task is represented by a lambda expression that calls a method named `DoSomeWork`, and the second task is represented by a lambda expression that calls a method named `DoSomeOtherWork`.
 
 > [!NOTE]
-> This documentation uses lambda expressions to define delegates in TPL. If you are not familiar with lambda expressions in C# or Visual Basic, see [Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> This documentation uses lambda expressions to define delegates in TPL. If you are not familiar with lambda expressions in C# or Visual Basic, see [Lambda Expressions in PLINQ and TPL](lambda-expressions-in-plinq-and-tpl.md).
 
 [!code-csharp[TPL#21](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#21)]
 [!code-vb[TPL#21](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/tpl_vb.vb#21)]
@@ -36,7 +36,7 @@ The <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType
 > [!NOTE]
 > The number of <xref:System.Threading.Tasks.Task> instances that are created behind the scenes by <xref:System.Threading.Tasks.Parallel.Invoke%2A> is not necessarily equal to the number of delegates that are provided. The TPL may employ various optimizations, especially with large numbers of delegates.
 
-For more information, see [How to: Use Parallel.Invoke to Execute Parallel Operations](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md).
+For more information, see [How to: Use Parallel.Invoke to Execute Parallel Operations](how-to-use-parallel-invoke-to-execute-parallel-operations.md).
 
 For greater control over task execution or to return a value from the task, you have to work with <xref:System.Threading.Tasks.Task> objects more explicitly.
 
@@ -64,7 +64,7 @@ You can also use the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displa
 [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
 [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]
 
-For more information, see [How to: Return a Value from a Task](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).
+For more information, see [How to: Return a Value from a Task](how-to-return-a-value-from-a-task.md).
 
 When you use a lambda expression to create a delegate, you have access to all the variables that are visible at that point in your source code. However, in some cases, most notably within loops, a lambda doesn't capture the variable as expected. It only captures the final value, not the value as it mutates after each iteration. The following example illustrates the problem. It passes a loop counter to a lambda expression that instantiates a `CustomData` object and uses the loop counter as the object's identifier. As the output from the example shows, each `CustomData` object has an identical identifier.
 
@@ -87,39 +87,27 @@ Every task receives an integer ID that uniquely identifies it in an application 
 
 ## Task creation options
 
-Most APIs that create tasks provide overloads that accept a <xref:System.Threading.Tasks.TaskCreationOptions> parameter. By specifying one of these options, you tell the task scheduler how to schedule the task on the thread pool. The following table lists the various task creation options.
+Most APIs that create tasks provide overloads that accept a <xref:System.Threading.Tasks.TaskCreationOptions> parameter. By specifying one or more of these options, you tell the task scheduler how to schedule the task on the thread pool. Options may be combined by using a bitwise **OR** operation.
 
-|<xref:System.Threading.Tasks.TaskCreationOptions> parameter value|Description|
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-|<xref:System.Threading.Tasks.TaskCreationOptions.None>|The default when no option is specified. The scheduler uses its default heuristics to schedule the task.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Specifies that the task should be scheduled so that tasks created sooner will be more likely to be executed sooner, and tasks created later will be more likely to execute later.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.LongRunning>|Specifies that the task represents a long-running operation.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|Specifies that a task should be created as an attached child of the current task, if one exists. For more information, see [Attached and Detached Child Tasks](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).|
-|<xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach>|Specifies that if an inner task specifies the `AttachedToParent` option, that task will not become an attached child task.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.HideScheduler>|Specifies that the task scheduler for tasks created by calling methods like <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> or <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> from within a particular task is the default scheduler instead of the scheduler on which this task is running.|
-
-The options may be combined by using a bitwise **OR** operation. The following example shows a task that has the <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> and <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness> option.
+The following example shows a task that has the <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> and <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness> options.
 
 [!code-csharp[TPL_TaskIntro#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#03)]
 [!code-vb[TPL_TaskIntro#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#03)]
 
 ## Tasks, threads, and culture
 
-Each thread has an associated culture and UI culture, which is defined by the <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> and <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> properties, respectively. A thread's culture is used in such operations as formatting, parsing, sorting, and string comparison. A thread's UI culture is used in resource lookup. Ordinarily, unless you specify a default culture for all the threads in an application domain by using the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> and <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> properties, the default culture and UI culture of a thread is defined by the system culture. If you explicitly set a thread's culture and launch a new thread, the new thread does not inherit the culture of the calling thread; instead, its culture is the default system culture. The task-based programming model for apps that target versions of the .NET Framework prior to .NET Framework 4.6 adhere to this practice.
+Each thread has an associated culture and UI culture, which are defined by the <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> and <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> properties, respectively. A thread's culture is used in such operations as formatting, parsing, sorting, and string comparison. A thread's UI culture is used in resource lookup.
 
-> [!IMPORTANT]
-> Note that the calling thread's culture as part of a task's context applies to apps that *target* the .NET Framework 4.6, not apps that *run under* the .NET Framework 4.6. You can target a particular version of the .NET Framework when you create your project in Visual Studio by selecting that version from the dropdown list at the top of the **New Project** dialog box, or outside of Visual Studio you can use the <xref:System.Runtime.Versioning.TargetFrameworkAttribute> attribute. For apps that target versions of the .NET Framework prior to the .NET Framework 4.6, or that do not target a specific version of the .NET Framework, a task's culture continues to be determined by the culture of the thread on which it runs.
+Unless you specify a default culture for all the threads in an application domain by using the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> and <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> properties, the default culture and UI culture of a thread is defined by the system culture. If you explicitly set a thread's culture and launch a new thread, the new thread does not inherit the culture of the calling thread; instead, its culture is the default system culture. However, in task-based programming, tasks use the calling thread's culture, even if the task runs asynchronously on a different thread.
 
-Starting with apps that target the .NET Framework 4.6, the calling thread's culture is inherited by each task, even if the task runs asynchronously on a thread pool thread.
+The following example provides a simple illustration. It changes the app's current culture to French (France) (or, if French (France) is already the current culture, to English (United States)). It then invokes a delegate named `formatDelegate` that returns some numbers formatted as currency values in the new culture. Whether the delegate is invoked by a task either synchronously or asynchronously, the task uses the culture of the calling thread.
 
-The following example provides a simple illustration. It uses the <xref:System.Runtime.Versioning.TargetFrameworkAttribute> attribute to target the .NET Framework 4.6 and changes the app's current culture to either French (France) or, if French (France) is already the current culture, English (United States). It then invokes a delegate named `formatDelegate` that returns some numbers formatted as currency values in the new culture. Note that whether the delegate as a task either synchronously or asynchronously, it returns the expected result because the culture of the calling thread is inherited by the asynchronous task.
+:::code language="csharp" source="snippets/cs/asyncculture1.cs" id="1":::
 
-[!code-csharp[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#5)]
-[!code-vb[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#5)]
+:::code language="vbnet" source="snippets/vb/asyncculture1.vb" id="1":::
 
-If you are using Visual Studio, you can omit the <xref:System.Runtime.Versioning.TargetFrameworkAttribute> attribute and instead select the .NET Framework 4.6 as the target when you create the project in the **New Project** dialog.
-
-For output that reflects the behavior of apps the target versions of the .NET Framework prior to .NET Framework 4.6, remove the <xref:System.Runtime.Versioning.TargetFrameworkAttribute> attribute from the source code. The output will reflect the formatting conventions of the default system culture, not the culture of the calling thread.
+> [!NOTE]
+> In versions of .NET Framework prior to .NET Framework 4.6, a task's culture is determined by the culture of the thread on which it *runs*, not the culture of the *calling thread*. For asynchronous tasks, this means the culture used by the task could be different to the calling thread's culture.
 
 For more information on asynchronous tasks and culture, see the "Culture and asynchronous task-based operations" section in the <xref:System.Globalization.CultureInfo> topic.
 
@@ -139,7 +127,7 @@ Because <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWi
 
 The <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> and <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> methods enable you to continue from multiple tasks.
 
-For more information, see [Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md).
+For more information, see [Chaining Tasks by Using Continuation Tasks](chaining-tasks-by-using-continuation-tasks.md).
 
 ## Creating detached child tasks
 
@@ -152,12 +140,12 @@ Note that the parent task does not wait for the detached child task to finish.
 
 ## Creating child tasks
 
-When user code that is running in a task creates a task with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> option, the new task is known as a *attached child task* of the parent task. You can use the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> option to express structured task parallelism, because the parent task implicitly waits for all attached child tasks to finish. The following example shows a parent task that creates ten attached child tasks. Note that although the example calls the <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> method to wait for the parent task to finish, it does not have to explicitly wait for the attached child tasks to complete.
+When user code that is running in a task creates a task with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> option, the new task is known as an *attached child task* of the parent task. You can use the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> option to express structured task parallelism, because the parent task implicitly waits for all attached child tasks to finish. The following example shows a parent task that creates ten attached child tasks. Note that although the example calls the <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> method to wait for the parent task to finish, it does not have to explicitly wait for the attached child tasks to complete.
 
 [!code-csharp[TPL_TaskIntro#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/child1.cs#8)]
 [!code-vb[TPL_TaskIntro#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/child1.vb#8)]
 
-A parent task can use the <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> option to prevent other tasks from attaching to the parent task. For more information, see [Attached and Detached Child Tasks](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).
+A parent task can use the <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> option to prevent other tasks from attaching to the parent task. For more information, see [Attached and Detached Child Tasks](attached-and-detached-child-tasks.md).
 
 ## Waiting for tasks to finish
 
@@ -176,7 +164,7 @@ The following example shows the basic pattern that does not involve exception ha
 [!code-csharp[TPL_TaskIntro#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#06)]
 [!code-vb[TPL_TaskIntro#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#06)]
 
-For an example that shows exception handling, see [Exception Handling](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).
+For an example that shows exception handling, see [Exception Handling](exception-handling-task-parallel-library.md).
 
 Some overloads let you specify a time-out, and others take an additional <xref:System.Threading.CancellationToken> as an input parameter, so that the wait itself can be canceled either programmatically or in response to user input.
 
@@ -208,7 +196,7 @@ The <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> met
 
 ### Task(T).FromResult
 
-By using the <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> method, you can create a <xref:System.Threading.Tasks.Task%601> object that holds a pre-computed result. This method is useful when you perform an asynchronous operation that returns a <xref:System.Threading.Tasks.Task%601> object, and the result of that <xref:System.Threading.Tasks.Task%601> object is already computed. For an example that uses <xref:System.Threading.Tasks.Task.FromResult%2A> to retrieve the results of asynchronous download operations that are held in a cache, see [How to: Create Pre-Computed Tasks](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md).
+By using the <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> method, you can create a <xref:System.Threading.Tasks.Task%601> object that holds a pre-computed result. This method is useful when you perform an asynchronous operation that returns a <xref:System.Threading.Tasks.Task%601> object, and the result of that <xref:System.Threading.Tasks.Task%601> object is already computed. For an example that uses <xref:System.Threading.Tasks.Task.FromResult%2A> to retrieve the results of asynchronous download operations that are held in a cache, see [How to: Create Pre-Computed Tasks](how-to-create-pre-computed-tasks.md).
 
 ## Handling exceptions in tasks
 
@@ -224,7 +212,7 @@ When a task throws one or more exceptions, the exceptions are wrapped in an <xre
 
 The joining thread can also handle exceptions by accessing the <xref:System.Threading.Tasks.Task.Exception%2A> property before the task is garbage-collected. By accessing this property, you prevent the unhandled exception from triggering the exception propagation behavior that terminates the process when the object is finalized.
 
-For more information about exceptions and tasks, see [Exception Handling](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).
+For more information about exceptions and tasks, see [Exception Handling](exception-handling-task-parallel-library.md).
 
 ## Canceling tasks
 
@@ -232,7 +220,7 @@ The <xref:System.Threading.Tasks.Task> class supports cooperative cancellation a
 
 You can create the token, and issue the cancellation request at some later time, by using the <xref:System.Threading.CancellationTokenSource> class. Pass the token to the <xref:System.Threading.Tasks.Task> as an argument, and also reference the same token in your user delegate, which does the work of responding to a cancellation request.
 
-For more information, see [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md) and [How to: Cancel a Task and Its Children](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).
+For more information, see [Task Cancellation](task-cancellation.md) and [How to: Cancel a Task and Its Children](how-to-cancel-a-task-and-its-children.md).
 
 ## The TaskFactory class
 
@@ -240,9 +228,9 @@ The <xref:System.Threading.Tasks.TaskFactory> class provides static methods that
 
 - The most common pattern is <xref:System.Threading.Tasks.TaskFactory.StartNew%2A>, which creates and starts a task in one statement.
 
-- When you create continuation tasks from multiple antecedents, use the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> method or <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> method or their equivalents in the <xref:System.Threading.Tasks.Task%601> class. For more information, see [Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md).
+- When you create continuation tasks from multiple antecedents, use the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> method or <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> method or their equivalents in the <xref:System.Threading.Tasks.Task%601> class. For more information, see [Chaining Tasks by Using Continuation Tasks](chaining-tasks-by-using-continuation-tasks.md).
 
-- To encapsulate Asynchronous Programming Model `BeginX` and `EndX` methods in a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601> instance, use the <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> methods. For more information, see [TPL and Traditional .NET Framework Asynchronous Programming](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md).
+- To encapsulate Asynchronous Programming Model `BeginX` and `EndX` methods in a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601> instance, use the <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> methods. For more information, see [TPL and Traditional .NET Framework Asynchronous Programming](tpl-and-traditional-async-programming.md).
 
 The default <xref:System.Threading.Tasks.TaskFactory> can be accessed as a static property on the <xref:System.Threading.Tasks.Task> class or <xref:System.Threading.Tasks.Task%601> class. You can also instantiate a <xref:System.Threading.Tasks.TaskFactory> directly and specify various options that include a <xref:System.Threading.CancellationToken>, a <xref:System.Threading.Tasks.TaskCreationOptions> option, a <xref:System.Threading.Tasks.TaskContinuationOptions> option, or a <xref:System.Threading.Tasks.TaskScheduler>. Whatever options are specified when you create the task factory will be applied to all tasks that it creates, unless the <xref:System.Threading.Tasks.Task> is created by using the <xref:System.Threading.Tasks.TaskCreationOptions> enumeration, in which case the task's options override those of the task factory.
 
@@ -256,7 +244,7 @@ Most application or library developers do not care which processor the task runs
 
 ## Related data structures
 
-The TPL has several new public types that are useful in both parallel and sequential scenarios. These include several thread-safe, fast and scalable collection classes in the <xref:System.Collections.Concurrent?displayProperty=nameWithType> namespace, and several new synchronization types, for example, <xref:System.Threading.Semaphore?displayProperty=nameWithType> and <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, which are more efficient than their predecessors for specific kinds of workloads. Other new types in the .NET Framework 4, for example, <xref:System.Threading.Barrier?displayProperty=nameWithType> and <xref:System.Threading.SpinLock?displayProperty=nameWithType>, provide functionality that was not available in earlier releases. For more information, see [Data Structures for Parallel Programming](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md).
+The TPL has several new public types that are useful in both parallel and sequential scenarios. These include several thread-safe, fast and scalable collection classes in the <xref:System.Collections.Concurrent?displayProperty=nameWithType> namespace, and several new synchronization types, for example, <xref:System.Threading.Semaphore?displayProperty=nameWithType> and <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, which are more efficient than their predecessors for specific kinds of workloads. Other new types in the .NET Framework 4, for example, <xref:System.Threading.Barrier?displayProperty=nameWithType> and <xref:System.Threading.SpinLock?displayProperty=nameWithType>, provide functionality that was not available in earlier releases. For more information, see [Data Structures for Parallel Programming](data-structures-for-parallel-programming.md).
 
 ## Custom task types
 
@@ -268,20 +256,20 @@ If you must inherit from <xref:System.Threading.Tasks.Task> or <xref:System.Thre
 
 |Title|Description|
 |-|-|
-|[Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)|Describes how continuations work.|
-|[Attached and Detached Child Tasks](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)|Describes the difference between attached and detached child tasks.|
-|[Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)|Describes the cancellation support that is built into the <xref:System.Threading.Tasks.Task> object.|
-|[Exception Handling](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)|Describes how exceptions on concurrent threads are handled.|
-|[How to: Use Parallel.Invoke to Execute Parallel Operations](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Describes how to use <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|
-|[How to: Return a Value from a Task](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)|Describes how to return values from tasks.|
-|[How to: Cancel a Task and Its Children](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)|Describes how to cancel tasks.|
-|[How to: Create Pre-Computed Tasks](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)|Describes how to use the <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> method to retrieve the results of asynchronous download operations that are held in a cache.|
-|[How to: Traverse a Binary Tree with Parallel Tasks](../../../docs/standard/parallel-programming/how-to-traverse-a-binary-tree-with-parallel-tasks.md)|Describes how to use tasks to traverse a binary tree.|
-|[How to: Unwrap a Nested Task](../../../docs/standard/parallel-programming/how-to-unwrap-a-nested-task.md)|Demonstrates how to use the <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> extension method.|
-|[Data Parallelism](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Describes how to use <xref:System.Threading.Tasks.Parallel.For%2A> and <xref:System.Threading.Tasks.Parallel.ForEach%2A> to create parallel loops over data.|
-|[Parallel Programming](../../../docs/standard/parallel-programming/index.md)|Top level node for .NET Framework parallel programming.|
+|[Chaining Tasks by Using Continuation Tasks](chaining-tasks-by-using-continuation-tasks.md)|Describes how continuations work.|
+|[Attached and Detached Child Tasks](attached-and-detached-child-tasks.md)|Describes the difference between attached and detached child tasks.|
+|[Task Cancellation](task-cancellation.md)|Describes the cancellation support that is built into the <xref:System.Threading.Tasks.Task> object.|
+|[Exception Handling](exception-handling-task-parallel-library.md)|Describes how exceptions on concurrent threads are handled.|
+|[How to: Use Parallel.Invoke to Execute Parallel Operations](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Describes how to use <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|
+|[How to: Return a Value from a Task](how-to-return-a-value-from-a-task.md)|Describes how to return values from tasks.|
+|[How to: Cancel a Task and Its Children](how-to-cancel-a-task-and-its-children.md)|Describes how to cancel tasks.|
+|[How to: Create Pre-Computed Tasks](how-to-create-pre-computed-tasks.md)|Describes how to use the <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> method to retrieve the results of asynchronous download operations that are held in a cache.|
+|[How to: Traverse a Binary Tree with Parallel Tasks](how-to-traverse-a-binary-tree-with-parallel-tasks.md)|Describes how to use tasks to traverse a binary tree.|
+|[How to: Unwrap a Nested Task](how-to-unwrap-a-nested-task.md)|Demonstrates how to use the <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> extension method.|
+|[Data Parallelism](data-parallelism-task-parallel-library.md)|Describes how to use <xref:System.Threading.Tasks.Parallel.For%2A> and <xref:System.Threading.Tasks.Parallel.ForEach%2A> to create parallel loops over data.|
+|[Parallel Programming](index.md)|Top level node for .NET Framework parallel programming.|
 
 ## See also
 
-- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)
-- [Samples for Parallel Programming with the .NET Framework](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+- [Parallel Programming](index.md)
+- [Samples for Parallel Programming with the .NET Core & .NET Standard](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

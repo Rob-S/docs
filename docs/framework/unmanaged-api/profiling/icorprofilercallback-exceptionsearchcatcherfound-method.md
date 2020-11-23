@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ExceptionSearchCatcherFound Method
+
 Notifies the profiler that the search phase of exception handling has located a handler for the exception that was thrown.  
   
 ## Syntax  
@@ -26,12 +27,15 @@ RESULT ExceptionSearchCatcherFound(
     [in] FunctionID functionId);  
 ```  
   
-## Parameters  
- `functionId`  
- [in] The ID of the function that contains the exception handler.  
-  
+## Parameters
+
+- `functionId`
+
+  \[in] The ID of the function that contains the exception handler.
+
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -41,4 +45,4 @@ RESULT ExceptionSearchCatcherFound(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

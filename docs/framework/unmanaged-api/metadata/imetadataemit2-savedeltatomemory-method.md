@@ -17,26 +17,29 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit2::SaveDeltaToMemory Method
+
 Saves changes from the current edit-and-continue session to memory.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT SaveDeltaToMemory (  
-    [out] void        *pbData,   
+    [out] void        *pbData,
     [in]  ULONG       cbData  
 );  
 ```  
   
 ## Parameters  
+
  `pbData`  
  [out] The address at which to begin writing the metadata delta.  
   
  `cbData`  
- [in] The size of the changes. Use [IMetaDataEmit2::GetDeltaSaveSize](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-getdeltasavesize-method.md) to determine the size.  
+ [in] The size of the changes. Use [IMetaDataEmit2::GetDeltaSaveSize](imetadataemit2-getdeltasavesize-method.md) to determine the size.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -46,5 +49,5 @@ HRESULT SaveDeltaToMemory (
   
 ## See also
 
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)

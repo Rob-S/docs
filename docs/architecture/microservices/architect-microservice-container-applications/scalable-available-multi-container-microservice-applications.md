@@ -1,9 +1,9 @@
 ---
-title: Orchestrating microservices and multi-container applications for high scalability and availability
+title: Orchestrate microservices and multi-container applications for high scalability and availability
 description: Discover the options to orchestrate microservices and multi-container applications for high scalability and availability and the possibilities of Azure Dev Spaces while developing Kubernetes application lifecycle.
-ms.date: 09/20/2018
+ms.date: 01/30/2020
 ---
-# Orchestrating microservices and multi-container applications for high scalability and availability
+# Orchestrate microservices and multi-container applications for high scalability and availability
 
 Using orchestrators for production-ready applications is essential if your application is based on microservices or simply split across multiple containers. As introduced previously, in a microservice-based approach, each microservice owns its model and data so that it will be autonomous from a development and deployment point of view. But even if you have a more traditional application that's composed of multiple services (like SOA), you'll also have multiple containers or services comprising a single business application that need to be deployed as a distributed system. These kinds of systems are complex to scale out and manage; therefore, you absolutely need an orchestrator if you want to have a production-ready and scalable multi-container application.
 
@@ -13,7 +13,7 @@ Figure 4-23 illustrates deployment into a cluster of an application composed of 
 
 **Figure 4-23**. A cluster of containers
 
-You use one container for each service instance. Docker containers are “units of deployment” and a container is an instance of a Docker. A host handles many containers. It looks like a logical approach. But how are you handling load-balancing, routing, and orchestrating these composed applications?
+You use one container for each service instance. Docker containers are "units of deployment" and a container is an instance of a Docker. A host handles many containers. It looks like a logical approach. But how are you handling load-balancing, routing, and orchestrating these composed applications?
 
 The plain Docker Engine in single Docker hosts meets the needs of managing single image instances on one host, but it falls short when it comes to managing multiple containers deployed on multiple hosts for more complex distributed applications. In most cases, you need a management platform that will automatically start containers, scale-out containers with multiple instances per image, suspend them or shut them down when needed, and ideally also control how they access resources like the network and data storage.
 
@@ -30,9 +30,9 @@ The concepts of a cluster and a scheduler are closely related, so the products p
 ## Software platforms for container clustering, orchestration, and scheduling
 
 |     |   |
-|-----|---|
+|:---:|---|
 | **Kubernetes** <br> ![An image of the Kubernetes logo.](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) is an open-source product that provides functionality that ranges from cluster infrastructure and container scheduling to orchestrating capabilities. It lets you automate deployment, scaling, and operations of application containers across clusters of hosts. <br><br> *Kubernetes* provides a container-centric infrastructure that groups application containers into logical units for easy management and discovery. <br><br> *Kubernetes* is mature in Linux, less mature in Windows. |
-| **Azure Kubernetes Service (AKS)** <br> ![An image of the Azure Kubernetes Service logo.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) is a managed Kubernetes container orchestration service in Azure that simplifies Kubernetes cluster’s management, deployment, and operations. |
+| **Azure Kubernetes Service (AKS)** <br> ![An image of the Azure Kubernetes Service logo.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) is a managed Kubernetes container orchestration service in Azure that simplifies Kubernetes cluster's management, deployment, and operations. |
 
 ## Using container-based orchestrators in Microsoft Azure
 
@@ -62,31 +62,31 @@ In the development environment, [Docker announced in July 2018](https://blog.doc
 
 ## Getting started with Azure Kubernetes Service (AKS)
 
-To begin using AKS, you deploy an AKS cluster from the Azure portal or by using the CLI. For more information on deploying a Kubernetes cluster in Azure, see [Deploy an Azure Kubernetes Service (AKS) cluster](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
+To begin using AKS, you deploy an AKS cluster from the Azure portal or by using the CLI. For more information on deploying a Kubernetes cluster in Azure, see [Deploy an Azure Kubernetes Service (AKS) cluster](/azure/aks/kubernetes-walkthrough-portal).
 
 There are no fees for any of the software installed by default as part of AKS. All default options are implemented with open-source software. AKS is available for multiple virtual machines in Azure. You're charged only for the compute instances you choose, as well as the other underlying infrastructure resources consumed, such as storage and networking. There are no incremental charges for AKS itself.
 
-For further implementation information on deployment to Kubernetes based on kubectl and original .yaml files, check the post on [Setting eShopOnContainers up in AKS (Azure Kubernetes Service)](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.-Setting-the-solution-up-in-AKS-(Azure-Kubernetes-Service)).
+The default production deployment option for Kubernetes is to use Helm charts, which is introduced in the next section.
 
-## Deploying with Helm charts into Kubernetes clusters
+## Deploy with Helm charts into Kubernetes clusters
 
 When deploying an application to a Kubernetes cluster, you can use the original kubectl.exe CLI tool using deployment files based on the native format (.yaml files), as already mentioned in the previous section. However, for more complex Kubernetes applications such as when deploying complex microservice-based applications, it's recommended to use [Helm](https://helm.sh/).
 
 Helm Charts helps you define, version, install, share, upgrade or rollback even the most complex Kubernetes application.
 
-Going further, Helm usage is also recommended because additional Kubernetes environments in Azure, such as [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) are also based on Helm charts.
+Going further, Helm usage is also recommended because additional Kubernetes environments in Azure, such as [Azure Dev Spaces](/azure/dev-spaces/azure-dev-spaces) are also based on Helm charts.
 
 Helm is maintained by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) - in collaboration with Microsoft, Google, Bitnami and the Helm contributor community.
 
-For further implementation information on Helm charts and Kubernetes check the post on [Using Helm Charts to deploy eShopOnContainers to AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.1-Deploying-to-AKS-using-Helm-Charts).
+For more implementation information on Helm charts and Kubernetes, see the [Using Helm Charts to deploy eShopOnContainers to AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)) post.
 
 ## Use Azure Dev Spaces for your Kubernetes application lifecycle
 
-[Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) provides a rapid, iterative Kubernetes development experience for teams. With minimal dev machine setup, you can iteratively run and debug containers directly in Azure Kubernetes Service (AKS). Develop on Windows, Mac, or Linux using familiar tools like Visual Studio, Visual Studio Code, or the command line.
+[Azure Dev Spaces](/azure/dev-spaces/azure-dev-spaces) provides a rapid, iterative Kubernetes development experience for teams. With minimal dev machine setup, you can iteratively run and debug containers directly in Azure Kubernetes Service (AKS). Develop on Windows, Mac, or Linux using familiar tools like Visual Studio, Visual Studio Code, or the command line.
 
 As mentioned, Azure Dev Spaces uses Helm charts when deploying the container-based applications.
 
-Azure Dev Spaces helps development teams be more productive on Kubernetes because it allows you to rapidly iterate and debug code directly in a global Kubernetes cluster in Azure by simply using Visual Studio 2017 or Visual Studio Code. That Kubernetes cluster in Azure is a shared managed Kubernetes cluster, so your team can collaboratively work together. You can develop your code in isolation, then deploy to the global cluster and do end-to-end testing with other components without replicating or mocking up dependencies.
+Azure Dev Spaces helps development teams be more productive on Kubernetes because it allows you to rapidly iterate and debug code directly in a global Kubernetes cluster in Azure by simply using Visual Studio 2019 or Visual Studio Code. That Kubernetes cluster in Azure is a shared managed Kubernetes cluster, so your team can collaboratively work together. You can develop your code in isolation, then deploy to the global cluster and do end-to-end testing with other components without replicating or mocking up dependencies.
 
 As shown in figure 4-26, the most differential feature in Azure Dev Spaces is capability of creating 'spaces' that can run integrated to the rest of the global deployment in the cluster.
 
@@ -100,9 +100,9 @@ Azure Dev Spaces provides the concept of a space, which allows you to work in re
 
 This feature is based on URL prefixes, so when using any dev space prefix in the url, a request is served from the target microservice if it exists in the dev space, otherwise it's forwarded up to the first instance of the target microservice found in the hierarchy, eventually getting to the master dev space at the top.
 
-You can see the [eShopOnContainers wiki page on Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.1-Using-Azure-Dev-Spaces-and-AKS), to get a practical view on a concrete example.
+To get a practical view on a concrete example, see the [eShopOnContainers wiki page on Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces).
 
-For further information check the article on [Team Development with Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
+For further information check the article on [Team Development with Azure Dev Spaces](/azure/dev-spaces/team-development-netcore).
 
 ## Additional resources
 

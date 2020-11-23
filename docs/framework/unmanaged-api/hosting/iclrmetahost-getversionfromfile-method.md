@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICLRMetaHost::GetVersionFromFile Method
-Gets an assembly's original .NET Framework compilation version (stored in the metadata), given its file path. This method supersedes the [GetFileVersion](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) function.  
+
+Gets an assembly's original .NET Framework compilation version (stored in the metadata), given its file path. This method supersedes the [GetFileVersion](getfileversion-function.md) function.  
   
 ## Syntax  
   
@@ -30,6 +31,7 @@ HRESULT GetVersionFromFile (
 ```  
   
 ## Parameters  
+
  `pwzFilePath`  
  [in] The complete assembly file path.  
   
@@ -45,6 +47,7 @@ HRESULT GetVersionFromFile (
  [in, out] The size of `pwzbuffer` to avoid buffer overruns.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -54,7 +57,8 @@ HRESULT GetVersionFromFile (
 |HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|The buffer is too small.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -64,5 +68,5 @@ HRESULT GetVersionFromFile (
   
 ## See also
 
-- [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRMetaHost Interface](iclrmetahost-interface.md)
+- [Hosting](index.md)

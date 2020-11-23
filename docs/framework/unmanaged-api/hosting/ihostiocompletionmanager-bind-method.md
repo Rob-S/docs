@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IHostIoCompletionManager::Bind Method
-Binds the specified handle to an I/O completion port that has been created by an earlier call to [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
+
+Binds the specified handle to an I/O completion port that has been created by an earlier call to [CreateIoCompletionPort](ihostiocompletionmanager-createiocompletionport-method.md).  
   
 ## Syntax  
   
@@ -29,6 +30,7 @@ HRESULT Bind (
 ```  
   
 ## Parameters  
+
  `hPort`  
  [in] The I/O completion port to which to bind `hHandle`. If the value of `hPort` is null, `hHandle` is bound to the default I/O completion port.  
   
@@ -47,13 +49,15 @@ HRESULT Bind (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  An I/O completion port is created by using a call to `CreateIoCompletionPort`. The CLR calls `Bind` to bind a handle to that port.  
   
 > [!NOTE]
-> When an I/O request completes, the host must call the [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) method.  
+> When an I/O request completes, the host must call the [ICLRIoCompletionManager::OnComplete](iclriocompletionmanager-oncomplete-method.md) method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -63,4 +67,4 @@ HRESULT Bind (
   
 ## See also
 
-- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
+- [ICLRIoCompletionManager Interface](iclriocompletionmanager-interface.md)

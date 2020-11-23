@@ -17,21 +17,23 @@ topic_type:
   - "apiref"
 ---
 # ICLRStrongName::StrongNameSignatureSize Method
+
 Returns the size of the strong name signature. This method is typically used by compilers to determine how much space to reserve in the file when creating a delay-signed assembly.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT StrongNameSignatureSize (   
+HRESULT StrongNameSignatureSize (
     [in]  BYTE   *pbPublicKeyBlob,  
-    [in]  ULONG  cbPublicKeyBlob,   
+    [in]  ULONG  cbPublicKeyBlob,
     [in]  DWORD  *pcbSize  
-);   
+);
 ```  
   
 ## Parameters  
+
  `pbPublicKeyBlob`  
- [in] A structure of type [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) that contains the public portion of the key pair used to generate the strong name signature.  
+ [in] A structure of type [PublicKeyBlob](../strong-naming/publickeyblob-structure.md) that contains the public portion of the key pair used to generate the strong name signature.  
   
  `cbPublicKeyBlob`  
  [in] The size, in bytes, of `pbPublicKeyBlob`.  
@@ -40,10 +42,12 @@ HRESULT StrongNameSignatureSize (
  [in] The number of bytes required to store the strong name signature.  
   
 ## Return Value  
- `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).  
+
+ `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) for a list).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -53,4 +57,4 @@ HRESULT StrongNameSignatureSize (
   
 ## See also
 
-- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [ICLRStrongName Interface](iclrstrongname-interface.md)

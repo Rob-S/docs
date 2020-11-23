@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IGCThreadControl::SuspensionStarting Method
+
 Notifies the host that the runtime is beginning a thread suspension for a garbage collection or other suspension.  
   
 ## Syntax  
@@ -26,10 +27,12 @@ HRESULT SuspensionStarting ( );
 ```  
   
 ## Remarks  
+
  Do not reschedule any threads during the `SuspensionStarting` callback.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -39,4 +42,4 @@ HRESULT SuspensionStarting ( );
   
 ## See also
 
-- [IGCThreadControl Interface](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-interface.md)
+- [IGCThreadControl Interface](igcthreadcontrol-interface.md)

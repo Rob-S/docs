@@ -14,20 +14,23 @@ helpviewer_keywords:
 ms.assetid: f08b2390-d872-4521-a815-e9c237c4c45d
 ---
 # ICLRDomainManager Interface
+
 Enables the host to specify the application domain manager that will be used to initialize the default application domain, and to specify initialization properties.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[SetAppDomainManagerType Method](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-setappdomainmanagertype-method.md)|Specifies the type, derived from the <xref:System.AppDomainManager?displayProperty=nameWithType> class, of the application domain manager that will be used to initialize the default application domain.|  
-|[SetPropertiesForDefaultAppDomain Method](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-setpropertiesfordefaultappdomain-method.md)|Sets properties that will be used to initialize the default application domain.|  
+|[SetAppDomainManagerType Method](iclrdomainmanager-setappdomainmanagertype-method.md)|Specifies the type, derived from the <xref:System.AppDomainManager?displayProperty=nameWithType> class, of the application domain manager that will be used to initialize the default application domain.|  
+|[SetPropertiesForDefaultAppDomain Method](iclrdomainmanager-setpropertiesfordefaultappdomain-method.md)|Sets properties that will be used to initialize the default application domain.|  
   
 ## Remarks  
- To get an instance of this interface, call the [ICLRControl::GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) method with the manager type IID `IID_ICLRDomainManager`.  
+
+ To get an instance of this interface, call the [ICLRControl::GetCLRManager](iclrcontrol-getclrmanager-method.md) method with the manager type IID `IID_ICLRDomainManager`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -37,5 +40,5 @@ Enables the host to specify the application domain manager that will be used to 
   
 ## See also
 
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [Hosting Interfaces](hosting-interfaces.md)
+- [Hosting](index.md)

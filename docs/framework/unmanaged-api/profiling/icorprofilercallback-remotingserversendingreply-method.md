@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::RemotingServerSendingReply Method
+
 Notifies the profiler that the process has finished processing a remote method invocation request and is about to transmit the reply through a channel.  
   
 ## Syntax  
@@ -28,8 +29,9 @@ HRESULT RemotingServerSendingReply(
 ```  
   
 ## Parameters  
+
  `pCookie`  
- [in] A pointer to a GUID that will correspond with the value provided in [ICorProfilerCallback::RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) under these conditions:  
+ [in] A pointer to a GUID that will correspond with the value provided in [ICorProfilerCallback::RemotingClientReceivingReply](icorprofilercallback-remotingclientreceivingreply-method.md) under these conditions:  
   
 - Remoting GUID cookies are active.  
   
@@ -43,7 +45,8 @@ HRESULT RemotingServerSendingReply(
  [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -53,4 +56,4 @@ HRESULT RemotingServerSendingReply(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)

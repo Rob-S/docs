@@ -1,5 +1,6 @@
 ---
 title: "Exposing .NET components to COM"
+description: Expose .NET components to COM. Qualify .NET types for interoperation. Apply interop attributes. Package an assembly for COM. Consume a managed type from COM.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "exposing .NET Framework components to COM"
@@ -35,11 +36,11 @@ Writing a .NET type and consuming that type from unmanaged code are distinct act
 
      COM developers can reference types in an assembly using the same tools and techniques they use today.
 
-3. [Call a .NET object](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100)).
+3. [Call a .NET object](/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100)).
 
      COM developers can call methods on the .NET object the same way they call methods on any unmanaged type. For example, the COM **CoCreateInstance** API activates .NET objects.
 
-4. [Deploy an application for COM access](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100)).
+4. [Deploy an application for COM access](/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100)).
 
      A strong-named assembly can be installed in the global assembly cache and requires a signature from its publisher. Assemblies that are not strong named must be installed in the application directory of the client.
 

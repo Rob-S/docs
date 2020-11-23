@@ -11,15 +11,15 @@ Windows Communication Foundation (WCF) clients are wire-level compatible with We
   
 ### To configure a WCF client to interoperate with a WSE 3.0 Web service  
   
-1. Run the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to create a WCF client for the WSE 3.0 Web service.  
+1. Run the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) to create a WCF client for the WSE 3.0 Web service.  
   
      For a WSE Web service, a WCF client class is created.  
   
-     For details about creating a WCF client, see the [How to: Create a Client](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+     For details about creating a WCF client, see the [How to: Create a Client](../how-to-create-a-wcf-client.md).  
   
 2. Create a class that represents a binding that can communicate with WSE 3.0 Web services.  
   
-     The following class is part of the [Interoperating with WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29) sample.  
+     The following class is part of the [Interoperating with WSE](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90)) sample.  
   
     1. Create a class that derives from the <xref:System.ServiceModel.Channels.Binding> class.  
   
@@ -58,4 +58,4 @@ Windows Communication Foundation (WCF) clients are wire-level compatible with We
 ## See also
 
 - <xref:System.ServiceModel.Channels.Binding>
-- [Interoperating with WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)
+- [Interoperating with WSE](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90))

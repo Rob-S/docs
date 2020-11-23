@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # IBindingDisplay::InitializeForProcess Method
-Initializes the [IBindingDisplay](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md) object.  
+
+Initializes the [IBindingDisplay](ibindingdisplay-interface.md) object.  
   
 ## Syntax  
   
@@ -28,14 +29,17 @@ HRESULT InitializeForProcess (
 ```  
   
 ## Parameters  
+
  `pid`  
  [in] The process identifier.  
   
 ## Remarks  
+
  The debugger calls the `InitializeForProcess` method at creation time to initialize the binding display. `InitializeForProcess` must be called at creation time before any other method on `IBindingDisplay` is called.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** BindingDisplay.h  
   
@@ -45,4 +49,4 @@ HRESULT InitializeForProcess (
   
 ## See also
 
-- [IBindingDisplay Interface](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md)
+- [IBindingDisplay Interface](ibindingdisplay-interface.md)

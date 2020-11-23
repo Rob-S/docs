@@ -17,18 +17,20 @@ topic_type:
   - "apiref"
 ---
 # ICLRGCManager2::SetGCStartupLimitsEx Method
+
 Sets the size of a garbage collection segment and the maximum size of the garbage collection system's generation 0.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT SetGCStartupLimitsEx (  
-    [in] SIZE_T SegmentSize,   
+    [in] SIZE_T SegmentSize,
     [in] SIZE_T MaxGen0Size  
 );  
 ```  
   
 ## Parameters  
+
  `SegmentSize`  
  [in] The specified size of a garbage collection segment.  
   
@@ -51,12 +53,14 @@ HRESULT SetGCStartupLimitsEx (
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
   
 ## Remarks  
+
  The values that `SetGCStartupLimitsEx` sets can be specified only before the host is started. Later calls to `SetGCStartupLimitsEx` are ignored.  
   
  To set either parameter without affecting the other, specify 0 (zero) for the parameter you don't want to change.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -68,5 +72,5 @@ HRESULT SetGCStartupLimitsEx (
 
 - [Automatic Memory Management](../../../standard/automatic-memory-management.md)
 - [Garbage Collection](../../../standard/garbage-collection/index.md)
-- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [ICLRGCManager2 Interface](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-interface.md)
+- [ICLRControl Interface](iclrcontrol-interface.md)
+- [ICLRGCManager2 Interface](iclrgcmanager2-interface.md)

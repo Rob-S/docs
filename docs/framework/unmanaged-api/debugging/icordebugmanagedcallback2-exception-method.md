@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback2::Exception Method
+
 Notifies the debugger that a search for an exception handler has started.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT Exception (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain containing the thread on which the exception was thrown.  
   
@@ -49,9 +51,10 @@ HRESULT Exception (
  [in] A value of the CorDebugExceptionCallbackType enumeration that specifies the type of this exception callback.  
   
  `dwFlags`  
- [in] A value of the [CorDebugExceptionFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) enumeration that specifies additional information about the exception  
+ [in] A value of the [CorDebugExceptionFlags](cordebugexceptionflags-enumeration.md) enumeration that specifies additional information about the exception  
   
 ## Remarks  
+
  The `Exception` callback is called at various points during the search phase of the exception-handling process. That is, it can be called more than once while unwinding an exception.  
   
  The exception being processed can be retrieved from the ICorDebugThread object referenced by the `pThread` parameter.  
@@ -66,7 +69,8 @@ HRESULT Exception (
 |DEBUG_EXCEPTION_UNHANDLED|NULL|Undefined.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -76,5 +80,5 @@ HRESULT Exception (
   
 ## See also
 
-- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 Interface](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 02b8e145-7988-48ad-abad-ed7656b4933c
 ---
 # Application-defined or object-defined error
+
 An application-defined or user-defined error occurred. Check the error.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ An application-defined or user-defined error occurred. Check the error.
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../programming-guide/language-features/error-types.md)

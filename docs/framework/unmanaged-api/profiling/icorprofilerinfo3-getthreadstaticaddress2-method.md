@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerInfo3::GetThreadStaticAddress2 Method
+
 Gets the address of the specified thread-static field that is in the scope of the specified thread and application domain.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT GetThreadStaticAddress2(
 ```  
   
 ## Parameters  
+
  `classId`  
  [in] The ID of the class that contains the requested thread-static field.  
   
@@ -47,6 +49,7 @@ HRESULT GetThreadStaticAddress2(
  [out] A pointer to the address of the static field that is within the specified thread.  
   
 ## Remarks  
+
  The `GetThreadStaticAddress2` method may return one of the following:  
   
 - A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
@@ -55,10 +58,11 @@ HRESULT GetThreadStaticAddress2(
   
  Before a class’s class constructor is completed, `GetThreadStaticAddress2` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.  
   
- The [ICorProfilerInfo2::GetThreadStaticAddress](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) method is similar to the `GetThreadStaticAddress2` method, but does not accept an application domain argument.  
+ The [ICorProfilerInfo2::GetThreadStaticAddress](icorprofilerinfo2-getthreadstaticaddress-method.md) method is similar to the `GetThreadStaticAddress2` method, but does not accept an application domain argument.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -68,6 +72,6 @@ HRESULT GetThreadStaticAddress2(
   
 ## See also
 
-- [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo3 Interface](icorprofilerinfo3-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)
+- [Profiling](index.md)

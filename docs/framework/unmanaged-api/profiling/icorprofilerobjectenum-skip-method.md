@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerObjectEnum::Skip Method
+
 Advances the cursor of this enumerator from its current position so that the specified number of elements are skipped.  
   
 ## Syntax  
@@ -28,14 +29,17 @@ HRESULT Skip (
 ```  
   
 ## Parameters  
+
  `celt`  
  [in] The number of elements to be skipped.  
   
 ## Remarks  
+
  The new position of this enumerator's cursor is: (current position) + `celt` .  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -45,4 +49,4 @@ HRESULT Skip (
   
 ## See also
 
-- [ICorProfilerObjectEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md)
+- [ICorProfilerObjectEnum Interface](icorprofilerobjectenum-interface.md)

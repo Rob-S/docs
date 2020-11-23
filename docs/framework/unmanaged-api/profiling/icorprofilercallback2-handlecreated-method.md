@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback2::HandleCreated Method
+
 Notifies the code profiler that a garbage collection handle has been created.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT HandleCreated(
 ```  
   
 ## Parameters  
+
  `handleId`  
  [in] The ID of the handle for the garbage collection.  
   
@@ -35,7 +37,8 @@ HRESULT HandleCreated(
  [in] The ID of the object for which the garbage collection handle was created.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -45,5 +48,5 @@ HRESULT HandleCreated(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 Interface](icorprofilercallback2-interface.md)

@@ -1,14 +1,13 @@
 ---
 title: "How to: Use time zones in date and time arithmetic"
 ms.date: "04/10/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
-  - "time zones [.NET Framework], arithmetic operations"
-  - "arithmetic operations [.NET Framework], dates and times"
-  - "dates [.NET Framework], adding and subtracting"
+  - "time zones [.NET], arithmetic operations"
+  - "arithmetic operations [.NET], dates and times"
+  - "dates [.NET], adding and subtracting"
 ms.assetid: 83dd898d-1338-415d-8cd6-445377ab7871
 ---
 # How to: Use time zones in date and time arithmetic
@@ -56,5 +55,5 @@ This example requires:
 
 ## See also
 
-- [Dates, times, and time zones](../../../docs/standard/datetime/index.md)
-- [Performing arithmetic operations with dates and times](../../../docs/standard/datetime/performing-arithmetic-operations.md)
+- [Dates, times, and time zones](index.md)
+- [Performing arithmetic operations with dates and times](performing-arithmetic-operations.md)

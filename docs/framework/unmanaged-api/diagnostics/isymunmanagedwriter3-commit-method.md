@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedWriter3::Commit Method
+
 Commits the changes written so far to the stream.  
   
 ## Syntax  
@@ -26,11 +27,13 @@ HRESULT Commit();
 ```  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedWriter3 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+- [ISymUnmanagedWriter3 Interface](isymunmanagedwriter3-interface.md)

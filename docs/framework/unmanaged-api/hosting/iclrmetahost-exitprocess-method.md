@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICLRMetaHost::ExitProcess Method
-Attempts to shut down all loaded runtimes gracefully and then terminates the process. Supersedes the [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md) function.  
+
+Attempts to shut down all loaded runtimes gracefully and then terminates the process. Supersedes the [CorExitProcess](corexitprocess-function.md) function.  
   
 ## Syntax  
   
@@ -27,16 +28,19 @@ HRESULT ExitProcess (
 ```  
   
 ## Parameters  
+
  `iExitCode`  
  [in] The exit code for the process.  
   
 ## Return Value  
+
  This method never returns, so its return value is undefined.  
   
 ## Remarks  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -46,5 +50,5 @@ HRESULT ExitProcess (
   
 ## See also
 
-- [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRMetaHost Interface](iclrmetahost-interface.md)
+- [Hosting](index.md)

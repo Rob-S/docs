@@ -1,5 +1,6 @@
 ---
 title: "contextSwitchDeadlock MDA"
+description: Read about the contextSwitchDeadlock managed debugging assistant (MDA) in .NET, which is activated when a deadlock is detected during a COM context transition.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "deadlocks [.NET Framework]"
@@ -12,8 +13,6 @@ helpviewer_keywords:
   - "message pumping"
   - "context switching deadlocks"
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # contextSwitchDeadlock MDA
 

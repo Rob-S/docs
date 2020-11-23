@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedConstant::GetName Method
+
 Gets the name of the constant.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT GetName(
 ```  
   
 ## Parameters  
+
  `cchName`  
  [in] The length of the buffer that the `szName` parameter points to.  
   
@@ -40,13 +42,15 @@ HRESULT GetName(
  [out] The buffer that stores the name.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedConstant Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
-- [GetSignature Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)
-- [GetValue Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)
+- [ISymUnmanagedConstant Interface](isymunmanagedconstant-interface.md)
+- [GetSignature Method](isymunmanagedconstant-getsignature-method.md)
+- [GetValue Method](isymunmanagedconstant-getvalue-method.md)

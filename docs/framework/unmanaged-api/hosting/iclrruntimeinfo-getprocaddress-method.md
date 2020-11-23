@@ -17,9 +17,10 @@ topic_type:
   - "apiref"
 ---
 # ICLRRuntimeInfo::GetProcAddress Method
+
 Gets the address of a specified function that was exported from the common language runtime (CLR) associated with this interface.  
   
- This method supersedes the [GetRealProcAddress](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) function.  
+ This method supersedes the [GetRealProcAddress](getrealprocaddress-function.md) function.  
   
 ## Syntax  
   
@@ -30,6 +31,7 @@ HRESULT GetProcAddress(
 ```  
   
 ## Parameters  
+
  `pszProcName`  
  [in] The name of the exported function.  
   
@@ -37,6 +39,7 @@ HRESULT GetProcAddress(
  [out] The address of the exported function.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -46,10 +49,12 @@ HRESULT GetProcAddress(
 |CLR_E_SHIM_RUNTIMEEXPORT|The specified function is not an exported function.|  
   
 ## Remarks  
+
  This method causes the CLR to be loaded but not initialized.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -59,6 +64,6 @@ HRESULT GetProcAddress(
   
 ## See also
 
-- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo Interface](iclrruntimeinfo-interface.md)
+- [Hosting Interfaces](hosting-interfaces.md)
+- [Hosting](index.md)

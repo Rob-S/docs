@@ -9,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
 ---
 # Walkthrough: Implementing IEnumerable(Of T) in Visual Basic
+
 The <xref:System.Collections.Generic.IEnumerable%601> interface is implemented by classes that can return a sequence of values one item at a time. The advantage of returning data one item at a time is that you do not have to load the complete set of data into memory to work with it. You only have to use sufficient memory to load a single item from the data. Classes that implement the `IEnumerable(T)` interface can be used with `For Each` loops or LINQ queries.  
   
  For example, consider an application that must read a large text file and return each line from the file that matches particular search criteria. The application uses a LINQ query to return lines from the file that match the specified criteria. To query the contents of the file by using a LINQ query, the application could load the contents of the file into an array or a collection. However, loading the whole file into an array or collection would consume far more memory than is required. The LINQ query could instead query the file contents by using an enumerable class, returning only values that match the search criteria. Queries that return only a few matching values would consume far less memory.  
@@ -79,7 +80,7 @@ The <xref:System.Collections.Generic.IEnumerable%601> interface is implemented b
 
 7. The `Dispose` method of the `IEnumerator` interface guarantees that all unmanaged resources are released before the iterator is destroyed. The file handle that is used by the `StreamReader` object is an unmanaged resource and must be closed before the iterator instance is destroyed. Replace the code that Visual Basic generated for the `Dispose` method with the following code.
 
-     [!code-vb[VbVbalrIteratorWalkthrough#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#9)] 
+     [!code-vb[VbVbalrIteratorWalkthrough#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#9)]
   
 ## Using the Sample Iterator
 
@@ -89,7 +90,7 @@ The <xref:System.Collections.Generic.IEnumerable%601> interface is implemented b
   
 ## See also
 
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Control Flow](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
-- [Loop Structures](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
-- [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+- [Introduction to LINQ in Visual Basic](../linq/introduction-to-linq.md)
+- [Control Flow](index.md)
+- [Loop Structures](loop-structures.md)
+- [For Each...Next Statement](../../../language-reference/statements/for-each-next-statement.md)

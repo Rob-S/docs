@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: a5113d23-ca66-4961-909f-74f97a0eaf87
 ---
 # Named argument '\<argumentname>' specified multiple times
+
 You specified a named argument more than once.  
   
 ## To correct this error  
@@ -14,4 +15,4 @@ You specified a named argument more than once.
   
 ## See also
 
-- [Passing Arguments by Position and by Name](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
+- [Passing Arguments by Position and by Name](../programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)

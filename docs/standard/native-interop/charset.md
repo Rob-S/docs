@@ -1,8 +1,6 @@
 ---
 title: Charsets and marshaling - .NET
 description: Learn how different values of CharSet can change how .NET marshals your data to native code.
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
 ---
 
@@ -14,8 +12,8 @@ The following table shows a mapping between each charset and how a character or 
 
 | `CharSet` value | Windows            | .NET Core 2.2 and earlier on Unix | .NET Core 3.0 and later and Mono on Unix |
 |-----------------|--------------------|-----------------------------------|------------------------------------------|
-| Ansi            | `char` (the system default [Windows (ANSI) code page](/windows/win32/intl/code-pages))      | `char` (UTF-8)                    | `char` (UTF-8)                           |
-| Unicode         | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char16_t` (UTF-16)                      |
-| Auto            | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char` (UTF-8)                           |
+| `Ansi`          | `char` (the system default [Windows (ANSI) code page](/windows/win32/intl/code-pages))      | `char` (UTF-8)                    | `char` (UTF-8)                           |
+| `Unicode`       | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char16_t` (UTF-16)                      |
+| `Auto`          | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char` (UTF-8)                           |
 
 Make sure you know what representation your native representation expects when picking your charset.

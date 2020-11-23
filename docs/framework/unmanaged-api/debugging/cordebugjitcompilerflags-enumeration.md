@@ -16,6 +16,7 @@ topic_type:
   - "apiref"
 ---
 # CorDebugJITCompilerFlags Enumeration
+
 Contains values that influence the behavior of the managed just-in-time (JIT) compiler.  
   
 ## Syntax  
@@ -39,7 +40,8 @@ typedef enum CorDebugJITCompilerFlags {
 |`CORDEBUG_JIT_ENABLE_ENC`|Specifies that the compiler should track compilation data, disables optimizations, and enables Edit and Continue technologies.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -49,4 +51,4 @@ typedef enum CorDebugJITCompilerFlags {
   
 ## See also
 
-- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Debugging Enumerations](debugging-enumerations.md)

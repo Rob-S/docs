@@ -1,5 +1,6 @@
 ---
 title: "pInvokeStackImbalance MDA"
+description: Review the PInvokeStackImbalance MDA, which may be activated during an access violation or memory corruption when making or following a platform invoke call.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "signatures, platform invoke"
@@ -10,8 +11,6 @@ helpviewer_keywords:
   - "PInvokeStackImbalance MDA"
   - "managed debugging assistants (MDAs), platform invoke"
 ms.assetid: 34ddc6bd-1675-4f35-86aa-de1645d5c631
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # PInvokeStackImbalance MDA
 

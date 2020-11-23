@@ -16,12 +16,13 @@ topic_type:
   - "apiref"
 ---
 # CorNativeLinkType Enumeration
+
 Provides values that indicate the type linked in native code.  
   
 ## Syntax  
   
 ```cpp  
-typedef enum   
+typedef enum
 {  
     nltNone       = 1,  
     nltAnsi       = 2,  
@@ -44,7 +45,8 @@ typedef enum
 |`nltMaxValue`|Not used.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -54,4 +56,4 @@ typedef enum
   
 ## See also
 
-- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Metadata Enumerations](metadata-enumerations.md)

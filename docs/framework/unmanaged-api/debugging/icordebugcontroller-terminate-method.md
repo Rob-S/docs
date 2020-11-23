@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugController::Terminate Method
+
 Terminates the process with the specified exit code.  
   
 > [!NOTE]
@@ -31,17 +32,20 @@ HRESULT Terminate (
 ```  
   
 ## Parameters  
+
  `exitCode`  
  [in] A numeric value that is the exit code. The valid numeric values are defined in Winbase.h.  
   
 ## Remarks  
- If the process is stopped when `Terminate` is called, the process should be continued by using the [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) method so that the debugger receives confirmation of the termination through the [ICorDebugManagedCallback::ExitProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) or [ICorDebugManagedCallback::ExitAppDomain](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) callback.  
+
+ If the process is stopped when `Terminate` is called, the process should be continued by using the [ICorDebugController::Continue](icordebugcontroller-continue-method.md) method so that the debugger receives confirmation of the termination through the [ICorDebugManagedCallback::ExitProcess](icordebugmanagedcallback-exitprocess-method.md) or [ICorDebugManagedCallback::ExitAppDomain](icordebugmanagedcallback-exitappdomain-method.md) callback.  
   
 > [!NOTE]
 > This method is not implemented by an application domain. That is, it is not implemented at the <xref:System.AppDomain> level.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   

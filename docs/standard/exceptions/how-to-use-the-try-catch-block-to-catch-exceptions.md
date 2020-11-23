@@ -1,7 +1,7 @@
 ---
 title: "How to: Use the Try-Catch Block to Catch Exceptions"
+description: Use the try block to contain statements that might raise or throw an exception. Place statements to handle exceptions in one or more catch blocks.
 ms.date: "02/06/2019"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
@@ -11,8 +11,6 @@ helpviewer_keywords:
   - "try/catch blocks"
   - "catch blocks"
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # How to use the try/catch block to catch exceptions
 

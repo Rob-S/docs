@@ -1,9 +1,7 @@
 ---
 title: Diagnostics tools overview - .NET Core
 description: An overview of the tools and techniques available to diagnose .NET Core applications.
-author: sdmaclea
-ms.author: stmaclea
-ms.date: 12/17/2019
+ms.date: 07/16/2020
 ms.topic: overview
 #Customer intent: As a .NET Core developer I want to find the best tools to help me diagnose problems so that I can be productive.
 ---
@@ -25,7 +23,15 @@ This article helps you find the various tools you need.
 
 [Unit testing](../testing/index.md) is a key component of continuous integration and deployment of high-quality software. Unit tests are designed to give you an early warning when you break something.
 
-## .NET Core dotnet diagnostic Global Tools
+## Collect diagnostics in containers
+
+The same diagnostics tools that are used in non-containerized Linux environments can also be used to [collect diagnostics in containers](diagnostics-in-containers.md). There are just a few usage changes needed to make sure the tools work in a Docker container.
+
+## Debug Linux dumps
+
+[Debug Linux dumps](debug-linux-dumps.md) explains how to collect and analyze dumps on Linux.
+
+## .NET Core diagnostic global tools
 
 ### dotnet-counters
 
@@ -35,12 +41,40 @@ This article helps you find the various tools you need.
 
 The [dotnet-dump](dotnet-dump.md) tool is a way to collect and analyze Windows and Linux core dumps without a native debugger.
 
+### dotnet-gcdump
+
+The [dotnet-gcdump](dotnet-gcdump.md) tool is a way to collect GC (Garbage Collector) dumps of live .NET processes.
+
 ### dotnet-trace
 
 .NET Core includes what is called the `EventPipe` through which diagnostics data is exposed. The [dotnet-trace](dotnet-trace.md) tool allows you to consume interesting profiling data from your app that can help in scenarios where you need to root cause apps running slow.
+
+### dotnet-symbol
+
+[dotnet-symbol](dotnet-symbol.md) downloads files (symbols, DAC/DBI, host files, etc.) needed to open a core dump or minidump. Use this tool if you need symbols and modules to debug a dump file captured on a different machine.
+
+### dotnet-sos
+
+[dotnet-sos](dotnet-sos.md) is used to install the [SOS debugging extension](../../framework/tools/sos-dll-sos-debugging-extension.md) on Linux or MacOS (or on Windows if using older debugging tools).
+
+### PerfCollect
+
+[PerfCollect](trace-perfcollect-lttng.md) is a bash script you can use to collect traces with `perf` and `LTTng` for a more in-depth performance analysis of .NET apps running on Linux distributions.
 
 ## .NET Core diagnostics tutorials
 
 ### Debug a memory leak
 
 [Tutorial: Debug a memory leak](debug-memory-leak.md) walks through finding a memory leak. The [dotnet-counters](dotnet-counters.md) tool is used to confirm the leak and the [dotnet-dump](dotnet-dump.md) tool is used to diagnose the leak.
+
+### Debug high CPU usage
+
+[Tutorial: Debug high CPU usage](debug-highcpu.md) walks you through investigating high CPU usage. It uses the [dotnet-counters](dotnet-counters.md) tool to confirm the high CPU usage. It then walks you through using [Trace for performance analysis utility (`dotnet-trace`)](dotnet-trace.md) or Linux `perf` to collect and view CPU usage profile.
+
+### Debug deadlock
+
+[Tutorial: Debug deadlock](debug-deadlock.md) shows you how to use the [dotnet-dump](dotnet-dump.md) tool to investigate threads and locks.
+
+### Measure performance using EventCounters
+
+[Tutorial: Measure performance using EventCounters in .NET](event-counter-perf.md) shows you how to use the <xref:System.Diagnostics.Tracing.EventCounter> API to measure performance in your .NET app.

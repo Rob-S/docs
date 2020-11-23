@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedSymbolSearchInfo::GetHRESULT Method
+
 Gets the HRESULT.  
   
 ## Syntax  
@@ -27,15 +28,18 @@ HRESULT GetHRESULT(
 ```  
   
 ## Parameters  
+
  `phr`  
  [out] A pointer to the HRESULT.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedSymbolSearchInfo Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)
+- [ISymUnmanagedSymbolSearchInfo Interface](isymunmanagedsymbolsearchinfo-interface.md)

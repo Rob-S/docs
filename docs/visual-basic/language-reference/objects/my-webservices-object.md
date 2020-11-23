@@ -9,16 +9,19 @@ helpviewer_keywords:
 ms.assetid: f188dc05-2c75-41b6-bb68-122d1c3110a2
 ---
 # My.WebServices Object
+
 Provides properties for creating and accessing a single instance of each XML Web service referenced by the current project.  
   
 ## Remarks  
- The `My.WebServices` object provides an instance of each Web service referenced by the current project. Each instance is instantiated on demand. You can access these Web services through the properties of the `My.WebServices` object. The name of the property is the same as the name of the Web service that the property accesses. Any class that inherits from <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> is a Web service. For information about adding Web services to a project, see [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+
+ The `My.WebServices` object provides an instance of each Web service referenced by the current project. Each instance is instantiated on demand. You can access these Web services through the properties of the `My.WebServices` object. The name of the property is the same as the name of the Web service that the property accesses. Any class that inherits from <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> is a Web service. For information about adding Web services to a project, see [Accessing Application Web Services](../../developing-apps/programming/accessing-application-web-services.md).  
   
- The `My.WebServices` object exposes only the Web services associated with the current project. It does not provide access to Web services declared in referenced DLLs. To access a Web service that a DLL provides, you must use the qualified name of the Web service, in the form *DllName*.*WebServiceName*. For more information, see [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ The `My.WebServices` object exposes only the Web services associated with the current project. It does not provide access to Web services declared in referenced DLLs. To access a Web service that a DLL provides, you must use the qualified name of the Web service, in the form *DllName*.*WebServiceName*. For more information, see [Accessing Application Web Services](../../developing-apps/programming/accessing-application-web-services.md).  
   
  The object and its properties are not available for Web applications.  
   
 ## Properties  
+
  Each property of the `My.WebServices` object provides access to an instance of a Web service referenced by the current project. The name of the property is the same as the name of the Web service that the property accesses, and the property type is the same as the Web service's type.  
   
 > [!NOTE]
@@ -34,11 +37,12 @@ Provides properties for creating and accessing a single instance of each XML Web
 > Typically, the `Is` or `IsNot` operator has to read the value of the property to perform the comparison. However, if the property currently stores `Nothing`, the property creates a new instance of the Web service and then returns that instance. However, the Visual Basic compiler treats the properties of the `My.WebServices` object specially, and allows the `Is` or `IsNot` operator to check the status of the property without altering its value.  
   
 ## Example  
+
  This example calls the `FahrenheitToCelsius` method of the `TemperatureConverter` XML Web service, and returns the result.  
   
  [!code-vb[VbVbalrMyWebService#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWebService/VB/Form1.vb#1)]  
   
- For this example to work, your project must reference a Web service named `Converter`, and that Web service must expose the `ConvertTemperature` method. For more information, see [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ For this example to work, your project must reference a Web service named `Converter`, and that Web service must expose the `ConvertTemperature` method. For more information, see [Accessing Application Web Services](../../developing-apps/programming/accessing-application-web-services.md).  
   
  This code does not work in a Web application project.  
   
@@ -60,4 +64,4 @@ Provides properties for creating and accessing a single instance of each XML Web
 
 - <xref:System.Web.Services.Protocols.SoapHttpClientProtocol>
 - <xref:System.ArgumentException>
-- [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)
+- [Accessing Application Web Services](../../developing-apps/programming/accessing-application-web-services.md)

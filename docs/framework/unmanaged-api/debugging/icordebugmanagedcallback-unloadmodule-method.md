@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugManagedCallback::UnloadModule Method
+
 Notifies the debugger that a common language runtime module (DLL) has been unloaded.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT UnloadModule (
 ```  
   
 ## Parameters  
+
  `pAppDomain`  
  [in] A pointer to an ICorDebugAppDomain object that represents the application domain that contained the module.  
   
@@ -36,10 +38,12 @@ HRESULT UnloadModule (
  [in] A pointer to an ICorDebugModule object that represents the module.  
   
 ## Remarks  
+
  The module should not be used after this call.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -49,5 +53,5 @@ HRESULT UnloadModule (
   
 ## See also
 
-- [LoadModule Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadmodule-method.md)
-- [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [LoadModule Method](icordebugmanagedcallback-loadmodule-method.md)
+- [ICorDebugManagedCallback Interface](icordebugmanagedcallback-interface.md)

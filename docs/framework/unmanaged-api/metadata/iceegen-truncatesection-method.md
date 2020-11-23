@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::TruncateSection Method
+
 Truncates the specified code section by the specified length.  
   
  This method is obsolete and should not be used.  
@@ -31,6 +32,7 @@ HRESULT TruncateSection (
 ```  
   
 ## Parameters  
+
  `section`  
  [in] The section to truncate.  
   
@@ -38,10 +40,12 @@ HRESULT TruncateSection (
  [in] The length, in bytes, by which to truncate the section.  
   
 ## Remarks  
+
  Call `TruncateSection` only if you have special section requirements that are not handled by other methods.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -51,4 +55,4 @@ HRESULT TruncateSection (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

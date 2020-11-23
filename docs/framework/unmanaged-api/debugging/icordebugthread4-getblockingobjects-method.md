@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugThread4::GetBlockingObjects Method
-Provides an ordered enumeration of [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures that provide thread blocking information.  
+
+Provides an ordered enumeration of [CorDebugBlockingObject](cordebugblockingobject-structure.md) structures that provide thread blocking information.  
   
 ## Syntax  
   
@@ -27,10 +28,12 @@ HRESULT GetBlockingObjects (
 ```  
   
 ## Parameters  
+
  `ppBlockingObjectEnum`  
- [out] A pointer to an ordered enumeration of [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.  
+ [out] A pointer to an ordered enumeration of [CorDebugBlockingObject](cordebugblockingobject-structure.md) structures.  
   
 ## Remarks  
+
  The first element in the returned enumeration corresponds to the first structure that is blocking the thread. The second element corresponds to a blocking item that is encountered while running an asynchronous procedure call (APC) when blocked on the first, and so on.  
   
  The enumeration is valid only for the duration of the current synchronized state.  
@@ -42,7 +45,8 @@ HRESULT GetBlockingObjects (
  If a thread is blocked and the error cannot be determined, the method returns an HRESULT that indicates failure; otherwise, it returns S_OK.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -52,6 +56,6 @@ HRESULT GetBlockingObjects (
   
 ## See also
 
-- [ICorDebugThread4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugThread4 Interface](icordebugthread4-interface.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

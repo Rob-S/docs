@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedWriter2::DefineGlobalVariable2 Method
+
 Defines a single global variable.  
   
 ## Syntax  
@@ -33,6 +34,7 @@ HRESULT DefineGlobalVariable2(
 ```  
   
 ## Parameters  
+
  `name`  
  [in] The global variable name.  
   
@@ -55,12 +57,14 @@ HRESULT DefineGlobalVariable2(
  [in] The third address for the parameter specification.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl  
   
 ## See also
 
-- [ISymUnmanagedWriter2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-interface.md)
-- [DefineGlobalVariable Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)
+- [ISymUnmanagedWriter2 Interface](isymunmanagedwriter2-interface.md)
+- [DefineGlobalVariable Method](isymunmanagedwriter-defineglobalvariable-method.md)

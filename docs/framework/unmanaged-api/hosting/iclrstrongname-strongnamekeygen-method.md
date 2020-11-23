@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRStrongName::StrongNameKeyGen Method
+
 Creates a new public/private key pair for strong name use.  
   
 ## Syntax  
@@ -31,6 +32,7 @@ HRESULT StrongNameKeyGen (
 ```  
   
 ## Parameters  
+
  `wszKeyContainer`  
  [in] The requested key container name. `wszKeyContainer` must either be a non-empty string or null to generate a temporary name.  
   
@@ -48,13 +50,16 @@ HRESULT StrongNameKeyGen (
  [out] The size, in bytes, of `ppbKeyBlob`.  
   
 ## Return Value  
- `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).  
+
+ `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) for a list).  
   
 ## Remarks  
- The [ICLRStrongName::StrongNameKeyGen](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) method creates a 1024-bit key. After the key is retrieved, you should call the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method to release the allocated memory.  
+
+ The [ICLRStrongName::StrongNameKeyGen](iclrstrongname-strongnamekeygen-method.md) method creates a 1024-bit key. After the key is retrieved, you should call the [ICLRStrongName::StrongNameFreeBuffer](iclrstrongname-strongnamefreebuffer-method.md) method to release the allocated memory.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -64,5 +69,5 @@ HRESULT StrongNameKeyGen (
   
 ## See also
 
-- [StrongNameKeyGenEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)
-- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameKeyGenEx Method](iclrstrongname-strongnamekeygenex-method.md)
+- [ICLRStrongName Interface](iclrstrongname-interface.md)

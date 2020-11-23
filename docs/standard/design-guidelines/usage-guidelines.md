@@ -1,11 +1,9 @@
 ---
 title: "Usage guidelines"
 ms.date: "10/22/2008"
-ms.technology: dotnet-standard
 helpviewer_keywords: 
   - "class library design guidelines [.NET Framework], usage guidelines"
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-author: "KrzysztofCwalina"
 ---
 # Usage guidelines
 
@@ -31,4 +29,4 @@ The <xref:System.IDisposable?displayProperty=nameWithType> interface is not cove
   
 ## See also
 
-- [Framework Design Guidelines](../../../docs/standard/design-guidelines/index.md)
+- [Framework Design Guidelines](index.md)

@@ -1,18 +1,17 @@
 ---
 title: "Conversion of XML Data Types"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Conversion of XML Data Types
-The majority of the methods found in an **XmlConvert** class are used to convert data between strings and strongly-typed formats. Methods are locale independent. This means that they do not take into account any locale settings when doing conversion.  
+
+The majority of the methods found in an **XmlConvert** class are used to convert data between strings and strongly typed formats. Methods are locale independent. This means that they do not take into account any locale settings when doing conversion.  
   
 ## Reading String as types  
+
  The following sample reads a string and converts it to a **DateTime** type.  
   
  Given the following XML input:  
@@ -38,6 +37,7 @@ Console.WriteLine(vDateTime);
 ```  
   
 ## Writing Strings as types  
+
  The following sample reads an **Int32** and converts it to a string.  
   
  Given the following XML input:  
@@ -62,5 +62,5 @@ writer.WriteElementString("TestInt32",XmlConvert.ToString(vInt32));
   
 ## See also
 
-- [Converting Strings to .NET Framework Data Types](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)
-- [Converting .NET Framework Types to Strings](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [Converting Strings to .NET Framework Data Types](converting-strings-to-dotnet-data-types.md)
+- [Converting .NET Framework Types to Strings](converting-dotnet-types-to-strings.md)

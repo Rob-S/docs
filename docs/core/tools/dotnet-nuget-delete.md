@@ -6,7 +6,7 @@ ms.date: 06/26/2019
 ---
 # dotnet nuget delete
 
-**This topic applies to: ✓** .NET Core 1.x SDK and later versions
+**This article applies to:** ✔️ .NET Core 1.x SDK and later versions
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -19,9 +19,11 @@ ms.date: 06/26/2019
 ## Synopsis
 
 ```dotnetcli
-dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [--interactive] [-k|--api-key] [--no-service-endpoint]
-    [--non-interactive] [-s|--source]
-dotnet nuget delete [-h|--help]
+dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output]
+    [--interactive] [-k|--api-key <API_KEY>] [--no-service-endpoint]
+    [--non-interactive] [-s|--source <SOURCE>]
+
+dotnet nuget delete -h|--help
 ```
 
 ## Description

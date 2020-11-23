@@ -16,18 +16,20 @@ topic_type:
   - "apiref"
 ---
 # IDebuggerThreadControl Interface
+
 Provides methods for notifying the host about the blocking and unblocking of threads by the debugging services.  
   
 ## Methods  
   
 |Method|Description|  
 |------------|-----------------|  
-|[ThreadIsBlockingForDebugger Method](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-threadisblockingfordebugger-method.md)|Notifies the host that the thread that is sending this callback is about to block within the debugging services.|  
-|[ReleaseAllRuntimeThreads Method](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-releaseallruntimethreads-method.md)|Notifies the host that the debugging services are about to release all threads that are blocked.|  
-|[StartBlockingForDebugger Method](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-startblockingfordebugger-method.md)|Notifies the host that the debugging services are about to start blocking all threads.|  
+|[ThreadIsBlockingForDebugger Method](idebuggerthreadcontrol-threadisblockingfordebugger-method.md)|Notifies the host that the thread that is sending this callback is about to block within the debugging services.|  
+|[ReleaseAllRuntimeThreads Method](idebuggerthreadcontrol-releaseallruntimethreads-method.md)|Notifies the host that the debugging services are about to release all threads that are blocked.|  
+|[StartBlockingForDebugger Method](idebuggerthreadcontrol-startblockingfordebugger-method.md)|Notifies the host that the debugging services are about to start blocking all threads.|  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -37,4 +39,4 @@ Provides methods for notifying the host about the blocking and unblocking of thr
   
 ## See also
 
-- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hosting Interfaces](hosting-interfaces.md)

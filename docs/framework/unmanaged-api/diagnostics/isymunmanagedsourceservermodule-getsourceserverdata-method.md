@@ -17,17 +17,19 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedSourceServerModule::GetSourceServerData Method
+
 Returns the source server data for the module. The caller must free resources by using `CoTaskMemFree`.  
   
 ## Syntax  
   
 ```cpp  
 HRESULT GetSourceServerData(  
-    [out] ULONG* pDataByteCount,   
+    [out] ULONG* pDataByteCount,
     [out, size_is (, *pDataByteCount)] BYTE** ppData);  
 ```  
   
 ## Parameters  
+
  `pDataByteCount`  
  [out] A pointer to a `ULONG32` that receives the size, in bytes, of the source server data.  
   
@@ -35,11 +37,13 @@ HRESULT GetSourceServerData(
  [out] A pointer to the returned `pDataByteCount` value.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedSourceServerModule Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsourceservermodule-interface.md)
+- [ISymUnmanagedSourceServerModule Interface](isymunmanagedsourceservermodule-interface.md)

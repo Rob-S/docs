@@ -6,7 +6,7 @@ helpviewer_keywords:
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
 ---
 # Message Security User Name
-This sample demonstrates how to implement an application that uses WS-Security with username authentication for the client and requires server authentication using the server's X.509v3 certificate. All application messages between the client and server are signed and encrypted. By default, the username and password supplied by the client are used to logon to a valid Windows account. This sample is based on the [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). This sample consists of a client console program (Client.exe) and a service library (Service.dll) hosted by Internet Information Services (IIS). The service implements a contract that defines a request-reply communication pattern.  
+This sample demonstrates how to implement an application that uses WS-Security with username authentication for the client and requires server authentication using the server's X.509v3 certificate. All application messages between the client and server are signed and encrypted. By default, the username and password supplied by the client are used to logon to a valid Windows account. This sample is based on the [WSHttpBinding](wshttpbinding.md). This sample consists of a client console program (Client.exe) and a service library (Service.dll) hosted by Internet Information Services (IIS). The service implements a contract that defines a request-reply communication pattern.  
   
 > [!NOTE]
 > The setup procedure and build instructions for this sample are located at the end of this topic.  
@@ -17,7 +17,7 @@ This sample demonstrates how to implement an application that uses WS-Security w
   
 - How to access the caller's identity information from the service code.  
   
- The service exposes a single endpoint for communicating with the service, which is defined using the configuration file Web.config. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), which defaults to using message security. This sample sets the standard [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) to use client username authentication. The behavior specifies that the user credentials are to be used for service authentication. The server certificate must contain the same value for the subject name as the `findValue` attribute in the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
+ The service exposes a single endpoint for communicating with the service, which is defined using the configuration file Web.config. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md), which defaults to using message security. This sample sets the standard [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) to use client username authentication. The behavior specifies that the user credentials are to be used for service authentication. The server certificate must contain the same value for the subject name as the `findValue` attribute in the [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md).  
   
 ```xml  
 <system.serviceModel>  
@@ -65,9 +65,9 @@ This sample demonstrates how to implement an application that uses WS-Security w
 ```xml  
 <system.serviceModel>  
   <client>  
-    <endpoint address="http://localhost/servicemodelsamples/service.svc"   
-              binding="wsHttpBinding"   
-              bindingConfiguration="Binding1"   
+    <endpoint address="http://localhost/servicemodelsamples/service.svc"
+              binding="wsHttpBinding"
+              bindingConfiguration="Binding1"
               behaviorConfiguration="ClientCredentialsBehavior"  
               contract="Microsoft.ServiceModel.Samples.ICalculator" />  
   </client>  
@@ -185,9 +185,9 @@ Press <ENTER> to terminate client.
   
 ### To set up, build, and run the sample  
   
-1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).  
   
 ### To run the sample on the same computer  
   
@@ -202,7 +202,7 @@ Press <ENTER> to terminate client.
   
 4. Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-5. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+5. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### To run the sample across computers  
   
@@ -224,11 +224,11 @@ Press <ENTER> to terminate client.
   
 9. On the client, run ImportServiceCert.bat in a Developer Command Prompt for Visual Studio opened with administrator privileges. This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.  
   
-10. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips for WCF Samples](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### To clean up after the sample  
   
 - Run Cleanup.bat in the samples folder after you have finished running the sample.  
   
     > [!NOTE]
-    > This script does not remove service certificates on a client when running this sample across computers. If you have run Windows Communication Foundation (WCF) samples that use certificates across computers, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store. To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+    > This script does not remove service certificates on a client when running this sample across computers. If you have run Windows Communication Foundation (WCF) samples that use certificates across computers, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store. To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

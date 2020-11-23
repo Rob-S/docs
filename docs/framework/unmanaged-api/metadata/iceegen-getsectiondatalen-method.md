@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::GetSectionDataLen Method
+
 Gets the length of the specified section.  
   
  This method is obsolete and should not be used.  
@@ -31,6 +32,7 @@ HRESULT GetSectionDataLen (
 ```  
   
 ## Parameters  
+
  `section`  
  [in] The data section whose length will be retrieved.  
   
@@ -38,10 +40,12 @@ HRESULT GetSectionDataLen (
  [out] The returned length of the specified section.  
   
 ## Remarks  
+
  Call `GetSectionDataLen` only if you have special section requirements that are not handled by other methods.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -51,4 +55,4 @@ HRESULT GetSectionDataLen (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorDebug::DebugActiveProcess Method
+
 Attaches the debugger to an existing process.  
   
 ## Syntax  
@@ -30,6 +31,7 @@ HRESULT DebugActiveProcess (
 ```  
   
 ## Parameters  
+
  `id`  
  [in] The ID of the process to which the debugger is to be attached.  
   
@@ -40,10 +42,12 @@ HRESULT DebugActiveProcess (
  [out] A pointer to the address of an "ICorDebugProcess" object that represents the process to which the debugger has been attached.  
   
 ## Remarks  
+
  Interop debugging is not supported on Win9x and non-x86 platforms, such as IA-64-based and AMD64-based platforms.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -53,4 +57,4 @@ HRESULT DebugActiveProcess (
   
 ## See also
 
-- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug Interface](icordebug-interface.md)

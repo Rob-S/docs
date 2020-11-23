@@ -1,12 +1,11 @@
 ---
 title: "Application Domain Resource Monitoring (ARM) ETW Events"
+description: Read about application domain resource monitoring (ARM) ETW events in .NET, such as ThreadCreated, AppDomainMemAllocated, AppDomainMemSurvived, and more.
 ms.date: "03/30/2017"
 helpviewer_keywords:
   - "ETW, application domain monitoring events"
   - "application domain monitoring events [.NET Framework]"
 ms.assetid: d38ff268-a2ee-434e-b504-d570880e0289
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Application Domain Resource Monitoring (ARM) ETW Events
 

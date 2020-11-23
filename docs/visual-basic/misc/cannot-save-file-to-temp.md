@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 1055fc15-9641-43b2-a40c-a0a9fbbb34b2
 ---
 # Cannot save file to TEMP
+
 Either a component cannot find a directory named TEMP, or the drive or partition containing the TEMP directory lacks sufficient space to save information.  
   
 ## To correct this error  
@@ -16,4 +17,4 @@ Either a component cannot find a directory named TEMP, or the drive or partition
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Error Types](../programming-guide/language-features/error-types.md)

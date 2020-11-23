@@ -1,5 +1,6 @@
 ---
 title: "Find a UI Automation Element Based on a Property Condition"
+description: Find a UI Automation element based on a property condition. Locate an element within the UI Automation tree based on a specific property or properties.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -26,6 +27,6 @@ ms.assetid: 3acaee5a-6ce8-4c3e-81c8-67e59eb74477
   
 ## See also
 
-- [InvokePattern and ExpandCollapsePattern Menu Item Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771636(v=vs.90))
+- [InvokePattern and ExpandCollapsePattern Menu Item Sample](/previous-versions/dotnet/netframework-3.5/ms771636(v=vs.90))
 - [Obtaining UI Automation Elements](obtaining-ui-automation-elements.md)
 - [Use the AutomationID Property](use-the-automationid-property.md)

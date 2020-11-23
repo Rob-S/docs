@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
 ---
 # How to: Call a Property Procedure (Visual Basic)
+
 You call a property procedure by storing a value in the property or retrieving its value. You access a property the same way you access a variable.  
   
  The property's `Set` procedure stores a value, and its `Get` procedure retrieves the value. However, you do not explicitly call these procedures by name. You use the property in an assignment statement or an expression, just as you would store or retrieve the value of a variable. Visual Basic makes the calls to the property's procedures.  
@@ -50,12 +51,12 @@ You call a property procedure by storing a value in the property or retrieving i
 
 - [Property Procedures](./property-procedures.md)
 - [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md)
-- [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md)
+- [Property Statement](../../../language-reference/statements/property-statement.md)
 - [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
 - [How to: Create a Property](./how-to-create-a-property.md)
 - [How to: Declare a Property with Mixed Access Levels](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [How to: Put a Value in a Property](./how-to-put-a-value-in-a-property.md)
 - [How to: Get a Value from a Property](./how-to-get-a-value-from-a-property.md)
-- [Get Statement](../../../../visual-basic/language-reference/statements/get-statement.md)
-- [Set Statement](../../../../visual-basic/language-reference/statements/set-statement.md)
+- [Get Statement](../../../language-reference/statements/get-statement.md)
+- [Set Statement](../../../language-reference/statements/set-statement.md)

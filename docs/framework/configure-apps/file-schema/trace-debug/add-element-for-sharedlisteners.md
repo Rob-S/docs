@@ -10,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
 ---
 # \<add> Element for \<sharedListeners>
+
 Adds a listener to the `sharedListeners` collection. `sharedListeners` is a collection of listeners that any [\<source>](source-element.md) or [\<trace>](trace-element.md) can reference.  By default, listeners in the `sharedListeners` collection are not placed in a `Listeners` collection. They must be added by name to the [\<source>](source-element.md) or [\<trace>](trace-element.md). It is not possible to get the listeners in the `sharedListeners` collection in code at run time.  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -20,7 +21,7 @@ Adds a listener to the `sharedListeners` collection. `sharedListeners` is a coll
 ## Syntax  
   
 ```xml  
-<add name="name"   
+<add name="name"
   type="TraceListenerClassName, Version, Culture, PublicKeyToken"  
   initializeData="data"
   traceOutputOptions = "None"
@@ -28,6 +29,7 @@ Adds a listener to the `sharedListeners` collection. `sharedListeners` is a coll
 ```
   
 ## Attributes and Elements  
+
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
@@ -54,6 +56,7 @@ Adds a listener to the `sharedListeners` collection. `sharedListeners` is a coll
 |`sharedListeners`|A collection of listeners that any source or trace element can reference.|  
   
 ## Remarks  
+
  The listener classes shipped with the .NET Framework derive from the <xref:System.Diagnostics.TraceListener> class. The value for the `name` attribute is used to add the shared listener to a `Listeners` collection for either a trace or a trace source. The value for the `initializeData` attribute depends on the type of listener you create. Not all trace listeners require that you specify `initializeData`.  
   
 > [!NOTE]
@@ -71,19 +74,21 @@ Adds a listener to the `sharedListeners` collection. `sharedListeners` is a coll
 |<xref:System.Diagnostics.XmlWriterTraceListener>|The name of the file that the <xref:System.Diagnostics.XmlWriterTraceListener> writes to.|  
   
 ## Configuration File  
+
  This element can be used in the machine configuration file (Machine.config) and the application configuration file.  
   
 ## Example  
+
  The following example shows how to use `<add>` elements to add the <xref:System.Diagnostics.TextWriterTraceListener>`textListener` to the `sharedListeners` collection.   `textListener` is added by name to the `Listeners` collection for the trace source `TraceSourceApp`. The `textListener` listener writes trace output to the file myListener.log.  
   
 ```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
-      <source name="TraceSourceApp" switchName="sourceSwitch"   
+      <source name="TraceSourceApp" switchName="sourceSwitch"
         switchType="System.Diagnostics.SourceSwitch">  
         <listeners>  
-          <add name="console"   
+          <add name="console"
             type="System.Diagnostics.ConsoleTraceListener"/>  
           <add name="textListener"/>  
           <remove name="Default"/>  
@@ -91,15 +96,15 @@ Adds a listener to the `sharedListeners` collection. `sharedListeners` is a coll
       </source>  
     </sources>  
     <sharedListeners>  
-      <add name="textListener"   
-        type="System.Diagnostics.TextWriterTraceListener"   
+      <add name="textListener"
+        type="System.Diagnostics.TextWriterTraceListener"
         initializeData="myListener.log"/>  
     </sharedListeners>  
     <switches>  
       <add name="sourceSwitch" value="Warning"/>  
     </switches>  
   </system.diagnostics>  
-</configuration>   
+</configuration>
 ```  
   
 ## See also

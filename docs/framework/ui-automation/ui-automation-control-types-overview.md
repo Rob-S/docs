@@ -1,5 +1,6 @@
 ---
 title: "UI Automation Control Types Overview"
+description: Read an overview of UI Automation control types, which are well-known identifiers that can be used to indicate what kind of control an element represents.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "UI Automation, control types"
@@ -14,7 +15,7 @@ ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
   
  Having a well-known identifier makes it easier for assistive technology devices to determine what types of controls are available in the [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] and how to interact with the controls.  
   
-<a name="UI_Automation_Control_Type_Requisites"></a>   
+<a name="UI_Automation_Control_Type_Requisites"></a>
 ## UI Automation Control Type Requisites  
  [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] control types provide a set of conditions that providers must meet. When these conditions are met, the control can use the specific control type name. Each control type has conditions for the following:  
   
@@ -26,7 +27,7 @@ ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
   
  When a control meets the conditions for a particular control type, the <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> property value will indicate that control type.  
   
-<a name="Current_UI_Automation_Control_Types"></a>   
+<a name="Current_UI_Automation_Control_Types"></a>
 ## Current UI Automation Control Types  
  The following list contains the current set of [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] control types:  
   

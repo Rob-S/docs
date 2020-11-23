@@ -2,9 +2,7 @@
 title: .NET assembly file format
 description: Learn about the .NET assembly file format, which is used to describe and contain .NET apps and libraries.
 author: richlander
-ms.author: mairaw
 ms.date: 08/20/2019
-ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 ---
 
@@ -14,7 +12,7 @@ ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 
 > Each CLI component carries the metadata for declarations, implementations, and references specific to that component. Therefore, the component-specific metadata is referred to as component metadata, and the resulting component is said to be self-describing – from ECMA 335 I.9.1, Components and assemblies.
 
-The format is fully specified and standardized as [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). All .NET compilers and runtimes use this format. The presence of a documented and infrequently updated binary format has been a major benefit (arguably a requirement) for interoperability. The format was last updated in a substantive way in 2005 (.NET 2.0) to accommodate generics and processor architecture.
+The format is fully specified and standardized as [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). All .NET compilers and runtimes use this format. The presence of a documented and infrequently updated binary format has been a major benefit (arguably a requirement) for interoperability. The format was last updated in a substantive way in 2005 (.NET Framework 2.0) to accommodate generics and processor architecture.
 
 The format is CPU- and OS-agnostic. It has been used as part of .NET implementations that target many chips and CPUs. While the format itself has Windows heritage, it is implementable on any operating system. Its arguably most significant choice for OS interoperability is that most values are stored in little-endian format. It doesn’t have a specific affinity to machine pointer size (for example, 32-bit, 64-bit).
 
@@ -30,4 +28,4 @@ Assembly Headers from ECMA 335 II.25.1, Structure of the runtime file format.
 
 ## Process the assemblies
 
-It is possible to write tools or APIs to process assemblies. Assembly information enables making programmatic decisions at runtime, re-writing assemblies, providing API IntelliSense in an editor and generating documentation. <xref:System.Reflection?displayProperty=nameWithType>, <xref:System.Reflection.MetadataLoadContext?displayProperty=nameWithType>, and [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) are good examples of tools that are frequently used for this purpose.
+It is possible to write tools or APIs to process assemblies. Assembly information enables making programmatic decisions at run time, re-writing assemblies, providing API IntelliSense in an editor and generating documentation. <xref:System.Reflection?displayProperty=nameWithType>, <xref:System.Reflection.MetadataLoadContext?displayProperty=nameWithType>, and [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) are good examples of tools that are frequently used for this purpose.

@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # IHostThreadPoolManager::SetMaxThreads Method
+
 Sets the maximum number of threads that the host can maintain in the thread pool.  
   
 ## Syntax  
@@ -28,6 +29,7 @@ HRESULT SetMaxThreads (
 ```  
   
 ## Parameters  
+
  `MaxThreads`  
  The maximum number of worker threads in the thread pool.  
   
@@ -44,10 +46,12 @@ HRESULT SetMaxThreads (
 |E_NOTIMPL|The host does not provide an implementation of `SetMaxThreads`.|  
   
 ## Remarks  
+
  A host is not required to allow the CLR to configure the size of the thread pool. Some hosts might want exclusive control over the thread pool, for reasons such as implementation, performance, or scalability. In this case, a host should return an HRESULT value of E_NOTIMPL.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MSCorEE.h  
   
@@ -59,6 +63,6 @@ HRESULT SetMaxThreads (
 
 - <xref:System.Threading.ThreadPool.SetMaxThreads%2A>
 - <xref:System.Threading.ThreadPool>
-- [GetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)
-- [SetMinThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)
-- [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
+- [GetMaxThreads Method](ihostthreadpoolmanager-getmaxthreads-method.md)
+- [SetMinThreads Method](ihostthreadpoolmanager-setminthreads-method.md)
+- [IHostThreadPoolManager Interface](ihostthreadpoolmanager-interface.md)

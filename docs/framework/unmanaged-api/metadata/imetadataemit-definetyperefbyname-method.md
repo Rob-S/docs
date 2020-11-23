@@ -17,19 +17,21 @@ topic_type:
   - "apiref"
 ---
 # IMetaDataEmit::DefineTypeRefByName Method
+
 Gets a metadata token for a type that is defined in the specified scope, which is outside the current scope.  
   
 ## Syntax  
   
 ```cpp  
-HRESULT DefineTypeRefByName (   
-    [in]  mdToken     tkResolutionScope,   
-    [in]  LPCWSTR     szName,   
-    [out] mdTypeRef   *ptr   
+HRESULT DefineTypeRefByName (
+    [in]  mdToken     tkResolutionScope,
+    [in]  LPCWSTR     szName,
+    [out] mdTypeRef   *ptr
 );  
 ```  
   
 ## Parameters  
+
  `tkResolutionScope`  
  [in] The token specifying the resolution scope. The following token types are valid:  
   
@@ -50,7 +52,8 @@ HRESULT DefineTypeRefByName (
  [out] A pointer to the `mdTypeRef` token that is assigned to the type.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -60,5 +63,5 @@ HRESULT DefineTypeRefByName (
   
 ## See also
 
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit Interface](imetadataemit-interface.md)
+- [IMetaDataEmit2 Interface](imetadataemit2-interface.md)

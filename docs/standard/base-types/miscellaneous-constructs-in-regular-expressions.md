@@ -1,25 +1,26 @@
 ---
 title: "Miscellaneous Constructs in Regular Expressions"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 dev_langs: 
   - "csharp"
   - "vb"
 helpviewer_keywords: 
   - "constructs, miscellaneous"
-  - ".NET Framework regular expressions, miscellaneous constructs"
+  - ".NET regular expressions, miscellaneous constructs"
   - "regular expressions, miscellaneous constructs"
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 ---
 # Miscellaneous Constructs in Regular Expressions
+
 Regular expressions in .NET include three miscellaneous language constructs. One lets you enable or disable particular matching options in the middle of a regular expression pattern. The remaining two let you include comments in a regular expression.  
   
 ## Inline Options  
+
  You can set or disable specific pattern matching options for part of a regular expression by using the syntax  
   
 `(?imnsx-imnsx)`  
   
- You list the options you want to enable after the question mark, and the options you want to disable after the minus sign. The following table describes each option. For more information about each option, see [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md).  
+ You list the options you want to enable after the question mark, and the options you want to disable after the minus sign. The following table describes each option. For more information about each option, see [Regular Expression Options](regular-expression-options.md).  
   
 |Option|Description|  
 |------------|-----------------|  
@@ -32,7 +33,7 @@ Regular expressions in .NET include three miscellaneous language constructs. One
  Any change in regular expression options defined by the `(?imnsx-imnsx)` construct remains in effect until the end of the enclosing group.  
   
 > [!NOTE]
-> The `(?imnsx-imnsx:`*subexpression*`)` grouping construct provides identical functionality for a subexpression. For more information, see [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+> The `(?imnsx-imnsx:`*subexpression*`)` grouping construct provides identical functionality for a subexpression. For more information, see [Grouping Constructs](grouping-constructs-in-regular-expressions.md).  
   
  The following example uses the `i`, `n`, and `x` options to enable case insensitivity and explicit captures, and to ignore white space in the regular expression pattern in the middle of a regular expression.  
   
@@ -51,6 +52,7 @@ Regular expressions in .NET include three miscellaneous language constructs. One
 |`\b`|Match a word boundary.|  
   
 ## Inline Comment  
+
  The `(?#` *comment*`)` construct lets you include an inline comment in a regular expression. The regular expression engine does not use any part of the comment in pattern matching, although the comment is included in the string that is returned by the <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType> method. The comment ends at the first closing parenthesis.  
   
  The following example repeats the first regular expression pattern from the example in the previous section. It adds two inline comments to the regular expression to indicate whether the comparison is case-sensitive. The regular expression pattern, `\b((?# case-sensitive comparison)D\w+)\s(?ixn)((?#case-insensitive comparison)d\w+)\b`, is defined as follows.  
@@ -70,6 +72,7 @@ Regular expressions in .NET include three miscellaneous language constructs. One
  [!code-vb[RegularExpressions.Language.Miscellaneous#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.miscellaneous/vb/miscellaneous2.vb#2)]  
   
 ## End-of-Line Comment  
+
  A number sign (`#`)marks an x-mode comment, which starts at the unescaped # character at the end of the regular expression pattern and continues until the end of the line. To use this construct, you must either enable the `x` option (through inline options) or supply the <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> value to the `option` parameter when instantiating the <xref:System.Text.RegularExpressions.Regex> object or calling a static <xref:System.Text.RegularExpressions.Regex> method.  
   
  The following example illustrates the end-of-line comment construct. It determines whether a string is a composite format string that includes at least one format item. The following table describes the constructs in the regular expression pattern:  
@@ -93,4 +96,4 @@ Regular expressions in .NET include three miscellaneous language constructs. One
   
 ## See also
 
-- [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Regular Expression Language - Quick Reference](regular-expression-language-quick-reference.md)

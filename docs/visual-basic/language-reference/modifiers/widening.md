@@ -12,9 +12,11 @@ helpviewer_keywords:
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
 ---
 # Widening (Visual Basic)
+
 Indicates that a conversion operator (`CType`) converts a class or structure to a type that can hold all possible values of the original class or structure.  
   
 ## Converting with the Widening Keyword  
+
  The conversion procedure must specify `Public Shared` in addition to `Widening`.  
   
  Widening conversions always succeed at run time and never incur data loss. Examples are `Single` to `Double`, `Char` to `String`, and a derived type to its base type. This last conversion is widening because the derived type contains all the members of the base type and thus is an instance of the base type.  
@@ -23,16 +25,16 @@ Indicates that a conversion operator (`CType`) converts a class or structure to 
   
  The `Widening` keyword can be used in this context:  
   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Operator Statement](../statements/operator-statement.md)  
   
- For example definitions of widening and narrowing conversion operators, see [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ For example definitions of widening and narrowing conversion operators, see [How to: Define a Conversion Operator](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
 ## See also
 
-- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
-- [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
-- [How to: Define an Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md)
-- [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Operator Statement](../statements/operator-statement.md)
+- [Narrowing](narrowing.md)
+- [Widening and Narrowing Conversions](../../programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [How to: Define an Operator](../../programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [CType Function](../functions/ctype-function.md)
+- [Option Strict Statement](../statements/option-strict-statement.md)
+- [How to: Define a Conversion Operator](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

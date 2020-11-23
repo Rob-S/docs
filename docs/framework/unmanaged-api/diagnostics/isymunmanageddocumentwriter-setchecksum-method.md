@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ISymUnmanagedDocumentWriter::SetCheckSum Method
+
 Sets checksum information.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT SetCheckSum(
 ```  
   
 ## Parameters  
+
  `algorithmId`  
  [in] The GUID that represents the algorithm identifier.  
   
@@ -39,11 +41,13 @@ HRESULT SetCheckSum(
  [in] The buffer that stores the checksum information.  
   
 ## Return Value  
+
  S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## Requirements  
+
  **Header:** CorSym.idl, CorSym.h  
   
 ## See also
 
-- [ISymUnmanagedDocumentWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+- [ISymUnmanagedDocumentWriter Interface](isymunmanageddocumentwriter-interface.md)

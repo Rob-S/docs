@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICeeGen::GetSectionBlock Method
+
 Gets a section block of the code base.  
   
  This method is obsolete and should not be used.  
@@ -25,14 +26,15 @@ Gets a section block of the code base.
   
 ```cpp  
 HRESULT GetSectionBlock (  
-    [in]  HCEESECTION    section,     
+    [in]  HCEESECTION    section,
     [in]  ULONG          len,  
     [in]  ULONG          align     = 1,  
     [out] void           **ppBytes = 0  
-);   
+);
 ```  
   
 ## Parameters  
+
  `section`  
  [in] The section from which to retrieve a block of the code base.  
   
@@ -46,10 +48,12 @@ HRESULT GetSectionBlock (
  [out] A pointer to a location that receives the address of the retrieved block.  
   
 ## Remarks  
+
  Call `GetSectionBlock` only if you have special section requirements that are not handled by other methods.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** Cor.h  
   
@@ -59,4 +63,4 @@ HRESULT GetSectionBlock (
   
 ## See also
 
-- [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen Interface](iceegen-interface.md)

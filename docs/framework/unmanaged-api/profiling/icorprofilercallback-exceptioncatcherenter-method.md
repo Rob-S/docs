@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback::ExceptionCatcherEnter Method
+
 Notifies the profiler that control is being passed to the appropriate `catch` block.  
   
 ## Syntax  
@@ -27,14 +28,18 @@ HRESULT ExceptionCatcherEnter(
     [in] ObjectID   objectId);  
 ```  
   
-## Parameters  
- `functionId`  
- [in] The identifier of the function containing the `catch` block.  
+## Parameters
+
+- `functionId`
+
+  \[in] The identifier of the function containing the `catch` block.
   
- `objectId`  
- [in] The identifier of the exception being handled.  
-  
+- `objectId`
+
+  \[in] The identifier of the exception being handled.
+
 ## Remarks  
+
  The `ExceptionCatcherEnter` method is called only if the catch point is in code compiled with the just-in-time (JIT) compiler. An exception that is caught in unmanaged code or in the internal code of the runtime will not call this notification. The `objectId` value is passed again since a garbage collection could have moved the object since the `ExceptionThrown` notification.  
   
  The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
@@ -42,7 +47,8 @@ HRESULT ExceptionCatcherEnter(
  The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -52,5 +58,5 @@ HRESULT ExceptionCatcherEnter(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionCatcherLeave Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [ExceptionCatcherLeave Method](icorprofilercallback-exceptioncatcherleave-method.md)

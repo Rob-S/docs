@@ -1,7 +1,6 @@
 ---
 title: DateTime and DateTimeOffset support in System.Text.Json
 description: An overview of how DateTime and DateTimeOffset types are supported in the System.Text.Json library.
-ms.technology: dotnet-standard
 author: layomia
 ms.author: laakinri
 ms.date: 07/22/2019
@@ -103,6 +102,8 @@ This example shows a custom converter that serializes and deserializes <xref:Sys
 
 > [!NOTE]
 > The "R" standard format will always be 29 characters long.
+>
+> The "l" (lowercase "L") format is not documented with the other [standard date and time format strings](../base-types/standard-date-and-time-format-strings.md) because it is supported only by the `Utf8Parser` and `Utf8Formatter` types. The format is lowercase RFC 1123 (a lowercase version of the "R" format), for example: "thu, 25 jul 2019 06:36:07 gmt".
 
 #### Using `DateTime(Offset).Parse` as a fallback to the serializer's native parsing
 
@@ -184,6 +185,12 @@ The following levels of granularity are defined for parsing:
     3. "yyyy'-'MM'-'dd'T'HH':'mm':'ss('+'/'-')HH':'mm"
     4. "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'FFFFFFF('+'/'-')HH':'mm"
 
+    This level of granularity is compliant with [RFC 3339](https://tools.ietf.org/html/rfc3339#section-5.6), a widely adopted profile of ISO 8601 used for interchanging date and time information. However, there are a few restrictions in the System.Text.Json implementation.
+
+    - RFC 3339 does not specify a maximum number of fractional-second digits, but specifies that at least one digit must follow the period, if a fractional-second section is present. The implementation in System.Text.Json allows up to 16 digits (to support interop with other programming languages and frameworks), but parses only the first seven. A <xref:System.Text.Json.JsonException> will be thrown if there are more than 16 fractional second digits when reading `DateTime` and `DateTimeOffset` instances.
+    - RFC 3339 allows the "T" and "Z" characters to be "t" or "z" respectively, but allows applications to limit support to just the upper-case variants. The implementation in System.Text.Json requires them to be "T" and "Z". A <xref:System.Text.Json.JsonException> will be thrown if input payloads contain "t" or "z" when reading `DateTime` and `DateTimeOffset` instances.
+    - RFC 3339 specifies that the date and time sections are separated by "T", but allows applications to separate them by a space (" ") instead. System.Text.Json requires date and time sections to be separated with "T". A <xref:System.Text.Json.JsonException> will be thrown if input payloads contain a space (" ") when reading `DateTime` and `DateTimeOffset` instances.
+
 If there are decimal fractions for seconds, there must be at least one digit; `2019-07-26T00:00:00.` is not allowed.
 While up to 16 fractional digits are allowed, only the first seven are parsed. Anything beyond that is considered a zero.
 For example, `2019-07-26T00:00:00.1234567890` will be parsed as if it is `2019-07-26T00:00:00.1234567`.
@@ -222,4 +229,22 @@ The following levels of granularity are defined for formatting:
 
         Used to format a <xref:System.DateTime> or <xref:System.DateTimeOffset> with fractional seconds and with a local offset.
 
-If present, a maximum of 7 fractional digits are written. This aligns with the <xref:System.DateTime> implementation, which is limited to this resolution.
+    This level of granularity is compliant with [RFC 3339](https://tools.ietf.org/html/rfc3339#section-5.6).
+
+If the [round-trip format](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) representation of a
+<xref:System.DateTime> or <xref:System.DateTimeOffset> instance has trailing zeros in its fractional seconds, then <xref:System.Text.Json.JsonSerializer>
+and <xref:System.Text.Json.Utf8JsonWriter> will format a representation of the instance without trailing zeros.
+For example, a <xref:System.DateTime> instance whose [round-trip format](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier)
+representation is `2019-04-24T14:50:17.1010000Z`, will be formatted as `2019-04-24T14:50:17.101Z` by <xref:System.Text.Json.JsonSerializer>
+and <xref:System.Text.Json.Utf8JsonWriter>.
+
+If the [round-trip format](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) representation of a
+<xref:System.DateTime> or <xref:System.DateTimeOffset> instance has all zeros in its fractional seconds, then <xref:System.Text.Json.JsonSerializer>
+and <xref:System.Text.Json.Utf8JsonWriter> will format a representation of the instance without fractional seconds.
+For example, a <xref:System.DateTime> instance whose [round-trip format](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier)
+representation is `2019-04-24T14:50:17.0000000+02:00`, will be formatted as `2019-04-24T14:50:17+02:00` by <xref:System.Text.Json.JsonSerializer>
+and <xref:System.Text.Json.Utf8JsonWriter>.
+
+Truncating zeros in fractional-second digits allows the smallest output needed to preserve information on a round trip to be written.
+
+A maximum of 7 fractional-second digits are written. This aligns with the <xref:System.DateTime> implementation, which is limited to this resolution.

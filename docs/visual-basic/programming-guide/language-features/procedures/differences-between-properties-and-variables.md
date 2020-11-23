@@ -16,15 +16,19 @@ helpviewer_keywords:
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
 ---
 # Differences Between Properties and Variables in Visual Basic
+
 Variables and properties both represent values that you can access. However, there are differences in storage and implementation.  
   
 ## Variables  
+
  A *variable* corresponds directly to a memory location. You define a variable with a single declaration statement. A variable can be a *local variable*, defined inside a procedure and available only within that procedure, or it can be a *member variable*, defined in a module, class, or structure but not inside any procedure. A member variable is also called a *field*.  
   
 ## Properties  
+
  A *property* is a data element defined on a module, class, or structure. You define a property with a code block between the `Property` and `End Property` statements. The code block contains a `Get` procedure, a `Set` procedure, or both. These procedures are called *property procedures* or *property accessors*. In addition to retrieving or storing the property's value, they can also perform custom actions, such as updating an access counter.  
   
 ## Differences  
+
  The following table shows some important differences between variables and properties.  
   
 |Point of difference|Variable|Property|  
@@ -42,8 +46,8 @@ Variables and properties both represent values that you can access. However, the
 
 - [Property Procedures](./property-procedures.md)
 - [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md)
-- [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Property Statement](../../../language-reference/statements/property-statement.md)
+- [Dim Statement](../../../language-reference/statements/dim-statement.md)
 - [How to: Create a Property](./how-to-create-a-property.md)
 - [How to: Declare a Property with Mixed Access Levels](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [How to: Call a Property Procedure](./how-to-call-a-property-procedure.md)

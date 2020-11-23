@@ -18,7 +18,7 @@ The procedure below provides a high-level outline for calling a custom database 
 
 1. Create a custom function in your database.
 
-     For more information about creating custom functions in SQL Server, see [CREATE FUNCTION (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkID=139871).
+     For more information about creating custom functions in SQL Server, see [CREATE FUNCTION (Transact-SQL)](/sql/t-sql/statements/create-function-transact-sql).
 
 2. Declare a function in the store schema definition language (SSDL) of your .edmx file. The name of the function must be the same as the name of the function declared in the database.
 
@@ -30,7 +30,7 @@ The procedure below provides a high-level outline for calling a custom database 
 
 ## Example
 
-The following example demonstrates how to call a custom database function from within a LINQ to Entities query. The example uses the School model. For information about the School model, see [Creating the School Sample Database](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) and [Generating the School .edmx File](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).
+The following example demonstrates how to call a custom database function from within a LINQ to Entities query. The example uses the School model. For information about the School model, see [Creating the School Sample Database](/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) and [Generating the School .edmx File](/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).
 
 The following code adds the `AvgStudentGrade` function to the School sample database.
 
@@ -61,5 +61,5 @@ Finally, call the method in a LINQ to Entities query. The following code display
 
 ## See also
 
-- [.edmx File Overview](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [.edmx File Overview](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Queries in LINQ to Entities](queries-in-linq-to-entities.md)

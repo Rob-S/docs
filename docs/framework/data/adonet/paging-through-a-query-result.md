@@ -7,6 +7,7 @@ dev_langs:
 ms.assetid: fa360c46-e5f8-411e-a711-46997771133d
 ---
 # Paging Through a Query Result
+
 Paging through a query result is the process of returning the results of a query in smaller subsets of data, or pages. This is a common practice for displaying results to a user in small, easy-to-manage chunks.  
   
  The **DataAdapter** provides a facility for returning only a page of data, through overloads of the **Fill** method. However, this might not be the best choice for paging through large query results because, although the **DataAdapter** fills the target <xref:System.Data.DataTable> or <xref:System.Data.DataSet> with only the requested records, the resources to return the entire query are still used. To return a page of data from a data source without using the resources to return the entire query, specify additional criteria for your query that reduce the rows returned to only those required.  
@@ -51,13 +52,13 @@ Dim adapter As SqlDataAdapter = _
   New SqlDataAdapter(orderSQL, connection)  
   
 Dim dataSet As DataSet = New DataSet()  
-adapter.Fill(dataSet, "Orders")   
+adapter.Fill(dataSet, "Orders")
 ```  
   
 ```csharp  
 int pageSize = 5;  
   
-string orderSQL = "SELECT TOP " + pageSize +   
+string orderSQL = "SELECT TOP " + pageSize +
   " * FROM Orders ORDER BY OrderID";  
 SqlDataAdapter adapter = new SqlDataAdapter(orderSQL, connection);  
   
@@ -73,7 +74,7 @@ Dim lastRecord As String = _
 ```  
   
 ```csharp  
-string lastRecord =   
+string lastRecord =
   dataSet.Tables["Orders"].Rows[pageSize - 1]["OrderID"].ToString();  
 ```  
   
@@ -108,7 +109,7 @@ adapter.Fill(dataSet, "Orders")
 ```  
   
 ```csharp  
-orderSQL = "SELECT TOP " + pageSize +   
+orderSQL = "SELECT TOP " + pageSize +
   " * FROM Orders WHERE OrderID > " + lastRecord + " ORDER BY OrderID";  
 adapter.SelectCommand.CommandText = orderSQL;  
   

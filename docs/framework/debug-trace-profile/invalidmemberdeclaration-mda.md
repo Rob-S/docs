@@ -1,5 +1,6 @@
 ---
 title: "invalidMemberDeclaration MDA"
+description: Review the invalidMemberDeclaration managed debugging assistant, which is invoked if a failure HRESULT is returned to COM without calling the managed method.
 ms.date: "03/30/2017"
 helpviewer_keywords: 
   - "invalid member declaration"
@@ -8,8 +9,6 @@ helpviewer_keywords:
   - "managed debugging assistants (MDAs), marshaling"
   - "MDAs (managed debugging assistants), marshaling"
 ms.assetid: a84dd9a3-d6cf-4824-989a-ecbbf443eeb4
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # invalidMemberDeclaration MDA
 The `invalidMemberDeclaration` managed debugging assistant (MDA) is activated to report an error that occurs while determining how to marshal the parameters of a member to be called from COM.  

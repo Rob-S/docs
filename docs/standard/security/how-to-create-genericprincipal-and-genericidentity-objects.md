@@ -1,7 +1,6 @@
 ---
 title: "How to: Create GenericPrincipal and GenericIdentity Objects"
-ms.date: "03/30/2017"
-ms.technology: dotnet-standard
+ms.date: 07/15/2020
 dev_langs:
   - "csharp"
   - "vb"
@@ -11,11 +10,14 @@ helpviewer_keywords:
   - "Creating GenericPrincipal Objects"
   - "GenericIdentity Objects"
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-author: "mairaw"
-ms.author: "mairaw"
 ---
 
 # How to: Create GenericPrincipal and GenericIdentity Objects
+
+> [!NOTE]
+> This article applies to Windows.
+>
+> For information about ASP.NET Core, see [Overview of ASP.NET Core Security](/aspnet/core/security/).
 
 You can use the <xref:System.Security.Principal.GenericIdentity> class in conjunction with the <xref:System.Security.Principal.GenericPrincipal> class to create an authorization scheme that exists independent of a Windows domain.
 
@@ -43,7 +45,7 @@ You can use the <xref:System.Security.Principal.GenericIdentity> class in conjun
     GenericPrincipal myPrincipal = new GenericPrincipal(myIdentity, myStringArray);
     ```
 
-3. Use the following code to attach the principal to the current thread. This is valuable in situations where the principal must be validated several times, it must be validated by other code running in your application, or it must be validated by a <xref:System.Security.Permissions.PrincipalPermission> object. You can still perform role-based validation on the principal object without attaching it to the thread. For more information, see [Replacing a Principal Object](../../../docs/standard/security/replacing-a-principal-object.md).
+3. Use the following code to attach the principal to the current thread. This is valuable in situations where the principal must be validated several times, it must be validated by other code running in your application, or it must be validated by a <xref:System.Security.Permissions.PrincipalPermission> object. You can still perform role-based validation on the principal object without attaching it to the thread. For more information, see [Replacing a Principal Object](replacing-a-principal-object.md).
 
     ```vb
     Thread.CurrentPrincipal = myPrincipal
@@ -141,5 +143,5 @@ Is this a Manager? True
 - <xref:System.Security.Principal.GenericIdentity>
 - <xref:System.Security.Principal.GenericPrincipal>
 - <xref:System.Security.Permissions.PrincipalPermission>
-- [Replacing a Principal Object](../../../docs/standard/security/replacing-a-principal-object.md)
-- [Principal and Identity Objects](../../../docs/standard/security/principal-and-identity-objects.md)
+- [Replacing a Principal Object](replacing-a-principal-object.md)
+- [Principal and Identity Objects](principal-and-identity-objects.md)

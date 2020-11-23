@@ -1,12 +1,18 @@
 ---
-title: Globalization breaking changes - .NET Core
-description: Lists the breaking changes in globalization in .NET Core.
-ms.date: "09/20/2019"
+title: Globalization breaking changes
+description: Lists the breaking changes in globalization in .NET Core 3.0.
+ms.date: 04/07/2020
 ---
-# Globalization breaking changes
+# Globalization breaking changes in .NET Core 3.0
 
-The following is a list of breaking changes in globalization by .NET Core version.
+The following breaking changes are documented on this page:
+
+| Breaking change | Version introduced |
+| - | :-: |
+| ["C" locale maps to the invariant locale](#c-locale-maps-to-the-invariant-locale) | 3.0 |
 
 ## .NET Core 3.0
 
 [!INCLUDE["C" locale maps to the invariant locale](~/includes/core-changes/globalization/3.0/c-locale-maps-to-invariant-locale.md)]
+
+***

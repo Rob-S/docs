@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerObjectEnum::Next Method
+
 Gets the specified number of contiguous objects from a sequential collection of objects, starting at the enumerator's current position in the sequence.  
   
 ## Syntax  
@@ -24,13 +25,14 @@ Gets the specified number of contiguous objects from a sequential collection of 
 ```cpp  
 HRESULT Next (  
     [in] ULONG                    celt,  
-    [out, size_is(celt), length_is(*pceltFetched)]    
+    [out, size_is(celt), length_is(*pceltFetched)]
         ObjectID                  objects[],  
     [out] ULONG                   *pceltFetched  
 );  
 ```  
   
 ## Parameters  
+
  `celt`  
  [in] The number of objects to be retrieved.  
   
@@ -41,7 +43,8 @@ HRESULT Next (
  [out] A pointer to the number of elements actually returned in the `objects` array.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -51,4 +54,4 @@ HRESULT Next (
   
 ## See also
 
-- [ICorProfilerObjectEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md)
+- [ICorProfilerObjectEnum Interface](icorprofilerobjectenum-interface.md)

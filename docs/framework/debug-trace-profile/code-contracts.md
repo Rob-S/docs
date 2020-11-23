@@ -1,5 +1,6 @@
 ---
 title: "Code Contracts"
+description: Explore code contracts, which provide a way to specify preconditions, postconditions, and object invariants in your .NET code.
 ms.date: "09/05/2018"
 dev_langs:
   - "csharp"
@@ -7,8 +8,6 @@ dev_langs:
 helpviewer_keywords:
   - "Code contracts"
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Code Contracts
 

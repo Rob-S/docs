@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 2c458944-1bdf-4ea7-9caf-560ca7582cc0
 ---
 # Argument \<argumentname> cannot be an empty string or Nothing
+
 The argument requires a value other than an empty string ("") or `Nothing`. This may be a result of incorrectly calculating the value.  
   
 ## To correct this error  
@@ -14,6 +15,6 @@ The argument requires a value other than an empty string ("") or `Nothing`. This
   
 ## See also
 
-- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
-- [Nothing](../../visual-basic/language-reference/nothing.md)
+- [Error Types](../programming-guide/language-features/error-types.md)
+- [Nothing](../language-reference/nothing.md)
 - <xref:System.NullReferenceException>

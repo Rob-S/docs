@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorProfilerCallback4::MovedReferences2 Method
-Called to report the new layout of objects in the heap as a result of a compacting garbage collection. This method is called if the profiler has implemented the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface. This callback replaces the [ICorProfilerCallback::MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) method, because it can report larger ranges of objects whose lengths exceed what can be expressed in a ULONG.  
+
+Called to report the new layout of objects in the heap as a result of a compacting garbage collection. This method is called if the profiler has implemented the [ICorProfilerCallback4](icorprofilercallback4-interface.md) interface. This callback replaces the [ICorProfilerCallback::MovedReferences](icorprofilercallback-movedreferences-method.md) method, because it can report larger ranges of objects whose lengths exceed what can be expressed in a ULONG.  
   
 ## Syntax  
   
@@ -30,6 +31,7 @@ HRESULT MovedReferences2(
 ```  
   
 ## Parameters  
+
  `cMovedObjectIDRanges`  
  [in] The number of blocks of contiguous objects that moved as the result of the compacting garbage collection. That is, the value of `cMovedObjectIDRanges` is the total size of the `oldObjectIDRangeStart`, `newObjectIDRangeStart`, and `cObjectIDRangeLength` arrays.  
   
@@ -47,6 +49,7 @@ HRESULT MovedReferences2(
  A size is specified for each block that is referenced in the `oldObjectIDRangeStart` and `newObjectIDRangeStart` arrays.  
   
 ## Remarks  
+
  A compacting garbage collector reclaims the memory occupied by dead objects and compacts that freed space. As a result, live objects might be moved within the heap, and `ObjectID` values distributed by previous notifications might change.  
   
  Assume that an existing `ObjectID` value (`oldObjectID`) lies within the following range:  
@@ -65,12 +68,13 @@ HRESULT MovedReferences2(
   
  `newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)  
   
- None of the `ObjectID` values passed by `MovedReferences2` are valid during the callback itself, because the garbage collector might be in the middle of moving objects from old locations to new locations. Therefore, profilers should not attempt to inspect objects during a `MovedReferences2` call. A [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) callback indicates that all objects have been moved to their new locations and inspection can be performed.  
+ None of the `ObjectID` values passed by `MovedReferences2` are valid during the callback itself, because the garbage collector might be in the middle of moving objects from old locations to new locations. Therefore, profilers should not attempt to inspect objects during a `MovedReferences2` call. A [ICorProfilerCallback2::GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) callback indicates that all objects have been moved to their new locations and inspection can be performed.  
   
- If the profiler implements both the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) and the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interfaces, the `MovedReferences2` method is called before the [ICorProfilerCallback::MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) method, but only if the `MovedReferences2` method returns successfully. Profilers can return an HRESULT that indicates failure from the `MovedReferences2` method, to avoid calling the second method.  
+ If the profiler implements both the [ICorProfilerCallback](icorprofilercallback-interface.md) and the [ICorProfilerCallback4](icorprofilercallback4-interface.md) interfaces, the `MovedReferences2` method is called before the [ICorProfilerCallback::MovedReferences](icorprofilercallback-movedreferences-method.md) method, but only if the `MovedReferences2` method returns successfully. Profilers can return an HRESULT that indicates failure from the `MovedReferences2` method, to avoid calling the second method.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorProf.idl, CorProf.h  
   
@@ -80,8 +84,8 @@ HRESULT MovedReferences2(
   
 ## See also
 
-- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [MovedReferences Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md)
-- [ICorProfilerCallback4 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
-- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback Interface](icorprofilercallback-interface.md)
+- [MovedReferences Method](icorprofilercallback-movedreferences-method.md)
+- [ICorProfilerCallback4 Interface](icorprofilercallback4-interface.md)
+- [Profiling Interfaces](profiling-interfaces.md)
+- [Profiling](index.md)

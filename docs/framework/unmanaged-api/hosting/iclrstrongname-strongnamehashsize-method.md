@@ -17,6 +17,7 @@ topic_type:
   - "apiref"
 ---
 # ICLRStrongName::StrongNameHashSize Method
+
 Gets the buffer size required for a hash, using the specified hash algorithm.  
   
 ## Syntax  
@@ -29,6 +30,7 @@ HRESULT StrongNameHashSize (
 ```  
   
 ## Parameters  
+
  `ulHashAlg`  
  [in] The hash algorithm used to compute the buffer size.  
   
@@ -36,10 +38,12 @@ HRESULT StrongNameHashSize (
  [out] The returned buffer size, in bytes.  
   
 ## Return Value  
- `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).  
+
+ `S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) for a list).  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** MetaHost.h  
   
@@ -49,4 +53,4 @@ HRESULT StrongNameHashSize (
   
 ## See also
 
-- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [ICLRStrongName Interface](iclrstrongname-interface.md)

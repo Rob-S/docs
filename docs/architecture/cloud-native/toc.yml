@@ -39,17 +39,19 @@
       href: front-end-communication.md
     - name: Service to service communication
       href: service-to-service-communication.md
-    - name: REST and gRPC
-      href: rest-grpc.md
+    - name: gRPC
+      href: grpc.md
     - name: Service Mesh communication infrastructure
       href: service-mesh-communication-infrastructure.md
-  - name: Distributed Data
+  - name: Distributed data
     href: distributed-data.md
     items:
-    - name: Cloud-native data patterns
-      href: data-patterns.md
-    - name: Data Storage in Azure
-      href: azure-data-storage.md
+    - name: Relational vs. NoSQL data
+      href: relational-vs-nosql-data.md
+    - name: Caching in a cloud-native application
+      href: azure-caching.md
+    - name: Elasticsearch in Azure
+      href: elastic-search-in-azure.md
   - name: Cloud-native resiliency
     href: resiliency.md
     items:
@@ -84,10 +86,14 @@
     items:
     - name: Azure Security for cloud-native apps
       href: azure-security.md
-  - name: Cloud-native DevOps
+  - name: DevOps
     href: devops.md
     items:
+    - name: Feature flags
+      href: feature-flags.md      
     - name: Infrastructure as Code
       href: infrastructure-as-code.md
     - name: Cloud Native Application Bundles
       href: application-bundles.md
+  - name: Summary
+    href: summary.md

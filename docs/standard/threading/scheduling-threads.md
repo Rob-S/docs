@@ -1,9 +1,8 @@
 ---
 title: "Scheduling threads"
 ms.date: "03/30/2017"
-ms.technology: dotnet-standard
 helpviewer_keywords: 
-  - "threading [.NET Framework], scheduling"
+  - "threading [.NET], scheduling"
   - "scheduling threads"
 ms.assetid: 67e4a0eb-3095-4ea7-b20f-908faa476277
 ---
@@ -15,5 +14,5 @@ Every thread has a thread priority assigned to it. Threads created within the co
   
 ## See also
 
-- [Using Threads and Threading](../../../docs/standard/threading/using-threads-and-threading.md)
-- [Managed and Unmanaged Threading in Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)
+- [Using Threads and Threading](using-threads-and-threading.md)
+- [Managed and Unmanaged Threading in Windows](managed-and-unmanaged-threading-in-windows.md)

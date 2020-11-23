@@ -17,7 +17,8 @@ topic_type:
   - "apiref"
 ---
 # ICorDebugStackWalk::GetContext Method
-Returns the context for the current frame in the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object.  
+
+Returns the context for the current frame in the [ICorDebugStackWalk](icordebugstackwalk-interface.md) object.  
   
 ## Syntax  
   
@@ -29,6 +30,7 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
 ```  
   
 ## Parameters  
+
  `contextFlags`  
  [in] Flags that indicate the requested contents of the context buffer (defined in WinNT.h).  
   
@@ -42,6 +44,7 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
  [out] The context buffer.  
   
 ## Return Value  
+
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Description|  
@@ -54,10 +57,12 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
 ## Exceptions  
   
 ## Remarks  
+
  Because unwinding restores only a subset of the registers, such as non-volatile registers, the context may not exactly match the register state at the time of the call.  
   
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** CorDebug.idl, CorDebug.h  
   
@@ -67,5 +72,5 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
   
 ## See also
 
-- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Debugging Interfaces](debugging-interfaces.md)
+- [Debugging](index.md)

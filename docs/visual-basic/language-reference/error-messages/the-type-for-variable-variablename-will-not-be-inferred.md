@@ -8,7 +8,7 @@ helpviewer_keywords:
   - "BC42110"
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
 ---
-# The type for variable '\<variablename>' will not be inferred because it is bound to a field in an enclosing scope
+# BC42110: The type for variable '\<variablename>' will not be inferred because it is bound to a field in an enclosing scope
 
 The type for variable '\<variablename>' will not be inferred because it is bound to a field in an enclosing scope. Either change the name of '\<variablename>', or use the fully qualified name (for example, 'Me.variablename' or 'MyBase.variablename').
 
@@ -37,7 +37,7 @@ By default, this message is a warning. For information about how to hide warning
 
 **Error ID:** BC42110
 
-### To address this warning
+## To address this warning
 
 - Make the loop control variable local by changing its name to an identifier that is not also the name of a field of the class.
 
@@ -58,6 +58,7 @@ By default, this message is a warning. For information about how to hide warning
   ```
 
 ## Example
+
  The following code shows the earlier example with the first correction in place.
 
 ```vb
@@ -78,9 +79,9 @@ End Class
 
 ## See also
 
-- [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
-- [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [How to: Refer to the Current Instance of an Object](../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)
-- [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Me, My, MyBase, and MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [Option Infer Statement](../statements/option-infer-statement.md)
+- [For Each...Next Statement](../statements/for-each-next-statement.md)
+- [For...Next Statement](../statements/for-next-statement.md)
+- [How to: Refer to the Current Instance of an Object](../../programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)
+- [Local Type Inference](../../programming-guide/language-features/variables/local-type-inference.md)
+- [Me, My, MyBase, and MyClass](../../programming-guide/program-structure/me-my-mybase-and-myclass.md)

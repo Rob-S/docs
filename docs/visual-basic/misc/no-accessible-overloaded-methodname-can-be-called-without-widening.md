@@ -6,6 +6,7 @@ f1_keywords:
 ms.assetid: 5e74f5cf-80bd-4b48-b58a-465f981ec694
 ---
 # No accessible overloaded '\<methodname>' can be called with these arguments without a widening conversion: \<list>
+
 An overloaded method was called, but no method could be matched with the list of provided arguments without a widening conversion.  
   
 ## To correct this error  
@@ -16,5 +17,5 @@ An overloaded method was called, but no method could be matched with the list of
   
 ## See also
 
-- [Widening and Narrowing Conversions](../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
-- [Option Strict Statement](../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Widening and Narrowing Conversions](../programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [Option Strict Statement](../language-reference/statements/option-strict-statement.md)
