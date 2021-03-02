@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Authorization in WCF"
 title: "Authorization in WCF"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -7,9 +8,11 @@ helpviewer_keywords:
 ms.assetid: 8ea0b552-af65-45b0-a157-c6c111b8ce5e
 ---
 # Authorization in WCF
+
 Authorization is the process of controlling access and rights to resources, such as services or files. The topics in this section show you how to perform this basic task in Windows Communication Foundation (WCF) in a variety of ways.  
   
 ## In This Section  
+
  [Access Control Mechanisms](access-control-mechanisms.md)  
  Provides a brief outline of the authorization mechanisms in WCF, and suggested uses.  
   
@@ -29,6 +32,7 @@ Authorization is the process of controlling access and rights to resources, such
  Explains the difference between delegation and impersonation.  
   
 ## Reference  
+
  <xref:System.ServiceModel.Security>  
   
  <xref:System.ServiceModel.Description.PrincipalPermissionMode>  
@@ -38,6 +42,7 @@ Authorization is the process of controlling access and rights to resources, such
  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
   
 ## Related Sections  
+
  [Authentication](authentication-in-wcf.md)  
   
 ## See also

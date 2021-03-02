@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Two-Way Communication"
 title: "Two-Way Communication"
 ms.date: "03/30/2017"
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
 ---
 # Two-Way Communication
+
 This sample demonstrates how to perform transacted two-way queued communication over MSMQ. This sample uses the `netMsmqBinding` binding. In this case, the service is a self-hosted console application that allows you to observe the service receiving queued messages.  
   
 > [!NOTE]

@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Windows Communication Foundation Transactions Overview"
 title: "Windows Communication Foundation Transactions Overview"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -8,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
 ---
 # Windows Communication Foundation Transactions Overview
+
 Transactions provide a way to group a set of actions or operations into a single indivisible unit of execution. A transaction is a collection of operations with the following properties:  
   
 - Atomicity. This ensures that either all of the updates completed under a specific transaction are committed and made durable or they are all aborted and rolled back to their previous state.  

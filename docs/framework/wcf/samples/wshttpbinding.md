@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: WSHttpBinding"
 title: "WSHttpBinding"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: 22d85b19-0135-4141-9179-a0e9c343ad73
 ---
 # WSHttpBinding
+
 This sample demonstrates how to implement a typical service and a typical client using Windows Communication Foundation (WCF). This sample consists of a client console program (client.exe) and a service library hosted by Internet Information Services (IIS). The service implements a contract that defines a request-reply communication pattern. The contract is defined by the `ICalculator` interface, which exposes math operations (add, subtract, multiply, and divide). The client makes synchronous requests to a given math operation and the service replies with the result. Client activity is visible in the console window.  
   
 > [!IMPORTANT]

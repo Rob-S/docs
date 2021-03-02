@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Get Interface and Protocol Information"
 title: "How to: Get Interface and Protocol Information"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
 ---
 # How to: Get Interface and Protocol Information
+
 This sample shows how to read the TCP statistics of a network interface.  
   
 ## Example  
@@ -64,6 +66,7 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 ```  
   
 ## Compiling the Code  
+
  This example requires:  
   
 - References to the **System.Net** namespace.

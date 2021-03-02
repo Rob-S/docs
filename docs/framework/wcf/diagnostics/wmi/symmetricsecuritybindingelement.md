@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: SymmetricSecurityBindingElement"
 title: "SymmetricSecurityBindingElement"
 ms.date: "03/30/2017"
 ms.assetid: b2e182b6-c041-4d80-a926-6058068d9f79
 ---
 # SymmetricSecurityBindingElement
+
 SymmetricSecurityBindingElement  
   
 ## Syntax  
@@ -17,12 +19,15 @@ class SymmetricSecurityBindingElement : SecurityBindingElement
 ```  
   
 ## Methods  
+
  The SymmetricSecurityBindingElement class does not define any methods.  
   
 ## Properties  
+
  The SymmetricSecurityBindingElement class has the following properties:  
   
 ### MessageProtectionOrder  
+
  Data type: string  
   
  Access type: Read-only  
@@ -30,6 +35,7 @@ class SymmetricSecurityBindingElement : SecurityBindingElement
  The order of message encryption and signing for this binding.  
   
 ### RequireSignatureConfirmation  
+
  Data type: boolean  
   
  Access type: Read-only  

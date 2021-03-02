@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Caching Support for WCF Web HTTP Services"
 title: "Caching Support for WCF Web HTTP Services"
 ms.date: "03/30/2017"
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
@@ -161,4 +162,5 @@ public Customer GetCustomer(string id)
 ```  
   
 ## Security Considerations  
+
  Requests that require authorization should not have their responses cached, because the authorization is not performed when the response is served from the cache.  Caching such responses would introduce a serious security vulnerability.  Usually, requests that require authorization provide user-specific data and therefore server-side caching is not even beneficial.  In such situations, client-side caching or simply not caching at all will be more appropriate.

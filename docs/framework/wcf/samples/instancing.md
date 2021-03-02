@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Instancing"
 title: "Instancing"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -7,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: c290fa54-f6ae-45a1-9186-d9504ebc6ee6
 ---
 # Instancing
+
 The Instancing sample demonstrates the instancing behavior setting, which controls how instances of a service class are created in response to client requests. The sample is based on the [Getting Started](getting-started-sample.md), which implements the `ICalculator` service contract. This sample defines a new contract, `ICalculatorInstance`, which inherits from `ICalculator`. The contract specified by `ICalculatorInstance` provides three additional operations for inspecting the state of the service instance. By altering the instancing setting, you can observe the change in behavior by running the client.  
   
  In this sample, the client is a console application (.exe) and the service is hosted by Internet Information Services (IIS).  

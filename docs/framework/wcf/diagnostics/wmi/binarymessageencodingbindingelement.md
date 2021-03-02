@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: BinaryMessageEncodingBindingElement"
 title: "BinaryMessageEncodingBindingElement"
 ms.date: "03/30/2017"
 ms.assetid: e2bb3cdd-3bbd-4bb5-85fe-570457500a66
 ---
 # BinaryMessageEncodingBindingElement
+
 BinaryMessageEncodingBindingElement  
   
 ## Syntax  
@@ -19,12 +21,15 @@ class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement
 ```  
   
 ## Methods  
+
  The BinaryMessageEncodingBindingElement class does not define any methods.  
   
 ## Properties  
+
  The BinaryMessageEncodingBindingElement class has the following properties.  
   
 ## MaxReadPoolSize  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -32,6 +37,7 @@ class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement
  An integer that defines how many messages can be read simultaneously without allocating new readers.  
   
 ## MaxSessionSize  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -39,6 +45,7 @@ class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement
  A value that specifies the size, in bytes, of the buffer used for encoding.  
   
 ## MaxWritePoolSize  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -46,6 +53,7 @@ class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement
  An integer that defines how many messages can be sent simultaneously without allocating new writers.  
   
 ## ReaderQuotas  
+
  Data type: XmlDictionaryReaderQuotas  
   
  Access type: Read-only  

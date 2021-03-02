@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 113 - WorkflowInstanceTerminatedRecord"
 title: "113 - WorkflowInstanceTerminatedRecord"
 ms.date: "03/30/2017"
 ms.assetid: f53204ee-4ea2-45e1-8859-e86d07305efd
 ---
 # 113 - WorkflowInstanceTerminatedRecord
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: f53204ee-4ea2-45e1-8859-e86d07305efd
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## Description  
+
  This event is emitted by the ETW tracking participant when a workflow instance emits WorkflowInstanceTerminatedRecord.  
   
 ## Message  
+
  TrackRecord = WorkflowInstanceTerminatedRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, Reason = %5, Annotations = %6, ProfileName = %7  
   
 ## Details  

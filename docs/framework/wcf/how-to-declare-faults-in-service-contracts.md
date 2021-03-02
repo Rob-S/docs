@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Declare Faults in Service Contracts"
 title: "How to: Declare Faults in Service Contracts"
 ms.date: "03/30/2017"
 dev_langs:
@@ -24,6 +25,7 @@ In managed code, exceptions are thrown when error conditions occur. In Windows C
 4. Repeat steps 2 and 3 for all operations in the contract that communicate error conditions to clients.
 
 ## Implementing an Operation to Return a Specified SOAP Fault
+
  Once an operation has specified that a specific SOAP fault can be returned (such as in the preceding procedure) to communicate an error condition to a calling application, the next step is to implement that specification.
 
 ### Throw the specified SOAP fault in the operation

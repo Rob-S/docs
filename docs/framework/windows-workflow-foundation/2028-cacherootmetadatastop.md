@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 2028 - CacheRootMetadataStop"
 title: "2028 - CacheRootMetadataStop"
 ms.date: "03/30/2017"
 ms.assetid: d799b707-ee16-4b04-8b6d-b87c0d60e71d
 ---
 # 2028 - CacheRootMetadataStop
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: d799b707-ee16-4b04-8b6d-b87c0d60e71d
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Indicates the completion of CacheRootMetadata on an activity.  
   
 ## Message  
+
  CacheRootMetadata stopped on activity %1.  
   
 ## Details  

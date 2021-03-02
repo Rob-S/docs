@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 1022 - StartBookmarkWorkItem"
 title: "1022 - StartBookmarkWorkItem"
 ms.date: "03/30/2017"
 ms.assetid: 4415fbdb-0329-4019-803f-aea66e75f3da
 ---
 # 1022 - StartBookmarkWorkItem
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: 4415fbdb-0329-4019-803f-aea66e75f3da
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Indicates a BookmarkWorkItem is starting execution.  
   
 ## Message  
+
  Starting execution of a BookmarkWorkItem for Activity '%1', DisplayName: '%2', InstanceId: '%3'.  BookmarkName: %4, BookmarkScope: %5.  
   
 ## Details  

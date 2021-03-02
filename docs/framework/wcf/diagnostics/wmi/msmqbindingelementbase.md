@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: MsmqBindingElementBase"
 title: "MsmqBindingElementBase"
 ms.date: "03/30/2017"
 ms.assetid: 210d41ab-a2a4-4d7a-afd2-0916c08a4015
 ---
 # MsmqBindingElementBase
+
 MsmqBindingElementBase  
   
 ## Syntax  
@@ -26,12 +28,15 @@ class MsmqBindingElementBase : TransportBindingElement
 ```  
   
 ## Methods  
+
  The MsmqBindingElementBase class does not define any methods.  
   
 ## Properties  
+
  The MsmqBindingElementBase class has the following properties:  
   
 ### CustomDeadLetterQueue  
+
  Data type: string  
   
  Access type: Read-only  
@@ -39,6 +44,7 @@ class MsmqBindingElementBase : TransportBindingElement
  A URI that contains the location of the dead letter queue for each application, where messages that have expired or that have failed transfer or delivery are placed.  
   
 ### DeadLetterQueue  
+
  Data type: string  
   
  Access type: Read-only  
@@ -46,6 +52,7 @@ class MsmqBindingElementBase : TransportBindingElement
  An enumeration value that indicates the type of dead letter queue to use.  
   
 ### Durable  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -53,6 +60,7 @@ class MsmqBindingElementBase : TransportBindingElement
  A value that indicates whether the messages processed by this binding are durable or volatile.  
   
 ### ExactlyOnce  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -60,6 +68,7 @@ class MsmqBindingElementBase : TransportBindingElement
  A Boolean value that indicates whether messages processed by this binding are received exactly once.  
   
 ### MaxRetryCycles  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -67,6 +76,7 @@ class MsmqBindingElementBase : TransportBindingElement
  The maximum number of retry cycles to attempt delivery of messages to the receiving application.  
   
 ### ReceiveErrorHandling  
+
  Data type: string  
   
  Access type: Read-only  
@@ -74,6 +84,7 @@ class MsmqBindingElementBase : TransportBindingElement
  The settings for poison message handling.  
   
 ### ReceiveRetryCount  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -81,6 +92,7 @@ class MsmqBindingElementBase : TransportBindingElement
  The maximum number of immediate retry attempts on a message that is read from the application queue.  
   
 ### RetryCycleDelay  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -88,6 +100,7 @@ class MsmqBindingElementBase : TransportBindingElement
  A value that indicates the time delay between retry cycles when attempting to deliver a message that could not be delivered immediately.  
   
 ### TimeToLive  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -95,6 +108,7 @@ class MsmqBindingElementBase : TransportBindingElement
  The interval of time that indicates how long the messages processed by this binding can be in the queue before they expire.  
   
 ### UseMsmqTracing  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -102,6 +116,7 @@ class MsmqBindingElementBase : TransportBindingElement
  A Boolean value that indicates whether messages processed by this binding should be traced.  
   
 ### UseSourceJournal  
+
  Data type: boolean  
   
  Access type: Read-only  

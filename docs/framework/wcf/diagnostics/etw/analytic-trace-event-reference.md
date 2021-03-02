@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Analytic Trace Event Reference"
 title: "Analytic Trace Event Reference"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: e44540cf-44a1-4efc-b965-7fbfd2131d73
 ---
 # Analytic Trace Event Reference
+
 The following table defines the event levels, identifiers, and messages associated with the WCF Analytic Tracing.  
   
 ## Event Reference  

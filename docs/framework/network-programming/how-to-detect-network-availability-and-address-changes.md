@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Detect Network Availability and Address Changes"
 title: "How to: Detect Network Availability and Address Changes"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: d4377115-4a76-4848-ab23-4898d65c771c
 ---
 # How to: Detect Network Availability and Address Changes
+
 This sample shows how to detect changes in the network address of an interface.  
   
 ## Example  
@@ -40,6 +42,7 @@ namespace Examples.Net.AddressChanges
 ```  
   
 ## Compiling the Code  
+
  This example requires:  
   
 - References to the **System.Net** namespace.

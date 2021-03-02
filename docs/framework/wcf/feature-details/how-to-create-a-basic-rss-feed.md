@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Create a Basic RSS Feed"
 title: "How to: Create a Basic RSS Feed"
 ms.date: "03/30/2017"
 dev_langs: 
@@ -7,6 +8,7 @@ dev_langs:
 ms.assetid: 431879b8-a5f8-4947-ad1e-4768c726aca8
 ---
 # How to: Create a Basic RSS Feed
+
 Windows Communication Foundation (WCF) allows you to create a service that exposes a syndication feed. This topic discusses how to create a syndication service that exposes an RSS syndication feed.  
   
 ### To create a basic syndication service  
@@ -80,12 +82,14 @@ Windows Communication Foundation (WCF) allows you to create a service that expos
      [!code-vb[htRssBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/snippets.vb#11)]  
   
 ## Example  
+
  The following is the full code listing for this example.  
   
  [!code-csharp[htRssBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htrssbasic/cs/program.cs#12)]
  [!code-vb[htRssBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/program.vb#12)]  
   
 ## Compiling the Code  
+
  When compiling the preceding code, reference System.ServiceModel.dll and System.ServiceModel.Web.dll.  
   
 ## See also

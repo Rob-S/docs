@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Using a custom activity"
 title: "Using a custom activity"
 ms.date: "03/30/2017"
 ms.assetid: 8f356419-681a-4175-ae93-878eee970249
 ---
 # Using a custom activity
+
 Activities that derive from <xref:System.Activities.Activity> or its subclasses can be composed into larger workflows, or created directly in code. This topic describes how to use custom activities in workflows created either in code or in the designer.  
   
 > [!NOTE]

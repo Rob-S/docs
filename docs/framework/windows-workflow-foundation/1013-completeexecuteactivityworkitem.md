@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 1013 - CompleteExecuteActivityWorkItem"
 title: "1013 - CompleteExecuteActivityWorkItem"
 ms.date: "03/30/2017"
 ms.assetid: 31fc57b3-ef2f-48f0-a5de-b4e2c5c9ded7
 ---
 # 1013 - CompleteExecuteActivityWorkItem
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: 31fc57b3-ef2f-48f0-a5de-b4e2c5c9ded7
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Indicates an ExecuteActivityWorkItem has completed  
   
 ## Message  
+
  An ExecuteActivityWorkItem has completed for Activity '%1', DisplayName: '%2', InstanceId: '%3'.  
   
 ## Details  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 4208 - RetryingSqlCommandDueToSqlError"
 title: "4208 - RetryingSqlCommandDueToSqlError"
 ms.date: "03/30/2017"
 ms.assetid: a8e6483a-a6e4-4bbf-82ec-cd8b6e711aad
 ---
 # 4208 - RetryingSqlCommandDueToSqlError
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: a8e6483a-a6e4-4bbf-82ec-cd8b6e711aad
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Indicates the SQL provider is retrying a SQL command due to a SQL error.  
   
 ## Message  
+
  Retrying a SQL command due to SQL error number %1.  
   
 ## Details  

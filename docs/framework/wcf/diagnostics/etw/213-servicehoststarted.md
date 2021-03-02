@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 213 - ServiceHostStarted"
 title: "213 - ServiceHostStarted"
 ms.date: "03/30/2017"
 ms.assetid: a6f7facc-342f-46bb-9d52-a470178ba6bb
 ---
 # 213 - ServiceHostStarted
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: a6f7facc-342f-46bb-9d52-a470178ba6bb
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## Description  
+
  This event is emitted when a Web-hosted service host is started. This typically happens when the service is activated by a message. It may also happen if the service is configured to be automatically started.  
   
 ## Message  
+
  ServiceHost started: '%1'.  
   
 ## Details  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: PeerTransportBindingElement"
 title: "PeerTransportBindingElement"
 ms.date: "03/30/2017"
 ms.assetid: 40bf6be2-8087-4cb3-a66c-408d53eb9269
 ---
 # PeerTransportBindingElement
+
 PeerTransportBindingElement  
   
 ## Syntax  
@@ -18,12 +20,15 @@ class PeerTransportBindingElement : TransportBindingElement
 ```  
   
 ## Methods  
+
  The PeerTransportBindingElement class does not define any methods.  
   
 ## Properties  
+
  The PeerTransportBindingElement class has the following properties:  
   
 ### ListenIPAddress  
+
  Data type: string  
   
  Access type: Read-only  
@@ -31,6 +36,7 @@ class PeerTransportBindingElement : TransportBindingElement
  The IP address on which the peer node listens for messages.  
   
 ### Port  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -38,6 +44,7 @@ class PeerTransportBindingElement : TransportBindingElement
  The network interface port on which this binding processes peer channel messages.  
   
 ### Security  
+
  Data type: PeerSecuritySettings  
   
  Access type: Read-only  

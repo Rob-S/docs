@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: IXCLRDataProcess Interface"
 title: "IXCLRDataProcess Interface"
 ms.date: "01/16/2019"
 api.name:
@@ -26,6 +27,7 @@ Provides methods for querying information about a process.
 
 | Method                                                                                                                                               | Description                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [GetRuntimeNameByAddress](ixclrdataprocess-getruntimenamebyaddress-method.md)                     | Gets a name for the given address.                                                               |
 | [GetAppDomainByUniqueId](ixclrdataprocess-getappdomainbyuniqueid-method.md)                       | Gets an `AppDomain` in a process by its unique id.                                              |
 | [StartEnumModules](ixclrdataprocess-startenummodules-method.md)                                   | Provides a handle to enumerate the modules of a process.                                        |
 | [EnumModule](ixclrdataprocess-enummodule-method.md)                                               | Enumerates the modules of this process.                                                         |

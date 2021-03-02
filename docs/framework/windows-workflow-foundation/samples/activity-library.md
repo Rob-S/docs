@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Activity Library"
 title: "Activity Library"
 ms.date: "03/30/2017"
 ms.assetid: 5323e9d4-71d6-47eb-bfa6-31feac62044d
 ---
 # Activity Library
+
 This section contains samples that demonstrate advanced custom activities in Windows Workflow Foundation (WF).  
   
 ## In This Section

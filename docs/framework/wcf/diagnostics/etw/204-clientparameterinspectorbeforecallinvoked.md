@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 204 - ClientParameterInspectorBeforeCallInvoked"
 title: "204 - ClientParameterInspectorBeforeCallInvoked"
 ms.date: "03/30/2017"
 ms.assetid: 8253555a-9002-4565-8ede-33d7a33a895f
 ---
 # 204 - ClientParameterInspectorBeforeCallInvoked
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: 8253555a-9002-4565-8ede-33d7a33a895f
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## Description  
+
  This event is emitted after the Service Model has invoked the `BeforeCall` method on a client parameter inspector.  
   
 ## Message  
+
  The Dispatcher invoked 'BeforeCall' on a ClientParameterInspector of type '%1'.  
   
 ## Details  

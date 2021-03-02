@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Data Transfer and Serialization"
 title: "Data Transfer and Serialization"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -7,9 +8,11 @@ helpviewer_keywords:
 ms.assetid: 0f03c635-f3e7-4c5c-9463-3cb0135e221e
 ---
 # Data Transfer and Serialization
+
 In a connected system, services and clients depend on the exchange of data to accomplish any task. As a developer of a service or client, you must also understand how Windows Communication Foundation (WCF) handles data and data serialization in order to create applications that are efficient and easy to maintain.  
   
 ## In This Section  
+
  [Specifying Data Transfer in Service Contracts](specifying-data-transfer-in-service-contracts.md)  
  Describes the basic concepts of data transfer in services.  
   
@@ -41,6 +44,7 @@ In a connected system, services and clients depend on the exchange of data to ac
  Describes a view of the overall design of data transfer in WCF.  
   
 ## Reference  
+
  <xref:System.ServiceModel>  
   
  <xref:System.Runtime.Serialization.DataContractSerializer>  
@@ -52,6 +56,7 @@ In a connected system, services and clients depend on the exchange of data to ac
  <xref:System.Xml.Serialization>  
   
 ## Related Sections  
+
  [Extending Encoders and Serializers](../extending/extending-encoders-and-serializers.md)  
   
 ## See also

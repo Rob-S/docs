@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Use Multiple Security Tokens of the Same Type"
 title: "How to: Use Multiple Security Tokens of the Same Type"
 ms.date: "03/30/2017"
 ms.assetid: cf179f48-4ed4-4caa-86a5-ef8eecc231cd
@@ -40,6 +41,7 @@ ms.assetid: cf179f48-4ed4-4caa-86a5-ef8eecc231cd
      [!code-csharp[C_CustomBinding#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#15)]  
   
 ## Example  
+
  The following is the entire method described by the preceding procedure.  
   
  [!code-csharp[C_CustomBinding#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#7)]  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Behavior class"
 title: "Behavior class"
 ms.date: "03/30/2017"
 ms.assetid: 75d117f5-87f9-40fb-84c6-9e2fef6da6af
 ---
 # Behavior class
+
 ## Syntax  
   
 ```csharp
@@ -14,12 +16,15 @@ class Behavior
 ```  
   
 ## Methods  
+
  The Behavior class does not define any methods.  
   
 ## Properties  
+
  The Behavior class has the following property:  
   
 ### Type  
+
  Data type: string  
   
  Access type: Read-only  

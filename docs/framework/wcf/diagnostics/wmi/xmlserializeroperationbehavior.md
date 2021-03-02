@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: XmlSerializerOperationBehavior"
 title: "XmlSerializerOperationBehavior"
 ms.date: "03/30/2017"
 ms.assetid: 8911aa1b-e34b-4161-a3ae-7468d89a6861
 ---
 # XmlSerializerOperationBehavior
+
 XmlSerializerOperationBehavior  
   
 ## Syntax  
@@ -17,12 +19,15 @@ class XmlSerializerOperationBehavior : Behavior
 ```  
   
 ## Methods  
+
  The XmlSerializerOperationBehavior class does not define any methods.  
   
 ## Properties  
+
  The XmlSerializerOperationBehavior class has the following properties:  
   
 ### Style  
+
  Data type: string  
   
  Access type: Read-only  
@@ -30,6 +35,7 @@ class XmlSerializerOperationBehavior : Behavior
  Defines the style of the SOAP message.  
   
 ### Use  
+
  Data type: string  
   
  Access type: Read-only  

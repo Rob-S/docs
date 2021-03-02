@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Windows Communication Foundation Bindings"
 title: "Windows Communication Foundation Bindings"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,9 +7,11 @@ helpviewer_keywords:
 ms.assetid: 845df323-be53-4848-92ef-ba67a406484d
 ---
 # Windows Communication Foundation Bindings
+
 Bindings specify how a Windows Communication Foundation (WCF) service endpoint communicates with other endpoints. At its most basic, a binding must specify the transport (for example, HTTP or TCP) to use. You can also set other characteristics, such as security and transaction support, through bindings.  
   
 ## In This Section  
+
  [WCF Bindings Overview](bindings-overview.md)  
  Overview of what WCF bindings do, what bindings the system provides, and how you can define or modify them.  
   
@@ -22,9 +25,11 @@ Bindings specify how a Windows Communication Foundation (WCF) service endpoint c
  Configuration enables administrators and installers to customize the bindings for service endpoints.  
   
 ## Reference  
+
  <xref:System.ServiceModel.Channels>  
   
 ## Related Sections  
+
  [Endpoints: Addresses, Bindings, and Contracts](./feature-details/endpoints-addresses-bindings-and-contracts.md)  
   
  [Bindings](./feature-details/bindings.md)  

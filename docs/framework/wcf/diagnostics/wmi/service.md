@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Service"
 title: "Service"
 ms.date: "03/30/2017"
 ms.assetid: 999806e1-6376-409e-b998-b0af391adfe7
 ---
 # Service
+
 Service  
   
 ## Syntax  
@@ -27,12 +29,15 @@ class Service
 ```  
   
 ## Methods  
+
  The Service class does not define any methods.  
   
 ## Properties  
+
  The Service class has the following properties:  
   
 ### BaseAddresses  
+
  Data type: string array  
   
  Access type: Read-only  
@@ -40,6 +45,7 @@ class Service
  The base addresses used by the service.  
   
 ### Behaviors  
+
  Data type: Behavior array  
   
  Access type: Read-only  
@@ -47,6 +53,7 @@ class Service
  The behaviors associated with this service.  
   
 ### ConfigurationName  
+
  Data type: string  
   
  Access type: Read-only  
@@ -54,6 +61,7 @@ class Service
  ServiceElement_BehaviorConfiguration  
   
 ### CounterInstanceName  
+
  Data type: string  
   
  Access type: Read-only  
@@ -61,6 +69,7 @@ class Service
  Instance name of the instance of the performance counters of the service.  
   
 ### DistinguishedName  
+
  Data type: string  
   
  Access type: Read-only  
@@ -68,6 +77,7 @@ class Service
  Service name at the address.  
   
 ### Extensions  
+
  Data type: string array  
   
  Access type: Read-only  
@@ -75,6 +85,7 @@ class Service
  The instance contexts for the extensions of the service instance.  
   
 ### Metadata  
+
  Data type: string array  
   
  Access type: Read-only  
@@ -82,6 +93,7 @@ class Service
  The service metadata settings.  
   
 ### Name  
+
  Data type: string  
   
  Access type: Read-only  
@@ -89,6 +101,7 @@ class Service
  The unique name of this service.  
   
 ### Namespace  
+
  Data type: string  
   
  Access type: Read-only  
@@ -96,6 +109,7 @@ class Service
  The namespace of the service.  
   
 ### Opened  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -103,6 +117,7 @@ class Service
  The time the service was opened.  
   
 ### OutgoingChannels  
+
  Data type: Channel array  
   
  Access type: Read-only  
@@ -110,6 +125,7 @@ class Service
  The channels that are outgoing from the service instance.  
   
 ### ProcessId  
+
  Data type: sint32  
   
  Access type: Read-only  

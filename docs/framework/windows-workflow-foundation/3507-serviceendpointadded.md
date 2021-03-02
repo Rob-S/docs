@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 3507 - ServiceEndpointAdded"
 title: "3507 - ServiceEndpointAdded"
 ms.date: "03/30/2017"
 ms.assetid: c068fc0e-07ee-4551-9824-ea7216e1fe37
 ---
 # 3507 - ServiceEndpointAdded
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: c068fc0e-07ee-4551-9824-ea7216e1fe37
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## Description  
+
  Indicates a service endpoint has been added.  
   
 ## Message  
+
  A service endpoint has been added for address '%1', binding '%2', and contract '%3'.  
   
 ## Details  

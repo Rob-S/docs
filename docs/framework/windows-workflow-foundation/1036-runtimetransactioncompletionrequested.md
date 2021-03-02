@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 1036 - RuntimeTransactionCompletionRequested"
 title: "1036 - RuntimeTransactionCompletionRequested"
 ms.date: "03/30/2017"
 ms.assetid: d36b9f44-7c0f-4083-9d3a-9034dd2b98de
 ---
 # 1036 - RuntimeTransactionCompletionRequested
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: d36b9f44-7c0f-4083-9d3a-9034dd2b98de
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Indicates an activity has scheduled the completion of the runtime transaction.  
   
 ## Message  
+
  Activity '%1', DisplayName: '%2', InstanceId: '%3' has scheduled completion of the runtime transaction.  
   
 ## Details  

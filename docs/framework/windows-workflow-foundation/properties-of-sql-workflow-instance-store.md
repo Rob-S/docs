@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Properties of SQL Workflow Instance Store"
 title: "Properties of SQL Workflow Instance Store"
 ms.date: "03/30/2017"
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
 ---
 # Properties of SQL Workflow Instance Store
+
 The topics in this section provide details about properties of the SQL Workflow Instance Store.  
   
 ## In This Section  

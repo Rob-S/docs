@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Cache Policy Interaction—Maximum Age and Minimum Freshness"
 title: "Cache Policy Interaction—Maximum Age and Minimum Freshness"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -12,6 +13,7 @@ helpviewer_keywords:
 ms.assetid: 6567d451-ecec-496c-95a3-a415b99ba52a
 ---
 # Cache Policy Interaction—Maximum Age and Minimum Freshness
+
 To help ensure that the freshest content is returned to the client application, the interaction of client cache policy and server revalidation requirements always results in the most conservative cache policy. All the examples in this topic illustrate the cache policy for a resource that is cached on January 1 and expires on January 4.  
   
  The following examples illustrate the cache policy that results from the interaction of the maximum age (`maxAge`) and minimum freshness (`minFresh`) values.  

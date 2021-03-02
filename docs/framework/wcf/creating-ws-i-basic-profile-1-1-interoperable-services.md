@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Creating WS-I Basic Profile 1.1 Interoperable Services"
 title: "Creating WS-I Basic Profile 1.1 Interoperable Services"
 ms.date: "03/30/2017"
 dev_langs: 
@@ -9,6 +10,7 @@ helpviewer_keywords:
 ms.assetid: 91b70a21-8f5c-4679-808c-2ed5fa6b2013
 ---
 # Creating WS-I Basic Profile 1.1 Interoperable Services
+
 To configure a WCF service endpoint to be interoperable with ASP.NET Web service clients:  
   
 - Use the <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> type as the binding type for your service endpoint.  
@@ -28,9 +30,11 @@ To make the metadata for a WCF service available to ASP.NET, use the Web service
 ## Example  
   
 ### Description  
+
  The following example code demonstrates how to add a WCF endpoint that is compatible with ASP.NET Web service clients in code and, alternatively, in a configuration file.  
   
 ### Code  
+
  [!code-csharp[C_HowTo-WCFServiceAndASMXClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/cs/program.cs#0)]
  [!code-vb[C_HowTo-WCFServiceAndASMXClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/vb/program.vb#0)]  
  [!code-xml[C_HowTo-WCFServiceAndASMXClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/common/app.config#1)]  

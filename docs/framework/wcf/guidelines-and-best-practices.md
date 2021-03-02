@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Guidelines and Best Practices"
 title: "Guidelines and Best Practices"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -10,9 +11,11 @@ helpviewer_keywords:
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
 ---
 # Guidelines and Best Practices
+
 This section contains topics that provide guidelines for creating Windows Communication Foundation (WCF) applications.  
   
 ## In This Section  
+
  [Best Practices: Data Contract Versioning](best-practices-data-contract-versioning.md)  
  Explains how and when to create data contracts that do not break when future versions are created.  
   
@@ -29,11 +32,13 @@ This section contains topics that provide guidelines for creating Windows Commun
  Describes the considerations to be made when using the ClickOnce feature.  
   
 ## Reference  
+
  <xref:System.ServiceModel>  
   
  <xref:System.Runtime.Serialization>  
   
 ## Related Sections  
+
  [Conceptual Overview](conceptual-overview.md)  
   
  [Basic WCF Programming](basic-wcf-programming.md)  

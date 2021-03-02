@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Create a Basic Atom Feed"
 title: "How to: Create a Basic Atom Feed"
 ms.date: "03/30/2017"
 dev_langs: 
@@ -7,6 +8,7 @@ dev_langs:
 ms.assetid: 6e0cacc1-9b11-4665-adb7-577a62626fd6
 ---
 # How to: Create a Basic Atom Feed
+
 Windows Communication Foundation (WCF) allows you to create a service that exposes a syndication feed. This topic discusses how to create a syndication service that exposes an Atom syndication feed.  
   
 ### To create a basic syndication service  
@@ -82,12 +84,14 @@ Windows Communication Foundation (WCF) allows you to create a service that expos
      [!code-vb[htAtomBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/snippets.vb#11)]  
   
 ## Example  
+
  The following is the full code listing for this example.  
   
  [!code-csharp[htAtomBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#12)]
  [!code-vb[htAtomBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#12)]  
   
 ## Compiling the Code  
+
  When compiling the preceding code, reference System.ServiceModel.dll and System.ServiceModel.Web.dll.  
   
 ## See also

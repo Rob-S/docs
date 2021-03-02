@@ -1,12 +1,15 @@
 ---
+description: "Learn more about: System.ServiceModel.ComIntegration.ComIntegrationEnteringActivity"
 title: "System.ServiceModel.ComIntegration.ComIntegrationEnteringActivity"
 ms.date: "03/30/2017"
 ms.assetid: bacbae18-322b-41e9-881a-75017f97ffd7
 ---
 # System.ServiceModel.ComIntegration.ComIntegrationEnteringActivity
+
 System.ServiceModel.ComIntegration.ComIntegrationEnteringActivity  
   
 ## Description  
+
  ComPlus: Entering COM+ activity.  
   
 ## See also

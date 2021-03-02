@@ -1,12 +1,15 @@
 ---
+description: "Learn more about: Using Tracing to Troubleshoot Your Application"
 title: "Using Tracing to Troubleshoot Your Application"
 ms.date: "03/30/2017"
 ms.assetid: 7676b9bb-cbd1-41fd-9a93-cc615af6e2d0
 ---
 # Using Tracing to Troubleshoot Your Application
+
 This section contains various topics that describe how you can use tracing to troubleshoot your application.  
   
 ## In This Section  
+
  [Recommended Settings for Tracing and Message Logging](recommended-settings-for-tracing-and-message-logging.md)  
  Describes suggested settings for production and debugging environments.  
   

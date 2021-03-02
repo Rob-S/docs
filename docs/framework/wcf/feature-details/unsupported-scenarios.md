@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Unsupported scenarios"
 title: "Unsupported Scenarios"
 ms.date: "03/30/2017"
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
@@ -10,6 +11,7 @@ For various reasons, Windows Communication Foundation (WCF) does not support som
 ## Impersonation scenarios
 
 ### Impersonated identity might not flow when clients make asynchronous calls
+
  When a WCF client makes asynchronous calls to a WCF service using Windows authentication under impersonation, authentication might occur with the identity of the client process instead of the impersonated identity.
 
 ### Windows XP and secure context token cookie enabled

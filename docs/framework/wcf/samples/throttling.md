@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Throttling"
 title: "Throttling"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -7,6 +8,7 @@ helpviewer_keywords:
 ms.assetid: 40bb3582-8ae9-4410-96f0-6c515bfaf47c
 ---
 # Throttling
+
 The Throttling sample demonstrates the use of throttling controls. Throttling controls place limits on the number of concurrent calls, instances, or sessions to prevent over-consumption of resources. Throttling behavior is specified in service configuration file settings. This sample is based on the [Getting Started](getting-started-sample.md) that implements a calculator service.  
   
  In this sample, the client is a console application (.exe) and the service is hosted by Internet Information Services (IIS).  

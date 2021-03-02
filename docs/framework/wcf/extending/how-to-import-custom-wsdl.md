@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: How to: Import Custom WSDL"
 title: "How to: Import Custom WSDL"
 ms.date: "03/30/2017"
 ms.assetid: ddc3718d-ce60-44f6-92af-a5c67477dd99
 ---
 # How to: Import Custom WSDL
+
 This topic describes how to import custom WSDL. To handle the custom WSDL, you must implement the <xref:System.ServiceModel.Description.IWsdlImportExtension> interface.  
   
 ### To import custom WSDL  

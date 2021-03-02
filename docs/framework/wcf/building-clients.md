@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Building Clients"
 title: "Building Clients"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -7,9 +8,11 @@ helpviewer_keywords:
 ms.assetid: 28dfff47-d95b-4cc2-9d5c-b3b9ba71fd50
 ---
 # Building Clients
+
 The topics in this section demonstrate how to create and use a Windows Communication Foundation (WCF) client.  
   
 ## In This Section  
+
  [WCF Client Overview](wcf-client-overview.md)  
  Provides an overview of WCF clients and how they work.  
   
@@ -20,6 +23,7 @@ The topics in this section demonstrate how to create and use a Windows Communica
  Describes how to configure security for WCF clients.  
   
 ## Reference  
+
  <xref:System.ServiceModel.ClientBase%601>  
   
  <xref:System.ServiceModel.DuplexClientBase%601>  
@@ -35,6 +39,7 @@ The topics in this section demonstrate how to create and use a Windows Communica
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
   
 ## Related Sections  
+
  [Hosting Services](hosting-services.md)  
   
  [Designing and Implementing Services](designing-and-implementing-services.md)

@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Hosting Workflows"
 title: "Hosting Workflows"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,9 +7,11 @@ helpviewer_keywords:
 ms.assetid: a99a5990-b53b-419b-9538-b1c3d1ba5db3
 ---
 # Hosting Workflows
+
 The topics in this section discuss hosting workflows.  
   
 ## In This Section  
+
  [Workflow Hosting Options](workflow-hosting-options.md)  
  Describes how to select the appropriate host for your workflows.  
   

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: How to: Configure Tracking with WorkflowServiceHost"
 title: "How to: Configure Tracking with WorkflowServiceHost"
 ms.date: "03/30/2017"
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
 ---
 # How to: Configure Tracking with WorkflowServiceHost
+
 This topic explains how to configure tracking for a [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] workflow hosted in <xref:System.ServiceModel.Activities.WorkflowServiceHost>. It is configured through a Web.config file by specifying a service behavior.  
   
 ### Configure Tracking in Configuration  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 1131 - InvokeMethodUseAsyncPattern"
 title: "1131 - InvokeMethodUseAsyncPattern"
 ms.date: "03/30/2017"
 ms.assetid: eca50fa7-5276-4759-ad1c-e490b9bd1f82
 ---
 # 1131 - InvokeMethodUseAsyncPattern
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: eca50fa7-5276-4759-ad1c-e490b9bd1f82
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  During CacheMetadata step, InvokeMethod activity indicates that it is using the async pattern when invoking the method.  
   
 ## Message  
+
  InvokeMethod '%1' - method uses asynchronous pattern of '%2' and '%3'.  
   
 ## Details  

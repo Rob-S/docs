@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: How To: Service Versioning"
 title: "How To: Service Versioning"
 ms.date: "03/30/2017"
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
 ---
 # How To: Service Versioning
+
 This topic outlines the basic steps required to create a routing configuration that routes messages to different versions of the same service. In this example, messages are routed to two different versions of a calculator service, `roundingCalc` (v1) and `regularCalc` (v2). Both implementations support the same operations; however the older service, `roundingCalc`, rounds all calculations to the nearest integer value before returning. A client application must be able to indicate whether to use the newer `regularCalc` service.  
   
 > [!WARNING]
@@ -125,6 +127,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     ```  
   
 ## Example  
+
  The following is a complete listing of the configuration file.  
   
 ```xml  
@@ -208,6 +211,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
 ```  
   
 ## Example  
+
  The following is a complete listing of the client application.  
   
 ```csharp  

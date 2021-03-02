@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 1147 - FlowchartSwitchDefault"
 title: "1147 - FlowchartSwitchDefault"
 ms.date: "03/30/2017"
 ms.assetid: 03bb91f4-bfa4-4420-97fe-8443ee9b03e5
 ---
 # 1147 - FlowchartSwitchDefault
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: 03bb91f4-bfa4-4420-97fe-8443ee9b03e5
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Indicates the default case has been selected in a Flowchart switch.  
   
 ## Message  
+
  Flowchart '%1'/FlowSwitch - Default Case was selected.  
   
 ## Details  

@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Query for Non-persisted Instances"
 title: "How to: Query for Non-persisted Instances"
 ms.date: "03/30/2017"
 ms.assetid: 294019b1-c1a7-4b81-a14f-b47c106cd723
@@ -32,6 +33,7 @@ select InstanceId, CreationTime from [System.Activities.DurableInstancing].[Inst
 ```
 
 ## To find all instances not persisted yet and also not loaded
+
  The following SQL query returns ID and creation time for all instances that are not persisted and also are not loaded.
 
 ```sql

@@ -30,11 +30,11 @@ The choice of which print style API to use is up to you. The key differences are
   - Useful for information that your customer may need to see in the release.
   - Because it's the simplest approach, it's often used for ad-hoc temporary debugging. This debug code is often never checked in to source control.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
-  - Only enabled when `TRACE` is defined.
+  - Only enabled when `TRACE` is defined by adding `#define TRACE` to your source or specifying the option `/d:TRACE` when compiling.
   - Writes to attached <xref:System.Diagnostics.Trace.Listeners>, by default the <xref:System.Diagnostics.DefaultTraceListener>.
   - Use this API when creating logs that will be enabled in most builds.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
-  - Only enabled when `DEBUG` is defined.
+  - Only enabled when `DEBUG` is defined by adding `#define DEBUG` to your source or specifying the option `/d:DEBUG` when compiling.
   - Writes to an attached debugger.
   - On `*nix` writes to stderr if `COMPlus_DebugWriteToStdErr` is set.
   - Use this API when creating logs that will be enabled only in debug builds.
@@ -59,13 +59,14 @@ The following APIs are more event oriented. Rather than logging simple strings t
   - Allows in-process tracing of non-serializable objects.
   - Includes a bridge to allow selected fields of logged objects to be written to an <xref:System.Diagnostics.Tracing.EventSource>.
 
-- <xref:System.Diagnostics.Activity?displayProperty=nameWithType>
-  - Provides a definitive way to identify log messages resulting from a specific activity or transaction. This object can be used to correlate logs across different services.
-
 - <xref:System.Diagnostics.EventLog?displayProperty=nameWithType>
   - Windows only.
   - Writes messages to the Windows Event Log.
   - System administrators expect fatal application error messages to appear in the Windows Event Log.
+
+## Distributed Tracing
+
+[Distributed Tracing](./distributed-tracing.md) is the way to publish and observe the tracing data in a distributed system.
 
 ## ILogger and logging frameworks
 
@@ -89,6 +90,8 @@ For instance, to allow you to make the best choice for your application .NET off
 - [C# string interpolation](../../csharp/language-reference/tokens/interpolated.md) can simplify writing logging code.
 
 - [Runtime Provider Event List](../../fundamentals/diagnostics/runtime-events.md)
+
+- [Well-known Event Providers in .NET](well-known-event-providers.md)
 
 - The <xref:System.Exception.Message?displayProperty=nameWithType> property is useful for logging exceptions.
 

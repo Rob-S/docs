@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: SecurityNegotiationFailure"
 title: "SecurityNegotiationFailure"
 ms.date: "03/30/2017"
 ms.assetid: 2060a678-f97b-4491-acd9-6c57c732afd7
 ---
 # SecurityNegotiationFailure
+
 Id: 172  
   
  Severity: Error  
@@ -11,6 +13,7 @@ Id: 172
  Category: SecurityAudit  
   
 ## Description  
+
  This event indicates that Security negotiation failed. The event lists the service, action, client identity, activity ID, and negotiation.  
   
 ## See also

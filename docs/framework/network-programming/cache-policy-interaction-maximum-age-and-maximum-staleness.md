@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Cache Policy Interaction—Maximum Age and Maximum Staleness"
 title: "Cache Policy Interaction—Maximum Age and Maximum Staleness"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -11,6 +12,7 @@ helpviewer_keywords:
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
 ---
 # Cache Policy Interaction—Maximum Age and Maximum Staleness
+
 To help ensure that the freshest content is returned to the client application, the interaction of client cache policy and server revalidation requirements always results in the most conservative cache policy. All the examples in this topic illustrate the cache policy for a resource that is cached on January 1 and expires on January 4.  
   
  In the following examples, the maximum staleness value (`maxStale`) is used in conjunction with a maximum age (`maxAge`):  

@@ -18,7 +18,7 @@ ms.custom: "updateeachrelease"
   * [Windows Forms](/dotnet/desktop/winforms/)
   * [Universal Windows Platform (UWP)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * [Games](https://dotnet.microsoft.com/apps/games)
-* [Internet of Things (IoT)](/dotnet/iot)
+* [Internet of Things (IoT)](../iot/index.yml)
 * [Machine learning](../machine-learning/index.yml)
 * [Console apps](tutorials/with-visual-studio-code.md)
 * [Windows services](/aspnet/core/host-and-deploy/windows-service)
@@ -139,6 +139,13 @@ The SDK download includes the following components:
 * The ASP.NET Core runtime. Provides basic services for internet-connected apps, such as web apps, IoT apps, and mobile backends.
 * The desktop runtime. Provides basic services for Windows desktop apps, including Windows Forms and WPF.
 
+The runtime download includes the following components:
+
+* Optionally, the desktop or ASP.NET Core runtime.
+* The [.NET runtime](#clr). Provides a type system, assembly loading, a garbage collector, native interop, and other basic services.
+* [Runtime libraries](#runtime-libraries). Provides primitive data types and fundamental utilities.
+* The `dotnet` [driver](tools/index.md#driver). A CLI command that runs framework-dependent apps.
+
 For more information, see the following resources:
 
 * [.NET SDK overview](sdk.md)
@@ -248,7 +255,7 @@ For more information, see [Cleaning up unmanaged resources](../standard/garbage-
 
 * Publishing an app as *self-contained* produces an executable file that includes the .NET [runtime](#sdk-and-runtimes) and [libraries](#runtime-libraries), and the application and its dependencies. Users of the application can run it on a machine that doesn't have the .NET runtime installed. Self-contained apps are platform-specific, and they can optionally be published using a form of [AOT compilation](#aot-compiler).
 
-* Publishing an app as *framework-dependent* produces an executable file and binary files (*.dll* files) that include only the application itself and its dependencies. Users of the application have to separately install the .NET [runtime](#sdk-and-runtimes). The executable file is platform-specific, but The *.dll* files of framework-dependent applications are cross-platform.
+* Publishing an app as *framework-dependent* produces an executable file and binary files (*.dll* files) that include only the application itself and its dependencies. Users of the application have to separately install the .NET [runtime](#sdk-and-runtimes). The executable file is platform-specific, but the *.dll* files of framework-dependent applications are cross-platform.
 
   You can install multiple versions of the runtime side by side to run framework-dependent apps that target different versions of the runtime. For more information, see [Target frameworks](../standard/frameworks.md).
 

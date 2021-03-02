@@ -1,12 +1,15 @@
 ---
+description: "Learn more about: Endpoint: Security Validation and Authentication Failures"
 title: "Endpoint: Security Validation and Authentication Failures"
 ms.date: "03/30/2017"
 ms.assetid: 5bad60aa-6084-4c7b-aefd-9b581f04382e
 ---
 # Endpoint: Security Validation and Authentication Failures
+
 Counter name: Security Validation and Authentication Failures  
   
 ## Description  
+
  This counter is incremented whenever a message is rejected due to a security problem not covered by the "Security Calls Not Authorized" counter. Such problems include:  
   
 - Client token cannot be read from the message.  

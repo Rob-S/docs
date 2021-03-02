@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Set a Max Clock Skew"
 title: "How to: Set a Max Clock Skew"
 ms.date: "03/30/2017"
 dev_langs: 
@@ -10,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: 491d1705-eb29-43c2-a44c-c0cf996f74eb
 ---
 # How to: Set a Max Clock Skew
+
 Time-critical functions can be derailed if the clock settings on two computers are different. To mitigate this possibility, you can set the `MaxClockSkew` property to a <xref:System.TimeSpan>. This property is available on two classes:  
   
  <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 4214 - InstanceLocksRecoveryError"
 title: "4214 - InstanceLocksRecoveryError"
 ms.date: "03/30/2017"
 ms.assetid: d28fb2d5-bf15-4648-8d20-8141ad16f04b
 ---
 # 4214 - InstanceLocksRecoveryError
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: d28fb2d5-bf15-4648-8d20-8141ad16f04b
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
   
 ## Description  
+
  Recovering instance locks failed due to an exception.  
   
 ## Message  
+
  Recovering instance locks failed due to the following exception  
   
 ## Details  

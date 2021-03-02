@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: NativeActivity Base Class"
 title: "NativeActivity Base Class"
 ms.date: "03/30/2017"
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
@@ -8,6 +9,7 @@ ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
 <xref:System.Activities.NativeActivity> is an abstract class with a protected constructor. Like <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> is used for writing imperative behavior by implementing an <xref:System.Activities.NativeActivity.Execute%2A> method. Unlike <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> has access to all of the exposed features of the workflow runtime through the <xref:System.Activities.NativeActivityContext> object passed to the <xref:System.Activities.NativeActivity.Execute%2A> method.
 
 ## Using NativeActivityContext
+
  Features of the workflow runtime can be accessed from within the <xref:System.Activities.NativeActivity.Execute%2A> method by using members of the `context` parameter, of type <xref:System.Activities.NativeActivityContext>. The features available through <xref:System.Activities.NativeActivityContext> include the following:
 
 - Getting and setting of arguments and variables.

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 216 - MessageSentByTransport"
 title: "216 - MessageSentByTransport"
 ms.date: "03/30/2017"
 ms.assetid: 150c3167-4154-4225-8d94-57cc94341233
 ---
 # 216 - MessageSentByTransport
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: 150c3167-4154-4225-8d94-57cc94341233
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## Description  
+
  This event occurs when a TCP-based transport sends a message. Note that at the transport level multiple messages can be exchanged between clients and services for a single operation. This may be due to infrastructure behavior, security being a good example. Therefore, the number of **MessageSentByTransport** events that are emitted vary based on your service's binding and its configuration.  
   
 ## Message  
+
  The transport sent a message to '%1'.  
   
 ## Details  

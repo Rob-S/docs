@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: ReliableSessionBindingElement"
 title: "ReliableSessionBindingElement"
 ms.date: "03/30/2017"
 ms.assetid: effda125-b8d3-4de6-8c0e-f59f5ea8f6eb
 ---
 # ReliableSessionBindingElement
+
 ReliableSessionBindingElement  
   
 ## Syntax  
@@ -23,12 +25,15 @@ class ReliableSessionBindingElement : BindingElement
 ```  
   
 ## Methods  
+
  The ReliableSessionBindingElement class does not define any methods.  
   
 ## Properties  
+
  The ReliableSessionBindingElement class has the following properties:  
   
 ### AcknowledgementInterval  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -36,6 +41,7 @@ class ReliableSessionBindingElement : BindingElement
  The interval of time that a destination waits before sending an acknowledgement to the message source on reliable channels that are created by the factory.  
   
 ### FlowControlEnabled  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -43,6 +49,7 @@ class ReliableSessionBindingElement : BindingElement
  A Boolean value that specifies whether flow control is enabled.  
   
 ### InactivityTimeout  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -50,6 +57,7 @@ class ReliableSessionBindingElement : BindingElement
  Specifies the maximum duration the channel is going to allow the other communicating party not to send any messages before faulting the channel.  
   
 ### MaxPendingChannels  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -57,6 +65,7 @@ class ReliableSessionBindingElement : BindingElement
  The maximum number of channels that can wait to be accepted on the listener.  
   
 ### MaxRetryCount  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -64,6 +73,7 @@ class ReliableSessionBindingElement : BindingElement
  The maximum number of times a reliable channel attempts to retransmit a message it has not received an acknowledgement for, by calling `Send` on its underlying channel.  
   
 ### MaxTransferWindowSize  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -71,6 +81,7 @@ class ReliableSessionBindingElement : BindingElement
  The maximum transfer window size for the reliable session.  
   
 ### Ordered  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -78,6 +89,7 @@ class ReliableSessionBindingElement : BindingElement
  A Boolean value that specifies whether messages are guaranteed to arrive in the order they were sent.  
   
 ### ReliableMessagingVersion  
+
  Data type: integer  
   
  Access type: Read-only  

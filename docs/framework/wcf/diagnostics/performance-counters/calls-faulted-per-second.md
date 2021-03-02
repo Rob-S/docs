@@ -1,12 +1,15 @@
 ---
+description: "Learn more about: Calls Faulted Per Second"
 title: "Calls Faulted Per Second"
 ms.date: "03/30/2017"
 ms.assetid: 81c88073-8e32-4520-a71a-2c56b71ee515
 ---
 # Calls Faulted Per Second
+
 Counter Name: Calls Faulted Per Second  
   
 ## Description  
+
  Number of calls that returned faults to this operation in a second.  
   
  This counter is of performance counter type [PERF_COUNTER_COUNTER](/previous-versions/windows/it-pro/windows-server-2003/cc740048(v=ws.10)), whose value is calculated using the following formula.  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: LocalServiceSecuritySettings"
 title: "LocalServiceSecuritySettings"
 ms.date: "03/30/2017"
 ms.assetid: 490aa0e5-5242-4f8d-b505-5ec6287633b4
 ---
 # LocalServiceSecuritySettings
+
 LocalServiceSecuritySettings  
   
 ## Syntax  
@@ -29,12 +31,15 @@ class LocalServiceSecuritySettings
 ```  
   
 ## Methods  
+
  The LocalServiceSecuritySettings class does not define any methods.  
   
 ## Properties  
+
  The LocalServiceSecuritySettings class has the following properties:  
   
 ### DetectReplays  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -42,6 +47,7 @@ class LocalServiceSecuritySettings
  A Boolean value that specifies whether replay attacks against the channel are detected and dealt with automatically.  
   
 ### InactivityTimeout  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -49,6 +55,7 @@ class LocalServiceSecuritySettings
  The maximum number of pending security sessions that the service supports.  
   
 ### IssuedCookieLifetime  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -56,6 +63,7 @@ class LocalServiceSecuritySettings
  A TimeSpan that specifies the lifetime issued to all new security cookies.  
   
 ### MaxCachedCookies  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -63,6 +71,7 @@ class LocalServiceSecuritySettings
  The maximum number of cookies that can be cached.  
   
 ### MaxClockSkew  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -70,6 +79,7 @@ class LocalServiceSecuritySettings
  A TimeSpan that specifies the maximum time difference between the system clocks of the two communicating parties.  
   
 ### MaxPendingSessions  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -77,6 +87,7 @@ class LocalServiceSecuritySettings
  The maximum number of pending connections on the service.  
   
 ### MaxStatefulNegotiations  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -84,6 +95,7 @@ class LocalServiceSecuritySettings
  The number of security negotiations that can be active concurrently.  
   
 ### NegotiationTimeout  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -91,6 +103,7 @@ class LocalServiceSecuritySettings
  A TimeSpan that specifies the maximum duration for the security negotiation phase between server and client.  
   
 ### ReconnectTransportOnFailure  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -98,6 +111,7 @@ class LocalServiceSecuritySettings
  A Boolean value that specifies whether connections using WS-Reliable messaging attempt to reconnect after transport failures.  
   
 ### ReplayCacheSize  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -105,6 +119,7 @@ class LocalServiceSecuritySettings
  The number of cached nonces used for replay detection.  
   
 ### ReplayWindow  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -112,6 +127,7 @@ class LocalServiceSecuritySettings
  A TimeSpan that specifies the duration in which individual message nonces are valid.  
   
 ### SessionKeyRenewalInterval  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -119,6 +135,7 @@ class LocalServiceSecuritySettings
  A TimeSpan that specifies the duration after which the initiator renews the key for the security session.  
   
 ### SessionKeyRolloverInterval  
+
  Data type: datetime  
   
  Access type: Read-only  
@@ -126,6 +143,7 @@ class LocalServiceSecuritySettings
  A TimeSpan that specifies the time interval a previous session key is valid on incoming messages during a key renewal.  
   
 ### TimestampValidityDuration  
+
  Data type: datetime  
   
  Access type: Read-only  

@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: MsmqTransportBindingElement"
 title: "MsmqTransportBindingElement"
 ms.date: "03/30/2017"
 ms.assetid: 1c89f073-9ed3-4025-a8c5-13535a0f526b
 ---
 # MsmqTransportBindingElement
+
 MsmqTransportBindingElement  
   
 ## Syntax  
@@ -18,12 +20,15 @@ class MsmqTransportBindingElement : MsmqBindingElementBase
 ```  
   
 ## Methods  
+
  The MsmqTransportBindingElement class does not define any methods.  
   
 ## Properties  
+
  The MsmqTransportBindingElement class has the following properties:  
   
 ### MaxPoolSize  
+
  Data type: sint32  
   
  Access type: Read-only  
@@ -31,6 +36,7 @@ class MsmqTransportBindingElement : MsmqBindingElementBase
  The maximum size of the pool that contains internal MSMQ message objects.  
   
 ### QueueTransferProtocol  
+
  Data type: string  
   
  Access type: Read-only  
@@ -38,6 +44,7 @@ class MsmqTransportBindingElement : MsmqBindingElementBase
  An enumeration value that indicates the queued communication channel transport that this binding uses.  
   
 ### UseActiveDirectory  
+
  Data type: boolean  
   
  Access type: Read-only  

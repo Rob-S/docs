@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Obtain a Certificate (WCF)"
 title: "How to: Obtain a Certificate (WCF)"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -6,6 +7,7 @@ helpviewer_keywords:
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
 ---
 # How to: Obtain a Certificate (WCF)
+
 To use any of the Windows Communication Foundation (WCF) features of that use X.509 certificates, you just first obtain certificates.  
   
 ### To obtain an X.509 certificate  

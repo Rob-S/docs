@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: 115 - WorkflowInstanceAbortedRecordWithId"
 title: "115 - WorkflowInstanceAbortedRecordWithId"
 ms.date: "03/30/2017"
 ms.assetid: 0293dd4e-e6ae-473a-b3d6-c2d38f9bd875
 ---
 # 115 - WorkflowInstanceAbortedRecordWithId
+
 ## Properties  
   
 |||  
@@ -14,9 +16,11 @@ ms.assetid: 0293dd4e-e6ae-473a-b3d6-c2d38f9bd875
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## Description  
+
  This event is emitted by the ETW tracking participant when a workflow instance emits WorkflowInstanceAbortedRecord.  
   
 ## Message  
+
  TrackRecord = WorkflowInstanceAbortedRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, Reason = %5,  Annotations = %6, ProfileName = %7, WorkflowDefinitionIdentity = %8  
   
 ## Details  

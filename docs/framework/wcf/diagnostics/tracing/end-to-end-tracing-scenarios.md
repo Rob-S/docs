@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: End-To-End Tracing Scenarios"
 title: "End-To-End Tracing Scenarios"
 ms.date: "03/30/2017"
 ms.assetid: f83b7d53-6061-4362-a9a3-ee1daf6542be
 ---
 # End-To-End Tracing Scenarios
+
 This section contains topics that describe different scenarios for using tracing.  
   
  Activity Tracing is implemented for Reply/Response, OneWay and Duplex scenarios using the following  

@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: How to: Create a Custom Activity Template"
 title: "How to: Create a Custom Activity Template"
 ms.date: "03/30/2017"
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
@@ -87,6 +88,7 @@ Custom activity templates are used to customize the configuration of activities,
 9. Locate the **MyDelayActivity** template in the **DelayActivityTemplate** category. Drag it onto the design surface. Confirm in the **Properties** window that the `Duration` property has been set to 10 seconds.
 
 ## Example
+
  The MyDelayActivity.cs file should contain the following code.
 
 ```csharp

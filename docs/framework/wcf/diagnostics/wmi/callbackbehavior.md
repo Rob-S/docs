@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: CallbackBehavior"
 title: "CallbackBehavior"
 ms.date: "03/30/2017"
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
 ---
 # CallbackBehavior
+
 CallbackBehavior  
   
 ## Syntax  
@@ -22,12 +24,15 @@ class CallbackBehavior : Behavior
 ```  
   
 ## Methods  
+
  The CallbackBehavior class does not define any methods.  
   
 ## Properties  
+
  The CallbackBehavior class has the following properties:  
   
 ### AutomaticSessionShutdown  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -35,12 +40,14 @@ class CallbackBehavior : Behavior
  When true, the session is automatically closed when a service closes a duplex session.  
   
 ### ConcurrencyMode  
+
  Data type: string  
 Access type: Read-only  
   
  Specifies whether the service supports one thread, multiple threads, or reentrant calls.  
   
 ### IgnoreExtensionDataObject  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -48,6 +55,7 @@ Access type: Read-only
  A value that specifies whether to send unknown serialization data onto the wire.  
   
 ### IncludeExceptionDetailInFaults  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -55,6 +63,7 @@ Access type: Read-only
  When enabled, details about exceptions on the callback are attached to the faults returned to the service.  
   
 ### MaxItemsInObjectGraph  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -62,6 +71,7 @@ Access type: Read-only
  The maximum number of items allowed in a serialized object.  
   
 ### UseSynchronizationContext  
+
  Data type: boolean  
   
  Access type: Read-only  
@@ -69,6 +79,7 @@ Access type: Read-only
  Specifies whether to use the current synchronization context to choose the thread of execution.  
   
 ### ValidateMustUnderstand  
+
  Data type: boolean  
   
  Access type: Read-only  

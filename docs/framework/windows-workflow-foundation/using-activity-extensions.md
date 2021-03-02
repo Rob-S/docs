@@ -1,9 +1,11 @@
 ---
+description: "Learn more about: Using Activity Extensions"
 title: "Using Activity Extensions"
 ms.date: "03/30/2017"
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
 ---
 # Using Activity Extensions
+
 Activities can interact with workflow application extensions that allow the host to provide additional functionality that is not explicitly modeled in the workflow.  This topic describes how to create and use an extension to count the number of times the activity executes.
 
 ### To use an activity extension to count executions

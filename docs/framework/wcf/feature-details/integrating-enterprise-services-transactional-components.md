@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Integrating Enterprise Services Transactional Components"
 title: "Integrating Enterprise Services Transactional Components"
 ms.date: "03/30/2017"
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
@@ -10,6 +11,7 @@ Windows Communication Foundation (WCF) provides an automatic mechanism for integ
  To provide the desired level of interoperability between the incoming flowed transaction and the COM+ context transaction, the service implementation must create a <xref:System.Transactions.TransactionScope> instance and use the appropriate value from the <xref:System.Transactions.EnterpriseServicesInteropOption> enumeration.  
   
 ## Integrating Enterprise Services with a Service Operation  
+
  The following code demonstrates an operation, with Allowed transaction flow, that creates a <xref:System.Transactions.TransactionScope> with the <xref:System.Transactions.EnterpriseServicesInteropOption.Full> option. The following conditions apply in this scenario:  
   
 - If the client flows a transaction, the operation, including the call to the Enterprise Services component, is executed within the scope of that transaction. Using <xref:System.Transactions.EnterpriseServicesInteropOption.Full> ensures that the transaction is synchronized with the <xref:System.EnterpriseServices> context, which means that the ambient transaction for <xref:System.Transactions> and the <xref:System.EnterpriseServices> is the same.  
@@ -57,6 +59,7 @@ public class CustomerService : ICustomerServiceContract
  If no synchronization is required between an operation’s current transaction and calls to transactional Enterprise Services components, then use the <xref:System.Transactions.EnterpriseServicesInteropOption.None> option when instantiating the <xref:System.Transactions.TransactionScope> instance.  
   
 ## Integrating Enterprise Services with a Client  
+
  The following code demonstrates client code using a <xref:System.Transactions.TransactionScope> instance with the <xref:System.Transactions.EnterpriseServicesInteropOption.Full> setting. In this scenario, calls to service operations that support transaction flow occur within the scope of the same transaction as the calls to Enterprise Services components.  
   
 ```csharp

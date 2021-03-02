@@ -1,4 +1,5 @@
 ---
+description: "Learn more about: Windows Communication Foundation Security"
 title: "Windows Communication Foundation Security"
 ms.date: "03/30/2017"
 helpviewer_keywords: 
@@ -8,11 +9,13 @@ helpviewer_keywords:
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
 ---
 # Windows Communication Foundation Security
+
 The topics in this section describe Windows Communication Foundation (WCF) security features and how to use them to help secure messages.  
   
  For more information about Windows Server AppFabric and security, see [Security Model for Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10))  
   
 ## In This Section  
+
  [Security Overview](security-overview.md)  
  Describes the security features in WCF.  
   
@@ -50,11 +53,13 @@ The topics in this section describe Windows Communication Foundation (WCF) secur
  Guidelines for creating secure WCF applications.  
   
 ## Reference  
+
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Security>  
   
 ## Related Sections  
+
  [WCF Feature Details](index.md)  
   
  [Basic WCF Programming](../basic-wcf-programming.md)  
